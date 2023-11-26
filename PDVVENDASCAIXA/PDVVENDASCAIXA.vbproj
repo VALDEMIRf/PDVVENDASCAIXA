@@ -1,0 +1,463 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{960D4063-1F04-4515-88F7-F3BC480A6AE1}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>PDVVENDASCAIXA.My.MyApplication</StartupObject>
+    <RootNamespace>PDVVENDASCAIXA</RootNamespace>
+    <AssemblyName>PDVVENDASCAIXA</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>PDVVENDASCAIXA.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>PDVVENDASCAIXA.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Threading.Tasks" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Cadastros\frmCargos.Designer.vb">
+      <DependentUpon>frmCargos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Cadastros\frmCargos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cadastros\frmCategoriaProdutos.Designer.vb">
+      <DependentUpon>frmCategoriaProdutos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Cadastros\frmCategoriaProdutos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cadastros\frmClientes.Designer.vb">
+      <DependentUpon>frmClientes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Cadastros\frmClientes.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cadastros\frmEmpresa.Designer.vb">
+      <DependentUpon>frmEmpresa.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Cadastros\frmEmpresa.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cadastros\frmFornecedores.Designer.vb">
+      <DependentUpon>frmFornecedores.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Cadastros\frmFornecedores.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cadastros\frmFuncionarios.Designer.vb">
+      <DependentUpon>frmFuncionarios.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Cadastros\frmFuncionarios.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="classes\CNPJ.vb" />
+    <Compile Include="conexao.vb" />
+    <Compile Include="Connected Services\WSCEP\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="mdlFuncoesDiversas.vb" />
+    <Compile Include="Movimentacao\frmServicos.Designer.vb">
+      <DependentUpon>frmServicos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Movimentacao\frmServicos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Movimentacao\frmTipoServico.Designer.vb">
+      <DependentUpon>frmTipoServico.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Movimentacao\frmTipoServico.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Movimentacao\frmUnidadeMedidas.Designer.vb">
+      <DependentUpon>frmUnidadeMedidas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Movimentacao\frmUnidadeMedidas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="telas administrativo\frmLogin.Designer.vb">
+      <DependentUpon>frmLogin.vb</DependentUpon>
+    </Compile>
+    <Compile Include="telas administrativo\frmLogin.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="telas administrativo\frmPrincipal.Designer.vb">
+      <DependentUpon>frmPrincipal.vb</DependentUpon>
+    </Compile>
+    <Compile Include="telas administrativo\frmPrincipal.vb">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Cadastros\frmCargos.resx">
+      <DependentUpon>frmCargos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cadastros\frmCategoriaProdutos.resx">
+      <DependentUpon>frmCategoriaProdutos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cadastros\frmClientes.resx">
+      <DependentUpon>frmClientes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cadastros\frmEmpresa.resx">
+      <DependentUpon>frmEmpresa.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cadastros\frmFornecedores.resx">
+      <DependentUpon>frmFornecedores.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cadastros\frmFuncionarios.resx">
+      <DependentUpon>frmFuncionarios.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Movimentacao\frmServicos.resx">
+      <DependentUpon>frmServicos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Movimentacao\frmTipoServico.resx">
+      <DependentUpon>frmTipoServico.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Movimentacao\frmUnidadeMedidas.resx">
+      <DependentUpon>frmUnidadeMedidas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="telas administrativo\frmLogin.resx">
+      <DependentUpon>frmLogin.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="telas administrativo\frmPrincipal.resx">
+      <DependentUpon>frmPrincipal.vb</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\WSCEP\AtendeClienteService.wsdl" />
+    <None Include="Connected Services\WSCEP\PDVVENDASCAIXA.WSCEP.atualizaPagamentoNaEntregaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSCEP\PDVVENDASCAIXA.WSCEP.atualizaRemessaAgrupadaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSCEP\PDVVENDASCAIXA.WSCEP.bloquearObjetoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSCEP\PDVVENDASCAIXA.WSCEP.buscaClienteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSCEP\PDVVENDASCAIXA.WSCEP.buscaContratoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSCEP\PDVVENDASCAIXA.WSCEP.buscaDataAtualResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSCEP\PDVVENDASCAIXA.WSCEP.buscaOpcoesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSCEP\PDVVENDASCAIXA.WSCEP.buscaPagamentoEntregaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSCEP\PDVVENDASCAIXA.WSCEP.buscaServicosAdicionaisAtivosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSCEP\PDVVENDASCAIXA.WSCEP.buscaServicosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSCEP\PDVVENDASCAIXA.WSCEP.buscaServicosValorDeclaradoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSCEP\PDVVENDASCAIXA.WSCEP.buscaServicosXServicosAdicionaisResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSCEP\PDVVENDASCAIXA.WSCEP.buscaTarifaValeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSCEP\PDVVENDASCAIXA.WSCEP.calculaTarifaServicoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSCEP\PDVVENDASCAIXA.WSCEP.cancelarObjetoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSCEP\PDVVENDASCAIXA.WSCEP.cancelarPedidoScolResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSCEP\PDVVENDASCAIXA.WSCEP.clienteERP.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSCEP\PDVVENDASCAIXA.WSCEP.consultaCEPResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSCEP\PDVVENDASCAIXA.WSCEP.contratoERP.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSCEP\PDVVENDASCAIXA.WSCEP.dimensaoTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSCEP\PDVVENDASCAIXA.WSCEP.embalagemLRSMaster.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSCEP\PDVVENDASCAIXA.WSCEP.enderecoERP.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSCEP\PDVVENDASCAIXA.WSCEP.fechaPlpResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSCEP\PDVVENDASCAIXA.WSCEP.fechaPlpVariosServicosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSCEP\PDVVENDASCAIXA.WSCEP.geraDigitoVerificadorEtiquetasResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSCEP\PDVVENDASCAIXA.WSCEP.getStatusCartaoPostagemResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSCEP\PDVVENDASCAIXA.WSCEP.getStatusPLPResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSCEP\PDVVENDASCAIXA.WSCEP.integrarUsuarioScolResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSCEP\PDVVENDASCAIXA.WSCEP.mensagemParametrizadaTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSCEP\PDVVENDASCAIXA.WSCEP.obterClienteAtualizacaoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSCEP\PDVVENDASCAIXA.WSCEP.obterEmbalagemLRSResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSCEP\PDVVENDASCAIXA.WSCEP.obterMensagemParametrizadaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSCEP\PDVVENDASCAIXA.WSCEP.pesquisarDimensoesServicoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSCEP\PDVVENDASCAIXA.WSCEP.pesquisarEmbalagensPorServicoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSCEP\PDVVENDASCAIXA.WSCEP.pesquisarParametrosPorDescricaoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSCEP\PDVVENDASCAIXA.WSCEP.pesquisarServicosAdicionaisResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSCEP\PDVVENDASCAIXA.WSCEP.retornoCancelamento.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSCEP\PDVVENDASCAIXA.WSCEP.servicoAdicionalTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSCEP\PDVVENDASCAIXA.WSCEP.servicoAdicionalXML.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSCEP\PDVVENDASCAIXA.WSCEP.servicoERP.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSCEP\PDVVENDASCAIXA.WSCEP.solicitaEtiquetasResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSCEP\PDVVENDASCAIXA.WSCEP.solicitaPLPResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSCEP\PDVVENDASCAIXA.WSCEP.solicitarPostagemScolResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSCEP\PDVVENDASCAIXA.WSCEP.solicitaXmlPlpResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSCEP\PDVVENDASCAIXA.WSCEP.statusCartao.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSCEP\PDVVENDASCAIXA.WSCEP.statusPlp.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSCEP\PDVVENDASCAIXA.WSCEP.tipoEmbalagem.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSCEP\PDVVENDASCAIXA.WSCEP.valePostal.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSCEP\PDVVENDASCAIXA.WSCEP.validaEtiquetaPLPResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSCEP\PDVVENDASCAIXA.WSCEP.validaPlpResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSCEP\PDVVENDASCAIXA.WSCEP.validarPostagemReversaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSCEP\PDVVENDASCAIXA.WSCEP.validarPostagemSimultaneaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSCEP\PDVVENDASCAIXA.WSCEP.verificaDisponibilidadeServicoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSCEP\PDVVENDASCAIXA.WSCEP.verificaModalTransporteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSCEP\PDVVENDASCAIXA.WSCEP.VerificaSeTodosObjetosCanceladosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="backgrounds\tela de login.jpg" />
+    <None Include="Connected Services\WSCEP\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+    <None Include="Connected Services\WSCEP\configuration.svcinfo" />
+    <None Include="Connected Services\WSCEP\configuration91.svcinfo" />
+    <Content Include="icones\boss.ico" />
+    <Content Include="icones\Cash.ico" />
+    <Content Include="icones\CategoriaProdutos_Icon.ico" />
+    <Content Include="icones\Company-building.ico" />
+    <Content Include="icones\Custom-Icon-Design-Flatastic-4-Inventory-maintenance.ico" />
+    <Content Include="icones\lock.ico" />
+    <Content Include="icones\Maintenance.ico" />
+    <Content Include="icones\people.ico" />
+    <Content Include="icones\Sales-report.ico" />
+    <Content Include="icones\Shadow-Cart.ico" />
+    <Content Include="icones\Stock.ico" />
+    <Content Include="icones\user group.ico" />
+    <Content Include="imagens\-reports.48.png" />
+    <Content Include="imagens\Add.png" />
+    <Content Include="imagens\add_azul.png" />
+    <Content Include="imagens\Ampeross-Qetto-2-Move.32.png" />
+    <Content Include="imagens\Boss.bmp" />
+    <Content Include="imagens\boss.ico" />
+    <Content Include="imagens\Button-Add32.png" />
+    <Content Include="imagens\camera.png" />
+    <Content Include="imagens\cash-icon.png" />
+    <Content Include="imagens\categoriaProdutosdocumentation.32.png" />
+    <Content Include="imagens\clear.png" />
+    <Content Include="imagens\Close.gif" />
+    <Content Include="imagens\Company-building.32.png" />
+    <Content Include="imagens\Custom-Icon-Design-Flatastic-4-Inventory-maintenance.ico" />
+    <Content Include="imagens\deletar.png" />
+    <Content Include="imagens\Delete.png" />
+    <Content Include="imagens\Document.32.png" />
+    <Content Include="imagens\Edit.png" />
+    <Content Include="imagens\if_money_299107.ico" />
+    <Content Include="imagens\Inventory-maintenance.32.png" />
+    <Content Include="imagens\listaprod.48.png" />
+    <Content Include="imagens\logout.png" />
+    <Content Include="imagens\maintenance.png" />
+    <Content Include="imagens\pdv-logo.jpg" />
+    <Content Include="imagens\People.png" />
+    <Content Include="imagens\produtos.jfif" />
+    <Content Include="imagens\registrodevendas.32.png" />
+    <Content Include="imagens\relatorio de vendas.32.png" />
+    <Content Include="imagens\relatorioVendas.png" />
+    <Content Include="imagens\rosto.jpg" />
+    <Content Include="imagens\salvar.png" />
+    <Content Include="imagens\salvarPreto.png" />
+    <Content Include="imagens\Shadow-Cart.24.png" />
+    <Content Include="imagens\Shadow-Cart.ico" />
+    <Content Include="imagens\Stock-market.48.png" />
+    <Content Include="imagens\Stock.48.png" />
+    <Content Include="imagens\User group.gif" />
+    <Content Include="imagens\Zoom.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\WSCEP\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Caixa\" />
+    <Folder Include="Estoque\" />
+    <Folder Include="Relatorios\" />
+    <Folder Include="Vendas\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+</Project>
