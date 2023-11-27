@@ -8,12 +8,12 @@ Public Class frmProdutos
     Private _create As Net.HttpWebRequest
 
     Private Sub frmProdutos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        DesabilitarCampos()
-        btnSalvar.Enabled = False
-
         CarregarFornecedor()
         CarregarCategoriaProdutos()
         CarregarUnidadesMedidas()
+
+        DesabilitarCampos()
+        btnSalvar.Enabled = False
 
         Listar()
 
@@ -85,13 +85,12 @@ Public Class frmProdutos
             abrir()
 
             '  da = New SqlDataAdapter("SELECT * FROM tbProdutos", con)
-            da = New SqlDataAdapter("pa_produtoListar", con)
+            da = New SqlDataAdapter("pa_produto_Listar", con)
             da.Fill(dt)
             dg.DataSource = dt
 
             ContarLinhas()
             FormatarDG()
-
 
         Catch ex As Exception
             MessageBox.Show("Erro ao Listar os produtos" + ex.Message.ToString)
@@ -103,24 +102,30 @@ Public Class frmProdutos
     Private Sub DesabilitarCampos()
         txtNome.Enabled = False
         txtDescricao.Enabled = False
-        txtQuantidade.Enabled = False
-        txtValor.Enabled = False
-        txtValorCompra.Enabled = False
-        txtNivel.Enabled = False
         cbFornecedor.Enabled = False
+        cbCategoria.Enabled = False
+        cbUnidade.Enabled = False
+        txtQuantidade.Enabled = False
+        txtValorCompra.Enabled = False
+        txtValorVenda.Enabled = False
+
+        txtNivel.Enabled = False
+
 
     End Sub
 
     Private Sub HabilitarCampos()
         txtNome.Enabled = True
         txtDescricao.Enabled = True
-        'txtQuantidade.Enabled = True
-        txtValor.Enabled = True
-        txtValorCompra.Enabled = True
-        txtNivel.Enabled = True
         cbFornecedor.Enabled = True
         cbCategoria.Enabled = True
         cbUnidade.Enabled = True
+        txtQuantidade.Enabled = True
+        txtValorCompra.Enabled = True
+        txtValorVenda.Enabled = True
+
+        txtNivel.Enabled = True
+
     End Sub
 
     Private Sub Limpar()
@@ -128,63 +133,54 @@ Public Class frmProdutos
         txtNome.Text = ""
         txtDescricao.Text = ""
         txtQuantidade.Text = "0"
-        txtValor.Text = ""
+        txtValorVenda.Text = ""
         txtValorCompra.Text = ""
         txtBuscar.Text = ""
         txtNivel.Text = "0"
-        cbCategoria.Text = " "
         cbFornecedor.Text = Nothing
         cbUnidade.Text = Nothing
         cbCategoria.Text = Nothing
-        txtCodBarras.Text = ""
-        imgCodBar.Image = Nothing
+        'txtCodBarras.Text = ""
+        'imgCodBar.Image = Nothing
         '  carregarImagem()
 
     End Sub
 
     Private Sub FormatarDG()
         dg.Columns(0).Visible = False
-        dg.Columns(9).Visible = False
-        dg.Columns(15).Visible = False
-        dg.Columns(16).Visible = False
-        dg.Columns(17).Visible = False
-        dg.Columns(18).Visible = False
-        dg.Columns(19).Visible = False
-        dg.Columns(20).Visible = False
+        'dg.Columns(9).Visible = False
+        'dg.Columns(15).Visible = False
+        'dg.Columns(16).Visible = False
+        'dg.Columns(17).Visible = False
+        'dg.Columns(18).Visible = False
+        'dg.Columns(19).Visible = False
+        'dg.Columns(20).Visible = False
 
         dg.Columns(1).HeaderText = "Nome"
         dg.Columns(2).HeaderText = "Descrição"
-        dg.Columns(3).HeaderText = "Categoria"
-        dg.Columns(4).HeaderText = "Unidade"
-        dg.Columns(5).HeaderText = "Quant."
-        dg.Columns(6).HeaderText = "Vlr de Compra"
-        dg.Columns(7).HeaderText = "Vlr de Venda"
-        dg.Columns(8).HeaderText = "Dt Cadastro"
-        'dg.Columns(9).HeaderText = "Imagem"
-        dg.Columns(10).HeaderText = "Nível Mínimo"
-        dg.Columns(11).HeaderText = "Quant. Vendida"
-        dg.Columns(12).HeaderText = "Código de Barras"
-        dg.Columns(13).HeaderText = "Razão Social"
-        dg.Columns(14).HeaderText = "Fantasia"
-        'dg.Columns(15).HeaderText = "id_fornecedor"
-        'dg.Columns(16).HeaderText = "id_fornecedor"
-        'dg.Columns(17).HeaderText = "id_categoria"
-        'dg.Columns(18).HeaderText = "id_unidade"
-        'dg.Columns(19).HeaderText = "id_categoria"
-        'dg.Columns(20).HeaderText = "id_unidade"
+        dg.Columns(3).HeaderText = "Razão Social"
+        dg.Columns(4).HeaderText = "Categoria"
+        dg.Columns(5).HeaderText = "Unidade"
+        dg.Columns(6).HeaderText = "Quant."
+        dg.Columns(7).HeaderText = "Vlr de Compra"
+        dg.Columns(8).HeaderText = "Vlr de Venda"
+        dg.Columns(9).HeaderText = "Dt Cadastro"
+        'dg.Columns(10).HeaderText = "id_fornecedor"
+        'dg.Columns(11).HeaderText = "id_categoria"
+        'dg.Columns(12).HeaderText = "id_unidade"
 
         dg.Columns(2).Width = 180
         dg.Columns(1).Width = 120
-        dg.Columns(3).Width = 90
+        dg.Columns(3).Width = 100
         dg.Columns(4).Width = 80
         dg.Columns(5).Width = 50
         dg.Columns(6).Width = 60
         dg.Columns(7).Width = 60
         dg.Columns(8).Width = 80
-        dg.Columns(10).Width = 55
-        dg.Columns(11).Width = 70
-        dg.Columns(12).Width = 100
-        dg.Columns(13).Width = 190
+        dg.Columns(9).Width = 55
+        'dg.Columns(11).Width = 70
+        'dg.Columns(12).Width = 100
+        'dg.Columns(13).Width = 190
 
     End Sub
 
@@ -194,7 +190,225 @@ Public Class frmProdutos
 
     End Sub
 
+    Private Sub btnNovo_Click(sender As Object, e As EventArgs) Handles btnNovo.Click
+        HabilitarCampos()
+        Limpar()
+        btnSalvar.Enabled = True
+        btnEditar.Enabled = False
+        btnExcluir.Enabled = False
+
+    End Sub
+
+    Private Sub btnSalvar_Click(sender As Object, e As EventArgs) Handles btnSalvar.Click
+        Dim cmd As SqlCommand
+
+        'If txtNome.Text <> "" Then
+        '    If pbImagem.Image.Equals(Nothing) Then
+        '        errErro.SetError(pbImagem, "Escolha uma imagem")
+        '        Exit Sub
+        '    Else
+        '        'MessageBox.Show("certo")
+        '    End If
+
+        Try
+
+            'CARREGANDO IMAGEM NO BANCO
+            'Dim MS As New IO.MemoryStream
+            'ImagemCarregada.Save(MS, System.Drawing.Imaging.ImageFormat.Jpeg)
+            'Dim byteArray = MS.ToArray
+
+            Dim vlcompra = Replace(txtValorCompra.Text, ",", ".")
+                Dim vlVenda = Replace(txtValorVenda.Text, ",", ".")
+
+                abrir()
+                cmd = New SqlCommand("pa_produto_Salvar", con)
+                cmd.CommandType = CommandType.StoredProcedure
+                cmd.Parameters.AddWithValue("@nome", txtNome.Text)
+                cmd.Parameters.AddWithValue("@descricao", txtDescricao.Text)
+                cmd.Parameters.AddWithValue("@id_fornecedor", cbFornecedor.SelectedValue)
+                cmd.Parameters.AddWithValue("@id_categoria", cbCategoria.SelectedValue)
+                cmd.Parameters.AddWithValue("@id_unidade", cbUnidade.SelectedValue)
+                cmd.Parameters.AddWithValue("@quantidade", txtQuantidade.Text)
+                cmd.Parameters.AddWithValue("@valor_compra", vlcompra)
+                cmd.Parameters.AddWithValue("@valor_venda", vlVenda)
+                cmd.Parameters.AddWithValue("@data_cadastro", Now.Date())
+                'cmd.Parameters.AddWithValue("@imagem", byteArray)
+                'cmd.Parameters.AddWithValue("@nivel_minimo", txtNivel.Text)
+
+                ' cmd.Parameters.AddWithValue("@quant_vendida", 0)
+                ' cmd.Parameters.AddWithValue("@codigo_barras", txtCodBarras.Text)
 
 
+                cmd.Parameters.Add("@mensagem", SqlDbType.VarChar, 100).Direction = 2
+                cmd.ExecuteNonQuery()
 
+                Dim msg As String = cmd.Parameters("@mensagem").Value.ToString
+                MessageBox.Show(msg, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button3)
+
+                ' PrintPreviewDialog1.Show()
+                Listar()
+                Limpar()
+
+                btnSalvar.Enabled = False
+
+            Catch ex As Exception
+                MessageBox.Show("Erro ao salvar os dados" + ex.Message.ToString)
+            Finally
+                fechar()
+
+            End Try
+        'End If
+    End Sub
+
+    Private Sub btnEditar_Click(sender As Object, e As EventArgs) Handles btnEditar.Click
+
+        Dim cmd As SqlCommand
+
+        Dim vlcompra = Replace(txtValorCompra.Text, ",", ".")
+        Dim vlVenda = Replace(txtValorVenda.Text, ",", ".")
+
+        If txtNome.Text <> "" Then
+
+            Try
+
+                'CARREGANDO IMAGEM NO BANCO
+                'Dim MS As New IO.MemoryStream
+                'ImagemCarregada.Save(MS, System.Drawing.Imaging.ImageFormat.Jpeg)
+                'Dim byteArray = MS.ToArray
+
+                abrir()
+                cmd = New SqlCommand("pa_produto_Editar", con)
+                cmd.CommandType = CommandType.StoredProcedure
+                cmd.Parameters.AddWithValue("@id_produto", txtCodigo.Text)
+                cmd.Parameters.AddWithValue("@nome", txtNome.Text)
+                cmd.Parameters.AddWithValue("@descricao", txtDescricao.Text)
+                cmd.Parameters.AddWithValue("@id_fornecedor", cbFornecedor.SelectedValue)
+                cmd.Parameters.AddWithValue("@id_categoria", cbCategoria.SelectedValue)
+                cmd.Parameters.AddWithValue("@id_unidade", cbUnidade.SelectedValue)
+                cmd.Parameters.AddWithValue("@quantidade", txtQuantidade.Text)
+                cmd.Parameters.AddWithValue("@valor_compra", vlcompra)
+                cmd.Parameters.AddWithValue("@valor_venda", vlVenda)
+
+                'cmd.Parameters.AddWithValue("@imagem", byteArray)
+                'cmd.Parameters.AddWithValue("@nivel_minimo", txtNivel.Text)
+
+                cmd.Parameters.Add("@mensagem", SqlDbType.VarChar, 100).Direction = 2
+                cmd.ExecuteNonQuery()
+
+                Dim msg As String = cmd.Parameters("@mensagem").Value.ToString
+                MessageBox.Show(msg, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
+
+                Listar()
+                Limpar()
+
+            Catch ex As Exception
+                MessageBox.Show("Erro ao Editar os dados" + ex.Message.ToString)
+                fechar()
+            End Try
+        End If
+    End Sub
+
+    Private Sub btnExcluir_Click(sender As Object, e As EventArgs) Handles btnExcluir.Click
+        Dim cmd As SqlCommand
+
+        If txtCodigo.Text <> "" Then
+
+            Try
+                If (MessageBox.Show("Deseja excluir este Produto?", Me.Text, MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.No) Then Exit Sub
+
+                abrir()
+                cmd = New SqlCommand("pa_produto_Excluir", con)
+                cmd.CommandType = CommandType.StoredProcedure
+                cmd.Parameters.AddWithValue("@id_produto", txtCodigo.Text)
+                cmd.Parameters.Add("@mensagem", SqlDbType.VarChar, 100).Direction = 2
+                cmd.ExecuteNonQuery()
+
+                Dim msg As String = cmd.Parameters("@mensagem").Value.ToString
+                MessageBox.Show(msg, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
+
+                Listar()
+                Limpar()
+
+                btnExcluir.Enabled = False
+                btnEditar.Enabled = False
+
+            Catch ex As Exception
+                MessageBox.Show("Erro ao excluir o Produto" + ex.Message)
+                fechar()
+            End Try
+        End If
+    End Sub
+
+    Private Sub btSair_Click(sender As Object, e As EventArgs) Handles btSair.Click
+        Me.Close()
+    End Sub
+
+    Private Sub dg_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dg.CellClick
+        Cadastro.Show()
+        btnEditar.Enabled = True
+        btnExcluir.Enabled = True
+        btnSalvar.Enabled = False
+
+        txtValorCompra.Visible = True
+        txtValorVenda.Visible = True
+
+        HabilitarCampos()
+
+        txtCodigo.Text = dg.CurrentRow.Cells(0).Value
+        txtNome.Text = dg.CurrentRow.Cells(1).Value
+        txtDescricao.Text = dg.CurrentRow.Cells(2).Value
+        cbFornecedor.Text = dg.CurrentRow.Cells(3).Value
+        cbCategoria.Text = dg.CurrentRow.Cells(4).Value
+        cbUnidade.Text = dg.CurrentRow.Cells(5).Value
+        txtQuantidade.Text = dg.CurrentRow.Cells(6).Value
+        txtValorCompra.Text = CInt(dg.CurrentRow.Cells(7).Value) '.ToString("R$ #,###.00")
+        txtValorVenda.Text = CInt(dg.CurrentRow.Cells(8).Value) '.ToString("R$ #,###.00")
+        ' txtNivel.Text = CInt(dg.CurrentRow.Cells(10).Value)
+
+
+        '  txtCodBarras.Text = dg.CurrentRow.Cells(12).Value
+
+        'CriarCodigoBarras()
+
+        'Dim tempImagem As Byte() = DirectCast(dg.CurrentRow.Cells(9).Value, Byte())
+        'If tempImagem Is Nothing Then
+        '    MessageBox.Show("Imagem não localizada", "Erro")
+        '    Exit Sub
+        'End If
+        'Dim strArquivo As String = Convert.ToString(DateTime.Now.ToFileTime())
+        'Dim fs As New FileStream(strArquivo, FileMode.CreateNew, FileAccess.Write)
+        'fs.Write(tempImagem, 0, tempImagem.Length)
+        'fs.Flush()
+        'fs.Close()
+        'ImagemCarregada = Image.FromFile(strArquivo)
+        'pbImagem.Image = ImagemCarregada
+    End Sub
+
+    Private Sub txtBuscar_TextChanged(sender As Object, e As EventArgs) Handles txtBuscar.TextChanged
+        If txtBuscar.Text = "" And dg.Rows.Count > 0 Then
+
+            Listar()
+
+        Else
+            Dim dt As New DataTable
+            Dim da As SqlDataAdapter
+
+            Try
+                abrir()
+                da = New SqlDataAdapter("pa_produto_BuscarNome", con)
+                da.SelectCommand.CommandType = CommandType.StoredProcedure
+                da.SelectCommand.Parameters.AddWithValue("@nome", txtBuscar.Text)
+                ' da.SelectCommand.Parameters.AddWithValue("@codigo_barras", txtBuscar.Text)
+
+                da.Fill(dt)
+                dg.DataSource = dt
+
+                ContarLinhas()
+
+            Catch ex As Exception
+                MessageBox.Show("Erro ao Listar" + ex.Message)
+                fechar()
+            End Try
+        End If
+    End Sub
 End Class

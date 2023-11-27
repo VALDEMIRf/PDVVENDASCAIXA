@@ -47,4 +47,9 @@
         Dim form = New frmServicos
         form.ShowDialog()
     End Sub
+
+    Private Sub ProdutosToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles ProdutosToolStripMenuItem1.Click
+        Dim form = New frmProdutos
+        form.ShowDialog()
+    End Sub
 End Class

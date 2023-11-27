@@ -22,12 +22,12 @@ Partial Class frmProdutos
     'Não o modifique usando o editor de códigos.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmProdutos))
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.Cadastro = New System.Windows.Forms.TabPage()
-        Me.txtVlr = New System.Windows.Forms.TextBox()
-        Me.txtVlrCompra = New System.Windows.Forms.TextBox()
+        Me.txtValorCompra = New System.Windows.Forms.TextBox()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.cbUnidade = New System.Windows.Forms.ComboBox()
         Me.Label12 = New System.Windows.Forms.Label()
@@ -45,10 +45,9 @@ Partial Class frmProdutos
         Me.Label5 = New System.Windows.Forms.Label()
         Me.txtDescricao = New System.Windows.Forms.TextBox()
         Me.cbFornecedor = New System.Windows.Forms.ComboBox()
-        Me.txtValorCompra = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
-        Me.txtValor = New System.Windows.Forms.TextBox()
+        Me.txtValorVenda = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.txtQuantidade = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -64,6 +63,7 @@ Partial Class frmProdutos
         Me.btnSalvar = New System.Windows.Forms.Button()
         Me.btnEditar = New System.Windows.Forms.Button()
         Me.btnExcluir = New System.Windows.Forms.Button()
+        Me.errErro = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.TabControl1.SuspendLayout()
         Me.Cadastro.SuspendLayout()
         CType(Me.imgCodBar, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -71,6 +71,7 @@ Partial Class frmProdutos
         Me.Consulta.SuspendLayout()
         CType(Me.dg, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
+        CType(Me.errErro, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'TabControl1
@@ -86,8 +87,7 @@ Partial Class frmProdutos
         'Cadastro
         '
         Me.Cadastro.BackColor = System.Drawing.Color.Teal
-        Me.Cadastro.Controls.Add(Me.txtVlr)
-        Me.Cadastro.Controls.Add(Me.txtVlrCompra)
+        Me.Cadastro.Controls.Add(Me.txtValorCompra)
         Me.Cadastro.Controls.Add(Me.Label13)
         Me.Cadastro.Controls.Add(Me.cbUnidade)
         Me.Cadastro.Controls.Add(Me.Label12)
@@ -105,10 +105,9 @@ Partial Class frmProdutos
         Me.Cadastro.Controls.Add(Me.Label5)
         Me.Cadastro.Controls.Add(Me.txtDescricao)
         Me.Cadastro.Controls.Add(Me.cbFornecedor)
-        Me.Cadastro.Controls.Add(Me.txtValorCompra)
         Me.Cadastro.Controls.Add(Me.Label4)
         Me.Cadastro.Controls.Add(Me.Label8)
-        Me.Cadastro.Controls.Add(Me.txtValor)
+        Me.Cadastro.Controls.Add(Me.txtValorVenda)
         Me.Cadastro.Controls.Add(Me.Label7)
         Me.Cadastro.Controls.Add(Me.txtQuantidade)
         Me.Cadastro.Controls.Add(Me.Label3)
@@ -119,23 +118,13 @@ Partial Class frmProdutos
         Me.Cadastro.TabIndex = 0
         Me.Cadastro.Text = "Cadastro"
         '
-        'txtVlr
+        'txtValorCompra
         '
-        Me.txtVlr.Enabled = False
-        Me.txtVlr.Location = New System.Drawing.Point(688, 83)
-        Me.txtVlr.Name = "txtVlr"
-        Me.txtVlr.ReadOnly = True
-        Me.txtVlr.Size = New System.Drawing.Size(90, 20)
-        Me.txtVlr.TabIndex = 194
-        '
-        'txtVlrCompra
-        '
-        Me.txtVlrCompra.Enabled = False
-        Me.txtVlrCompra.Location = New System.Drawing.Point(688, 34)
-        Me.txtVlrCompra.Name = "txtVlrCompra"
-        Me.txtVlrCompra.ReadOnly = True
-        Me.txtVlrCompra.Size = New System.Drawing.Size(90, 20)
-        Me.txtVlrCompra.TabIndex = 193
+        Me.txtValorCompra.Enabled = False
+        Me.txtValorCompra.Location = New System.Drawing.Point(657, 69)
+        Me.txtValorCompra.Name = "txtValorCompra"
+        Me.txtValorCompra.Size = New System.Drawing.Size(90, 20)
+        Me.txtValorCompra.TabIndex = 193
         '
         'Label13
         '
@@ -155,7 +144,7 @@ Partial Class frmProdutos
         Me.cbUnidade.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbUnidade.Enabled = False
         Me.cbUnidade.FormattingEnabled = True
-        Me.cbUnidade.Location = New System.Drawing.Point(108, 221)
+        Me.cbUnidade.Location = New System.Drawing.Point(108, 228)
         Me.cbUnidade.Name = "cbUnidade"
         Me.cbUnidade.Size = New System.Drawing.Size(106, 21)
         Me.cbUnidade.TabIndex = 190
@@ -164,7 +153,7 @@ Partial Class frmProdutos
         '
         Me.Label12.AutoSize = True
         Me.Label12.ForeColor = System.Drawing.Color.White
-        Me.Label12.Location = New System.Drawing.Point(42, 225)
+        Me.Label12.Location = New System.Drawing.Point(42, 232)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(50, 13)
         Me.Label12.TabIndex = 191
@@ -175,7 +164,7 @@ Partial Class frmProdutos
         Me.cbCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbCategoria.Enabled = False
         Me.cbCategoria.FormattingEnabled = True
-        Me.cbCategoria.Location = New System.Drawing.Point(108, 179)
+        Me.cbCategoria.Location = New System.Drawing.Point(108, 186)
         Me.cbCategoria.Name = "cbCategoria"
         Me.cbCategoria.Size = New System.Drawing.Size(193, 21)
         Me.cbCategoria.TabIndex = 188
@@ -184,7 +173,7 @@ Partial Class frmProdutos
         '
         Me.Label10.AutoSize = True
         Me.Label10.ForeColor = System.Drawing.Color.White
-        Me.Label10.Location = New System.Drawing.Point(35, 183)
+        Me.Label10.Location = New System.Drawing.Point(35, 190)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(55, 13)
         Me.Label10.TabIndex = 189
@@ -200,7 +189,7 @@ Partial Class frmProdutos
         '
         'txtNivel
         '
-        Me.txtNivel.Location = New System.Drawing.Point(686, 130)
+        Me.txtNivel.Location = New System.Drawing.Point(647, 228)
         Me.txtNivel.Margin = New System.Windows.Forms.Padding(5)
         Me.txtNivel.Name = "txtNivel"
         Me.txtNivel.Size = New System.Drawing.Size(89, 20)
@@ -223,7 +212,7 @@ Partial Class frmProdutos
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.ForeColor = System.Drawing.Color.White
-        Me.Label6.Location = New System.Drawing.Point(597, 133)
+        Me.Label6.Location = New System.Drawing.Point(558, 231)
         Me.Label6.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(88, 16)
@@ -238,7 +227,6 @@ Partial Class frmProdutos
         Me.txtCodigo.Name = "txtCodigo"
         Me.txtCodigo.Size = New System.Drawing.Size(35, 20)
         Me.txtCodigo.TabIndex = 154
-        Me.txtCodigo.Visible = False
         '
         'btImagem
         '
@@ -307,26 +295,17 @@ Partial Class frmProdutos
         Me.cbFornecedor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbFornecedor.Enabled = False
         Me.cbFornecedor.FormattingEnabled = True
-        Me.cbFornecedor.Location = New System.Drawing.Point(108, 149)
+        Me.cbFornecedor.Location = New System.Drawing.Point(108, 153)
         Me.cbFornecedor.Name = "cbFornecedor"
         Me.cbFornecedor.Size = New System.Drawing.Size(419, 21)
         Me.cbFornecedor.TabIndex = 182
-        '
-        'txtValorCompra
-        '
-        Me.txtValorCompra.Location = New System.Drawing.Point(687, 34)
-        Me.txtValorCompra.Margin = New System.Windows.Forms.Padding(5)
-        Me.txtValorCompra.MaxLength = 16
-        Me.txtValorCompra.Name = "txtValorCompra"
-        Me.txtValorCompra.Size = New System.Drawing.Size(90, 20)
-        Me.txtValorCompra.TabIndex = 158
         '
         'Label4
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.White
-        Me.Label4.Location = New System.Drawing.Point(573, 34)
+        Me.Label4.Location = New System.Drawing.Point(542, 69)
         Me.Label4.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(113, 16)
@@ -337,27 +316,27 @@ Partial Class frmProdutos
         '
         Me.Label8.AutoSize = True
         Me.Label8.ForeColor = System.Drawing.Color.White
-        Me.Label8.Location = New System.Drawing.Point(21, 152)
+        Me.Label8.Location = New System.Drawing.Point(21, 156)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(64, 13)
         Me.Label8.TabIndex = 183
         Me.Label8.Text = "Fornecedor:"
         '
-        'txtValor
+        'txtValorVenda
         '
-        Me.txtValor.Location = New System.Drawing.Point(687, 83)
-        Me.txtValor.Margin = New System.Windows.Forms.Padding(5)
-        Me.txtValor.MaxLength = 16
-        Me.txtValor.Name = "txtValor"
-        Me.txtValor.Size = New System.Drawing.Size(90, 20)
-        Me.txtValor.TabIndex = 156
+        Me.txtValorVenda.Location = New System.Drawing.Point(657, 117)
+        Me.txtValorVenda.Margin = New System.Windows.Forms.Padding(5)
+        Me.txtValorVenda.MaxLength = 16
+        Me.txtValorVenda.Name = "txtValorVenda"
+        Me.txtValorVenda.Size = New System.Drawing.Size(90, 20)
+        Me.txtValorVenda.TabIndex = 156
         '
         'Label7
         '
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.ForeColor = System.Drawing.Color.White
-        Me.Label7.Location = New System.Drawing.Point(603, 180)
+        Me.Label7.Location = New System.Drawing.Point(574, 31)
         Me.Label7.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(81, 16)
@@ -366,7 +345,7 @@ Partial Class frmProdutos
         '
         'txtQuantidade
         '
-        Me.txtQuantidade.Location = New System.Drawing.Point(686, 177)
+        Me.txtQuantidade.Location = New System.Drawing.Point(657, 28)
         Me.txtQuantidade.Margin = New System.Windows.Forms.Padding(5)
         Me.txtQuantidade.Name = "txtQuantidade"
         Me.txtQuantidade.Size = New System.Drawing.Size(89, 20)
@@ -378,7 +357,7 @@ Partial Class frmProdutos
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.White
-        Me.Label3.Location = New System.Drawing.Point(582, 83)
+        Me.Label3.Location = New System.Drawing.Point(551, 118)
         Me.Label3.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(105, 16)
@@ -407,14 +386,14 @@ Partial Class frmProdutos
         Me.dg.BackgroundColor = System.Drawing.Color.White
         Me.dg.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.dg.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dg.DefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dg.DefaultCellStyle = DataGridViewCellStyle3
         Me.dg.GridColor = System.Drawing.Color.CadetBlue
         Me.dg.Location = New System.Drawing.Point(7, 37)
         Me.dg.Margin = New System.Windows.Forms.Padding(4)
@@ -426,7 +405,7 @@ Partial Class frmProdutos
         '
         'txtBuscar
         '
-        Me.txtBuscar.Location = New System.Drawing.Point(78, 8)
+        Me.txtBuscar.Location = New System.Drawing.Point(165, 10)
         Me.txtBuscar.Margin = New System.Windows.Forms.Padding(5)
         Me.txtBuscar.Name = "txtBuscar"
         Me.txtBuscar.Size = New System.Drawing.Size(137, 20)
@@ -583,6 +562,10 @@ Partial Class frmProdutos
         Me.btnExcluir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnExcluir.UseVisualStyleBackColor = False
         '
+        'errErro
+        '
+        Me.errErro.ContainerControl = Me
+        '
         'frmProdutos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -607,14 +590,14 @@ Partial Class frmProdutos
         Me.Consulta.PerformLayout()
         CType(Me.dg, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
+        CType(Me.errErro, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
 
     Friend WithEvents TabControl1 As TabControl
     Friend WithEvents Cadastro As TabPage
-    Friend WithEvents txtVlr As TextBox
-    Friend WithEvents txtVlrCompra As TextBox
+    Friend WithEvents txtValorCompra As TextBox
     Friend WithEvents Label13 As Label
     Friend WithEvents cbUnidade As ComboBox
     Friend WithEvents Label12 As Label
@@ -632,10 +615,8 @@ Partial Class frmProdutos
     Friend WithEvents Label5 As Label
     Friend WithEvents txtDescricao As TextBox
     Friend WithEvents cbFornecedor As ComboBox
-    Friend WithEvents txtValorCompra As TextBox
     Friend WithEvents Label4 As Label
     Friend WithEvents Label8 As Label
-    Friend WithEvents txtValor As TextBox
     Friend WithEvents Label7 As Label
     Friend WithEvents txtQuantidade As TextBox
     Friend WithEvents Label3 As Label
@@ -651,4 +632,6 @@ Partial Class frmProdutos
     Friend WithEvents btnSalvar As Button
     Friend WithEvents btnEditar As Button
     Friend WithEvents btnExcluir As Button
+    Friend WithEvents txtValorVenda As TextBox
+    Friend WithEvents errErro As ErrorProvider
 End Class
