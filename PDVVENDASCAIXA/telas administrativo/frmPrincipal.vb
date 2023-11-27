@@ -42,4 +42,9 @@
         Dim form = New frmClientes
         form.ShowDialog()
     End Sub
+
+    Private Sub OrdemDeServiçoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles OrdemDeServiçoToolStripMenuItem.Click
+        Dim form = New frmServicos
+        form.ShowDialog()
+    End Sub
 End Class

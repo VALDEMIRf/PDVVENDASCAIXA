@@ -28,6 +28,7 @@ Partial Class frmServicos
         Me.mktDtEntrada = New System.Windows.Forms.MaskedTextBox()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.txtComplemento = New System.Windows.Forms.TextBox()
         Me.txtCompl = New System.Windows.Forms.TextBox()
         Me.Label25 = New System.Windows.Forms.Label()
         Me.btBuscarCEP = New System.Windows.Forms.Button()
@@ -85,7 +86,6 @@ Partial Class frmServicos
         Me.btnEditar = New System.Windows.Forms.Button()
         Me.btSair = New System.Windows.Forms.Button()
         Me.btnExcluir = New System.Windows.Forms.Button()
-        Me.txtComplemento2 = New System.Windows.Forms.TextBox()
         Me.TabControl1.SuspendLayout()
         Me.Cadastro.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -154,7 +154,7 @@ Partial Class frmServicos
         'GroupBox3
         '
         Me.GroupBox3.BackColor = System.Drawing.Color.Transparent
-        Me.GroupBox3.Controls.Add(Me.txtComplemento2)
+        Me.GroupBox3.Controls.Add(Me.txtComplemento)
         Me.GroupBox3.Controls.Add(Me.txtCompl)
         Me.GroupBox3.Controls.Add(Me.Label25)
         Me.GroupBox3.Controls.Add(Me.btBuscarCEP)
@@ -179,6 +179,15 @@ Partial Class frmServicos
         Me.GroupBox3.TabIndex = 178
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Local do Serviço"
+        '
+        'txtComplemento
+        '
+        Me.txtComplemento.Enabled = False
+        Me.txtComplemento.Location = New System.Drawing.Point(242, 67)
+        Me.txtComplemento.Margin = New System.Windows.Forms.Padding(8, 7, 8, 7)
+        Me.txtComplemento.Name = "txtComplemento"
+        Me.txtComplemento.Size = New System.Drawing.Size(203, 20)
+        Me.txtComplemento.TabIndex = 124
         '
         'txtCompl
         '
@@ -205,9 +214,9 @@ Partial Class frmServicos
         Me.btBuscarCEP.FlatAppearance.BorderSize = 0
         Me.btBuscarCEP.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btBuscarCEP.Image = CType(resources.GetObject("btBuscarCEP.Image"), System.Drawing.Image)
-        Me.btBuscarCEP.Location = New System.Drawing.Point(164, 16)
+        Me.btBuscarCEP.Location = New System.Drawing.Point(159, 17)
         Me.btBuscarCEP.Name = "btBuscarCEP"
-        Me.btBuscarCEP.Size = New System.Drawing.Size(37, 26)
+        Me.btBuscarCEP.Size = New System.Drawing.Size(35, 23)
         Me.btBuscarCEP.TabIndex = 121
         Me.btBuscarCEP.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btBuscarCEP.UseVisualStyleBackColor = True
@@ -627,7 +636,7 @@ Partial Class frmServicos
         '
         'txtObs
         '
-        Me.txtObs.Location = New System.Drawing.Point(548, 262)
+        Me.txtObs.Location = New System.Drawing.Point(548, 261)
         Me.txtObs.Margin = New System.Windows.Forms.Padding(8, 7, 8, 7)
         Me.txtObs.Multiline = True
         Me.txtObs.Name = "txtObs"
@@ -655,7 +664,7 @@ Partial Class frmServicos
         '
         'txtBuscar
         '
-        Me.txtBuscar.Location = New System.Drawing.Point(166, 17)
+        Me.txtBuscar.Location = New System.Drawing.Point(566, 21)
         Me.txtBuscar.Margin = New System.Windows.Forms.Padding(7, 6, 7, 6)
         Me.txtBuscar.Name = "txtBuscar"
         Me.txtBuscar.Size = New System.Drawing.Size(182, 20)
@@ -664,19 +673,18 @@ Partial Class frmServicos
         'dtData
         '
         Me.dtData.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtData.Location = New System.Drawing.Point(373, 18)
+        Me.dtData.Location = New System.Drawing.Point(338, 21)
         Me.dtData.Margin = New System.Windows.Forms.Padding(4)
         Me.dtData.Name = "dtData"
         Me.dtData.Size = New System.Drawing.Size(208, 20)
         Me.dtData.TabIndex = 198
-        Me.dtData.Visible = False
         '
         'rbData
         '
         Me.rbData.AutoSize = True
         Me.rbData.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.rbData.ForeColor = System.Drawing.Color.White
-        Me.rbData.Location = New System.Drawing.Point(618, 15)
+        Me.rbData.Location = New System.Drawing.Point(169, 16)
         Me.rbData.Margin = New System.Windows.Forms.Padding(4)
         Me.rbData.Name = "rbData"
         Me.rbData.Size = New System.Drawing.Size(57, 22)
@@ -684,14 +692,13 @@ Partial Class frmServicos
         Me.rbData.TabStop = True
         Me.rbData.Text = "Data"
         Me.rbData.UseVisualStyleBackColor = True
-        Me.rbData.Visible = False
         '
         'rbCliente
         '
         Me.rbCliente.AutoSize = True
         Me.rbCliente.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.rbCliente.ForeColor = System.Drawing.Color.White
-        Me.rbCliente.Location = New System.Drawing.Point(694, 15)
+        Me.rbCliente.Location = New System.Drawing.Point(245, 16)
         Me.rbCliente.Margin = New System.Windows.Forms.Padding(4)
         Me.rbCliente.Name = "rbCliente"
         Me.rbCliente.Size = New System.Drawing.Size(71, 22)
@@ -699,7 +706,6 @@ Partial Class frmServicos
         Me.rbCliente.TabStop = True
         Me.rbCliente.Text = "Cliente"
         Me.rbCliente.UseVisualStyleBackColor = True
-        Me.rbCliente.Visible = False
         '
         'Label24
         '
@@ -869,15 +875,6 @@ Partial Class frmServicos
         Me.btnExcluir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnExcluir.UseVisualStyleBackColor = False
         '
-        'txtComplemento2
-        '
-        Me.txtComplemento2.Enabled = False
-        Me.txtComplemento2.Location = New System.Drawing.Point(242, 67)
-        Me.txtComplemento2.Margin = New System.Windows.Forms.Padding(8, 7, 8, 7)
-        Me.txtComplemento2.Name = "txtComplemento2"
-        Me.txtComplemento2.Size = New System.Drawing.Size(203, 20)
-        Me.txtComplemento2.TabIndex = 124
-        '
         'frmServicos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -887,11 +884,12 @@ Partial Class frmServicos
         Me.Controls.Add(Me.GroupBox5)
         Me.Controls.Add(Me.TabControl1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "frmServicos"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "frmServicos"
+        Me.Text = "Servicos"
         Me.TabControl1.ResumeLayout(False)
         Me.Cadastro.ResumeLayout(False)
         Me.Cadastro.PerformLayout()
@@ -971,5 +969,5 @@ Partial Class frmServicos
     Friend WithEvents btnEditar As Button
     Friend WithEvents btSair As Button
     Friend WithEvents btnExcluir As Button
-    Friend WithEvents txtComplemento2 As TextBox
+    Friend WithEvents txtComplemento As TextBox
 End Class

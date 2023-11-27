@@ -21,18 +21,21 @@ Public Class frmServicos
 
     Private Sub DesabilitarCampos()
         txtNumServico.Enabled = False
+        txtCodigo.Enabled = False
         cbCliente.Enabled = False
-        cbTipoServico.Enabled = False
         mktDtEntrada.Enabled = False
-        txtEndereco.Enabled = False
-        txtNumero.Enabled = False
-        txtBairro.Enabled = False
-        txtCidade.Enabled = False
-        txtUF.Enabled = False
         txtCEP.Enabled = False
+        'txtUF.Enabled = False
+        'txtEndereco.Enabled = False
+        txtNumero.Enabled = False
+        'txtComplemento.Enabled = False
+        txtCompl.Enabled = False
+        'txtBairro.Enabled = False
+        'txtCidade.Enabled = False
         txtTelRes.Enabled = False
         txtTelCel.Enabled = False
         txtEmail.Enabled = False
+        cbTipoServico.Enabled = False
         txtResponsavel.Enabled = False
         cbGarantia.Enabled = False
         mktDtEntrega.Enabled = False
@@ -44,18 +47,21 @@ Public Class frmServicos
 
     Private Sub HabilitarCampos()
         txtNumServico.Enabled = True
+        txtCodigo.Enabled = True
         cbCliente.Enabled = True
-        cbTipoServico.Enabled = True
         mktDtEntrada.Enabled = True
-        txtEndereco.Enabled = True
-        txtNumero.Enabled = True
-        txtBairro.Enabled = True
-        txtCidade.Enabled = True
-        txtUF.Enabled = True
         txtCEP.Enabled = True
+        'txtUF.Enabled = True
+        'txtEndereco.Enabled = True
+        txtNumero.Enabled = True
+        'txtComplemento.Enabled = True
+        txtCompl.Enabled = True
+        'txtBairro.Enabled = True
+        'txtCidade.Enabled = True
         txtTelRes.Enabled = True
         txtTelCel.Enabled = True
         txtEmail.Enabled = True
+        cbTipoServico.Enabled = True
         txtResponsavel.Enabled = True
         cbGarantia.Enabled = True
         mktDtEntrega.Enabled = True
@@ -66,19 +72,22 @@ Public Class frmServicos
 
     Private Sub Limpar()
         cbCliente.Focus()
+        txtNumServico.Text = ""
         txtCodigo.Text = ""
         cbCliente.Text = Nothing
-        cbTipoServico.Text = Nothing
         mktDtEntrada.Text = ""
+        txtCEP.Text = ""
+        txtUF.Text = Nothing
         txtEndereco.Text = ""
         txtNumero.Text = ""
+        txtComplemento.Text = ""
+        txtCompl.Text = ""
         txtBairro.Text = ""
         txtCidade.Text = ""
-        txtUF.Text = Nothing
-        txtCEP.Text = ""
         txtTelRes.Text = ""
         txtTelCel.Text = ""
         txtEmail.Text = ""
+        cbTipoServico.Text = Nothing
         txtResponsavel.Text = ""
         cbGarantia.Text = Nothing
         mktDtEntrega.Text = ""
@@ -90,7 +99,7 @@ Public Class frmServicos
 
     Private Sub FormatarDG()
 
-        dgvServico.Columns(20).Visible = False
+        dgvServico.Columns(22).Visible = False
         dgvServico.Columns(21).Visible = False
 
         dgvServico.Columns(0).HeaderText = "Núm. OS"
@@ -100,21 +109,22 @@ Public Class frmServicos
         dgvServico.Columns(4).HeaderText = "UF"
         dgvServico.Columns(5).HeaderText = "Endereço"
         dgvServico.Columns(6).HeaderText = "Num."
-        dgvServico.Columns(7).HeaderText = "Compl."
-        dgvServico.Columns(8).HeaderText = "Bairro"
-        dgvServico.Columns(9).HeaderText = "Cidade"
-        dgvServico.Columns(10).HeaderText = "Residencial"
-        dgvServico.Columns(11).HeaderText = "Celular"
-        dgvServico.Columns(12).HeaderText = "Email"
-        dgvServico.Columns(13).HeaderText = "Serviço"
-        dgvServico.Columns(14).HeaderText = "Responsável"
-        dgvServico.Columns(15).HeaderText = "Garantia"
-        dgvServico.Columns(16).HeaderText = "Entrega"
-        dgvServico.Columns(17).HeaderText = "Valor"
-        dgvServico.Columns(18).HeaderText = "Status do Pag."
-        dgvServico.Columns(19).HeaderText = "Observações"
-        dgvServico.Columns(20).HeaderText = "idCliente"
-        dgvServico.Columns(21).HeaderText = "idTipo"
+        dgvServico.Columns(7).HeaderText = "Complemento2."
+        dgvServico.Columns(8).HeaderText = "Compl"
+        dgvServico.Columns(9).HeaderText = "Bairro"
+        dgvServico.Columns(10).HeaderText = "Cidade"
+        dgvServico.Columns(11).HeaderText = "Tel. Residencial"
+        dgvServico.Columns(12).HeaderText = "Tel. Celular"
+        dgvServico.Columns(13).HeaderText = "Email"
+        dgvServico.Columns(14).HeaderText = "Serviço"
+        dgvServico.Columns(15).HeaderText = "Responsável"
+        dgvServico.Columns(16).HeaderText = "Garantia"
+        dgvServico.Columns(17).HeaderText = "Data de Entrega"
+        dgvServico.Columns(18).HeaderText = "Valor"
+        dgvServico.Columns(19).HeaderText = "Status do Pag."
+        dgvServico.Columns(20).HeaderText = "Observações"
+        dgvServico.Columns(21).HeaderText = "idClienteidTipo"
+        dgvServico.Columns(22).HeaderText = "idTipo"
 
         dgvServico.Columns(0).Width = 50
         dgvServico.Columns(1).Width = 180
@@ -145,7 +155,7 @@ Public Class frmServicos
 
         Try
             abrir()
-            da = New SqlDataAdapter("pa_ServicoLista", con)
+            da = New SqlDataAdapter("pa_Servico_Lista", con)
             da.Fill(dt)
             dgvServico.DataSource = dt
 
@@ -225,7 +235,7 @@ Public Class frmServicos
             Dim ws = New WSCEP.AtendeClienteClient()
             Dim resposta = ws.consultaCEP(txtCEP.Text)
             txtEndereco.Text = resposta.end
-            txtComplemento2.Text = resposta.complemento2  'complemento
+            txtComplemento.Text = resposta.complemento2  'complemento
             txtBairro.Text = resposta.bairro
             txtCidade.Text = resposta.cidade
             txtUF.Text = resposta.uf
@@ -236,42 +246,234 @@ Public Class frmServicos
     End Sub
 
     Private Sub btNovo_Click(sender As Object, e As EventArgs) Handles btNovo.Click
+        HabilitarCampos()
+        Limpar()
+        btSalvar.Enabled = True
 
+        btnEditar.Enabled = False
+        btnExcluir.Enabled = False
     End Sub
 
     Private Sub btSalvar_Click(sender As Object, e As EventArgs) Handles btSalvar.Click
+        Dim cmd As SqlCommand
 
+        If cbCliente.Text <> "" Then
+
+            Dim valor1 = Replace(txtValor.Text, ",", ".")
+            '  txtValor.Text = String.Format("{0:n2}")
+
+            ' Dim aNumber As Double = Math.PI
+
+            ' txtValor.Text = String.Format("{0:n2}", aNumber)
+
+
+
+            Try
+                abrir()
+                cmd = New SqlCommand("pa_servico_Salvar", con)
+                cmd.CommandType = CommandType.StoredProcedure
+
+                cmd.Parameters.AddWithValue("@id_cliente", cbCliente.SelectedValue)
+                cmd.Parameters.AddWithValue("@dtEntrada", mktDtEntrada.Text)
+                cmd.Parameters.AddWithValue("@CEP", txtCEP.Text)
+                cmd.Parameters.AddWithValue("@UF", txtUF.Text)
+                cmd.Parameters.AddWithValue("@endereco", txtEndereco.Text)
+                cmd.Parameters.AddWithValue("@num", txtNumero.Text)
+                cmd.Parameters.AddWithValue("@complemento", txtComplemento.Text)
+                cmd.Parameters.AddWithValue("@compl", txtCompl.Text)
+                cmd.Parameters.AddWithValue("@bairro", txtBairro.Text)
+                cmd.Parameters.AddWithValue("@cidade", txtCidade.Text)
+                cmd.Parameters.AddWithValue("@telres", txtTelRes.Text)
+                cmd.Parameters.AddWithValue("@telcel", txtTelCel.Text)
+                cmd.Parameters.AddWithValue("@email", txtEmail.Text)
+                cmd.Parameters.AddWithValue("@id_tipo", cbTipoServico.SelectedValue)
+                cmd.Parameters.AddWithValue("@responsavel", txtResponsavel.Text)
+                cmd.Parameters.AddWithValue("@garantia", cbGarantia.Text)
+                cmd.Parameters.AddWithValue("@dtEntrega", mktDtEntrega.Text)
+                cmd.Parameters.AddWithValue("@valor", valor1)
+                cmd.Parameters.AddWithValue("@statusPag", cbStatusPgto.Text)
+                cmd.Parameters.AddWithValue("@obs", txtObs.Text)
+                cmd.Parameters.Add("@mensagem", SqlDbType.VarChar, 100).Direction = 2
+                cmd.ExecuteNonQuery()
+
+                Dim msg As String = cmd.Parameters("@mensagem").Value.ToString
+                MessageBox.Show(msg, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button3)
+
+                Listar()
+                Limpar()
+
+                btSalvar.Enabled = False
+
+            Catch ex As Exception
+                MessageBox.Show("Erro ao salvar os dados" + ex.Message.ToString)
+                fechar()
+            End Try
+        End If
     End Sub
 
     Private Sub btnEditar_Click(sender As Object, e As EventArgs) Handles btnEditar.Click
+        Dim cmd As SqlCommand
 
+        If txtCodigo.Text <> "" Then
+
+            Dim valor1 = Replace(txtValor.Text, ",", ".")
+
+
+            Try
+                abrir()
+                cmd = New SqlCommand("pa_Servico_Editar", con)
+                cmd.CommandType = CommandType.StoredProcedure
+
+                cmd.Parameters.AddWithValue("@id_servico", txtCodigo.Text)
+                cmd.Parameters.AddWithValue("@id_cliente", cbCliente.SelectedValue)
+                cmd.Parameters.AddWithValue("@dtEntrada", mktDtEntrada.Text)
+                cmd.Parameters.AddWithValue("@CEP", txtCEP.Text)
+                cmd.Parameters.AddWithValue("@UF", txtUF.Text)
+                cmd.Parameters.AddWithValue("@endereco", txtEndereco.Text)
+                cmd.Parameters.AddWithValue("@num", txtNumero.Text)
+                cmd.Parameters.AddWithValue("@complemento", txtComplemento.Text)
+                cmd.Parameters.AddWithValue("@compl", txtCompl.Text)
+                cmd.Parameters.AddWithValue("@bairro", txtBairro.Text)
+                cmd.Parameters.AddWithValue("@cidade", txtCidade.Text)
+                cmd.Parameters.AddWithValue("@telres", txtTelRes.Text)
+                cmd.Parameters.AddWithValue("@telcel", txtTelCel.Text)
+                cmd.Parameters.AddWithValue("@email", txtEmail.Text)
+                cmd.Parameters.AddWithValue("@id_tipo", cbTipoServico.SelectedValue)
+                cmd.Parameters.AddWithValue("@responsavel", txtResponsavel.Text)
+                cmd.Parameters.AddWithValue("@garantia", cbGarantia.Text)
+                cmd.Parameters.AddWithValue("@dtEntrega", mktDtEntrega.Text)
+                cmd.Parameters.AddWithValue("@valor", valor1)
+                cmd.Parameters.AddWithValue("@statusPag", cbStatusPgto.Text)
+                cmd.Parameters.AddWithValue("@obs", txtObs.Text)
+
+                cmd.Parameters.Add("@mensagem", SqlDbType.VarChar, 100).Direction = 2
+                cmd.ExecuteNonQuery()
+
+                Dim msg As String = cmd.Parameters("@mensagem").Value.ToString
+                MessageBox.Show(msg, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
+
+                Listar()
+                Limpar()
+
+            Catch ex As Exception
+                MessageBox.Show("Erro ao editar os dados" + ex.Message)
+                fechar()
+            End Try
+        End If
     End Sub
 
     Private Sub btnExcluir_Click(sender As Object, e As EventArgs) Handles btnExcluir.Click
+        Dim cmd As SqlCommand
 
+        If txtCodigo.Text <> "" Then
+
+            Try
+                If (MessageBox.Show("Deseja excluir este serviço?", Me.Text, MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.No) Then Exit Sub
+
+                abrir()
+                cmd = New SqlCommand("pa_Servico_Excluir", con)
+                cmd.CommandType = CommandType.StoredProcedure
+                cmd.Parameters.AddWithValue("@id_servico", txtCodigo.Text)
+                cmd.Parameters.Add("@mensagem", SqlDbType.VarChar, 100).Direction = 2
+                cmd.ExecuteNonQuery()
+
+                Dim msg As String = cmd.Parameters("@mensagem").Value.ToString
+                MessageBox.Show(msg, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
+
+                Listar()
+                Limpar()
+
+                btnExcluir.Enabled = False
+                btnEditar.Enabled = False
+
+            Catch ex As Exception
+                MessageBox.Show("Erro ao excluir os dados" + ex.Message)
+                fechar()
+            End Try
+        End If
     End Sub
 
     Private Sub btSair_Click(sender As Object, e As EventArgs) Handles btSair.Click
-
+        Me.Close()
     End Sub
 
-    Private Sub txtBuscar_TextChanged(sender As Object, e As EventArgs) Handles txtBuscar.TextChanged
+    Private Sub dgvServico_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvServico.CellClick
+        Cadastro.Show()
 
+        btnEditar.Enabled = True
+        btnExcluir.Enabled = True
+        btSalvar.Enabled = False
+
+        HabilitarCampos()
+
+        txtCodigo.Text = dgvServico.CurrentRow.Cells(0).Value
+        cbCliente.Text = dgvServico.CurrentRow.Cells(1).Value
+        mktDtEntrada.Text = dgvServico.CurrentRow.Cells(2).Value
+        txtCEP.Text = dgvServico.CurrentRow.Cells(3).Value
+        txtUF.Text = dgvServico.CurrentRow.Cells(4).Value
+        txtEndereco.Text = dgvServico.CurrentRow.Cells(5).Value
+        txtNumero.Text = dgvServico.CurrentRow.Cells(6).Value
+        txtComplemento.Text = dgvServico.CurrentRow.Cells(7).Value
+        txtCompl.Text = dgvServico.CurrentRow.Cells(8).Value
+        txtBairro.Text = dgvServico.CurrentRow.Cells(9).Value
+        txtCidade.Text = dgvServico.CurrentRow.Cells(10).Value
+        txtTelRes.Text = dgvServico.CurrentRow.Cells(11).Value
+        txtTelCel.Text = dgvServico.CurrentRow.Cells(12).Value
+        txtEmail.Text = dgvServico.CurrentRow.Cells(13).Value
+        cbTipoServico.Text = dgvServico.CurrentRow.Cells(14).Value
+        txtResponsavel.Text = dgvServico.CurrentRow.Cells(15).Value
+        cbGarantia.Text = dgvServico.CurrentRow.Cells(16).Value
+        mktDtEntrega.Text = dgvServico.CurrentRow.Cells(17).Value
+        txtValor.Text = dgvServico.CurrentRow.Cells(18).Value
+        cbStatusPgto.Text = dgvServico.CurrentRow.Cells(19).Value
+        txtObs.Text = dgvServico.CurrentRow.Cells(20).Value
     End Sub
 
     Private Sub rbData_CheckedChanged(sender As Object, e As EventArgs) Handles rbData.CheckedChanged
-
+        txtBuscar.Text = ""
+        txtBuscar.Visible = False
+        dtData.Visible = True
+        '  Listar()
     End Sub
 
     Private Sub rbCliente_CheckedChanged(sender As Object, e As EventArgs) Handles rbCliente.CheckedChanged
+        dtData.Visible = False
+        txtBuscar.Text = ""
+        txtBuscar.Visible = True
 
+        txtBuscar.Focus()
+        ' Listar()
     End Sub
 
     Private Sub dtData_ValueChanged(sender As Object, e As EventArgs) Handles dtData.ValueChanged
 
     End Sub
 
-    Private Sub dgvServico_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvServico.CellClick
+    Private Sub txtBuscar_TextChanged(sender As Object, e As EventArgs) Handles txtBuscar.TextChanged
+        If txtBuscar.Text = "" And dgvServico.Rows.Count > 0 Then
 
+            Listar()
+
+        Else
+            Dim dt As New DataTable
+            Dim da As SqlDataAdapter
+
+            Try
+                abrir()
+                da = New SqlDataAdapter("pa_Servico_ConsultaNome", con)
+                da.SelectCommand.CommandType = CommandType.StoredProcedure
+                da.SelectCommand.Parameters.AddWithValue("@nome", txtBuscar.Text)
+
+                da.Fill(dt)
+                dgvServico.DataSource = dt
+
+                ContarLinhas()
+
+            Catch ex As Exception
+                MessageBox.Show("Erro ao Listar" + ex.Message.ToString)
+                fechar()
+            End Try
+        End If
     End Sub
+
 End Class
