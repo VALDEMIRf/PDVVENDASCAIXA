@@ -137,7 +137,7 @@ Partial Class frmServicos
         Me.mktDtEntrada.Mask = "00/00/0000"
         Me.mktDtEntrada.Name = "mktDtEntrada"
         Me.mktDtEntrada.Size = New System.Drawing.Size(91, 20)
-        Me.mktDtEntrada.TabIndex = 4
+        Me.mktDtEntrada.TabIndex = 2
         Me.mktDtEntrada.ValidatingType = GetType(Date)
         '
         'Label13
@@ -195,7 +195,7 @@ Partial Class frmServicos
         Me.txtCompl.Margin = New System.Windows.Forms.Padding(8, 7, 8, 7)
         Me.txtCompl.Name = "txtCompl"
         Me.txtCompl.Size = New System.Drawing.Size(203, 20)
-        Me.txtCompl.TabIndex = 122
+        Me.txtCompl.TabIndex = 6
         '
         'Label25
         '
@@ -217,7 +217,7 @@ Partial Class frmServicos
         Me.btBuscarCEP.Location = New System.Drawing.Point(159, 17)
         Me.btBuscarCEP.Name = "btBuscarCEP"
         Me.btBuscarCEP.Size = New System.Drawing.Size(35, 23)
-        Me.btBuscarCEP.TabIndex = 121
+        Me.btBuscarCEP.TabIndex = 4
         Me.btBuscarCEP.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btBuscarCEP.UseVisualStyleBackColor = True
         '
@@ -247,7 +247,7 @@ Partial Class frmServicos
         Me.txtNumero.Margin = New System.Windows.Forms.Padding(8, 7, 8, 7)
         Me.txtNumero.Name = "txtNumero"
         Me.txtNumero.Size = New System.Drawing.Size(73, 20)
-        Me.txtNumero.TabIndex = 7
+        Me.txtNumero.TabIndex = 5
         '
         'Label15
         '
@@ -267,7 +267,7 @@ Partial Class frmServicos
         Me.txtCEP.Mask = "00000-999"
         Me.txtCEP.Name = "txtCEP"
         Me.txtCEP.Size = New System.Drawing.Size(82, 20)
-        Me.txtCEP.TabIndex = 12
+        Me.txtCEP.TabIndex = 3
         '
         'Label17
         '
@@ -360,7 +360,7 @@ Partial Class frmServicos
         Me.cbCliente.Margin = New System.Windows.Forms.Padding(5)
         Me.cbCliente.Name = "cbCliente"
         Me.cbCliente.Size = New System.Drawing.Size(229, 21)
-        Me.cbCliente.TabIndex = 2
+        Me.cbCliente.TabIndex = 1
         '
         'Label2
         '
@@ -407,7 +407,7 @@ Partial Class frmServicos
         Me.cbStatusPgto.Margin = New System.Windows.Forms.Padding(5)
         Me.cbStatusPgto.Name = "cbStatusPgto"
         Me.cbStatusPgto.Size = New System.Drawing.Size(259, 21)
-        Me.cbStatusPgto.TabIndex = 23
+        Me.cbStatusPgto.TabIndex = 15
         '
         'txtValor
         '
@@ -415,7 +415,7 @@ Partial Class frmServicos
         Me.txtValor.Margin = New System.Windows.Forms.Padding(8, 7, 8, 7)
         Me.txtValor.Name = "txtValor"
         Me.txtValor.Size = New System.Drawing.Size(115, 20)
-        Me.txtValor.TabIndex = 22
+        Me.txtValor.TabIndex = 14
         '
         'cbTipoServico
         '
@@ -425,7 +425,7 @@ Partial Class frmServicos
         Me.cbTipoServico.Margin = New System.Windows.Forms.Padding(5)
         Me.cbTipoServico.Name = "cbTipoServico"
         Me.cbTipoServico.Size = New System.Drawing.Size(262, 21)
-        Me.cbTipoServico.TabIndex = 3
+        Me.cbTipoServico.TabIndex = 10
         '
         'Label8
         '
@@ -446,7 +446,7 @@ Partial Class frmServicos
         Me.mktDtEntrega.Mask = "00/00/0000"
         Me.mktDtEntrega.Name = "mktDtEntrega"
         Me.mktDtEntrega.Size = New System.Drawing.Size(85, 20)
-        Me.mktDtEntrega.TabIndex = 20
+        Me.mktDtEntrega.TabIndex = 13
         Me.mktDtEntrega.ValidatingType = GetType(Date)
         '
         'Label12
@@ -470,7 +470,7 @@ Partial Class frmServicos
         Me.cbGarantia.Margin = New System.Windows.Forms.Padding(5)
         Me.cbGarantia.Name = "cbGarantia"
         Me.cbGarantia.Size = New System.Drawing.Size(261, 21)
-        Me.cbGarantia.TabIndex = 19
+        Me.cbGarantia.TabIndex = 12
         '
         'Label3
         '
@@ -499,7 +499,7 @@ Partial Class frmServicos
         Me.txtResponsavel.Margin = New System.Windows.Forms.Padding(8, 7, 8, 7)
         Me.txtResponsavel.Name = "txtResponsavel"
         Me.txtResponsavel.Size = New System.Drawing.Size(261, 20)
-        Me.txtResponsavel.TabIndex = 18
+        Me.txtResponsavel.TabIndex = 11
         '
         'Label10
         '
@@ -560,7 +560,7 @@ Partial Class frmServicos
         Me.txtTelCel.Mask = "(00) 00000-0000"
         Me.txtTelCel.Name = "txtTelCel"
         Me.txtTelCel.Size = New System.Drawing.Size(132, 20)
-        Me.txtTelCel.TabIndex = 15
+        Me.txtTelCel.TabIndex = 8
         '
         'Label7
         '
@@ -579,7 +579,7 @@ Partial Class frmServicos
         Me.txtTelRes.Mask = "(00) 00000-0000"
         Me.txtTelRes.Name = "txtTelRes"
         Me.txtTelRes.Size = New System.Drawing.Size(126, 20)
-        Me.txtTelRes.TabIndex = 14
+        Me.txtTelRes.TabIndex = 7
         '
         'Label6
         '
@@ -597,7 +597,7 @@ Partial Class frmServicos
         Me.txtEmail.Margin = New System.Windows.Forms.Padding(8, 7, 8, 7)
         Me.txtEmail.Name = "txtEmail"
         Me.txtEmail.Size = New System.Drawing.Size(392, 20)
-        Me.txtEmail.TabIndex = 16
+        Me.txtEmail.TabIndex = 9
         '
         'Label4
         '
@@ -641,7 +641,7 @@ Partial Class frmServicos
         Me.txtObs.Multiline = True
         Me.txtObs.Name = "txtObs"
         Me.txtObs.Size = New System.Drawing.Size(426, 128)
-        Me.txtObs.TabIndex = 181
+        Me.txtObs.TabIndex = 16
         '
         'Consulta
         '
@@ -789,7 +789,7 @@ Partial Class frmServicos
         Me.btNovo.Margin = New System.Windows.Forms.Padding(5)
         Me.btNovo.Name = "btNovo"
         Me.btNovo.Size = New System.Drawing.Size(87, 37)
-        Me.btNovo.TabIndex = 183
+        Me.btNovo.TabIndex = 17
         Me.btNovo.Text = "Novo"
         Me.btNovo.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btNovo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -809,7 +809,7 @@ Partial Class frmServicos
         Me.btSalvar.Margin = New System.Windows.Forms.Padding(5)
         Me.btSalvar.Name = "btSalvar"
         Me.btSalvar.Size = New System.Drawing.Size(89, 35)
-        Me.btSalvar.TabIndex = 184
+        Me.btSalvar.TabIndex = 18
         Me.btSalvar.Text = "Salvar"
         Me.btSalvar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btSalvar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -829,7 +829,7 @@ Partial Class frmServicos
         Me.btnEditar.Margin = New System.Windows.Forms.Padding(5)
         Me.btnEditar.Name = "btnEditar"
         Me.btnEditar.Size = New System.Drawing.Size(90, 35)
-        Me.btnEditar.TabIndex = 185
+        Me.btnEditar.TabIndex = 19
         Me.btnEditar.Text = "Editar"
         Me.btnEditar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btnEditar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -849,7 +849,7 @@ Partial Class frmServicos
         Me.btSair.Margin = New System.Windows.Forms.Padding(5)
         Me.btSair.Name = "btSair"
         Me.btSair.Size = New System.Drawing.Size(85, 35)
-        Me.btSair.TabIndex = 187
+        Me.btSair.TabIndex = 21
         Me.btSair.Text = "Sair"
         Me.btSair.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btSair.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -869,7 +869,7 @@ Partial Class frmServicos
         Me.btnExcluir.Margin = New System.Windows.Forms.Padding(5)
         Me.btnExcluir.Name = "btnExcluir"
         Me.btnExcluir.Size = New System.Drawing.Size(90, 35)
-        Me.btnExcluir.TabIndex = 186
+        Me.btnExcluir.TabIndex = 20
         Me.btnExcluir.Text = "Excluir"
         Me.btnExcluir.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btnExcluir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText

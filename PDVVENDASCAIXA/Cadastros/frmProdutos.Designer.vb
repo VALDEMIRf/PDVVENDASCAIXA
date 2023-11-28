@@ -24,7 +24,7 @@ Partial Class frmProdutos
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmProdutos))
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.Cadastro = New System.Windows.Forms.TabPage()
         Me.txtValorCompra = New System.Windows.Forms.TextBox()
@@ -124,7 +124,7 @@ Partial Class frmProdutos
         Me.txtValorCompra.Location = New System.Drawing.Point(657, 69)
         Me.txtValorCompra.Name = "txtValorCompra"
         Me.txtValorCompra.Size = New System.Drawing.Size(90, 20)
-        Me.txtValorCompra.TabIndex = 193
+        Me.txtValorCompra.TabIndex = 7
         '
         'Label13
         '
@@ -147,7 +147,7 @@ Partial Class frmProdutos
         Me.cbUnidade.Location = New System.Drawing.Point(108, 228)
         Me.cbUnidade.Name = "cbUnidade"
         Me.cbUnidade.Size = New System.Drawing.Size(106, 21)
-        Me.cbUnidade.TabIndex = 190
+        Me.cbUnidade.TabIndex = 5
         '
         'Label12
         '
@@ -167,7 +167,7 @@ Partial Class frmProdutos
         Me.cbCategoria.Location = New System.Drawing.Point(108, 186)
         Me.cbCategoria.Name = "cbCategoria"
         Me.cbCategoria.Size = New System.Drawing.Size(193, 21)
-        Me.cbCategoria.TabIndex = 188
+        Me.cbCategoria.TabIndex = 4
         '
         'Label10
         '
@@ -267,7 +267,7 @@ Partial Class frmProdutos
         Me.txtNome.Margin = New System.Windows.Forms.Padding(5)
         Me.txtNome.Name = "txtNome"
         Me.txtNome.Size = New System.Drawing.Size(423, 20)
-        Me.txtNome.TabIndex = 146
+        Me.txtNome.TabIndex = 1
         '
         'Label5
         '
@@ -288,7 +288,7 @@ Partial Class frmProdutos
         Me.txtDescricao.Multiline = True
         Me.txtDescricao.Name = "txtDescricao"
         Me.txtDescricao.Size = New System.Drawing.Size(419, 71)
-        Me.txtDescricao.TabIndex = 147
+        Me.txtDescricao.TabIndex = 2
         '
         'cbFornecedor
         '
@@ -298,7 +298,7 @@ Partial Class frmProdutos
         Me.cbFornecedor.Location = New System.Drawing.Point(108, 153)
         Me.cbFornecedor.Name = "cbFornecedor"
         Me.cbFornecedor.Size = New System.Drawing.Size(419, 21)
-        Me.cbFornecedor.TabIndex = 182
+        Me.cbFornecedor.TabIndex = 3
         '
         'Label4
         '
@@ -329,7 +329,7 @@ Partial Class frmProdutos
         Me.txtValorVenda.MaxLength = 16
         Me.txtValorVenda.Name = "txtValorVenda"
         Me.txtValorVenda.Size = New System.Drawing.Size(90, 20)
-        Me.txtValorVenda.TabIndex = 156
+        Me.txtValorVenda.TabIndex = 8
         '
         'Label7
         '
@@ -349,7 +349,7 @@ Partial Class frmProdutos
         Me.txtQuantidade.Margin = New System.Windows.Forms.Padding(5)
         Me.txtQuantidade.Name = "txtQuantidade"
         Me.txtQuantidade.Size = New System.Drawing.Size(89, 20)
-        Me.txtQuantidade.TabIndex = 155
+        Me.txtQuantidade.TabIndex = 6
         Me.txtQuantidade.Text = "0"
         '
         'Label3
@@ -386,14 +386,14 @@ Partial Class frmProdutos
         Me.dg.BackgroundColor = System.Drawing.Color.White
         Me.dg.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.dg.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dg.DefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dg.DefaultCellStyle = DataGridViewCellStyle4
         Me.dg.GridColor = System.Drawing.Color.CadetBlue
         Me.dg.Location = New System.Drawing.Point(7, 37)
         Me.dg.Margin = New System.Windows.Forms.Padding(4)

@@ -46,6 +46,7 @@ Public Class frmServicos
     End Sub
 
     Private Sub HabilitarCampos()
+
         txtNumServico.Enabled = True
         txtCodigo.Enabled = True
         cbCliente.Enabled = True

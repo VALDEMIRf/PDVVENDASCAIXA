@@ -22,6 +22,7 @@ Partial Class frmPrincipal
     'Não o modifique usando o editor de códigos.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmPrincipal))
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.CadastrosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -56,7 +57,14 @@ Partial Class frmPrincipal
         Me.SairToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SairToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.LogoffToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.lblUsuario = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.lblHora = New System.Windows.Forms.Label()
+        Me.lblData = New System.Windows.Forms.Label()
+        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.MenuStrip1.SuspendLayout()
+        Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
         'MenuStrip1
@@ -66,7 +74,7 @@ Partial Class frmPrincipal
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CadastrosToolStripMenuItem, Me.EstoqueToolStripMenuItem, Me.MovimentaçãoToolStripMenuItem, Me.VendasToolStripMenuItem, Me.RelatóriosToolStripMenuItem, Me.SairToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(879, 28)
+        Me.MenuStrip1.Size = New System.Drawing.Size(962, 28)
         Me.MenuStrip1.TabIndex = 0
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -94,6 +102,7 @@ Partial Class frmPrincipal
         '
         'FuncionáriosToolStripMenuItem
         '
+        Me.FuncionáriosToolStripMenuItem.Enabled = False
         Me.FuncionáriosToolStripMenuItem.Image = CType(resources.GetObject("FuncionáriosToolStripMenuItem.Image"), System.Drawing.Image)
         Me.FuncionáriosToolStripMenuItem.Name = "FuncionáriosToolStripMenuItem"
         Me.FuncionáriosToolStripMenuItem.Size = New System.Drawing.Size(180, 24)
@@ -293,11 +302,68 @@ Partial Class frmPrincipal
         Me.LogoffToolStripMenuItem.Size = New System.Drawing.Size(112, 24)
         Me.LogoffToolStripMenuItem.Text = "Logoff"
         '
+        'lblUsuario
+        '
+        Me.lblUsuario.AutoSize = True
+        Me.lblUsuario.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblUsuario.Location = New System.Drawing.Point(118, 29)
+        Me.lblUsuario.Name = "lblUsuario"
+        Me.lblUsuario.Size = New System.Drawing.Size(13, 17)
+        Me.lblUsuario.TabIndex = 1
+        Me.lblUsuario.Text = "-"
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(32, 29)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(80, 17)
+        Me.Label1.TabIndex = 2
+        Me.Label1.Text = "Bem Vindo:"
+        '
+        'lblHora
+        '
+        Me.lblHora.AutoSize = True
+        Me.lblHora.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblHora.Location = New System.Drawing.Point(118, 60)
+        Me.lblHora.Name = "lblHora"
+        Me.lblHora.Size = New System.Drawing.Size(13, 17)
+        Me.lblHora.TabIndex = 3
+        Me.lblHora.Text = "-"
+        '
+        'lblData
+        '
+        Me.lblData.AutoSize = True
+        Me.lblData.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblData.Location = New System.Drawing.Point(32, 60)
+        Me.lblData.Name = "lblData"
+        Me.lblData.Size = New System.Drawing.Size(13, 17)
+        Me.lblData.TabIndex = 4
+        Me.lblData.Text = "-"
+        '
+        'Timer1
+        '
+        Me.Timer1.Enabled = True
+        '
+        'GroupBox1
+        '
+        Me.GroupBox1.Controls.Add(Me.Label1)
+        Me.GroupBox1.Controls.Add(Me.lblData)
+        Me.GroupBox1.Controls.Add(Me.lblUsuario)
+        Me.GroupBox1.Controls.Add(Me.lblHora)
+        Me.GroupBox1.Location = New System.Drawing.Point(675, 43)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(234, 126)
+        Me.GroupBox1.TabIndex = 5
+        Me.GroupBox1.TabStop = False
+        '
         'frmPrincipal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(879, 450)
+        Me.ClientSize = New System.Drawing.Size(962, 450)
+        Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.MenuStrip1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
@@ -308,6 +374,8 @@ Partial Class frmPrincipal
         Me.Text = "TELA INICIAL - PDV"
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
+        Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -346,4 +414,10 @@ Partial Class frmPrincipal
     Friend WithEvents SairToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents SairToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents LogoffToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents lblUsuario As Label
+    Friend WithEvents Label1 As Label
+    Friend WithEvents lblHora As Label
+    Friend WithEvents lblData As Label
+    Friend WithEvents Timer1 As Timer
+    Friend WithEvents GroupBox1 As GroupBox
 End Class

@@ -57,7 +57,6 @@ Public Class frmProdutos
 
     End Sub
 
-
     Sub CarregarUnidadesMedidas()
         Dim DT As New DataTable
         Dim DA As SqlDataAdapter
@@ -171,13 +170,13 @@ Public Class frmProdutos
 
         dg.Columns(2).Width = 180
         dg.Columns(1).Width = 120
-        dg.Columns(3).Width = 100
-        dg.Columns(4).Width = 80
-        dg.Columns(5).Width = 50
-        dg.Columns(6).Width = 60
-        dg.Columns(7).Width = 60
-        dg.Columns(8).Width = 80
-        dg.Columns(9).Width = 55
+        dg.Columns(3).Width = 260
+        dg.Columns(4).Width = 160
+        dg.Columns(5).Width = 90
+        dg.Columns(6).Width = 70
+        dg.Columns(7).Width = 100
+        dg.Columns(8).Width = 100
+        dg.Columns(9).Width = 80
         'dg.Columns(11).Width = 70
         'dg.Columns(12).Width = 100
         'dg.Columns(13).Width = 190

@@ -173,6 +173,12 @@
     <Compile Include="telas administrativo\frmPrincipal.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Vendas\frmVendas.Designer.vb">
+      <DependentUpon>frmVendas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vendas\frmVendas.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Cadastros\frmCargos.resx">
@@ -216,6 +222,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="telas administrativo\frmPrincipal.resx">
       <DependentUpon>frmPrincipal.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vendas\frmVendas.resx">
+      <DependentUpon>frmVendas.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -466,7 +475,6 @@
     <Folder Include="Caixa\" />
     <Folder Include="Estoque\" />
     <Folder Include="Relatorios\" />
-    <Folder Include="Vendas\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

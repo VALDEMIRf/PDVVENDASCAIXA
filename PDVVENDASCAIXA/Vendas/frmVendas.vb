@@ -1,0 +1,249 @@
+﻿Imports System.Data.SqlClient
+
+Public Class frmVendas
+    Private Sub frmVendas_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        DesabilitarCampos()
+        btnSalvar.Enabled = False
+
+        CarregarProdutos()
+        CarregarClientes()
+
+        Listar()
+
+        btnEditar.Enabled = False
+        btnExcluir.Enabled = False
+    End Sub
+    Private Sub Listar()
+
+        Dim dt As New DataTable
+        Dim da As SqlDataAdapter
+
+        Try
+            abrir()
+
+            da = New SqlDataAdapter("SELECT * FROM tbVendas", con)
+            '  cmd = New SqlCommand("SELECT ven.id_vendas, ven.num_vendas,pro.codigo_barras as Codigo, pro.nome as Descricao,cli.nome,pro.valor_venda as Vlr_Unitario,ven.quantidade as Quant,ven.valor as Vlr_Total, ven.funcionario, ven.data_venda, ven.id_produto, ven.id_cliente FROM tbVendas as ven INNER JOIN tbProdutos as pro on ven.id_produto=pro.id_produto INNER JOIN tblClientes  as cli on ven.id_cliente = cli.id_cliente WHERE ven.data_venda= @data and ven.funcionario=@funcionario order by num_vendas desc", con)
+
+            da.Fill(dt)
+            dg.DataSource = dt
+
+
+            FormatarDG()
+
+        Catch ex As Exception
+            MessageBox.Show("Erro ao Listar os produtos" + ex.Message.ToString)
+        Finally
+            fechar()
+        End Try
+    End Sub
+
+    Private Sub FormatarDG()
+        dg.Columns(0).Visible = False
+
+        dg.Columns(1).HeaderText = "Núm. Venda"
+        dg.Columns(2).HeaderText = "Produto"
+        dg.Columns(3).HeaderText = "Cliente"
+        dg.Columns(4).HeaderText = "Quantidade"
+        dg.Columns(5).HeaderText = "Valor Total"
+        dg.Columns(6).HeaderText = "Funcionário"
+        dg.Columns(7).HeaderText = "Dt. Venda"
+
+        dg.Columns(1).Width = 80
+        dg.Columns(2).Width = 120
+        dg.Columns(3).Width = 120
+        dg.Columns(4).Width = 90
+        dg.Columns(5).Width = 90
+        dg.Columns(6).Width = 70
+        dg.Columns(7).Width = 100
+
+    End Sub
+
+    Private Sub DesabilitarCampos()
+        txtNum.Enabled = False
+        txtQuantidade.Enabled = False
+        cbCliente.Enabled = False
+        cbProduto.Enabled = False
+    End Sub
+
+    Private Sub HabilitarCampos()
+        txtNum.Enabled = True
+        txtQuantidade.Enabled = True
+        cbCliente.Enabled = True
+        cbProduto.Enabled = True
+    End Sub
+
+    Private Sub Limpar()
+        txtNum.Focus()
+        txtNum.Text = ""
+        txtQuantidade.Text = "0"
+        txtBuscar.Text = ""
+
+    End Sub
+
+    Sub CarregarProdutos()
+        Dim DT As New DataTable
+        Dim DA As SqlDataAdapter
+        Try
+            abrir()
+            'DA = New SqlDataAdapter("SELECT * FROM tbProdutos", con) '
+            DA = New SqlDataAdapter("pa_produto_Lista", con)
+            DA.Fill(DT)
+            cbProduto.DisplayMember = "nome"
+            cbProduto.ValueMember = "id_produto"
+            cbProduto.DataSource = DT
+
+        Catch ex As Exception : MessageBox.Show(ex.Message.ToString)
+        Finally
+            fechar()
+        End Try
+
+    End Sub
+
+    Sub CarregarClientes()
+        Dim DT As New DataTable
+        Dim DA As SqlDataAdapter
+        Try
+            abrir()
+            DA = New SqlDataAdapter("pa_cliente_listar", con)
+
+            DA.Fill(DT)
+            cbCliente.DisplayMember = "nome"
+            cbCliente.ValueMember = "id_cliente"
+            cbCliente.DataSource = DT
+        Catch ex As Exception : MessageBox.Show(ex.Message.ToString)
+        Finally
+            fechar()
+        End Try
+
+    End Sub
+
+    Private Sub btnNovo_Click(sender As Object, e As EventArgs) Handles btnNovo.Click
+        HabilitarCampos()
+        Limpar()
+        btnSalvar.Enabled = True
+        cbCliente.Text = "CONSUMIDOR"
+    End Sub
+
+    Private Sub cbProduto_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbProduto.SelectedIndexChanged
+        ' 
+        Dim cmd As New SqlCommand("pa_Vendas_buscarValorProd", con)
+        Try
+            abrir()
+            cmd.CommandType = 4
+            cmd.Parameters.AddWithValue("@id_produto", cbProduto.SelectedValue)
+            cmd.Parameters.Add("@valor_venda", SqlDbType.Decimal).Direction = 2
+            cmd.Parameters.Add("@quant", SqlDbType.Int).Direction = 2
+            'cmd.Parameters.Add("@quant_vendida", SqlDbType.Int).Direction = 2
+            'cmd.Parameters.Add("@codigo_barras", SqlDbType.VarChar, 100).Direction = 2
+            cmd.ExecuteNonQuery()
+
+            Dim valor As Decimal = cmd.Parameters("@valor_venda").Value
+            txtValorVenda.Text = CStr(valor)
+
+            Dim quant As Int32 = cmd.Parameters("@quant").Value
+            txtEstoque.Text = CStr(quant)
+
+            '' ----------------------------------------------------------------------------
+
+            ''Dim cmd2 As New SqlCommand("pa_produtoBuscaFoto", con)
+            'Dim cmd2 As New SqlCommand("select imagem from tbProdutos where id_produto = @id_produto", con)
+
+            'cmd2.Parameters.AddWithValue("@id_produto", cbProduto.SelectedValue)
+            'cmd2.ExecuteNonQuery()
+
+            'Dim tempImagem As Byte() = DirectCast(cmd2.ExecuteScalar, Byte())
+            ''  Dim tempImagem As Byte() = DirectCast(cmd.Parameters("@imagem").Value, Byte())
+            'If tempImagem Is Nothing Then
+            '    MessageBox.Show("Imagem não localizada", "Erro")
+            '    Exit Sub
+            'End If
+            'Dim strArquivo As String = Convert.ToString(DateTime.Now.ToFileTime())
+            'Dim fs As New FileStream(strArquivo, FileMode.CreateNew, FileAccess.Write)
+            'fs.Write(tempImagem, 0, tempImagem.Length)
+            'fs.Flush()
+            'fs.Close()
+
+            'pbImagem.Image = Image.FromFile(strArquivo)
+
+            'Dim cod_barras As String = cmd.Parameters("@codigo_barras").Value
+            'txtCodBarras.Text = cod_barras
+
+        Catch ex As Exception
+            MsgBox(ex.Message.ToString)
+        Finally
+            fechar()
+        End Try
+
+    End Sub
+
+    Private Sub btnSalvar_Click(sender As Object, e As EventArgs) Handles btnSalvar.Click
+        Dim cmd As SqlCommand
+
+        If txtNum.Text <> "" Then
+            '    If pbImagem.Image.Equals(Nothing) Then
+            '        errErro.SetError(pbImagem, "Escolha uma imagem")
+            '        Exit Sub
+            '    Else
+            '        'MessageBox.Show("certo")
+            '    End If
+            Dim total As Decimal
+            Dim valor As Decimal
+            Dim quant As Decimal
+
+            valor = txtValorVenda.Text
+            quant = txtQuantidade.Text
+
+            total = valor * quant
+
+            Try
+
+                abrir()
+                cmd = New SqlCommand("pa_Vendas_salvar", con)
+                cmd.CommandType = CommandType.StoredProcedure
+                cmd.Parameters.AddWithValue("@num_vendas", txtNum.Text)
+                cmd.Parameters.AddWithValue("@id_produto", cbProduto.SelectedValue)
+                cmd.Parameters.AddWithValue("@id_cliente", cbCliente.SelectedValue)
+                cmd.Parameters.AddWithValue("@quantidade", txtQuantidade.Text)
+                cmd.Parameters.AddWithValue("@valor", total)
+                cmd.Parameters.AddWithValue("@funcionario", usuarioNome)
+                cmd.Parameters.AddWithValue("@data_venda", Now.Date())
+                'cmd.Parameters.AddWithValue("@imagem", byteArray)
+                'cmd.Parameters.AddWithValue("@nivel_minimo", txtNivel.Text)
+
+                ' cmd.Parameters.AddWithValue("@quant_vendida", 0)
+                ' cmd.Parameters.AddWithValue("@codigo_barras", txtCodBarras.Text)
+
+
+                cmd.Parameters.Add("@mensagem", SqlDbType.VarChar, 100).Direction = 2
+                cmd.ExecuteNonQuery()
+
+                Dim msg As String = cmd.Parameters("@mensagem").Value.ToString
+                MessageBox.Show(msg, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button3)
+
+                ' PrintPreviewDialog1.Show()
+                Listar()
+                Limpar()
+
+                btnSalvar.Enabled = False
+
+            Catch ex As Exception
+                MessageBox.Show("Erro ao salvar os dados" + ex.Message.ToString)
+            Finally
+                fechar()
+
+            End Try
+        End If
+    End Sub
+
+    Private Sub btnEditar_Click(sender As Object, e As EventArgs) Handles btnEditar.Click
+
+    End Sub
+
+    Private Sub btnExcluir_Click(sender As Object, e As EventArgs) Handles btnExcluir.Click
+
+    End Sub
+
+    Private Sub btSair_Click(sender As Object, e As EventArgs) Handles btSair.Click
+        Me.Close()
+    End Sub
+End Class
