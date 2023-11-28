@@ -12,6 +12,7 @@ Public Class frmVendas
 
         btnEditar.Enabled = False
         btnExcluir.Enabled = False
+        totalizar()
     End Sub
     Private Sub Listar()
 
@@ -20,13 +21,13 @@ Public Class frmVendas
 
         Try
             abrir()
-
-            da = New SqlDataAdapter("SELECT * FROM tbVendas", con)
-            '  cmd = New SqlCommand("SELECT ven.id_vendas, ven.num_vendas,pro.codigo_barras as Codigo, pro.nome as Descricao,cli.nome,pro.valor_venda as Vlr_Unitario,ven.quantidade as Quant,ven.valor as Vlr_Total, ven.funcionario, ven.data_venda, ven.id_produto, ven.id_cliente FROM tbVendas as ven INNER JOIN tbProdutos as pro on ven.id_produto=pro.id_produto INNER JOIN tblClientes  as cli on ven.id_cliente = cli.id_cliente WHERE ven.data_venda= @data and ven.funcionario=@funcionario order by num_vendas desc", con)
+            '  da = New SqlDataAdapter("SELECT ven.id_vendas, ven.num_vendas, pro.nome,cli.nome,pro.valor_venda,ven.quantidade,ven.valor, ven.funcionario, ven.data_venda, ven.id_produto, ven.id_cliente FROM tbVendas as ven INNER JOIN tbProdutos as pro on ven.id_produto=pro.id_produto INNER JOIN tbClientes  as cli on ven.id_cliente = cli.id_cliente", con)
+            da = New SqlDataAdapter("pa_Vendas_Listar", con)
+            da.SelectCommand.CommandType = CommandType.StoredProcedure
+            ' da.SelectCommand.Parameters.AddWithValue("@num_vendas", txtBuscar.Text)
 
             da.Fill(dt)
             dg.DataSource = dt
-
 
             FormatarDG()
 
@@ -39,30 +40,33 @@ Public Class frmVendas
 
     Private Sub FormatarDG()
         dg.Columns(0).Visible = False
+        dg.Columns(9).Visible = False
+        dg.Columns(10).Visible = False
 
         dg.Columns(1).HeaderText = "Núm. Venda"
         dg.Columns(2).HeaderText = "Produto"
         dg.Columns(3).HeaderText = "Cliente"
-        dg.Columns(4).HeaderText = "Quantidade"
-        dg.Columns(5).HeaderText = "Valor Total"
-        dg.Columns(6).HeaderText = "Funcionário"
-        dg.Columns(7).HeaderText = "Dt. Venda"
+        dg.Columns(4).HeaderText = "Valor Unit."
+        dg.Columns(5).HeaderText = "Quantidade"
+        dg.Columns(6).HeaderText = "Valor Total"
+        dg.Columns(7).HeaderText = "Funcionário"
+        dg.Columns(8).HeaderText = "Dt. Venda"
 
-        dg.Columns(1).Width = 80
-        dg.Columns(2).Width = 120
-        dg.Columns(3).Width = 120
+        dg.Columns(1).Width = 70
+        dg.Columns(2).Width = 180
+        dg.Columns(3).Width = 130
         dg.Columns(4).Width = 90
         dg.Columns(5).Width = 90
         dg.Columns(6).Width = 70
-        dg.Columns(7).Width = 100
+        dg.Columns(7).Width = 150
 
     End Sub
 
     Private Sub DesabilitarCampos()
-        txtNum.Enabled = False
-        txtQuantidade.Enabled = False
-        cbCliente.Enabled = False
-        cbProduto.Enabled = False
+        '    txtNum.Enabled = False
+        '    txtQuantidade.Enabled = False
+        '    cbCliente.Enabled = False
+        '    cbProduto.Enabled = False
     End Sub
 
     Private Sub HabilitarCampos()
@@ -186,16 +190,17 @@ Public Class frmVendas
             '    Else
             '        'MessageBox.Show("certo")
             '    End If
-            Dim total As Decimal
-            Dim valor As Decimal
-            Dim quant As Decimal
-
-            valor = txtValorVenda.Text
-            quant = txtQuantidade.Text
-
-            total = valor * quant
 
             Try
+
+                Dim total As Decimal
+                Dim valor As Decimal
+                Dim quant As Decimal
+
+                valor = txtValorVenda.Text
+                quant = txtQuantidade.Text
+
+                total = valor * quant
 
                 abrir()
                 cmd = New SqlCommand("pa_Vendas_salvar", con)
@@ -223,8 +228,10 @@ Public Class frmVendas
                 ' PrintPreviewDialog1.Show()
                 Listar()
                 Limpar()
-
-                btnSalvar.Enabled = False
+                totalizar()
+                cbCliente.Enabled = False
+                txtNum.Enabled = False
+                txtQuantidade.Text = ""
 
             Catch ex As Exception
                 MessageBox.Show("Erro ao salvar os dados" + ex.Message.ToString)
@@ -236,14 +243,141 @@ Public Class frmVendas
     End Sub
 
     Private Sub btnEditar_Click(sender As Object, e As EventArgs) Handles btnEditar.Click
+        Dim cmd As SqlCommand
 
+
+        If txtNum.Text <> "" Then
+
+            Try
+                Dim total As Decimal
+                Dim valor As Decimal
+                Dim quant As Decimal
+
+                valor = txtValorVenda.Text
+                quant = txtQuantidade.Text
+
+                total = valor * quant
+
+                'CARREGANDO IMAGEM NO BANCO
+                'Dim MS As New IO.MemoryStream
+                'ImagemCarregada.Save(MS, System.Drawing.Imaging.ImageFormat.Jpeg)
+                'Dim byteArray = MS.ToArray
+
+                abrir()
+                cmd = New SqlCommand("pa_Vendas_editar", con)
+                cmd.CommandType = CommandType.StoredProcedure
+                cmd.Parameters.AddWithValue("@id_vendas", txtCodigo.Text)
+                cmd.Parameters.AddWithValue("@num_vendas", txtNum.Text)
+                cmd.Parameters.AddWithValue("@id_produto", cbProduto.SelectedValue)
+                cmd.Parameters.AddWithValue("@quantidade", txtQuantidade.Text)
+                cmd.Parameters.AddWithValue("@valor", total)
+
+
+                'cmd.Parameters.AddWithValue("@imagem", byteArray)
+                'cmd.Parameters.AddWithValue("@nivel_minimo", txtNivel.Text)
+
+                cmd.Parameters.Add("@mensagem", SqlDbType.VarChar, 100).Direction = 2
+                cmd.ExecuteNonQuery()
+
+                Dim msg As String = cmd.Parameters("@mensagem").Value.ToString
+                MessageBox.Show(msg, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
+
+                Listar()
+                Limpar()
+                totalizar()
+            Catch ex As Exception
+                MessageBox.Show("Erro ao Editar os dados" + ex.Message.ToString)
+                fechar()
+            End Try
+        End If
     End Sub
 
     Private Sub btnExcluir_Click(sender As Object, e As EventArgs) Handles btnExcluir.Click
+        Dim cmd As SqlCommand
+
+        If txtCodigo.Text <> "" Then
+
+            Try
+                If (MessageBox.Show("Deseja excluir este Produto?", Me.Text, MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.No) Then Exit Sub
+
+                abrir()
+                cmd = New SqlCommand("pa_Vendas_excluir", con)
+                cmd.CommandType = CommandType.StoredProcedure
+                cmd.Parameters.AddWithValue("@id_vendas", txtCodigo.Text)
+                cmd.Parameters.Add("@mensagem", SqlDbType.VarChar, 100).Direction = 2
+                cmd.ExecuteNonQuery()
+
+                Dim msg As String = cmd.Parameters("@mensagem").Value.ToString
+                MessageBox.Show(msg, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
+
+                Listar()
+                Limpar()
+                totalizar()
+                btnExcluir.Enabled = False
+                btnEditar.Enabled = False
+
+            Catch ex As Exception
+                MessageBox.Show("Erro ao excluir o Produto" + ex.Message)
+                fechar()
+            End Try
+        End If
 
     End Sub
 
     Private Sub btSair_Click(sender As Object, e As EventArgs) Handles btSair.Click
         Me.Close()
+    End Sub
+
+    Private Sub dg_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dg.CellClick
+        btnEditar.Enabled = True
+        btnExcluir.Enabled = True
+        btnSalvar.Enabled = True
+        cbProduto.Enabled = True
+
+        '  HabilitarCampos()
+
+        txtCodigo.Text = dg.CurrentRow.Cells(0).Value
+        txtNum.Text = dg.CurrentRow.Cells(1).Value
+        cbProduto.Text = dg.CurrentRow.Cells(2).Value
+        cbCliente.Text = dg.CurrentRow.Cells(3).Value
+        txtQuantidade.Text = dg.CurrentRow.Cells(5).Value
+        ' txtValorVenda.Text = dg.CurrentRow.Cells(5).Value
+    End Sub
+
+    Private Sub txtBuscar_TextChanged(sender As Object, e As EventArgs) Handles txtBuscar.TextChanged
+        If txtBuscar.Text = "" And dg.Rows.Count > 0 Then
+
+            Listar()
+
+        Else
+            Dim dt As New DataTable
+            Dim da As SqlDataAdapter
+
+            Try
+                abrir()
+                da = New SqlDataAdapter("pa_Vendas_buscar", con)
+                da.SelectCommand.CommandType = CommandType.StoredProcedure
+                da.SelectCommand.Parameters.AddWithValue("@num_vendas", txtBuscar.Text)
+                ' da.SelectCommand.Parameters.AddWithValue("@codigo_barras", txtBuscar.Text)
+
+                da.Fill(dt)
+                dg.DataSource = dt
+
+                totalizar()
+            Catch ex As Exception
+                MessageBox.Show("Erro ao Listar" + ex.Message)
+                fechar()
+            End Try
+        End If
+    End Sub
+
+    Private Sub totalizar()
+        Dim total As Decimal
+        For Each lin As DataGridViewRow In dg.Rows
+            total = total + lin.Cells(6).Value
+        Next
+
+        lblTotal.Text = total
+
     End Sub
 End Class

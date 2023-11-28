@@ -63,13 +63,18 @@ Partial Class frmPrincipal
         Me.lblData = New System.Windows.Forms.Label()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.dg = New System.Windows.Forms.DataGridView()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.lblTotal = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
         Me.MenuStrip1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
+        CType(Me.dg, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'MenuStrip1
         '
-        Me.MenuStrip1.BackColor = System.Drawing.Color.DodgerBlue
+        Me.MenuStrip1.BackColor = System.Drawing.Color.LightSeaGreen
         Me.MenuStrip1.Font = New System.Drawing.Font("Arial Narrow", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CadastrosToolStripMenuItem, Me.EstoqueToolStripMenuItem, Me.MovimentaçãoToolStripMenuItem, Me.VendasToolStripMenuItem, Me.RelatóriosToolStripMenuItem, Me.SairToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
@@ -81,6 +86,7 @@ Partial Class frmPrincipal
         'CadastrosToolStripMenuItem
         '
         Me.CadastrosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ClientesToolStripMenuItem, Me.CargosToolStripMenuItem, Me.FuncionáriosToolStripMenuItem, Me.FornecedoresToolStripMenuItem, Me.EmpresaToolStripMenuItem, Me.ProdutosToolStripMenuItem})
+        Me.CadastrosToolStripMenuItem.ForeColor = System.Drawing.Color.White
         Me.CadastrosToolStripMenuItem.Image = CType(resources.GetObject("CadastrosToolStripMenuItem.Image"), System.Drawing.Image)
         Me.CadastrosToolStripMenuItem.Name = "CadastrosToolStripMenuItem"
         Me.CadastrosToolStripMenuItem.Size = New System.Drawing.Size(93, 24)
@@ -90,14 +96,14 @@ Partial Class frmPrincipal
         '
         Me.ClientesToolStripMenuItem.Image = CType(resources.GetObject("ClientesToolStripMenuItem.Image"), System.Drawing.Image)
         Me.ClientesToolStripMenuItem.Name = "ClientesToolStripMenuItem"
-        Me.ClientesToolStripMenuItem.Size = New System.Drawing.Size(180, 24)
+        Me.ClientesToolStripMenuItem.Size = New System.Drawing.Size(156, 24)
         Me.ClientesToolStripMenuItem.Text = "Clientes"
         '
         'CargosToolStripMenuItem
         '
         Me.CargosToolStripMenuItem.Image = CType(resources.GetObject("CargosToolStripMenuItem.Image"), System.Drawing.Image)
         Me.CargosToolStripMenuItem.Name = "CargosToolStripMenuItem"
-        Me.CargosToolStripMenuItem.Size = New System.Drawing.Size(180, 24)
+        Me.CargosToolStripMenuItem.Size = New System.Drawing.Size(156, 24)
         Me.CargosToolStripMenuItem.Text = "Cargos"
         '
         'FuncionáriosToolStripMenuItem
@@ -105,28 +111,28 @@ Partial Class frmPrincipal
         Me.FuncionáriosToolStripMenuItem.Enabled = False
         Me.FuncionáriosToolStripMenuItem.Image = CType(resources.GetObject("FuncionáriosToolStripMenuItem.Image"), System.Drawing.Image)
         Me.FuncionáriosToolStripMenuItem.Name = "FuncionáriosToolStripMenuItem"
-        Me.FuncionáriosToolStripMenuItem.Size = New System.Drawing.Size(180, 24)
+        Me.FuncionáriosToolStripMenuItem.Size = New System.Drawing.Size(156, 24)
         Me.FuncionáriosToolStripMenuItem.Text = "Funcionários"
         '
         'FornecedoresToolStripMenuItem
         '
         Me.FornecedoresToolStripMenuItem.Image = CType(resources.GetObject("FornecedoresToolStripMenuItem.Image"), System.Drawing.Image)
         Me.FornecedoresToolStripMenuItem.Name = "FornecedoresToolStripMenuItem"
-        Me.FornecedoresToolStripMenuItem.Size = New System.Drawing.Size(180, 24)
+        Me.FornecedoresToolStripMenuItem.Size = New System.Drawing.Size(156, 24)
         Me.FornecedoresToolStripMenuItem.Text = "Fornecedores"
         '
         'EmpresaToolStripMenuItem
         '
         Me.EmpresaToolStripMenuItem.Image = CType(resources.GetObject("EmpresaToolStripMenuItem.Image"), System.Drawing.Image)
         Me.EmpresaToolStripMenuItem.Name = "EmpresaToolStripMenuItem"
-        Me.EmpresaToolStripMenuItem.Size = New System.Drawing.Size(180, 24)
+        Me.EmpresaToolStripMenuItem.Size = New System.Drawing.Size(156, 24)
         Me.EmpresaToolStripMenuItem.Text = "Empresa"
         '
         'ProdutosToolStripMenuItem
         '
         Me.ProdutosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ProdutosToolStripMenuItem1, Me.CategoriasToolStripMenuItem, Me.UnidadeDeMedidaToolStripMenuItem})
         Me.ProdutosToolStripMenuItem.Name = "ProdutosToolStripMenuItem"
-        Me.ProdutosToolStripMenuItem.Size = New System.Drawing.Size(180, 24)
+        Me.ProdutosToolStripMenuItem.Size = New System.Drawing.Size(156, 24)
         Me.ProdutosToolStripMenuItem.Text = "Produtos"
         '
         'ProdutosToolStripMenuItem1
@@ -153,6 +159,7 @@ Partial Class frmPrincipal
         'EstoqueToolStripMenuItem
         '
         Me.EstoqueToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EntradaSaídaToolStripMenuItem, Me.ConsultasToolStripMenuItem, Me.NíveisBaixoToolStripMenuItem})
+        Me.EstoqueToolStripMenuItem.ForeColor = System.Drawing.Color.White
         Me.EstoqueToolStripMenuItem.Image = CType(resources.GetObject("EstoqueToolStripMenuItem.Image"), System.Drawing.Image)
         Me.EstoqueToolStripMenuItem.Name = "EstoqueToolStripMenuItem"
         Me.EstoqueToolStripMenuItem.Size = New System.Drawing.Size(82, 24)
@@ -182,6 +189,7 @@ Partial Class frmPrincipal
         'MovimentaçãoToolStripMenuItem
         '
         Me.MovimentaçãoToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.OrdemDeServiçoToolStripMenuItem, Me.TiposDeServiçosToolStripMenuItem, Me.OrçamentoToolStripMenuItem})
+        Me.MovimentaçãoToolStripMenuItem.ForeColor = System.Drawing.Color.White
         Me.MovimentaçãoToolStripMenuItem.Image = CType(resources.GetObject("MovimentaçãoToolStripMenuItem.Image"), System.Drawing.Image)
         Me.MovimentaçãoToolStripMenuItem.Name = "MovimentaçãoToolStripMenuItem"
         Me.MovimentaçãoToolStripMenuItem.Size = New System.Drawing.Size(119, 24)
@@ -209,6 +217,7 @@ Partial Class frmPrincipal
         'VendasToolStripMenuItem
         '
         Me.VendasToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PDVRegistrarVendaToolStripMenuItem, Me.ListarVendasToolStripMenuItem, Me.SangriaToolStripMenuItem})
+        Me.VendasToolStripMenuItem.ForeColor = System.Drawing.Color.White
         Me.VendasToolStripMenuItem.Image = CType(resources.GetObject("VendasToolStripMenuItem.Image"), System.Drawing.Image)
         Me.VendasToolStripMenuItem.Name = "VendasToolStripMenuItem"
         Me.VendasToolStripMenuItem.Size = New System.Drawing.Size(78, 24)
@@ -238,6 +247,7 @@ Partial Class frmPrincipal
         'RelatóriosToolStripMenuItem
         '
         Me.RelatóriosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CatálogoDeProdutosToolStripMenuItem, Me.RelatórioDoCaixaToolStripMenuItem, Me.EntradaSaídaToolStripMenuItem1, Me.NíveisDoEstoqueToolStripMenuItem, Me.ProdutosMaisVendidosToolStripMenuItem, Me.VendasPorFuncionárioToolStripMenuItem})
+        Me.RelatóriosToolStripMenuItem.ForeColor = System.Drawing.Color.White
         Me.RelatóriosToolStripMenuItem.Image = CType(resources.GetObject("RelatóriosToolStripMenuItem.Image"), System.Drawing.Image)
         Me.RelatóriosToolStripMenuItem.Name = "RelatóriosToolStripMenuItem"
         Me.RelatóriosToolStripMenuItem.Size = New System.Drawing.Size(93, 24)
@@ -284,6 +294,7 @@ Partial Class frmPrincipal
         'SairToolStripMenuItem
         '
         Me.SairToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SairToolStripMenuItem1, Me.LogoffToolStripMenuItem})
+        Me.SairToolStripMenuItem.ForeColor = System.Drawing.Color.White
         Me.SairToolStripMenuItem.Image = CType(resources.GetObject("SairToolStripMenuItem.Image"), System.Drawing.Image)
         Me.SairToolStripMenuItem.Name = "SairToolStripMenuItem"
         Me.SairToolStripMenuItem.Size = New System.Drawing.Size(59, 24)
@@ -352,17 +363,71 @@ Partial Class frmPrincipal
         Me.GroupBox1.Controls.Add(Me.lblData)
         Me.GroupBox1.Controls.Add(Me.lblUsuario)
         Me.GroupBox1.Controls.Add(Me.lblHora)
+        Me.GroupBox1.ForeColor = System.Drawing.Color.White
         Me.GroupBox1.Location = New System.Drawing.Point(675, 43)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(234, 126)
         Me.GroupBox1.TabIndex = 5
         Me.GroupBox1.TabStop = False
         '
+        'dg
+        '
+        Me.dg.AllowUserToAddRows = False
+        Me.dg.AllowUserToDeleteRows = False
+        Me.dg.BackgroundColor = System.Drawing.Color.White
+        Me.dg.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dg.GridColor = System.Drawing.SystemColors.HotTrack
+        Me.dg.Location = New System.Drawing.Point(22, 176)
+        Me.dg.Margin = New System.Windows.Forms.Padding(4)
+        Me.dg.Name = "dg"
+        Me.dg.ReadOnly = True
+        Me.dg.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.dg.Size = New System.Drawing.Size(887, 234)
+        Me.dg.TabIndex = 222
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.Color.White
+        Me.Label2.Location = New System.Drawing.Point(41, 147)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(120, 17)
+        Me.Label2.TabIndex = 223
+        Me.Label2.Text = "Últimas Vendas"
+        '
+        'lblTotal
+        '
+        Me.lblTotal.AutoSize = True
+        Me.lblTotal.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTotal.ForeColor = System.Drawing.Color.White
+        Me.lblTotal.Location = New System.Drawing.Point(692, 432)
+        Me.lblTotal.Name = "lblTotal"
+        Me.lblTotal.Size = New System.Drawing.Size(14, 17)
+        Me.lblTotal.TabIndex = 224
+        Me.lblTotal.Text = "-"
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.ForeColor = System.Drawing.Color.White
+        Me.Label4.Location = New System.Drawing.Point(572, 432)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(114, 17)
+        Me.Label4.TabIndex = 225
+        Me.Label4.Text = "Total Vendido:"
+        '
         'frmPrincipal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(962, 450)
+        Me.BackColor = System.Drawing.Color.Teal
+        Me.ClientSize = New System.Drawing.Size(962, 531)
+        Me.Controls.Add(Me.Label4)
+        Me.Controls.Add(Me.lblTotal)
+        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.dg)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.MenuStrip1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
@@ -376,6 +441,7 @@ Partial Class frmPrincipal
         Me.MenuStrip1.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
+        CType(Me.dg, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -420,4 +486,8 @@ Partial Class frmPrincipal
     Friend WithEvents lblData As Label
     Friend WithEvents Timer1 As Timer
     Friend WithEvents GroupBox1 As GroupBox
+    Friend WithEvents dg As DataGridView
+    Friend WithEvents Label2 As Label
+    Friend WithEvents lblTotal As Label
+    Friend WithEvents Label4 As Label
 End Class
