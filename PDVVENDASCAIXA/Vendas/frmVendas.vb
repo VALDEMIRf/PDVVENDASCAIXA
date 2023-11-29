@@ -129,7 +129,13 @@ Public Class frmVendas
     End Sub
 
     Private Sub cbProduto_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbProduto.SelectedIndexChanged
+        atualizarValor()
         ' 
+
+
+    End Sub
+
+    Private Sub atualizarValor()
         Dim cmd As New SqlCommand("pa_Vendas_buscarValorProd", con)
         Try
             abrir()
@@ -177,13 +183,26 @@ Public Class frmVendas
         Finally
             fechar()
         End Try
-
     End Sub
 
     Private Sub btnSalvar_Click(sender As Object, e As EventArgs) Handles btnSalvar.Click
         Dim cmd As SqlCommand
 
-        If txtNum.Text <> "" Then
+        Dim quantidade As Decimal
+        Dim estoque As Decimal
+        Dim quant_vendida As Decimal
+        Dim TotQuantidade As Decimal
+        Dim Totestoque As Decimal
+
+        quantidade = txtQuantidade.Text
+        estoque = txtEstoque.Text
+        Totestoque = estoque - quantidade
+
+
+        'quant_vendida = txtQuantVendida.Text
+        'TotQuantidade = quant_vendida + quantidade
+
+        If txtNum.Text <> "" And Totestoque >= 0 Then
             '    If pbImagem.Image.Equals(Nothing) Then
             '        errErro.SetError(pbImagem, "Escolha uma imagem")
             '        Exit Sub
@@ -203,6 +222,18 @@ Public Class frmVendas
                 total = valor * quant
 
                 abrir()
+
+                'ABATENDO PRODUTOS NO ESTOQUE
+
+                cmd = New SqlCommand("pa_produto_EditarEstoque", con)
+                cmd.CommandType = CommandType.StoredProcedure
+                cmd.Parameters.AddWithValue("@quantidade", Totestoque)
+                cmd.Parameters.AddWithValue("@id_produto", cbProduto.SelectedValue)
+                cmd.ExecuteNonQuery()
+
+                '=======================================================================================================================
+
+
                 cmd = New SqlCommand("pa_Vendas_salvar", con)
                 cmd.CommandType = CommandType.StoredProcedure
                 cmd.Parameters.AddWithValue("@num_vendas", txtNum.Text)
@@ -225,10 +256,14 @@ Public Class frmVendas
                 Dim msg As String = cmd.Parameters("@mensagem").Value.ToString
                 MessageBox.Show(msg, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button3)
 
+
+                atualizarValor()
                 ' PrintPreviewDialog1.Show()
-                Listar()
-                Limpar()
+                'Listar()
+                BuscarVenda()
+
                 totalizar()
+
                 cbCliente.Enabled = False
                 txtNum.Enabled = False
                 txtQuantidade.Text = ""
@@ -239,6 +274,8 @@ Public Class frmVendas
                 fechar()
 
             End Try
+        Else
+            MsgBox("A quantidade em estoque é insulficiente!!")
         End If
     End Sub
 
@@ -379,5 +416,32 @@ Public Class frmVendas
 
         lblTotal.Text = total
 
+    End Sub
+
+    Private Sub BuscarVenda()
+        If txtNum.Text = "" And dg.Rows.Count > 0 Then
+
+            Listar()
+            totalizar()
+        Else
+            Dim dt As New DataTable
+            Dim da As SqlDataAdapter
+
+            Try
+                abrir()
+                da = New SqlDataAdapter("pa_Vendas_buscar", con)
+                da.SelectCommand.CommandType = CommandType.StoredProcedure
+                da.SelectCommand.Parameters.AddWithValue("@num_vendas", txtNum.Text)
+                ' da.SelectCommand.Parameters.AddWithValue("@codigo_barras", txtBuscar.Text)
+
+                da.Fill(dt)
+                dg.DataSource = dt
+
+                totalizar()
+            Catch ex As Exception
+                MessageBox.Show("Erro ao Listar" + ex.Message)
+                fechar()
+            End Try
+        End If
     End Sub
 End Class

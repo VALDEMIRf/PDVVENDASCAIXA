@@ -134,4 +134,8 @@ Public Class frmPrincipal
         Dim form = New frmVendas
         form.ShowDialog()
     End Sub
+
+    Private Sub frmPrincipal_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
+        Application.Exit()
+    End Sub
 End Class
