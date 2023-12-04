@@ -18,9 +18,9 @@ Module conexao
 
         Public usuarioNome As String
 
-        Public idempresa As String
+    Public empresaNome As String
 
-    End Module
+End Module
 
 
 

@@ -10,7 +10,7 @@ Public Class frmVendas
 
         Listar()
 
-        btnEditar.Enabled = False
+
         btnExcluir.Enabled = False
         totalizar()
     End Sub
@@ -130,9 +130,6 @@ Public Class frmVendas
 
     Private Sub cbProduto_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbProduto.SelectedIndexChanged
         atualizarValor()
-        ' 
-
-
     End Sub
 
     Private Sub atualizarValor()
@@ -223,7 +220,7 @@ Public Class frmVendas
 
                 abrir()
 
-                'ABATENDO PRODUTOS NO ESTOQUE
+                'ABATENDO QUANTIDADE EM ESTOQUE
 
                 cmd = New SqlCommand("pa_produto_EditarEstoque", con)
                 cmd.CommandType = CommandType.StoredProcedure
@@ -247,7 +244,7 @@ Public Class frmVendas
                 'cmd.Parameters.AddWithValue("@nivel_minimo", txtNivel.Text)
 
                 ' cmd.Parameters.AddWithValue("@quant_vendida", 0)
-                ' cmd.Parameters.AddWithValue("@codigo_barras", txtCodBarras.Text)
+                ' cmd.Parameters.AddWithValue("@codigo_barras", txtCodBarras.Text)+
 
 
                 cmd.Parameters.Add("@mensagem", SqlDbType.VarChar, 100).Direction = 2
@@ -279,7 +276,7 @@ Public Class frmVendas
         End If
     End Sub
 
-    Private Sub btnEditar_Click(sender As Object, e As EventArgs) Handles btnEditar.Click
+    Private Sub btnEditar_Click(sender As Object, e As EventArgs)
         Dim cmd As SqlCommand
 
 
@@ -330,6 +327,15 @@ Public Class frmVendas
     End Sub
 
     Private Sub btnExcluir_Click(sender As Object, e As EventArgs) Handles btnExcluir.Click
+
+        Dim quantidade As Decimal
+        Dim estoque As Decimal
+        Dim Totestoque As Decimal
+
+        quantidade = txtQuantidade.Text
+        estoque = txtEstoque.Text
+        Totestoque = estoque + quantidade
+
         Dim cmd As SqlCommand
 
         If txtCodigo.Text <> "" Then
@@ -338,6 +344,17 @@ Public Class frmVendas
                 If (MessageBox.Show("Deseja excluir este Produto?", Me.Text, MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.No) Then Exit Sub
 
                 abrir()
+
+                'DEVOLVENDO QUANTIDADE NO ESTOQUE
+
+                cmd = New SqlCommand("pa_produto_EditarEstoque", con)
+                cmd.CommandType = CommandType.StoredProcedure
+                cmd.Parameters.AddWithValue("@quantidade", Totestoque)
+                cmd.Parameters.AddWithValue("@id_produto", cbProduto.SelectedValue)
+                cmd.ExecuteNonQuery()
+
+                '=======================================================================================================================
+
                 cmd = New SqlCommand("pa_Vendas_excluir", con)
                 cmd.CommandType = CommandType.StoredProcedure
                 cmd.Parameters.AddWithValue("@id_vendas", txtCodigo.Text)
@@ -350,8 +367,10 @@ Public Class frmVendas
                 Listar()
                 Limpar()
                 totalizar()
+                atualizarValor()
+
                 btnExcluir.Enabled = False
-                btnEditar.Enabled = False
+
 
             Catch ex As Exception
                 MessageBox.Show("Erro ao excluir o Produto" + ex.Message)
@@ -366,7 +385,7 @@ Public Class frmVendas
     End Sub
 
     Private Sub dg_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dg.CellClick
-        btnEditar.Enabled = True
+
         btnExcluir.Enabled = True
         btnSalvar.Enabled = True
         cbProduto.Enabled = True
@@ -419,7 +438,7 @@ Public Class frmVendas
     End Sub
 
     Private Sub BuscarVenda()
-        If txtNum.Text = "" And dg.Rows.Count > 0 Then
+        If txtNum.Text = "" Then
 
             Listar()
             totalizar()

@@ -56,7 +56,9 @@ Public Class frmPrincipal
     End Sub
 
     Private Sub frmPrincipal_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Me.Text = "GESTÃO ADMINISTRATIVA   -   PDV   -    EMPRESA:  " & empresaNome
         lblUsuario.Text = usuarioNome
+
         If (usuarioNome = "admin") Then
 
             FuncionáriosToolStripMenuItem.Enabled = True
@@ -71,13 +73,29 @@ Public Class frmPrincipal
 
         Dim dt As New DataTable
         Dim da As SqlDataAdapter
+        Dim cmd As SqlCommand
 
         Try
             abrir()
-            '  da = New SqlDataAdapter("SELECT ven.id_vendas, ven.num_vendas, pro.nome,cli.nome,pro.valor_venda,ven.quantidade,ven.valor, ven.funcionario, ven.data_venda, ven.id_produto, ven.id_cliente FROM tbVendas as ven INNER JOIN tbProdutos as pro on ven.id_produto=pro.id_produto INNER JOIN tbClientes  as cli on ven.id_cliente = cli.id_cliente", con)
-            da = New SqlDataAdapter("pa_Vendas_Listar", con)
+
+            'METODO 1 - CONSULTA DIRETA NO FORMULÁRIO
+            ' cmd = New SqlCommand("SELECT ven.id_vendas, ven.num_vendas, pro.nome,cli.nome,pro.valor_venda,ven.quantidade,ven.valor, ven.funcionario, ven.data_venda, ven.id_produto, ven.id_cliente FROM tbVendas as ven INNER JOIN tbProdutos as pro on ven.id_produto=pro.id_produto INNER JOIN tbClientes  as cli on ven.id_cliente = cli.id_cliente where ven.data_venda=@data order by num_vendas desc", con)
+            ' cmd.Parameters.AddWithValue("@data", Now.Date())
+            'cmd.Parameters.AddWithValue("@funcionario", usuarioNome)
+            ' da = New SqlDataAdapter(cmd)
+
+            '============================================================================================================================================================
+
+
+            'METODO 2 - CONSULTA COM PROC NO BANCO DE DADOS
+            da = New SqlDataAdapter("pa_Vendas_ListaDiaria", con)
             da.SelectCommand.CommandType = CommandType.StoredProcedure
-            ' da.SelectCommand.Parameters.AddWithValue("@num_vendas", txtBuscar.Text)
+            da.SelectCommand.Parameters.AddWithValue("@data", Now.Date())
+            da.SelectCommand.Parameters.AddWithValue("@funcionario", usuarioNome)
+
+
+            '============================================================================================================================================================
+
 
             da.Fill(dt)
             dg.DataSource = dt
@@ -137,5 +155,9 @@ Public Class frmPrincipal
 
     Private Sub frmPrincipal_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
         Application.Exit()
+    End Sub
+
+    Private Sub frmPrincipal_Activated(sender As Object, e As EventArgs) Handles MyBase.Activated
+        Listar()
     End Sub
 End Class

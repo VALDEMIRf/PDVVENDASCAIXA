@@ -392,9 +392,9 @@ Partial Class frmPrincipal
         Me.Label2.ForeColor = System.Drawing.Color.White
         Me.Label2.Location = New System.Drawing.Point(41, 147)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(120, 17)
+        Me.Label2.Size = New System.Drawing.Size(117, 17)
         Me.Label2.TabIndex = 223
-        Me.Label2.Text = "Últimas Vendas"
+        Me.Label2.Text = " Vendas do dia"
         '
         'lblTotal
         '
@@ -436,7 +436,6 @@ Partial Class frmPrincipal
         Me.MaximizeBox = False
         Me.Name = "frmPrincipal"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "TELA INICIAL - PDV"
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)

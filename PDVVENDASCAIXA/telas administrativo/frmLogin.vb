@@ -85,7 +85,7 @@ Public Class frmLogin
             dr = cmd.ExecuteReader()
 
             If dr.Read() Then
-                idempresa = dr.Item("razaoSocial")
+                empresaNome = dr.Item("razaoSocial")
                 bolResult = True
             End If
 

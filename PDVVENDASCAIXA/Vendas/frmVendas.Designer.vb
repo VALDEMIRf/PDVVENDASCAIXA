@@ -38,7 +38,6 @@ Partial Class frmVendas
         Me.btnNovo = New System.Windows.Forms.Button()
         Me.btSair = New System.Windows.Forms.Button()
         Me.btnSalvar = New System.Windows.Forms.Button()
-        Me.btnEditar = New System.Windows.Forms.Button()
         Me.btnExcluir = New System.Windows.Forms.Button()
         Me.txtBuscar = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -170,13 +169,12 @@ Partial Class frmVendas
         Me.GroupBox1.Controls.Add(Me.btnNovo)
         Me.GroupBox1.Controls.Add(Me.btSair)
         Me.GroupBox1.Controls.Add(Me.btnSalvar)
-        Me.GroupBox1.Controls.Add(Me.btnEditar)
         Me.GroupBox1.Controls.Add(Me.btnExcluir)
         Me.GroupBox1.Location = New System.Drawing.Point(14, 462)
         Me.GroupBox1.Margin = New System.Windows.Forms.Padding(4)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Padding = New System.Windows.Forms.Padding(4)
-        Me.GroupBox1.Size = New System.Drawing.Size(462, 69)
+        Me.GroupBox1.Size = New System.Drawing.Size(371, 69)
         Me.GroupBox1.TabIndex = 214
         Me.GroupBox1.TabStop = False
         '
@@ -210,7 +208,7 @@ Partial Class frmVendas
         Me.btSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btSair.ForeColor = System.Drawing.Color.White
         Me.btSair.Image = CType(resources.GetObject("btSair.Image"), System.Drawing.Image)
-        Me.btSair.Location = New System.Drawing.Point(378, 22)
+        Me.btSair.Location = New System.Drawing.Point(294, 21)
         Me.btSair.Margin = New System.Windows.Forms.Padding(7, 6, 7, 6)
         Me.btSair.Name = "btSair"
         Me.btSair.Size = New System.Drawing.Size(73, 33)
@@ -240,26 +238,6 @@ Partial Class frmVendas
         Me.btnSalvar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnSalvar.UseVisualStyleBackColor = False
         '
-        'btnEditar
-        '
-        Me.btnEditar.BackColor = System.Drawing.Color.Transparent
-        Me.btnEditar.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnEditar.FlatAppearance.BorderSize = 0
-        Me.btnEditar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Azure
-        Me.btnEditar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
-        Me.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnEditar.ForeColor = System.Drawing.Color.White
-        Me.btnEditar.Image = CType(resources.GetObject("btnEditar.Image"), System.Drawing.Image)
-        Me.btnEditar.Location = New System.Drawing.Point(195, 18)
-        Me.btnEditar.Margin = New System.Windows.Forms.Padding(7, 6, 7, 6)
-        Me.btnEditar.Name = "btnEditar"
-        Me.btnEditar.Size = New System.Drawing.Size(87, 36)
-        Me.btnEditar.TabIndex = 163
-        Me.btnEditar.Text = "Editar"
-        Me.btnEditar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.btnEditar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnEditar.UseVisualStyleBackColor = False
-        '
         'btnExcluir
         '
         Me.btnExcluir.BackColor = System.Drawing.Color.Transparent
@@ -270,7 +248,7 @@ Partial Class frmVendas
         Me.btnExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnExcluir.ForeColor = System.Drawing.Color.White
         Me.btnExcluir.Image = CType(resources.GetObject("btnExcluir.Image"), System.Drawing.Image)
-        Me.btnExcluir.Location = New System.Drawing.Point(287, 18)
+        Me.btnExcluir.Location = New System.Drawing.Point(195, 17)
         Me.btnExcluir.Margin = New System.Windows.Forms.Padding(7, 6, 7, 6)
         Me.btnExcluir.Name = "btnExcluir"
         Me.btnExcluir.Size = New System.Drawing.Size(93, 37)
@@ -412,7 +390,6 @@ Partial Class frmVendas
     Friend WithEvents btnNovo As Button
     Friend WithEvents btSair As Button
     Friend WithEvents btnSalvar As Button
-    Friend WithEvents btnEditar As Button
     Friend WithEvents btnExcluir As Button
     Friend WithEvents txtBuscar As TextBox
     Friend WithEvents Label1 As Label
