@@ -160,4 +160,9 @@ Public Class frmPrincipal
     Private Sub frmPrincipal_Activated(sender As Object, e As EventArgs) Handles MyBase.Activated
         Listar()
     End Sub
+
+    Private Sub ListarVendasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ListarVendasToolStripMenuItem.Click
+        Dim form = New frmListaVendas
+        form.ShowDialog()
+    End Sub
 End Class

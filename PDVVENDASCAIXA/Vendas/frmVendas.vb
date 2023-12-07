@@ -126,6 +126,7 @@ Public Class frmVendas
         Limpar()
         btnSalvar.Enabled = True
         cbCliente.Text = "CONSUMIDOR"
+        gerarnum()
     End Sub
 
     Private Sub cbProduto_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbProduto.SelectedIndexChanged
@@ -462,5 +463,37 @@ Public Class frmVendas
                 fechar()
             End Try
         End If
+    End Sub
+
+    Private Sub gerarnum()
+        Dim cmd As New SqlCommand("pa_Vendas_buscarNum", con)  'pa_VendaSbuscarNumero
+        Try
+            abrir()
+            cmd.CommandType = 4
+            cmd.Parameters.Add("@num_vendas", SqlDbType.Int).Direction = 2
+
+            cmd.ExecuteNonQuery()
+
+            Dim num As Integer = cmd.Parameters("@num_vendas").Value
+
+            Dim hora As String = Now.Second
+            'Dim numAleatorio As Random = New Random()
+            ' Dim valorInteiro As Integer = numAleatorio.Next(10000000)
+            Dim num_final As Integer
+            num_final = num + 1
+
+            Dim num_pers As String
+            num_pers = num_final.ToString + hora
+
+            ' txtNum.Text = valorInteiro.ToString()
+            txtNum.Text = CStr(num_pers)
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+            fechar()
+        End Try
+
+
     End Sub
 End Class
