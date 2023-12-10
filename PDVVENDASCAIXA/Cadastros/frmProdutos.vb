@@ -8,6 +8,7 @@ Public Class frmProdutos
     Private _create As Net.HttpWebRequest
 
     Private Sub frmProdutos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        carregarImagem()
         CarregarFornecedor()
         CarregarCategoriaProdutos()
         CarregarUnidadesMedidas()
@@ -141,23 +142,21 @@ Public Class frmProdutos
         cbCategoria.Text = Nothing
         'txtCodBarras.Text = ""
         'imgCodBar.Image = Nothing
-        '  carregarImagem()
+        carregarImagem()
 
     End Sub
 
     Private Sub FormatarDG()
         dg.Columns(0).Visible = False
         'dg.Columns(9).Visible = False
-        'dg.Columns(15).Visible = False
-        'dg.Columns(16).Visible = False
-        'dg.Columns(17).Visible = False
-        'dg.Columns(18).Visible = False
-        'dg.Columns(19).Visible = False
-        'dg.Columns(20).Visible = False
+        dg.Columns(10).Visible = False
+        dg.Columns(11).Visible = False
+        dg.Columns(12).Visible = False
+        dg.Columns(13).Visible = False
 
-        dg.Columns(1).HeaderText = "Nome"
+        dg.Columns(1).HeaderText = "Produto"
         dg.Columns(2).HeaderText = "Descrição"
-        dg.Columns(3).HeaderText = "Razão Social"
+        dg.Columns(3).HeaderText = "Fornecedor"
         dg.Columns(4).HeaderText = "Categoria"
         dg.Columns(5).HeaderText = "Unidade"
         dg.Columns(6).HeaderText = "Quant."
@@ -169,11 +168,12 @@ Public Class frmProdutos
         'dg.Columns(12).HeaderText = "id_unidade"
 
         dg.Columns(2).Width = 180
-        dg.Columns(1).Width = 120
+        dg.Columns(1).Width = 150
+        dg.Columns(2).Width = 200
         dg.Columns(3).Width = 260
-        dg.Columns(4).Width = 160
-        dg.Columns(5).Width = 90
-        dg.Columns(6).Width = 70
+        dg.Columns(4).Width = 120
+        dg.Columns(5).Width = 80
+        dg.Columns(6).Width = 45
         dg.Columns(7).Width = 100
         dg.Columns(8).Width = 100
         dg.Columns(9).Width = 80
@@ -190,6 +190,7 @@ Public Class frmProdutos
     End Sub
 
     Private Sub btnNovo_Click(sender As Object, e As EventArgs) Handles btnNovo.Click
+
         HabilitarCampos()
         Limpar()
         btnSalvar.Enabled = True
@@ -199,6 +200,7 @@ Public Class frmProdutos
     End Sub
 
     Private Sub btnSalvar_Click(sender As Object, e As EventArgs) Handles btnSalvar.Click
+
         Dim cmd As SqlCommand
 
         'If txtNome.Text <> "" Then
@@ -212,14 +214,14 @@ Public Class frmProdutos
         Try
 
             'CARREGANDO IMAGEM NO BANCO
-            'Dim MS As New IO.MemoryStream
-            'ImagemCarregada.Save(MS, System.Drawing.Imaging.ImageFormat.Jpeg)
-            'Dim byteArray = MS.ToArray
+            Dim MS As New IO.MemoryStream
+            ImagemCarregada.Save(MS, System.Drawing.Imaging.ImageFormat.Jpeg)
+            Dim byteArray = MS.ToArray
 
             Dim vlcompra = Replace(txtValorCompra.Text, ",", ".")
-                Dim vlVenda = Replace(txtValorVenda.Text, ",", ".")
+            Dim vlVenda = Replace(txtValorVenda.Text, ",", ".")
 
-                abrir()
+            abrir()
                 cmd = New SqlCommand("pa_produto_Salvar", con)
                 cmd.CommandType = CommandType.StoredProcedure
                 cmd.Parameters.AddWithValue("@nome", txtNome.Text)
@@ -231,14 +233,14 @@ Public Class frmProdutos
                 cmd.Parameters.AddWithValue("@valor_compra", vlcompra)
                 cmd.Parameters.AddWithValue("@valor_venda", vlVenda)
                 cmd.Parameters.AddWithValue("@data_cadastro", Now.Date())
-                'cmd.Parameters.AddWithValue("@imagem", byteArray)
-                'cmd.Parameters.AddWithValue("@nivel_minimo", txtNivel.Text)
+            cmd.Parameters.AddWithValue("@imagem", byteArray)
+            'cmd.Parameters.AddWithValue("@nivel_minimo", txtNivel.Text)
 
-                ' cmd.Parameters.AddWithValue("@quant_vendida", 0)
-                ' cmd.Parameters.AddWithValue("@codigo_barras", txtCodBarras.Text)
+            ' cmd.Parameters.AddWithValue("@quant_vendida", 0)
+            ' cmd.Parameters.AddWithValue("@codigo_barras", txtCodBarras.Text)
 
 
-                cmd.Parameters.Add("@mensagem", SqlDbType.VarChar, 100).Direction = 2
+            cmd.Parameters.Add("@mensagem", SqlDbType.VarChar, 100).Direction = 2
                 cmd.ExecuteNonQuery()
 
                 Dim msg As String = cmd.Parameters("@mensagem").Value.ToString
@@ -271,9 +273,9 @@ Public Class frmProdutos
             Try
 
                 'CARREGANDO IMAGEM NO BANCO
-                'Dim MS As New IO.MemoryStream
-                'ImagemCarregada.Save(MS, System.Drawing.Imaging.ImageFormat.Jpeg)
-                'Dim byteArray = MS.ToArray
+                Dim MS As New IO.MemoryStream
+                ImagemCarregada.Save(MS, System.Drawing.Imaging.ImageFormat.Jpeg)
+                Dim byteArray = MS.ToArray
 
                 abrir()
                 cmd = New SqlCommand("pa_produto_Editar", con)
@@ -287,6 +289,7 @@ Public Class frmProdutos
                 cmd.Parameters.AddWithValue("@quantidade", txtQuantidade.Text)
                 cmd.Parameters.AddWithValue("@valor_compra", vlcompra)
                 cmd.Parameters.AddWithValue("@valor_venda", vlVenda)
+                cmd.Parameters.AddWithValue("@imagem", byteArray)
 
                 'cmd.Parameters.AddWithValue("@imagem", byteArray)
                 'cmd.Parameters.AddWithValue("@nivel_minimo", txtNivel.Text)
@@ -362,25 +365,26 @@ Public Class frmProdutos
         txtQuantidade.Text = dg.CurrentRow.Cells(6).Value
         txtValorCompra.Text = CInt(dg.CurrentRow.Cells(7).Value) '.ToString("R$ #,###.00")
         txtValorVenda.Text = CInt(dg.CurrentRow.Cells(8).Value) '.ToString("R$ #,###.00")
-        ' txtNivel.Text = CInt(dg.CurrentRow.Cells(10).Value)
+
+        Dim tempImagem As Byte() = DirectCast(dg.CurrentRow.Cells(13).Value, Byte())
+        If tempImagem Is Nothing Then
+            MessageBox.Show("Imagem não localizada", "Erro")
+            Exit Sub
+        End If
+        Dim strArquivo As String = Convert.ToString(DateTime.Now.ToFileTime())
+        Dim fs As New FileStream(strArquivo, FileMode.CreateNew, FileAccess.Write)
+        fs.Write(tempImagem, 0, tempImagem.Length)
+        fs.Flush()
+        fs.Close()
+        ImagemCarregada = Image.FromFile(strArquivo)
+        pbImagem.Image = ImagemCarregada
+
+        ' txtNivel.Text = CInt(dg.CurrentRow.Cells(11).Value)
 
 
         '  txtCodBarras.Text = dg.CurrentRow.Cells(12).Value
 
         'CriarCodigoBarras()
-
-        'Dim tempImagem As Byte() = DirectCast(dg.CurrentRow.Cells(9).Value, Byte())
-        'If tempImagem Is Nothing Then
-        '    MessageBox.Show("Imagem não localizada", "Erro")
-        '    Exit Sub
-        'End If
-        'Dim strArquivo As String = Convert.ToString(DateTime.Now.ToFileTime())
-        'Dim fs As New FileStream(strArquivo, FileMode.CreateNew, FileAccess.Write)
-        'fs.Write(tempImagem, 0, tempImagem.Length)
-        'fs.Flush()
-        'fs.Close()
-        'ImagemCarregada = Image.FromFile(strArquivo)
-        'pbImagem.Image = ImagemCarregada
     End Sub
 
     Private Sub txtBuscar_TextChanged(sender As Object, e As EventArgs) Handles txtBuscar.TextChanged
@@ -409,5 +413,47 @@ Public Class frmProdutos
                 fechar()
             End Try
         End If
+    End Sub
+
+    Private Sub btImagem_Click(sender As Object, e As EventArgs) Handles btImagem.Click
+        pbImagem.Visible = True
+        Using OFD As New OpenFileDialog With {.Filter = "Image File(*.jpg;*.bmp;*.gif;*.png)|*.jpg;*.bmp;*.gif;*.png"}
+
+            If OFD.ShowDialog = DialogResult.OK Then
+                ImagemCarregada = Image.FromFile(OFD.FileName)
+                pbImagem.Image = ImagemCarregada
+            End If
+        End Using
+    End Sub
+
+    Sub carregarImagem()
+
+        ' Try
+        ' 
+        Dim img As String = "https://www.buritama.sp.leg.br/imagens/parlamentares-2013-2016/sem-foto.jpg/image"
+        ' Dim img As String = My.Resources.imagesemfoto
+        Dim req As System.Net.HttpWebRequest
+        Dim resp As System.Net.HttpWebResponse
+        req = Net.WebRequest.Create(img)
+        req = req.Create(img)
+
+        resp = req.GetResponse
+
+        ImagemCarregada = New Bitmap(resp.GetResponseStream)
+        pbImagem.Image = ImagemCarregada
+        req.Abort()
+
+
+
+        ' ImagemCarregada = Image.FromFile("C:\Users\valde\OneDrive\Documentos\Visual Studio 2017\Projetos\PDV\PDV\imagens\imagesemfoto.jpg")
+        '  pbImagem.Image = My.Resources.imagesemfoto
+
+        'ImagemCarregada = Image.FromFile(\ imaagens \ imagesemfoto.jpg)
+        ' pbImagem.Image = ImagemCarregada
+
+        ' Catch ex As Exception
+        '    MsgBox("<< Erro ao ler a imagem >> " & ex.Message.ToString)
+        ' End Try
+
     End Sub
 End Class

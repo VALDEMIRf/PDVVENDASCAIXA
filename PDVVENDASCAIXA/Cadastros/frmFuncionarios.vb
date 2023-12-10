@@ -1,10 +1,12 @@
-﻿
-
-Imports System.Data.SqlClient
+﻿Imports System.Data.SqlClient
 Imports System.IO
 Imports iTextSharp.text.pdf
 Public Class frmFuncionarios
+    Private ImagemCarregada As Image
+    Private _create As Net.HttpWebRequest
+
     Private Sub frmFuncionarios_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        carregarImagem()
         DesabilitarCampos()
 
         btSalvar.Enabled = False
@@ -65,6 +67,8 @@ Public Class frmFuncionarios
         dg.Columns(3).Visible = False
         dg.Columns(4).Visible = False
         dg.Columns(2).Visible = False
+        dg.Columns(7).Visible = False
+        dg.Columns(20).Visible = False
 
         dg.Columns(1).HeaderText = "Nome"
         dg.Columns(2).HeaderText = "Sexo"
@@ -85,16 +89,16 @@ Public Class frmFuncionarios
         dg.Columns(17).HeaderText = "Turno"
         dg.Columns(18).HeaderText = "Dt Contratação"
         dg.Columns(19).HeaderText = "Dt Demissão"
-        ' dg.Columns(20).HeaderText = "Imagem"
+
 
         dg.Columns(5).Width = 130
-        dg.Columns(6).Width = 180
+        dg.Columns(6).Width = 150
         dg.Columns(8).Width = 65
         dg.Columns(9).Width = 30
-        dg.Columns(10).Width = 150
+        dg.Columns(10).Width = 170
         dg.Columns(11).Width = 45
-        dg.Columns(12).Width = 180
-        dg.Columns(13).Width = 150
+        dg.Columns(12).Width = 110
+        dg.Columns(13).Width = 110
         dg.Columns(14).Width = 150
         dg.Columns(15).Width = 150
         dg.Columns(16).Width = 65
@@ -162,9 +166,8 @@ Public Class frmFuncionarios
         dtData.Text = ""
         txtdtDemissao.Text = ""
         txtBuscar.Text = ""
-        ' pbImagem.Image = Nothing
 
-        ' carregarImagem()
+        carregarImagem()
     End Sub
 
     Private Sub btBuscarCEP_Click(sender As Object, e As EventArgs) Handles btBuscarCEP.Click
@@ -207,9 +210,9 @@ Public Class frmFuncionarios
             Try
 
                 'CARREGANDO IMAGEM NO BANCO
-                'Dim MS As New IO.MemoryStream
-                'ImagemCarregada.Save(MS, System.Drawing.Imaging.ImageFormat.Jpeg)
-                'Dim byteArray = MS.ToArray
+                Dim MS As New IO.MemoryStream
+                ImagemCarregada.Save(MS, System.Drawing.Imaging.ImageFormat.Jpeg)
+                Dim byteArray = MS.ToArray
 
                 abrir()
                 cmd = New SqlCommand("pa_funcionario_Salvar", con)
@@ -233,7 +236,7 @@ Public Class frmFuncionarios
                 cmd.Parameters.AddWithValue("@turno", cbTurno.Text)
                 cmd.Parameters.AddWithValue("@data_contratado", dtData.Text)
                 cmd.Parameters.AddWithValue("@data_demissao", txtdtDemissao.Text)
-                ' cmd.Parameters.AddWithValue("@imagem", byteArray)
+                cmd.Parameters.AddWithValue("@imagem", byteArray)
                 cmd.Parameters.Add("@mensagem", SqlDbType.VarChar, 100).Direction = 2
                 cmd.ExecuteNonQuery()
 
@@ -261,9 +264,9 @@ Public Class frmFuncionarios
             Try
 
                 'CARREGANDO IMAGEM NO BANCO
-                'Dim MS As New IO.MemoryStream
-                'ImagemCarregada.Save(MS, System.Drawing.Imaging.ImageFormat.Jpeg)
-                'Dim byteArray = MS.ToArray
+                Dim MS As New IO.MemoryStream
+                ImagemCarregada.Save(MS, System.Drawing.Imaging.ImageFormat.Jpeg)
+                Dim byteArray = MS.ToArray
 
 
                 abrir()
@@ -288,7 +291,7 @@ Public Class frmFuncionarios
                 cmd.Parameters.AddWithValue("@turno", cbTurno.Text)
                 cmd.Parameters.AddWithValue("@data_contratado", dtData.Text)
                 cmd.Parameters.AddWithValue("@data_demissao", txtdtDemissao.Text)
-                ' cmd.Parameters.AddWithValue("@imagem", byteArray)
+                cmd.Parameters.AddWithValue("@imagem", byteArray)
                 cmd.Parameters.Add("@mensagem", SqlDbType.VarChar, 100).Direction = 2
                 cmd.ExecuteNonQuery()
 
@@ -443,17 +446,59 @@ Public Class frmFuncionarios
         dtData.Text = dg.CurrentRow.Cells(18).Value
         txtdtDemissao.Text = dg.CurrentRow.Cells(19).Value
 
-        'Dim tempImagem As Byte() = DirectCast(dg.CurrentRow.Cells(20).Value, Byte())
-        'If tempImagem Is Nothing Then
-        '    MessageBox.Show("Imagem não localizada", "Erro")
-        '    Exit Sub
-        'End If
-        'Dim strArquivo As String = Convert.ToString(DateTime.Now.ToFileTime())
-        'Dim fs As New FileStream(strArquivo, FileMode.CreateNew, FileAccess.Write)
-        'fs.Write(tempImagem, 0, tempImagem.Length)
-        'fs.Flush()
-        'fs.Close()
-        'ImagemCarregada = Image.FromFile(strArquivo)
-        'pbImagem.Image = ImagemCarregada
+        Dim tempImagem As Byte() = DirectCast(dg.CurrentRow.Cells(20).Value, Byte())
+        If tempImagem Is Nothing Then
+            MessageBox.Show("Imagem não localizada", "Erro")
+            Exit Sub
+        End If
+        Dim strArquivo As String = Convert.ToString(DateTime.Now.ToFileTime())
+        Dim fs As New FileStream(strArquivo, FileMode.CreateNew, FileAccess.Write)
+        fs.Write(tempImagem, 0, tempImagem.Length)
+        fs.Flush()
+        fs.Close()
+        ImagemCarregada = Image.FromFile(strArquivo)
+        pbImagem.Image = ImagemCarregada
+    End Sub
+
+    Private Sub btImagem_Click(sender As Object, e As EventArgs) Handles btImagem.Click
+        pbImagem.Visible = True
+        Using OFD As New OpenFileDialog With {.Filter = "Image File(*.jpg;*.bmp;*.gif;*.png)|*.jpg;*.bmp;*.gif;*.png"}
+
+            If OFD.ShowDialog = DialogResult.OK Then
+                ImagemCarregada = Image.FromFile(OFD.FileName)
+                pbImagem.Image = ImagemCarregada
+            End If
+        End Using
+    End Sub
+
+    Sub carregarImagem()
+
+        ' Try
+        ' 
+        Dim img As String = "https://www.buritama.sp.leg.br/imagens/parlamentares-2013-2016/sem-foto.jpg/image"
+        ' Dim img As String = My.Resources.imagesemfoto
+        Dim req As System.Net.HttpWebRequest
+        Dim resp As System.Net.HttpWebResponse
+        req = Net.WebRequest.Create(img)
+        req = req.Create(img)
+
+        resp = req.GetResponse
+
+        ImagemCarregada = New Bitmap(resp.GetResponseStream)
+        pbImagem.Image = ImagemCarregada
+        req.Abort()
+
+
+
+        ' ImagemCarregada = Image.FromFile("C:\Users\valde\OneDrive\Documentos\Visual Studio 2017\Projetos\PDV\PDV\imagens\imagesemfoto.jpg")
+        '  pbImagem.Image = My.Resources.imagesemfoto
+
+        'ImagemCarregada = Image.FromFile(\ imaagens \ imagesemfoto.jpg)
+        ' pbImagem.Image = ImagemCarregada
+
+        ' Catch ex As Exception
+        '    MsgBox("<< Erro ao ler a imagem >> " & ex.Message.ToString)
+        ' End Try
+
     End Sub
 End Class

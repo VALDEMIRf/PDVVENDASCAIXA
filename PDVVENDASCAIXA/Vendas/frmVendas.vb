@@ -1,4 +1,5 @@
 ﻿Imports System.Data.SqlClient
+Imports System.IO
 
 Public Class frmVendas
     Private Sub frmVendas_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -153,25 +154,25 @@ Public Class frmVendas
 
             '' ----------------------------------------------------------------------------
 
-            ''Dim cmd2 As New SqlCommand("pa_produtoBuscaFoto", con)
-            'Dim cmd2 As New SqlCommand("select imagem from tbProdutos where id_produto = @id_produto", con)
+            'Dim cmd2 As New SqlCommand("pa_produtoBuscaFoto", con)
+            Dim cmd2 As New SqlCommand("select imagem from tbProdutos where id_produto = @id_produto", con)
 
-            'cmd2.Parameters.AddWithValue("@id_produto", cbProduto.SelectedValue)
-            'cmd2.ExecuteNonQuery()
+            cmd2.Parameters.AddWithValue("@id_produto", cbProduto.SelectedValue)
+            cmd2.ExecuteNonQuery()
 
-            'Dim tempImagem As Byte() = DirectCast(cmd2.ExecuteScalar, Byte())
-            ''  Dim tempImagem As Byte() = DirectCast(cmd.Parameters("@imagem").Value, Byte())
-            'If tempImagem Is Nothing Then
-            '    MessageBox.Show("Imagem não localizada", "Erro")
-            '    Exit Sub
-            'End If
-            'Dim strArquivo As String = Convert.ToString(DateTime.Now.ToFileTime())
-            'Dim fs As New FileStream(strArquivo, FileMode.CreateNew, FileAccess.Write)
-            'fs.Write(tempImagem, 0, tempImagem.Length)
-            'fs.Flush()
-            'fs.Close()
+            Dim tempImagem As Byte() = DirectCast(cmd2.ExecuteScalar, Byte())
+            '  Dim tempImagem As Byte() = DirectCast(cmd.Parameters("@imagem").Value, Byte())
+            If tempImagem Is Nothing Then
+                MessageBox.Show("Imagem não localizada", "Erro")
+                Exit Sub
+            End If
+            Dim strArquivo As String = Convert.ToString(DateTime.Now.ToFileTime())
+            Dim fs As New FileStream(strArquivo, FileMode.CreateNew, FileAccess.Write)
+            fs.Write(tempImagem, 0, tempImagem.Length)
+            fs.Flush()
+            fs.Close()
 
-            'pbImagem.Image = Image.FromFile(strArquivo)
+            pbImagem.Image = Image.FromFile(strArquivo)
 
             'Dim cod_barras As String = cmd.Parameters("@codigo_barras").Value
             'txtCodBarras.Text = cod_barras

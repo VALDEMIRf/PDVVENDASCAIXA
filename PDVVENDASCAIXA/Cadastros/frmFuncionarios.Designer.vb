@@ -514,9 +514,9 @@ Partial Class frmFuncionarios
         'pbImagem
         '
         Me.pbImagem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.pbImagem.Location = New System.Drawing.Point(850, 9)
+        Me.pbImagem.Location = New System.Drawing.Point(879, 13)
         Me.pbImagem.Name = "pbImagem"
-        Me.pbImagem.Size = New System.Drawing.Size(185, 171)
+        Me.pbImagem.Size = New System.Drawing.Size(130, 130)
         Me.pbImagem.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.pbImagem.TabIndex = 110
         Me.pbImagem.TabStop = False
@@ -535,9 +535,10 @@ Partial Class frmFuncionarios
         '
         Me.btImagem.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btImagem.FlatAppearance.BorderSize = 0
+        Me.btImagem.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Teal
         Me.btImagem.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btImagem.Image = CType(resources.GetObject("btImagem.Image"), System.Drawing.Image)
-        Me.btImagem.Location = New System.Drawing.Point(989, 186)
+        Me.btImagem.Location = New System.Drawing.Point(927, 162)
         Me.btImagem.Name = "btImagem"
         Me.btImagem.Size = New System.Drawing.Size(37, 26)
         Me.btImagem.TabIndex = 14

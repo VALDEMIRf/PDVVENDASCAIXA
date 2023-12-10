@@ -102,6 +102,8 @@ Public Class frmPrincipal
 
             FormatarDG()
 
+            'totalizar()
+
         Catch ex As Exception
             MessageBox.Show("Erro ao Listar os produtos" + ex.Message.ToString)
         Finally
@@ -139,7 +141,8 @@ Public Class frmPrincipal
             total = total + lin.Cells(6).Value
         Next
 
-        lblTotal.Text = total
+        lblTotalDoDia.Text = total
+
 
     End Sub
 
@@ -159,6 +162,7 @@ Public Class frmPrincipal
 
     Private Sub frmPrincipal_Activated(sender As Object, e As EventArgs) Handles MyBase.Activated
         Listar()
+        totalizar()
     End Sub
 
     Private Sub ListarVendasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ListarVendasToolStripMenuItem.Click

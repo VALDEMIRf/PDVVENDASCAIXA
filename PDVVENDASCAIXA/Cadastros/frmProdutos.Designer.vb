@@ -24,7 +24,7 @@ Partial Class frmProdutos
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmProdutos))
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.Cadastro = New System.Windows.Forms.TabPage()
         Me.txtValorCompra = New System.Windows.Forms.TextBox()
@@ -132,7 +132,7 @@ Partial Class frmProdutos
         Me.Label13.BackColor = System.Drawing.Color.SteelBlue
         Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label13.ForeColor = System.Drawing.Color.White
-        Me.Label13.Location = New System.Drawing.Point(867, 208)
+        Me.Label13.Location = New System.Drawing.Point(840, 251)
         Me.Label13.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(127, 18)
@@ -181,7 +181,7 @@ Partial Class frmProdutos
         '
         'imgCodBar
         '
-        Me.imgCodBar.Location = New System.Drawing.Point(812, 261)
+        Me.imgCodBar.Location = New System.Drawing.Point(783, 302)
         Me.imgCodBar.Name = "imgCodBar"
         Me.imgCodBar.Size = New System.Drawing.Size(188, 50)
         Me.imgCodBar.TabIndex = 187
@@ -227,15 +227,17 @@ Partial Class frmProdutos
         Me.txtCodigo.Name = "txtCodigo"
         Me.txtCodigo.Size = New System.Drawing.Size(35, 20)
         Me.txtCodigo.TabIndex = 154
+        Me.txtCodigo.Visible = False
         '
         'btImagem
         '
         Me.btImagem.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btImagem.FlatAppearance.BorderSize = 0
+        Me.btImagem.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Teal
         Me.btImagem.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btImagem.ForeColor = System.Drawing.Color.Transparent
         Me.btImagem.Image = CType(resources.GetObject("btImagem.Image"), System.Drawing.Image)
-        Me.btImagem.Location = New System.Drawing.Point(946, 165)
+        Me.btImagem.Location = New System.Drawing.Point(874, 179)
         Me.btImagem.Margin = New System.Windows.Forms.Padding(4)
         Me.btImagem.Name = "btImagem"
         Me.btImagem.Size = New System.Drawing.Size(48, 28)
@@ -244,7 +246,7 @@ Partial Class frmProdutos
         '
         'txtCodBarras
         '
-        Me.txtCodBarras.Location = New System.Drawing.Point(812, 231)
+        Me.txtCodBarras.Location = New System.Drawing.Point(783, 274)
         Me.txtCodBarras.Margin = New System.Windows.Forms.Padding(5)
         Me.txtCodBarras.Name = "txtCodBarras"
         Me.txtCodBarras.Size = New System.Drawing.Size(187, 20)
@@ -253,10 +255,10 @@ Partial Class frmProdutos
         'pbImagem
         '
         Me.pbImagem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.pbImagem.Location = New System.Drawing.Point(799, 7)
+        Me.pbImagem.Location = New System.Drawing.Point(837, 27)
         Me.pbImagem.Margin = New System.Windows.Forms.Padding(4)
         Me.pbImagem.Name = "pbImagem"
-        Me.pbImagem.Size = New System.Drawing.Size(200, 150)
+        Me.pbImagem.Size = New System.Drawing.Size(130, 130)
         Me.pbImagem.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.pbImagem.TabIndex = 159
         Me.pbImagem.TabStop = False
@@ -386,14 +388,14 @@ Partial Class frmProdutos
         Me.dg.BackgroundColor = System.Drawing.Color.White
         Me.dg.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.dg.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dg.DefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dg.DefaultCellStyle = DataGridViewCellStyle2
         Me.dg.GridColor = System.Drawing.Color.CadetBlue
         Me.dg.Location = New System.Drawing.Point(7, 37)
         Me.dg.Margin = New System.Windows.Forms.Padding(4)
@@ -450,7 +452,6 @@ Partial Class frmProdutos
         'GroupBox1
         '
         Me.GroupBox1.Controls.Add(Me.btnNovo)
-        Me.GroupBox1.Controls.Add(Me.btSair)
         Me.GroupBox1.Controls.Add(Me.btnSalvar)
         Me.GroupBox1.Controls.Add(Me.btnEditar)
         Me.GroupBox1.Controls.Add(Me.btnExcluir)
@@ -458,7 +459,7 @@ Partial Class frmProdutos
         Me.GroupBox1.Margin = New System.Windows.Forms.Padding(4)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Padding = New System.Windows.Forms.Padding(4)
-        Me.GroupBox1.Size = New System.Drawing.Size(438, 69)
+        Me.GroupBox1.Size = New System.Drawing.Size(362, 69)
         Me.GroupBox1.TabIndex = 190
         Me.GroupBox1.TabStop = False
         '
@@ -492,7 +493,7 @@ Partial Class frmProdutos
         Me.btSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btSair.ForeColor = System.Drawing.Color.White
         Me.btSair.Image = CType(resources.GetObject("btSair.Image"), System.Drawing.Image)
-        Me.btSair.Location = New System.Drawing.Point(361, 23)
+        Me.btSair.Location = New System.Drawing.Point(933, 420)
         Me.btSair.Margin = New System.Windows.Forms.Padding(7, 6, 7, 6)
         Me.btSair.Name = "btSair"
         Me.btSair.Size = New System.Drawing.Size(73, 33)
@@ -573,6 +574,7 @@ Partial Class frmProdutos
         Me.BackColor = System.Drawing.Color.Teal
         Me.ClientSize = New System.Drawing.Size(1036, 478)
         Me.Controls.Add(Me.GroupBox1)
+        Me.Controls.Add(Me.btSair)
         Me.Controls.Add(Me.TabControl1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)

@@ -46,8 +46,10 @@ Partial Class frmVendas
         Me.txtEstoque = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.dg = New System.Windows.Forms.DataGridView()
+        Me.pbImagem = New System.Windows.Forms.PictureBox()
         Me.GroupBox1.SuspendLayout()
         CType(Me.dg, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pbImagem, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'txtValorVenda
@@ -105,7 +107,7 @@ Partial Class frmVendas
         Me.Label11.AutoSize = True
         Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label11.ForeColor = System.Drawing.Color.White
-        Me.Label11.Location = New System.Drawing.Point(699, 479)
+        Me.Label11.Location = New System.Drawing.Point(730, 516)
         Me.Label11.Margin = New System.Windows.Forms.Padding(7, 0, 7, 0)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(48, 20)
@@ -117,7 +119,7 @@ Partial Class frmVendas
         Me.lblTotal.AutoSize = True
         Me.lblTotal.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblTotal.ForeColor = System.Drawing.Color.White
-        Me.lblTotal.Location = New System.Drawing.Point(748, 480)
+        Me.lblTotal.Location = New System.Drawing.Point(779, 517)
         Me.lblTotal.Margin = New System.Windows.Forms.Padding(7, 0, 7, 0)
         Me.lblTotal.Name = "lblTotal"
         Me.lblTotal.Size = New System.Drawing.Size(14, 20)
@@ -170,7 +172,7 @@ Partial Class frmVendas
         Me.GroupBox1.Controls.Add(Me.btSair)
         Me.GroupBox1.Controls.Add(Me.btnSalvar)
         Me.GroupBox1.Controls.Add(Me.btnExcluir)
-        Me.GroupBox1.Location = New System.Drawing.Point(14, 462)
+        Me.GroupBox1.Location = New System.Drawing.Point(13, 495)
         Me.GroupBox1.Margin = New System.Windows.Forms.Padding(4)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Padding = New System.Windows.Forms.Padding(4)
@@ -325,20 +327,32 @@ Partial Class frmVendas
         Me.dg.BackgroundColor = System.Drawing.Color.White
         Me.dg.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dg.GridColor = System.Drawing.SystemColors.HotTrack
-        Me.dg.Location = New System.Drawing.Point(22, 125)
+        Me.dg.Location = New System.Drawing.Point(14, 141)
         Me.dg.Margin = New System.Windows.Forms.Padding(4)
         Me.dg.Name = "dg"
         Me.dg.ReadOnly = True
         Me.dg.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dg.Size = New System.Drawing.Size(818, 329)
+        Me.dg.Size = New System.Drawing.Size(892, 346)
         Me.dg.TabIndex = 221
+        '
+        'pbImagem
+        '
+        Me.pbImagem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.pbImagem.Location = New System.Drawing.Point(766, 18)
+        Me.pbImagem.Margin = New System.Windows.Forms.Padding(4)
+        Me.pbImagem.Name = "pbImagem"
+        Me.pbImagem.Size = New System.Drawing.Size(100, 100)
+        Me.pbImagem.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.pbImagem.TabIndex = 222
+        Me.pbImagem.TabStop = False
         '
         'frmVendas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Teal
-        Me.ClientSize = New System.Drawing.Size(863, 554)
+        Me.ClientSize = New System.Drawing.Size(974, 577)
+        Me.Controls.Add(Me.pbImagem)
         Me.Controls.Add(Me.dg)
         Me.Controls.Add(Me.txtEstoque)
         Me.Controls.Add(Me.Label3)
@@ -370,6 +384,7 @@ Partial Class frmVendas
         Me.Text = "frmVendas"
         Me.GroupBox1.ResumeLayout(False)
         CType(Me.dg, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pbImagem, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -398,4 +413,5 @@ Partial Class frmVendas
     Friend WithEvents txtEstoque As TextBox
     Friend WithEvents Label3 As Label
     Friend WithEvents dg As DataGridView
+    Friend WithEvents pbImagem As PictureBox
 End Class

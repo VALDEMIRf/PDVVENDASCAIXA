@@ -446,8 +446,10 @@
     <Content Include="imagens\boss.ico" />
     <Content Include="imagens\Button-Add32.png" />
     <Content Include="imagens\camera.png" />
+    <Content Include="imagens\carregarProdutos.png" />
     <Content Include="imagens\cash-icon.png" />
     <Content Include="imagens\categoriaProdutosdocumentation.32.png" />
+    <Content Include="imagens\cestaProdutos.png" />
     <Content Include="imagens\clear.png" />
     <Content Include="imagens\Close.gif" />
     <Content Include="imagens\Company-building.32.png" />
@@ -461,6 +463,7 @@
     <Content Include="imagens\listaprod.48.png" />
     <Content Include="imagens\logout.png" />
     <Content Include="imagens\maintenance.png" />
+    <Content Include="imagens\Newidols.ru-Shop-Cart.32.png" />
     <Content Include="imagens\pdv-logo.jpg" />
     <Content Include="imagens\People.png" />
     <Content Include="imagens\produtos.jfif" />
