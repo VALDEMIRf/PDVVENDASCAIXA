@@ -235,7 +235,7 @@ Partial Class frmProdutos
         Me.btImagem.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btImagem.ForeColor = System.Drawing.Color.Transparent
         Me.btImagem.Image = CType(resources.GetObject("btImagem.Image"), System.Drawing.Image)
-        Me.btImagem.Location = New System.Drawing.Point(942, 175)
+        Me.btImagem.Location = New System.Drawing.Point(946, 165)
         Me.btImagem.Margin = New System.Windows.Forms.Padding(4)
         Me.btImagem.Name = "btImagem"
         Me.btImagem.Size = New System.Drawing.Size(48, 28)

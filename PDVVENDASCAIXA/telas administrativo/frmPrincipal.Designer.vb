@@ -86,7 +86,7 @@ Partial Class frmPrincipal
         'CadastrosToolStripMenuItem
         '
         Me.CadastrosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ClientesToolStripMenuItem, Me.CargosToolStripMenuItem, Me.FuncionáriosToolStripMenuItem, Me.FornecedoresToolStripMenuItem, Me.EmpresaToolStripMenuItem, Me.ProdutosToolStripMenuItem})
-        Me.CadastrosToolStripMenuItem.ForeColor = System.Drawing.Color.White
+        Me.CadastrosToolStripMenuItem.ForeColor = System.Drawing.Color.Black
         Me.CadastrosToolStripMenuItem.Image = CType(resources.GetObject("CadastrosToolStripMenuItem.Image"), System.Drawing.Image)
         Me.CadastrosToolStripMenuItem.Name = "CadastrosToolStripMenuItem"
         Me.CadastrosToolStripMenuItem.Size = New System.Drawing.Size(93, 24)
@@ -159,7 +159,7 @@ Partial Class frmPrincipal
         'EstoqueToolStripMenuItem
         '
         Me.EstoqueToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EntradaSaídaToolStripMenuItem, Me.ConsultasToolStripMenuItem, Me.NíveisBaixoToolStripMenuItem})
-        Me.EstoqueToolStripMenuItem.ForeColor = System.Drawing.Color.White
+        Me.EstoqueToolStripMenuItem.ForeColor = System.Drawing.Color.Black
         Me.EstoqueToolStripMenuItem.Image = CType(resources.GetObject("EstoqueToolStripMenuItem.Image"), System.Drawing.Image)
         Me.EstoqueToolStripMenuItem.Name = "EstoqueToolStripMenuItem"
         Me.EstoqueToolStripMenuItem.Size = New System.Drawing.Size(82, 24)
@@ -189,7 +189,7 @@ Partial Class frmPrincipal
         'MovimentaçãoToolStripMenuItem
         '
         Me.MovimentaçãoToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.OrdemDeServiçoToolStripMenuItem, Me.TiposDeServiçosToolStripMenuItem, Me.OrçamentoToolStripMenuItem})
-        Me.MovimentaçãoToolStripMenuItem.ForeColor = System.Drawing.Color.White
+        Me.MovimentaçãoToolStripMenuItem.ForeColor = System.Drawing.Color.Black
         Me.MovimentaçãoToolStripMenuItem.Image = CType(resources.GetObject("MovimentaçãoToolStripMenuItem.Image"), System.Drawing.Image)
         Me.MovimentaçãoToolStripMenuItem.Name = "MovimentaçãoToolStripMenuItem"
         Me.MovimentaçãoToolStripMenuItem.Size = New System.Drawing.Size(119, 24)
@@ -217,7 +217,7 @@ Partial Class frmPrincipal
         'VendasToolStripMenuItem
         '
         Me.VendasToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PDVRegistrarVendaToolStripMenuItem, Me.ListarVendasToolStripMenuItem, Me.SangriaToolStripMenuItem})
-        Me.VendasToolStripMenuItem.ForeColor = System.Drawing.Color.White
+        Me.VendasToolStripMenuItem.ForeColor = System.Drawing.Color.Black
         Me.VendasToolStripMenuItem.Image = CType(resources.GetObject("VendasToolStripMenuItem.Image"), System.Drawing.Image)
         Me.VendasToolStripMenuItem.Name = "VendasToolStripMenuItem"
         Me.VendasToolStripMenuItem.Size = New System.Drawing.Size(78, 24)
@@ -247,7 +247,7 @@ Partial Class frmPrincipal
         'RelatóriosToolStripMenuItem
         '
         Me.RelatóriosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CatálogoDeProdutosToolStripMenuItem, Me.RelatórioDoCaixaToolStripMenuItem, Me.EntradaSaídaToolStripMenuItem1, Me.NíveisDoEstoqueToolStripMenuItem, Me.ProdutosMaisVendidosToolStripMenuItem, Me.VendasPorFuncionárioToolStripMenuItem})
-        Me.RelatóriosToolStripMenuItem.ForeColor = System.Drawing.Color.White
+        Me.RelatóriosToolStripMenuItem.ForeColor = System.Drawing.Color.Black
         Me.RelatóriosToolStripMenuItem.Image = CType(resources.GetObject("RelatóriosToolStripMenuItem.Image"), System.Drawing.Image)
         Me.RelatóriosToolStripMenuItem.Name = "RelatóriosToolStripMenuItem"
         Me.RelatóriosToolStripMenuItem.Size = New System.Drawing.Size(93, 24)
@@ -294,7 +294,7 @@ Partial Class frmPrincipal
         'SairToolStripMenuItem
         '
         Me.SairToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SairToolStripMenuItem1, Me.LogoffToolStripMenuItem})
-        Me.SairToolStripMenuItem.ForeColor = System.Drawing.Color.White
+        Me.SairToolStripMenuItem.ForeColor = System.Drawing.Color.Black
         Me.SairToolStripMenuItem.Image = CType(resources.GetObject("SairToolStripMenuItem.Image"), System.Drawing.Image)
         Me.SairToolStripMenuItem.Name = "SairToolStripMenuItem"
         Me.SairToolStripMenuItem.Size = New System.Drawing.Size(59, 24)
@@ -304,13 +304,13 @@ Partial Class frmPrincipal
         '
         Me.SairToolStripMenuItem1.Image = CType(resources.GetObject("SairToolStripMenuItem1.Image"), System.Drawing.Image)
         Me.SairToolStripMenuItem1.Name = "SairToolStripMenuItem1"
-        Me.SairToolStripMenuItem1.Size = New System.Drawing.Size(112, 24)
+        Me.SairToolStripMenuItem1.Size = New System.Drawing.Size(180, 24)
         Me.SairToolStripMenuItem1.Text = "Sair"
         '
         'LogoffToolStripMenuItem
         '
         Me.LogoffToolStripMenuItem.Name = "LogoffToolStripMenuItem"
-        Me.LogoffToolStripMenuItem.Size = New System.Drawing.Size(112, 24)
+        Me.LogoffToolStripMenuItem.Size = New System.Drawing.Size(180, 24)
         Me.LogoffToolStripMenuItem.Text = "Logoff"
         '
         'lblUsuario

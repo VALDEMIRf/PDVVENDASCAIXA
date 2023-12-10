@@ -664,7 +664,7 @@ Partial Class frmServicos
         '
         'txtBuscar
         '
-        Me.txtBuscar.Location = New System.Drawing.Point(566, 21)
+        Me.txtBuscar.Location = New System.Drawing.Point(247, 21)
         Me.txtBuscar.Margin = New System.Windows.Forms.Padding(7, 6, 7, 6)
         Me.txtBuscar.Name = "txtBuscar"
         Me.txtBuscar.Size = New System.Drawing.Size(182, 20)
@@ -673,10 +673,10 @@ Partial Class frmServicos
         'dtData
         '
         Me.dtData.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtData.Location = New System.Drawing.Point(338, 21)
+        Me.dtData.Location = New System.Drawing.Point(247, 21)
         Me.dtData.Margin = New System.Windows.Forms.Padding(4)
         Me.dtData.Name = "dtData"
-        Me.dtData.Size = New System.Drawing.Size(208, 20)
+        Me.dtData.Size = New System.Drawing.Size(182, 20)
         Me.dtData.TabIndex = 198
         '
         'rbData
@@ -684,7 +684,7 @@ Partial Class frmServicos
         Me.rbData.AutoSize = True
         Me.rbData.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.rbData.ForeColor = System.Drawing.Color.White
-        Me.rbData.Location = New System.Drawing.Point(169, 16)
+        Me.rbData.Location = New System.Drawing.Point(92, 18)
         Me.rbData.Margin = New System.Windows.Forms.Padding(4)
         Me.rbData.Name = "rbData"
         Me.rbData.Size = New System.Drawing.Size(57, 22)
@@ -698,7 +698,7 @@ Partial Class frmServicos
         Me.rbCliente.AutoSize = True
         Me.rbCliente.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.rbCliente.ForeColor = System.Drawing.Color.White
-        Me.rbCliente.Location = New System.Drawing.Point(245, 16)
+        Me.rbCliente.Location = New System.Drawing.Point(165, 18)
         Me.rbCliente.Margin = New System.Windows.Forms.Padding(4)
         Me.rbCliente.Name = "rbCliente"
         Me.rbCliente.Size = New System.Drawing.Size(71, 22)
@@ -712,12 +712,12 @@ Partial Class frmServicos
         Me.Label24.AutoSize = True
         Me.Label24.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label24.ForeColor = System.Drawing.Color.White
-        Me.Label24.Location = New System.Drawing.Point(31, 15)
+        Me.Label24.Location = New System.Drawing.Point(21, 19)
         Me.Label24.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label24.Name = "Label24"
-        Me.Label24.Size = New System.Drawing.Size(127, 18)
+        Me.Label24.Size = New System.Drawing.Size(59, 18)
         Me.Label24.TabIndex = 194
-        Me.Label24.Text = "Buscar por nome:"
+        Me.Label24.Text = "Buscar:"
         '
         'dgvServico
         '
