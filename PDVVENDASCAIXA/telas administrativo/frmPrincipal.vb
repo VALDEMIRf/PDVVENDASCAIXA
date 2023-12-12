@@ -169,4 +169,9 @@ Public Class frmPrincipal
         Dim form = New frmListaVendas
         form.ShowDialog()
     End Sub
+
+    Private Sub CatálogoDeProdutosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CatálogoDeProdutosToolStripMenuItem.Click
+        Dim form = New frmRelProdutos
+        form.ShowDialog()
+    End Sub
 End Class
