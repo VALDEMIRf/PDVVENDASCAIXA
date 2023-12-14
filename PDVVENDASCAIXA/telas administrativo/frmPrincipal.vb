@@ -174,4 +174,9 @@ Public Class frmPrincipal
         Dim form = New frmRelProdutos
         form.ShowDialog()
     End Sub
+
+    Private Sub FiltroDeVendasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles FiltroDeVendasToolStripMenuItem.Click
+        Dim form = New frmRelVenda
+        form.ShowDialog()
+    End Sub
 End Class

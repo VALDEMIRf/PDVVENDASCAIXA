@@ -67,6 +67,7 @@ Partial Class frmPrincipal
         Me.Label2 = New System.Windows.Forms.Label()
         Me.lblTotalDoDia = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
+        Me.FiltroDeVendasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.dg, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -248,7 +249,7 @@ Partial Class frmPrincipal
         '
         'RelatóriosToolStripMenuItem
         '
-        Me.RelatóriosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CatálogoDeProdutosToolStripMenuItem, Me.RelatórioDoCaixaToolStripMenuItem, Me.EntradaSaídaToolStripMenuItem1, Me.NíveisDoEstoqueToolStripMenuItem, Me.ProdutosMaisVendidosToolStripMenuItem, Me.VendasPorFuncionárioToolStripMenuItem})
+        Me.RelatóriosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CatálogoDeProdutosToolStripMenuItem, Me.RelatórioDoCaixaToolStripMenuItem, Me.EntradaSaídaToolStripMenuItem1, Me.NíveisDoEstoqueToolStripMenuItem, Me.ProdutosMaisVendidosToolStripMenuItem, Me.VendasPorFuncionárioToolStripMenuItem, Me.FiltroDeVendasToolStripMenuItem})
         Me.RelatóriosToolStripMenuItem.ForeColor = System.Drawing.Color.Black
         Me.RelatóriosToolStripMenuItem.Image = CType(resources.GetObject("RelatóriosToolStripMenuItem.Image"), System.Drawing.Image)
         Me.RelatóriosToolStripMenuItem.Name = "RelatóriosToolStripMenuItem"
@@ -420,6 +421,13 @@ Partial Class frmPrincipal
         Me.Label4.TabIndex = 225
         Me.Label4.Text = "Total Vendido:"
         '
+        'FiltroDeVendasToolStripMenuItem
+        '
+        Me.FiltroDeVendasToolStripMenuItem.Image = CType(resources.GetObject("FiltroDeVendasToolStripMenuItem.Image"), System.Drawing.Image)
+        Me.FiltroDeVendasToolStripMenuItem.Name = "FiltroDeVendasToolStripMenuItem"
+        Me.FiltroDeVendasToolStripMenuItem.Size = New System.Drawing.Size(211, 24)
+        Me.FiltroDeVendasToolStripMenuItem.Text = "Filtro de Vendas"
+        '
         'frmPrincipal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -491,4 +499,5 @@ Partial Class frmPrincipal
     Friend WithEvents Label2 As Label
     Friend WithEvents lblTotalDoDia As Label
     Friend WithEvents Label4 As Label
+    Friend WithEvents FiltroDeVendasToolStripMenuItem As ToolStripMenuItem
 End Class

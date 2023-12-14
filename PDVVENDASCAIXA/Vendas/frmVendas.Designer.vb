@@ -381,7 +381,7 @@ Partial Class frmVendas
         Me.MinimizeBox = False
         Me.Name = "frmVendas"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "frmVendas"
+        Me.Text = "Vendas - PDV"
         Me.GroupBox1.ResumeLayout(False)
         CType(Me.dg, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pbImagem, System.ComponentModel.ISupportInitialize).EndInit()

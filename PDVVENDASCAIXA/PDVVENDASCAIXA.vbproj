@@ -164,6 +164,11 @@
     <Compile Include="Movimentacao\frmUnidadeMedidas.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="PDVDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PDVDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="ProdutosDataSet.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -207,6 +212,11 @@
     </Compile>
     <Compile Include="telas administrativo\frmPrincipal.vb">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VendasDataSet1.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>VendasDataSet1.xsd</DependentUpon>
     </Compile>
     <Compile Include="Vendas\frmListaVendas.Designer.vb">
       <DependentUpon>frmListaVendas.vb</DependentUpon>
@@ -259,6 +269,7 @@
       <DependentUpon>frmRelVenda.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Relatorios\rel\relProdutos1.rdlc" />
+    <EmbeddedResource Include="Relatorios\rel\relVenda.rdlc" />
     <EmbeddedResource Include="telas administrativo\frmLogin.resx">
       <DependentUpon>frmLogin.vb</DependentUpon>
     </EmbeddedResource>
@@ -456,6 +467,17 @@
     </None>
     <None Include="App.config" />
     <None Include="packages.config" />
+    <None Include="PDVDataSet.xsc">
+      <DependentUpon>PDVDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="PDVDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PDVDataSet.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="PDVDataSet.xss">
+      <DependentUpon>PDVDataSet.xsd</DependentUpon>
+    </None>
     <None Include="ProdutosDataSet.xsc">
       <DependentUpon>ProdutosDataSet.xsd</DependentUpon>
     </None>
@@ -466,6 +488,17 @@
     </None>
     <None Include="ProdutosDataSet.xss">
       <DependentUpon>ProdutosDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="VendasDataSet1.xsc">
+      <DependentUpon>VendasDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="VendasDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>VendasDataSet1.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="VendasDataSet1.xss">
+      <DependentUpon>VendasDataSet1.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>

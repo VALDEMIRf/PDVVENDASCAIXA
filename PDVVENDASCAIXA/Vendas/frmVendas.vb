@@ -477,14 +477,14 @@ Public Class frmVendas
 
             Dim num As Integer = cmd.Parameters("@num_vendas").Value
 
-            Dim hora As String = Now.Second
-            'Dim numAleatorio As Random = New Random()
-            ' Dim valorInteiro As Integer = numAleatorio.Next(10000000)
+            ' Dim hora As String = Now.Second
+            Dim numAleatorio As Random = New Random()
+            Dim valorInteiro As Integer = numAleatorio.Next(10000000)
             Dim num_final As Integer
             num_final = num + 1
 
             Dim num_pers As String
-            num_pers = num_final.ToString + hora
+            num_pers = num_final.ToString + valorInteiro
 
             ' txtNum.Text = valorInteiro.ToString()
             txtNum.Text = CStr(num_pers)
