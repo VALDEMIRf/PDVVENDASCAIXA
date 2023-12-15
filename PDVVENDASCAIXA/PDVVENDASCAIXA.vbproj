@@ -164,6 +164,11 @@
     <Compile Include="Movimentacao\frmUnidadeMedidas.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="ORDEMSERVICODataSet1.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ORDEMSERVICODataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="PDVDataSet.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -184,6 +189,12 @@
       <DependentUpon>frmRelProdutos.vb</DependentUpon>
     </Compile>
     <Compile Include="Relatorios\frmRelProdutos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Relatorios\frmRelServicos.Designer.vb">
+      <DependentUpon>frmRelServicos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Relatorios\frmRelServicos.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Relatorios\frmRelVenda.Designer.vb">
@@ -274,11 +285,15 @@
     <EmbeddedResource Include="Relatorios\frmRelProdutos.resx">
       <DependentUpon>frmRelProdutos.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Relatorios\frmRelServicos.resx">
+      <DependentUpon>frmRelServicos.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Relatorios\frmRelVenda.resx">
       <DependentUpon>frmRelVenda.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Relatorios\rel\relComprovante.rdlc" />
     <EmbeddedResource Include="Relatorios\rel\relProdutos1.rdlc" />
+    <EmbeddedResource Include="Relatorios\rel\relServicos.rdlc" />
     <EmbeddedResource Include="Relatorios\rel\relVenda.rdlc" />
     <EmbeddedResource Include="telas administrativo\frmLogin.resx">
       <DependentUpon>frmLogin.vb</DependentUpon>
@@ -476,6 +491,17 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="App.config" />
+    <None Include="ORDEMSERVICODataSet1.xsc">
+      <DependentUpon>ORDEMSERVICODataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="ORDEMSERVICODataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ORDEMSERVICODataSet1.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ORDEMSERVICODataSet1.xss">
+      <DependentUpon>ORDEMSERVICODataSet1.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="PDVDataSet.xsc">
       <DependentUpon>PDVDataSet.xsd</DependentUpon>

@@ -54,6 +54,7 @@ Partial Class frmPrincipal
         Me.NíveisDoEstoqueToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ProdutosMaisVendidosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.VendasPorFuncionárioToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.FiltroDeVendasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SairToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SairToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.LogoffToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -67,7 +68,7 @@ Partial Class frmPrincipal
         Me.Label2 = New System.Windows.Forms.Label()
         Me.lblTotalDoDia = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.FiltroDeVendasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ServiçosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.dg, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -249,7 +250,7 @@ Partial Class frmPrincipal
         '
         'RelatóriosToolStripMenuItem
         '
-        Me.RelatóriosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CatálogoDeProdutosToolStripMenuItem, Me.RelatórioDoCaixaToolStripMenuItem, Me.EntradaSaídaToolStripMenuItem1, Me.NíveisDoEstoqueToolStripMenuItem, Me.ProdutosMaisVendidosToolStripMenuItem, Me.VendasPorFuncionárioToolStripMenuItem, Me.FiltroDeVendasToolStripMenuItem})
+        Me.RelatóriosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CatálogoDeProdutosToolStripMenuItem, Me.RelatórioDoCaixaToolStripMenuItem, Me.EntradaSaídaToolStripMenuItem1, Me.NíveisDoEstoqueToolStripMenuItem, Me.ProdutosMaisVendidosToolStripMenuItem, Me.VendasPorFuncionárioToolStripMenuItem, Me.FiltroDeVendasToolStripMenuItem, Me.ServiçosToolStripMenuItem})
         Me.RelatóriosToolStripMenuItem.ForeColor = System.Drawing.Color.Black
         Me.RelatóriosToolStripMenuItem.Image = CType(resources.GetObject("RelatóriosToolStripMenuItem.Image"), System.Drawing.Image)
         Me.RelatóriosToolStripMenuItem.Name = "RelatóriosToolStripMenuItem"
@@ -293,6 +294,13 @@ Partial Class frmPrincipal
         Me.VendasPorFuncionárioToolStripMenuItem.Name = "VendasPorFuncionárioToolStripMenuItem"
         Me.VendasPorFuncionárioToolStripMenuItem.Size = New System.Drawing.Size(211, 24)
         Me.VendasPorFuncionárioToolStripMenuItem.Text = "Vendas por Funcionário"
+        '
+        'FiltroDeVendasToolStripMenuItem
+        '
+        Me.FiltroDeVendasToolStripMenuItem.Image = CType(resources.GetObject("FiltroDeVendasToolStripMenuItem.Image"), System.Drawing.Image)
+        Me.FiltroDeVendasToolStripMenuItem.Name = "FiltroDeVendasToolStripMenuItem"
+        Me.FiltroDeVendasToolStripMenuItem.Size = New System.Drawing.Size(211, 24)
+        Me.FiltroDeVendasToolStripMenuItem.Text = "Filtro de Vendas"
         '
         'SairToolStripMenuItem
         '
@@ -421,12 +429,12 @@ Partial Class frmPrincipal
         Me.Label4.TabIndex = 225
         Me.Label4.Text = "Total Vendido:"
         '
-        'FiltroDeVendasToolStripMenuItem
+        'ServiçosToolStripMenuItem
         '
-        Me.FiltroDeVendasToolStripMenuItem.Image = CType(resources.GetObject("FiltroDeVendasToolStripMenuItem.Image"), System.Drawing.Image)
-        Me.FiltroDeVendasToolStripMenuItem.Name = "FiltroDeVendasToolStripMenuItem"
-        Me.FiltroDeVendasToolStripMenuItem.Size = New System.Drawing.Size(211, 24)
-        Me.FiltroDeVendasToolStripMenuItem.Text = "Filtro de Vendas"
+        Me.ServiçosToolStripMenuItem.Image = CType(resources.GetObject("ServiçosToolStripMenuItem.Image"), System.Drawing.Image)
+        Me.ServiçosToolStripMenuItem.Name = "ServiçosToolStripMenuItem"
+        Me.ServiçosToolStripMenuItem.Size = New System.Drawing.Size(211, 24)
+        Me.ServiçosToolStripMenuItem.Text = "Serviços"
         '
         'frmPrincipal
         '
@@ -500,4 +508,5 @@ Partial Class frmPrincipal
     Friend WithEvents lblTotalDoDia As Label
     Friend WithEvents Label4 As Label
     Friend WithEvents FiltroDeVendasToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ServiçosToolStripMenuItem As ToolStripMenuItem
 End Class

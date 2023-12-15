@@ -179,4 +179,9 @@ Public Class frmPrincipal
         Dim form = New frmRelVenda
         form.ShowDialog()
     End Sub
+
+    Private Sub ServiçosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ServiçosToolStripMenuItem.Click
+        Dim form = New frmRelServicos
+        form.ShowDialog()
+    End Sub
 End Class
