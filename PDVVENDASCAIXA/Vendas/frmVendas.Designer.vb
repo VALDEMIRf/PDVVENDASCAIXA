@@ -35,6 +35,7 @@ Partial Class frmVendas
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.btRel = New System.Windows.Forms.Button()
         Me.btnNovo = New System.Windows.Forms.Button()
         Me.btSair = New System.Windows.Forms.Button()
         Me.btnSalvar = New System.Windows.Forms.Button()
@@ -47,6 +48,8 @@ Partial Class frmVendas
         Me.Label3 = New System.Windows.Forms.Label()
         Me.dg = New System.Windows.Forms.DataGridView()
         Me.pbImagem = New System.Windows.Forms.PictureBox()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         CType(Me.dg, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pbImagem, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -55,7 +58,7 @@ Partial Class frmVendas
         'txtValorVenda
         '
         Me.txtValorVenda.Enabled = False
-        Me.txtValorVenda.Location = New System.Drawing.Point(308, 91)
+        Me.txtValorVenda.Location = New System.Drawing.Point(338, 92)
         Me.txtValorVenda.Name = "txtValorVenda"
         Me.txtValorVenda.Size = New System.Drawing.Size(90, 23)
         Me.txtValorVenda.TabIndex = 198
@@ -107,7 +110,7 @@ Partial Class frmVendas
         Me.Label11.AutoSize = True
         Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label11.ForeColor = System.Drawing.Color.White
-        Me.Label11.Location = New System.Drawing.Point(730, 516)
+        Me.Label11.Location = New System.Drawing.Point(759, 512)
         Me.Label11.Margin = New System.Windows.Forms.Padding(7, 0, 7, 0)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(48, 20)
@@ -119,7 +122,7 @@ Partial Class frmVendas
         Me.lblTotal.AutoSize = True
         Me.lblTotal.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblTotal.ForeColor = System.Drawing.Color.White
-        Me.lblTotal.Location = New System.Drawing.Point(779, 517)
+        Me.lblTotal.Location = New System.Drawing.Point(853, 511)
         Me.lblTotal.Margin = New System.Windows.Forms.Padding(7, 0, 7, 0)
         Me.lblTotal.Name = "lblTotal"
         Me.lblTotal.Size = New System.Drawing.Size(14, 20)
@@ -168,6 +171,7 @@ Partial Class frmVendas
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.btRel)
         Me.GroupBox1.Controls.Add(Me.btnNovo)
         Me.GroupBox1.Controls.Add(Me.btSair)
         Me.GroupBox1.Controls.Add(Me.btnSalvar)
@@ -176,9 +180,29 @@ Partial Class frmVendas
         Me.GroupBox1.Margin = New System.Windows.Forms.Padding(4)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Padding = New System.Windows.Forms.Padding(4)
-        Me.GroupBox1.Size = New System.Drawing.Size(371, 69)
+        Me.GroupBox1.Size = New System.Drawing.Size(566, 69)
         Me.GroupBox1.TabIndex = 214
         Me.GroupBox1.TabStop = False
+        '
+        'btRel
+        '
+        Me.btRel.BackColor = System.Drawing.Color.Transparent
+        Me.btRel.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btRel.FlatAppearance.BorderSize = 0
+        Me.btRel.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Azure
+        Me.btRel.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
+        Me.btRel.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btRel.ForeColor = System.Drawing.Color.White
+        Me.btRel.Image = CType(resources.GetObject("btRel.Image"), System.Drawing.Image)
+        Me.btRel.Location = New System.Drawing.Point(304, 9)
+        Me.btRel.Margin = New System.Windows.Forms.Padding(7, 6, 7, 6)
+        Me.btRel.Name = "btRel"
+        Me.btRel.Size = New System.Drawing.Size(162, 52)
+        Me.btRel.TabIndex = 166
+        Me.btRel.Text = "Comprovante"
+        Me.btRel.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btRel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btRel.UseVisualStyleBackColor = False
         '
         'btnNovo
         '
@@ -210,7 +234,7 @@ Partial Class frmVendas
         Me.btSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btSair.ForeColor = System.Drawing.Color.White
         Me.btSair.Image = CType(resources.GetObject("btSair.Image"), System.Drawing.Image)
-        Me.btSair.Location = New System.Drawing.Point(294, 21)
+        Me.btSair.Location = New System.Drawing.Point(482, 19)
         Me.btSair.Margin = New System.Windows.Forms.Padding(7, 6, 7, 6)
         Me.btSair.Name = "btSair"
         Me.btSair.Size = New System.Drawing.Size(73, 33)
@@ -332,13 +356,13 @@ Partial Class frmVendas
         Me.dg.Name = "dg"
         Me.dg.ReadOnly = True
         Me.dg.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dg.Size = New System.Drawing.Size(892, 346)
+        Me.dg.Size = New System.Drawing.Size(930, 346)
         Me.dg.TabIndex = 221
         '
         'pbImagem
         '
         Me.pbImagem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.pbImagem.Location = New System.Drawing.Point(766, 18)
+        Me.pbImagem.Location = New System.Drawing.Point(818, 18)
         Me.pbImagem.Margin = New System.Windows.Forms.Padding(4)
         Me.pbImagem.Name = "pbImagem"
         Me.pbImagem.Size = New System.Drawing.Size(100, 100)
@@ -346,12 +370,36 @@ Partial Class frmVendas
         Me.pbImagem.TabIndex = 222
         Me.pbImagem.TabStop = False
         '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.ForeColor = System.Drawing.Color.White
+        Me.Label9.Location = New System.Drawing.Point(310, 95)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(26, 17)
+        Me.Label9.TabIndex = 223
+        Me.Label9.Text = "R$"
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.ForeColor = System.Drawing.Color.White
+        Me.Label5.Location = New System.Drawing.Point(826, 513)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(26, 17)
+        Me.Label5.TabIndex = 224
+        Me.Label5.Text = "R$"
+        '
         'frmVendas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Teal
         Me.ClientSize = New System.Drawing.Size(974, 577)
+        Me.Controls.Add(Me.Label5)
+        Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.pbImagem)
         Me.Controls.Add(Me.dg)
         Me.Controls.Add(Me.txtEstoque)
@@ -414,4 +462,7 @@ Partial Class frmVendas
     Friend WithEvents Label3 As Label
     Friend WithEvents dg As DataGridView
     Friend WithEvents pbImagem As PictureBox
+    Friend WithEvents btRel As Button
+    Friend WithEvents Label9 As Label
+    Friend WithEvents Label5 As Label
 End Class

@@ -13,6 +13,7 @@ Public Class frmVendas
 
 
         btnExcluir.Enabled = False
+        btRel.Enabled = False
         totalizar()
     End Sub
     Private Sub Listar()
@@ -82,7 +83,7 @@ Public Class frmVendas
         txtNum.Text = ""
         txtQuantidade.Text = "0"
         txtBuscar.Text = ""
-
+        btRel.Enabled = False
     End Sub
 
     Sub CarregarProdutos()
@@ -140,8 +141,9 @@ Public Class frmVendas
             abrir()
             cmd.CommandType = 4
             cmd.Parameters.AddWithValue("@id_produto", cbProduto.SelectedValue)
-            cmd.Parameters.Add("@valor_venda", SqlDbType.Decimal).Direction = 2
             cmd.Parameters.Add("@quant", SqlDbType.Int).Direction = 2
+            cmd.Parameters.Add("@valor_venda", SqlDbType.Decimal).Direction = 2
+
             'cmd.Parameters.Add("@quant_vendida", SqlDbType.Int).Direction = 2
             'cmd.Parameters.Add("@codigo_barras", SqlDbType.VarChar, 100).Direction = 2
             cmd.ExecuteNonQuery()
@@ -267,6 +269,8 @@ Public Class frmVendas
                 txtNum.Enabled = False
                 txtQuantidade.Text = ""
 
+                btRel.Enabled = True
+
             Catch ex As Exception
                 MessageBox.Show("Erro ao salvar os dados" + ex.Message.ToString)
             Finally
@@ -389,6 +393,7 @@ Public Class frmVendas
     Private Sub dg_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dg.CellClick
 
         btnExcluir.Enabled = True
+        btRel.Enabled = True
         btnSalvar.Enabled = True
         cbProduto.Enabled = True
 
@@ -497,4 +502,17 @@ Public Class frmVendas
 
 
     End Sub
+
+    Private Sub btRel_Click(sender As Object, e As EventArgs) Handles btRel.Click
+        If txtNum.Text = "" Then
+            MsgBox("Selecione uma venda na tabela!!!")
+            Exit Sub
+        End If
+
+        Dim num As String
+        num = txtNum.Text
+        Dim form = New frmRelComprovante(num)
+        form.ShowDialog()
+    End Sub
+
 End Class

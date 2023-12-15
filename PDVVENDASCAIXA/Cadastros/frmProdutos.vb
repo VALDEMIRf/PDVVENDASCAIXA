@@ -363,8 +363,10 @@ Public Class frmProdutos
         cbCategoria.Text = dg.CurrentRow.Cells(4).Value
         cbUnidade.Text = dg.CurrentRow.Cells(5).Value
         txtQuantidade.Text = dg.CurrentRow.Cells(6).Value
-        txtValorCompra.Text = CInt(dg.CurrentRow.Cells(7).Value) '.ToString("R$ #,###.00")
-        txtValorVenda.Text = CInt(dg.CurrentRow.Cells(8).Value) '.ToString("R$ #,###.00")
+        txtValorCompra.Text = dg.CurrentRow.Cells(7).Value '.ToString("R$ #,###.00")
+        txtValorVenda.Text = dg.CurrentRow.Cells(8).Value '.ToString("R$ #,###.00")
+        ' txtValorCompra.Text = CInt(dg.CurrentRow.Cells(7).Value) '.ToString("R$ #,###.00")
+        '  txtValorVenda.Text = CInt(dg.CurrentRow.Cells(8).Value) '.ToString("R$ #,###.00")
 
         Dim tempImagem As Byte() = DirectCast(dg.CurrentRow.Cells(13).Value, Byte())
         If tempImagem Is Nothing Then

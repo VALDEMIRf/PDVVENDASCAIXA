@@ -59,11 +59,13 @@ Partial Class frmProdutos
         Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.btnNovo = New System.Windows.Forms.Button()
-        Me.btSair = New System.Windows.Forms.Button()
         Me.btnSalvar = New System.Windows.Forms.Button()
         Me.btnEditar = New System.Windows.Forms.Button()
         Me.btnExcluir = New System.Windows.Forms.Button()
+        Me.btSair = New System.Windows.Forms.Button()
         Me.errErro = New System.Windows.Forms.ErrorProvider(Me.components)
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.Label14 = New System.Windows.Forms.Label()
         Me.TabControl1.SuspendLayout()
         Me.Cadastro.SuspendLayout()
         CType(Me.imgCodBar, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -87,6 +89,8 @@ Partial Class frmProdutos
         'Cadastro
         '
         Me.Cadastro.BackColor = System.Drawing.Color.Teal
+        Me.Cadastro.Controls.Add(Me.Label14)
+        Me.Cadastro.Controls.Add(Me.Label9)
         Me.Cadastro.Controls.Add(Me.txtValorCompra)
         Me.Cadastro.Controls.Add(Me.Label13)
         Me.Cadastro.Controls.Add(Me.cbUnidade)
@@ -121,9 +125,9 @@ Partial Class frmProdutos
         'txtValorCompra
         '
         Me.txtValorCompra.Enabled = False
-        Me.txtValorCompra.Location = New System.Drawing.Point(657, 69)
+        Me.txtValorCompra.Location = New System.Drawing.Point(682, 69)
         Me.txtValorCompra.Name = "txtValorCompra"
-        Me.txtValorCompra.Size = New System.Drawing.Size(90, 20)
+        Me.txtValorCompra.Size = New System.Drawing.Size(58, 20)
         Me.txtValorCompra.TabIndex = 7
         '
         'Label13
@@ -232,12 +236,13 @@ Partial Class frmProdutos
         'btImagem
         '
         Me.btImagem.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btImagem.FlatAppearance.BorderColor = System.Drawing.Color.Teal
         Me.btImagem.FlatAppearance.BorderSize = 0
         Me.btImagem.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Teal
         Me.btImagem.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btImagem.ForeColor = System.Drawing.Color.Transparent
         Me.btImagem.Image = CType(resources.GetObject("btImagem.Image"), System.Drawing.Image)
-        Me.btImagem.Location = New System.Drawing.Point(874, 179)
+        Me.btImagem.Location = New System.Drawing.Point(876, 165)
         Me.btImagem.Margin = New System.Windows.Forms.Padding(4)
         Me.btImagem.Name = "btImagem"
         Me.btImagem.Size = New System.Drawing.Size(48, 28)
@@ -326,11 +331,11 @@ Partial Class frmProdutos
         '
         'txtValorVenda
         '
-        Me.txtValorVenda.Location = New System.Drawing.Point(657, 117)
+        Me.txtValorVenda.Location = New System.Drawing.Point(682, 117)
         Me.txtValorVenda.Margin = New System.Windows.Forms.Padding(5)
         Me.txtValorVenda.MaxLength = 16
         Me.txtValorVenda.Name = "txtValorVenda"
-        Me.txtValorVenda.Size = New System.Drawing.Size(90, 20)
+        Me.txtValorVenda.Size = New System.Drawing.Size(58, 20)
         Me.txtValorVenda.TabIndex = 8
         '
         'Label7
@@ -350,7 +355,7 @@ Partial Class frmProdutos
         Me.txtQuantidade.Location = New System.Drawing.Point(657, 28)
         Me.txtQuantidade.Margin = New System.Windows.Forms.Padding(5)
         Me.txtQuantidade.Name = "txtQuantidade"
-        Me.txtQuantidade.Size = New System.Drawing.Size(89, 20)
+        Me.txtQuantidade.Size = New System.Drawing.Size(58, 20)
         Me.txtQuantidade.TabIndex = 6
         Me.txtQuantidade.Text = "0"
         '
@@ -483,26 +488,6 @@ Partial Class frmProdutos
         Me.btnNovo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnNovo.UseVisualStyleBackColor = False
         '
-        'btSair
-        '
-        Me.btSair.BackColor = System.Drawing.Color.Transparent
-        Me.btSair.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btSair.FlatAppearance.BorderSize = 0
-        Me.btSair.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Azure
-        Me.btSair.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
-        Me.btSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btSair.ForeColor = System.Drawing.Color.White
-        Me.btSair.Image = CType(resources.GetObject("btSair.Image"), System.Drawing.Image)
-        Me.btSair.Location = New System.Drawing.Point(933, 420)
-        Me.btSair.Margin = New System.Windows.Forms.Padding(7, 6, 7, 6)
-        Me.btSair.Name = "btSair"
-        Me.btSair.Size = New System.Drawing.Size(73, 33)
-        Me.btSair.TabIndex = 165
-        Me.btSair.Text = "Sair"
-        Me.btSair.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.btSair.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btSair.UseVisualStyleBackColor = False
-        '
         'btnSalvar
         '
         Me.btnSalvar.BackColor = System.Drawing.Color.Transparent
@@ -563,9 +548,51 @@ Partial Class frmProdutos
         Me.btnExcluir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnExcluir.UseVisualStyleBackColor = False
         '
+        'btSair
+        '
+        Me.btSair.BackColor = System.Drawing.Color.Transparent
+        Me.btSair.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btSair.FlatAppearance.BorderSize = 0
+        Me.btSair.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Azure
+        Me.btSair.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
+        Me.btSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btSair.ForeColor = System.Drawing.Color.White
+        Me.btSair.Image = CType(resources.GetObject("btSair.Image"), System.Drawing.Image)
+        Me.btSair.Location = New System.Drawing.Point(933, 420)
+        Me.btSair.Margin = New System.Windows.Forms.Padding(7, 6, 7, 6)
+        Me.btSair.Name = "btSair"
+        Me.btSair.Size = New System.Drawing.Size(73, 33)
+        Me.btSair.TabIndex = 165
+        Me.btSair.Text = "Sair"
+        Me.btSair.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btSair.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btSair.UseVisualStyleBackColor = False
+        '
         'errErro
         '
         Me.errErro.ContainerControl = Me
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.ForeColor = System.Drawing.Color.White
+        Me.Label9.Location = New System.Drawing.Point(656, 119)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(26, 17)
+        Me.Label9.TabIndex = 195
+        Me.Label9.Text = "R$"
+        '
+        'Label14
+        '
+        Me.Label14.AutoSize = True
+        Me.Label14.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label14.ForeColor = System.Drawing.Color.White
+        Me.Label14.Location = New System.Drawing.Point(657, 70)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(26, 17)
+        Me.Label14.TabIndex = 196
+        Me.Label14.Text = "R$"
         '
         'frmProdutos
         '
@@ -636,4 +663,6 @@ Partial Class frmProdutos
     Friend WithEvents btnExcluir As Button
     Friend WithEvents txtValorVenda As TextBox
     Friend WithEvents errErro As ErrorProvider
+    Friend WithEvents Label14 As Label
+    Friend WithEvents Label9 As Label
 End Class
