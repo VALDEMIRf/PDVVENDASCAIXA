@@ -433,6 +433,7 @@ Public Class frmServicos
     Private Sub rbData_CheckedChanged(sender As Object, e As EventArgs) Handles rbData.CheckedChanged
         txtBuscar.Text = ""
         txtBuscar.Visible = False
+        txtNumeroOrdem.Visible = False
         dtData.Visible = True
         '  Listar()
     End Sub
@@ -441,9 +442,16 @@ Public Class frmServicos
         dtData.Visible = False
         txtBuscar.Text = ""
         txtBuscar.Visible = True
-
+        txtNumeroOrdem.Visible = False
         txtBuscar.Focus()
         ' Listar()
+    End Sub
+
+    Private Sub rbNumeroServico_CheckedChanged(sender As Object, e As EventArgs) Handles rbNumeroServico.CheckedChanged
+        dtData.Visible = False
+        txtBuscar.Visible = False
+        txtNumeroOrdem.Visible = True
+        txtNumeroOrdem.Focus()
     End Sub
 
     Private Sub dtData_ValueChanged(sender As Object, e As EventArgs) Handles dtData.ValueChanged
@@ -500,4 +508,30 @@ Public Class frmServicos
         End If
     End Sub
 
+    Private Sub txtNumeroOrdem_TextChanged(sender As Object, e As EventArgs) Handles txtNumeroOrdem.TextChanged
+        If txtNumeroOrdem.Text = "" And dgvServico.Rows.Count > 0 Then
+
+            Listar()
+
+        Else
+            Dim dt As New DataTable
+            Dim da As SqlDataAdapter
+
+            Try
+                abrir()
+                da = New SqlDataAdapter("pa_Servico_ConsultaNumeroOrdem", con)
+                da.SelectCommand.CommandType = CommandType.StoredProcedure
+                da.SelectCommand.Parameters.AddWithValue("@id_servico", txtNumeroOrdem.Text)
+
+                da.Fill(dt)
+                dgvServico.DataSource = dt
+
+                ContarLinhas()
+
+            Catch ex As Exception
+                MessageBox.Show("Erro ao Listar" + ex.Message.ToString)
+                fechar()
+            End Try
+        End If
+    End Sub
 End Class

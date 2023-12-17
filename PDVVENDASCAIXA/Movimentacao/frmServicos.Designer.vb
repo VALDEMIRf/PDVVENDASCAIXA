@@ -72,6 +72,8 @@ Partial Class frmServicos
         Me.Label22 = New System.Windows.Forms.Label()
         Me.txtObs = New System.Windows.Forms.TextBox()
         Me.Consulta = New System.Windows.Forms.TabPage()
+        Me.txtNumeroOrdem = New System.Windows.Forms.TextBox()
+        Me.rbNumeroServico = New System.Windows.Forms.RadioButton()
         Me.txtBuscar = New System.Windows.Forms.TextBox()
         Me.dtData = New System.Windows.Forms.DateTimePicker()
         Me.rbData = New System.Windows.Forms.RadioButton()
@@ -646,6 +648,8 @@ Partial Class frmServicos
         'Consulta
         '
         Me.Consulta.BackColor = System.Drawing.Color.Teal
+        Me.Consulta.Controls.Add(Me.txtNumeroOrdem)
+        Me.Consulta.Controls.Add(Me.rbNumeroServico)
         Me.Consulta.Controls.Add(Me.txtBuscar)
         Me.Consulta.Controls.Add(Me.dtData)
         Me.Consulta.Controls.Add(Me.rbData)
@@ -662,21 +666,42 @@ Partial Class frmServicos
         Me.Consulta.TabIndex = 1
         Me.Consulta.Text = "Consulta"
         '
+        'txtNumeroOrdem
+        '
+        Me.txtNumeroOrdem.Location = New System.Drawing.Point(415, 20)
+        Me.txtNumeroOrdem.Name = "txtNumeroOrdem"
+        Me.txtNumeroOrdem.Size = New System.Drawing.Size(150, 20)
+        Me.txtNumeroOrdem.TabIndex = 201
+        '
+        'rbNumeroServico
+        '
+        Me.rbNumeroServico.AutoSize = True
+        Me.rbNumeroServico.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.rbNumeroServico.ForeColor = System.Drawing.Color.White
+        Me.rbNumeroServico.Location = New System.Drawing.Point(253, 19)
+        Me.rbNumeroServico.Margin = New System.Windows.Forms.Padding(4)
+        Me.rbNumeroServico.Name = "rbNumeroServico"
+        Me.rbNumeroServico.Size = New System.Drawing.Size(154, 22)
+        Me.rbNumeroServico.TabIndex = 200
+        Me.rbNumeroServico.TabStop = True
+        Me.rbNumeroServico.Text = "Número de Serviço"
+        Me.rbNumeroServico.UseVisualStyleBackColor = True
+        '
         'txtBuscar
         '
-        Me.txtBuscar.Location = New System.Drawing.Point(247, 21)
+        Me.txtBuscar.Location = New System.Drawing.Point(414, 20)
         Me.txtBuscar.Margin = New System.Windows.Forms.Padding(7, 6, 7, 6)
         Me.txtBuscar.Name = "txtBuscar"
-        Me.txtBuscar.Size = New System.Drawing.Size(182, 20)
+        Me.txtBuscar.Size = New System.Drawing.Size(150, 20)
         Me.txtBuscar.TabIndex = 199
         '
         'dtData
         '
         Me.dtData.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtData.Location = New System.Drawing.Point(247, 21)
+        Me.dtData.Location = New System.Drawing.Point(415, 21)
         Me.dtData.Margin = New System.Windows.Forms.Padding(4)
         Me.dtData.Name = "dtData"
-        Me.dtData.Size = New System.Drawing.Size(182, 20)
+        Me.dtData.Size = New System.Drawing.Size(150, 20)
         Me.dtData.TabIndex = 198
         '
         'rbData
@@ -970,4 +995,6 @@ Partial Class frmServicos
     Friend WithEvents btSair As Button
     Friend WithEvents btnExcluir As Button
     Friend WithEvents txtComplemento As TextBox
+    Friend WithEvents txtNumeroOrdem As TextBox
+    Friend WithEvents rbNumeroServico As RadioButton
 End Class

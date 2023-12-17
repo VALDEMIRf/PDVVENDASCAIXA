@@ -1,6 +1,11 @@
 ﻿Imports System.Data.SqlClient
 
 Public Class frmPrincipal
+
+    Dim data As Date
+
+    Dim abertura As Boolean
+
     Private Sub FuncionáriosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles FuncionáriosToolStripMenuItem.Click
         Dim form = New frmFuncionarios
         form.ShowDialog()
@@ -69,6 +74,15 @@ Public Class frmPrincipal
 
     End Sub
 
+    Private Sub frmPrincipal_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
+        Application.Exit()
+    End Sub
+
+    Private Sub frmPrincipal_Activated(sender As Object, e As EventArgs) Handles MyBase.Activated
+        Listar()
+        totalizar()
+    End Sub
+
     Private Sub Listar()
 
         Dim dt As New DataTable
@@ -113,6 +127,10 @@ Public Class frmPrincipal
 
     Private Sub FormatarDG()
         dg.Columns(0).Visible = False
+        dg.Columns(1).Visible = False
+        dg.Columns(4).Visible = False
+        dg.Columns(7).Visible = False
+        dg.Columns(8).Visible = False
         dg.Columns(9).Visible = False
         dg.Columns(10).Visible = False
 
@@ -126,10 +144,10 @@ Public Class frmPrincipal
         dg.Columns(8).HeaderText = "Dt. Venda"
 
         dg.Columns(1).Width = 70
-        dg.Columns(2).Width = 180
+        dg.Columns(2).Width = 130
         dg.Columns(3).Width = 130
         dg.Columns(4).Width = 90
-        dg.Columns(5).Width = 90
+        dg.Columns(5).Width = 70
         dg.Columns(6).Width = 70
         dg.Columns(7).Width = 150
 
@@ -152,18 +170,39 @@ Public Class frmPrincipal
     End Sub
 
     Private Sub PDVRegistrarVendaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PDVRegistrarVendaToolStripMenuItem.Click
-        Dim form = New frmVendas
-        form.ShowDialog()
+        data = Now.ToShortDateString()
+
+        Dim cmd As New SqlCommand("pa_caixa_verificar_abertura", con)
+
+        Try
+            abrir()
+            cmd.CommandType = 4
+            With cmd.Parameters
+                .AddWithValue("@data", data)
+                .AddWithValue("@funcionario", usuarioNome)
+                .Add("@msg", SqlDbType.VarChar, 100).Direction = 2
+                cmd.ExecuteNonQuery()
+            End With
+
+            Dim msg As String = cmd.Parameters("@msg").Value
+
+
+            If (msg = "Abra primeiro o Caixa" Or lblTextoCaixa.Text = "CAIXA FECHADO") Then
+                MessageBox.Show("O Caixa não está aberto! ")
+
+            Else
+                Dim form = New frmVendas
+                form.ShowDialog()
+            End If
+
+        Catch ex As Exception
+            MessageBox.Show("Erro ao Acessar! " + ex.Message.ToString)
+        Finally
+            fechar()
+        End Try
     End Sub
 
-    Private Sub frmPrincipal_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
-        Application.Exit()
-    End Sub
 
-    Private Sub frmPrincipal_Activated(sender As Object, e As EventArgs) Handles MyBase.Activated
-        Listar()
-        totalizar()
-    End Sub
 
     Private Sub ListarVendasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ListarVendasToolStripMenuItem.Click
         Dim form = New frmListaVendas
