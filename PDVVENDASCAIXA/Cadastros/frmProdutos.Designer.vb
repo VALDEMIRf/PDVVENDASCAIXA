@@ -24,9 +24,11 @@ Partial Class frmProdutos
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmProdutos))
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.Cadastro = New System.Windows.Forms.TabPage()
+        Me.Label14 = New System.Windows.Forms.Label()
+        Me.Label9 = New System.Windows.Forms.Label()
         Me.txtValorCompra = New System.Windows.Forms.TextBox()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.cbUnidade = New System.Windows.Forms.ComboBox()
@@ -64,8 +66,6 @@ Partial Class frmProdutos
         Me.btnExcluir = New System.Windows.Forms.Button()
         Me.btSair = New System.Windows.Forms.Button()
         Me.errErro = New System.Windows.Forms.ErrorProvider(Me.components)
-        Me.Label9 = New System.Windows.Forms.Label()
-        Me.Label14 = New System.Windows.Forms.Label()
         Me.TabControl1.SuspendLayout()
         Me.Cadastro.SuspendLayout()
         CType(Me.imgCodBar, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -121,6 +121,28 @@ Partial Class frmProdutos
         Me.Cadastro.Size = New System.Drawing.Size(1008, 358)
         Me.Cadastro.TabIndex = 0
         Me.Cadastro.Text = "Cadastro"
+        '
+        'Label14
+        '
+        Me.Label14.AutoSize = True
+        Me.Label14.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label14.ForeColor = System.Drawing.Color.White
+        Me.Label14.Location = New System.Drawing.Point(657, 70)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(26, 17)
+        Me.Label14.TabIndex = 196
+        Me.Label14.Text = "R$"
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.ForeColor = System.Drawing.Color.White
+        Me.Label9.Location = New System.Drawing.Point(656, 119)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(26, 17)
+        Me.Label9.TabIndex = 195
+        Me.Label9.Text = "R$"
         '
         'txtValorCompra
         '
@@ -393,14 +415,14 @@ Partial Class frmProdutos
         Me.dg.BackgroundColor = System.Drawing.Color.White
         Me.dg.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.dg.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dg.DefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dg.DefaultCellStyle = DataGridViewCellStyle1
         Me.dg.GridColor = System.Drawing.Color.CadetBlue
         Me.dg.Location = New System.Drawing.Point(7, 37)
         Me.dg.Margin = New System.Windows.Forms.Padding(4)
@@ -558,7 +580,7 @@ Partial Class frmProdutos
         Me.btSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btSair.ForeColor = System.Drawing.Color.White
         Me.btSair.Image = CType(resources.GetObject("btSair.Image"), System.Drawing.Image)
-        Me.btSair.Location = New System.Drawing.Point(933, 420)
+        Me.btSair.Location = New System.Drawing.Point(573, 423)
         Me.btSair.Margin = New System.Windows.Forms.Padding(7, 6, 7, 6)
         Me.btSair.Name = "btSair"
         Me.btSair.Size = New System.Drawing.Size(73, 33)
@@ -572,34 +594,12 @@ Partial Class frmProdutos
         '
         Me.errErro.ContainerControl = Me
         '
-        'Label9
-        '
-        Me.Label9.AutoSize = True
-        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.ForeColor = System.Drawing.Color.White
-        Me.Label9.Location = New System.Drawing.Point(656, 119)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(26, 17)
-        Me.Label9.TabIndex = 195
-        Me.Label9.Text = "R$"
-        '
-        'Label14
-        '
-        Me.Label14.AutoSize = True
-        Me.Label14.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label14.ForeColor = System.Drawing.Color.White
-        Me.Label14.Location = New System.Drawing.Point(657, 70)
-        Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(26, 17)
-        Me.Label14.TabIndex = 196
-        Me.Label14.Text = "R$"
-        '
         'frmProdutos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Teal
-        Me.ClientSize = New System.Drawing.Size(1036, 478)
+        Me.ClientSize = New System.Drawing.Size(1171, 600)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.btSair)
         Me.Controls.Add(Me.TabControl1)

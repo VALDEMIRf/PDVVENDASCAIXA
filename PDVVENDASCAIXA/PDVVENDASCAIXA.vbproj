@@ -138,6 +138,18 @@
     <Compile Include="Cadastros\frmProdutos.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Caixa\frmAbrirCaixa.Designer.vb">
+      <DependentUpon>frmAbrirCaixa.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Caixa\frmAbrirCaixa.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Caixa\frmFecharCaixa.Designer.vb">
+      <DependentUpon>frmFecharCaixa.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Caixa\frmFecharCaixa.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="classes\CNPJ.vb" />
     <Compile Include="conexao.vb" />
     <Compile Include="Connected Services\WSCEP\Reference.vb">
@@ -269,6 +281,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Cadastros\frmProdutos.resx">
       <DependentUpon>frmProdutos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Caixa\frmAbrirCaixa.resx">
+      <DependentUpon>frmAbrirCaixa.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Caixa\frmFecharCaixa.resx">
+      <DependentUpon>frmFecharCaixa.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Movimentacao\frmServicos.resx">
       <DependentUpon>frmServicos.vb</DependentUpon>
@@ -555,6 +573,10 @@
     <Content Include="imgProdutos\racaogatos.jpg" />
     <Content Include="imgProdutos\racaogoldenFormula.jpg" />
     <Content Include="imgProdutos\shampoo star pet.jpg" />
+    <None Include="Resources\btVerde.jpg" />
+    <None Include="Resources\btVermelho.jpg" />
+    <None Include="Resources\verde.png" />
+    <None Include="Resources\vermelho.png" />
     <Content Include="SqlServerTypes\Loader.cs" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
@@ -633,7 +655,6 @@
     <WCFMetadataStorage Include="Connected Services\WSCEP\" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Caixa\" />
     <Folder Include="Estoque\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />

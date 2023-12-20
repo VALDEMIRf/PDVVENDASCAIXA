@@ -71,19 +71,21 @@ Partial Class frmPrincipal
         Me.lblTextoCaixa = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label5 = New System.Windows.Forms.Label()
+        Me.lblHoraAb = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
-        Me.Label7 = New System.Windows.Forms.Label()
+        Me.lblVlrAb = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
-        Me.Label9 = New System.Windows.Forms.Label()
-        Me.Label12 = New System.Windows.Forms.Label()
+        Me.lblTotSangria = New System.Windows.Forms.Label()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.Label14 = New System.Windows.Forms.Label()
-        Me.Label15 = New System.Windows.Forms.Label()
-        Me.Label16 = New System.Windows.Forms.Label()
+        Me.lblHoraSangria = New System.Windows.Forms.Label()
+        Me.lblVendasDia = New System.Windows.Forms.Label()
+        Me.txtTotaliza = New System.Windows.Forms.TextBox()
+        Me.imagem = New System.Windows.Forms.PictureBox()
         Me.MenuStrip1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.dg, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.imagem, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'MenuStrip1
@@ -339,6 +341,7 @@ Partial Class frmPrincipal
         '
         'LogoffToolStripMenuItem
         '
+        Me.LogoffToolStripMenuItem.Image = CType(resources.GetObject("LogoffToolStripMenuItem.Image"), System.Drawing.Image)
         Me.LogoffToolStripMenuItem.Name = "LogoffToolStripMenuItem"
         Me.LogoffToolStripMenuItem.Size = New System.Drawing.Size(112, 24)
         Me.LogoffToolStripMenuItem.Text = "Logoff"
@@ -463,21 +466,21 @@ Partial Class frmPrincipal
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(655, 106)
+        Me.Label3.Location = New System.Drawing.Point(655, 124)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(105, 17)
         Me.Label3.TabIndex = 228
         Me.Label3.Text = "Vendas do Dia:"
         '
-        'Label5
+        'lblHoraAb
         '
-        Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(666, 189)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(13, 17)
-        Me.Label5.TabIndex = 229
-        Me.Label5.Text = "-"
+        Me.lblHoraAb.AutoSize = True
+        Me.lblHoraAb.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblHoraAb.Location = New System.Drawing.Point(666, 189)
+        Me.lblHoraAb.Name = "lblHoraAb"
+        Me.lblHoraAb.Size = New System.Drawing.Size(13, 17)
+        Me.lblHoraAb.TabIndex = 229
+        Me.lblHoraAb.Text = "-"
         '
         'Label6
         '
@@ -489,15 +492,15 @@ Partial Class frmPrincipal
         Me.Label6.TabIndex = 230
         Me.Label6.Text = "Valor da Abertura:"
         '
-        'Label7
+        'lblVlrAb
         '
-        Me.Label7.AutoSize = True
-        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(862, 190)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(13, 17)
-        Me.Label7.TabIndex = 231
-        Me.Label7.Text = "-"
+        Me.lblVlrAb.AutoSize = True
+        Me.lblVlrAb.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblVlrAb.Location = New System.Drawing.Point(862, 190)
+        Me.lblVlrAb.Name = "lblVlrAb"
+        Me.lblVlrAb.Size = New System.Drawing.Size(13, 17)
+        Me.lblVlrAb.TabIndex = 231
+        Me.lblVlrAb.Text = "-"
         '
         'Label8
         '
@@ -509,25 +512,15 @@ Partial Class frmPrincipal
         Me.Label8.TabIndex = 232
         Me.Label8.Text = "Total Sangria:"
         '
-        'Label9
+        'lblTotSangria
         '
-        Me.Label9.AutoSize = True
-        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.Location = New System.Drawing.Point(837, 229)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(13, 17)
-        Me.Label9.TabIndex = 233
-        Me.Label9.Text = "-"
-        '
-        'Label12
-        '
-        Me.Label12.AutoSize = True
-        Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label12.Location = New System.Drawing.Point(703, 78)
-        Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(13, 17)
-        Me.Label12.TabIndex = 236
-        Me.Label12.Text = "-"
+        Me.lblTotSangria.AutoSize = True
+        Me.lblTotSangria.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTotSangria.Location = New System.Drawing.Point(837, 229)
+        Me.lblTotSangria.Name = "lblTotSangria"
+        Me.lblTotSangria.Size = New System.Drawing.Size(13, 17)
+        Me.lblTotSangria.TabIndex = 233
+        Me.lblTotSangria.Text = "-"
         '
         'Label13
         '
@@ -549,25 +542,45 @@ Partial Class frmPrincipal
         Me.Label14.TabIndex = 238
         Me.Label14.Text = "Última Sangria:"
         '
-        'Label15
+        'lblHoraSangria
         '
-        Me.Label15.AutoSize = True
-        Me.Label15.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label15.Location = New System.Drawing.Point(645, 229)
-        Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(13, 17)
-        Me.Label15.TabIndex = 239
-        Me.Label15.Text = "-"
+        Me.lblHoraSangria.AutoSize = True
+        Me.lblHoraSangria.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblHoraSangria.Location = New System.Drawing.Point(645, 229)
+        Me.lblHoraSangria.Name = "lblHoraSangria"
+        Me.lblHoraSangria.Size = New System.Drawing.Size(13, 17)
+        Me.lblHoraSangria.TabIndex = 239
+        Me.lblHoraSangria.Text = "-"
         '
-        'Label16
+        'lblVendasDia
         '
-        Me.Label16.AutoSize = True
-        Me.Label16.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label16.Location = New System.Drawing.Point(762, 109)
-        Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(13, 17)
-        Me.Label16.TabIndex = 240
-        Me.Label16.Text = "-"
+        Me.lblVendasDia.AutoSize = True
+        Me.lblVendasDia.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblVendasDia.Location = New System.Drawing.Point(762, 127)
+        Me.lblVendasDia.Name = "lblVendasDia"
+        Me.lblVendasDia.Size = New System.Drawing.Size(13, 17)
+        Me.lblVendasDia.TabIndex = 240
+        Me.lblVendasDia.Text = "-"
+        '
+        'txtTotaliza
+        '
+        Me.txtTotaliza.Enabled = False
+        Me.txtTotaliza.Location = New System.Drawing.Point(427, 465)
+        Me.txtTotaliza.Name = "txtTotaliza"
+        Me.txtTotaliza.ReadOnly = True
+        Me.txtTotaliza.Size = New System.Drawing.Size(65, 20)
+        Me.txtTotaliza.TabIndex = 241
+        '
+        'imagem
+        '
+        Me.imagem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.imagem.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.imagem.Location = New System.Drawing.Point(705, 70)
+        Me.imagem.Name = "imagem"
+        Me.imagem.Size = New System.Drawing.Size(25, 25)
+        Me.imagem.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.imagem.TabIndex = 242
+        Me.imagem.TabStop = False
         '
         'frmPrincipal
         '
@@ -575,16 +588,17 @@ Partial Class frmPrincipal
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Teal
         Me.ClientSize = New System.Drawing.Size(962, 531)
-        Me.Controls.Add(Me.Label16)
-        Me.Controls.Add(Me.Label15)
+        Me.Controls.Add(Me.imagem)
+        Me.Controls.Add(Me.txtTotaliza)
+        Me.Controls.Add(Me.lblVendasDia)
+        Me.Controls.Add(Me.lblHoraSangria)
         Me.Controls.Add(Me.Label14)
         Me.Controls.Add(Me.Label13)
-        Me.Controls.Add(Me.Label12)
-        Me.Controls.Add(Me.Label9)
+        Me.Controls.Add(Me.lblTotSangria)
         Me.Controls.Add(Me.Label8)
-        Me.Controls.Add(Me.Label7)
+        Me.Controls.Add(Me.lblVlrAb)
         Me.Controls.Add(Me.Label6)
-        Me.Controls.Add(Me.Label5)
+        Me.Controls.Add(Me.lblHoraAb)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.lblTextoCaixa)
@@ -597,6 +611,7 @@ Partial Class frmPrincipal
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MainMenuStrip = Me.MenuStrip1
         Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "frmPrincipal"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.MenuStrip1.ResumeLayout(False)
@@ -604,6 +619,7 @@ Partial Class frmPrincipal
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         CType(Me.dg, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.imagem, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -656,14 +672,15 @@ Partial Class frmPrincipal
     Friend WithEvents lblTextoCaixa As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
-    Friend WithEvents Label5 As Label
+    Friend WithEvents lblHoraAb As Label
     Friend WithEvents Label6 As Label
-    Friend WithEvents Label7 As Label
+    Friend WithEvents lblVlrAb As Label
     Friend WithEvents Label8 As Label
-    Friend WithEvents Label9 As Label
-    Friend WithEvents Label12 As Label
+    Friend WithEvents lblTotSangria As Label
     Friend WithEvents Label13 As Label
     Friend WithEvents Label14 As Label
-    Friend WithEvents Label15 As Label
-    Friend WithEvents Label16 As Label
+    Friend WithEvents lblHoraSangria As Label
+    Friend WithEvents lblVendasDia As Label
+    Friend WithEvents txtTotaliza As TextBox
+    Friend WithEvents imagem As PictureBox
 End Class
