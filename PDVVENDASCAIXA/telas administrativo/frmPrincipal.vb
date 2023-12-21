@@ -74,7 +74,8 @@ Public Class frmPrincipal
         If (usuarioNome = "admin") Then
 
             FuncionáriosToolStripMenuItem.Enabled = True
-
+            SangriaToolStripMenuItem.Enabled = True
+            EmpresaToolStripMenuItem.Enabled = True
         End If
         Listar()
         totalizar()
@@ -216,7 +217,6 @@ Public Class frmPrincipal
     End Sub
 
 
-
     Private Sub ListarVendasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ListarVendasToolStripMenuItem.Click
         Dim form = New frmListaVendas
         form.ShowDialog()
@@ -234,6 +234,11 @@ Public Class frmPrincipal
 
     Private Sub ServiçosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ServiçosToolStripMenuItem.Click
         Dim form = New frmRelServicos
+        form.ShowDialog()
+    End Sub
+
+    Private Sub SangriaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SangriaToolStripMenuItem.Click
+        Dim form = New frmSangria
         form.ShowDialog()
     End Sub
 
@@ -306,13 +311,12 @@ Public Class frmPrincipal
             cmd.Parameters.Add("@hora_sangria", SqlDbType.Time).Direction = 2
             cmd.Parameters.Add("@valor_ab", SqlDbType.Decimal).Direction = 2
             cmd.Parameters.Add("@valor_sangria", SqlDbType.Decimal).Direction = 2
-            cmd.Parameters.Add("@total_caixa", SqlDbType.Decimal).Direction = 2
+            ' cmd.Parameters.Add("@total_caixa", SqlDbType.Decimal).Direction = 2
 
             cmd.ExecuteNonQuery()
 
             Dim hora_ab As TimeSpan = cmd.Parameters("@hora_ab").Value
             lblHoraAb.Text = hora_ab.ToString()
-            ' lblHoraAb.Text = CStr(hora_ab)
 
             Dim hora_sangria As TimeSpan = cmd.Parameters("@hora_sangria").Value
             lblHoraSangria.Text = hora_sangria.ToString()
@@ -339,5 +343,6 @@ Public Class frmPrincipal
 
 
     End Sub
+
 
 End Class

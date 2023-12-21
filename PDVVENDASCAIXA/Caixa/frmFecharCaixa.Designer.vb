@@ -39,7 +39,7 @@ Partial Class frmFecharCaixa
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 22.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.White
-        Me.Label3.Location = New System.Drawing.Point(249, 15)
+        Me.Label3.Location = New System.Drawing.Point(142, 9)
         Me.Label3.Margin = New System.Windows.Forms.Padding(7, 0, 7, 0)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(250, 36)
@@ -92,11 +92,11 @@ Partial Class frmFecharCaixa
         Me.dg.AllowUserToDeleteRows = False
         Me.dg.BackgroundColor = System.Drawing.Color.White
         Me.dg.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dg.Location = New System.Drawing.Point(4, 111)
+        Me.dg.Location = New System.Drawing.Point(14, 107)
         Me.dg.Margin = New System.Windows.Forms.Padding(5)
         Me.dg.Name = "dg"
         Me.dg.ReadOnly = True
-        Me.dg.Size = New System.Drawing.Size(720, 172)
+        Me.dg.Size = New System.Drawing.Size(519, 151)
         Me.dg.TabIndex = 196
         '
         'btSair
@@ -109,7 +109,7 @@ Partial Class frmFecharCaixa
         Me.btSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btSair.ForeColor = System.Drawing.Color.White
         Me.btSair.Image = CType(resources.GetObject("btSair.Image"), System.Drawing.Image)
-        Me.btSair.Location = New System.Drawing.Point(628, 295)
+        Me.btSair.Location = New System.Drawing.Point(440, 272)
         Me.btSair.Margin = New System.Windows.Forms.Padding(9, 7, 9, 7)
         Me.btSair.Name = "btSair"
         Me.btSair.Size = New System.Drawing.Size(80, 35)
@@ -129,7 +129,7 @@ Partial Class frmFecharCaixa
         Me.btnSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnSalvar.ForeColor = System.Drawing.Color.White
         Me.btnSalvar.Image = CType(resources.GetObject("btnSalvar.Image"), System.Drawing.Image)
-        Me.btnSalvar.Location = New System.Drawing.Point(418, 295)
+        Me.btnSalvar.Location = New System.Drawing.Point(323, 270)
         Me.btnSalvar.Margin = New System.Windows.Forms.Padding(9, 7, 9, 7)
         Me.btnSalvar.Name = "btnSalvar"
         Me.btnSalvar.Size = New System.Drawing.Size(90, 35)
@@ -144,7 +144,7 @@ Partial Class frmFecharCaixa
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Teal
-        Me.ClientSize = New System.Drawing.Size(726, 348)
+        Me.ClientSize = New System.Drawing.Size(560, 323)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.txtVlrAbertura)
         Me.Controls.Add(Me.btSair)
