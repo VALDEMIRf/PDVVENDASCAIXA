@@ -29,6 +29,24 @@ Public Class frmClientes
         lblNatural.Visible = True
         lblSexo.Visible = True
         lblNasc.Visible = True
+        lblMotivo.Visible = False
+        lblSituacao.Visible = False
+        txtSituacao.Visible = False
+        txtMotivo.Visible = False
+        txtTelJuridica.Visible = False
+        txtTel.Visible = True
+        txtTelCel.Visible = True
+        txtTelJuridica.Enabled = False
+        txtEmail.Enabled = True
+        btBuscarCEP.Visible = True
+        btBuscarCNPJ.Visible = False
+        txtCEP.Enabled = True
+        txtUF.Enabled = True
+        txtEndereco.Enabled = True
+        txtNumero.Enabled = True
+        txtComplemento.Enabled = True
+        txtBairro.Enabled = True
+        txtCidade.Enabled = True
 
     End Sub
 
@@ -36,6 +54,7 @@ Public Class frmClientes
         txtCPF.Visible = False
         txtRG.Visible = False
         txtCNPJ.Visible = True
+        txtIE.Visible = True
         txtIE.Visible = True
         txtNatural.Visible = False
         txtdtNasc.Visible = False
@@ -45,6 +64,28 @@ Public Class frmClientes
         lblNatural.Visible = False
         lblSexo.Visible = False
         lblNasc.Visible = False
+
+        lblMotivo.Visible = True
+        lblSituacao.Visible = True
+        txtSituacao.Visible = True
+        txtMotivo.Visible = True
+
+        txtTel.Visible = False
+        txtTelCel.Visible = False
+        txtTelJuridica.Visible = True
+
+        txtTelJuridica.Enabled = False
+        txtEmail.Enabled = False
+        btBuscarCEP.Visible = False
+        btBuscarCNPJ.Visible = True
+        txtCEP.Enabled = False
+        txtUF.Enabled = False
+        txtEndereco.Enabled = False
+        txtNumero.Enabled = False
+        txtComplemento.Enabled = False
+        txtBairro.Enabled = False
+        txtCidade.Enabled = False
+
     End Sub
 
     Private Sub DesabilitarCampos()
@@ -219,6 +260,8 @@ Public Class frmClientes
                 cmd.Parameters.AddWithValue("@cidade", txtCidade.Text)
                 cmd.Parameters.AddWithValue("@obs", txtObs.Text)
                 cmd.Parameters.AddWithValue("@data_cadastro", Now.Date())
+                cmd.Parameters.AddWithValue("@situacao", txtSituacao.Text)
+                cmd.Parameters.AddWithValue("@motivo", txtMotivo.Text)
                 cmd.Parameters.Add("@mensagem", SqlDbType.VarChar, 100).Direction = 2
                 cmd.ExecuteNonQuery()
 
@@ -436,5 +479,33 @@ Public Class frmClientes
                 fechar()
             End Try
         End If
+    End Sub
+
+    Private Sub btBuscarCNPJ_Click(sender As Object, e As EventArgs) Handles btBuscarCNPJ.Click
+        ObterCnpj(txtCNPJ.Text)
+    End Sub
+
+    Private Sub ObterCnpj(cnpj As String)
+
+        Dim cliente = Empresa.ObterCnpj(cnpj)
+        Try
+            txtNome.Text = cliente.nome
+            txtSituacao.Text = cliente.situacao
+            txtMotivo.Text = UTF8_to_ISO(cliente.motivo_situacao)
+            txtEndereco.Text = cliente.logradouro
+            txtNumero.Text = cliente.numero
+            txtComplemento.Text = cliente.complemento
+            txtBairro.Text = cliente.bairro
+            txtCEP.Text = cliente.cep
+            txtCidade.Text = cliente.municipio
+            txtUF.Text = cliente.uf
+            txtTelJuridica.Text = cliente.telefone
+            txtEmail.Text = cliente.email
+        Catch ex As Exception
+
+            '  MessageBox.Show("CNPJ Incorreto, digite um CNPJ válido!!!" + ex.Message.ToString)
+            MessageBox.Show("CNPJ Incorreto, digite um CNPJ válido!!!", "ERRO")
+        End Try
+
     End Sub
 End Class

@@ -84,6 +84,12 @@ Partial Class frmClientes
         Me.btnEditar = New System.Windows.Forms.Button()
         Me.btnSalvar = New System.Windows.Forms.Button()
         Me.btSair = New System.Windows.Forms.Button()
+        Me.txtTelJuridica = New System.Windows.Forms.TextBox()
+        Me.btBuscarCNPJ = New System.Windows.Forms.Button()
+        Me.lblMotivo = New System.Windows.Forms.Label()
+        Me.txtMotivo = New System.Windows.Forms.TextBox()
+        Me.lblSituacao = New System.Windows.Forms.Label()
+        Me.txtSituacao = New System.Windows.Forms.TextBox()
         Me.TabControl1.SuspendLayout()
         Me.Cadastro.SuspendLayout()
         Me.Consulta.SuspendLayout()
@@ -105,6 +111,12 @@ Partial Class frmClientes
         'Cadastro
         '
         Me.Cadastro.BackColor = System.Drawing.Color.Teal
+        Me.Cadastro.Controls.Add(Me.lblSituacao)
+        Me.Cadastro.Controls.Add(Me.txtSituacao)
+        Me.Cadastro.Controls.Add(Me.lblMotivo)
+        Me.Cadastro.Controls.Add(Me.txtMotivo)
+        Me.Cadastro.Controls.Add(Me.btBuscarCNPJ)
+        Me.Cadastro.Controls.Add(Me.txtTelJuridica)
         Me.Cadastro.Controls.Add(Me.Label20)
         Me.Cadastro.Controls.Add(Me.txtObs)
         Me.Cadastro.Controls.Add(Me.txtIE)
@@ -160,7 +172,7 @@ Partial Class frmClientes
         '
         Me.Label20.AutoSize = True
         Me.Label20.ForeColor = System.Drawing.Color.White
-        Me.Label20.Location = New System.Drawing.Point(45, 253)
+        Me.Label20.Location = New System.Drawing.Point(598, 256)
         Me.Label20.Margin = New System.Windows.Forms.Padding(9, 0, 9, 0)
         Me.Label20.Name = "Label20"
         Me.Label20.Size = New System.Drawing.Size(42, 17)
@@ -169,20 +181,20 @@ Partial Class frmClientes
         '
         'txtObs
         '
-        Me.txtObs.Location = New System.Drawing.Point(105, 253)
+        Me.txtObs.Location = New System.Drawing.Point(653, 253)
         Me.txtObs.Margin = New System.Windows.Forms.Padding(9, 7, 9, 7)
         Me.txtObs.Multiline = True
         Me.txtObs.Name = "txtObs"
-        Me.txtObs.Size = New System.Drawing.Size(458, 127)
+        Me.txtObs.Size = New System.Drawing.Size(361, 127)
         Me.txtObs.TabIndex = 287
         '
         'txtIE
         '
-        Me.txtIE.Location = New System.Drawing.Point(335, 81)
+        Me.txtIE.Location = New System.Drawing.Point(409, 50)
         Me.txtIE.Margin = New System.Windows.Forms.Padding(11, 7, 11, 7)
         Me.txtIE.Mask = "###.###.###.###"
         Me.txtIE.Name = "txtIE"
-        Me.txtIE.Size = New System.Drawing.Size(227, 23)
+        Me.txtIE.Size = New System.Drawing.Size(154, 23)
         Me.txtIE.TabIndex = 286
         Me.txtIE.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals
         '
@@ -390,7 +402,7 @@ Partial Class frmClientes
         '
         'txtCNPJ
         '
-        Me.txtCNPJ.Location = New System.Drawing.Point(103, 81)
+        Me.txtCNPJ.Location = New System.Drawing.Point(104, 47)
         Me.txtCNPJ.Margin = New System.Windows.Forms.Padding(11, 7, 11, 7)
         Me.txtCNPJ.Mask = "##.###.###/####-##"
         Me.txtCNPJ.Name = "txtCNPJ"
@@ -421,7 +433,7 @@ Partial Class frmClientes
         '
         Me.cbEstCivil.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbEstCivil.FormattingEnabled = True
-        Me.cbEstCivil.Items.AddRange(New Object() {"Solteiro (a)", "Casado (a)", "Separado (a)", "Divorciado (a) ", "Viúvo (a) "})
+        Me.cbEstCivil.Items.AddRange(New Object() {"Solteiro (a)", "Casado (a)", "Separado (a)", "Divorciado (a) ", "Viúvo (a) ", "Outros"})
         Me.cbEstCivil.Location = New System.Drawing.Point(104, 115)
         Me.cbEstCivil.Margin = New System.Windows.Forms.Padding(9, 7, 9, 7)
         Me.cbEstCivil.Name = "cbEstCivil"
@@ -441,7 +453,7 @@ Partial Class frmClientes
         '
         'txtCPF
         '
-        Me.txtCPF.Location = New System.Drawing.Point(104, 81)
+        Me.txtCPF.Location = New System.Drawing.Point(105, 47)
         Me.txtCPF.Margin = New System.Windows.Forms.Padding(9, 7, 9, 7)
         Me.txtCPF.Mask = "999,999,999-99"
         Me.txtCPF.Name = "txtCPF"
@@ -452,7 +464,7 @@ Partial Class frmClientes
         '
         Me.Label10.AutoSize = True
         Me.Label10.ForeColor = System.Drawing.Color.White
-        Me.Label10.Location = New System.Drawing.Point(273, 85)
+        Me.Label10.Location = New System.Drawing.Point(348, 51)
         Me.Label10.Margin = New System.Windows.Forms.Padding(9, 0, 9, 0)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(57, 17)
@@ -461,10 +473,10 @@ Partial Class frmClientes
         '
         'txtRG
         '
-        Me.txtRG.Location = New System.Drawing.Point(335, 80)
+        Me.txtRG.Location = New System.Drawing.Point(409, 47)
         Me.txtRG.Margin = New System.Windows.Forms.Padding(9, 7, 9, 7)
         Me.txtRG.Name = "txtRG"
-        Me.txtRG.Size = New System.Drawing.Size(227, 23)
+        Me.txtRG.Size = New System.Drawing.Size(154, 23)
         Me.txtRG.TabIndex = 134
         '
         'lblNasc
@@ -491,7 +503,7 @@ Partial Class frmClientes
         '
         Me.lblCPF.AutoSize = True
         Me.lblCPF.ForeColor = System.Drawing.Color.White
-        Me.lblCPF.Location = New System.Drawing.Point(13, 84)
+        Me.lblCPF.Location = New System.Drawing.Point(13, 50)
         Me.lblCPF.Margin = New System.Windows.Forms.Padding(9, 0, 9, 0)
         Me.lblCPF.Name = "lblCPF"
         Me.lblCPF.Size = New System.Drawing.Size(85, 17)
@@ -524,7 +536,7 @@ Partial Class frmClientes
         '
         Me.Label2.AutoSize = True
         Me.Label2.ForeColor = System.Drawing.Color.White
-        Me.Label2.Location = New System.Drawing.Point(43, 57)
+        Me.Label2.Location = New System.Drawing.Point(42, 86)
         Me.Label2.Margin = New System.Windows.Forms.Padding(9, 0, 9, 0)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(49, 17)
@@ -533,7 +545,7 @@ Partial Class frmClientes
         '
         'txtNome
         '
-        Me.txtNome.Location = New System.Drawing.Point(104, 51)
+        Me.txtNome.Location = New System.Drawing.Point(103, 80)
         Me.txtNome.Margin = New System.Windows.Forms.Padding(9, 7, 9, 7)
         Me.txtNome.Name = "txtNome"
         Me.txtNome.Size = New System.Drawing.Size(459, 23)
@@ -841,6 +853,65 @@ Partial Class frmClientes
         Me.btSair.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btSair.UseVisualStyleBackColor = False
         '
+        'txtTelJuridica
+        '
+        Me.txtTelJuridica.Enabled = False
+        Me.txtTelJuridica.Location = New System.Drawing.Point(103, 183)
+        Me.txtTelJuridica.Name = "txtTelJuridica"
+        Me.txtTelJuridica.Size = New System.Drawing.Size(459, 23)
+        Me.txtTelJuridica.TabIndex = 289
+        '
+        'btBuscarCNPJ
+        '
+        Me.btBuscarCNPJ.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btBuscarCNPJ.FlatAppearance.BorderSize = 0
+        Me.btBuscarCNPJ.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btBuscarCNPJ.Image = CType(resources.GetObject("btBuscarCNPJ.Image"), System.Drawing.Image)
+        Me.btBuscarCNPJ.Location = New System.Drawing.Point(244, 46)
+        Me.btBuscarCNPJ.Name = "btBuscarCNPJ"
+        Me.btBuscarCNPJ.Size = New System.Drawing.Size(37, 26)
+        Me.btBuscarCNPJ.TabIndex = 290
+        Me.btBuscarCNPJ.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btBuscarCNPJ.UseVisualStyleBackColor = True
+        '
+        'lblMotivo
+        '
+        Me.lblMotivo.AutoSize = True
+        Me.lblMotivo.ForeColor = System.Drawing.Color.White
+        Me.lblMotivo.Location = New System.Drawing.Point(39, 296)
+        Me.lblMotivo.Margin = New System.Windows.Forms.Padding(9, 0, 9, 0)
+        Me.lblMotivo.Name = "lblMotivo"
+        Me.lblMotivo.Size = New System.Drawing.Size(53, 17)
+        Me.lblMotivo.TabIndex = 292
+        Me.lblMotivo.Text = "Motivo:"
+        '
+        'txtMotivo
+        '
+        Me.txtMotivo.Location = New System.Drawing.Point(103, 293)
+        Me.txtMotivo.Margin = New System.Windows.Forms.Padding(9, 7, 9, 7)
+        Me.txtMotivo.Name = "txtMotivo"
+        Me.txtMotivo.Size = New System.Drawing.Size(458, 23)
+        Me.txtMotivo.TabIndex = 291
+        '
+        'lblSituacao
+        '
+        Me.lblSituacao.AutoSize = True
+        Me.lblSituacao.ForeColor = System.Drawing.Color.White
+        Me.lblSituacao.Location = New System.Drawing.Point(32, 259)
+        Me.lblSituacao.Margin = New System.Windows.Forms.Padding(9, 0, 9, 0)
+        Me.lblSituacao.Name = "lblSituacao"
+        Me.lblSituacao.Size = New System.Drawing.Size(67, 17)
+        Me.lblSituacao.TabIndex = 294
+        Me.lblSituacao.Text = "Situação:"
+        '
+        'txtSituacao
+        '
+        Me.txtSituacao.Location = New System.Drawing.Point(103, 256)
+        Me.txtSituacao.Margin = New System.Windows.Forms.Padding(9, 7, 9, 7)
+        Me.txtSituacao.Name = "txtSituacao"
+        Me.txtSituacao.Size = New System.Drawing.Size(458, 23)
+        Me.txtSituacao.TabIndex = 293
+        '
         'frmClientes
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -937,4 +1008,10 @@ Partial Class frmClientes
     Friend WithEvents rbNome As RadioButton
     Friend WithEvents txtBuscarCPF As MaskedTextBox
     Friend WithEvents txtBuscarNome As TextBox
+    Friend WithEvents txtTelJuridica As TextBox
+    Friend WithEvents btBuscarCNPJ As Button
+    Friend WithEvents lblSituacao As Label
+    Friend WithEvents txtSituacao As TextBox
+    Friend WithEvents lblMotivo As Label
+    Friend WithEvents txtMotivo As TextBox
 End Class
