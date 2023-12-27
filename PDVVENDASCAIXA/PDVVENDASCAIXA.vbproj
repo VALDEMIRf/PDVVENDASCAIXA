@@ -150,6 +150,12 @@
     <Compile Include="Caixa\frmFecharCaixa.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Caixa\frmReforcoCaixa.Designer.vb">
+      <DependentUpon>frmReforcoCaixa.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Caixa\frmReforcoCaixa.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Caixa\frmSangria.Designer.vb">
       <DependentUpon>frmSangria.vb</DependentUpon>
     </Compile>
@@ -293,6 +299,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Caixa\frmFecharCaixa.resx">
       <DependentUpon>frmFecharCaixa.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Caixa\frmReforcoCaixa.resx">
+      <DependentUpon>frmReforcoCaixa.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Caixa\frmSangria.resx">
       <DependentUpon>frmSangria.vb</DependentUpon>

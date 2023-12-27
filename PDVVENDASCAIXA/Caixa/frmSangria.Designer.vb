@@ -32,12 +32,12 @@ Partial Class frmSangria
         Me.Label3 = New System.Windows.Forms.Label()
         Me.lblTotSangria = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.txtHistorico = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.dg = New System.Windows.Forms.DataGridView()
         Me.Label6 = New System.Windows.Forms.Label()
-        Me.cbTipoSangria = New System.Windows.Forms.ComboBox()
+        Me.cbTipo = New System.Windows.Forms.ComboBox()
         CType(Me.dg, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -46,12 +46,12 @@ Partial Class frmSangria
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(125, 9)
+        Me.Label1.Location = New System.Drawing.Point(85, 9)
         Me.Label1.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(235, 29)
+        Me.Label1.Size = New System.Drawing.Size(351, 29)
         Me.Label1.TabIndex = 201
-        Me.Label1.Text = "INSERIR SANGRIA"
+        Me.Label1.Text = "LANÇAMENTO DE SANGRIA"
         '
         'txtSangria
         '
@@ -150,13 +150,13 @@ Partial Class frmSangria
         Me.Label4.TabIndex = 202
         Me.Label4.Text = "Valor já retirado no dia:"
         '
-        'TextBox1
+        'txtHistorico
         '
-        Me.TextBox1.Location = New System.Drawing.Point(90, 85)
-        Me.TextBox1.Margin = New System.Windows.Forms.Padding(5)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(405, 20)
-        Me.TextBox1.TabIndex = 205
+        Me.txtHistorico.Location = New System.Drawing.Point(90, 85)
+        Me.txtHistorico.Margin = New System.Windows.Forms.Padding(5)
+        Me.txtHistorico.Name = "txtHistorico"
+        Me.txtHistorico.Size = New System.Drawing.Size(405, 20)
+        Me.txtHistorico.TabIndex = 205
         '
         'Label5
         '
@@ -227,14 +227,14 @@ Partial Class frmSangria
         Me.Label6.TabIndex = 209
         Me.Label6.Text = "Tipo:"
         '
-        'cbTipoSangria
+        'cbTipo
         '
-        Me.cbTipoSangria.FormattingEnabled = True
-        Me.cbTipoSangria.Items.AddRange(New Object() {"DINHEIRO", "CHEQUE", "CHEQUE PRE", "CARTÃO DÉBITO", "CARTÃO CRÉDITO", "BOLETO", "VALE / HAVER", "CREDIÁRIO"})
-        Me.cbTipoSangria.Location = New System.Drawing.Point(282, 117)
-        Me.cbTipoSangria.Name = "cbTipoSangria"
-        Me.cbTipoSangria.Size = New System.Drawing.Size(213, 21)
-        Me.cbTipoSangria.TabIndex = 210
+        Me.cbTipo.FormattingEnabled = True
+        Me.cbTipo.Items.AddRange(New Object() {"DINHEIRO", "CHEQUE", "CHEQUE PRE", "CARTÃO DÉBITO", "CARTÃO CRÉDITO", "BOLETO", "VALE / HAVER", "CREDIÁRIO"})
+        Me.cbTipo.Location = New System.Drawing.Point(282, 117)
+        Me.cbTipo.Name = "cbTipo"
+        Me.cbTipo.Size = New System.Drawing.Size(213, 21)
+        Me.cbTipo.TabIndex = 210
         '
         'frmSangria
         '
@@ -242,11 +242,11 @@ Partial Class frmSangria
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Maroon
         Me.ClientSize = New System.Drawing.Size(507, 384)
-        Me.Controls.Add(Me.cbTipoSangria)
+        Me.Controls.Add(Me.cbTipo)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.dg)
         Me.Controls.Add(Me.Button1)
-        Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.txtHistorico)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.lblTotSangria)
@@ -276,10 +276,10 @@ Partial Class frmSangria
     Friend WithEvents Label3 As Label
     Friend WithEvents lblTotSangria As Label
     Friend WithEvents Label4 As Label
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents txtHistorico As TextBox
     Friend WithEvents Label5 As Label
     Friend WithEvents Button1 As Button
     Friend WithEvents dg As DataGridView
     Friend WithEvents Label6 As Label
-    Friend WithEvents cbTipoSangria As ComboBox
+    Friend WithEvents cbTipo As ComboBox
 End Class

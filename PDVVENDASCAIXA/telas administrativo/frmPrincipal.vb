@@ -71,6 +71,8 @@ Public Class frmPrincipal
         Me.Text = "GESTÃO ADMINISTRATIVA   -   PDV   -    EMPRESA:  " & empresaNome
         lblUsuario.Text = usuarioNome
 
+        carregarSangria()
+
         If (usuarioNome = "admin") Then
 
             FuncionáriosToolStripMenuItem.Enabled = True
@@ -79,6 +81,30 @@ Public Class frmPrincipal
         End If
         Listar()
         totalizar()
+
+    End Sub
+
+    Private Sub carregarSangria()
+        Dim cmd As New SqlCommand("pa_Sangria_listar_VALOR", con)
+
+        Try
+            abrir()
+            cmd.CommandType = 4
+            cmd.Parameters.AddWithValue("@data_sangria", Now.ToShortDateString())
+            cmd.Parameters.AddWithValue("@funcionario", usuarioNome)
+            cmd.Parameters.Add("@valor_sangria", SqlDbType.Decimal).Direction = 2
+            ' cmd.Parameters.Add("@total_caixa", SqlDbType.Decimal).Direction = 2
+
+            cmd.ExecuteNonQuery()
+
+            Dim valor_sangria As Decimal = cmd.Parameters("@valor_sangria").Value
+            lblSangriaBD.Text = CStr(valor_sangria)
+
+
+        Catch ex As Exception : MessageBox.Show(ex.Message.ToString)
+        Finally
+            fechar()
+        End Try
 
     End Sub
 
@@ -344,5 +370,8 @@ Public Class frmPrincipal
 
     End Sub
 
-
+    Private Sub ReforçosAsCaixaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ReforçosAsCaixaToolStripMenuItem.Click
+        Dim form = New frmReforcoCaixa
+        form.ShowDialog()
+    End Sub
 End Class

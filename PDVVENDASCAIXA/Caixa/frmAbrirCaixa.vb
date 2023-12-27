@@ -10,7 +10,10 @@ Public Class frmAbrirCaixa
             MsgBox("Digite um valor")
         Else
             Dim cmd As SqlCommand
+            Dim cmd2 As SqlCommand
             Try
+
+                Dim descricao_Sangria As String = "inicio do dia"
 
                 abrir()
                 cmd = New SqlCommand("pa_caixa_abertura_caixa", con)
@@ -28,9 +31,11 @@ Public Class frmAbrirCaixa
                 cmd.Parameters.AddWithValue("@saldo_total", 0)
                 cmd.Parameters.AddWithValue("@valor_quebra", 0)
                 cmd.Parameters.AddWithValue("@hora_fecha", Now.ToLongTimeString())
+                '' cmd.Parameters.AddWithValue("@historicoSangria", descricao_Sangria)
+                ''   cmd.Parameters.AddWithValue("@valorReforco", 0)
 
-                '@data_ab,@hora_ab,@funcionario,@valor_ab,@valor_sangria,@hora_sangria,@quant_vendas,@prod_vendidos,
-                '@total_vendido,@total_caixa,@saldo_total,@valor_quebra,@hora_fecha
+                ''@data_ab,@hora_ab,@funcionario,@valor_ab,@valor_sangria,@hora_sangria,@quant_vendas,@prod_vendidos,
+                ''@total_vendido,@total_caixa,@saldo_total,@valor_quebra,@hora_fecha
                 cmd.Parameters.Add("@mensagem", SqlDbType.VarChar, 100).Direction = 2
                 cmd.ExecuteNonQuery()
 

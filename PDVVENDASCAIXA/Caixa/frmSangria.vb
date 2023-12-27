@@ -23,12 +23,53 @@ Public Class frmSangria
             Dim valor_sangria As Decimal = cmd.Parameters("@valor_sangria").Value
             lblTotSangria.Text = CStr(valor_sangria)
 
+            Listar()
 
         Catch ex As Exception
             MsgBox(ex.Message.ToString)
         Finally
             fechar()
         End Try
+
+    End Sub
+
+    Private Sub Listar()
+
+        Dim dt As New DataTable
+        Dim da As SqlDataAdapter
+
+        Try
+            abrir()
+
+            '  da = New SqlDataAdapter("SELECT * FROM tbProdutos", con)
+            da = New SqlDataAdapter("pa_Sangria_listar", con)
+            da.Fill(dt)
+            dg.DataSource = dt
+
+
+            FormatarDG()
+
+        Catch ex As Exception
+            MessageBox.Show("Erro ao Listar os produtos" + ex.Message.ToString)
+        Finally
+            fechar()
+        End Try
+    End Sub
+
+    Private Sub FormatarDG()
+        dg.Columns(0).Visible = False
+        dg.Columns(1).Visible = False
+
+        dg.Columns(1).HeaderText = "Funcionario"
+        dg.Columns(2).HeaderText = "Dt. Sangria"
+        dg.Columns(3).HeaderText = "Valor Sangria"
+        dg.Columns(4).HeaderText = "Hora Sangria"
+        dg.Columns(5).HeaderText = "Histórico"
+        dg.Columns(6).HeaderText = "tipo"
+
+
+        dg.Columns(5).Width = 180
+
 
     End Sub
 
@@ -47,13 +88,14 @@ Public Class frmSangria
                 sangriaBD = lblTotSangria.Text
                 total_sangria = sangria + sangriaBD
 
-                cmd = New SqlCommand("pa_caixa_editarSangria", con)
+                cmd = New SqlCommand("pa_sangria_salvar", con)
                 cmd.CommandType = CommandType.StoredProcedure
-                cmd.Parameters.AddWithValue("@data_ab", Now.ToShortDateString)
                 cmd.Parameters.AddWithValue("@funcionario", usuarioNome)
-                cmd.Parameters.AddWithValue("@valor_sangria", total_sangria)
-                cmd.Parameters.AddWithValue("@hora_sangria", Now.ToShortTimeString)
-
+                cmd.Parameters.AddWithValue("@data_sangria", Now.ToShortDateString())
+                cmd.Parameters.AddWithValue("@valor_sangria", txtSangria.Text)
+                cmd.Parameters.AddWithValue("@hora_sangria", Now.ToLongTimeString())
+                cmd.Parameters.AddWithValue("@historico", txtHistorico.Text)
+                cmd.Parameters.AddWithValue("@tipoRetirada", cbTipo.Text)
                 cmd.Parameters.Add("@mensagem", SqlDbType.VarChar, 100).Direction = 2
                 cmd.ExecuteNonQuery()
 
@@ -64,6 +106,7 @@ Public Class frmSangria
 
             Catch ex As Exception
                 MessageBox.Show("Erro, corriga os dados de alteração" + ex.Message.ToString)
+            Finally
                 fechar()
             End Try
         End If

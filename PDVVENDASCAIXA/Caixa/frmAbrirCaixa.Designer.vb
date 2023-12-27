@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class frmAbrirCaixa
     Inherits System.Windows.Forms.Form
 
     'Descartar substituições de formulário para limpar a lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class frmAbrirCaixa
     'OBSERVAÇÃO: o procedimento a seguir é exigido pelo Windows Form Designer
     'Pode ser modificado usando o Windows Form Designer.  
     'Não o modifique usando o editor de códigos.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmAbrirCaixa))
         Me.Label2 = New System.Windows.Forms.Label()
@@ -73,7 +73,7 @@ Partial Class frmAbrirCaixa
         Me.btnSalvar.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSalvar.ForeColor = System.Drawing.Color.White
         Me.btnSalvar.Image = CType(resources.GetObject("btnSalvar.Image"), System.Drawing.Image)
-        Me.btnSalvar.Location = New System.Drawing.Point(63, 85)
+        Me.btnSalvar.Location = New System.Drawing.Point(52, 85)
         Me.btnSalvar.Margin = New System.Windows.Forms.Padding(7, 6, 7, 6)
         Me.btnSalvar.Name = "btnSalvar"
         Me.btnSalvar.Size = New System.Drawing.Size(92, 37)
@@ -93,7 +93,7 @@ Partial Class frmAbrirCaixa
         Me.btSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btSair.ForeColor = System.Drawing.Color.White
         Me.btSair.Image = CType(resources.GetObject("btSair.Image"), System.Drawing.Image)
-        Me.btSair.Location = New System.Drawing.Point(159, 89)
+        Me.btSair.Location = New System.Drawing.Point(158, 89)
         Me.btSair.Margin = New System.Windows.Forms.Padding(7, 6, 7, 6)
         Me.btSair.Name = "btSair"
         Me.btSair.Size = New System.Drawing.Size(73, 33)
@@ -108,7 +108,7 @@ Partial Class frmAbrirCaixa
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Maroon
-        Me.ClientSize = New System.Drawing.Size(276, 138)
+        Me.ClientSize = New System.Drawing.Size(260, 143)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.btnSalvar)
         Me.Controls.Add(Me.btSair)
