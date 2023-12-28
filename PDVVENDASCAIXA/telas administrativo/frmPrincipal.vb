@@ -6,6 +6,84 @@ Public Class frmPrincipal
 
     Dim abertura As Boolean
 
+    Private Sub frmPrincipal_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        ' verifivarAbertura()
+        Me.Text = "GESTÃO ADMINISTRATIVA   -   PDV   -    EMPRESA:  " & empresaNome
+        lblUsuario.Text = usuarioNome
+
+        ' carregarSangria()
+        'carregarReforco()
+
+        If (usuarioNome = "admin") Then
+
+            FuncionáriosToolStripMenuItem.Enabled = True
+            SangriaToolStripMenuItem.Enabled = True
+            EmpresaToolStripMenuItem.Enabled = True
+        End If
+        Listar()
+        totalizar()
+
+    End Sub
+
+    Private Sub frmPrincipal_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
+        Application.Exit()
+    End Sub
+
+    Private Sub frmPrincipal_Activated(sender As Object, e As EventArgs) Handles MyBase.Activated
+        verifivarAbertura()
+        Listar()
+        totalizar()
+
+        If abertura = True Then
+            CarregarDados()
+            'CarregarDadosGeral()
+        End If
+
+    End Sub
+
+    Private Sub Listar()
+
+        Dim dt As New DataTable
+        Dim da As SqlDataAdapter
+        Dim cmd As SqlCommand
+
+        Try
+            abrir()
+
+            'METODO 1 - CONSULTA DIRETA NO FORMULÁRIO
+            ' cmd = New SqlCommand("SELECT ven.id_vendas, ven.num_vendas, pro.nome,cli.nome,pro.valor_venda,ven.quantidade,ven.valor, ven.funcionario, ven.data_venda, ven.id_produto, ven.id_cliente FROM tbVendas as ven INNER JOIN tbProdutos as pro on ven.id_produto=pro.id_produto INNER JOIN tbClientes  as cli on ven.id_cliente = cli.id_cliente where ven.data_venda=@data order by num_vendas desc", con)
+            ' cmd.Parameters.AddWithValue("@data", Now.Date())
+            'cmd.Parameters.AddWithValue("@funcionario", usuarioNome)
+            ' da = New SqlDataAdapter(cmd)
+
+            '============================================================================================================================================================
+
+
+            'METODO 2 - CONSULTA COM PROC NO BANCO DE DADOS
+            da = New SqlDataAdapter("pa_Vendas_ListaDiaria", con)
+            da.SelectCommand.CommandType = CommandType.StoredProcedure
+            da.SelectCommand.Parameters.AddWithValue("@data", Now.Date())
+            da.SelectCommand.Parameters.AddWithValue("@funcionario", usuarioNome)
+
+
+            '============================================================================================================================================================
+
+
+            da.Fill(dt)
+            dg.DataSource = dt
+
+            FormatarDG()
+            lblVendasDia.Text = dg.Rows.Count()
+            'totalizar()
+
+        Catch ex As Exception
+            MessageBox.Show("Erro ao Listar os produtos" + ex.Message.ToString)
+        Finally
+            fechar()
+        End Try
+    End Sub
+
+
     Private Sub FuncionáriosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles FuncionáriosToolStripMenuItem.Click
         Dim form = New frmFuncionarios
         form.ShowDialog()
@@ -66,104 +144,6 @@ Public Class frmPrincipal
         form.ShowDialog()
     End Sub
 
-    Private Sub frmPrincipal_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        ' verifivarAbertura()
-        Me.Text = "GESTÃO ADMINISTRATIVA   -   PDV   -    EMPRESA:  " & empresaNome
-        lblUsuario.Text = usuarioNome
-
-        carregarSangria()
-
-        If (usuarioNome = "admin") Then
-
-            FuncionáriosToolStripMenuItem.Enabled = True
-            SangriaToolStripMenuItem.Enabled = True
-            EmpresaToolStripMenuItem.Enabled = True
-        End If
-        Listar()
-        totalizar()
-
-    End Sub
-
-    Private Sub carregarSangria()
-        Dim cmd As New SqlCommand("pa_Sangria_listar_VALOR", con)
-
-        Try
-            abrir()
-            cmd.CommandType = 4
-            cmd.Parameters.AddWithValue("@data_sangria", Now.ToShortDateString())
-            cmd.Parameters.AddWithValue("@funcionario", usuarioNome)
-            cmd.Parameters.Add("@valor_sangria", SqlDbType.Decimal).Direction = 2
-            ' cmd.Parameters.Add("@total_caixa", SqlDbType.Decimal).Direction = 2
-
-            cmd.ExecuteNonQuery()
-
-            Dim valor_sangria As Decimal = cmd.Parameters("@valor_sangria").Value
-            lblSangriaBD.Text = CStr(valor_sangria)
-
-
-        Catch ex As Exception : MessageBox.Show(ex.Message.ToString)
-        Finally
-            fechar()
-        End Try
-
-    End Sub
-
-    Private Sub frmPrincipal_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
-        Application.Exit()
-    End Sub
-
-    Private Sub frmPrincipal_Activated(sender As Object, e As EventArgs) Handles MyBase.Activated
-        verifivarAbertura()
-        Listar()
-        totalizar()
-
-        If abertura = True Then
-            CarregarDados()
-        End If
-
-    End Sub
-
-    Private Sub Listar()
-
-        Dim dt As New DataTable
-        Dim da As SqlDataAdapter
-        Dim cmd As SqlCommand
-
-        Try
-            abrir()
-
-            'METODO 1 - CONSULTA DIRETA NO FORMULÁRIO
-            ' cmd = New SqlCommand("SELECT ven.id_vendas, ven.num_vendas, pro.nome,cli.nome,pro.valor_venda,ven.quantidade,ven.valor, ven.funcionario, ven.data_venda, ven.id_produto, ven.id_cliente FROM tbVendas as ven INNER JOIN tbProdutos as pro on ven.id_produto=pro.id_produto INNER JOIN tbClientes  as cli on ven.id_cliente = cli.id_cliente where ven.data_venda=@data order by num_vendas desc", con)
-            ' cmd.Parameters.AddWithValue("@data", Now.Date())
-            'cmd.Parameters.AddWithValue("@funcionario", usuarioNome)
-            ' da = New SqlDataAdapter(cmd)
-
-            '============================================================================================================================================================
-
-
-            'METODO 2 - CONSULTA COM PROC NO BANCO DE DADOS
-            da = New SqlDataAdapter("pa_Vendas_ListaDiaria", con)
-            da.SelectCommand.CommandType = CommandType.StoredProcedure
-            da.SelectCommand.Parameters.AddWithValue("@data", Now.Date())
-            da.SelectCommand.Parameters.AddWithValue("@funcionario", usuarioNome)
-
-
-            '============================================================================================================================================================
-
-
-            da.Fill(dt)
-            dg.DataSource = dt
-
-            FormatarDG()
-            lblVendasDia.Text = dg.Rows.Count()
-            'totalizar()
-
-        Catch ex As Exception
-            MessageBox.Show("Erro ao Listar os produtos" + ex.Message.ToString)
-        Finally
-            fechar()
-        End Try
-    End Sub
 
     Private Sub FormatarDG()
         dg.Columns(0).Visible = False
@@ -242,7 +222,6 @@ Public Class frmPrincipal
         End Try
     End Sub
 
-
     Private Sub ListarVendasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ListarVendasToolStripMenuItem.Click
         Dim form = New frmListaVendas
         form.ShowDialog()
@@ -265,6 +244,11 @@ Public Class frmPrincipal
 
     Private Sub SangriaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SangriaToolStripMenuItem.Click
         Dim form = New frmSangria
+        form.ShowDialog()
+    End Sub
+
+    Private Sub ReforçosAsCaixaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ReforçosAsCaixaToolStripMenuItem.Click
+        Dim form = New frmReforcoCaixa
         form.ShowDialog()
     End Sub
 
@@ -325,6 +309,50 @@ Public Class frmPrincipal
         End If
     End Sub
 
+    'caixa_buscarDadosGeral
+    Private Sub CarregarDadosGeral()
+        Dim cmd As New SqlCommand("caixa_buscarDadosGeral", con)
+        Try
+            abrir()
+            cmd.CommandType = 4
+            cmd.Parameters.AddWithValue("@data_ab", Now.ToShortDateString())
+            cmd.Parameters.AddWithValue("@funcionario", usuarioNome)
+            cmd.Parameters.Add("@hora_ab", SqlDbType.Time).Direction = 2
+            cmd.Parameters.Add("@hora_sangria", SqlDbType.Time).Direction = 2
+            cmd.Parameters.Add("@valor_ab", SqlDbType.Decimal).Direction = 2
+            cmd.Parameters.Add("@valor_sangria", SqlDbType.Decimal).Direction = 2
+            ' cmd.Parameters.Add("@total_caixa", SqlDbType.Decimal).Direction = 2
+
+            cmd.ExecuteNonQuery()
+
+            Dim hora_ab As TimeSpan = cmd.Parameters("@hora_ab").Value
+            lblHoraAb.Text = hora_ab.ToString()
+
+            Dim hora_sangria As TimeSpan = cmd.Parameters("@hora_sangria").Value
+            lblHoraSangria.Text = hora_sangria.ToString()
+
+            Dim valor_ab As Decimal = cmd.Parameters("@valor_ab").Value
+            lblVlrAb.Text = CStr(valor_ab)
+
+            Dim valor_sangria As Decimal = cmd.Parameters("@valor_sangria").Value
+            lblTotSangria.Text = CStr(valor_sangria)
+
+            'Dim total_caixa As Decimal = cmd.Parameters("@total_caixa").Value
+            'lblTotalCaixa.Text = CStr(total_caixa)
+
+            'If total_caixa > 0 Then
+            '    abertura = False
+            '    carregarImagem()
+            'End If
+
+        Catch ex As Exception
+            MsgBox(ex.Message.ToString)
+        Finally
+            fechar()
+        End Try
+
+    End Sub
+
     Private Sub CarregarDados()
         Dim cmd As New SqlCommand("pa_caixa_buscarDadosCaixa", con)
 
@@ -370,8 +398,92 @@ Public Class frmPrincipal
 
     End Sub
 
-    Private Sub ReforçosAsCaixaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ReforçosAsCaixaToolStripMenuItem.Click
-        Dim form = New frmReforcoCaixa
-        form.ShowDialog()
+
+
+    'Private Sub carregarSangria()
+    '    Dim cmd As SqlCommand
+    '    Dim cmd2 As New SqlCommand("pa_Sangria_listar_VALOR", con)
+
+    '    Try
+    '        abrir()
+
+    '        cmd = New SqlCommand("pa_sangria_salvar", con)
+    '        cmd.CommandType = CommandType.StoredProcedure
+    '        cmd.Parameters.AddWithValue("@funcionario", usuarioNome)
+    '        cmd.Parameters.AddWithValue("@data_sangria", Now.ToShortDateString())
+    '        cmd.Parameters.AddWithValue("@valor_sangria", 0)
+    '        cmd.Parameters.AddWithValue("@hora_sangria", Now.ToLongTimeString())
+    '        cmd.Parameters.AddWithValue("@historico", "INICIO DO DIA")
+    '        cmd.Parameters.AddWithValue("@tipoRetirada", "")
+    '        cmd.Parameters.Add("@mensagem", SqlDbType.VarChar, 100).Direction = 2
+    '        cmd.ExecuteNonQuery()
+
+    '        Dim msg As String = cmd.Parameters("@mensagem").Value.ToString
+
+    '        '================================================================================================================================
+    '        '================================================================================================================================
+
+    '        cmd2.CommandType = 4
+    '        cmd2.Parameters.AddWithValue("@data_sangria", Now.ToShortDateString())
+    '        cmd2.Parameters.AddWithValue("@funcionario", usuarioNome)
+    '        cmd2.Parameters.Add("@valor_sangria", SqlDbType.Decimal).Direction = 2
+
+    '        cmd2.ExecuteNonQuery()
+
+    '        Dim valor_sangria As Decimal = cmd2.Parameters("@valor_sangria").Value
+    '        lblSangriaBD.Text = CStr(valor_sangria)
+
+
+    '    Catch ex As Exception : MessageBox.Show(ex.Message.ToString)
+    '    Finally
+    '        fechar()
+    '    End Try
+
+    'End Sub
+
+    Private Sub carregarReforco()
+        Dim cmd As New SqlCommand("pa_Reforco_listar_VALOR", con)
+
+        Try
+            abrir()
+
+            Dim vlReforco = Replace(lblReforco.Text, ",", ".")
+
+            abrir()
+            cmd = New SqlCommand("pa_Reforco_salvar", con)
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.Parameters.AddWithValue("@dataF", Now.ToShortDateString())
+            cmd.Parameters.AddWithValue("@horaF", Now.ToLongTimeString())
+            cmd.Parameters.AddWithValue("@funcionario", usuarioNome)
+            cmd.Parameters.AddWithValue("@valor", 0)
+            cmd.Parameters.AddWithValue("@motivo", "")
+            cmd.Parameters.Add("@mensagem", SqlDbType.VarChar, 100).Direction = 2
+            cmd.ExecuteNonQuery()
+
+            Dim msg As String = cmd.Parameters("@mensagem").Value.ToString
+
+
+
+
+
+            cmd.CommandType = 4
+            cmd.Parameters.AddWithValue("@dataF", Now.ToShortDateString())
+            cmd.Parameters.AddWithValue("@funcionario", usuarioNome)
+            cmd.Parameters.Add("@valor", SqlDbType.Decimal).Direction = 2
+
+
+            cmd.ExecuteNonQuery()
+
+            Dim valor_reforco As Decimal = cmd.Parameters("@valor").Value
+            lblReforco.Text = CStr(valor_reforco)
+
+
+        Catch ex As Exception : MessageBox.Show(ex.Message.ToString)
+        Finally
+            fechar()
+        End Try
     End Sub
+
+
+
 End Class

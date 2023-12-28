@@ -25,7 +25,7 @@ Partial Class frmReforcoCaixa
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmReforcoCaixa))
         Me.dg = New System.Windows.Forms.DataGridView()
-        Me.txtHistorico = New System.Windows.Forms.TextBox()
+        Me.txtMotivo = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.txtValor = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -63,13 +63,13 @@ Partial Class frmReforcoCaixa
         Me.dg.Size = New System.Drawing.Size(449, 177)
         Me.dg.TabIndex = 222
         '
-        'txtHistorico
+        'txtMotivo
         '
-        Me.txtHistorico.Location = New System.Drawing.Point(94, 73)
-        Me.txtHistorico.Margin = New System.Windows.Forms.Padding(5)
-        Me.txtHistorico.Name = "txtHistorico"
-        Me.txtHistorico.Size = New System.Drawing.Size(301, 20)
-        Me.txtHistorico.TabIndex = 219
+        Me.txtMotivo.Location = New System.Drawing.Point(94, 73)
+        Me.txtMotivo.Margin = New System.Windows.Forms.Padding(5)
+        Me.txtMotivo.Name = "txtMotivo"
+        Me.txtMotivo.Size = New System.Drawing.Size(301, 20)
+        Me.txtMotivo.TabIndex = 219
         '
         'Label5
         '
@@ -170,7 +170,7 @@ Partial Class frmReforcoCaixa
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(14, 9)
+        Me.Label1.Location = New System.Drawing.Point(33, 9)
         Me.Label1.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(397, 29)
@@ -239,7 +239,7 @@ Partial Class frmReforcoCaixa
         Me.Controls.Add(Me.btnExcluir)
         Me.Controls.Add(Me.dg)
         Me.Controls.Add(Me.btnEditar)
-        Me.Controls.Add(Me.txtHistorico)
+        Me.Controls.Add(Me.txtMotivo)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.btnSalvar)
@@ -258,7 +258,7 @@ Partial Class frmReforcoCaixa
 
     End Sub
     Friend WithEvents dg As DataGridView
-    Friend WithEvents txtHistorico As TextBox
+    Friend WithEvents txtMotivo As TextBox
     Friend WithEvents Label5 As Label
     Friend WithEvents btnSalvar As Button
     Friend WithEvents btSair As Button

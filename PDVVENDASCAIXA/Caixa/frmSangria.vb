@@ -58,23 +58,20 @@ Public Class frmSangria
 
     Private Sub FormatarDG()
         dg.Columns(0).Visible = False
-        dg.Columns(1).Visible = False
 
-        dg.Columns(1).HeaderText = "Funcionario"
-        dg.Columns(2).HeaderText = "Dt. Sangria"
-        dg.Columns(3).HeaderText = "Valor Sangria"
-        dg.Columns(4).HeaderText = "Hora Sangria"
-        dg.Columns(5).HeaderText = "Histórico"
-        dg.Columns(6).HeaderText = "tipo"
+        dg.Columns(1).HeaderText = "Valor Sangria"
+        dg.Columns(2).HeaderText = "Hora Sangria"
+        dg.Columns(3).HeaderText = "Histórico"
+        dg.Columns(4).HeaderText = "tipo"
 
-
-        dg.Columns(5).Width = 180
+        dg.Columns(3).Width = 180
 
 
     End Sub
 
-    Private Sub btnSalvar_Click(sender As Object, e As EventArgs) Handles btnSalvar.Click
+    Private Sub btnEditar_Click(sender As Object, e As EventArgs) Handles btnEditar.Click
         Dim cmd As SqlCommand
+        Dim cmd2 As SqlCommand
 
         If txtSangria.Text <> "" Then
 
@@ -88,19 +85,33 @@ Public Class frmSangria
                 sangriaBD = lblTotSangria.Text
                 total_sangria = sangria + sangriaBD
 
-                cmd = New SqlCommand("pa_sangria_salvar", con)
+                cmd = New SqlCommand("pa_caixa_editarSangria", con)
                 cmd.CommandType = CommandType.StoredProcedure
+                cmd.Parameters.AddWithValue("@data_ab", Now.ToShortDateString())
                 cmd.Parameters.AddWithValue("@funcionario", usuarioNome)
-                cmd.Parameters.AddWithValue("@data_sangria", Now.ToShortDateString())
-                cmd.Parameters.AddWithValue("@valor_sangria", txtSangria.Text)
+                cmd.Parameters.AddWithValue("@valor_sangria", total_sangria)
                 cmd.Parameters.AddWithValue("@hora_sangria", Now.ToLongTimeString())
-                cmd.Parameters.AddWithValue("@historico", txtHistorico.Text)
-                cmd.Parameters.AddWithValue("@tipoRetirada", cbTipo.Text)
+
                 cmd.Parameters.Add("@mensagem", SqlDbType.VarChar, 100).Direction = 2
                 cmd.ExecuteNonQuery()
 
                 Dim msg As String = cmd.Parameters("@mensagem").Value.ToString
                 MessageBox.Show(msg, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
+
+                '==============================================================================================================================
+                '==============================================================================================================================
+
+                cmd2 = New SqlCommand("pa_sangria_salvar", con)
+                cmd2.CommandType = CommandType.StoredProcedure
+                cmd2.Parameters.AddWithValue("@valor_sangria", txtSangria.Text)
+                cmd2.Parameters.AddWithValue("@hora_sangria", Now.ToLongTimeString())
+                cmd2.Parameters.AddWithValue("@historico", txtHistorico.Text)
+                cmd2.Parameters.AddWithValue("@tipoRetirada", cbTipo.Text)
+                cmd2.Parameters.Add("@mensagem", SqlDbType.VarChar, 100).Direction = 2
+                cmd2.ExecuteNonQuery()
+
+                Dim msg2 As String = cmd.Parameters("@mensagem").Value.ToString
+                MessageBox.Show(msg2, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
 
                 Me.Hide()
 
@@ -115,4 +126,5 @@ Public Class frmSangria
     Private Sub btSair_Click(sender As Object, e As EventArgs) Handles btSair.Click
         Me.Close()
     End Sub
+
 End Class

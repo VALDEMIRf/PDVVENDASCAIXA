@@ -2,6 +2,8 @@
 
 Public Class frmReforcoCaixa
     Private Sub frmReforcoCaixa_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        txtValor.Focus()
+        DesabilitarCampos()
         Listar()
 
     End Sub
@@ -29,13 +31,12 @@ Public Class frmReforcoCaixa
 
     Private Sub FormatarDG()
         dg.Columns(0).Visible = False
-        ' dg.Columns(1).Visible = False
 
-        dg.Columns(1).HeaderText = "Valor"
-        dg.Columns(2).HeaderText = "Historico"
+        dg.Columns(1).HeaderText = "Hora"
+        dg.Columns(2).HeaderText = "Valor"
+        dg.Columns(3).HeaderText = "Motivo"
 
-
-        dg.Columns(2).Width = 180
+        dg.Columns(3).Width = 180
 
     End Sub
 
@@ -44,58 +45,50 @@ Public Class frmReforcoCaixa
         btnExcluir.Enabled = True
         btnSalvar.Enabled = False
 
-
-
         HabilitarCampos()
 
         lblCodigo.Text = dg.CurrentRow.Cells(0).Value
         txtValor.Text = dg.CurrentRow.Cells(1).Value
-        txtHistorico.Text = dg.CurrentRow.Cells(2).Value
-
-    End Sub
-
-    Private Sub HabilitarCampos()
+        txtMotivo.Text = dg.CurrentRow.Cells(2).Value
 
     End Sub
 
     Private Sub btnSalvar_Click(sender As Object, e As EventArgs) Handles btnSalvar.Click
         Dim cmd As SqlCommand
+        If txtValor.Text <> "" Then
+            Try
+                Dim vlReforco = Replace(txtValor.Text, ",", ".")
 
-        Try
-            Dim vlReforco = Replace(txtValor.Text, ",", ".")
+                abrir()
+                cmd = New SqlCommand("pa_Reforco_salvar", con)
+                cmd.CommandType = CommandType.StoredProcedure
+                cmd.Parameters.AddWithValue("@horaF", Now.ToLongTimeString())
+                cmd.Parameters.AddWithValue("@valor", vlReforco)
+                cmd.Parameters.AddWithValue("@motivo", txtMotivo.Text)
+                cmd.Parameters.Add("@mensagem", SqlDbType.VarChar, 100).Direction = 2
+                cmd.ExecuteNonQuery()
 
-            abrir()
-            cmd = New SqlCommand("pa_Reforco_salvar", con)
-            cmd.CommandType = CommandType.StoredProcedure
+                Dim msg As String = cmd.Parameters("@mensagem").Value.ToString
+                MessageBox.Show(msg, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button3)
 
-            cmd.Parameters.AddWithValue("@valor", vlReforco)
-            cmd.Parameters.AddWithValue("@historico", txtHistorico.Text)
-            cmd.Parameters.Add("@mensagem", SqlDbType.VarChar, 100).Direction = 2
-            cmd.ExecuteNonQuery()
+                Listar()
+                Limpar()
+                btnSalvar.Enabled = False
 
-            Dim msg As String = cmd.Parameters("@mensagem").Value.ToString
-            MessageBox.Show(msg, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button3)
+            Catch ex As Exception
+                MessageBox.Show("Erro ao salvar os dados" + ex.Message.ToString)
+            Finally
+                fechar()
 
-            Listar()
-            Limpar()
-            btnSalvar.Enabled = False
-
-        Catch ex As Exception
-            MessageBox.Show("Erro ao salvar os dados" + ex.Message.ToString)
-        Finally
-            fechar()
-
-        End Try
-        'End If
+            End Try
+        End If
     End Sub
 
     Private Sub btnEditar_Click(sender As Object, e As EventArgs) Handles btnEditar.Click
         Dim cmd As SqlCommand
-
-        Dim vlReforco = Replace(txtValor.Text, ",", ".")
-
-
         If txtValor.Text <> "" Then
+
+            Dim vlReforco = Replace(txtValor.Text, ",", ".")
 
             Try
 
@@ -103,8 +96,9 @@ Public Class frmReforcoCaixa
                 cmd = New SqlCommand("pa_Reforco_editar", con)
                 cmd.CommandType = CommandType.StoredProcedure
                 cmd.Parameters.AddWithValue("@id_reforco", lblCodigo.Text)
+                cmd.Parameters.AddWithValue("@horaF", Now.ToLongTimeString())
                 cmd.Parameters.AddWithValue("@valor", vlReforco)
-                cmd.Parameters.AddWithValue("@historico", txtHistorico.Text)
+                cmd.Parameters.AddWithValue("@motivo", txtMotivo.Text)
                 cmd.Parameters.Add("@mensagem", SqlDbType.VarChar, 100).Direction = 2
                 cmd.ExecuteNonQuery()
 
@@ -143,7 +137,6 @@ Public Class frmReforcoCaixa
                 Limpar()
 
                 btnExcluir.Enabled = False
-
                 btnEditar.Enabled = False
 
             Catch ex As Exception
@@ -158,8 +151,8 @@ Public Class frmReforcoCaixa
     End Sub
 
     Private Sub btnNovo_Click(sender As Object, e As EventArgs) Handles btnNovo.Click
-        HabilitarCampos()
         Limpar()
+        HabilitarCampos()
         btnSalvar.Enabled = True
         btnEditar.Enabled = False
         btnExcluir.Enabled = False
@@ -168,7 +161,16 @@ Public Class frmReforcoCaixa
     Private Sub Limpar()
         txtValor.Focus()
         txtValor.Text = ""
-        txtHistorico.Text = ""
+        txtMotivo.Text = ""
     End Sub
 
+    Private Sub DesabilitarCampos()
+        txtValor.Enabled = False
+        txtMotivo.Enabled = False
+    End Sub
+
+    Private Sub HabilitarCampos()
+        txtValor.Enabled = True
+        txtMotivo.Enabled = True
+    End Sub
 End Class

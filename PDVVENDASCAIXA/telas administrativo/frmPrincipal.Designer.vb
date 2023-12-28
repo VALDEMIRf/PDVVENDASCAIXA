@@ -47,6 +47,7 @@ Partial Class frmPrincipal
         Me.PDVRegistrarVendaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ListarVendasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SangriaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ReforçosAsCaixaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.RelatóriosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CatálogoDeProdutosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.RelatórioDoCaixaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -83,8 +84,10 @@ Partial Class frmPrincipal
         Me.txtTotaliza = New System.Windows.Forms.TextBox()
         Me.imagem = New System.Windows.Forms.PictureBox()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.lblSangriaBD = New System.Windows.Forms.Label()
-        Me.ReforçosAsCaixaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.lblReforco = New System.Windows.Forms.Label()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.Label10 = New System.Windows.Forms.Label()
         Me.MenuStrip1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.dg, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -266,6 +269,12 @@ Partial Class frmPrincipal
         Me.SangriaToolStripMenuItem.Name = "SangriaToolStripMenuItem"
         Me.SangriaToolStripMenuItem.Size = New System.Drawing.Size(200, 24)
         Me.SangriaToolStripMenuItem.Text = "Sangria"
+        '
+        'ReforçosAsCaixaToolStripMenuItem
+        '
+        Me.ReforçosAsCaixaToolStripMenuItem.Name = "ReforçosAsCaixaToolStripMenuItem"
+        Me.ReforçosAsCaixaToolStripMenuItem.Size = New System.Drawing.Size(200, 24)
+        Me.ReforçosAsCaixaToolStripMenuItem.Text = "Reforços as Caixa"
         '
         'RelatóriosToolStripMenuItem
         '
@@ -450,7 +459,7 @@ Partial Class frmPrincipal
         Me.lblTextoCaixa.AutoSize = True
         Me.lblTextoCaixa.Font = New System.Drawing.Font("Arial", 33.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblTextoCaixa.ForeColor = System.Drawing.Color.DarkSlateBlue
-        Me.lblTextoCaixa.Location = New System.Drawing.Point(276, 42)
+        Me.lblTextoCaixa.Location = New System.Drawing.Point(324, 69)
         Me.lblTextoCaixa.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblTextoCaixa.Name = "lblTextoCaixa"
         Me.lblTextoCaixa.Size = New System.Drawing.Size(349, 51)
@@ -461,7 +470,7 @@ Partial Class frmPrincipal
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(655, 76)
+        Me.Label2.Location = New System.Drawing.Point(752, 76)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(55, 18)
         Me.Label2.TabIndex = 227
@@ -471,7 +480,7 @@ Partial Class frmPrincipal
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(633, 125)
+        Me.Label3.Location = New System.Drawing.Point(730, 125)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(122, 18)
         Me.Label3.TabIndex = 228
@@ -511,7 +520,7 @@ Partial Class frmPrincipal
         '
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(756, 294)
+        Me.Label8.Location = New System.Drawing.Point(752, 294)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(113, 18)
         Me.Label8.TabIndex = 232
@@ -521,7 +530,7 @@ Partial Class frmPrincipal
         '
         Me.lblTotSangria.AutoSize = True
         Me.lblTotSangria.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblTotSangria.Location = New System.Drawing.Point(888, 294)
+        Me.lblTotSangria.Location = New System.Drawing.Point(890, 294)
         Me.lblTotSangria.Name = "lblTotSangria"
         Me.lblTotSangria.Size = New System.Drawing.Size(14, 18)
         Me.lblTotSangria.TabIndex = 233
@@ -561,7 +570,7 @@ Partial Class frmPrincipal
         '
         Me.lblVendasDia.AutoSize = True
         Me.lblVendasDia.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblVendasDia.Location = New System.Drawing.Point(764, 125)
+        Me.lblVendasDia.Location = New System.Drawing.Point(861, 125)
         Me.lblVendasDia.Name = "lblVendasDia"
         Me.lblVendasDia.Size = New System.Drawing.Size(14, 18)
         Me.lblVendasDia.TabIndex = 240
@@ -581,7 +590,7 @@ Partial Class frmPrincipal
         '
         Me.imagem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
         Me.imagem.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.imagem.Location = New System.Drawing.Point(716, 69)
+        Me.imagem.Location = New System.Drawing.Point(813, 69)
         Me.imagem.Name = "imagem"
         Me.imagem.Size = New System.Drawing.Size(25, 25)
         Me.imagem.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -598,21 +607,45 @@ Partial Class frmPrincipal
         Me.Label5.TabIndex = 243
         Me.Label5.Text = "R$"
         '
-        'lblSangriaBD
+        'lblReforco
         '
-        Me.lblSangriaBD.AutoSize = True
-        Me.lblSangriaBD.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblSangriaBD.Location = New System.Drawing.Point(856, 334)
-        Me.lblSangriaBD.Name = "lblSangriaBD"
-        Me.lblSangriaBD.Size = New System.Drawing.Size(14, 17)
-        Me.lblSangriaBD.TabIndex = 244
-        Me.lblSangriaBD.Text = "-"
+        Me.lblReforco.AutoSize = True
+        Me.lblReforco.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblReforco.Location = New System.Drawing.Point(894, 344)
+        Me.lblReforco.Name = "lblReforco"
+        Me.lblReforco.Size = New System.Drawing.Size(14, 18)
+        Me.lblReforco.TabIndex = 246
+        Me.lblReforco.Text = "-"
         '
-        'ReforçosAsCaixaToolStripMenuItem
+        'Label9
         '
-        Me.ReforçosAsCaixaToolStripMenuItem.Name = "ReforçosAsCaixaToolStripMenuItem"
-        Me.ReforçosAsCaixaToolStripMenuItem.Size = New System.Drawing.Size(200, 24)
-        Me.ReforçosAsCaixaToolStripMenuItem.Text = "Reforços as Caixa"
+        Me.Label9.AutoSize = True
+        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.Location = New System.Drawing.Point(723, 343)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(145, 18)
+        Me.Label9.TabIndex = 245
+        Me.Label9.Text = "Reforço do Caixa:"
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.Location = New System.Drawing.Point(860, 295)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(29, 18)
+        Me.Label7.TabIndex = 247
+        Me.Label7.Text = "R$"
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label10.Location = New System.Drawing.Point(863, 344)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(29, 18)
+        Me.Label10.TabIndex = 248
+        Me.Label10.Text = "R$"
         '
         'frmPrincipal
         '
@@ -620,7 +653,10 @@ Partial Class frmPrincipal
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Teal
         Me.ClientSize = New System.Drawing.Size(962, 531)
-        Me.Controls.Add(Me.lblSangriaBD)
+        Me.Controls.Add(Me.Label10)
+        Me.Controls.Add(Me.Label7)
+        Me.Controls.Add(Me.lblReforco)
+        Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.imagem)
         Me.Controls.Add(Me.txtTotaliza)
@@ -718,6 +754,9 @@ Partial Class frmPrincipal
     Friend WithEvents txtTotaliza As TextBox
     Friend WithEvents imagem As PictureBox
     Friend WithEvents Label5 As Label
-    Friend WithEvents lblSangriaBD As Label
     Friend WithEvents ReforçosAsCaixaToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents lblReforco As Label
+    Friend WithEvents Label9 As Label
+    Friend WithEvents Label7 As Label
+    Friend WithEvents Label10 As Label
 End Class

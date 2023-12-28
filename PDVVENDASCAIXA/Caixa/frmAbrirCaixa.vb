@@ -14,6 +14,7 @@ Public Class frmAbrirCaixa
             Try
 
                 Dim descricao_Sangria As String = "inicio do dia"
+                Dim descricao_reforco As String = "inicio do dia"
 
                 abrir()
                 cmd = New SqlCommand("pa_caixa_abertura_caixa", con)
@@ -24,6 +25,7 @@ Public Class frmAbrirCaixa
                 cmd.Parameters.AddWithValue("@valor_ab", txtAbertura.Text)
                 cmd.Parameters.AddWithValue("@valor_sangria", 0)
                 cmd.Parameters.AddWithValue("@hora_sangria", Now.ToLongTimeString())
+                ' cmd.Parameters.AddWithValue("@historico", descricao_Sangria)
                 cmd.Parameters.AddWithValue("@quant_vendas", 0)
                 cmd.Parameters.AddWithValue("@prod_vendidos", 0)
                 cmd.Parameters.AddWithValue("@total_vendido", 0)
@@ -31,8 +33,9 @@ Public Class frmAbrirCaixa
                 cmd.Parameters.AddWithValue("@saldo_total", 0)
                 cmd.Parameters.AddWithValue("@valor_quebra", 0)
                 cmd.Parameters.AddWithValue("@hora_fecha", Now.ToLongTimeString())
-                '' cmd.Parameters.AddWithValue("@historicoSangria", descricao_Sangria)
-                ''   cmd.Parameters.AddWithValue("@valorReforco", 0)
+                ' cmd.Parameters.AddWithValue("@valor_reforco", 0)
+                ' cmd.Parameters.AddWithValue("@motivo_reforco", descricao_reforco)
+
 
                 ''@data_ab,@hora_ab,@funcionario,@valor_ab,@valor_sangria,@hora_sangria,@quant_vendas,@prod_vendidos,
                 ''@total_vendido,@total_caixa,@saldo_total,@valor_quebra,@hora_fecha

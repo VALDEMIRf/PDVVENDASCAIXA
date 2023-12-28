@@ -27,14 +27,13 @@ Partial Class frmSangria
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txtSangria = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.btnSalvar = New System.Windows.Forms.Button()
         Me.btSair = New System.Windows.Forms.Button()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.lblTotSangria = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.txtHistorico = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.btnEditar = New System.Windows.Forms.Button()
         Me.dg = New System.Windows.Forms.DataGridView()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.cbTipo = New System.Windows.Forms.ComboBox()
@@ -72,27 +71,6 @@ Partial Class frmSangria
         Me.Label2.Size = New System.Drawing.Size(76, 16)
         Me.Label2.TabIndex = 198
         Me.Label2.Text = "Valor (R$):"
-        '
-        'btnSalvar
-        '
-        Me.btnSalvar.BackColor = System.Drawing.Color.Transparent
-        Me.btnSalvar.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnSalvar.FlatAppearance.BorderSize = 0
-        Me.btnSalvar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Azure
-        Me.btnSalvar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
-        Me.btnSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnSalvar.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSalvar.ForeColor = System.Drawing.Color.White
-        Me.btnSalvar.Image = CType(resources.GetObject("btnSalvar.Image"), System.Drawing.Image)
-        Me.btnSalvar.Location = New System.Drawing.Point(299, 331)
-        Me.btnSalvar.Margin = New System.Windows.Forms.Padding(7, 6, 7, 6)
-        Me.btnSalvar.Name = "btnSalvar"
-        Me.btnSalvar.Size = New System.Drawing.Size(92, 37)
-        Me.btnSalvar.TabIndex = 199
-        Me.btnSalvar.Text = "Gravar"
-        Me.btnSalvar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.btnSalvar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnSalvar.UseVisualStyleBackColor = False
         '
         'btSair
         '
@@ -170,26 +148,26 @@ Partial Class frmSangria
         Me.Label5.TabIndex = 206
         Me.Label5.Text = "Histórico:"
         '
-        'Button1
+        'btnEditar
         '
-        Me.Button1.BackColor = System.Drawing.Color.Transparent
-        Me.Button1.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button1.FlatAppearance.BorderSize = 0
-        Me.Button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Azure
-        Me.Button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.ForeColor = System.Drawing.Color.White
-        Me.Button1.Image = CType(resources.GetObject("Button1.Image"), System.Drawing.Image)
-        Me.Button1.Location = New System.Drawing.Point(193, 331)
-        Me.Button1.Margin = New System.Windows.Forms.Padding(7, 6, 7, 6)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(92, 37)
-        Me.Button1.TabIndex = 207
-        Me.Button1.Text = "Editar"
-        Me.Button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.Button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.Button1.UseVisualStyleBackColor = False
+        Me.btnEditar.BackColor = System.Drawing.Color.Transparent
+        Me.btnEditar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnEditar.FlatAppearance.BorderSize = 0
+        Me.btnEditar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Azure
+        Me.btnEditar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
+        Me.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnEditar.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnEditar.ForeColor = System.Drawing.Color.White
+        Me.btnEditar.Image = CType(resources.GetObject("btnEditar.Image"), System.Drawing.Image)
+        Me.btnEditar.Location = New System.Drawing.Point(299, 336)
+        Me.btnEditar.Margin = New System.Windows.Forms.Padding(7, 6, 7, 6)
+        Me.btnEditar.Name = "btnEditar"
+        Me.btnEditar.Size = New System.Drawing.Size(92, 37)
+        Me.btnEditar.TabIndex = 207
+        Me.btnEditar.Text = "Editar"
+        Me.btnEditar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnEditar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnEditar.UseVisualStyleBackColor = False
         '
         'dg
         '
@@ -245,14 +223,13 @@ Partial Class frmSangria
         Me.Controls.Add(Me.cbTipo)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.dg)
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.btnEditar)
         Me.Controls.Add(Me.txtHistorico)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.lblTotSangria)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.btnSalvar)
         Me.Controls.Add(Me.btSair)
         Me.Controls.Add(Me.txtSangria)
         Me.Controls.Add(Me.Label2)
@@ -269,7 +246,6 @@ Partial Class frmSangria
     End Sub
 
     Friend WithEvents Label1 As Label
-    Friend WithEvents btnSalvar As Button
     Friend WithEvents btSair As Button
     Friend WithEvents txtSangria As TextBox
     Friend WithEvents Label2 As Label
@@ -278,7 +254,7 @@ Partial Class frmSangria
     Friend WithEvents Label4 As Label
     Friend WithEvents txtHistorico As TextBox
     Friend WithEvents Label5 As Label
-    Friend WithEvents Button1 As Button
+    Friend WithEvents btnEditar As Button
     Friend WithEvents dg As DataGridView
     Friend WithEvents Label6 As Label
     Friend WithEvents cbTipo As ComboBox
