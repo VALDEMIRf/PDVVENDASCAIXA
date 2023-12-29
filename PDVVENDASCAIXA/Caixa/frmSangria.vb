@@ -16,7 +16,7 @@ Public Class frmSangria
             cmd.Parameters.Add("@hora_sangria", SqlDbType.Time).Direction = 2
             cmd.Parameters.Add("@valor_ab", SqlDbType.Decimal).Direction = 2
             cmd.Parameters.Add("@valor_sangria", SqlDbType.Decimal).Direction = 2
-            '  cmd.Parameters.Add("@total_caixa", SqlDbType.Decimal).Direction = 2
+            cmd.Parameters.Add("@total_caixa", SqlDbType.Decimal).Direction = 2
 
             cmd.ExecuteNonQuery()
 

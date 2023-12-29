@@ -1,6 +1,7 @@
 ﻿Imports System.Data.SqlClient
 
 Public Class frmReforcoCaixa
+
     Private Sub frmReforcoCaixa_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         txtValor.Focus()
         DesabilitarCampos()

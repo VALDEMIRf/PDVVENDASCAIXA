@@ -203,6 +203,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ProdutosDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Relatorios\frmRelCaixa.Designer.vb">
+      <DependentUpon>frmRelCaixa.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Relatorios\frmRelCaixa.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Relatorios\frmRelComprovante.Designer.vb">
       <DependentUpon>frmRelComprovante.vb</DependentUpon>
     </Compile>
@@ -227,6 +233,12 @@
     <Compile Include="Relatorios\frmRelVenda.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="telas administrativo\frmInicial.Designer.vb">
+      <DependentUpon>frmInicial.vb</DependentUpon>
+    </Compile>
+    <Compile Include="telas administrativo\frmInicial.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="telas administrativo\frmLogin.Designer.vb">
       <DependentUpon>frmLogin.vb</DependentUpon>
     </Compile>
@@ -247,6 +259,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="telas administrativo\frmLoginAdm.Designer.vb">
+      <DependentUpon>frmLoginAdm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="telas administrativo\frmLoginAdm.vb">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="telas administrativo\frmPrincipal.Designer.vb">
       <DependentUpon>frmPrincipal.vb</DependentUpon>
@@ -331,6 +349,9 @@
     <EmbeddedResource Include="Relatorios\rel\relProdutos1.rdlc" />
     <EmbeddedResource Include="Relatorios\rel\relServicos.rdlc" />
     <EmbeddedResource Include="Relatorios\rel\relVenda.rdlc" />
+    <EmbeddedResource Include="telas administrativo\frmInicial.resx">
+      <DependentUpon>frmInicial.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="telas administrativo\frmLogin.resx">
       <DependentUpon>frmLogin.vb</DependentUpon>
     </EmbeddedResource>
@@ -339,6 +360,9 @@
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="telas administrativo\frmLoginAdm.resx">
+      <DependentUpon>frmLoginAdm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="telas administrativo\frmPrincipal.resx">
       <DependentUpon>frmPrincipal.vb</DependentUpon>
@@ -577,9 +601,15 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="backgrounds\images %283%29.jpg" />
+    <Content Include="backgrounds\images %284%29.jpg" />
     <Content Include="backgrounds\MEU LOGOS.jpg" />
     <Content Include="backgrounds\MINHA LOGO.jpg" />
+    <Content Include="backgrounds\seu logo inicial.jpeg" />
     <Content Include="backgrounds\tela de login.jpg" />
+    <Content Include="imagens\Ok-icon.png" />
+    <Content Include="imagens\Ok-icon1.png" />
+    <Content Include="imagens\sair2.png" />
     <Content Include="imgProdutos\aquario beta.jpg" />
     <Content Include="imgProdutos\bebedouro e comedouro.jpg" />
     <Content Include="imgProdutos\bola pata.jpg" />

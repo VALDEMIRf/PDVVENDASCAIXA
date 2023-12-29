@@ -25,6 +25,37 @@ Partial Class frmPrincipal
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmPrincipal))
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
+        Me.lblUsuario = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.lblHora = New System.Windows.Forms.Label()
+        Me.lblData = New System.Windows.Forms.Label()
+        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.dg = New System.Windows.Forms.DataGridView()
+        Me.lblTotalDoDia = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.lblTextoCaixa = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.lblHoraAb = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.lblVlrAb = New System.Windows.Forms.Label()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.lblTotSangria = New System.Windows.Forms.Label()
+        Me.Label13 = New System.Windows.Forms.Label()
+        Me.Label14 = New System.Windows.Forms.Label()
+        Me.lblHoraSangria = New System.Windows.Forms.Label()
+        Me.lblVendasDia = New System.Windows.Forms.Label()
+        Me.txtTotaliza = New System.Windows.Forms.TextBox()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.lblReforco = New System.Windows.Forms.Label()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.lblProdutosVendidos = New System.Windows.Forms.Label()
+        Me.Label12 = New System.Windows.Forms.Label()
+        Me.lblTotalCaixa = New System.Windows.Forms.Label()
+        Me.imagem = New System.Windows.Forms.PictureBox()
         Me.CadastrosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ClientesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CargosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -60,34 +91,6 @@ Partial Class frmPrincipal
         Me.SairToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SairToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.LogoffToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.lblUsuario = New System.Windows.Forms.Label()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.lblHora = New System.Windows.Forms.Label()
-        Me.lblData = New System.Windows.Forms.Label()
-        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.dg = New System.Windows.Forms.DataGridView()
-        Me.lblTotalDoDia = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.lblTextoCaixa = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.lblHoraAb = New System.Windows.Forms.Label()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.lblVlrAb = New System.Windows.Forms.Label()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.lblTotSangria = New System.Windows.Forms.Label()
-        Me.Label13 = New System.Windows.Forms.Label()
-        Me.Label14 = New System.Windows.Forms.Label()
-        Me.lblHoraSangria = New System.Windows.Forms.Label()
-        Me.lblVendasDia = New System.Windows.Forms.Label()
-        Me.txtTotaliza = New System.Windows.Forms.TextBox()
-        Me.imagem = New System.Windows.Forms.PictureBox()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.lblReforco = New System.Windows.Forms.Label()
-        Me.Label9 = New System.Windows.Forms.Label()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.Label10 = New System.Windows.Forms.Label()
         Me.MenuStrip1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.dg, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -96,7 +99,7 @@ Partial Class frmPrincipal
         '
         'MenuStrip1
         '
-        Me.MenuStrip1.BackColor = System.Drawing.Color.LightSeaGreen
+        Me.MenuStrip1.BackColor = System.Drawing.Color.SteelBlue
         Me.MenuStrip1.Font = New System.Drawing.Font("Arial Narrow", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CadastrosToolStripMenuItem, Me.EstoqueToolStripMenuItem, Me.MovimentaçãoToolStripMenuItem, Me.VendasToolStripMenuItem, Me.RelatóriosToolStripMenuItem, Me.SairToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
@@ -105,298 +108,43 @@ Partial Class frmPrincipal
         Me.MenuStrip1.TabIndex = 0
         Me.MenuStrip1.Text = "MenuStrip1"
         '
-        'CadastrosToolStripMenuItem
-        '
-        Me.CadastrosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ClientesToolStripMenuItem, Me.CargosToolStripMenuItem, Me.FuncionáriosToolStripMenuItem, Me.FornecedoresToolStripMenuItem, Me.EmpresaToolStripMenuItem, Me.ProdutosToolStripMenuItem})
-        Me.CadastrosToolStripMenuItem.ForeColor = System.Drawing.Color.Black
-        Me.CadastrosToolStripMenuItem.Image = CType(resources.GetObject("CadastrosToolStripMenuItem.Image"), System.Drawing.Image)
-        Me.CadastrosToolStripMenuItem.Name = "CadastrosToolStripMenuItem"
-        Me.CadastrosToolStripMenuItem.Size = New System.Drawing.Size(93, 24)
-        Me.CadastrosToolStripMenuItem.Text = "Cadastros"
-        '
-        'ClientesToolStripMenuItem
-        '
-        Me.ClientesToolStripMenuItem.Image = CType(resources.GetObject("ClientesToolStripMenuItem.Image"), System.Drawing.Image)
-        Me.ClientesToolStripMenuItem.Name = "ClientesToolStripMenuItem"
-        Me.ClientesToolStripMenuItem.Size = New System.Drawing.Size(156, 24)
-        Me.ClientesToolStripMenuItem.Text = "Clientes"
-        '
-        'CargosToolStripMenuItem
-        '
-        Me.CargosToolStripMenuItem.Image = CType(resources.GetObject("CargosToolStripMenuItem.Image"), System.Drawing.Image)
-        Me.CargosToolStripMenuItem.Name = "CargosToolStripMenuItem"
-        Me.CargosToolStripMenuItem.Size = New System.Drawing.Size(156, 24)
-        Me.CargosToolStripMenuItem.Text = "Cargos"
-        '
-        'FuncionáriosToolStripMenuItem
-        '
-        Me.FuncionáriosToolStripMenuItem.Enabled = False
-        Me.FuncionáriosToolStripMenuItem.Image = CType(resources.GetObject("FuncionáriosToolStripMenuItem.Image"), System.Drawing.Image)
-        Me.FuncionáriosToolStripMenuItem.Name = "FuncionáriosToolStripMenuItem"
-        Me.FuncionáriosToolStripMenuItem.Size = New System.Drawing.Size(156, 24)
-        Me.FuncionáriosToolStripMenuItem.Text = "Funcionários"
-        '
-        'FornecedoresToolStripMenuItem
-        '
-        Me.FornecedoresToolStripMenuItem.Image = CType(resources.GetObject("FornecedoresToolStripMenuItem.Image"), System.Drawing.Image)
-        Me.FornecedoresToolStripMenuItem.Name = "FornecedoresToolStripMenuItem"
-        Me.FornecedoresToolStripMenuItem.Size = New System.Drawing.Size(156, 24)
-        Me.FornecedoresToolStripMenuItem.Text = "Fornecedores"
-        '
-        'EmpresaToolStripMenuItem
-        '
-        Me.EmpresaToolStripMenuItem.Enabled = False
-        Me.EmpresaToolStripMenuItem.Image = CType(resources.GetObject("EmpresaToolStripMenuItem.Image"), System.Drawing.Image)
-        Me.EmpresaToolStripMenuItem.Name = "EmpresaToolStripMenuItem"
-        Me.EmpresaToolStripMenuItem.Size = New System.Drawing.Size(156, 24)
-        Me.EmpresaToolStripMenuItem.Text = "Empresa"
-        '
-        'ProdutosToolStripMenuItem
-        '
-        Me.ProdutosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ProdutosToolStripMenuItem1, Me.CategoriasToolStripMenuItem, Me.UnidadeDeMedidaToolStripMenuItem})
-        Me.ProdutosToolStripMenuItem.Image = CType(resources.GetObject("ProdutosToolStripMenuItem.Image"), System.Drawing.Image)
-        Me.ProdutosToolStripMenuItem.Name = "ProdutosToolStripMenuItem"
-        Me.ProdutosToolStripMenuItem.Size = New System.Drawing.Size(156, 24)
-        Me.ProdutosToolStripMenuItem.Text = "Produtos"
-        '
-        'ProdutosToolStripMenuItem1
-        '
-        Me.ProdutosToolStripMenuItem1.Image = CType(resources.GetObject("ProdutosToolStripMenuItem1.Image"), System.Drawing.Image)
-        Me.ProdutosToolStripMenuItem1.Name = "ProdutosToolStripMenuItem1"
-        Me.ProdutosToolStripMenuItem1.Size = New System.Drawing.Size(207, 24)
-        Me.ProdutosToolStripMenuItem1.Text = "Produtos"
-        '
-        'CategoriasToolStripMenuItem
-        '
-        Me.CategoriasToolStripMenuItem.Image = CType(resources.GetObject("CategoriasToolStripMenuItem.Image"), System.Drawing.Image)
-        Me.CategoriasToolStripMenuItem.Name = "CategoriasToolStripMenuItem"
-        Me.CategoriasToolStripMenuItem.Size = New System.Drawing.Size(207, 24)
-        Me.CategoriasToolStripMenuItem.Text = "Categorias de Produtos"
-        '
-        'UnidadeDeMedidaToolStripMenuItem
-        '
-        Me.UnidadeDeMedidaToolStripMenuItem.Image = CType(resources.GetObject("UnidadeDeMedidaToolStripMenuItem.Image"), System.Drawing.Image)
-        Me.UnidadeDeMedidaToolStripMenuItem.Name = "UnidadeDeMedidaToolStripMenuItem"
-        Me.UnidadeDeMedidaToolStripMenuItem.Size = New System.Drawing.Size(207, 24)
-        Me.UnidadeDeMedidaToolStripMenuItem.Text = "Unidade de Medida"
-        '
-        'EstoqueToolStripMenuItem
-        '
-        Me.EstoqueToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EntradaSaídaToolStripMenuItem, Me.ConsultasToolStripMenuItem, Me.NíveisBaixoToolStripMenuItem})
-        Me.EstoqueToolStripMenuItem.ForeColor = System.Drawing.Color.Black
-        Me.EstoqueToolStripMenuItem.Image = CType(resources.GetObject("EstoqueToolStripMenuItem.Image"), System.Drawing.Image)
-        Me.EstoqueToolStripMenuItem.Name = "EstoqueToolStripMenuItem"
-        Me.EstoqueToolStripMenuItem.Size = New System.Drawing.Size(82, 24)
-        Me.EstoqueToolStripMenuItem.Text = "Estoque"
-        '
-        'EntradaSaídaToolStripMenuItem
-        '
-        Me.EntradaSaídaToolStripMenuItem.Image = CType(resources.GetObject("EntradaSaídaToolStripMenuItem.Image"), System.Drawing.Image)
-        Me.EntradaSaídaToolStripMenuItem.Name = "EntradaSaídaToolStripMenuItem"
-        Me.EntradaSaídaToolStripMenuItem.Size = New System.Drawing.Size(162, 24)
-        Me.EntradaSaídaToolStripMenuItem.Text = "Entrada / Saída"
-        '
-        'ConsultasToolStripMenuItem
-        '
-        Me.ConsultasToolStripMenuItem.Image = CType(resources.GetObject("ConsultasToolStripMenuItem.Image"), System.Drawing.Image)
-        Me.ConsultasToolStripMenuItem.Name = "ConsultasToolStripMenuItem"
-        Me.ConsultasToolStripMenuItem.Size = New System.Drawing.Size(162, 24)
-        Me.ConsultasToolStripMenuItem.Text = "Consultas"
-        '
-        'NíveisBaixoToolStripMenuItem
-        '
-        Me.NíveisBaixoToolStripMenuItem.Image = CType(resources.GetObject("NíveisBaixoToolStripMenuItem.Image"), System.Drawing.Image)
-        Me.NíveisBaixoToolStripMenuItem.Name = "NíveisBaixoToolStripMenuItem"
-        Me.NíveisBaixoToolStripMenuItem.Size = New System.Drawing.Size(162, 24)
-        Me.NíveisBaixoToolStripMenuItem.Text = "Níveis Baixo"
-        '
-        'MovimentaçãoToolStripMenuItem
-        '
-        Me.MovimentaçãoToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.OrdemDeServiçoToolStripMenuItem, Me.TiposDeServiçosToolStripMenuItem, Me.OrçamentoToolStripMenuItem})
-        Me.MovimentaçãoToolStripMenuItem.ForeColor = System.Drawing.Color.Black
-        Me.MovimentaçãoToolStripMenuItem.Image = CType(resources.GetObject("MovimentaçãoToolStripMenuItem.Image"), System.Drawing.Image)
-        Me.MovimentaçãoToolStripMenuItem.Name = "MovimentaçãoToolStripMenuItem"
-        Me.MovimentaçãoToolStripMenuItem.Size = New System.Drawing.Size(119, 24)
-        Me.MovimentaçãoToolStripMenuItem.Text = "Movimentação"
-        '
-        'OrdemDeServiçoToolStripMenuItem
-        '
-        Me.OrdemDeServiçoToolStripMenuItem.Image = CType(resources.GetObject("OrdemDeServiçoToolStripMenuItem.Image"), System.Drawing.Image)
-        Me.OrdemDeServiçoToolStripMenuItem.Name = "OrdemDeServiçoToolStripMenuItem"
-        Me.OrdemDeServiçoToolStripMenuItem.Size = New System.Drawing.Size(178, 24)
-        Me.OrdemDeServiçoToolStripMenuItem.Text = "Ordem de Serviço"
-        '
-        'TiposDeServiçosToolStripMenuItem
-        '
-        Me.TiposDeServiçosToolStripMenuItem.Image = CType(resources.GetObject("TiposDeServiçosToolStripMenuItem.Image"), System.Drawing.Image)
-        Me.TiposDeServiçosToolStripMenuItem.Name = "TiposDeServiçosToolStripMenuItem"
-        Me.TiposDeServiçosToolStripMenuItem.Size = New System.Drawing.Size(178, 24)
-        Me.TiposDeServiçosToolStripMenuItem.Text = "Tipos de Serviços"
-        '
-        'OrçamentoToolStripMenuItem
-        '
-        Me.OrçamentoToolStripMenuItem.Name = "OrçamentoToolStripMenuItem"
-        Me.OrçamentoToolStripMenuItem.Size = New System.Drawing.Size(178, 24)
-        Me.OrçamentoToolStripMenuItem.Text = "Orçamento"
-        '
-        'VendasToolStripMenuItem
-        '
-        Me.VendasToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PDVRegistrarVendaToolStripMenuItem, Me.ListarVendasToolStripMenuItem, Me.SangriaToolStripMenuItem, Me.ReforçosAsCaixaToolStripMenuItem})
-        Me.VendasToolStripMenuItem.ForeColor = System.Drawing.Color.Black
-        Me.VendasToolStripMenuItem.Image = CType(resources.GetObject("VendasToolStripMenuItem.Image"), System.Drawing.Image)
-        Me.VendasToolStripMenuItem.Name = "VendasToolStripMenuItem"
-        Me.VendasToolStripMenuItem.Size = New System.Drawing.Size(78, 24)
-        Me.VendasToolStripMenuItem.Text = "Vendas"
-        '
-        'PDVRegistrarVendaToolStripMenuItem
-        '
-        Me.PDVRegistrarVendaToolStripMenuItem.Image = CType(resources.GetObject("PDVRegistrarVendaToolStripMenuItem.Image"), System.Drawing.Image)
-        Me.PDVRegistrarVendaToolStripMenuItem.Name = "PDVRegistrarVendaToolStripMenuItem"
-        Me.PDVRegistrarVendaToolStripMenuItem.Size = New System.Drawing.Size(200, 24)
-        Me.PDVRegistrarVendaToolStripMenuItem.Text = "PDV - Registrar Venda"
-        '
-        'ListarVendasToolStripMenuItem
-        '
-        Me.ListarVendasToolStripMenuItem.Image = CType(resources.GetObject("ListarVendasToolStripMenuItem.Image"), System.Drawing.Image)
-        Me.ListarVendasToolStripMenuItem.Name = "ListarVendasToolStripMenuItem"
-        Me.ListarVendasToolStripMenuItem.Size = New System.Drawing.Size(200, 24)
-        Me.ListarVendasToolStripMenuItem.Text = "Listar Vendas"
-        '
-        'SangriaToolStripMenuItem
-        '
-        Me.SangriaToolStripMenuItem.Enabled = False
-        Me.SangriaToolStripMenuItem.Image = CType(resources.GetObject("SangriaToolStripMenuItem.Image"), System.Drawing.Image)
-        Me.SangriaToolStripMenuItem.Name = "SangriaToolStripMenuItem"
-        Me.SangriaToolStripMenuItem.Size = New System.Drawing.Size(200, 24)
-        Me.SangriaToolStripMenuItem.Text = "Sangria"
-        '
-        'ReforçosAsCaixaToolStripMenuItem
-        '
-        Me.ReforçosAsCaixaToolStripMenuItem.Name = "ReforçosAsCaixaToolStripMenuItem"
-        Me.ReforçosAsCaixaToolStripMenuItem.Size = New System.Drawing.Size(200, 24)
-        Me.ReforçosAsCaixaToolStripMenuItem.Text = "Reforços as Caixa"
-        '
-        'RelatóriosToolStripMenuItem
-        '
-        Me.RelatóriosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CatálogoDeProdutosToolStripMenuItem, Me.RelatórioDoCaixaToolStripMenuItem, Me.EntradaSaídaToolStripMenuItem1, Me.NíveisDoEstoqueToolStripMenuItem, Me.ProdutosMaisVendidosToolStripMenuItem, Me.VendasPorFuncionárioToolStripMenuItem, Me.FiltroDeVendasToolStripMenuItem, Me.ServiçosToolStripMenuItem})
-        Me.RelatóriosToolStripMenuItem.ForeColor = System.Drawing.Color.Black
-        Me.RelatóriosToolStripMenuItem.Image = CType(resources.GetObject("RelatóriosToolStripMenuItem.Image"), System.Drawing.Image)
-        Me.RelatóriosToolStripMenuItem.Name = "RelatóriosToolStripMenuItem"
-        Me.RelatóriosToolStripMenuItem.Size = New System.Drawing.Size(93, 24)
-        Me.RelatóriosToolStripMenuItem.Text = "Relatórios"
-        '
-        'CatálogoDeProdutosToolStripMenuItem
-        '
-        Me.CatálogoDeProdutosToolStripMenuItem.Image = CType(resources.GetObject("CatálogoDeProdutosToolStripMenuItem.Image"), System.Drawing.Image)
-        Me.CatálogoDeProdutosToolStripMenuItem.Name = "CatálogoDeProdutosToolStripMenuItem"
-        Me.CatálogoDeProdutosToolStripMenuItem.Size = New System.Drawing.Size(211, 24)
-        Me.CatálogoDeProdutosToolStripMenuItem.Text = "Catálogo de Produtos"
-        '
-        'RelatórioDoCaixaToolStripMenuItem
-        '
-        Me.RelatórioDoCaixaToolStripMenuItem.Name = "RelatórioDoCaixaToolStripMenuItem"
-        Me.RelatórioDoCaixaToolStripMenuItem.Size = New System.Drawing.Size(211, 24)
-        Me.RelatórioDoCaixaToolStripMenuItem.Text = "Relatório do Caixa"
-        '
-        'EntradaSaídaToolStripMenuItem1
-        '
-        Me.EntradaSaídaToolStripMenuItem1.Name = "EntradaSaídaToolStripMenuItem1"
-        Me.EntradaSaídaToolStripMenuItem1.Size = New System.Drawing.Size(211, 24)
-        Me.EntradaSaídaToolStripMenuItem1.Text = "Entrada / Saída"
-        '
-        'NíveisDoEstoqueToolStripMenuItem
-        '
-        Me.NíveisDoEstoqueToolStripMenuItem.Image = CType(resources.GetObject("NíveisDoEstoqueToolStripMenuItem.Image"), System.Drawing.Image)
-        Me.NíveisDoEstoqueToolStripMenuItem.Name = "NíveisDoEstoqueToolStripMenuItem"
-        Me.NíveisDoEstoqueToolStripMenuItem.Size = New System.Drawing.Size(211, 24)
-        Me.NíveisDoEstoqueToolStripMenuItem.Text = "Níveis do Estoque"
-        '
-        'ProdutosMaisVendidosToolStripMenuItem
-        '
-        Me.ProdutosMaisVendidosToolStripMenuItem.Name = "ProdutosMaisVendidosToolStripMenuItem"
-        Me.ProdutosMaisVendidosToolStripMenuItem.Size = New System.Drawing.Size(211, 24)
-        Me.ProdutosMaisVendidosToolStripMenuItem.Text = "Produtos mais Vendidos"
-        '
-        'VendasPorFuncionárioToolStripMenuItem
-        '
-        Me.VendasPorFuncionárioToolStripMenuItem.Name = "VendasPorFuncionárioToolStripMenuItem"
-        Me.VendasPorFuncionárioToolStripMenuItem.Size = New System.Drawing.Size(211, 24)
-        Me.VendasPorFuncionárioToolStripMenuItem.Text = "Vendas por Funcionário"
-        '
-        'FiltroDeVendasToolStripMenuItem
-        '
-        Me.FiltroDeVendasToolStripMenuItem.Image = CType(resources.GetObject("FiltroDeVendasToolStripMenuItem.Image"), System.Drawing.Image)
-        Me.FiltroDeVendasToolStripMenuItem.Name = "FiltroDeVendasToolStripMenuItem"
-        Me.FiltroDeVendasToolStripMenuItem.Size = New System.Drawing.Size(211, 24)
-        Me.FiltroDeVendasToolStripMenuItem.Text = "Filtro de Vendas"
-        '
-        'ServiçosToolStripMenuItem
-        '
-        Me.ServiçosToolStripMenuItem.Image = CType(resources.GetObject("ServiçosToolStripMenuItem.Image"), System.Drawing.Image)
-        Me.ServiçosToolStripMenuItem.Name = "ServiçosToolStripMenuItem"
-        Me.ServiçosToolStripMenuItem.Size = New System.Drawing.Size(211, 24)
-        Me.ServiçosToolStripMenuItem.Text = "Serviços"
-        '
-        'SairToolStripMenuItem
-        '
-        Me.SairToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SairToolStripMenuItem1, Me.LogoffToolStripMenuItem})
-        Me.SairToolStripMenuItem.ForeColor = System.Drawing.Color.Black
-        Me.SairToolStripMenuItem.Image = CType(resources.GetObject("SairToolStripMenuItem.Image"), System.Drawing.Image)
-        Me.SairToolStripMenuItem.Name = "SairToolStripMenuItem"
-        Me.SairToolStripMenuItem.Size = New System.Drawing.Size(59, 24)
-        Me.SairToolStripMenuItem.Text = "Sair"
-        '
-        'SairToolStripMenuItem1
-        '
-        Me.SairToolStripMenuItem1.Image = CType(resources.GetObject("SairToolStripMenuItem1.Image"), System.Drawing.Image)
-        Me.SairToolStripMenuItem1.Name = "SairToolStripMenuItem1"
-        Me.SairToolStripMenuItem1.Size = New System.Drawing.Size(112, 24)
-        Me.SairToolStripMenuItem1.Text = "Sair"
-        '
-        'LogoffToolStripMenuItem
-        '
-        Me.LogoffToolStripMenuItem.Image = CType(resources.GetObject("LogoffToolStripMenuItem.Image"), System.Drawing.Image)
-        Me.LogoffToolStripMenuItem.Name = "LogoffToolStripMenuItem"
-        Me.LogoffToolStripMenuItem.Size = New System.Drawing.Size(112, 24)
-        Me.LogoffToolStripMenuItem.Text = "Logoff"
-        '
         'lblUsuario
         '
         Me.lblUsuario.AutoSize = True
-        Me.lblUsuario.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblUsuario.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblUsuario.Location = New System.Drawing.Point(118, 29)
         Me.lblUsuario.Name = "lblUsuario"
-        Me.lblUsuario.Size = New System.Drawing.Size(13, 17)
+        Me.lblUsuario.Size = New System.Drawing.Size(14, 20)
         Me.lblUsuario.TabIndex = 1
         Me.lblUsuario.Text = "-"
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.Location = New System.Drawing.Point(32, 29)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(80, 17)
+        Me.Label1.Size = New System.Drawing.Size(91, 20)
         Me.Label1.TabIndex = 2
         Me.Label1.Text = "Bem Vindo:"
         '
         'lblHora
         '
         Me.lblHora.AutoSize = True
-        Me.lblHora.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblHora.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblHora.Location = New System.Drawing.Point(118, 60)
         Me.lblHora.Name = "lblHora"
-        Me.lblHora.Size = New System.Drawing.Size(13, 17)
+        Me.lblHora.Size = New System.Drawing.Size(14, 20)
         Me.lblHora.TabIndex = 3
         Me.lblHora.Text = "-"
         '
         'lblData
         '
         Me.lblData.AutoSize = True
-        Me.lblData.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblData.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblData.Location = New System.Drawing.Point(32, 60)
         Me.lblData.Name = "lblData"
-        Me.lblData.Size = New System.Drawing.Size(13, 17)
+        Me.lblData.Size = New System.Drawing.Size(14, 20)
         Me.lblData.TabIndex = 4
         Me.lblData.Text = "-"
         '
@@ -413,7 +161,7 @@ Partial Class frmPrincipal
         Me.GroupBox1.ForeColor = System.Drawing.Color.White
         Me.GroupBox1.Location = New System.Drawing.Point(24, 31)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(234, 126)
+        Me.GroupBox1.Size = New System.Drawing.Size(234, 89)
         Me.GroupBox1.TabIndex = 5
         Me.GroupBox1.TabStop = False
         '
@@ -424,7 +172,7 @@ Partial Class frmPrincipal
         Me.dg.BackgroundColor = System.Drawing.Color.White
         Me.dg.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dg.GridColor = System.Drawing.SystemColors.HotTrack
-        Me.dg.Location = New System.Drawing.Point(22, 176)
+        Me.dg.Location = New System.Drawing.Point(23, 149)
         Me.dg.Margin = New System.Windows.Forms.Padding(4)
         Me.dg.Name = "dg"
         Me.dg.ReadOnly = True
@@ -586,17 +334,6 @@ Partial Class frmPrincipal
         Me.txtTotaliza.Size = New System.Drawing.Size(65, 24)
         Me.txtTotaliza.TabIndex = 241
         '
-        'imagem
-        '
-        Me.imagem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-        Me.imagem.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.imagem.Location = New System.Drawing.Point(813, 69)
-        Me.imagem.Name = "imagem"
-        Me.imagem.Size = New System.Drawing.Size(25, 25)
-        Me.imagem.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.imagem.TabIndex = 242
-        Me.imagem.TabStop = False
-        '
         'Label5
         '
         Me.Label5.AutoSize = True
@@ -647,12 +384,308 @@ Partial Class frmPrincipal
         Me.Label10.TabIndex = 248
         Me.Label10.Text = "R$"
         '
+        'lblProdutosVendidos
+        '
+        Me.lblProdutosVendidos.AutoSize = True
+        Me.lblProdutosVendidos.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblProdutosVendidos.Location = New System.Drawing.Point(653, 330)
+        Me.lblProdutosVendidos.Name = "lblProdutosVendidos"
+        Me.lblProdutosVendidos.Size = New System.Drawing.Size(14, 18)
+        Me.lblProdutosVendidos.TabIndex = 250
+        Me.lblProdutosVendidos.Text = "-"
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label12.Location = New System.Drawing.Point(491, 329)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(156, 18)
+        Me.Label12.TabIndex = 249
+        Me.Label12.Text = "Produtos Vendidos:"
+        '
+        'lblTotalCaixa
+        '
+        Me.lblTotalCaixa.AutoSize = True
+        Me.lblTotalCaixa.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTotalCaixa.Location = New System.Drawing.Point(824, 168)
+        Me.lblTotalCaixa.Name = "lblTotalCaixa"
+        Me.lblTotalCaixa.Size = New System.Drawing.Size(14, 18)
+        Me.lblTotalCaixa.TabIndex = 251
+        Me.lblTotalCaixa.Text = "-"
+        '
+        'imagem
+        '
+        Me.imagem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.imagem.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.imagem.Location = New System.Drawing.Point(813, 69)
+        Me.imagem.Name = "imagem"
+        Me.imagem.Size = New System.Drawing.Size(25, 25)
+        Me.imagem.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.imagem.TabIndex = 242
+        Me.imagem.TabStop = False
+        '
+        'CadastrosToolStripMenuItem
+        '
+        Me.CadastrosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ClientesToolStripMenuItem, Me.CargosToolStripMenuItem, Me.FuncionáriosToolStripMenuItem, Me.FornecedoresToolStripMenuItem, Me.EmpresaToolStripMenuItem, Me.ProdutosToolStripMenuItem})
+        Me.CadastrosToolStripMenuItem.ForeColor = System.Drawing.Color.Black
+        Me.CadastrosToolStripMenuItem.Image = CType(resources.GetObject("CadastrosToolStripMenuItem.Image"), System.Drawing.Image)
+        Me.CadastrosToolStripMenuItem.Name = "CadastrosToolStripMenuItem"
+        Me.CadastrosToolStripMenuItem.Size = New System.Drawing.Size(93, 24)
+        Me.CadastrosToolStripMenuItem.Text = "Cadastros"
+        '
+        'ClientesToolStripMenuItem
+        '
+        Me.ClientesToolStripMenuItem.Image = CType(resources.GetObject("ClientesToolStripMenuItem.Image"), System.Drawing.Image)
+        Me.ClientesToolStripMenuItem.Name = "ClientesToolStripMenuItem"
+        Me.ClientesToolStripMenuItem.Size = New System.Drawing.Size(156, 24)
+        Me.ClientesToolStripMenuItem.Text = "Clientes"
+        '
+        'CargosToolStripMenuItem
+        '
+        Me.CargosToolStripMenuItem.Image = CType(resources.GetObject("CargosToolStripMenuItem.Image"), System.Drawing.Image)
+        Me.CargosToolStripMenuItem.Name = "CargosToolStripMenuItem"
+        Me.CargosToolStripMenuItem.Size = New System.Drawing.Size(156, 24)
+        Me.CargosToolStripMenuItem.Text = "Cargos"
+        '
+        'FuncionáriosToolStripMenuItem
+        '
+        Me.FuncionáriosToolStripMenuItem.Image = CType(resources.GetObject("FuncionáriosToolStripMenuItem.Image"), System.Drawing.Image)
+        Me.FuncionáriosToolStripMenuItem.Name = "FuncionáriosToolStripMenuItem"
+        Me.FuncionáriosToolStripMenuItem.Size = New System.Drawing.Size(156, 24)
+        Me.FuncionáriosToolStripMenuItem.Text = "Funcionários"
+        '
+        'FornecedoresToolStripMenuItem
+        '
+        Me.FornecedoresToolStripMenuItem.Image = CType(resources.GetObject("FornecedoresToolStripMenuItem.Image"), System.Drawing.Image)
+        Me.FornecedoresToolStripMenuItem.Name = "FornecedoresToolStripMenuItem"
+        Me.FornecedoresToolStripMenuItem.Size = New System.Drawing.Size(156, 24)
+        Me.FornecedoresToolStripMenuItem.Text = "Fornecedores"
+        '
+        'EmpresaToolStripMenuItem
+        '
+        Me.EmpresaToolStripMenuItem.Image = CType(resources.GetObject("EmpresaToolStripMenuItem.Image"), System.Drawing.Image)
+        Me.EmpresaToolStripMenuItem.Name = "EmpresaToolStripMenuItem"
+        Me.EmpresaToolStripMenuItem.Size = New System.Drawing.Size(156, 24)
+        Me.EmpresaToolStripMenuItem.Text = "Empresa"
+        '
+        'ProdutosToolStripMenuItem
+        '
+        Me.ProdutosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ProdutosToolStripMenuItem1, Me.CategoriasToolStripMenuItem, Me.UnidadeDeMedidaToolStripMenuItem})
+        Me.ProdutosToolStripMenuItem.Image = CType(resources.GetObject("ProdutosToolStripMenuItem.Image"), System.Drawing.Image)
+        Me.ProdutosToolStripMenuItem.Name = "ProdutosToolStripMenuItem"
+        Me.ProdutosToolStripMenuItem.Size = New System.Drawing.Size(156, 24)
+        Me.ProdutosToolStripMenuItem.Text = "Produtos"
+        '
+        'ProdutosToolStripMenuItem1
+        '
+        Me.ProdutosToolStripMenuItem1.Image = CType(resources.GetObject("ProdutosToolStripMenuItem1.Image"), System.Drawing.Image)
+        Me.ProdutosToolStripMenuItem1.Name = "ProdutosToolStripMenuItem1"
+        Me.ProdutosToolStripMenuItem1.Size = New System.Drawing.Size(207, 24)
+        Me.ProdutosToolStripMenuItem1.Text = "Produtos"
+        '
+        'CategoriasToolStripMenuItem
+        '
+        Me.CategoriasToolStripMenuItem.Image = CType(resources.GetObject("CategoriasToolStripMenuItem.Image"), System.Drawing.Image)
+        Me.CategoriasToolStripMenuItem.Name = "CategoriasToolStripMenuItem"
+        Me.CategoriasToolStripMenuItem.Size = New System.Drawing.Size(207, 24)
+        Me.CategoriasToolStripMenuItem.Text = "Categorias de Produtos"
+        '
+        'UnidadeDeMedidaToolStripMenuItem
+        '
+        Me.UnidadeDeMedidaToolStripMenuItem.Image = CType(resources.GetObject("UnidadeDeMedidaToolStripMenuItem.Image"), System.Drawing.Image)
+        Me.UnidadeDeMedidaToolStripMenuItem.Name = "UnidadeDeMedidaToolStripMenuItem"
+        Me.UnidadeDeMedidaToolStripMenuItem.Size = New System.Drawing.Size(207, 24)
+        Me.UnidadeDeMedidaToolStripMenuItem.Text = "Unidade de Medida"
+        '
+        'EstoqueToolStripMenuItem
+        '
+        Me.EstoqueToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EntradaSaídaToolStripMenuItem, Me.ConsultasToolStripMenuItem, Me.NíveisBaixoToolStripMenuItem})
+        Me.EstoqueToolStripMenuItem.ForeColor = System.Drawing.Color.Black
+        Me.EstoqueToolStripMenuItem.Image = CType(resources.GetObject("EstoqueToolStripMenuItem.Image"), System.Drawing.Image)
+        Me.EstoqueToolStripMenuItem.Name = "EstoqueToolStripMenuItem"
+        Me.EstoqueToolStripMenuItem.Size = New System.Drawing.Size(82, 24)
+        Me.EstoqueToolStripMenuItem.Text = "Estoque"
+        '
+        'EntradaSaídaToolStripMenuItem
+        '
+        Me.EntradaSaídaToolStripMenuItem.Image = CType(resources.GetObject("EntradaSaídaToolStripMenuItem.Image"), System.Drawing.Image)
+        Me.EntradaSaídaToolStripMenuItem.Name = "EntradaSaídaToolStripMenuItem"
+        Me.EntradaSaídaToolStripMenuItem.Size = New System.Drawing.Size(162, 24)
+        Me.EntradaSaídaToolStripMenuItem.Text = "Entrada / Saída"
+        '
+        'ConsultasToolStripMenuItem
+        '
+        Me.ConsultasToolStripMenuItem.Image = CType(resources.GetObject("ConsultasToolStripMenuItem.Image"), System.Drawing.Image)
+        Me.ConsultasToolStripMenuItem.Name = "ConsultasToolStripMenuItem"
+        Me.ConsultasToolStripMenuItem.Size = New System.Drawing.Size(162, 24)
+        Me.ConsultasToolStripMenuItem.Text = "Consultas"
+        '
+        'NíveisBaixoToolStripMenuItem
+        '
+        Me.NíveisBaixoToolStripMenuItem.Image = CType(resources.GetObject("NíveisBaixoToolStripMenuItem.Image"), System.Drawing.Image)
+        Me.NíveisBaixoToolStripMenuItem.Name = "NíveisBaixoToolStripMenuItem"
+        Me.NíveisBaixoToolStripMenuItem.Size = New System.Drawing.Size(162, 24)
+        Me.NíveisBaixoToolStripMenuItem.Text = "Níveis Baixo"
+        '
+        'MovimentaçãoToolStripMenuItem
+        '
+        Me.MovimentaçãoToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.OrdemDeServiçoToolStripMenuItem, Me.TiposDeServiçosToolStripMenuItem, Me.OrçamentoToolStripMenuItem})
+        Me.MovimentaçãoToolStripMenuItem.ForeColor = System.Drawing.Color.Black
+        Me.MovimentaçãoToolStripMenuItem.Image = CType(resources.GetObject("MovimentaçãoToolStripMenuItem.Image"), System.Drawing.Image)
+        Me.MovimentaçãoToolStripMenuItem.Name = "MovimentaçãoToolStripMenuItem"
+        Me.MovimentaçãoToolStripMenuItem.Size = New System.Drawing.Size(119, 24)
+        Me.MovimentaçãoToolStripMenuItem.Text = "Movimentação"
+        '
+        'OrdemDeServiçoToolStripMenuItem
+        '
+        Me.OrdemDeServiçoToolStripMenuItem.Image = CType(resources.GetObject("OrdemDeServiçoToolStripMenuItem.Image"), System.Drawing.Image)
+        Me.OrdemDeServiçoToolStripMenuItem.Name = "OrdemDeServiçoToolStripMenuItem"
+        Me.OrdemDeServiçoToolStripMenuItem.Size = New System.Drawing.Size(178, 24)
+        Me.OrdemDeServiçoToolStripMenuItem.Text = "Ordem de Serviço"
+        '
+        'TiposDeServiçosToolStripMenuItem
+        '
+        Me.TiposDeServiçosToolStripMenuItem.Image = CType(resources.GetObject("TiposDeServiçosToolStripMenuItem.Image"), System.Drawing.Image)
+        Me.TiposDeServiçosToolStripMenuItem.Name = "TiposDeServiçosToolStripMenuItem"
+        Me.TiposDeServiçosToolStripMenuItem.Size = New System.Drawing.Size(178, 24)
+        Me.TiposDeServiçosToolStripMenuItem.Text = "Tipos de Serviços"
+        '
+        'OrçamentoToolStripMenuItem
+        '
+        Me.OrçamentoToolStripMenuItem.Name = "OrçamentoToolStripMenuItem"
+        Me.OrçamentoToolStripMenuItem.Size = New System.Drawing.Size(178, 24)
+        Me.OrçamentoToolStripMenuItem.Text = "Orçamento"
+        '
+        'VendasToolStripMenuItem
+        '
+        Me.VendasToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PDVRegistrarVendaToolStripMenuItem, Me.ListarVendasToolStripMenuItem, Me.SangriaToolStripMenuItem, Me.ReforçosAsCaixaToolStripMenuItem})
+        Me.VendasToolStripMenuItem.ForeColor = System.Drawing.Color.Black
+        Me.VendasToolStripMenuItem.Image = CType(resources.GetObject("VendasToolStripMenuItem.Image"), System.Drawing.Image)
+        Me.VendasToolStripMenuItem.Name = "VendasToolStripMenuItem"
+        Me.VendasToolStripMenuItem.Size = New System.Drawing.Size(78, 24)
+        Me.VendasToolStripMenuItem.Text = "Vendas"
+        '
+        'PDVRegistrarVendaToolStripMenuItem
+        '
+        Me.PDVRegistrarVendaToolStripMenuItem.Image = CType(resources.GetObject("PDVRegistrarVendaToolStripMenuItem.Image"), System.Drawing.Image)
+        Me.PDVRegistrarVendaToolStripMenuItem.Name = "PDVRegistrarVendaToolStripMenuItem"
+        Me.PDVRegistrarVendaToolStripMenuItem.Size = New System.Drawing.Size(200, 24)
+        Me.PDVRegistrarVendaToolStripMenuItem.Text = "PDV - Registrar Venda"
+        '
+        'ListarVendasToolStripMenuItem
+        '
+        Me.ListarVendasToolStripMenuItem.Image = CType(resources.GetObject("ListarVendasToolStripMenuItem.Image"), System.Drawing.Image)
+        Me.ListarVendasToolStripMenuItem.Name = "ListarVendasToolStripMenuItem"
+        Me.ListarVendasToolStripMenuItem.Size = New System.Drawing.Size(200, 24)
+        Me.ListarVendasToolStripMenuItem.Text = "Listar Vendas"
+        '
+        'SangriaToolStripMenuItem
+        '
+        Me.SangriaToolStripMenuItem.Image = CType(resources.GetObject("SangriaToolStripMenuItem.Image"), System.Drawing.Image)
+        Me.SangriaToolStripMenuItem.Name = "SangriaToolStripMenuItem"
+        Me.SangriaToolStripMenuItem.Size = New System.Drawing.Size(200, 24)
+        Me.SangriaToolStripMenuItem.Text = "Sangria"
+        '
+        'ReforçosAsCaixaToolStripMenuItem
+        '
+        Me.ReforçosAsCaixaToolStripMenuItem.Name = "ReforçosAsCaixaToolStripMenuItem"
+        Me.ReforçosAsCaixaToolStripMenuItem.Size = New System.Drawing.Size(200, 24)
+        Me.ReforçosAsCaixaToolStripMenuItem.Text = "Reforços as Caixa"
+        '
+        'RelatóriosToolStripMenuItem
+        '
+        Me.RelatóriosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CatálogoDeProdutosToolStripMenuItem, Me.RelatórioDoCaixaToolStripMenuItem, Me.EntradaSaídaToolStripMenuItem1, Me.NíveisDoEstoqueToolStripMenuItem, Me.ProdutosMaisVendidosToolStripMenuItem, Me.VendasPorFuncionárioToolStripMenuItem, Me.FiltroDeVendasToolStripMenuItem, Me.ServiçosToolStripMenuItem})
+        Me.RelatóriosToolStripMenuItem.ForeColor = System.Drawing.Color.Black
+        Me.RelatóriosToolStripMenuItem.Image = CType(resources.GetObject("RelatóriosToolStripMenuItem.Image"), System.Drawing.Image)
+        Me.RelatóriosToolStripMenuItem.Name = "RelatóriosToolStripMenuItem"
+        Me.RelatóriosToolStripMenuItem.Size = New System.Drawing.Size(93, 24)
+        Me.RelatóriosToolStripMenuItem.Text = "Relatórios"
+        '
+        'CatálogoDeProdutosToolStripMenuItem
+        '
+        Me.CatálogoDeProdutosToolStripMenuItem.Image = CType(resources.GetObject("CatálogoDeProdutosToolStripMenuItem.Image"), System.Drawing.Image)
+        Me.CatálogoDeProdutosToolStripMenuItem.Name = "CatálogoDeProdutosToolStripMenuItem"
+        Me.CatálogoDeProdutosToolStripMenuItem.Size = New System.Drawing.Size(211, 24)
+        Me.CatálogoDeProdutosToolStripMenuItem.Text = "Catálogo de Produtos"
+        '
+        'RelatórioDoCaixaToolStripMenuItem
+        '
+        Me.RelatórioDoCaixaToolStripMenuItem.Name = "RelatórioDoCaixaToolStripMenuItem"
+        Me.RelatórioDoCaixaToolStripMenuItem.Size = New System.Drawing.Size(211, 24)
+        Me.RelatórioDoCaixaToolStripMenuItem.Text = "Relatório do Caixa"
+        '
+        'EntradaSaídaToolStripMenuItem1
+        '
+        Me.EntradaSaídaToolStripMenuItem1.Name = "EntradaSaídaToolStripMenuItem1"
+        Me.EntradaSaídaToolStripMenuItem1.Size = New System.Drawing.Size(211, 24)
+        Me.EntradaSaídaToolStripMenuItem1.Text = "Entrada / Saída"
+        '
+        'NíveisDoEstoqueToolStripMenuItem
+        '
+        Me.NíveisDoEstoqueToolStripMenuItem.Image = CType(resources.GetObject("NíveisDoEstoqueToolStripMenuItem.Image"), System.Drawing.Image)
+        Me.NíveisDoEstoqueToolStripMenuItem.Name = "NíveisDoEstoqueToolStripMenuItem"
+        Me.NíveisDoEstoqueToolStripMenuItem.Size = New System.Drawing.Size(211, 24)
+        Me.NíveisDoEstoqueToolStripMenuItem.Text = "Níveis do Estoque"
+        '
+        'ProdutosMaisVendidosToolStripMenuItem
+        '
+        Me.ProdutosMaisVendidosToolStripMenuItem.Name = "ProdutosMaisVendidosToolStripMenuItem"
+        Me.ProdutosMaisVendidosToolStripMenuItem.Size = New System.Drawing.Size(211, 24)
+        Me.ProdutosMaisVendidosToolStripMenuItem.Text = "Produtos mais Vendidos"
+        '
+        'VendasPorFuncionárioToolStripMenuItem
+        '
+        Me.VendasPorFuncionárioToolStripMenuItem.Name = "VendasPorFuncionárioToolStripMenuItem"
+        Me.VendasPorFuncionárioToolStripMenuItem.Size = New System.Drawing.Size(211, 24)
+        Me.VendasPorFuncionárioToolStripMenuItem.Text = "Vendas por Funcionário"
+        '
+        'FiltroDeVendasToolStripMenuItem
+        '
+        Me.FiltroDeVendasToolStripMenuItem.Image = CType(resources.GetObject("FiltroDeVendasToolStripMenuItem.Image"), System.Drawing.Image)
+        Me.FiltroDeVendasToolStripMenuItem.Name = "FiltroDeVendasToolStripMenuItem"
+        Me.FiltroDeVendasToolStripMenuItem.Size = New System.Drawing.Size(211, 24)
+        Me.FiltroDeVendasToolStripMenuItem.Text = "Filtro de Vendas"
+        '
+        'ServiçosToolStripMenuItem
+        '
+        Me.ServiçosToolStripMenuItem.Image = CType(resources.GetObject("ServiçosToolStripMenuItem.Image"), System.Drawing.Image)
+        Me.ServiçosToolStripMenuItem.Name = "ServiçosToolStripMenuItem"
+        Me.ServiçosToolStripMenuItem.Size = New System.Drawing.Size(211, 24)
+        Me.ServiçosToolStripMenuItem.Text = "Serviços"
+        '
+        'SairToolStripMenuItem
+        '
+        Me.SairToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SairToolStripMenuItem1, Me.LogoffToolStripMenuItem})
+        Me.SairToolStripMenuItem.ForeColor = System.Drawing.Color.Black
+        Me.SairToolStripMenuItem.Image = CType(resources.GetObject("SairToolStripMenuItem.Image"), System.Drawing.Image)
+        Me.SairToolStripMenuItem.Name = "SairToolStripMenuItem"
+        Me.SairToolStripMenuItem.Size = New System.Drawing.Size(59, 24)
+        Me.SairToolStripMenuItem.Text = "Sair"
+        '
+        'SairToolStripMenuItem1
+        '
+        Me.SairToolStripMenuItem1.Image = CType(resources.GetObject("SairToolStripMenuItem1.Image"), System.Drawing.Image)
+        Me.SairToolStripMenuItem1.Name = "SairToolStripMenuItem1"
+        Me.SairToolStripMenuItem1.Size = New System.Drawing.Size(112, 24)
+        Me.SairToolStripMenuItem1.Text = "Sair"
+        '
+        'LogoffToolStripMenuItem
+        '
+        Me.LogoffToolStripMenuItem.Image = CType(resources.GetObject("LogoffToolStripMenuItem.Image"), System.Drawing.Image)
+        Me.LogoffToolStripMenuItem.Name = "LogoffToolStripMenuItem"
+        Me.LogoffToolStripMenuItem.Size = New System.Drawing.Size(112, 24)
+        Me.LogoffToolStripMenuItem.Text = "Logoff"
+        '
         'frmPrincipal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.Teal
+        Me.BackColor = System.Drawing.Color.LightSteelBlue
         Me.ClientSize = New System.Drawing.Size(962, 531)
+        Me.Controls.Add(Me.lblTotalCaixa)
+        Me.Controls.Add(Me.lblProdutosVendidos)
+        Me.Controls.Add(Me.Label12)
         Me.Controls.Add(Me.Label10)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.lblReforco)
@@ -759,4 +792,7 @@ Partial Class frmPrincipal
     Friend WithEvents Label9 As Label
     Friend WithEvents Label7 As Label
     Friend WithEvents Label10 As Label
+    Friend WithEvents lblProdutosVendidos As Label
+    Friend WithEvents Label12 As Label
+    Friend WithEvents lblTotalCaixa As Label
 End Class

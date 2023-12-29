@@ -58,4 +58,6 @@ Public Class frmAbrirCaixa
     Private Sub btSair_Click(sender As Object, e As EventArgs) Handles btSair.Click
         Me.Close()
     End Sub
+
+
 End Class

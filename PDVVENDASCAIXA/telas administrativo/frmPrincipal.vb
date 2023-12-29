@@ -16,9 +16,9 @@ Public Class frmPrincipal
 
         If (usuarioNome = "admin") Then
 
-            FuncionáriosToolStripMenuItem.Enabled = True
-            SangriaToolStripMenuItem.Enabled = True
-            EmpresaToolStripMenuItem.Enabled = True
+            'FuncionáriosToolStripMenuItem.Enabled = True
+
+            '  EmpresaToolStripMenuItem.Enabled = True
         End If
         Listar()
         totalizar()
@@ -33,6 +33,8 @@ Public Class frmPrincipal
         verifivarAbertura()
         Listar()
         totalizar()
+
+        lblVlrAb.Text = 0
 
         If abertura = True Then
             CarregarDados()
@@ -73,8 +75,10 @@ Public Class frmPrincipal
             dg.DataSource = dt
 
             FormatarDG()
+
             lblVendasDia.Text = dg.Rows.Count()
             'totalizar()
+            SomarQuantidadeProdutos()
 
         Catch ex As Exception
             MessageBox.Show("Erro ao Listar os produtos" + ex.Message.ToString)
@@ -85,8 +89,12 @@ Public Class frmPrincipal
 
 
     Private Sub FuncionáriosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles FuncionáriosToolStripMenuItem.Click
-        Dim form = New frmFuncionarios
+        Dim formP As Form
+        formP = frmFuncionarios
+
+        Dim form = New frmLoginAdm(formP)
         form.ShowDialog()
+
     End Sub
 
     Private Sub CargosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CargosToolStripMenuItem.Click
@@ -105,7 +113,10 @@ Public Class frmPrincipal
     End Sub
 
     Private Sub EmpresaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EmpresaToolStripMenuItem.Click
-        Dim form = New frmEmpresa
+        Dim formP As Form
+        formP = frmEmpresa
+
+        Dim form = New frmLoginAdm(formP)
         form.ShowDialog()
     End Sub
 
@@ -172,6 +183,15 @@ Public Class frmPrincipal
         dg.Columns(7).Width = 150
 
     End Sub
+
+    Sub SomarQuantidadeProdutos()
+        Dim quant As Decimal
+        For Each linha As DataGridViewRow In dg.Rows
+            quant = quant + linha.Cells(5).Value
+        Next
+        lblProdutosVendidos.Text = quant
+    End Sub
+
 
     Private Sub totalizar()
         Dim total As Decimal
@@ -243,12 +263,18 @@ Public Class frmPrincipal
     End Sub
 
     Private Sub SangriaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SangriaToolStripMenuItem.Click
-        Dim form = New frmSangria
+        Dim formP As Form
+        formP = frmSangria
+
+        Dim form = New frmLoginAdm(formP)
         form.ShowDialog()
     End Sub
 
     Private Sub ReforçosAsCaixaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ReforçosAsCaixaToolStripMenuItem.Click
-        Dim form = New frmReforcoCaixa
+        Dim formP As Form
+        formP = frmReforcoCaixa
+
+        Dim form = New frmLoginAdm(formP)
         form.ShowDialog()
     End Sub
 
@@ -297,15 +323,40 @@ Public Class frmPrincipal
     End Sub
 
     Private Sub imagem_Click(sender As Object, e As EventArgs) Handles imagem.Click
-        Dim img As String
+
         If abertura = True Then
-            Dim form = New frmFecharCaixa
+            Dim valor_abertura As Decimal
+            valor_abertura = lblVlrAb.Text
+
+            Dim quant_vendas As Integer
+            quant_vendas = lblVendasDia.Text
+
+            Dim prod_vendidos As Integer
+            prod_vendidos = lblProdutosVendidos.Text
+
+            Dim total_vendido As Decimal
+            total_vendido = lblTotalDoDia.Text
+
+            Dim valor_sangria As Decimal
+            valor_sangria = lblTotSangria.Text
+
+            Dim formP = New frmFecharCaixa(valor_abertura, quant_vendas, prod_vendidos, total_vendido, valor_sangria)
+
+            Dim form = New frmLoginAdm(formP)
             form.ShowDialog()
-            '  img = "https://static.vecteezy.com/system/resources/previews/017/177/933/non_2x/round-check-mark-symbol-with-transparent-background-free-png.png"
+
         Else
-            Dim form = New frmAbrirCaixa
-            form.ShowDialog()
-            ' img = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWtkh6KUxTBgwtqvJHp-5t8XUHG3hr9MQL0dd1AsmKuVS5fcdRxKbPb5cccxwKzSNCm9U&usqp=CAU"
+            Dim valorAb As Decimal
+            valorAb = lblVlrAb.Text
+            If valorAb > 0 Then
+                MsgBox("O caixa não pode ser aberto novamente Hoje!")
+            Else
+                Dim formP As Form
+                formP = frmAbrirCaixa
+                Dim form = New frmLoginAdm(formP)
+                form.ShowDialog()
+            End If
+
         End If
     End Sub
 
@@ -365,7 +416,7 @@ Public Class frmPrincipal
             cmd.Parameters.Add("@hora_sangria", SqlDbType.Time).Direction = 2
             cmd.Parameters.Add("@valor_ab", SqlDbType.Decimal).Direction = 2
             cmd.Parameters.Add("@valor_sangria", SqlDbType.Decimal).Direction = 2
-            ' cmd.Parameters.Add("@total_caixa", SqlDbType.Decimal).Direction = 2
+            cmd.Parameters.Add("@total_caixa", SqlDbType.Decimal).Direction = 2
 
             cmd.ExecuteNonQuery()
 
@@ -381,13 +432,13 @@ Public Class frmPrincipal
             Dim valor_sangria As Decimal = cmd.Parameters("@valor_sangria").Value
             lblTotSangria.Text = CStr(valor_sangria)
 
-            'Dim total_caixa As Decimal = cmd.Parameters("@total_caixa").Value
-            'lblTotalCaixa.Text = CStr(total_caixa)
+            Dim total_caixa As Decimal = cmd.Parameters("@total_caixa").Value
+            lblTotalCaixa.Text = CStr(total_caixa)
 
-            'If total_caixa > 0 Then
-            '    abertura = False
-            '    carregarImagem()
-            'End If
+            If total_caixa > 0 Then
+                abertura = False
+                carregarImagem()
+            End If
 
         Catch ex As Exception
             MsgBox(ex.Message.ToString)
@@ -452,10 +503,10 @@ Public Class frmPrincipal
             abrir()
             cmd = New SqlCommand("pa_Reforco_salvar", con)
             cmd.CommandType = CommandType.StoredProcedure
-            cmd.Parameters.AddWithValue("@dataF", Now.ToShortDateString())
+            ' cmd.Parameters.AddWithValue("@dataF", Now.ToShortDateString())
             cmd.Parameters.AddWithValue("@horaF", Now.ToLongTimeString())
-            cmd.Parameters.AddWithValue("@funcionario", usuarioNome)
-            cmd.Parameters.AddWithValue("@valor", 0)
+            ' cmd.Parameters.AddWithValue("@funcionario", usuarioNome)
+            cmd.Parameters.AddWithValue("@valor", vlReforco)
             cmd.Parameters.AddWithValue("@motivo", "")
             cmd.Parameters.Add("@mensagem", SqlDbType.VarChar, 100).Direction = 2
             cmd.ExecuteNonQuery()
@@ -484,6 +535,40 @@ Public Class frmPrincipal
         End Try
     End Sub
 
+    Sub verificarFechamento()
+        Dim cmd As SqlCommand
+
+        Try
+            abrir()
+
+            cmd = New SqlCommand("SELECT * FROM tbCaixa WHERE funcionario=@func AND data_ab=@data", con)
+
+            cmd.Parameters.AddWithValue("@func", usuarioNome)
+            cmd.Parameters.AddWithValue("@data", Now.ToShortDateString)
 
 
+
+
+
+            'da = New SqlDataAdapter("pa_Vendas_ListaGeral", con)
+            'da.SelectCommand.CommandType = CommandType.StoredProcedure
+            'cmd.Parameters.AddWithValue("@func", usuarioNome)
+            'cmd.Parameters.AddWithValue("@data", Now.ToShortDateString)
+            'da = New SqlDataAdapter(cmd)
+            'da.Fill(dt)
+            'dg.DataSource = dt
+
+            FormatarDG()
+
+        Catch ex As Exception
+            MessageBox.Show("Erro ao Listar os dados do caixa" + ex.Message.ToString)
+        Finally
+            fechar()
+        End Try
+    End Sub
+
+    Private Sub RelatórioDoCaixaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RelatórioDoCaixaToolStripMenuItem.Click
+        Dim form = New frmRelCaixa
+        form.ShowDialog()
+    End Sub
 End Class

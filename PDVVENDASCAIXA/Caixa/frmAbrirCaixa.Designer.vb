@@ -28,26 +28,31 @@ Partial Class frmAbrirCaixa
         Me.Label1 = New System.Windows.Forms.Label()
         Me.btnSalvar = New System.Windows.Forms.Button()
         Me.btSair = New System.Windows.Forms.Button()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.Panel1.SuspendLayout()
+        Me.Panel2.SuspendLayout()
         Me.SuspendLayout()
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.White
-        Me.Label2.Location = New System.Drawing.Point(31, 55)
+        Me.Label2.Location = New System.Drawing.Point(14, 25)
         Me.Label2.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(71, 16)
+        Me.Label2.Size = New System.Drawing.Size(173, 20)
         Me.Label2.TabIndex = 150
-        Me.Label2.Text = "Valor (R$):"
+        Me.Label2.Text = "Valor da Abertura (R$):"
         '
         'txtAbertura
         '
-        Me.txtAbertura.Location = New System.Drawing.Point(102, 54)
+        Me.txtAbertura.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtAbertura.Location = New System.Drawing.Point(197, 22)
         Me.txtAbertura.Margin = New System.Windows.Forms.Padding(5)
         Me.txtAbertura.Name = "txtAbertura"
-        Me.txtAbertura.Size = New System.Drawing.Size(135, 20)
+        Me.txtAbertura.Size = New System.Drawing.Size(143, 26)
         Me.txtAbertura.TabIndex = 1
         '
         'Label1
@@ -55,7 +60,7 @@ Partial Class frmAbrirCaixa
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(31, 9)
+        Me.Label1.Location = New System.Drawing.Point(59, 9)
         Me.Label1.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(221, 29)
@@ -70,10 +75,10 @@ Partial Class frmAbrirCaixa
         Me.btnSalvar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Azure
         Me.btnSalvar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.btnSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnSalvar.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSalvar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSalvar.ForeColor = System.Drawing.Color.White
         Me.btnSalvar.Image = CType(resources.GetObject("btnSalvar.Image"), System.Drawing.Image)
-        Me.btnSalvar.Location = New System.Drawing.Point(52, 85)
+        Me.btnSalvar.Location = New System.Drawing.Point(116, 129)
         Me.btnSalvar.Margin = New System.Windows.Forms.Padding(7, 6, 7, 6)
         Me.btnSalvar.Name = "btnSalvar"
         Me.btnSalvar.Size = New System.Drawing.Size(92, 37)
@@ -91,37 +96,60 @@ Partial Class frmAbrirCaixa
         Me.btSair.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Azure
         Me.btSair.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.btSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btSair.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btSair.ForeColor = System.Drawing.Color.White
         Me.btSair.Image = CType(resources.GetObject("btSair.Image"), System.Drawing.Image)
-        Me.btSair.Location = New System.Drawing.Point(158, 89)
+        Me.btSair.Location = New System.Drawing.Point(250, 133)
         Me.btSair.Margin = New System.Windows.Forms.Padding(7, 6, 7, 6)
         Me.btSair.Name = "btSair"
-        Me.btSair.Size = New System.Drawing.Size(73, 33)
+        Me.btSair.Size = New System.Drawing.Size(90, 33)
         Me.btSair.TabIndex = 191
         Me.btSair.Text = "Sair"
         Me.btSair.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btSair.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btSair.UseVisualStyleBackColor = False
         '
+        'Panel1
+        '
+        Me.Panel1.Controls.Add(Me.Label1)
+        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel1.Location = New System.Drawing.Point(0, 0)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(359, 55)
+        Me.Panel1.TabIndex = 197
+        '
+        'Panel2
+        '
+        Me.Panel2.BackColor = System.Drawing.Color.LightSteelBlue
+        Me.Panel2.Controls.Add(Me.txtAbertura)
+        Me.Panel2.Controls.Add(Me.Label2)
+        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel2.Location = New System.Drawing.Point(0, 55)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(359, 69)
+        Me.Panel2.TabIndex = 198
+        '
         'frmAbrirCaixa
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.Maroon
-        Me.ClientSize = New System.Drawing.Size(260, 143)
-        Me.Controls.Add(Me.Label1)
+        Me.BackColor = System.Drawing.Color.SteelBlue
+        Me.ClientSize = New System.Drawing.Size(359, 176)
         Me.Controls.Add(Me.btnSalvar)
         Me.Controls.Add(Me.btSair)
-        Me.Controls.Add(Me.txtAbertura)
-        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.Panel2)
+        Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "frmAbrirCaixa"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Abrertura de Caixa"
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
+        Me.Panel2.ResumeLayout(False)
+        Me.Panel2.PerformLayout()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
     Friend WithEvents btnSalvar As Button
@@ -129,4 +157,6 @@ Partial Class frmAbrirCaixa
     Friend WithEvents Label2 As Label
     Friend WithEvents txtAbertura As TextBox
     Friend WithEvents Label1 As Label
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents Panel2 As Panel
 End Class

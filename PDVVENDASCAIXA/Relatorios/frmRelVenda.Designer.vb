@@ -23,30 +23,40 @@ Partial Class frmRelVenda
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim ReportDataSource2 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
+        Dim ReportDataSource1 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmRelVenda))
+        Me.ListaVendasGeralBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.VendasDataSet1 = New PDVVENDASCAIXA.VendasDataSet1()
         Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
         Me.btSair = New System.Windows.Forms.Button()
         Me.dtData = New System.Windows.Forms.DateTimePicker()
         Me.cbFuncionario = New System.Windows.Forms.ComboBox()
-        Me.ListaVendasGeralBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.VendasDataSet1 = New PDVVENDASCAIXA.VendasDataSet1()
         Me.ListaVendasGeralTableAdapter = New PDVVENDASCAIXA.VendasDataSet1TableAdapters.ListaVendasGeralTableAdapter()
         Me.Label1 = New System.Windows.Forms.Label()
         CType(Me.ListaVendasGeralBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.VendasDataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
+        'ListaVendasGeralBindingSource
+        '
+        Me.ListaVendasGeralBindingSource.DataMember = "ListaVendasGeral"
+        Me.ListaVendasGeralBindingSource.DataSource = Me.VendasDataSet1
+        '
+        'VendasDataSet1
+        '
+        Me.VendasDataSet1.DataSetName = "VendasDataSet1"
+        Me.VendasDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
         'ReportViewer1
         '
-        ReportDataSource2.Name = "DataSet1"
-        ReportDataSource2.Value = Me.ListaVendasGeralBindingSource
-        Me.ReportViewer1.LocalReport.DataSources.Add(ReportDataSource2)
+        ReportDataSource1.Name = "DataSet1"
+        ReportDataSource1.Value = Me.ListaVendasGeralBindingSource
+        Me.ReportViewer1.LocalReport.DataSources.Add(ReportDataSource1)
         Me.ReportViewer1.LocalReport.ReportEmbeddedResource = "PDVVENDASCAIXA.relVenda.rdlc"
-        Me.ReportViewer1.Location = New System.Drawing.Point(12, 61)
+        Me.ReportViewer1.Location = New System.Drawing.Point(3, 61)
         Me.ReportViewer1.Name = "ReportViewer1"
         Me.ReportViewer1.ServerReport.BearerToken = Nothing
-        Me.ReportViewer1.Size = New System.Drawing.Size(856, 413)
+        Me.ReportViewer1.Size = New System.Drawing.Size(865, 413)
         Me.ReportViewer1.TabIndex = 0
         '
         'btSair
@@ -54,11 +64,12 @@ Partial Class frmRelVenda
         Me.btSair.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btSair.FlatAppearance.BorderSize = 0
         Me.btSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btSair.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btSair.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btSair.ForeColor = System.Drawing.Color.White
         Me.btSair.Image = CType(resources.GetObject("btSair.Image"), System.Drawing.Image)
         Me.btSair.Location = New System.Drawing.Point(12, 12)
         Me.btSair.Name = "btSair"
-        Me.btSair.Size = New System.Drawing.Size(74, 32)
+        Me.btSair.Size = New System.Drawing.Size(84, 32)
         Me.btSair.TabIndex = 1
         Me.btSair.Text = "Sair"
         Me.btSair.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -79,16 +90,6 @@ Partial Class frmRelVenda
         Me.cbFuncionario.Name = "cbFuncionario"
         Me.cbFuncionario.Size = New System.Drawing.Size(157, 21)
         Me.cbFuncionario.TabIndex = 225
-        '
-        'ListaVendasGeralBindingSource
-        '
-        Me.ListaVendasGeralBindingSource.DataMember = "ListaVendasGeral"
-        Me.ListaVendasGeralBindingSource.DataSource = Me.VendasDataSet1
-        '
-        'VendasDataSet1
-        '
-        Me.VendasDataSet1.DataSetName = "VendasDataSet1"
-        Me.VendasDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'ListaVendasGeralTableAdapter
         '
