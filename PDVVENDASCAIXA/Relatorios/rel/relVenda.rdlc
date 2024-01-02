@@ -801,7 +801,7 @@
   <Width>8.75509in</Width>
   <Page>
     <PageHeader>
-      <Height>2.18778cm</Height>
+      <Height>1.9232cm</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
@@ -809,8 +809,6 @@
           <Source>Embedded</Source>
           <Value>MEULOGOS</Value>
           <Sizing>FitProportional</Sizing>
-          <Top>0.29104cm</Top>
-          <Left>0.1cm</Left>
           <Height>1.89674cm</Height>
           <Width>1.84396cm</Width>
           <Style>

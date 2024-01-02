@@ -37,6 +37,9 @@ Public Class frmFecharCaixa
             Dim quebra As Decimal
             quebra = total_caixa - total_vendido - valor_abertura + valor_sangria
 
+            Dim ab = Replace(txtAbertura.Text, ",", ".")
+            Dim tc = Replace(txtTotalCaixa.Text, ",", ".")
+
             Dim cmd As SqlCommand
             Try
 
@@ -46,13 +49,13 @@ Public Class frmFecharCaixa
                 cmd.Parameters.AddWithValue("@data_ab", Now.ToShortDateString())
                 cmd.Parameters.AddWithValue("@hora_ab", Now.ToLongTimeString())
                 cmd.Parameters.AddWithValue("@funcionario", usuarioNome)
-                cmd.Parameters.AddWithValue("@valor_ab", txtAbertura.Text)
+                cmd.Parameters.AddWithValue("@valor_ab", ab)
                 'cmd.Parameters.AddWithValue("@valor_sangria", 0)
                 'cmd.Parameters.AddWithValue("@hora_sangria", Now.ToLongTimeString())
                 cmd.Parameters.AddWithValue("@quant_vendas", quant_vendas)
                 cmd.Parameters.AddWithValue("@prod_vendidos", prod_vendidos)
                 cmd.Parameters.AddWithValue("@total_vendido", total_vendido)
-                cmd.Parameters.AddWithValue("@total_caixa", txtTotalCaixa.Text)
+                cmd.Parameters.AddWithValue("@total_caixa", tc)
                 cmd.Parameters.AddWithValue("@saldo_total", subtotal)
                 cmd.Parameters.AddWithValue("@valor_quebra", quebra)
                 cmd.Parameters.AddWithValue("@hora_fecha", Now.ToShortTimeString())

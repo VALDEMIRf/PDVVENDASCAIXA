@@ -138,6 +138,11 @@
     <Compile Include="Cadastros\frmProdutos.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="caixa1DataSet1.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>caixa1DataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Caixa\frmAbrirCaixa.Designer.vb">
       <DependentUpon>frmAbrirCaixa.vb</DependentUpon>
     </Compile>
@@ -168,6 +173,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Estoque\frmTesteValor.Designer.vb">
+      <DependentUpon>frmTesteValor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Estoque\frmTesteValor.vb">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="mdlFuncoesDiversas.vb" />
     <Compile Include="Movimentacao\frmServicos.Designer.vb">
@@ -324,6 +335,9 @@
     <EmbeddedResource Include="Caixa\frmSangria.resx">
       <DependentUpon>frmSangria.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Estoque\frmTesteValor.resx">
+      <DependentUpon>frmTesteValor.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Movimentacao\frmServicos.resx">
       <DependentUpon>frmServicos.vb</DependentUpon>
     </EmbeddedResource>
@@ -332,6 +346,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Movimentacao\frmUnidadeMedidas.resx">
       <DependentUpon>frmUnidadeMedidas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Relatorios\frmRelCaixa.resx">
+      <DependentUpon>frmRelCaixa.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Relatorios\frmRelComprovante.resx">
       <DependentUpon>frmRelComprovante.vb</DependentUpon>
@@ -345,6 +362,7 @@
     <EmbeddedResource Include="Relatorios\frmRelVenda.resx">
       <DependentUpon>frmRelVenda.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Relatorios\rel\RelCaixa.rdlc" />
     <EmbeddedResource Include="Relatorios\rel\relComprovante.rdlc" />
     <EmbeddedResource Include="Relatorios\rel\relProdutos1.rdlc" />
     <EmbeddedResource Include="Relatorios\rel\relServicos.rdlc" />
@@ -375,6 +393,17 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="caixa1DataSet1.xsc">
+      <DependentUpon>caixa1DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="caixa1DataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>caixa1DataSet1.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="caixa1DataSet1.xss">
+      <DependentUpon>caixa1DataSet1.xsd</DependentUpon>
+    </None>
     <None Include="Connected Services\WSCEP\AtendeClienteService.wsdl" />
     <None Include="Connected Services\WSCEP\PDVVENDASCAIXA.WSCEP.atualizaPagamentoNaEntregaResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -702,8 +731,6 @@
   <ItemGroup>
     <WCFMetadataStorage Include="Connected Services\WSCEP\" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Estoque\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

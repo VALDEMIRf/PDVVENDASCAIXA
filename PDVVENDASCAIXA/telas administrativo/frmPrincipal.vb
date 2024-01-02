@@ -571,4 +571,9 @@ Public Class frmPrincipal
         Dim form = New frmRelCaixa
         form.ShowDialog()
     End Sub
+
+    Private Sub EntradaSaídaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EntradaSaídaToolStripMenuItem.Click
+        Dim form = New frmTesteValor
+        form.ShowDialog()
+    End Sub
 End Class

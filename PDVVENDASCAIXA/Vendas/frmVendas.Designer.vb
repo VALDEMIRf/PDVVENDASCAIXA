@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class frmVendas
     Inherits System.Windows.Forms.Form
 
     'Descartar substituições de formulário para limpar a lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class frmVendas
     'OBSERVAÇÃO: o procedimento a seguir é exigido pelo Windows Form Designer
     'Pode ser modificado usando o Windows Form Designer.  
     'Não o modifique usando o editor de códigos.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmVendas))
         Me.txtValorVenda = New System.Windows.Forms.TextBox()
@@ -58,7 +58,7 @@ Partial Class frmVendas
         'txtValorVenda
         '
         Me.txtValorVenda.Enabled = False
-        Me.txtValorVenda.Location = New System.Drawing.Point(338, 92)
+        Me.txtValorVenda.Location = New System.Drawing.Point(342, 92)
         Me.txtValorVenda.Name = "txtValorVenda"
         Me.txtValorVenda.Size = New System.Drawing.Size(90, 23)
         Me.txtValorVenda.TabIndex = 198
@@ -351,12 +351,12 @@ Partial Class frmVendas
         Me.dg.BackgroundColor = System.Drawing.Color.White
         Me.dg.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dg.GridColor = System.Drawing.SystemColors.HotTrack
-        Me.dg.Location = New System.Drawing.Point(14, 141)
+        Me.dg.Location = New System.Drawing.Point(13, 141)
         Me.dg.Margin = New System.Windows.Forms.Padding(4)
         Me.dg.Name = "dg"
         Me.dg.ReadOnly = True
         Me.dg.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dg.Size = New System.Drawing.Size(930, 346)
+        Me.dg.Size = New System.Drawing.Size(930, 348)
         Me.dg.TabIndex = 221
         '
         'pbImagem
