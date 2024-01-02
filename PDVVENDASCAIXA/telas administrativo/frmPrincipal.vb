@@ -281,9 +281,14 @@ Public Class frmPrincipal
     Sub carregarImagem()
 
         If abertura = True Then
-            imagem.Image = My.Resources.verde
+            imagem.Image = My.Resources.btVerde
+            lblTextoCaixa.Text = "CAIXA ABERTO"
+            lblAbrirFechar.Text = "FECHAR CAIXA"
+
         Else
-            imagem.Image = My.Resources.vermelho
+            imagem.Image = My.Resources.btVermelho
+            lblTextoCaixa.Text = "CAIXA FECHADO"
+            lblAbrirFechar.Text = "ABRIR CAIXA"
         End If
 
     End Sub
@@ -308,10 +313,10 @@ Public Class frmPrincipal
 
             '  If (msg = "Abra primeiro o Caixa" Or lblTextoCaixa.Text = "CAIXA FECHADO") Then
             If (msg = "Abra primeiro o Caixa") Then
-                abertura = False
-                carregarImagem()
-            Else
-                abertura = True
+                    abertura = False
+                    carregarImagem()
+                Else
+                    abertura = True
                 carregarImagem()
             End If
 
@@ -416,7 +421,7 @@ Public Class frmPrincipal
             cmd.Parameters.Add("@hora_sangria", SqlDbType.Time).Direction = 2
             cmd.Parameters.Add("@valor_ab", SqlDbType.Decimal).Direction = 2
             cmd.Parameters.Add("@valor_sangria", SqlDbType.Decimal).Direction = 2
-            cmd.Parameters.Add("@total_caixa", SqlDbType.Decimal).Direction = 2
+            cmd.Parameters.Add("@total_caixa", SqlDbType.Float).Direction = 2
 
             cmd.ExecuteNonQuery()
 
@@ -433,7 +438,7 @@ Public Class frmPrincipal
             lblTotSangria.Text = CStr(valor_sangria)
 
             Dim total_caixa As Decimal = cmd.Parameters("@total_caixa").Value
-            lblTotalCaixa.Text = CStr(total_caixa)
+            lblTotalCaixa.Text = CDbl(total_caixa)
 
             If total_caixa > 0 Then
                 abertura = False

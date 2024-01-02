@@ -25,37 +25,6 @@ Partial Class frmPrincipal
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmPrincipal))
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
-        Me.lblUsuario = New System.Windows.Forms.Label()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.lblHora = New System.Windows.Forms.Label()
-        Me.lblData = New System.Windows.Forms.Label()
-        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.dg = New System.Windows.Forms.DataGridView()
-        Me.lblTotalDoDia = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.lblTextoCaixa = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.lblHoraAb = New System.Windows.Forms.Label()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.lblVlrAb = New System.Windows.Forms.Label()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.lblTotSangria = New System.Windows.Forms.Label()
-        Me.Label13 = New System.Windows.Forms.Label()
-        Me.Label14 = New System.Windows.Forms.Label()
-        Me.lblHoraSangria = New System.Windows.Forms.Label()
-        Me.lblVendasDia = New System.Windows.Forms.Label()
-        Me.txtTotaliza = New System.Windows.Forms.TextBox()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.lblReforco = New System.Windows.Forms.Label()
-        Me.Label9 = New System.Windows.Forms.Label()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.Label10 = New System.Windows.Forms.Label()
-        Me.lblProdutosVendidos = New System.Windows.Forms.Label()
-        Me.Label12 = New System.Windows.Forms.Label()
-        Me.lblTotalCaixa = New System.Windows.Forms.Label()
-        Me.imagem = New System.Windows.Forms.PictureBox()
         Me.CadastrosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ClientesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CargosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -91,8 +60,25 @@ Partial Class frmPrincipal
         Me.SairToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SairToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.LogoffToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.lblUsuario = New System.Windows.Forms.Label()
+        Me.lblHora = New System.Windows.Forms.Label()
+        Me.lblData = New System.Windows.Forms.Label()
+        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.dg = New System.Windows.Forms.DataGridView()
+        Me.lblTotalDoDia = New System.Windows.Forms.Label()
+        Me.lblTextoCaixa = New System.Windows.Forms.Label()
+        Me.lblAbrirFechar = New System.Windows.Forms.Label()
+        Me.lblHoraAb = New System.Windows.Forms.Label()
+        Me.lblVlrAb = New System.Windows.Forms.Label()
+        Me.lblTotSangria = New System.Windows.Forms.Label()
+        Me.lblHoraSangria = New System.Windows.Forms.Label()
+        Me.lblVendasDia = New System.Windows.Forms.Label()
+        Me.lblReforco = New System.Windows.Forms.Label()
+        Me.lblProdutosVendidos = New System.Windows.Forms.Label()
+        Me.lblTotalCaixa = New System.Windows.Forms.Label()
+        Me.imagem = New System.Windows.Forms.PictureBox()
+        Me.txtTotaliza = New System.Windows.Forms.TextBox()
         Me.MenuStrip1.SuspendLayout()
-        Me.GroupBox1.SuspendLayout()
         CType(Me.dg, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.imagem, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -107,323 +93,6 @@ Partial Class frmPrincipal
         Me.MenuStrip1.Size = New System.Drawing.Size(962, 28)
         Me.MenuStrip1.TabIndex = 0
         Me.MenuStrip1.Text = "MenuStrip1"
-        '
-        'lblUsuario
-        '
-        Me.lblUsuario.AutoSize = True
-        Me.lblUsuario.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblUsuario.Location = New System.Drawing.Point(118, 29)
-        Me.lblUsuario.Name = "lblUsuario"
-        Me.lblUsuario.Size = New System.Drawing.Size(14, 20)
-        Me.lblUsuario.TabIndex = 1
-        Me.lblUsuario.Text = "-"
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(32, 29)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(91, 20)
-        Me.Label1.TabIndex = 2
-        Me.Label1.Text = "Bem Vindo:"
-        '
-        'lblHora
-        '
-        Me.lblHora.AutoSize = True
-        Me.lblHora.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblHora.Location = New System.Drawing.Point(118, 60)
-        Me.lblHora.Name = "lblHora"
-        Me.lblHora.Size = New System.Drawing.Size(14, 20)
-        Me.lblHora.TabIndex = 3
-        Me.lblHora.Text = "-"
-        '
-        'lblData
-        '
-        Me.lblData.AutoSize = True
-        Me.lblData.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblData.Location = New System.Drawing.Point(32, 60)
-        Me.lblData.Name = "lblData"
-        Me.lblData.Size = New System.Drawing.Size(14, 20)
-        Me.lblData.TabIndex = 4
-        Me.lblData.Text = "-"
-        '
-        'Timer1
-        '
-        Me.Timer1.Enabled = True
-        '
-        'GroupBox1
-        '
-        Me.GroupBox1.Controls.Add(Me.Label1)
-        Me.GroupBox1.Controls.Add(Me.lblData)
-        Me.GroupBox1.Controls.Add(Me.lblUsuario)
-        Me.GroupBox1.Controls.Add(Me.lblHora)
-        Me.GroupBox1.ForeColor = System.Drawing.Color.White
-        Me.GroupBox1.Location = New System.Drawing.Point(24, 31)
-        Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(234, 89)
-        Me.GroupBox1.TabIndex = 5
-        Me.GroupBox1.TabStop = False
-        '
-        'dg
-        '
-        Me.dg.AllowUserToAddRows = False
-        Me.dg.AllowUserToDeleteRows = False
-        Me.dg.BackgroundColor = System.Drawing.Color.White
-        Me.dg.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dg.GridColor = System.Drawing.SystemColors.HotTrack
-        Me.dg.Location = New System.Drawing.Point(23, 149)
-        Me.dg.Margin = New System.Windows.Forms.Padding(4)
-        Me.dg.Name = "dg"
-        Me.dg.ReadOnly = True
-        Me.dg.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dg.Size = New System.Drawing.Size(456, 234)
-        Me.dg.TabIndex = 222
-        '
-        'lblTotalDoDia
-        '
-        Me.lblTotalDoDia.AutoSize = True
-        Me.lblTotalDoDia.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblTotalDoDia.ForeColor = System.Drawing.Color.White
-        Me.lblTotalDoDia.Location = New System.Drawing.Point(450, 439)
-        Me.lblTotalDoDia.Name = "lblTotalDoDia"
-        Me.lblTotalDoDia.Size = New System.Drawing.Size(14, 18)
-        Me.lblTotalDoDia.TabIndex = 224
-        Me.lblTotalDoDia.Text = "-"
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.ForeColor = System.Drawing.Color.White
-        Me.Label4.Location = New System.Drawing.Point(330, 439)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(116, 18)
-        Me.Label4.TabIndex = 225
-        Me.Label4.Text = "Total Vendido:"
-        '
-        'lblTextoCaixa
-        '
-        Me.lblTextoCaixa.AutoSize = True
-        Me.lblTextoCaixa.Font = New System.Drawing.Font("Arial", 33.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblTextoCaixa.ForeColor = System.Drawing.Color.DarkSlateBlue
-        Me.lblTextoCaixa.Location = New System.Drawing.Point(324, 69)
-        Me.lblTextoCaixa.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.lblTextoCaixa.Name = "lblTextoCaixa"
-        Me.lblTextoCaixa.Size = New System.Drawing.Size(349, 51)
-        Me.lblTextoCaixa.TabIndex = 226
-        Me.lblTextoCaixa.Text = "CAIXA ABERTO"
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(752, 76)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(55, 18)
-        Me.Label2.TabIndex = 227
-        Me.Label2.Text = "Caixa:"
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(730, 125)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(122, 18)
-        Me.Label3.TabIndex = 228
-        Me.Label3.Text = "Vendas do Dia:"
-        '
-        'lblHoraAb
-        '
-        Me.lblHoraAb.AutoSize = True
-        Me.lblHoraAb.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblHoraAb.Location = New System.Drawing.Point(633, 233)
-        Me.lblHoraAb.Name = "lblHoraAb"
-        Me.lblHoraAb.Size = New System.Drawing.Size(14, 18)
-        Me.lblHoraAb.TabIndex = 229
-        Me.lblHoraAb.Text = "-"
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(718, 231)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(143, 18)
-        Me.Label6.TabIndex = 230
-        Me.Label6.Text = "Valor da Abertura:"
-        '
-        'lblVlrAb
-        '
-        Me.lblVlrAb.AutoSize = True
-        Me.lblVlrAb.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblVlrAb.Location = New System.Drawing.Point(888, 233)
-        Me.lblVlrAb.Name = "lblVlrAb"
-        Me.lblVlrAb.Size = New System.Drawing.Size(14, 18)
-        Me.lblVlrAb.TabIndex = 231
-        Me.lblVlrAb.Text = "-"
-        '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(752, 294)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(113, 18)
-        Me.Label8.TabIndex = 232
-        Me.Label8.Text = "Total Sangria:"
-        '
-        'lblTotSangria
-        '
-        Me.lblTotSangria.AutoSize = True
-        Me.lblTotSangria.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblTotSangria.Location = New System.Drawing.Point(890, 294)
-        Me.lblTotSangria.Name = "lblTotSangria"
-        Me.lblTotSangria.Size = New System.Drawing.Size(14, 18)
-        Me.lblTotSangria.TabIndex = 233
-        Me.lblTotSangria.Text = "-"
-        '
-        'Label13
-        '
-        Me.Label13.AutoSize = True
-        Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label13.Location = New System.Drawing.Point(486, 233)
-        Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(141, 18)
-        Me.Label13.TabIndex = 237
-        Me.Label13.Text = "Hora da Abertura:"
-        '
-        'Label14
-        '
-        Me.Label14.AutoSize = True
-        Me.Label14.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label14.Location = New System.Drawing.Point(502, 294)
-        Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(123, 18)
-        Me.Label14.TabIndex = 238
-        Me.Label14.Text = "Última Sangria:"
-        '
-        'lblHoraSangria
-        '
-        Me.lblHoraSangria.AutoSize = True
-        Me.lblHoraSangria.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblHoraSangria.Location = New System.Drawing.Point(633, 295)
-        Me.lblHoraSangria.Name = "lblHoraSangria"
-        Me.lblHoraSangria.Size = New System.Drawing.Size(14, 18)
-        Me.lblHoraSangria.TabIndex = 239
-        Me.lblHoraSangria.Text = "-"
-        '
-        'lblVendasDia
-        '
-        Me.lblVendasDia.AutoSize = True
-        Me.lblVendasDia.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblVendasDia.Location = New System.Drawing.Point(861, 125)
-        Me.lblVendasDia.Name = "lblVendasDia"
-        Me.lblVendasDia.Size = New System.Drawing.Size(14, 18)
-        Me.lblVendasDia.TabIndex = 240
-        Me.lblVendasDia.Text = "-"
-        '
-        'txtTotaliza
-        '
-        Me.txtTotaliza.Enabled = False
-        Me.txtTotaliza.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtTotaliza.Location = New System.Drawing.Point(427, 465)
-        Me.txtTotaliza.Name = "txtTotaliza"
-        Me.txtTotaliza.ReadOnly = True
-        Me.txtTotaliza.Size = New System.Drawing.Size(65, 24)
-        Me.txtTotaliza.TabIndex = 241
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(863, 233)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(29, 18)
-        Me.Label5.TabIndex = 243
-        Me.Label5.Text = "R$"
-        '
-        'lblReforco
-        '
-        Me.lblReforco.AutoSize = True
-        Me.lblReforco.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblReforco.Location = New System.Drawing.Point(894, 344)
-        Me.lblReforco.Name = "lblReforco"
-        Me.lblReforco.Size = New System.Drawing.Size(14, 18)
-        Me.lblReforco.TabIndex = 246
-        Me.lblReforco.Text = "-"
-        '
-        'Label9
-        '
-        Me.Label9.AutoSize = True
-        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.Location = New System.Drawing.Point(723, 343)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(145, 18)
-        Me.Label9.TabIndex = 245
-        Me.Label9.Text = "Reforço do Caixa:"
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(860, 295)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(29, 18)
-        Me.Label7.TabIndex = 247
-        Me.Label7.Text = "R$"
-        '
-        'Label10
-        '
-        Me.Label10.AutoSize = True
-        Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.Location = New System.Drawing.Point(863, 344)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(29, 18)
-        Me.Label10.TabIndex = 248
-        Me.Label10.Text = "R$"
-        '
-        'lblProdutosVendidos
-        '
-        Me.lblProdutosVendidos.AutoSize = True
-        Me.lblProdutosVendidos.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblProdutosVendidos.Location = New System.Drawing.Point(653, 330)
-        Me.lblProdutosVendidos.Name = "lblProdutosVendidos"
-        Me.lblProdutosVendidos.Size = New System.Drawing.Size(14, 18)
-        Me.lblProdutosVendidos.TabIndex = 250
-        Me.lblProdutosVendidos.Text = "-"
-        '
-        'Label12
-        '
-        Me.Label12.AutoSize = True
-        Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label12.Location = New System.Drawing.Point(491, 329)
-        Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(156, 18)
-        Me.Label12.TabIndex = 249
-        Me.Label12.Text = "Produtos Vendidos:"
-        '
-        'lblTotalCaixa
-        '
-        Me.lblTotalCaixa.AutoSize = True
-        Me.lblTotalCaixa.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblTotalCaixa.Location = New System.Drawing.Point(824, 168)
-        Me.lblTotalCaixa.Name = "lblTotalCaixa"
-        Me.lblTotalCaixa.Size = New System.Drawing.Size(14, 18)
-        Me.lblTotalCaixa.TabIndex = 251
-        Me.lblTotalCaixa.Text = "-"
-        '
-        'imagem
-        '
-        Me.imagem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-        Me.imagem.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.imagem.Location = New System.Drawing.Point(813, 69)
-        Me.imagem.Name = "imagem"
-        Me.imagem.Size = New System.Drawing.Size(25, 25)
-        Me.imagem.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.imagem.TabIndex = 242
-        Me.imagem.TabStop = False
         '
         'CadastrosToolStripMenuItem
         '
@@ -511,21 +180,21 @@ Partial Class frmPrincipal
         '
         Me.EntradaSaídaToolStripMenuItem.Image = CType(resources.GetObject("EntradaSaídaToolStripMenuItem.Image"), System.Drawing.Image)
         Me.EntradaSaídaToolStripMenuItem.Name = "EntradaSaídaToolStripMenuItem"
-        Me.EntradaSaídaToolStripMenuItem.Size = New System.Drawing.Size(180, 24)
+        Me.EntradaSaídaToolStripMenuItem.Size = New System.Drawing.Size(162, 24)
         Me.EntradaSaídaToolStripMenuItem.Text = "Entrada / Saída"
         '
         'ConsultasToolStripMenuItem
         '
         Me.ConsultasToolStripMenuItem.Image = CType(resources.GetObject("ConsultasToolStripMenuItem.Image"), System.Drawing.Image)
         Me.ConsultasToolStripMenuItem.Name = "ConsultasToolStripMenuItem"
-        Me.ConsultasToolStripMenuItem.Size = New System.Drawing.Size(180, 24)
+        Me.ConsultasToolStripMenuItem.Size = New System.Drawing.Size(162, 24)
         Me.ConsultasToolStripMenuItem.Text = "Consultas"
         '
         'NíveisBaixoToolStripMenuItem
         '
         Me.NíveisBaixoToolStripMenuItem.Image = CType(resources.GetObject("NíveisBaixoToolStripMenuItem.Image"), System.Drawing.Image)
         Me.NíveisBaixoToolStripMenuItem.Name = "NíveisBaixoToolStripMenuItem"
-        Me.NíveisBaixoToolStripMenuItem.Size = New System.Drawing.Size(180, 24)
+        Me.NíveisBaixoToolStripMenuItem.Size = New System.Drawing.Size(162, 24)
         Me.NíveisBaixoToolStripMenuItem.Text = "Níveis Baixo"
         '
         'MovimentaçãoToolStripMenuItem
@@ -677,38 +346,234 @@ Partial Class frmPrincipal
         Me.LogoffToolStripMenuItem.Size = New System.Drawing.Size(112, 24)
         Me.LogoffToolStripMenuItem.Text = "Logoff"
         '
+        'lblUsuario
+        '
+        Me.lblUsuario.AutoSize = True
+        Me.lblUsuario.BackColor = System.Drawing.Color.Transparent
+        Me.lblUsuario.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblUsuario.Location = New System.Drawing.Point(237, 219)
+        Me.lblUsuario.Name = "lblUsuario"
+        Me.lblUsuario.Size = New System.Drawing.Size(19, 26)
+        Me.lblUsuario.TabIndex = 1
+        Me.lblUsuario.Text = "-"
+        '
+        'lblHora
+        '
+        Me.lblHora.AutoSize = True
+        Me.lblHora.BackColor = System.Drawing.Color.Transparent
+        Me.lblHora.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblHora.Location = New System.Drawing.Point(366, 164)
+        Me.lblHora.Name = "lblHora"
+        Me.lblHora.Size = New System.Drawing.Size(19, 26)
+        Me.lblHora.TabIndex = 3
+        Me.lblHora.Text = "-"
+        '
+        'lblData
+        '
+        Me.lblData.AutoSize = True
+        Me.lblData.BackColor = System.Drawing.Color.Transparent
+        Me.lblData.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblData.Location = New System.Drawing.Point(236, 164)
+        Me.lblData.Name = "lblData"
+        Me.lblData.Size = New System.Drawing.Size(19, 26)
+        Me.lblData.TabIndex = 4
+        Me.lblData.Text = "-"
+        '
+        'Timer1
+        '
+        Me.Timer1.Enabled = True
+        '
+        'dg
+        '
+        Me.dg.AllowUserToAddRows = False
+        Me.dg.AllowUserToDeleteRows = False
+        Me.dg.BackgroundColor = System.Drawing.Color.White
+        Me.dg.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dg.GridColor = System.Drawing.SystemColors.HotTrack
+        Me.dg.Location = New System.Drawing.Point(522, 195)
+        Me.dg.Margin = New System.Windows.Forms.Padding(4)
+        Me.dg.Name = "dg"
+        Me.dg.ReadOnly = True
+        Me.dg.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.dg.Size = New System.Drawing.Size(408, 334)
+        Me.dg.TabIndex = 222
+        '
+        'lblTotalDoDia
+        '
+        Me.lblTotalDoDia.AutoSize = True
+        Me.lblTotalDoDia.BackColor = System.Drawing.Color.Transparent
+        Me.lblTotalDoDia.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTotalDoDia.ForeColor = System.Drawing.Color.Black
+        Me.lblTotalDoDia.Location = New System.Drawing.Point(237, 490)
+        Me.lblTotalDoDia.Name = "lblTotalDoDia"
+        Me.lblTotalDoDia.Size = New System.Drawing.Size(20, 26)
+        Me.lblTotalDoDia.TabIndex = 224
+        Me.lblTotalDoDia.Text = "-"
+        '
+        'lblTextoCaixa
+        '
+        Me.lblTextoCaixa.AutoSize = True
+        Me.lblTextoCaixa.BackColor = System.Drawing.Color.Transparent
+        Me.lblTextoCaixa.Font = New System.Drawing.Font("Arial", 33.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTextoCaixa.ForeColor = System.Drawing.Color.DarkSlateBlue
+        Me.lblTextoCaixa.Location = New System.Drawing.Point(374, 59)
+        Me.lblTextoCaixa.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblTextoCaixa.Name = "lblTextoCaixa"
+        Me.lblTextoCaixa.Size = New System.Drawing.Size(37, 51)
+        Me.lblTextoCaixa.TabIndex = 226
+        Me.lblTextoCaixa.Text = "-"
+        '
+        'lblAbrirFechar
+        '
+        Me.lblAbrirFechar.AutoSize = True
+        Me.lblAbrirFechar.BackColor = System.Drawing.Color.Transparent
+        Me.lblAbrirFechar.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblAbrirFechar.Location = New System.Drawing.Point(891, 113)
+        Me.lblAbrirFechar.Name = "lblAbrirFechar"
+        Me.lblAbrirFechar.Size = New System.Drawing.Size(10, 13)
+        Me.lblAbrirFechar.TabIndex = 227
+        Me.lblAbrirFechar.Text = "-"
+        '
+        'lblHoraAb
+        '
+        Me.lblHoraAb.AutoSize = True
+        Me.lblHoraAb.BackColor = System.Drawing.Color.Transparent
+        Me.lblHoraAb.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblHoraAb.Location = New System.Drawing.Point(16, 59)
+        Me.lblHoraAb.Name = "lblHoraAb"
+        Me.lblHoraAb.Size = New System.Drawing.Size(14, 18)
+        Me.lblHoraAb.TabIndex = 229
+        Me.lblHoraAb.Text = "-"
+        Me.lblHoraAb.Visible = False
+        '
+        'lblVlrAb
+        '
+        Me.lblVlrAb.AutoSize = True
+        Me.lblVlrAb.BackColor = System.Drawing.Color.Transparent
+        Me.lblVlrAb.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblVlrAb.Location = New System.Drawing.Point(16, 77)
+        Me.lblVlrAb.Name = "lblVlrAb"
+        Me.lblVlrAb.Size = New System.Drawing.Size(14, 18)
+        Me.lblVlrAb.TabIndex = 231
+        Me.lblVlrAb.Text = "-"
+        Me.lblVlrAb.Visible = False
+        '
+        'lblTotSangria
+        '
+        Me.lblTotSangria.AutoSize = True
+        Me.lblTotSangria.BackColor = System.Drawing.Color.Transparent
+        Me.lblTotSangria.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTotSangria.Location = New System.Drawing.Point(16, 95)
+        Me.lblTotSangria.Name = "lblTotSangria"
+        Me.lblTotSangria.Size = New System.Drawing.Size(14, 18)
+        Me.lblTotSangria.TabIndex = 233
+        Me.lblTotSangria.Text = "-"
+        Me.lblTotSangria.Visible = False
+        '
+        'lblHoraSangria
+        '
+        Me.lblHoraSangria.AutoSize = True
+        Me.lblHoraSangria.BackColor = System.Drawing.Color.Transparent
+        Me.lblHoraSangria.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblHoraSangria.Location = New System.Drawing.Point(235, 276)
+        Me.lblHoraSangria.Name = "lblHoraSangria"
+        Me.lblHoraSangria.Size = New System.Drawing.Size(20, 26)
+        Me.lblHoraSangria.TabIndex = 239
+        Me.lblHoraSangria.Text = "-"
+        '
+        'lblVendasDia
+        '
+        Me.lblVendasDia.AutoSize = True
+        Me.lblVendasDia.BackColor = System.Drawing.Color.Transparent
+        Me.lblVendasDia.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblVendasDia.Location = New System.Drawing.Point(239, 335)
+        Me.lblVendasDia.Name = "lblVendasDia"
+        Me.lblVendasDia.Size = New System.Drawing.Size(20, 26)
+        Me.lblVendasDia.TabIndex = 240
+        Me.lblVendasDia.Text = "-"
+        '
+        'lblReforco
+        '
+        Me.lblReforco.AutoSize = True
+        Me.lblReforco.BackColor = System.Drawing.Color.Transparent
+        Me.lblReforco.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblReforco.Location = New System.Drawing.Point(16, 113)
+        Me.lblReforco.Name = "lblReforco"
+        Me.lblReforco.Size = New System.Drawing.Size(14, 18)
+        Me.lblReforco.TabIndex = 246
+        Me.lblReforco.Text = "-"
+        Me.lblReforco.Visible = False
+        '
+        'lblProdutosVendidos
+        '
+        Me.lblProdutosVendidos.AutoSize = True
+        Me.lblProdutosVendidos.BackColor = System.Drawing.Color.Transparent
+        Me.lblProdutosVendidos.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblProdutosVendidos.Location = New System.Drawing.Point(236, 391)
+        Me.lblProdutosVendidos.Name = "lblProdutosVendidos"
+        Me.lblProdutosVendidos.Size = New System.Drawing.Size(20, 26)
+        Me.lblProdutosVendidos.TabIndex = 250
+        Me.lblProdutosVendidos.Text = "-"
+        '
+        'lblTotalCaixa
+        '
+        Me.lblTotalCaixa.AutoSize = True
+        Me.lblTotalCaixa.BackColor = System.Drawing.Color.Transparent
+        Me.lblTotalCaixa.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTotalCaixa.Location = New System.Drawing.Point(12, 40)
+        Me.lblTotalCaixa.Name = "lblTotalCaixa"
+        Me.lblTotalCaixa.Size = New System.Drawing.Size(14, 18)
+        Me.lblTotalCaixa.TabIndex = 251
+        Me.lblTotalCaixa.Text = "-"
+        Me.lblTotalCaixa.Visible = False
+        '
+        'imagem
+        '
+        Me.imagem.BackColor = System.Drawing.Color.Transparent
+        Me.imagem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.imagem.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.imagem.Location = New System.Drawing.Point(884, 85)
+        Me.imagem.Name = "imagem"
+        Me.imagem.Size = New System.Drawing.Size(25, 25)
+        Me.imagem.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.imagem.TabIndex = 242
+        Me.imagem.TabStop = False
+        '
+        'txtTotaliza
+        '
+        Me.txtTotaliza.Enabled = False
+        Me.txtTotaliza.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtTotaliza.Location = New System.Drawing.Point(0, 484)
+        Me.txtTotaliza.Name = "txtTotaliza"
+        Me.txtTotaliza.ReadOnly = True
+        Me.txtTotaliza.Size = New System.Drawing.Size(10, 24)
+        Me.txtTotaliza.TabIndex = 241
+        Me.txtTotaliza.Visible = False
+        '
         'frmPrincipal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.LightSteelBlue
-        Me.ClientSize = New System.Drawing.Size(962, 531)
+        Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
+        Me.ClientSize = New System.Drawing.Size(962, 557)
         Me.Controls.Add(Me.lblTotalCaixa)
+        Me.Controls.Add(Me.lblHora)
+        Me.Controls.Add(Me.lblData)
         Me.Controls.Add(Me.lblProdutosVendidos)
-        Me.Controls.Add(Me.Label12)
-        Me.Controls.Add(Me.Label10)
-        Me.Controls.Add(Me.Label7)
+        Me.Controls.Add(Me.lblUsuario)
         Me.Controls.Add(Me.lblReforco)
-        Me.Controls.Add(Me.Label9)
-        Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.imagem)
         Me.Controls.Add(Me.txtTotaliza)
         Me.Controls.Add(Me.lblVendasDia)
         Me.Controls.Add(Me.lblHoraSangria)
-        Me.Controls.Add(Me.Label14)
-        Me.Controls.Add(Me.Label13)
         Me.Controls.Add(Me.lblTotSangria)
-        Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.lblVlrAb)
-        Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.lblHoraAb)
-        Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.lblAbrirFechar)
         Me.Controls.Add(Me.lblTextoCaixa)
-        Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.lblTotalDoDia)
         Me.Controls.Add(Me.dg)
-        Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.MenuStrip1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
@@ -719,8 +584,6 @@ Partial Class frmPrincipal
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
-        Me.GroupBox1.ResumeLayout(False)
-        Me.GroupBox1.PerformLayout()
         CType(Me.dg, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.imagem, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
@@ -762,37 +625,24 @@ Partial Class frmPrincipal
     Friend WithEvents SairToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents LogoffToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents lblUsuario As Label
-    Friend WithEvents Label1 As Label
     Friend WithEvents lblHora As Label
     Friend WithEvents lblData As Label
     Friend WithEvents Timer1 As Timer
-    Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents dg As DataGridView
     Friend WithEvents lblTotalDoDia As Label
-    Friend WithEvents Label4 As Label
     Friend WithEvents FiltroDeVendasToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ServiçosToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents lblTextoCaixa As Label
-    Friend WithEvents Label2 As Label
-    Friend WithEvents Label3 As Label
+    Friend WithEvents lblAbrirFechar As Label
     Friend WithEvents lblHoraAb As Label
-    Friend WithEvents Label6 As Label
     Friend WithEvents lblVlrAb As Label
-    Friend WithEvents Label8 As Label
     Friend WithEvents lblTotSangria As Label
-    Friend WithEvents Label13 As Label
-    Friend WithEvents Label14 As Label
     Friend WithEvents lblHoraSangria As Label
     Friend WithEvents lblVendasDia As Label
-    Friend WithEvents txtTotaliza As TextBox
     Friend WithEvents imagem As PictureBox
-    Friend WithEvents Label5 As Label
     Friend WithEvents ReforçosAsCaixaToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents lblReforco As Label
-    Friend WithEvents Label9 As Label
-    Friend WithEvents Label7 As Label
-    Friend WithEvents Label10 As Label
     Friend WithEvents lblProdutosVendidos As Label
-    Friend WithEvents Label12 As Label
     Friend WithEvents lblTotalCaixa As Label
+    Friend WithEvents txtTotaliza As TextBox
 End Class
