@@ -174,6 +174,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Estoque\frmEstoque.Designer.vb">
+      <DependentUpon>frmEstoque.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Estoque\frmEstoque.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Estoque\frmTesteValor.Designer.vb">
       <DependentUpon>frmTesteValor.vb</DependentUpon>
     </Compile>
@@ -334,6 +340,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Caixa\frmSangria.resx">
       <DependentUpon>frmSangria.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Estoque\frmEstoque.resx">
+      <DependentUpon>frmEstoque.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Estoque\frmTesteValor.resx">
       <DependentUpon>frmTesteValor.vb</DependentUpon>
@@ -637,6 +646,8 @@
     <Content Include="backgrounds\seu logo inicial.jpeg" />
     <Content Include="backgrounds\tela de login.jpg" />
     <Content Include="backgrounds\TELA PRINCIPAL MENU AJUSTADA.jpg" />
+    <Content Include="imagens\Camera-32.png" />
+    <Content Include="imagens\Close.32.png" />
     <Content Include="imagens\Ok-icon.png" />
     <Content Include="imagens\Ok-icon1.png" />
     <Content Include="imagens\sair2.png" />

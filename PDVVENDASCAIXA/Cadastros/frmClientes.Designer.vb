@@ -25,6 +25,12 @@ Partial Class frmClientes
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmClientes))
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.Cadastro = New System.Windows.Forms.TabPage()
+        Me.lblSituacao = New System.Windows.Forms.Label()
+        Me.txtSituacao = New System.Windows.Forms.TextBox()
+        Me.lblMotivo = New System.Windows.Forms.Label()
+        Me.txtMotivo = New System.Windows.Forms.TextBox()
+        Me.btBuscarCNPJ = New System.Windows.Forms.Button()
+        Me.txtTelJuridica = New System.Windows.Forms.TextBox()
         Me.Label20 = New System.Windows.Forms.Label()
         Me.txtObs = New System.Windows.Forms.TextBox()
         Me.txtIE = New System.Windows.Forms.MaskedTextBox()
@@ -84,12 +90,6 @@ Partial Class frmClientes
         Me.btnEditar = New System.Windows.Forms.Button()
         Me.btnSalvar = New System.Windows.Forms.Button()
         Me.btSair = New System.Windows.Forms.Button()
-        Me.txtTelJuridica = New System.Windows.Forms.TextBox()
-        Me.btBuscarCNPJ = New System.Windows.Forms.Button()
-        Me.lblMotivo = New System.Windows.Forms.Label()
-        Me.txtMotivo = New System.Windows.Forms.TextBox()
-        Me.lblSituacao = New System.Windows.Forms.Label()
-        Me.txtSituacao = New System.Windows.Forms.TextBox()
         Me.TabControl1.SuspendLayout()
         Me.Cadastro.SuspendLayout()
         Me.Consulta.SuspendLayout()
@@ -167,6 +167,65 @@ Partial Class frmClientes
         Me.Cadastro.Size = New System.Drawing.Size(1023, 391)
         Me.Cadastro.TabIndex = 0
         Me.Cadastro.Text = "Cadastro"
+        '
+        'lblSituacao
+        '
+        Me.lblSituacao.AutoSize = True
+        Me.lblSituacao.ForeColor = System.Drawing.Color.White
+        Me.lblSituacao.Location = New System.Drawing.Point(32, 259)
+        Me.lblSituacao.Margin = New System.Windows.Forms.Padding(9, 0, 9, 0)
+        Me.lblSituacao.Name = "lblSituacao"
+        Me.lblSituacao.Size = New System.Drawing.Size(67, 17)
+        Me.lblSituacao.TabIndex = 294
+        Me.lblSituacao.Text = "Situação:"
+        '
+        'txtSituacao
+        '
+        Me.txtSituacao.Location = New System.Drawing.Point(103, 256)
+        Me.txtSituacao.Margin = New System.Windows.Forms.Padding(9, 7, 9, 7)
+        Me.txtSituacao.Name = "txtSituacao"
+        Me.txtSituacao.Size = New System.Drawing.Size(458, 23)
+        Me.txtSituacao.TabIndex = 293
+        '
+        'lblMotivo
+        '
+        Me.lblMotivo.AutoSize = True
+        Me.lblMotivo.ForeColor = System.Drawing.Color.White
+        Me.lblMotivo.Location = New System.Drawing.Point(39, 296)
+        Me.lblMotivo.Margin = New System.Windows.Forms.Padding(9, 0, 9, 0)
+        Me.lblMotivo.Name = "lblMotivo"
+        Me.lblMotivo.Size = New System.Drawing.Size(53, 17)
+        Me.lblMotivo.TabIndex = 292
+        Me.lblMotivo.Text = "Motivo:"
+        '
+        'txtMotivo
+        '
+        Me.txtMotivo.Location = New System.Drawing.Point(103, 293)
+        Me.txtMotivo.Margin = New System.Windows.Forms.Padding(9, 7, 9, 7)
+        Me.txtMotivo.Name = "txtMotivo"
+        Me.txtMotivo.Size = New System.Drawing.Size(458, 23)
+        Me.txtMotivo.TabIndex = 291
+        '
+        'btBuscarCNPJ
+        '
+        Me.btBuscarCNPJ.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btBuscarCNPJ.FlatAppearance.BorderSize = 0
+        Me.btBuscarCNPJ.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btBuscarCNPJ.Image = CType(resources.GetObject("btBuscarCNPJ.Image"), System.Drawing.Image)
+        Me.btBuscarCNPJ.Location = New System.Drawing.Point(244, 46)
+        Me.btBuscarCNPJ.Name = "btBuscarCNPJ"
+        Me.btBuscarCNPJ.Size = New System.Drawing.Size(37, 26)
+        Me.btBuscarCNPJ.TabIndex = 290
+        Me.btBuscarCNPJ.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btBuscarCNPJ.UseVisualStyleBackColor = True
+        '
+        'txtTelJuridica
+        '
+        Me.txtTelJuridica.Enabled = False
+        Me.txtTelJuridica.Location = New System.Drawing.Point(103, 183)
+        Me.txtTelJuridica.Name = "txtTelJuridica"
+        Me.txtTelJuridica.Size = New System.Drawing.Size(459, 23)
+        Me.txtTelJuridica.TabIndex = 289
         '
         'Label20
         '
@@ -615,7 +674,6 @@ Partial Class frmClientes
         Me.Consulta.BackColor = System.Drawing.Color.Teal
         Me.Consulta.Controls.Add(Me.GroupBox1)
         Me.Consulta.Controls.Add(Me.dg)
-        Me.Consulta.Controls.Add(Me.txtBuscarNome)
         Me.Consulta.Controls.Add(Me.Label7)
         Me.Consulta.Controls.Add(Me.lblTotal)
         Me.Consulta.Location = New System.Drawing.Point(4, 25)
@@ -630,6 +688,7 @@ Partial Class frmClientes
         '
         Me.GroupBox1.Controls.Add(Me.rbCPF)
         Me.GroupBox1.Controls.Add(Me.Label21)
+        Me.GroupBox1.Controls.Add(Me.txtBuscarNome)
         Me.GroupBox1.Controls.Add(Me.rbNome)
         Me.GroupBox1.Controls.Add(Me.txtBuscarCPF)
         Me.GroupBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -705,7 +764,7 @@ Partial Class frmClientes
         '
         'txtBuscarNome
         '
-        Me.txtBuscarNome.Location = New System.Drawing.Point(491, 20)
+        Me.txtBuscarNome.Location = New System.Drawing.Point(221, 15)
         Me.txtBuscarNome.Margin = New System.Windows.Forms.Padding(7, 6, 7, 6)
         Me.txtBuscarNome.Name = "txtBuscarNome"
         Me.txtBuscarNome.Size = New System.Drawing.Size(170, 23)
@@ -852,65 +911,6 @@ Partial Class frmClientes
         Me.btSair.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btSair.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btSair.UseVisualStyleBackColor = False
-        '
-        'txtTelJuridica
-        '
-        Me.txtTelJuridica.Enabled = False
-        Me.txtTelJuridica.Location = New System.Drawing.Point(103, 183)
-        Me.txtTelJuridica.Name = "txtTelJuridica"
-        Me.txtTelJuridica.Size = New System.Drawing.Size(459, 23)
-        Me.txtTelJuridica.TabIndex = 289
-        '
-        'btBuscarCNPJ
-        '
-        Me.btBuscarCNPJ.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btBuscarCNPJ.FlatAppearance.BorderSize = 0
-        Me.btBuscarCNPJ.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btBuscarCNPJ.Image = CType(resources.GetObject("btBuscarCNPJ.Image"), System.Drawing.Image)
-        Me.btBuscarCNPJ.Location = New System.Drawing.Point(244, 46)
-        Me.btBuscarCNPJ.Name = "btBuscarCNPJ"
-        Me.btBuscarCNPJ.Size = New System.Drawing.Size(37, 26)
-        Me.btBuscarCNPJ.TabIndex = 290
-        Me.btBuscarCNPJ.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btBuscarCNPJ.UseVisualStyleBackColor = True
-        '
-        'lblMotivo
-        '
-        Me.lblMotivo.AutoSize = True
-        Me.lblMotivo.ForeColor = System.Drawing.Color.White
-        Me.lblMotivo.Location = New System.Drawing.Point(39, 296)
-        Me.lblMotivo.Margin = New System.Windows.Forms.Padding(9, 0, 9, 0)
-        Me.lblMotivo.Name = "lblMotivo"
-        Me.lblMotivo.Size = New System.Drawing.Size(53, 17)
-        Me.lblMotivo.TabIndex = 292
-        Me.lblMotivo.Text = "Motivo:"
-        '
-        'txtMotivo
-        '
-        Me.txtMotivo.Location = New System.Drawing.Point(103, 293)
-        Me.txtMotivo.Margin = New System.Windows.Forms.Padding(9, 7, 9, 7)
-        Me.txtMotivo.Name = "txtMotivo"
-        Me.txtMotivo.Size = New System.Drawing.Size(458, 23)
-        Me.txtMotivo.TabIndex = 291
-        '
-        'lblSituacao
-        '
-        Me.lblSituacao.AutoSize = True
-        Me.lblSituacao.ForeColor = System.Drawing.Color.White
-        Me.lblSituacao.Location = New System.Drawing.Point(32, 259)
-        Me.lblSituacao.Margin = New System.Windows.Forms.Padding(9, 0, 9, 0)
-        Me.lblSituacao.Name = "lblSituacao"
-        Me.lblSituacao.Size = New System.Drawing.Size(67, 17)
-        Me.lblSituacao.TabIndex = 294
-        Me.lblSituacao.Text = "Situação:"
-        '
-        'txtSituacao
-        '
-        Me.txtSituacao.Location = New System.Drawing.Point(103, 256)
-        Me.txtSituacao.Margin = New System.Windows.Forms.Padding(9, 7, 9, 7)
-        Me.txtSituacao.Name = "txtSituacao"
-        Me.txtSituacao.Size = New System.Drawing.Size(458, 23)
-        Me.txtSituacao.TabIndex = 293
         '
         'frmClientes
         '

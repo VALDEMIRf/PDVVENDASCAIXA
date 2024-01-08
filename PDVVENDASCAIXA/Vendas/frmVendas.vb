@@ -142,32 +142,17 @@ Public Class frmVendas
             cmd.CommandType = 4
             cmd.Parameters.AddWithValue("@id_produto", cbProduto.SelectedValue)
             cmd.Parameters.Add("@quant", SqlDbType.Int).Direction = 2
-            cmd.Parameters.Add("@valor_venda", SqlDbType.Decimal).Direction = 2
-
-            cmd.Parameters.Add("@data_venda1", SqlDbType.Float).Direction = 2
-            ' cmd.Parameters.Add("@data_venda2", SqlDbType.Money).Direction = 2
-
+            cmd.Parameters.Add("@valor_venda", SqlDbType.Float).Direction = 2
 
             'cmd.Parameters.Add("@quant_vendida", SqlDbType.Int).Direction = 2
             'cmd.Parameters.Add("@codigo_barras", SqlDbType.VarChar, 100).Direction = 2
             cmd.ExecuteNonQuery()
 
-            'Dim valorVenda As Double
-
-
-            '  Dim valor As Decimal = cmd.Parameters("@valor_venda").Value
-            ' txtValorVenda.Text = CStr(valor)
             Dim quant As Int32 = cmd.Parameters("@quant").Value
             txtEstoque.Text = CStr(quant)
 
-
-            Dim valor1 As Double = cmd.Parameters("@data_venda1").Value
+            Dim valor1 As Double = cmd.Parameters("@valor_venda").Value
             txtValorVenda.Text = CDbl(valor1)
-
-            'Dim valor2 As Decimal = cmd.Parameters("@data_venda2").Value
-            'txtvalor2.Text = CStr(valor2)
-
-
 
             '' ----------------------------------------------------------------------------
 

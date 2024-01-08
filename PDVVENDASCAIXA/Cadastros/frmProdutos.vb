@@ -108,7 +108,6 @@ Public Class frmProdutos
         txtQuantidade.Enabled = False
         txtValorCompra.Enabled = False
         txtValorVenda.Enabled = False
-
         txtNivel.Enabled = False
 
 
@@ -120,10 +119,9 @@ Public Class frmProdutos
         cbFornecedor.Enabled = True
         cbCategoria.Enabled = True
         cbUnidade.Enabled = True
-        txtQuantidade.Enabled = True
+        ' txtQuantidade.Enabled = True
         txtValorCompra.Enabled = True
         txtValorVenda.Enabled = True
-
         txtNivel.Enabled = True
 
     End Sub
@@ -148,7 +146,6 @@ Public Class frmProdutos
 
     Private Sub FormatarDG()
         dg.Columns(0).Visible = False
-        'dg.Columns(9).Visible = False
         dg.Columns(10).Visible = False
         dg.Columns(11).Visible = False
         dg.Columns(12).Visible = False
@@ -163,9 +160,7 @@ Public Class frmProdutos
         dg.Columns(7).HeaderText = "Vlr de Compra"
         dg.Columns(8).HeaderText = "Vlr de Venda"
         dg.Columns(9).HeaderText = "Dt Cadastro"
-        'dg.Columns(10).HeaderText = "id_fornecedor"
-        'dg.Columns(11).HeaderText = "id_categoria"
-        'dg.Columns(12).HeaderText = "id_unidade"
+        dg.Columns(14).HeaderText = "Nível Mínimo"
 
         dg.Columns(2).Width = 180
         dg.Columns(1).Width = 150
@@ -177,10 +172,6 @@ Public Class frmProdutos
         dg.Columns(7).Width = 100
         dg.Columns(8).Width = 100
         dg.Columns(9).Width = 80
-        'dg.Columns(11).Width = 70
-        'dg.Columns(12).Width = 100
-        'dg.Columns(13).Width = 190
-
     End Sub
 
     Private Sub ContarLinhas()
@@ -234,7 +225,7 @@ Public Class frmProdutos
                 cmd.Parameters.AddWithValue("@valor_venda", vlVenda)
                 cmd.Parameters.AddWithValue("@data_cadastro", Now.Date())
             cmd.Parameters.AddWithValue("@imagem", byteArray)
-            'cmd.Parameters.AddWithValue("@nivel_minimo", txtNivel.Text)
+            cmd.Parameters.AddWithValue("@nivel_minimo", txtNivel.Text)
 
             ' cmd.Parameters.AddWithValue("@quant_vendida", 0)
             ' cmd.Parameters.AddWithValue("@codigo_barras", txtCodBarras.Text)
@@ -290,9 +281,7 @@ Public Class frmProdutos
                 cmd.Parameters.AddWithValue("@valor_compra", vlcompra)
                 cmd.Parameters.AddWithValue("@valor_venda", vlVenda)
                 cmd.Parameters.AddWithValue("@imagem", byteArray)
-
-                'cmd.Parameters.AddWithValue("@imagem", byteArray)
-                'cmd.Parameters.AddWithValue("@nivel_minimo", txtNivel.Text)
+                cmd.Parameters.AddWithValue("@nivel_minimo", txtNivel.Text)
 
                 cmd.Parameters.Add("@mensagem", SqlDbType.VarChar, 100).Direction = 2
                 cmd.ExecuteNonQuery()
@@ -346,7 +335,7 @@ Public Class frmProdutos
     End Sub
 
     Private Sub dg_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dg.CellClick
-        Cadastro.Show()
+        ' Cadastro.Show()
         btnEditar.Enabled = True
         btnExcluir.Enabled = True
         btnSalvar.Enabled = False
@@ -365,8 +354,8 @@ Public Class frmProdutos
         txtQuantidade.Text = dg.CurrentRow.Cells(6).Value
         txtValorCompra.Text = dg.CurrentRow.Cells(7).Value '.ToString("R$ #,###.00")
         txtValorVenda.Text = dg.CurrentRow.Cells(8).Value '.ToString("R$ #,###.00")
-        ' txtValorCompra.Text = CInt(dg.CurrentRow.Cells(7).Value) '.ToString("R$ #,###.00")
-        '  txtValorVenda.Text = CInt(dg.CurrentRow.Cells(8).Value) '.ToString("R$ #,###.00")
+
+        txtNivel.Text = CInt(dg.CurrentRow.Cells(14).Value)
 
         Dim tempImagem As Byte() = DirectCast(dg.CurrentRow.Cells(13).Value, Byte())
         If tempImagem Is Nothing Then
@@ -381,7 +370,7 @@ Public Class frmProdutos
         ImagemCarregada = Image.FromFile(strArquivo)
         pbImagem.Image = ImagemCarregada
 
-        ' txtNivel.Text = CInt(dg.CurrentRow.Cells(11).Value)
+        ' txtNivel.Text = CInt(dg.CurrentRow.Cells(14).Value)
 
 
         '  txtCodBarras.Text = dg.CurrentRow.Cells(12).Value
@@ -417,7 +406,7 @@ Public Class frmProdutos
         End If
     End Sub
 
-    Private Sub btImagem_Click(sender As Object, e As EventArgs) Handles btImagem.Click
+    Private Sub btImagem_Click(sender As Object, e As EventArgs)
         pbImagem.Visible = True
         Using OFD As New OpenFileDialog With {.Filter = "Image File(*.jpg;*.bmp;*.gif;*.png)|*.jpg;*.bmp;*.gif;*.png"}
 
@@ -458,4 +447,6 @@ Public Class frmProdutos
         ' End Try
 
     End Sub
+
+
 End Class

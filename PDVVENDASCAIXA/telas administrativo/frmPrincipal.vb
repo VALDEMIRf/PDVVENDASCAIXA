@@ -52,24 +52,10 @@ Public Class frmPrincipal
         Try
             abrir()
 
-            'METODO 1 - CONSULTA DIRETA NO FORMULÁRIO
-            ' cmd = New SqlCommand("SELECT ven.id_vendas, ven.num_vendas, pro.nome,cli.nome,pro.valor_venda,ven.quantidade,ven.valor, ven.funcionario, ven.data_venda, ven.id_produto, ven.id_cliente FROM tbVendas as ven INNER JOIN tbProdutos as pro on ven.id_produto=pro.id_produto INNER JOIN tbClientes  as cli on ven.id_cliente = cli.id_cliente where ven.data_venda=@data order by num_vendas desc", con)
-            ' cmd.Parameters.AddWithValue("@data", Now.Date())
-            'cmd.Parameters.AddWithValue("@funcionario", usuarioNome)
-            ' da = New SqlDataAdapter(cmd)
-
-            '============================================================================================================================================================
-
-
-            'METODO 2 - CONSULTA COM PROC NO BANCO DE DADOS
             da = New SqlDataAdapter("pa_Vendas_ListaDiaria", con)
             da.SelectCommand.CommandType = CommandType.StoredProcedure
             da.SelectCommand.Parameters.AddWithValue("@data", Now.Date())
             da.SelectCommand.Parameters.AddWithValue("@funcionario", usuarioNome)
-
-
-            '============================================================================================================================================================
-
 
             da.Fill(dt)
             dg.DataSource = dt
@@ -175,8 +161,8 @@ Public Class frmPrincipal
         dg.Columns(8).HeaderText = "Dt. Venda"
 
         dg.Columns(1).Width = 70
-        dg.Columns(2).Width = 130
-        dg.Columns(3).Width = 130
+        dg.Columns(2).Width = 110
+        dg.Columns(3).Width = 90
         dg.Columns(4).Width = 90
         dg.Columns(5).Width = 70
         dg.Columns(6).Width = 70
@@ -578,6 +564,11 @@ Public Class frmPrincipal
     End Sub
 
     Private Sub EntradaSaídaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EntradaSaídaToolStripMenuItem.Click
+        Dim form = New frmEstoque
+        form.ShowDialog()
+    End Sub
+
+    Private Sub ConsultasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ConsultasToolStripMenuItem.Click
         Dim form = New frmTesteValor
         form.ShowDialog()
     End Sub
