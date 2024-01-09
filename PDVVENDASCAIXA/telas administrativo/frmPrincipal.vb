@@ -569,7 +569,12 @@ Public Class frmPrincipal
     End Sub
 
     Private Sub ConsultasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ConsultasToolStripMenuItem.Click
-        Dim form = New frmTesteValor
+        Dim form = New frmConsultaEstoque
+        form.ShowDialog()
+    End Sub
+
+    Private Sub EntradaSaídaToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles EntradaSaídaToolStripMenuItem1.Click
+        Dim form = New frmRelEstoque
         form.ShowDialog()
     End Sub
 End Class

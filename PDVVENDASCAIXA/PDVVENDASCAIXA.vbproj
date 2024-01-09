@@ -174,6 +174,17 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="ESTOQUEDataSet1.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ESTOQUEDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Estoque\frmConsultaEstoque.Designer.vb">
+      <DependentUpon>frmConsultaEstoque.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Estoque\frmConsultaEstoque.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Estoque\frmEstoque.Designer.vb">
       <DependentUpon>frmEstoque.vb</DependentUpon>
     </Compile>
@@ -230,6 +241,12 @@
       <DependentUpon>frmRelComprovante.vb</DependentUpon>
     </Compile>
     <Compile Include="Relatorios\frmRelComprovante.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Relatorios\frmRelEstoque.Designer.vb">
+      <DependentUpon>frmRelEstoque.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Relatorios\frmRelEstoque.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Relatorios\frmRelProdutos.Designer.vb">
@@ -341,6 +358,9 @@
     <EmbeddedResource Include="Caixa\frmSangria.resx">
       <DependentUpon>frmSangria.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Estoque\frmConsultaEstoque.resx">
+      <DependentUpon>frmConsultaEstoque.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Estoque\frmEstoque.resx">
       <DependentUpon>frmEstoque.vb</DependentUpon>
     </EmbeddedResource>
@@ -362,6 +382,9 @@
     <EmbeddedResource Include="Relatorios\frmRelComprovante.resx">
       <DependentUpon>frmRelComprovante.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Relatorios\frmRelEstoque.resx">
+      <DependentUpon>frmRelEstoque.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Relatorios\frmRelProdutos.resx">
       <DependentUpon>frmRelProdutos.vb</DependentUpon>
     </EmbeddedResource>
@@ -373,6 +396,8 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Relatorios\rel\RelCaixa.rdlc" />
     <EmbeddedResource Include="Relatorios\rel\relComprovante.rdlc" />
+    <EmbeddedResource Include="Relatorios\rel\RelEntradaSaida.rdlc" />
+    <EmbeddedResource Include="Relatorios\rel\RelEstoqueData.rdlc" />
     <EmbeddedResource Include="Relatorios\rel\relProdutos1.rdlc" />
     <EmbeddedResource Include="Relatorios\rel\relServicos.rdlc" />
     <EmbeddedResource Include="Relatorios\rel\relVenda.rdlc" />
@@ -578,6 +603,17 @@
     </None>
     <None Include="Connected Services\WSCEP\PDVVENDASCAIXA.WSCEP.VerificaSeTodosObjetosCanceladosResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="ESTOQUEDataSet1.xsc">
+      <DependentUpon>ESTOQUEDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="ESTOQUEDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ESTOQUEDataSet1.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ESTOQUEDataSet1.xss">
+      <DependentUpon>ESTOQUEDataSet1.xsd</DependentUpon>
     </None>
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>

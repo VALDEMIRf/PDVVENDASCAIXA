@@ -224,12 +224,17 @@ Public Class frmVendas
 
                 abrir()
 
-                'ABATENDO QUANTIDADE EM ESTOQUE
+                'SALVAR SAÍDA NA TABELA ESTOQUE
 
-                cmd = New SqlCommand("pa_produto_EditarEstoque", con)
+                cmd = New SqlCommand("pa_estoque_Salvar", con)
                 cmd.CommandType = CommandType.StoredProcedure
-                cmd.Parameters.AddWithValue("@quantidade", Totestoque)
+                cmd.Parameters.AddWithValue("@descricao", "Saída")
+                cmd.Parameters.AddWithValue("@quantidade", txtQuantidade.Text)
+                cmd.Parameters.AddWithValue("@data_alteracao", Now.ToShortDateString())
                 cmd.Parameters.AddWithValue("@id_produto", cbProduto.SelectedValue)
+                cmd.Parameters.AddWithValue("@funcionario", usuarioNome)
+                cmd.Parameters.AddWithValue("@motivo", "Venda")
+                cmd.Parameters.Add("@mensagem", SqlDbType.VarChar, 100).Direction = 2
                 cmd.ExecuteNonQuery()
 
                 '=======================================================================================================================

@@ -78,10 +78,10 @@ Partial Class frmClientes
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.rbCPF = New System.Windows.Forms.RadioButton()
         Me.Label21 = New System.Windows.Forms.Label()
+        Me.txtBuscarNome = New System.Windows.Forms.TextBox()
         Me.rbNome = New System.Windows.Forms.RadioButton()
         Me.txtBuscarCPF = New System.Windows.Forms.MaskedTextBox()
         Me.dg = New System.Windows.Forms.DataGridView()
-        Me.txtBuscarNome = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.lblTotal = New System.Windows.Forms.Label()
         Me.Label18 = New System.Windows.Forms.Label()
@@ -725,6 +725,14 @@ Partial Class frmClientes
         Me.Label21.TabIndex = 0
         Me.Label21.Text = "Buscar:"
         '
+        'txtBuscarNome
+        '
+        Me.txtBuscarNome.Location = New System.Drawing.Point(221, 15)
+        Me.txtBuscarNome.Margin = New System.Windows.Forms.Padding(7, 6, 7, 6)
+        Me.txtBuscarNome.Name = "txtBuscarNome"
+        Me.txtBuscarNome.Size = New System.Drawing.Size(170, 23)
+        Me.txtBuscarNome.TabIndex = 17
+        '
         'rbNome
         '
         Me.rbNome.AutoSize = True
@@ -762,14 +770,6 @@ Partial Class frmClientes
         Me.dg.Size = New System.Drawing.Size(946, 296)
         Me.dg.TabIndex = 200
         '
-        'txtBuscarNome
-        '
-        Me.txtBuscarNome.Location = New System.Drawing.Point(221, 15)
-        Me.txtBuscarNome.Margin = New System.Windows.Forms.Padding(7, 6, 7, 6)
-        Me.txtBuscarNome.Name = "txtBuscarNome"
-        Me.txtBuscarNome.Size = New System.Drawing.Size(170, 23)
-        Me.txtBuscarNome.TabIndex = 17
-        '
         'Label7
         '
         Me.Label7.AutoSize = True
@@ -799,13 +799,13 @@ Partial Class frmClientes
         'Label18
         '
         Me.Label18.AutoSize = True
-        Me.Label18.Font = New System.Drawing.Font("Arial", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label18.Font = New System.Drawing.Font("Arial", 22.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label18.ForeColor = System.Drawing.Color.White
-        Me.Label18.Location = New System.Drawing.Point(216, 14)
+        Me.Label18.Location = New System.Drawing.Point(305, 16)
         Me.Label18.Name = "Label18"
-        Me.Label18.Size = New System.Drawing.Size(313, 29)
+        Me.Label18.Size = New System.Drawing.Size(486, 35)
         Me.Label18.TabIndex = 128
-        Me.Label18.Text = "CADASTRO DE CLIENTES"
+        Me.Label18.Text = "GERENCIAMENTO DE CLIENTES"
         '
         'btnNovo
         '

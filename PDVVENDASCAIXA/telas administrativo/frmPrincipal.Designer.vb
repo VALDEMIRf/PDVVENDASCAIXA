@@ -180,21 +180,21 @@ Partial Class frmPrincipal
         '
         Me.EntradaSaídaToolStripMenuItem.Image = CType(resources.GetObject("EntradaSaídaToolStripMenuItem.Image"), System.Drawing.Image)
         Me.EntradaSaídaToolStripMenuItem.Name = "EntradaSaídaToolStripMenuItem"
-        Me.EntradaSaídaToolStripMenuItem.Size = New System.Drawing.Size(180, 24)
+        Me.EntradaSaídaToolStripMenuItem.Size = New System.Drawing.Size(162, 24)
         Me.EntradaSaídaToolStripMenuItem.Text = "Entrada / Saída"
         '
         'ConsultasToolStripMenuItem
         '
         Me.ConsultasToolStripMenuItem.Image = CType(resources.GetObject("ConsultasToolStripMenuItem.Image"), System.Drawing.Image)
         Me.ConsultasToolStripMenuItem.Name = "ConsultasToolStripMenuItem"
-        Me.ConsultasToolStripMenuItem.Size = New System.Drawing.Size(180, 24)
+        Me.ConsultasToolStripMenuItem.Size = New System.Drawing.Size(162, 24)
         Me.ConsultasToolStripMenuItem.Text = "Consultas"
         '
         'NíveisBaixoToolStripMenuItem
         '
         Me.NíveisBaixoToolStripMenuItem.Image = CType(resources.GetObject("NíveisBaixoToolStripMenuItem.Image"), System.Drawing.Image)
         Me.NíveisBaixoToolStripMenuItem.Name = "NíveisBaixoToolStripMenuItem"
-        Me.NíveisBaixoToolStripMenuItem.Size = New System.Drawing.Size(180, 24)
+        Me.NíveisBaixoToolStripMenuItem.Size = New System.Drawing.Size(162, 24)
         Me.NíveisBaixoToolStripMenuItem.Text = "Níveis Baixo"
         '
         'MovimentaçãoToolStripMenuItem
@@ -286,6 +286,7 @@ Partial Class frmPrincipal
         '
         'EntradaSaídaToolStripMenuItem1
         '
+        Me.EntradaSaídaToolStripMenuItem1.Image = CType(resources.GetObject("EntradaSaídaToolStripMenuItem1.Image"), System.Drawing.Image)
         Me.EntradaSaídaToolStripMenuItem1.Name = "EntradaSaídaToolStripMenuItem1"
         Me.EntradaSaídaToolStripMenuItem1.Size = New System.Drawing.Size(211, 24)
         Me.EntradaSaídaToolStripMenuItem1.Text = "Entrada / Saída"
