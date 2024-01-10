@@ -86,6 +86,7 @@ Public Class frmProdutos
 
             '  da = New SqlDataAdapter("SELECT * FROM tbProdutos", con)
             da = New SqlDataAdapter("pa_produto_Listar", con)
+            da.SelectCommand.CommandType = CommandType.StoredProcedure
             da.Fill(dt)
             dg.DataSource = dt
 
@@ -162,8 +163,8 @@ Public Class frmProdutos
         dg.Columns(9).HeaderText = "Dt Cadastro"
         dg.Columns(14).HeaderText = "Nível Mínimo"
 
-        dg.Columns(2).Width = 180
-        dg.Columns(1).Width = 150
+        dg.Columns(2).Width = 200
+        dg.Columns(1).Width = 180
         dg.Columns(2).Width = 200
         dg.Columns(3).Width = 260
         dg.Columns(4).Width = 120

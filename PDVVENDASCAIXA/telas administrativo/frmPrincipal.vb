@@ -564,7 +564,7 @@ Public Class frmPrincipal
     End Sub
 
     Private Sub EntradaSaídaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EntradaSaídaToolStripMenuItem.Click
-        Dim form = New frmEstoque
+        Dim form = New frmEstoque(0)
         form.ShowDialog()
     End Sub
 
@@ -575,6 +575,16 @@ Public Class frmPrincipal
 
     Private Sub EntradaSaídaToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles EntradaSaídaToolStripMenuItem1.Click
         Dim form = New frmRelEstoque
+        form.ShowDialog()
+    End Sub
+
+    Private Sub NíveisBaixoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NíveisBaixoToolStripMenuItem.Click
+        Dim form = New frmNivelBaixo
+        form.ShowDialog()
+    End Sub
+
+    Private Sub NíveisDoEstoqueToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NíveisDoEstoqueToolStripMenuItem.Click
+        Dim form = New frmRelNiveis
         form.ShowDialog()
     End Sub
 End Class

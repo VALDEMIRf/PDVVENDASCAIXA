@@ -180,21 +180,21 @@ Partial Class frmPrincipal
         '
         Me.EntradaSaídaToolStripMenuItem.Image = CType(resources.GetObject("EntradaSaídaToolStripMenuItem.Image"), System.Drawing.Image)
         Me.EntradaSaídaToolStripMenuItem.Name = "EntradaSaídaToolStripMenuItem"
-        Me.EntradaSaídaToolStripMenuItem.Size = New System.Drawing.Size(162, 24)
+        Me.EntradaSaídaToolStripMenuItem.Size = New System.Drawing.Size(180, 24)
         Me.EntradaSaídaToolStripMenuItem.Text = "Entrada / Saída"
         '
         'ConsultasToolStripMenuItem
         '
         Me.ConsultasToolStripMenuItem.Image = CType(resources.GetObject("ConsultasToolStripMenuItem.Image"), System.Drawing.Image)
         Me.ConsultasToolStripMenuItem.Name = "ConsultasToolStripMenuItem"
-        Me.ConsultasToolStripMenuItem.Size = New System.Drawing.Size(162, 24)
+        Me.ConsultasToolStripMenuItem.Size = New System.Drawing.Size(180, 24)
         Me.ConsultasToolStripMenuItem.Text = "Consultas"
         '
         'NíveisBaixoToolStripMenuItem
         '
         Me.NíveisBaixoToolStripMenuItem.Image = CType(resources.GetObject("NíveisBaixoToolStripMenuItem.Image"), System.Drawing.Image)
         Me.NíveisBaixoToolStripMenuItem.Name = "NíveisBaixoToolStripMenuItem"
-        Me.NíveisBaixoToolStripMenuItem.Size = New System.Drawing.Size(162, 24)
+        Me.NíveisBaixoToolStripMenuItem.Size = New System.Drawing.Size(180, 24)
         Me.NíveisBaixoToolStripMenuItem.Text = "Níveis Baixo"
         '
         'MovimentaçãoToolStripMenuItem
@@ -275,53 +275,54 @@ Partial Class frmPrincipal
         '
         Me.CatálogoDeProdutosToolStripMenuItem.Image = CType(resources.GetObject("CatálogoDeProdutosToolStripMenuItem.Image"), System.Drawing.Image)
         Me.CatálogoDeProdutosToolStripMenuItem.Name = "CatálogoDeProdutosToolStripMenuItem"
-        Me.CatálogoDeProdutosToolStripMenuItem.Size = New System.Drawing.Size(211, 24)
+        Me.CatálogoDeProdutosToolStripMenuItem.Size = New System.Drawing.Size(227, 24)
         Me.CatálogoDeProdutosToolStripMenuItem.Text = "Catálogo de Produtos"
         '
         'RelatórioDoCaixaToolStripMenuItem
         '
+        Me.RelatórioDoCaixaToolStripMenuItem.Image = CType(resources.GetObject("RelatórioDoCaixaToolStripMenuItem.Image"), System.Drawing.Image)
         Me.RelatórioDoCaixaToolStripMenuItem.Name = "RelatórioDoCaixaToolStripMenuItem"
-        Me.RelatórioDoCaixaToolStripMenuItem.Size = New System.Drawing.Size(211, 24)
+        Me.RelatórioDoCaixaToolStripMenuItem.Size = New System.Drawing.Size(227, 24)
         Me.RelatórioDoCaixaToolStripMenuItem.Text = "Relatório do Caixa"
         '
         'EntradaSaídaToolStripMenuItem1
         '
         Me.EntradaSaídaToolStripMenuItem1.Image = CType(resources.GetObject("EntradaSaídaToolStripMenuItem1.Image"), System.Drawing.Image)
         Me.EntradaSaídaToolStripMenuItem1.Name = "EntradaSaídaToolStripMenuItem1"
-        Me.EntradaSaídaToolStripMenuItem1.Size = New System.Drawing.Size(211, 24)
-        Me.EntradaSaídaToolStripMenuItem1.Text = "Entrada / Saída"
+        Me.EntradaSaídaToolStripMenuItem1.Size = New System.Drawing.Size(227, 24)
+        Me.EntradaSaídaToolStripMenuItem1.Text = "Entrada / Saída no Estoque"
         '
         'NíveisDoEstoqueToolStripMenuItem
         '
         Me.NíveisDoEstoqueToolStripMenuItem.Image = CType(resources.GetObject("NíveisDoEstoqueToolStripMenuItem.Image"), System.Drawing.Image)
         Me.NíveisDoEstoqueToolStripMenuItem.Name = "NíveisDoEstoqueToolStripMenuItem"
-        Me.NíveisDoEstoqueToolStripMenuItem.Size = New System.Drawing.Size(211, 24)
-        Me.NíveisDoEstoqueToolStripMenuItem.Text = "Níveis do Estoque"
+        Me.NíveisDoEstoqueToolStripMenuItem.Size = New System.Drawing.Size(249, 24)
+        Me.NíveisDoEstoqueToolStripMenuItem.Text = "Níveis de Produtos em Estoque"
         '
         'ProdutosMaisVendidosToolStripMenuItem
         '
         Me.ProdutosMaisVendidosToolStripMenuItem.Name = "ProdutosMaisVendidosToolStripMenuItem"
-        Me.ProdutosMaisVendidosToolStripMenuItem.Size = New System.Drawing.Size(211, 24)
+        Me.ProdutosMaisVendidosToolStripMenuItem.Size = New System.Drawing.Size(227, 24)
         Me.ProdutosMaisVendidosToolStripMenuItem.Text = "Produtos mais Vendidos"
         '
         'VendasPorFuncionárioToolStripMenuItem
         '
         Me.VendasPorFuncionárioToolStripMenuItem.Name = "VendasPorFuncionárioToolStripMenuItem"
-        Me.VendasPorFuncionárioToolStripMenuItem.Size = New System.Drawing.Size(211, 24)
+        Me.VendasPorFuncionárioToolStripMenuItem.Size = New System.Drawing.Size(227, 24)
         Me.VendasPorFuncionárioToolStripMenuItem.Text = "Vendas por Funcionário"
         '
         'FiltroDeVendasToolStripMenuItem
         '
         Me.FiltroDeVendasToolStripMenuItem.Image = CType(resources.GetObject("FiltroDeVendasToolStripMenuItem.Image"), System.Drawing.Image)
         Me.FiltroDeVendasToolStripMenuItem.Name = "FiltroDeVendasToolStripMenuItem"
-        Me.FiltroDeVendasToolStripMenuItem.Size = New System.Drawing.Size(211, 24)
+        Me.FiltroDeVendasToolStripMenuItem.Size = New System.Drawing.Size(227, 24)
         Me.FiltroDeVendasToolStripMenuItem.Text = "Filtro de Vendas"
         '
         'ServiçosToolStripMenuItem
         '
         Me.ServiçosToolStripMenuItem.Image = CType(resources.GetObject("ServiçosToolStripMenuItem.Image"), System.Drawing.Image)
         Me.ServiçosToolStripMenuItem.Name = "ServiçosToolStripMenuItem"
-        Me.ServiçosToolStripMenuItem.Size = New System.Drawing.Size(211, 24)
+        Me.ServiçosToolStripMenuItem.Size = New System.Drawing.Size(227, 24)
         Me.ServiçosToolStripMenuItem.Text = "Serviços"
         '
         'SairToolStripMenuItem
@@ -352,7 +353,7 @@ Partial Class frmPrincipal
         Me.lblUsuario.AutoSize = True
         Me.lblUsuario.BackColor = System.Drawing.Color.Transparent
         Me.lblUsuario.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblUsuario.Location = New System.Drawing.Point(237, 220)
+        Me.lblUsuario.Location = New System.Drawing.Point(236, 220)
         Me.lblUsuario.Name = "lblUsuario"
         Me.lblUsuario.Size = New System.Drawing.Size(19, 26)
         Me.lblUsuario.TabIndex = 1
@@ -405,7 +406,7 @@ Partial Class frmPrincipal
         Me.lblTotalDoDia.BackColor = System.Drawing.Color.Transparent
         Me.lblTotalDoDia.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblTotalDoDia.ForeColor = System.Drawing.Color.Black
-        Me.lblTotalDoDia.Location = New System.Drawing.Point(237, 486)
+        Me.lblTotalDoDia.Location = New System.Drawing.Point(236, 486)
         Me.lblTotalDoDia.Name = "lblTotalDoDia"
         Me.lblTotalDoDia.Size = New System.Drawing.Size(20, 26)
         Me.lblTotalDoDia.TabIndex = 224
@@ -476,7 +477,7 @@ Partial Class frmPrincipal
         Me.lblHoraSangria.AutoSize = True
         Me.lblHoraSangria.BackColor = System.Drawing.Color.Transparent
         Me.lblHoraSangria.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblHoraSangria.Location = New System.Drawing.Point(235, 276)
+        Me.lblHoraSangria.Location = New System.Drawing.Point(236, 276)
         Me.lblHoraSangria.Name = "lblHoraSangria"
         Me.lblHoraSangria.Size = New System.Drawing.Size(20, 26)
         Me.lblHoraSangria.TabIndex = 239
@@ -487,7 +488,7 @@ Partial Class frmPrincipal
         Me.lblVendasDia.AutoSize = True
         Me.lblVendasDia.BackColor = System.Drawing.Color.Transparent
         Me.lblVendasDia.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblVendasDia.Location = New System.Drawing.Point(239, 333)
+        Me.lblVendasDia.Location = New System.Drawing.Point(236, 333)
         Me.lblVendasDia.Name = "lblVendasDia"
         Me.lblVendasDia.Size = New System.Drawing.Size(20, 26)
         Me.lblVendasDia.TabIndex = 240
@@ -533,7 +534,7 @@ Partial Class frmPrincipal
         Me.imagem.BackColor = System.Drawing.Color.Transparent
         Me.imagem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
         Me.imagem.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.imagem.Location = New System.Drawing.Point(884, 79)
+        Me.imagem.Location = New System.Drawing.Point(887, 79)
         Me.imagem.Name = "imagem"
         Me.imagem.Size = New System.Drawing.Size(25, 25)
         Me.imagem.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage

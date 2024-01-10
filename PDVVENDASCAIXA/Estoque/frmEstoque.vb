@@ -2,6 +2,18 @@
 Imports System.IO
 
 Public Class frmEstoque
+
+    Dim id_produto As Integer
+
+    Sub New(id_produto As Integer)
+
+        InitializeComponent()
+        Me.id_produto = id_produto
+
+
+
+    End Sub
+
     Private Sub frmEstoque_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         CarregarProdutosBuscar()
@@ -12,6 +24,13 @@ Public Class frmEstoque
         btnSalvar.Enabled = False
 
         CarregarProdutos()
+
+        If id_produto > 0 Then
+            cbProduto.SelectedValue = id_produto
+            txtQuantidade.Enabled = True
+            btnSalvar.Enabled = True
+
+        End If
 
         Listar()
 

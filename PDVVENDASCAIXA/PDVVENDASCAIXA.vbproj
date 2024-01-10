@@ -191,6 +191,12 @@
     <Compile Include="Estoque\frmEstoque.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Estoque\frmNivelBaixo.Designer.vb">
+      <DependentUpon>frmNivelBaixo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Estoque\frmNivelBaixo.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Estoque\frmTesteValor.Designer.vb">
       <DependentUpon>frmTesteValor.vb</DependentUpon>
     </Compile>
@@ -247,6 +253,12 @@
       <DependentUpon>frmRelEstoque.vb</DependentUpon>
     </Compile>
     <Compile Include="Relatorios\frmRelEstoque.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Relatorios\frmRelNiveis.Designer.vb">
+      <DependentUpon>frmRelNiveis.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Relatorios\frmRelNiveis.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Relatorios\frmRelProdutos.Designer.vb">
@@ -364,6 +376,9 @@
     <EmbeddedResource Include="Estoque\frmEstoque.resx">
       <DependentUpon>frmEstoque.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Estoque\frmNivelBaixo.resx">
+      <DependentUpon>frmNivelBaixo.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Estoque\frmTesteValor.resx">
       <DependentUpon>frmTesteValor.vb</DependentUpon>
     </EmbeddedResource>
@@ -385,6 +400,9 @@
     <EmbeddedResource Include="Relatorios\frmRelEstoque.resx">
       <DependentUpon>frmRelEstoque.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Relatorios\frmRelNiveis.resx">
+      <DependentUpon>frmRelNiveis.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Relatorios\frmRelProdutos.resx">
       <DependentUpon>frmRelProdutos.vb</DependentUpon>
     </EmbeddedResource>
@@ -398,6 +416,7 @@
     <EmbeddedResource Include="Relatorios\rel\relComprovante.rdlc" />
     <EmbeddedResource Include="Relatorios\rel\RelEntradaSaida.rdlc" />
     <EmbeddedResource Include="Relatorios\rel\RelEstoqueData.rdlc" />
+    <EmbeddedResource Include="Relatorios\rel\RelNiveis.rdlc" />
     <EmbeddedResource Include="Relatorios\rel\relProdutos1.rdlc" />
     <EmbeddedResource Include="Relatorios\rel\relServicos.rdlc" />
     <EmbeddedResource Include="Relatorios\rel\relVenda.rdlc" />
