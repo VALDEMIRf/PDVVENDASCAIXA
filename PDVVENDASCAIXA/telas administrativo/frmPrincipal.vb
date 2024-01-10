@@ -30,6 +30,7 @@ Public Class frmPrincipal
     End Sub
 
     Private Sub frmPrincipal_Activated(sender As Object, e As EventArgs) Handles MyBase.Activated
+        VerificarNiveis()
         verifivarAbertura()
         Listar()
         totalizar()
@@ -585,6 +586,43 @@ Public Class frmPrincipal
 
     Private Sub NíveisDoEstoqueToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NíveisDoEstoqueToolStripMenuItem.Click
         Dim form = New frmRelNiveis
+        form.ShowDialog()
+    End Sub
+
+    Sub VerificarNiveis()
+        Dim cmd As New SqlCommand("pa_verificar_nivelBaixo", con)
+
+        Try
+            abrir()
+            cmd.CommandType = 4
+            With cmd.Parameters
+
+                .Add("@msg", SqlDbType.VarChar, 100).Direction = 2
+                cmd.ExecuteNonQuery()
+            End With
+
+            Dim msg As String = cmd.Parameters("@msg").Value
+            If (msg = "Estoque Baixo") Then
+                'MsgBox("O Nível de estoque está baixo")
+
+                imagemNivel.Image = My.Resources.btVermelho
+                lblNivel.Text = "ESTOQUE BAIXO"
+
+            Else
+                imagemNivel.Image = My.Resources.btVerde
+                lblNivel.Text = "ESTOQUE BOM"
+
+            End If
+
+
+        Catch ex As Exception
+            MessageBox.Show("Erro ao Listar" + ex.Message)
+            fechar()
+        End Try
+    End Sub
+
+    Private Sub imagemNivel_Click(sender As Object, e As EventArgs) Handles imagemNivel.Click
+        Dim form = New frmNivelBaixo
         form.ShowDialog()
     End Sub
 End Class

@@ -78,9 +78,13 @@ Partial Class frmPrincipal
         Me.lblTotalCaixa = New System.Windows.Forms.Label()
         Me.imagem = New System.Windows.Forms.PictureBox()
         Me.txtTotaliza = New System.Windows.Forms.TextBox()
+        Me.imagemNivel = New System.Windows.Forms.PictureBox()
+        Me.lblNivel = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.dg, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.imagem, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.imagemNivel, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'MenuStrip1
@@ -275,21 +279,21 @@ Partial Class frmPrincipal
         '
         Me.CatálogoDeProdutosToolStripMenuItem.Image = CType(resources.GetObject("CatálogoDeProdutosToolStripMenuItem.Image"), System.Drawing.Image)
         Me.CatálogoDeProdutosToolStripMenuItem.Name = "CatálogoDeProdutosToolStripMenuItem"
-        Me.CatálogoDeProdutosToolStripMenuItem.Size = New System.Drawing.Size(227, 24)
+        Me.CatálogoDeProdutosToolStripMenuItem.Size = New System.Drawing.Size(249, 24)
         Me.CatálogoDeProdutosToolStripMenuItem.Text = "Catálogo de Produtos"
         '
         'RelatórioDoCaixaToolStripMenuItem
         '
         Me.RelatórioDoCaixaToolStripMenuItem.Image = CType(resources.GetObject("RelatórioDoCaixaToolStripMenuItem.Image"), System.Drawing.Image)
         Me.RelatórioDoCaixaToolStripMenuItem.Name = "RelatórioDoCaixaToolStripMenuItem"
-        Me.RelatórioDoCaixaToolStripMenuItem.Size = New System.Drawing.Size(227, 24)
+        Me.RelatórioDoCaixaToolStripMenuItem.Size = New System.Drawing.Size(249, 24)
         Me.RelatórioDoCaixaToolStripMenuItem.Text = "Relatório do Caixa"
         '
         'EntradaSaídaToolStripMenuItem1
         '
         Me.EntradaSaídaToolStripMenuItem1.Image = CType(resources.GetObject("EntradaSaídaToolStripMenuItem1.Image"), System.Drawing.Image)
         Me.EntradaSaídaToolStripMenuItem1.Name = "EntradaSaídaToolStripMenuItem1"
-        Me.EntradaSaídaToolStripMenuItem1.Size = New System.Drawing.Size(227, 24)
+        Me.EntradaSaídaToolStripMenuItem1.Size = New System.Drawing.Size(249, 24)
         Me.EntradaSaídaToolStripMenuItem1.Text = "Entrada / Saída no Estoque"
         '
         'NíveisDoEstoqueToolStripMenuItem
@@ -302,27 +306,27 @@ Partial Class frmPrincipal
         'ProdutosMaisVendidosToolStripMenuItem
         '
         Me.ProdutosMaisVendidosToolStripMenuItem.Name = "ProdutosMaisVendidosToolStripMenuItem"
-        Me.ProdutosMaisVendidosToolStripMenuItem.Size = New System.Drawing.Size(227, 24)
+        Me.ProdutosMaisVendidosToolStripMenuItem.Size = New System.Drawing.Size(249, 24)
         Me.ProdutosMaisVendidosToolStripMenuItem.Text = "Produtos mais Vendidos"
         '
         'VendasPorFuncionárioToolStripMenuItem
         '
         Me.VendasPorFuncionárioToolStripMenuItem.Name = "VendasPorFuncionárioToolStripMenuItem"
-        Me.VendasPorFuncionárioToolStripMenuItem.Size = New System.Drawing.Size(227, 24)
+        Me.VendasPorFuncionárioToolStripMenuItem.Size = New System.Drawing.Size(249, 24)
         Me.VendasPorFuncionárioToolStripMenuItem.Text = "Vendas por Funcionário"
         '
         'FiltroDeVendasToolStripMenuItem
         '
         Me.FiltroDeVendasToolStripMenuItem.Image = CType(resources.GetObject("FiltroDeVendasToolStripMenuItem.Image"), System.Drawing.Image)
         Me.FiltroDeVendasToolStripMenuItem.Name = "FiltroDeVendasToolStripMenuItem"
-        Me.FiltroDeVendasToolStripMenuItem.Size = New System.Drawing.Size(227, 24)
+        Me.FiltroDeVendasToolStripMenuItem.Size = New System.Drawing.Size(249, 24)
         Me.FiltroDeVendasToolStripMenuItem.Text = "Filtro de Vendas"
         '
         'ServiçosToolStripMenuItem
         '
         Me.ServiçosToolStripMenuItem.Image = CType(resources.GetObject("ServiçosToolStripMenuItem.Image"), System.Drawing.Image)
         Me.ServiçosToolStripMenuItem.Name = "ServiçosToolStripMenuItem"
-        Me.ServiçosToolStripMenuItem.Size = New System.Drawing.Size(227, 24)
+        Me.ServiçosToolStripMenuItem.Size = New System.Drawing.Size(249, 24)
         Me.ServiçosToolStripMenuItem.Text = "Serviços"
         '
         'SairToolStripMenuItem
@@ -418,7 +422,7 @@ Partial Class frmPrincipal
         Me.lblTextoCaixa.BackColor = System.Drawing.Color.Transparent
         Me.lblTextoCaixa.Font = New System.Drawing.Font("Arial", 33.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblTextoCaixa.ForeColor = System.Drawing.Color.DarkSlateBlue
-        Me.lblTextoCaixa.Location = New System.Drawing.Point(350, 60)
+        Me.lblTextoCaixa.Location = New System.Drawing.Point(292, 59)
         Me.lblTextoCaixa.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblTextoCaixa.Name = "lblTextoCaixa"
         Me.lblTextoCaixa.Size = New System.Drawing.Size(37, 51)
@@ -430,7 +434,7 @@ Partial Class frmPrincipal
         Me.lblAbrirFechar.AutoSize = True
         Me.lblAbrirFechar.BackColor = System.Drawing.Color.Transparent
         Me.lblAbrirFechar.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblAbrirFechar.Location = New System.Drawing.Point(867, 113)
+        Me.lblAbrirFechar.Location = New System.Drawing.Point(826, 95)
         Me.lblAbrirFechar.Name = "lblAbrirFechar"
         Me.lblAbrirFechar.Size = New System.Drawing.Size(10, 13)
         Me.lblAbrirFechar.TabIndex = 227
@@ -534,7 +538,7 @@ Partial Class frmPrincipal
         Me.imagem.BackColor = System.Drawing.Color.Transparent
         Me.imagem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
         Me.imagem.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.imagem.Location = New System.Drawing.Point(887, 79)
+        Me.imagem.Location = New System.Drawing.Point(796, 88)
         Me.imagem.Name = "imagem"
         Me.imagem.Size = New System.Drawing.Size(25, 25)
         Me.imagem.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -552,6 +556,41 @@ Partial Class frmPrincipal
         Me.txtTotaliza.TabIndex = 241
         Me.txtTotaliza.Visible = False
         '
+        'imagemNivel
+        '
+        Me.imagemNivel.BackColor = System.Drawing.Color.Transparent
+        Me.imagemNivel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.imagemNivel.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.imagemNivel.Location = New System.Drawing.Point(796, 52)
+        Me.imagemNivel.Name = "imagemNivel"
+        Me.imagemNivel.Size = New System.Drawing.Size(25, 25)
+        Me.imagemNivel.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.imagemNivel.TabIndex = 253
+        Me.imagemNivel.TabStop = False
+        '
+        'lblNivel
+        '
+        Me.lblNivel.AutoSize = True
+        Me.lblNivel.BackColor = System.Drawing.Color.Transparent
+        Me.lblNivel.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblNivel.Location = New System.Drawing.Point(826, 59)
+        Me.lblNivel.Name = "lblNivel"
+        Me.lblNivel.Size = New System.Drawing.Size(10, 13)
+        Me.lblNivel.TabIndex = 252
+        Me.lblNivel.Text = "-"
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.BackColor = System.Drawing.Color.Transparent
+        Me.Label1.Font = New System.Drawing.Font("Arial Black", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.DarkSlateBlue
+        Me.Label1.Location = New System.Drawing.Point(54, 427)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(88, 23)
+        Me.Label1.TabIndex = 254
+        Me.Label1.Text = "Nº CAIXA"
+        '
         'frmPrincipal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -559,6 +598,9 @@ Partial Class frmPrincipal
         Me.BackColor = System.Drawing.Color.LightSteelBlue
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.ClientSize = New System.Drawing.Size(962, 557)
+        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.imagemNivel)
+        Me.Controls.Add(Me.lblNivel)
         Me.Controls.Add(Me.lblTotalCaixa)
         Me.Controls.Add(Me.lblHora)
         Me.Controls.Add(Me.lblData)
@@ -588,6 +630,7 @@ Partial Class frmPrincipal
         Me.MenuStrip1.PerformLayout()
         CType(Me.dg, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.imagem, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.imagemNivel, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -647,4 +690,7 @@ Partial Class frmPrincipal
     Friend WithEvents lblProdutosVendidos As Label
     Friend WithEvents lblTotalCaixa As Label
     Friend WithEvents txtTotaliza As TextBox
+    Friend WithEvents imagemNivel As PictureBox
+    Friend WithEvents lblNivel As Label
+    Friend WithEvents Label1 As Label
 End Class
