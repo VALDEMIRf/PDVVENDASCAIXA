@@ -143,8 +143,7 @@ Public Class frmVendas
             cmd.Parameters.AddWithValue("@id_produto", cbProduto.SelectedValue)
             cmd.Parameters.Add("@quant", SqlDbType.Int).Direction = 2
             cmd.Parameters.Add("@valor_venda", SqlDbType.Float).Direction = 2
-
-            'cmd.Parameters.Add("@quant_vendida", SqlDbType.Int).Direction = 2
+            cmd.Parameters.Add("@quant_vendida", SqlDbType.Int).Direction = 2
             'cmd.Parameters.Add("@codigo_barras", SqlDbType.VarChar, 100).Direction = 2
             cmd.ExecuteNonQuery()
 
@@ -153,6 +152,9 @@ Public Class frmVendas
 
             Dim valor1 As Double = cmd.Parameters("@valor_venda").Value
             txtValorVenda.Text = CDbl(valor1)
+
+            Dim quant_vendida As Int32 = cmd.Parameters("@quant_vendida").Value
+            txtQuantVendida.Text = CStr(quant_vendida)
 
             '' ----------------------------------------------------------------------------
 
@@ -200,8 +202,8 @@ Public Class frmVendas
         Totestoque = estoque - quantidade
 
 
-        'quant_vendida = txtQuantVendida.Text
-        'TotQuantidade = quant_vendida + quantidade
+        quant_vendida = txtQuantVendida.Text
+        TotQuantidade = quant_vendida + quantidade
 
         If txtNum.Text <> "" And Totestoque >= 0 Then
             '    If pbImagem.Image.Equals(Nothing) Then
@@ -224,8 +226,27 @@ Public Class frmVendas
 
                 abrir()
 
-                'SALVAR SAÍDA NA TABELA ESTOQUE
+                'ABATENDO QUANTIDADE EM ESTOQUE
+                cmd = New SqlCommand("pa_produto_EditarEstoque", con)
+                cmd.CommandType = CommandType.StoredProcedure
+                cmd.Parameters.AddWithValue("@quantidade", Totestoque)
+                cmd.Parameters.AddWithValue("@id_produto", cbProduto.SelectedValue)
+                cmd.ExecuteNonQuery()
 
+                '=======================================================================================================================
+                '=======================================================================================================================
+
+                'ACRESCENTAR QUANTIDADE DE PRODUTOS VENDIDOS
+                cmd = New SqlCommand("pa_produto_EditarQuantidadeVendida", con)
+                cmd.CommandType = CommandType.StoredProcedure
+                cmd.Parameters.AddWithValue("@quant_vendida", TotQuantidade)
+                cmd.Parameters.AddWithValue("@id_produto", cbProduto.SelectedValue)
+                cmd.ExecuteNonQuery()
+
+                '=======================================================================================================================
+                '=======================================================================================================================
+
+                'SALVAR SAÍDA NA TABELA ESTOQUE
                 cmd = New SqlCommand("pa_estoque_Salvar", con)
                 cmd.CommandType = CommandType.StoredProcedure
                 cmd.Parameters.AddWithValue("@descricao", "Saída")
@@ -238,6 +259,8 @@ Public Class frmVendas
                 cmd.ExecuteNonQuery()
 
                 '=======================================================================================================================
+                '=======================================================================================================================
+
 
 
                 cmd = New SqlCommand("pa_Vendas_salvar", con)
@@ -341,11 +364,17 @@ Public Class frmVendas
 
         Dim quantidade As Decimal
         Dim estoque As Decimal
+        Dim quant_vendida As Decimal
+        Dim TotQuantidade As Decimal
         Dim Totestoque As Decimal
 
         quantidade = txtQuantidade.Text
         estoque = txtEstoque.Text
         Totestoque = estoque + quantidade
+
+
+        quant_vendida = txtQuantVendida.Text
+        TotQuantidade = quant_vendida - quantidade
 
         Dim cmd As SqlCommand
 
@@ -358,13 +387,42 @@ Public Class frmVendas
 
                 'DEVOLVENDO QUANTIDADE NO ESTOQUE
 
+                cmd = New SqlCommand("pa_estoque_Salvar", con)
+                cmd.CommandType = CommandType.StoredProcedure
+                cmd.Parameters.AddWithValue("@descricao", "Entrada")
+                cmd.Parameters.AddWithValue("@quantidade", txtQuantidade.Text)
+                cmd.Parameters.AddWithValue("@data_alteracao", Now.ToShortDateString())
+                cmd.Parameters.AddWithValue("@id_produto", cbProduto.SelectedValue)
+                cmd.Parameters.AddWithValue("@funcionario", usuarioNome)
+                cmd.Parameters.AddWithValue("@motivo", "Cancelamento")
+                cmd.Parameters.Add("@mensagem", SqlDbType.VarChar, 100).Direction = 2
+                cmd.ExecuteNonQuery()
+
+
+                '=======================================================================================================================
+                '=======================================================================================================================
+
+
                 cmd = New SqlCommand("pa_produto_EditarEstoque", con)
                 cmd.CommandType = CommandType.StoredProcedure
                 cmd.Parameters.AddWithValue("@quantidade", Totestoque)
                 cmd.Parameters.AddWithValue("@id_produto", cbProduto.SelectedValue)
                 cmd.ExecuteNonQuery()
 
+
                 '=======================================================================================================================
+                '=======================================================================================================================
+
+                'ACRESCENTAR QUANTIDADE DE PRODUTOS VENDIDOS
+                cmd = New SqlCommand("pa_produto_EditarQuantidadeVendida", con)
+                cmd.CommandType = CommandType.StoredProcedure
+                cmd.Parameters.AddWithValue("@quant_vendida", TotQuantidade)
+                cmd.Parameters.AddWithValue("@id_produto", cbProduto.SelectedValue)
+                cmd.ExecuteNonQuery()
+
+                '=======================================================================================================================
+                '=======================================================================================================================
+
 
                 cmd = New SqlCommand("pa_Vendas_excluir", con)
                 cmd.CommandType = CommandType.StoredProcedure

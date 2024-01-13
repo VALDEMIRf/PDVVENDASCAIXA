@@ -74,12 +74,12 @@ Public Class frmEstoque
         dg.Columns(5).HeaderText = "Funcionário"
         dg.Columns(6).HeaderText = "Motivo"
 
-        dg.Columns(1).Width = 100
-        'dg.Columns(2).Width = 180
+        dg.Columns(1).Width = 180
+        dg.Columns(2).Width = 180
         'dg.Columns(3).Width = 130
         'dg.Columns(4).Width = 90
         'dg.Columns(5).Width = 90
-        'dg.Columns(6).Width = 70
+        dg.Columns(6).Width = 150
         'dg.Columns(7).Width = 150
 
     End Sub
@@ -151,8 +151,21 @@ Public Class frmEstoque
         HabilitarCampos()
         Limpar()
         btnSalvar.Enabled = True
-
+        lblMotivo.Visible = False
+        txtMotivo.Visible = False
     End Sub
+
+    Private Sub cbDescricao_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbDescricao.SelectedIndexChanged
+        If cbDescricao.Text = "Saída" Then
+            lblMotivo.Visible = True
+            txtMotivo.Visible = True
+
+            '    lblMotivo.Visible = False
+            '    txtMotivo.Visible = False
+
+        End If
+    End Sub
+
 
     Private Sub btnSalvar_Click(sender As Object, e As EventArgs) Handles btnSalvar.Click
         Dim cmd As SqlCommand
@@ -203,7 +216,14 @@ Public Class frmEstoque
                 cmd.Parameters.AddWithValue("@data_alteracao", Now.ToShortDateString)
                 cmd.Parameters.AddWithValue("@id_produto", cbProduto.SelectedValue)
                 cmd.Parameters.AddWithValue("@funcionario", usuarioNome)
-                cmd.Parameters.AddWithValue("@motivo", "Inicio")
+
+                If cbDescricao.Text = "Entrada" Then
+
+                    cmd.Parameters.AddWithValue("@motivo", "Compra")
+
+                Else
+                    cmd.Parameters.AddWithValue("@motivo", txtMotivo.Text)
+                End If
                 'cmd.Parameters.AddWithValue("@imagem", byteArray)
                 'cmd.Parameters.AddWithValue("@nivel_minimo", txtNivel.Text)
 
@@ -270,6 +290,7 @@ Public Class frmEstoque
                 cmd.CommandType = CommandType.StoredProcedure
                 cmd.Parameters.AddWithValue("@quantidade", Totestoque)
                 cmd.Parameters.AddWithValue("@id_produto", cbProduto.SelectedValue)
+
                 cmd.ExecuteNonQuery()
 
                 '=======================================================================================================================
@@ -314,8 +335,7 @@ Public Class frmEstoque
             cmd.Parameters.AddWithValue("@id_produto", cbProduto.SelectedValue)
             cmd.Parameters.Add("@quant", SqlDbType.Int).Direction = 2
             cmd.Parameters.Add("@valor_venda", SqlDbType.Float).Direction = 2
-
-            'cmd.Parameters.Add("@quant_vendida", SqlDbType.Int).Direction = 2
+            cmd.Parameters.Add("@quant_vendida", SqlDbType.Int).Direction = 2
             'cmd.Parameters.Add("@codigo_barras", SqlDbType.VarChar, 100).Direction = 2
             cmd.ExecuteNonQuery()
 
@@ -358,12 +378,15 @@ Public Class frmEstoque
         btnExcluir.Enabled = True
         HabilitarCampos()
         atualizarValor()
+        lblMotivo.Visible = True
+        txtMotivo.Visible = True
 
         lblCodigo.Text = dg.CurrentRow.Cells(0).Value
         cbProduto.Text = dg.CurrentRow.Cells(1).Value
         ' cbProduto.SelectedValue = dg.CurrentRow.Cells(7).Value
         cbDescricao.Text = dg.CurrentRow.Cells(2).Value
         txtQuantidade.Text = dg.CurrentRow.Cells(3).Value
+        txtMotivo.Text = dg.CurrentRow.Cells(6).Value
 
     End Sub
 
@@ -419,4 +442,6 @@ Public Class frmEstoque
             End Try
         End If
     End Sub
+
+
 End Class

@@ -267,6 +267,12 @@
     <Compile Include="Relatorios\frmRelProdutos.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Relatorios\frmRelProdutosVendidos.Designer.vb">
+      <DependentUpon>frmRelProdutosVendidos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Relatorios\frmRelProdutosVendidos.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Relatorios\frmRelServicos.Designer.vb">
       <DependentUpon>frmRelServicos.vb</DependentUpon>
     </Compile>
@@ -406,6 +412,9 @@
     <EmbeddedResource Include="Relatorios\frmRelProdutos.resx">
       <DependentUpon>frmRelProdutos.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Relatorios\frmRelProdutosVendidos.resx">
+      <DependentUpon>frmRelProdutosVendidos.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Relatorios\frmRelServicos.resx">
       <DependentUpon>frmRelServicos.vb</DependentUpon>
     </EmbeddedResource>
@@ -418,8 +427,10 @@
     <EmbeddedResource Include="Relatorios\rel\RelEstoqueData.rdlc" />
     <EmbeddedResource Include="Relatorios\rel\RelNiveis.rdlc" />
     <EmbeddedResource Include="Relatorios\rel\relProdutos1.rdlc" />
+    <EmbeddedResource Include="Relatorios\rel\RelProdutosVenda.rdlc" />
     <EmbeddedResource Include="Relatorios\rel\relServicos.rdlc" />
     <EmbeddedResource Include="Relatorios\rel\relVenda.rdlc" />
+    <EmbeddedResource Include="Relatorios\rel\RelVendasData.rdlc" />
     <EmbeddedResource Include="telas administrativo\frmInicial.resx">
       <DependentUpon>frmInicial.vb</DependentUpon>
     </EmbeddedResource>
@@ -710,6 +721,8 @@
     <Content Include="imgProdutos\bebedouro e comedouro.jpg" />
     <Content Include="imgProdutos\bola pata.jpg" />
     <Content Include="imgProdutos\bolinha cachorro.jpg" />
+    <Content Include="imgProdutos\cataflam-pro-.jpg" />
+    <Content Include="imgProdutos\cataflampro.jpg" />
     <Content Include="imgProdutos\coca220ml-pet.jpg" />
     <Content Include="imgProdutos\gaiola de periquitos.jpg" />
     <Content Include="imgProdutos\kit pet.jpg" />

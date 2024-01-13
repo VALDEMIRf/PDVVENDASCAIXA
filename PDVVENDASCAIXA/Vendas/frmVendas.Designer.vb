@@ -23,6 +23,8 @@ Partial Class frmVendas
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmVendas))
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.txtValorVenda = New System.Windows.Forms.TextBox()
         Me.txtCodigo = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
@@ -50,6 +52,8 @@ Partial Class frmVendas
         Me.pbImagem = New System.Windows.Forms.PictureBox()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.txtQuantVendida = New System.Windows.Forms.TextBox()
         Me.GroupBox1.SuspendLayout()
         CType(Me.dg, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pbImagem, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -58,7 +62,7 @@ Partial Class frmVendas
         'txtValorVenda
         '
         Me.txtValorVenda.Enabled = False
-        Me.txtValorVenda.Location = New System.Drawing.Point(342, 92)
+        Me.txtValorVenda.Location = New System.Drawing.Point(303, 92)
         Me.txtValorVenda.Name = "txtValorVenda"
         Me.txtValorVenda.Size = New System.Drawing.Size(90, 23)
         Me.txtValorVenda.TabIndex = 198
@@ -77,7 +81,7 @@ Partial Class frmVendas
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.White
-        Me.Label4.Location = New System.Drawing.Point(259, 95)
+        Me.Label4.Location = New System.Drawing.Point(236, 94)
         Me.Label4.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(43, 16)
@@ -144,7 +148,7 @@ Partial Class frmVendas
         Me.cbCliente.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbCliente.Enabled = False
         Me.cbCliente.FormattingEnabled = True
-        Me.cbCliente.Location = New System.Drawing.Point(565, 60)
+        Me.cbCliente.Location = New System.Drawing.Point(636, 58)
         Me.cbCliente.Name = "cbCliente"
         Me.cbCliente.Size = New System.Drawing.Size(161, 24)
         Me.cbCliente.TabIndex = 195
@@ -153,7 +157,7 @@ Partial Class frmVendas
         '
         Me.Label10.AutoSize = True
         Me.Label10.ForeColor = System.Drawing.Color.White
-        Me.Label10.Location = New System.Drawing.Point(505, 62)
+        Me.Label10.Location = New System.Drawing.Point(576, 60)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(55, 17)
         Me.Label10.TabIndex = 209
@@ -286,7 +290,7 @@ Partial Class frmVendas
         '
         'txtBuscar
         '
-        Me.txtBuscar.Location = New System.Drawing.Point(589, 14)
+        Me.txtBuscar.Location = New System.Drawing.Point(660, 12)
         Me.txtBuscar.Margin = New System.Windows.Forms.Padding(5)
         Me.txtBuscar.Name = "txtBuscar"
         Me.txtBuscar.Size = New System.Drawing.Size(137, 23)
@@ -297,7 +301,7 @@ Partial Class frmVendas
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(526, 18)
+        Me.Label1.Location = New System.Drawing.Point(597, 16)
         Me.Label1.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(53, 16)
@@ -327,7 +331,7 @@ Partial Class frmVendas
         'txtEstoque
         '
         Me.txtEstoque.Enabled = False
-        Me.txtEstoque.Location = New System.Drawing.Point(565, 95)
+        Me.txtEstoque.Location = New System.Drawing.Point(677, 93)
         Me.txtEstoque.Name = "txtEstoque"
         Me.txtEstoque.Size = New System.Drawing.Size(122, 23)
         Me.txtEstoque.TabIndex = 219
@@ -337,7 +341,7 @@ Partial Class frmVendas
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.White
-        Me.Label3.Location = New System.Drawing.Point(496, 98)
+        Me.Label3.Location = New System.Drawing.Point(608, 96)
         Me.Label3.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(61, 16)
@@ -350,11 +354,21 @@ Partial Class frmVendas
         Me.dg.AllowUserToDeleteRows = False
         Me.dg.BackgroundColor = System.Drawing.Color.White
         Me.dg.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dg.DefaultCellStyle = DataGridViewCellStyle1
         Me.dg.GridColor = System.Drawing.SystemColors.HotTrack
         Me.dg.Location = New System.Drawing.Point(13, 141)
         Me.dg.Margin = New System.Windows.Forms.Padding(4)
         Me.dg.Name = "dg"
         Me.dg.ReadOnly = True
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.dg.RowsDefaultCellStyle = DataGridViewCellStyle2
         Me.dg.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dg.Size = New System.Drawing.Size(930, 348)
         Me.dg.TabIndex = 221
@@ -375,7 +389,7 @@ Partial Class frmVendas
         Me.Label9.AutoSize = True
         Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label9.ForeColor = System.Drawing.Color.White
-        Me.Label9.Location = New System.Drawing.Point(310, 95)
+        Me.Label9.Location = New System.Drawing.Point(276, 94)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(26, 17)
         Me.Label9.TabIndex = 223
@@ -392,12 +406,34 @@ Partial Class frmVendas
         Me.Label5.TabIndex = 224
         Me.Label5.Text = "R$"
         '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.ForeColor = System.Drawing.Color.White
+        Me.Label6.Location = New System.Drawing.Point(411, 99)
+        Me.Label6.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(103, 16)
+        Me.Label6.TabIndex = 225
+        Me.Label6.Text = "Quant. Vendida:"
+        '
+        'txtQuantVendida
+        '
+        Me.txtQuantVendida.Enabled = False
+        Me.txtQuantVendida.Location = New System.Drawing.Point(513, 96)
+        Me.txtQuantVendida.Name = "txtQuantVendida"
+        Me.txtQuantVendida.Size = New System.Drawing.Size(55, 23)
+        Me.txtQuantVendida.TabIndex = 226
+        '
         'frmVendas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Teal
         Me.ClientSize = New System.Drawing.Size(974, 577)
+        Me.Controls.Add(Me.txtQuantVendida)
+        Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.pbImagem)
@@ -465,4 +501,6 @@ Partial Class frmVendas
     Friend WithEvents btRel As Button
     Friend WithEvents Label9 As Label
     Friend WithEvents Label5 As Label
+    Friend WithEvents Label6 As Label
+    Friend WithEvents txtQuantVendida As TextBox
 End Class

@@ -614,7 +614,6 @@ Public Class frmPrincipal
 
             End If
 
-
         Catch ex As Exception
             MessageBox.Show("Erro ao Listar" + ex.Message)
             fechar()
@@ -623,6 +622,11 @@ Public Class frmPrincipal
 
     Private Sub imagemNivel_Click(sender As Object, e As EventArgs) Handles imagemNivel.Click
         Dim form = New frmNivelBaixo
+        form.ShowDialog()
+    End Sub
+
+    Private Sub ProdutosMaisVendidosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ProdutosMaisVendidosToolStripMenuItem.Click
+        Dim form = New frmRelProdutosVendidos
         form.ShowDialog()
     End Sub
 End Class

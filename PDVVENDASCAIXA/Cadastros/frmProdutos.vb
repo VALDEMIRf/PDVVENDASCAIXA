@@ -147,10 +147,12 @@ Public Class frmProdutos
 
     Private Sub FormatarDG()
         dg.Columns(0).Visible = False
-        dg.Columns(10).Visible = False
-        dg.Columns(11).Visible = False
-        dg.Columns(12).Visible = False
+        dg.Columns(9).Visible = False
         dg.Columns(13).Visible = False
+        dg.Columns(14).Visible = False
+        dg.Columns(15).Visible = False
+
+
 
         dg.Columns(1).HeaderText = "Produto"
         dg.Columns(2).HeaderText = "Descrição"
@@ -160,19 +162,26 @@ Public Class frmProdutos
         dg.Columns(6).HeaderText = "Quant."
         dg.Columns(7).HeaderText = "Vlr de Compra"
         dg.Columns(8).HeaderText = "Vlr de Venda"
-        dg.Columns(9).HeaderText = "Dt Cadastro"
-        dg.Columns(14).HeaderText = "Nível Mínimo"
+        'dg.Columns(9).HeaderText = "imagem"
+        dg.Columns(10).HeaderText = "Nível Mínimo"
 
-        dg.Columns(2).Width = 200
-        dg.Columns(1).Width = 180
-        dg.Columns(2).Width = 200
-        dg.Columns(3).Width = 260
-        dg.Columns(4).Width = 120
-        dg.Columns(5).Width = 80
-        dg.Columns(6).Width = 45
-        dg.Columns(7).Width = 100
-        dg.Columns(8).Width = 100
-        dg.Columns(9).Width = 80
+        dg.Columns(11).HeaderText = "quant_vendida"
+        dg.Columns(12).HeaderText = "data_cadastro"
+        'dg.Columns(13).HeaderText = "id_fornecedor"
+        'dg.Columns(14).HeaderText = "id_categoria"
+        'dg.Columns(15).HeaderText = "id_unidade"
+
+
+        dg.Columns(1).Width = 200
+        dg.Columns(2).Width = 180
+        'dg.Columns(2).Width = 200
+        'dg.Columns(3).Width = 260
+        'dg.Columns(4).Width = 120
+        'dg.Columns(5).Width = 80
+        'dg.Columns(6).Width = 45
+        'dg.Columns(7).Width = 100
+        'dg.Columns(8).Width = 100
+        'dg.Columns(9).Width = 80
     End Sub
 
     Private Sub ContarLinhas()
@@ -227,8 +236,7 @@ Public Class frmProdutos
                 cmd.Parameters.AddWithValue("@data_cadastro", Now.Date())
             cmd.Parameters.AddWithValue("@imagem", byteArray)
             cmd.Parameters.AddWithValue("@nivel_minimo", txtNivel.Text)
-
-            ' cmd.Parameters.AddWithValue("@quant_vendida", 0)
+            cmd.Parameters.AddWithValue("@quant_vendida", 0)
             ' cmd.Parameters.AddWithValue("@codigo_barras", txtCodBarras.Text)
 
 
@@ -283,6 +291,7 @@ Public Class frmProdutos
                 cmd.Parameters.AddWithValue("@valor_venda", vlVenda)
                 cmd.Parameters.AddWithValue("@imagem", byteArray)
                 cmd.Parameters.AddWithValue("@nivel_minimo", txtNivel.Text)
+
 
                 cmd.Parameters.Add("@mensagem", SqlDbType.VarChar, 100).Direction = 2
                 cmd.ExecuteNonQuery()
@@ -346,6 +355,9 @@ Public Class frmProdutos
 
         HabilitarCampos()
 
+        'p.id_produto, p.nome, p.descricao, f.razaoSocial, c.categoria, u.unidadeMedida, p.quantidade, p.valor_compra,
+        '  p.valor_venda, p.imagem, p.nivel_minimo, p.quant_vendida, p.data_cadastro, p.id_fornecedor, c.id_categoria, u.id_unidade
+
         txtCodigo.Text = dg.CurrentRow.Cells(0).Value
         txtNome.Text = dg.CurrentRow.Cells(1).Value
         txtDescricao.Text = dg.CurrentRow.Cells(2).Value
@@ -356,9 +368,9 @@ Public Class frmProdutos
         txtValorCompra.Text = dg.CurrentRow.Cells(7).Value '.ToString("R$ #,###.00")
         txtValorVenda.Text = dg.CurrentRow.Cells(8).Value '.ToString("R$ #,###.00")
 
-        txtNivel.Text = CInt(dg.CurrentRow.Cells(14).Value)
+        txtNivel.Text = CInt(dg.CurrentRow.Cells(10).Value)
 
-        Dim tempImagem As Byte() = DirectCast(dg.CurrentRow.Cells(13).Value, Byte())
+        Dim tempImagem As Byte() = DirectCast(dg.CurrentRow.Cells(9).Value, Byte())
         If tempImagem Is Nothing Then
             MessageBox.Show("Imagem não localizada", "Erro")
             Exit Sub
@@ -418,6 +430,16 @@ Public Class frmProdutos
         End Using
     End Sub
 
+    Private Sub btImagem_Click_1(sender As Object, e As EventArgs) Handles btImagem.Click
+        pbImagem.Visible = True
+        Using OFD As New OpenFileDialog With {.Filter = "Image File(*.jpg;*.bmp;*.gif;*.png)|*.jpg;*.bmp;*.gif;*.png"}
+
+            If OFD.ShowDialog = DialogResult.OK Then
+                ImagemCarregada = Image.FromFile(OFD.FileName)
+                pbImagem.Image = ImagemCarregada
+            End If
+        End Using
+    End Sub
     Sub carregarImagem()
 
         ' Try
