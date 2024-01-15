@@ -285,6 +285,12 @@
     <Compile Include="Relatorios\frmRelVenda.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Relatorios\frmRelVendaData.Designer.vb">
+      <DependentUpon>frmRelVendaData.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Relatorios\frmRelVendaData.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="telas administrativo\frmInicial.Designer.vb">
       <DependentUpon>frmInicial.vb</DependentUpon>
     </Compile>
@@ -420,6 +426,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Relatorios\frmRelVenda.resx">
       <DependentUpon>frmRelVenda.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Relatorios\frmRelVendaData.resx">
+      <DependentUpon>frmRelVendaData.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Relatorios\rel\RelCaixa.rdlc" />
     <EmbeddedResource Include="Relatorios\rel\relComprovante.rdlc" />

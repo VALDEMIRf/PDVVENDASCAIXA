@@ -312,6 +312,7 @@ Partial Class frmPrincipal
         '
         'VendasPorFuncionárioToolStripMenuItem
         '
+        Me.VendasPorFuncionárioToolStripMenuItem.Image = CType(resources.GetObject("VendasPorFuncionárioToolStripMenuItem.Image"), System.Drawing.Image)
         Me.VendasPorFuncionárioToolStripMenuItem.Name = "VendasPorFuncionárioToolStripMenuItem"
         Me.VendasPorFuncionárioToolStripMenuItem.Size = New System.Drawing.Size(249, 24)
         Me.VendasPorFuncionárioToolStripMenuItem.Text = "Vendas por Funcionário"

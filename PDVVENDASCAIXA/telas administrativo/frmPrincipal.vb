@@ -629,4 +629,9 @@ Public Class frmPrincipal
         Dim form = New frmRelProdutosVendidos
         form.ShowDialog()
     End Sub
+
+    Private Sub VendasPorFuncionárioToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles VendasPorFuncionárioToolStripMenuItem.Click
+        Dim form = New frmRelVendaData
+        form.ShowDialog()
+    End Sub
 End Class
