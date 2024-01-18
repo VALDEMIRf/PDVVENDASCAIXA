@@ -61,6 +61,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Consulta um recurso localizado do tipo System.IO.UnmanagedMemoryStream semelhante a System.IO.MemoryStream.
+        '''</summary>
+        Friend ReadOnly Property barCode() As System.IO.UnmanagedMemoryStream
+            Get
+                Return ResourceManager.GetStream("barCode", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         '''</summary>
         Friend ReadOnly Property btVerde() As System.Drawing.Bitmap

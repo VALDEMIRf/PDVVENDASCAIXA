@@ -139,8 +139,8 @@ Public Class frmProdutos
         cbFornecedor.Text = Nothing
         cbUnidade.Text = Nothing
         cbCategoria.Text = Nothing
-        'txtCodBarras.Text = ""
-        'imgCodBar.Image = Nothing
+        txtCodBarras.Text = ""
+        imgCodBar.Image = Nothing
         carregarImagem()
 
     End Sub
@@ -148,11 +148,9 @@ Public Class frmProdutos
     Private Sub FormatarDG()
         dg.Columns(0).Visible = False
         dg.Columns(9).Visible = False
-        dg.Columns(13).Visible = False
+        dg.Columns(16).Visible = False
         dg.Columns(14).Visible = False
         dg.Columns(15).Visible = False
-
-
 
         dg.Columns(1).HeaderText = "Produto"
         dg.Columns(2).HeaderText = "Descrição"
@@ -164,12 +162,12 @@ Public Class frmProdutos
         dg.Columns(8).HeaderText = "Vlr de Venda"
         'dg.Columns(9).HeaderText = "imagem"
         dg.Columns(10).HeaderText = "Nível Mínimo"
-
         dg.Columns(11).HeaderText = "quant_vendida"
-        dg.Columns(12).HeaderText = "data_cadastro"
-        'dg.Columns(13).HeaderText = "id_fornecedor"
-        'dg.Columns(14).HeaderText = "id_categoria"
-        'dg.Columns(15).HeaderText = "id_unidade"
+        dg.Columns(12).HeaderText = "Cód. Barras"
+        dg.Columns(13).HeaderText = "data_cadastro"
+        'dg.Columns(14).HeaderText = "id_fornecedor"
+        'dg.Columns(15).HeaderText = "id_categoria"
+        'dg.Columns(16).HeaderText = "id_unidade"
 
 
         dg.Columns(1).Width = 200
@@ -197,32 +195,27 @@ Public Class frmProdutos
         btnSalvar.Enabled = True
         btnEditar.Enabled = False
         btnExcluir.Enabled = False
-
+        ' CriarCodigoBarras()
+        txtCodBarras.Focus()
     End Sub
 
     Private Sub btnSalvar_Click(sender As Object, e As EventArgs) Handles btnSalvar.Click
 
         Dim cmd As SqlCommand
 
-        'If txtNome.Text <> "" Then
-        '    If pbImagem.Image.Equals(Nothing) Then
-        '        errErro.SetError(pbImagem, "Escolha uma imagem")
-        '        Exit Sub
-        '    Else
-        '        'MessageBox.Show("certo")
-        '    End If
+        If txtNome.Text <> "" Then
 
-        Try
+            Try
 
-            'CARREGANDO IMAGEM NO BANCO
-            Dim MS As New IO.MemoryStream
-            ImagemCarregada.Save(MS, System.Drawing.Imaging.ImageFormat.Jpeg)
-            Dim byteArray = MS.ToArray
+                'CARREGANDO IMAGEM NO BANCO
+                Dim MS As New IO.MemoryStream
+                ImagemCarregada.Save(MS, System.Drawing.Imaging.ImageFormat.Jpeg)
+                Dim byteArray = MS.ToArray
 
-            Dim vlcompra = Replace(txtValorCompra.Text, ",", ".")
-            Dim vlVenda = Replace(txtValorVenda.Text, ",", ".")
+                Dim vlcompra = Replace(txtValorCompra.Text, ",", ".")
+                Dim vlVenda = Replace(txtValorVenda.Text, ",", ".")
 
-            abrir()
+                abrir()
                 cmd = New SqlCommand("pa_produto_Salvar", con)
                 cmd.CommandType = CommandType.StoredProcedure
                 cmd.Parameters.AddWithValue("@nome", txtNome.Text)
@@ -234,13 +227,12 @@ Public Class frmProdutos
                 cmd.Parameters.AddWithValue("@valor_compra", vlcompra)
                 cmd.Parameters.AddWithValue("@valor_venda", vlVenda)
                 cmd.Parameters.AddWithValue("@data_cadastro", Now.Date())
-            cmd.Parameters.AddWithValue("@imagem", byteArray)
-            cmd.Parameters.AddWithValue("@nivel_minimo", txtNivel.Text)
-            cmd.Parameters.AddWithValue("@quant_vendida", 0)
-            ' cmd.Parameters.AddWithValue("@codigo_barras", txtCodBarras.Text)
+                cmd.Parameters.AddWithValue("@imagem", byteArray)
+                cmd.Parameters.AddWithValue("@nivel_minimo", txtNivel.Text)
+                cmd.Parameters.AddWithValue("@quant_vendida", 0)
+                cmd.Parameters.AddWithValue("@codigo_barras", txtCodBarras.Text)
 
-
-            cmd.Parameters.Add("@mensagem", SqlDbType.VarChar, 100).Direction = 2
+                cmd.Parameters.Add("@mensagem", SqlDbType.VarChar, 100).Direction = 2
                 cmd.ExecuteNonQuery()
 
                 Dim msg As String = cmd.Parameters("@mensagem").Value.ToString
@@ -258,7 +250,7 @@ Public Class frmProdutos
                 fechar()
 
             End Try
-        'End If
+        End If
     End Sub
 
     Private Sub btnEditar_Click(sender As Object, e As EventArgs) Handles btnEditar.Click
@@ -291,7 +283,6 @@ Public Class frmProdutos
                 cmd.Parameters.AddWithValue("@valor_venda", vlVenda)
                 cmd.Parameters.AddWithValue("@imagem", byteArray)
                 cmd.Parameters.AddWithValue("@nivel_minimo", txtNivel.Text)
-
 
                 cmd.Parameters.Add("@mensagem", SqlDbType.VarChar, 100).Direction = 2
                 cmd.ExecuteNonQuery()
@@ -356,7 +347,7 @@ Public Class frmProdutos
         HabilitarCampos()
 
         'p.id_produto, p.nome, p.descricao, f.razaoSocial, c.categoria, u.unidadeMedida, p.quantidade, p.valor_compra,
-        '  p.valor_venda, p.imagem, p.nivel_minimo, p.quant_vendida, p.data_cadastro, p.id_fornecedor, c.id_categoria, u.id_unidade
+        '  p.valor_venda, p.imagem, p.nivel_minimo, p.quant_vendida,  p.cosigo_barras,p.data_cadastro, p.id_fornecedor, c.id_categoria, u.id_unidade
 
         txtCodigo.Text = dg.CurrentRow.Cells(0).Value
         txtNome.Text = dg.CurrentRow.Cells(1).Value
@@ -369,6 +360,7 @@ Public Class frmProdutos
         txtValorVenda.Text = dg.CurrentRow.Cells(8).Value '.ToString("R$ #,###.00")
 
         txtNivel.Text = CInt(dg.CurrentRow.Cells(10).Value)
+        txtCodBarras.Text = dg.CurrentRow.Cells(12).Value
 
         Dim tempImagem As Byte() = DirectCast(dg.CurrentRow.Cells(9).Value, Byte())
         If tempImagem Is Nothing Then
@@ -385,10 +377,7 @@ Public Class frmProdutos
 
         ' txtNivel.Text = CInt(dg.CurrentRow.Cells(14).Value)
 
-
-        '  txtCodBarras.Text = dg.CurrentRow.Cells(12).Value
-
-        'CriarCodigoBarras()
+        CriarCodigoBarras()
     End Sub
 
     Private Sub txtBuscar_TextChanged(sender As Object, e As EventArgs) Handles txtBuscar.TextChanged
@@ -405,7 +394,7 @@ Public Class frmProdutos
                 da = New SqlDataAdapter("pa_produto_BuscarNome", con)
                 da.SelectCommand.CommandType = CommandType.StoredProcedure
                 da.SelectCommand.Parameters.AddWithValue("@nome", txtBuscar.Text)
-                ' da.SelectCommand.Parameters.AddWithValue("@codigo_barras", txtBuscar.Text)
+                da.SelectCommand.Parameters.AddWithValue("@codigo_barras", txtBuscar.Text)
 
                 da.Fill(dt)
                 dg.DataSource = dt
@@ -440,6 +429,35 @@ Public Class frmProdutos
             End If
         End Using
     End Sub
+
+    Sub CriarCodigoBarras()
+
+        Dim codBarras As New Barcode128
+
+        With codBarras
+            .BarHeight = 50
+            .Code = txtCodBarras.Text
+            .GenerateChecksum = True
+            .CodeType = Barcode.CODE128
+
+            Try
+                Dim bmp As New Bitmap(.CreateDrawingImage(Color.Black, Color.White))
+                Dim img As Image
+                img = New Bitmap(bmp.Width, bmp.Height)
+
+                Dim g As Graphics = Graphics.FromImage(img)
+                g.FillRectangle(New SolidBrush(Color.White), 0, 0, bmp.Width, bmp.Height)
+                g.DrawImage(bmp, 0, 0)
+                imgCodBar.Image = img
+
+            Catch ex As Exception
+                MsgBox("Erro" + ex.Message.ToString)
+            End Try
+
+        End With
+
+    End Sub
+
     Sub carregarImagem()
 
         ' Try
@@ -471,5 +489,13 @@ Public Class frmProdutos
 
     End Sub
 
+    Private Sub PrintDocument1_PrintPage(sender As Object, e As Printing.PrintPageEventArgs) Handles PrintDocument1.PrintPage
+        Dim bmp As New Bitmap(imgCodBar.Width, imgCodBar.Height)
+        imgCodBar.DrawToBitmap(bmp, New Rectangle(0, 0, bmp.Width, bmp.Height))
+        e.Graphics.DrawImage(bmp, 0, 0)
+    End Sub
 
+    Private Sub txtCodBarras_TextChanged(sender As Object, e As EventArgs) Handles txtCodBarras.TextChanged
+        CriarCodigoBarras()
+    End Sub
 End Class

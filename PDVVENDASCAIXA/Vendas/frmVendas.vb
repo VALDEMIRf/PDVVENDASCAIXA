@@ -3,14 +3,17 @@ Imports System.IO
 
 Public Class frmVendas
     Private Sub frmVendas_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        cbCliente.Text = "CONSUMIDOR"
+
         DesabilitarCampos()
         btnSalvar.Enabled = False
 
-        CarregarProdutos()
+
         CarregarClientes()
 
         Listar()
 
+        txtCodBarras.Focus()
 
         btnExcluir.Enabled = False
         btRel.Enabled = False
@@ -23,10 +26,13 @@ Public Class frmVendas
 
         Try
             abrir()
-            '  da = New SqlDataAdapter("SELECT ven.id_vendas, ven.num_vendas, pro.nome,cli.nome,pro.valor_venda,ven.quantidade,ven.valor, ven.funcionario, ven.data_venda, ven.id_produto, ven.id_cliente FROM tbVendas as ven INNER JOIN tbProdutos as pro on ven.id_produto=pro.id_produto INNER JOIN tbClientes  as cli on ven.id_cliente = cli.id_cliente", con)
-            da = New SqlDataAdapter("pa_Vendas_Listar", con)
+
+            ' da = New SqlDataAdapter("pa_Vendas_Listar", con) '
+            da = New SqlDataAdapter("pa_Vendas_Lista_Geral", con)
             da.SelectCommand.CommandType = CommandType.StoredProcedure
-            ' da.SelectCommand.Parameters.AddWithValue("@num_vendas", txtBuscar.Text)
+
+            da.SelectCommand.Parameters.AddWithValue("@data", Now.ToShortDateString)
+            da.SelectCommand.Parameters.AddWithValue("@funcionario", usuarioNome)
 
             da.Fill(dt)
             dg.DataSource = dt
@@ -42,25 +48,30 @@ Public Class frmVendas
 
     Private Sub FormatarDG()
         dg.Columns(0).Visible = False
+        'dg.Columns(1).Visible = False
+        dg.Columns(3).Visible = False
+        dg.Columns(7).Visible = False
+        dg.Columns(8).Visible = False
         dg.Columns(9).Visible = False
         dg.Columns(10).Visible = False
 
+
         dg.Columns(1).HeaderText = "Núm. Venda"
         dg.Columns(2).HeaderText = "Produto"
-        dg.Columns(3).HeaderText = "Cliente"
+        '   dg.Columns(3).HeaderText = "Cliente"
         dg.Columns(4).HeaderText = "Valor Unit."
-        dg.Columns(5).HeaderText = "Quantidade"
+        dg.Columns(5).HeaderText = "Quant."
         dg.Columns(6).HeaderText = "Valor Total"
-        dg.Columns(7).HeaderText = "Funcionário"
-        dg.Columns(8).HeaderText = "Dt. Venda"
+        ' dg.Columns(7).HeaderText = "Funcionário"
+        ' dg.Columns(8).HeaderText = "Dt. Venda"
 
-        dg.Columns(1).Width = 70
-        dg.Columns(2).Width = 180
-        dg.Columns(3).Width = 130
-        dg.Columns(4).Width = 90
-        dg.Columns(5).Width = 90
-        dg.Columns(6).Width = 70
-        dg.Columns(7).Width = 150
+        'dg.Columns(1).Width = 70
+        'dg.Columns(2).Width = 180
+        'dg.Columns(3).Width = 130
+        'dg.Columns(4).Width = 90
+        'dg.Columns(5).Width = 90
+        'dg.Columns(6).Width = 70
+        'dg.Columns(7).Width = 150
 
     End Sub
 
@@ -79,7 +90,7 @@ Public Class frmVendas
     End Sub
 
     Private Sub Limpar()
-        txtNum.Focus()
+        txtCodBarras.Focus()
         txtNum.Text = ""
         txtQuantidade.Text = "0"
         txtBuscar.Text = ""
@@ -111,8 +122,8 @@ Public Class frmVendas
         Try
             abrir()
             DA = New SqlDataAdapter("pa_cliente_listar", con)
-
             DA.Fill(DT)
+
             cbCliente.DisplayMember = "nome"
             cbCliente.ValueMember = "id_cliente"
             cbCliente.DataSource = DT
@@ -125,10 +136,12 @@ Public Class frmVendas
 
     Private Sub btnNovo_Click(sender As Object, e As EventArgs) Handles btnNovo.Click
         HabilitarCampos()
-        Limpar()
+        gerarnum()
+
         btnSalvar.Enabled = True
         cbCliente.Text = "CONSUMIDOR"
-        gerarnum()
+        CarregarProdutos()
+        Limpar()
     End Sub
 
     Private Sub cbProduto_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbProduto.SelectedIndexChanged
@@ -144,14 +157,14 @@ Public Class frmVendas
             cmd.Parameters.Add("@quant", SqlDbType.Int).Direction = 2
             cmd.Parameters.Add("@valor_venda", SqlDbType.Float).Direction = 2
             cmd.Parameters.Add("@quant_vendida", SqlDbType.Int).Direction = 2
-            'cmd.Parameters.Add("@codigo_barras", SqlDbType.VarChar, 100).Direction = 2
+            cmd.Parameters.Add("@codigo_barras", SqlDbType.VarChar, 100).Direction = 2
             cmd.ExecuteNonQuery()
 
             Dim quant As Int32 = cmd.Parameters("@quant").Value
             txtEstoque.Text = CStr(quant)
 
             Dim valor1 As Double = cmd.Parameters("@valor_venda").Value
-            txtValorVenda.Text = CDbl(valor1)
+            lblValorVenda.Text = CDbl(valor1)
 
             Dim quant_vendida As Int32 = cmd.Parameters("@quant_vendida").Value
             txtQuantVendida.Text = CStr(quant_vendida)
@@ -178,8 +191,8 @@ Public Class frmVendas
 
             pbImagem.Image = Image.FromFile(strArquivo)
 
-            'Dim cod_barras As String = cmd.Parameters("@codigo_barras").Value
-            'txtCodBarras.Text = cod_barras
+            Dim cod_barras As String = cmd.Parameters("@codigo_barras").Value
+            txtCodBarras.Text = cod_barras
 
         Catch ex As Exception
             MsgBox(ex.Message.ToString)
@@ -205,7 +218,7 @@ Public Class frmVendas
         quant_vendida = txtQuantVendida.Text
         TotQuantidade = quant_vendida + quantidade
 
-        If txtNum.Text <> "" And Totestoque >= 0 Then
+        If txtNum.Text <> "0" And Totestoque >= 0 Then
             '    If pbImagem.Image.Equals(Nothing) Then
             '        errErro.SetError(pbImagem, "Escolha uma imagem")
             '        Exit Sub
@@ -219,7 +232,7 @@ Public Class frmVendas
                 Dim valor As Decimal
                 Dim quant As Decimal
 
-                valor = txtValorVenda.Text
+                valor = lblValorVenda.Text
                 quant = txtQuantidade.Text
 
                 total = valor * quant
@@ -295,7 +308,7 @@ Public Class frmVendas
 
                 cbCliente.Enabled = False
                 txtNum.Enabled = False
-                txtQuantidade.Text = ""
+                txtQuantidade.Text = "0"
 
                 btRel.Enabled = True
 
@@ -321,7 +334,7 @@ Public Class frmVendas
                 Dim valor As Decimal
                 Dim quant As Decimal
 
-                valor = txtValorVenda.Text
+                valor = lblValorVenda.Text
                 quant = txtQuantidade.Text
 
                 total = valor * quant
@@ -459,13 +472,18 @@ Public Class frmVendas
         btRel.Enabled = True
         btnSalvar.Enabled = True
         cbProduto.Enabled = True
+        CarregarProdutos()
 
         '  HabilitarCampos()
 
         txtCodigo.Text = dg.CurrentRow.Cells(0).Value
         txtNum.Text = dg.CurrentRow.Cells(1).Value
-        cbProduto.Text = dg.CurrentRow.Cells(2).Value
-        cbCliente.Text = dg.CurrentRow.Cells(3).Value
+        '  cbProduto.Text = dg.CurrentRow.Cells(2).Value
+        ' cbCliente.Text = dg.CurrentRow.Cells(3).Value
+
+        cbProduto.SelectedValue = dg.CurrentRow.Cells(9).Value
+        cbCliente.SelectedValue = dg.CurrentRow.Cells(10).Value
+
         txtQuantidade.Text = dg.CurrentRow.Cells(5).Value
         ' txtValorVenda.Text = dg.CurrentRow.Cells(5).Value
     End Sub
@@ -558,7 +576,7 @@ Public Class frmVendas
             txtNum.Text = CStr(num_pers)
 
         Catch ex As Exception
-            MsgBox(ex.Message)
+            MsgBox(ex.Message.ToString)
         Finally
             fechar()
         End Try
@@ -578,4 +596,78 @@ Public Class frmVendas
         form.ShowDialog()
     End Sub
 
+    Private Sub txtCodBarras_KeyDown(sender As Object, e As KeyEventArgs) Handles txtCodBarras.KeyDown
+        If e.Control = True And e.KeyCode = Keys.NumPad1 Then
+
+            txtCodBarras.Text = ""
+        End If
+        If e.Control = True And e.KeyCode = Keys.NumPad2 Then
+
+            atualizarValorCod()
+        End If
+    End Sub
+
+    Private Sub atualizarValorCod()
+        Dim cmd As New SqlCommand("pa_Vendas_buscarCodBarras", con)
+
+        Try
+            abrir()
+            cmd.CommandType = 4
+            cmd.Parameters.AddWithValue("@codigo_barras", txtCodBarras.Text)
+            cmd.Parameters.Add("@id_produto", SqlDbType.Int).Direction = 2
+            cmd.ExecuteNonQuery()
+
+
+            Dim id_produto As Int32 = cmd.Parameters("@id_produto").Value
+            cbProduto.SelectedValue = id_produto
+            My.Computer.Audio.Play(My.Resources.barCode, AudioPlayMode.WaitToComplete)
+
+        Catch ex As Exception
+            ' MsgBox(ex.Message.ToString)
+        Finally
+            fechar()
+            'MsgBox("Produto não Encontrado")
+        End Try
+
+    End Sub
+
+    Private Sub txtCodBarras_TextChanged(sender As Object, e As EventArgs) Handles txtCodBarras.TextChanged
+        atualizarValorCod()
+    End Sub
+
+    Private Sub txtQuantidade_TextChanged(sender As Object, e As EventArgs) Handles txtQuantidade.TextChanged
+        If txtQuantidade.Text <> "0" And lblValorVenda.Text <> "" Then
+            Dim valor As Decimal
+            Dim quant As Decimal
+            Dim total As Decimal
+            valor = lblValorVenda.Text
+            quant = txtQuantidade.Text
+            total = valor * quant
+            lblTotalUnit.Text = total
+        End If
+    End Sub
+
+    Private Sub txtDesconto_TextChanged(sender As Object, e As EventArgs) Handles txtDesconto.TextChanged
+        If lblTotal.Text <> "0" And txtDesconto.Text <> "" Then
+            Dim subTotal As Decimal
+            Dim desc As Decimal
+            Dim total As Decimal
+            subTotal = lblTotal.Text
+            desc = txtDesconto.Text
+            total = subTotal - desc
+            lblTotalFinal.Text = total
+        End If
+    End Sub
+
+    Private Sub txtValorRecebido_TextChanged(sender As Object, e As EventArgs) Handles txtValorRecebido.TextChanged
+        If lblTotalFinal.Text <> "0" And txtValorRecebido.Text <> "" Then
+            Dim totalFinal As Decimal
+            Dim valorPago As Decimal
+            Dim total As Decimal
+            totalFinal = lblTotalFinal.Text
+            valorPago = txtValorRecebido.Text
+            total = valorPago - totalFinal
+            lblTroco.Text = total
+        End If
+    End Sub
 End Class
