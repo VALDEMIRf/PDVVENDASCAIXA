@@ -336,7 +336,7 @@ Public Class frmEstoque
             cmd.Parameters.Add("@quant", SqlDbType.Int).Direction = 2
             cmd.Parameters.Add("@valor_venda", SqlDbType.Float).Direction = 2
             cmd.Parameters.Add("@quant_vendida", SqlDbType.Int).Direction = 2
-            cmd.Parameters.Add("@codigo_barras", SqlDbType.VarChar, 100).Direction = 2
+            'cmd.Parameters.Add("@codigo_barras", SqlDbType.VarChar, 100).Direction = 2
             cmd.ExecuteNonQuery()
 
             Dim quant As Int32 = cmd.Parameters("@quant").Value

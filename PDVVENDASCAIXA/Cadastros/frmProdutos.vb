@@ -152,6 +152,9 @@ Public Class frmProdutos
         dg.Columns(14).Visible = False
         dg.Columns(15).Visible = False
 
+        'p.id_produto,p.nome,p.descricao,f.razaoSocial,c.categoria,u.unidadeMedida,p.quantidade,p.valor_compra,p.valor_venda, p.imagem,
+        'p.nivel_minimo, p.quant_vendida, p.codigo_barras, p.data_cadastro, p.id_fornecedor, c.id_categoria, u.id_unidade
+
         dg.Columns(1).HeaderText = "Produto"
         dg.Columns(2).HeaderText = "Descrição"
         dg.Columns(3).HeaderText = "Fornecedor"
@@ -489,13 +492,13 @@ Public Class frmProdutos
 
     End Sub
 
+    Private Sub txtCodBarras_TextChanged(sender As Object, e As EventArgs) Handles txtCodBarras.TextChanged
+        CriarCodigoBarras()
+    End Sub
+
     Private Sub PrintDocument1_PrintPage(sender As Object, e As Printing.PrintPageEventArgs) Handles PrintDocument1.PrintPage
         Dim bmp As New Bitmap(imgCodBar.Width, imgCodBar.Height)
         imgCodBar.DrawToBitmap(bmp, New Rectangle(0, 0, bmp.Width, bmp.Height))
         e.Graphics.DrawImage(bmp, 0, 0)
-    End Sub
-
-    Private Sub txtCodBarras_TextChanged(sender As Object, e As EventArgs) Handles txtCodBarras.TextChanged
-        CriarCodigoBarras()
     End Sub
 End Class
