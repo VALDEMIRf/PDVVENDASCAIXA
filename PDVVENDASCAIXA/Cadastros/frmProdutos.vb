@@ -152,9 +152,6 @@ Public Class frmProdutos
         dg.Columns(14).Visible = False
         dg.Columns(15).Visible = False
 
-        'p.id_produto,p.nome,p.descricao,f.razaoSocial,c.categoria,u.unidadeMedida,p.quantidade,p.valor_compra,p.valor_venda, p.imagem,
-        'p.nivel_minimo, p.quant_vendida, p.codigo_barras, p.data_cadastro, p.id_fornecedor, c.id_categoria, u.id_unidade
-
         dg.Columns(1).HeaderText = "Produto"
         dg.Columns(2).HeaderText = "Descrição"
         dg.Columns(3).HeaderText = "Fornecedor"
@@ -163,15 +160,10 @@ Public Class frmProdutos
         dg.Columns(6).HeaderText = "Quant."
         dg.Columns(7).HeaderText = "Vlr de Compra"
         dg.Columns(8).HeaderText = "Vlr de Venda"
-        'dg.Columns(9).HeaderText = "imagem"
         dg.Columns(10).HeaderText = "Nível Mínimo"
         dg.Columns(11).HeaderText = "quant_vendida"
         dg.Columns(12).HeaderText = "Cód. Barras"
         dg.Columns(13).HeaderText = "data_cadastro"
-        'dg.Columns(14).HeaderText = "id_fornecedor"
-        'dg.Columns(15).HeaderText = "id_categoria"
-        'dg.Columns(16).HeaderText = "id_unidade"
-
 
         dg.Columns(1).Width = 200
         dg.Columns(2).Width = 180
@@ -349,9 +341,6 @@ Public Class frmProdutos
 
         HabilitarCampos()
 
-        'p.id_produto, p.nome, p.descricao, f.razaoSocial, c.categoria, u.unidadeMedida, p.quantidade, p.valor_compra,
-        '  p.valor_venda, p.imagem, p.nivel_minimo, p.quant_vendida,  p.cosigo_barras,p.data_cadastro, p.id_fornecedor, c.id_categoria, u.id_unidade
-
         txtCodigo.Text = dg.CurrentRow.Cells(0).Value
         txtNome.Text = dg.CurrentRow.Cells(1).Value
         txtDescricao.Text = dg.CurrentRow.Cells(2).Value
@@ -463,10 +452,8 @@ Public Class frmProdutos
 
     Sub carregarImagem()
 
-        ' Try
-        ' 
         Dim img As String = "https://www.buritama.sp.leg.br/imagens/parlamentares-2013-2016/sem-foto.jpg/image"
-        ' Dim img As String = My.Resources.imagesemfoto
+
         Dim req As System.Net.HttpWebRequest
         Dim resp As System.Net.HttpWebResponse
         req = Net.WebRequest.Create(img)
@@ -477,18 +464,6 @@ Public Class frmProdutos
         ImagemCarregada = New Bitmap(resp.GetResponseStream)
         pbImagem.Image = ImagemCarregada
         req.Abort()
-
-
-
-        ' ImagemCarregada = Image.FromFile("C:\Users\valde\OneDrive\Documentos\Visual Studio 2017\Projetos\PDV\PDV\imagens\imagesemfoto.jpg")
-        '  pbImagem.Image = My.Resources.imagesemfoto
-
-        'ImagemCarregada = Image.FromFile(\ imaagens \ imagesemfoto.jpg)
-        ' pbImagem.Image = ImagemCarregada
-
-        ' Catch ex As Exception
-        '    MsgBox("<< Erro ao ler a imagem >> " & ex.Message.ToString)
-        ' End Try
 
     End Sub
 
@@ -501,4 +476,6 @@ Public Class frmProdutos
         imgCodBar.DrawToBitmap(bmp, New Rectangle(0, 0, bmp.Width, bmp.Height))
         e.Graphics.DrawImage(bmp, 0, 0)
     End Sub
+
+
 End Class
