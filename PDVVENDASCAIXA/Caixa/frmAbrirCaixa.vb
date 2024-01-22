@@ -59,5 +59,7 @@ Public Class frmAbrirCaixa
         Me.Close()
     End Sub
 
-
+    Private Sub frmAbrirCaixa_Activated(sender As Object, e As EventArgs) Handles MyBase.Activated
+        txtAbertura.Focus()
+    End Sub
 End Class

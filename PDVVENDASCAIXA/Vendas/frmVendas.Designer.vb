@@ -378,10 +378,10 @@ Partial Class frmVendas
         'pbImagem
         '
         Me.pbImagem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.pbImagem.Location = New System.Drawing.Point(806, 1)
+        Me.pbImagem.Location = New System.Drawing.Point(857, 18)
         Me.pbImagem.Margin = New System.Windows.Forms.Padding(4)
         Me.pbImagem.Name = "pbImagem"
-        Me.pbImagem.Size = New System.Drawing.Size(150, 150)
+        Me.pbImagem.Size = New System.Drawing.Size(122, 114)
         Me.pbImagem.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.pbImagem.TabIndex = 222
         Me.pbImagem.TabStop = False

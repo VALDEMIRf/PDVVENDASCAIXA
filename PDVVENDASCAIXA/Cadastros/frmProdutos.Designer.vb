@@ -23,7 +23,7 @@ Partial Class frmProdutos
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmProdutos))
         Me.dg = New System.Windows.Forms.DataGridView()
         Me.txtBuscar = New System.Windows.Forms.TextBox()
@@ -80,14 +80,14 @@ Partial Class frmProdutos
         Me.dg.BackgroundColor = System.Drawing.Color.White
         Me.dg.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.dg.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dg.DefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dg.DefaultCellStyle = DataGridViewCellStyle1
         Me.dg.GridColor = System.Drawing.Color.CadetBlue
         Me.dg.Location = New System.Drawing.Point(6, 190)
         Me.dg.Margin = New System.Windows.Forms.Padding(4)
@@ -252,7 +252,7 @@ Partial Class frmProdutos
         Me.Label14.AutoSize = True
         Me.Label14.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label14.ForeColor = System.Drawing.Color.White
-        Me.Label14.Location = New System.Drawing.Point(523, 79)
+        Me.Label14.Location = New System.Drawing.Point(523, 74)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(26, 17)
         Me.Label14.TabIndex = 250
@@ -263,7 +263,7 @@ Partial Class frmProdutos
         Me.Label9.AutoSize = True
         Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label9.ForeColor = System.Drawing.Color.White
-        Me.Label9.Location = New System.Drawing.Point(762, 79)
+        Me.Label9.Location = New System.Drawing.Point(762, 75)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(26, 17)
         Me.Label9.TabIndex = 249
@@ -272,7 +272,7 @@ Partial Class frmProdutos
         'txtValorCompra
         '
         Me.txtValorCompra.Enabled = False
-        Me.txtValorCompra.Location = New System.Drawing.Point(548, 73)
+        Me.txtValorCompra.Location = New System.Drawing.Point(548, 72)
         Me.txtValorCompra.Name = "txtValorCompra"
         Me.txtValorCompra.Size = New System.Drawing.Size(58, 20)
         Me.txtValorCompra.TabIndex = 231
@@ -295,7 +295,7 @@ Partial Class frmProdutos
         Me.cbUnidade.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbUnidade.Enabled = False
         Me.cbUnidade.FormattingEnabled = True
-        Me.cbUnidade.Location = New System.Drawing.Point(786, 46)
+        Me.cbUnidade.Location = New System.Drawing.Point(784, 44)
         Me.cbUnidade.Name = "cbUnidade"
         Me.cbUnidade.Size = New System.Drawing.Size(74, 21)
         Me.cbUnidade.TabIndex = 229
@@ -351,7 +351,7 @@ Partial Class frmProdutos
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.White
-        Me.Label2.Location = New System.Drawing.Point(37, 45)
+        Me.Label2.Location = New System.Drawing.Point(37, 49)
         Me.Label2.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(48, 16)
@@ -389,7 +389,7 @@ Partial Class frmProdutos
         Me.btImagem.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btImagem.ForeColor = System.Drawing.Color.Transparent
         Me.btImagem.Image = CType(resources.GetObject("btImagem.Image"), System.Drawing.Image)
-        Me.btImagem.Location = New System.Drawing.Point(950, 141)
+        Me.btImagem.Location = New System.Drawing.Point(944, 145)
         Me.btImagem.Margin = New System.Windows.Forms.Padding(4)
         Me.btImagem.Name = "btImagem"
         Me.btImagem.Size = New System.Drawing.Size(38, 27)
@@ -430,7 +430,7 @@ Partial Class frmProdutos
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.Color.White
-        Me.Label5.Location = New System.Drawing.Point(12, 80)
+        Me.Label5.Location = New System.Drawing.Point(12, 75)
         Me.Label5.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(73, 16)
@@ -471,16 +471,17 @@ Partial Class frmProdutos
         'Label8
         '
         Me.Label8.AutoSize = True
+        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.ForeColor = System.Drawing.Color.White
-        Me.Label8.Location = New System.Drawing.Point(12, 102)
+        Me.Label8.Location = New System.Drawing.Point(6, 102)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(64, 13)
+        Me.Label8.Size = New System.Drawing.Size(81, 16)
         Me.Label8.TabIndex = 242
         Me.Label8.Text = "Fornecedor:"
         '
         'txtValorVenda
         '
-        Me.txtValorVenda.Location = New System.Drawing.Point(786, 77)
+        Me.txtValorVenda.Location = New System.Drawing.Point(786, 74)
         Me.txtValorVenda.Margin = New System.Windows.Forms.Padding(5)
         Me.txtValorVenda.MaxLength = 16
         Me.txtValorVenda.Name = "txtValorVenda"
@@ -492,7 +493,7 @@ Partial Class frmProdutos
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.ForeColor = System.Drawing.Color.White
-        Me.Label7.Location = New System.Drawing.Point(413, 47)
+        Me.Label7.Location = New System.Drawing.Point(414, 46)
         Me.Label7.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(81, 16)
@@ -513,7 +514,7 @@ Partial Class frmProdutos
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.White
-        Me.Label3.Location = New System.Drawing.Point(659, 79)
+        Me.Label3.Location = New System.Drawing.Point(659, 76)
         Me.Label3.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(105, 16)
