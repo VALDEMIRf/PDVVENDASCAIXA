@@ -328,6 +328,8 @@ Public Class frmEstoque
     End Sub
 
     Private Sub atualizarValor()
+        Dim dt As New DataTable
+        Dim da As SqlDataAdapter
         Dim cmd As New SqlCommand("pa_Vendas_buscarValorProd", con)
         Try
             abrir()
@@ -336,7 +338,7 @@ Public Class frmEstoque
             cmd.Parameters.Add("@quant", SqlDbType.Int).Direction = 2
             cmd.Parameters.Add("@valor_venda", SqlDbType.Float).Direction = 2
             cmd.Parameters.Add("@quant_vendida", SqlDbType.Int).Direction = 2
-            'cmd.Parameters.Add("@codigo_barras", SqlDbType.VarChar, 100).Direction = 2
+            cmd.Parameters.Add("@codigo_barras", SqlDbType.VarChar, 100).Direction = 2
             cmd.ExecuteNonQuery()
 
             Dim quant As Int32 = cmd.Parameters("@quant").Value
@@ -344,14 +346,19 @@ Public Class frmEstoque
 
             '' ----------------------------------------------------------------------------
 
-            'Dim cmd2 As New SqlCommand("pa_produtoBuscaFoto", con)
-            Dim cmd2 As New SqlCommand("select imagem from tbProdutos where id_produto = @id_produto", con)
 
-            cmd2.Parameters.AddWithValue("@id_produto", cbProduto.SelectedValue)
-            cmd2.ExecuteNonQuery()
+            ' Dim cmd2 As New SqlCommand("select imagem from tbProdutos where id_produto = @id_produto", con)
 
-            Dim tempImagem As Byte() = DirectCast(cmd2.ExecuteScalar, Byte())
-            '  Dim tempImagem As Byte() = DirectCast(cmd.Parameters("@imagem").Value, Byte())
+            ' cmd2.Parameters.AddWithValue("@id_produto", cbProduto.SelectedValue)
+            '  cmd2.ExecuteNonQuery()
+
+            da = New SqlDataAdapter("pa_produto_BuscaFoto", con)
+            da.SelectCommand.CommandType = CommandType.StoredProcedure
+            da.SelectCommand.Parameters.AddWithValue("@id_produto", cbProduto.SelectedValue)
+
+
+            Dim tempImagem As Byte() = DirectCast(da.SelectCommand.ExecuteScalar, Byte())
+
             If tempImagem Is Nothing Then
                 MessageBox.Show("Imagem não localizada", "Erro")
                 Exit Sub

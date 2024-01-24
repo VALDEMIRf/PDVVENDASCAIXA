@@ -730,6 +730,7 @@
     <Content Include="imagens\3d bar chart.gif" />
     <Content Include="imagens\Camera-32.png" />
     <Content Include="imagens\Close.32.png" />
+    <Content Include="imagens\controle de estoque.png" />
     <Content Include="imagens\Delete.gif" />
     <Content Include="imagens\Filter.gif" />
     <Content Include="imagens\Home.gif" />
@@ -758,6 +759,7 @@
     <None Include="Resources\btVermelho.jpg" />
     <None Include="Resources\verde.png" />
     <None Include="Resources\vermelho.png" />
+    <None Include="Resources\barCode.wav" />
     <Content Include="SqlServerTypes\Loader.cs" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">

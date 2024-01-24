@@ -6,11 +6,12 @@ Public Class frmVendas
         DesabilitarCampos()
         btnSalvar.Enabled = False
 
-        CarregarProdutos()
+
         CarregarClientes()
 
-        ' Listar()
+        Listar()
 
+        txtCodBarras.Focus()
 
         btnExcluir.Enabled = False
         btRel.Enabled = False
@@ -59,9 +60,9 @@ Public Class frmVendas
         'dg.Columns(1).Width = 70
         'dg.Columns(2).Width = 180
         'dg.Columns(3).Width = 130
-        'dg.Columns(4).Width = 90
-        'dg.Columns(5).Width = 90
-        'dg.Columns(6).Width = 70
+        dg.Columns(4).Width = 70
+        dg.Columns(5).Width = 50
+        dg.Columns(6).Width = 70
         'dg.Columns(7).Width = 150
 
     End Sub
@@ -81,9 +82,9 @@ Public Class frmVendas
     End Sub
 
     Private Sub Limpar()
-        txtNum.Focus()
+        txtCodBarras.Focus()
         txtNum.Text = ""
-        txtQuantidade.Text = "0"
+        txtQuantidade.Text = "1"
         txtBuscar.Text = ""
         btRel.Enabled = False
         txtCodBarras.Text = ""
@@ -132,6 +133,7 @@ Public Class frmVendas
         Limpar()
         btnSalvar.Enabled = True
         cbCliente.Text = "CONSUMIDOR"
+        CarregarProdutos()
         gerarnum()
     End Sub
 
@@ -140,6 +142,8 @@ Public Class frmVendas
     End Sub
 
     Private Sub atualizarValor()
+        Dim da As SqlDataAdapter
+
         Dim cmd As New SqlCommand("pa_Vendas_buscarValorProd", con)
         Try
             abrir()
@@ -163,14 +167,21 @@ Public Class frmVendas
             '======================================================================================================
             '======================================================================================================
 
-            'Dim cmd2 As New SqlCommand("pa_produtoBuscaFoto", con)
-            Dim cmd2 As New SqlCommand("select imagem from tbProdutos where id_produto = @id_produto", con)
 
-            cmd2.Parameters.AddWithValue("@id_produto", cbProduto.SelectedValue)
-            cmd2.ExecuteNonQuery()
+            'Dim cmd2 As New SqlCommand("select imagem from tbProdutos where id_produto = @id_produto", con)
 
-            Dim tempImagem As Byte() = DirectCast(cmd2.ExecuteScalar, Byte())
-            '  Dim tempImagem As Byte() = DirectCast(cmd.Parameters("@imagem").Value, Byte())
+            'cmd2.Parameters.AddWithValue("@id_produto", cbProduto.SelectedValue)
+            'cmd2.ExecuteNonQuery()
+
+            'Dim tempImagem As Byte() = DirectCast(cmd2.ExecuteScalar, Byte())
+
+            da = New SqlDataAdapter("pa_produto_BuscaFoto", con)
+            da.SelectCommand.CommandType = CommandType.StoredProcedure
+            da.SelectCommand.Parameters.AddWithValue("@id_produto", cbProduto.SelectedValue)
+
+
+            Dim tempImagem As Byte() = DirectCast(da.SelectCommand.ExecuteScalar, Byte())
+
             If tempImagem Is Nothing Then
                 MessageBox.Show("Imagem não localizada", "Erro")
                 Exit Sub
@@ -301,9 +312,12 @@ Public Class frmVendas
 
                 cbCliente.Enabled = False
                 txtNum.Enabled = False
-                txtQuantidade.Text = ""
+                txtQuantidade.Text = "1"
 
                 btRel.Enabled = True
+
+                txtCodBarras.Text = ""
+                txtCodBarras.Focus()
 
             Catch ex As Exception
                 MessageBox.Show("Erro ao salvar os dados" + ex.Message.ToString)
@@ -584,4 +598,39 @@ Public Class frmVendas
         form.ShowDialog()
     End Sub
 
+    Private Sub txtCodBarras_KeyDown(sender As Object, e As KeyEventArgs) Handles txtCodBarras.KeyDown
+        If e.Control = True And e.KeyCode = Keys.NumPad1 Then
+
+            txtCodBarras.Text = ""
+        End If
+        If e.Control = True And e.KeyCode = Keys.NumPad2 Then
+
+            atualizarValorCod()
+        End If
+    End Sub
+
+    Private Sub atualizarValorCod()
+        Dim cmd As New SqlCommand("pa_Vendas_buscarCodBarras", con)
+
+        Try
+            abrir()
+            cmd.CommandType = 4
+            cmd.Parameters.AddWithValue("@codigo_barras", txtCodBarras.Text)
+            cmd.Parameters.Add("@id_produto", SqlDbType.Int).Direction = 2
+
+            cmd.ExecuteNonQuery()
+
+            Dim id_produto As Int32 = cmd.Parameters("@id_produto").Value
+            cbProduto.SelectedValue = id_produto
+            My.Computer.Audio.Play(My.Resources.barCode, AudioPlayMode.WaitToComplete)
+
+        Catch ex As Exception
+            'MsgBox("Produto não Encontrado")
+        End Try
+        fechar()
+    End Sub
+
+    Private Sub txtCodBarras_TextChanged(sender As Object, e As EventArgs) Handles txtCodBarras.TextChanged
+        atualizarValorCod()
+    End Sub
 End Class
