@@ -634,4 +634,9 @@ Public Class frmPrincipal
         Dim form = New frmRelVendaData
         form.ShowDialog()
     End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs)
+        Dim form = New frmProdutoConsultaSimples
+        form.ShowDialog()
+    End Sub
 End Class
