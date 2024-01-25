@@ -9,7 +9,7 @@ Public Class frmVendas
 
         CarregarClientes()
 
-        Listar()
+        ' Listar()
 
         txtCodBarras.Focus()
 
@@ -300,7 +300,7 @@ Public Class frmVendas
                 cmd.ExecuteNonQuery()
 
                 Dim msg As String = cmd.Parameters("@mensagem").Value.ToString
-                MessageBox.Show(msg, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button3)
+                ' MessageBox.Show(msg, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button3)
 
 
                 atualizarValor()

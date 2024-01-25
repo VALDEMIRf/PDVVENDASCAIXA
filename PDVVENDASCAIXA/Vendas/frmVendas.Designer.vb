@@ -22,51 +22,44 @@ Partial Class frmVendas
     'Não o modifique usando o editor de códigos.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmVendas))
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.txtValorVenda = New System.Windows.Forms.TextBox()
         Me.txtCodigo = New System.Windows.Forms.TextBox()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label7 = New System.Windows.Forms.Label()
         Me.txtQuantidade = New System.Windows.Forms.TextBox()
-        Me.Label11 = New System.Windows.Forms.Label()
         Me.lblTotal = New System.Windows.Forms.Label()
         Me.cbProduto = New System.Windows.Forms.ComboBox()
         Me.cbCliente = New System.Windows.Forms.ComboBox()
-        Me.Label10 = New System.Windows.Forms.Label()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.btRel = New System.Windows.Forms.Button()
+        Me.btnNovo = New System.Windows.Forms.Button()
+        Me.btSair = New System.Windows.Forms.Button()
+        Me.btnSalvar = New System.Windows.Forms.Button()
+        Me.btnExcluir = New System.Windows.Forms.Button()
         Me.txtBuscar = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txtNum = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.txtEstoque = New System.Windows.Forms.TextBox()
-        Me.Label3 = New System.Windows.Forms.Label()
         Me.dg = New System.Windows.Forms.DataGridView()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.txtQuantVendida = New System.Windows.Forms.TextBox()
         Me.txtCodBarras = New System.Windows.Forms.TextBox()
-        Me.Label12 = New System.Windows.Forms.Label()
         Me.pbImagem = New System.Windows.Forms.PictureBox()
-        Me.btRel = New System.Windows.Forms.Button()
-        Me.btnNovo = New System.Windows.Forms.Button()
-        Me.btSair = New System.Windows.Forms.Button()
-        Me.btnSalvar = New System.Windows.Forms.Button()
-        Me.btnExcluir = New System.Windows.Forms.Button()
-        Me.GroupBox1.SuspendLayout()
         CType(Me.dg, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pbImagem, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'txtValorVenda
         '
+        Me.txtValorVenda.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtValorVenda.Enabled = False
-        Me.txtValorVenda.Location = New System.Drawing.Point(303, 92)
+        Me.txtValorVenda.Font = New System.Drawing.Font("Microsoft Sans Serif", 22.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtValorVenda.Location = New System.Drawing.Point(447, 414)
         Me.txtValorVenda.Name = "txtValorVenda"
-        Me.txtValorVenda.Size = New System.Drawing.Size(90, 23)
+        Me.txtValorVenda.Size = New System.Drawing.Size(183, 34)
         Me.txtValorVenda.TabIndex = 198
         '
         'txtCodigo
@@ -78,60 +71,26 @@ Partial Class frmVendas
         Me.txtCodigo.Size = New System.Drawing.Size(35, 23)
         Me.txtCodigo.TabIndex = 204
         '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.ForeColor = System.Drawing.Color.Black
-        Me.Label4.Location = New System.Drawing.Point(236, 94)
-        Me.Label4.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(43, 16)
-        Me.Label4.TabIndex = 205
-        Me.Label4.Text = "Valor:"
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.ForeColor = System.Drawing.Color.Black
-        Me.Label7.Location = New System.Drawing.Point(21, 91)
-        Me.Label7.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(81, 16)
-        Me.Label7.TabIndex = 201
-        Me.Label7.Text = "Quantidade:"
-        '
         'txtQuantidade
         '
-        Me.txtQuantidade.Location = New System.Drawing.Point(108, 87)
+        Me.txtQuantidade.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.txtQuantidade.Font = New System.Drawing.Font("Microsoft Sans Serif", 22.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtQuantidade.Location = New System.Drawing.Point(449, 339)
         Me.txtQuantidade.Margin = New System.Windows.Forms.Padding(5)
         Me.txtQuantidade.Name = "txtQuantidade"
-        Me.txtQuantidade.Size = New System.Drawing.Size(89, 23)
+        Me.txtQuantidade.Size = New System.Drawing.Size(181, 34)
         Me.txtQuantidade.TabIndex = 197
         Me.txtQuantidade.Text = "1"
-        '
-        'Label11
-        '
-        Me.Label11.AutoSize = True
-        Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.ForeColor = System.Drawing.Color.Black
-        Me.Label11.Location = New System.Drawing.Point(759, 512)
-        Me.Label11.Margin = New System.Windows.Forms.Padding(7, 0, 7, 0)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(48, 20)
-        Me.Label11.TabIndex = 213
-        Me.Label11.Text = "Total:"
         '
         'lblTotal
         '
         Me.lblTotal.AutoSize = True
-        Me.lblTotal.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTotal.Font = New System.Drawing.Font("Microsoft Sans Serif", 25.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblTotal.ForeColor = System.Drawing.Color.Black
-        Me.lblTotal.Location = New System.Drawing.Point(853, 511)
+        Me.lblTotal.Location = New System.Drawing.Point(973, 158)
         Me.lblTotal.Margin = New System.Windows.Forms.Padding(7, 0, 7, 0)
         Me.lblTotal.Name = "lblTotal"
-        Me.lblTotal.Size = New System.Drawing.Size(14, 20)
+        Me.lblTotal.Size = New System.Drawing.Size(28, 39)
         Me.lblTotal.TabIndex = 212
         Me.lblTotal.Text = "-"
         '
@@ -139,212 +98,25 @@ Partial Class frmVendas
         '
         Me.cbProduto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbProduto.Enabled = False
+        Me.cbProduto.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.cbProduto.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbProduto.FormattingEnabled = True
-        Me.cbProduto.Location = New System.Drawing.Point(308, 57)
+        Me.cbProduto.Location = New System.Drawing.Point(448, 167)
         Me.cbProduto.Name = "cbProduto"
-        Me.cbProduto.Size = New System.Drawing.Size(168, 24)
+        Me.cbProduto.Size = New System.Drawing.Size(461, 39)
         Me.cbProduto.TabIndex = 194
         '
         'cbCliente
         '
         Me.cbCliente.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbCliente.Enabled = False
+        Me.cbCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.cbCliente.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbCliente.FormattingEnabled = True
-        Me.cbCliente.Location = New System.Drawing.Point(636, 58)
+        Me.cbCliente.Location = New System.Drawing.Point(448, 248)
         Me.cbCliente.Name = "cbCliente"
-        Me.cbCliente.Size = New System.Drawing.Size(161, 24)
+        Me.cbCliente.Size = New System.Drawing.Size(461, 39)
         Me.cbCliente.TabIndex = 195
-        '
-        'Label10
-        '
-        Me.Label10.AutoSize = True
-        Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.ForeColor = System.Drawing.Color.Black
-        Me.Label10.Location = New System.Drawing.Point(576, 60)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(48, 15)
-        Me.Label10.TabIndex = 209
-        Me.Label10.Text = "Cliente:"
-        '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.ForeColor = System.Drawing.Color.Black
-        Me.Label8.Location = New System.Drawing.Point(240, 58)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(62, 17)
-        Me.Label8.TabIndex = 207
-        Me.Label8.Text = "Produto:"
-        '
-        'GroupBox1
-        '
-        Me.GroupBox1.Controls.Add(Me.btRel)
-        Me.GroupBox1.Controls.Add(Me.btnNovo)
-        Me.GroupBox1.Controls.Add(Me.btSair)
-        Me.GroupBox1.Controls.Add(Me.btnSalvar)
-        Me.GroupBox1.Controls.Add(Me.btnExcluir)
-        Me.GroupBox1.Location = New System.Drawing.Point(13, 495)
-        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(4)
-        Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(4)
-        Me.GroupBox1.Size = New System.Drawing.Size(566, 69)
-        Me.GroupBox1.TabIndex = 214
-        Me.GroupBox1.TabStop = False
-        '
-        'txtBuscar
-        '
-        Me.txtBuscar.Location = New System.Drawing.Point(660, 12)
-        Me.txtBuscar.Margin = New System.Windows.Forms.Padding(5)
-        Me.txtBuscar.Name = "txtBuscar"
-        Me.txtBuscar.Size = New System.Drawing.Size(137, 23)
-        Me.txtBuscar.TabIndex = 216
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.Black
-        Me.Label1.Location = New System.Drawing.Point(597, 16)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(53, 16)
-        Me.Label1.TabIndex = 215
-        Me.Label1.Text = "Buscar:"
-        '
-        'txtNum
-        '
-        Me.txtNum.Enabled = False
-        Me.txtNum.Location = New System.Drawing.Point(108, 56)
-        Me.txtNum.Name = "txtNum"
-        Me.txtNum.Size = New System.Drawing.Size(109, 23)
-        Me.txtNum.TabIndex = 217
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.Black
-        Me.Label2.Location = New System.Drawing.Point(15, 60)
-        Me.Label2.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(85, 16)
-        Me.Label2.TabIndex = 218
-        Me.Label2.Text = "Núm. Venda:"
-        '
-        'txtEstoque
-        '
-        Me.txtEstoque.Enabled = False
-        Me.txtEstoque.Location = New System.Drawing.Point(677, 93)
-        Me.txtEstoque.Name = "txtEstoque"
-        Me.txtEstoque.Size = New System.Drawing.Size(122, 23)
-        Me.txtEstoque.TabIndex = 219
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.ForeColor = System.Drawing.Color.Black
-        Me.Label3.Location = New System.Drawing.Point(608, 96)
-        Me.Label3.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(61, 16)
-        Me.Label3.TabIndex = 220
-        Me.Label3.Text = "Estoque:"
-        '
-        'dg
-        '
-        Me.dg.AllowUserToAddRows = False
-        Me.dg.AllowUserToDeleteRows = False
-        Me.dg.BackgroundColor = System.Drawing.Color.White
-        Me.dg.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dg.DefaultCellStyle = DataGridViewCellStyle3
-        Me.dg.GridColor = System.Drawing.Color.Teal
-        Me.dg.Location = New System.Drawing.Point(13, 146)
-        Me.dg.Margin = New System.Windows.Forms.Padding(4)
-        Me.dg.Name = "dg"
-        Me.dg.ReadOnly = True
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.dg.RowsDefaultCellStyle = DataGridViewCellStyle4
-        Me.dg.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dg.Size = New System.Drawing.Size(478, 281)
-        Me.dg.TabIndex = 221
-        '
-        'Label9
-        '
-        Me.Label9.AutoSize = True
-        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.ForeColor = System.Drawing.Color.White
-        Me.Label9.Location = New System.Drawing.Point(276, 94)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(26, 17)
-        Me.Label9.TabIndex = 223
-        Me.Label9.Text = "R$"
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.ForeColor = System.Drawing.Color.Black
-        Me.Label5.Location = New System.Drawing.Point(826, 513)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(26, 17)
-        Me.Label5.TabIndex = 224
-        Me.Label5.Text = "R$"
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.ForeColor = System.Drawing.Color.Black
-        Me.Label6.Location = New System.Drawing.Point(411, 99)
-        Me.Label6.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(103, 16)
-        Me.Label6.TabIndex = 225
-        Me.Label6.Text = "Quant. Vendida:"
-        '
-        'txtQuantVendida
-        '
-        Me.txtQuantVendida.Enabled = False
-        Me.txtQuantVendida.Location = New System.Drawing.Point(513, 96)
-        Me.txtQuantVendida.Name = "txtQuantVendida"
-        Me.txtQuantVendida.Size = New System.Drawing.Size(55, 23)
-        Me.txtQuantVendida.TabIndex = 226
-        '
-        'txtCodBarras
-        '
-        Me.txtCodBarras.Location = New System.Drawing.Point(259, 12)
-        Me.txtCodBarras.Name = "txtCodBarras"
-        Me.txtCodBarras.Size = New System.Drawing.Size(255, 23)
-        Me.txtCodBarras.TabIndex = 227
-        '
-        'Label12
-        '
-        Me.Label12.AutoSize = True
-        Me.Label12.ForeColor = System.Drawing.Color.Black
-        Me.Label12.Location = New System.Drawing.Point(166, 15)
-        Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(87, 17)
-        Me.Label12.TabIndex = 228
-        Me.Label12.Text = "Cód. Barras:"
-        '
-        'pbImagem
-        '
-        Me.pbImagem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.pbImagem.Location = New System.Drawing.Point(857, 18)
-        Me.pbImagem.Margin = New System.Windows.Forms.Padding(4)
-        Me.pbImagem.Name = "pbImagem"
-        Me.pbImagem.Size = New System.Drawing.Size(122, 114)
-        Me.pbImagem.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.pbImagem.TabIndex = 222
-        Me.pbImagem.TabStop = False
         '
         'btRel
         '
@@ -356,7 +128,7 @@ Partial Class frmVendas
         Me.btRel.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btRel.ForeColor = System.Drawing.Color.Black
         Me.btRel.Image = CType(resources.GetObject("btRel.Image"), System.Drawing.Image)
-        Me.btRel.Location = New System.Drawing.Point(304, 9)
+        Me.btRel.Location = New System.Drawing.Point(171, 354)
         Me.btRel.Margin = New System.Windows.Forms.Padding(7, 6, 7, 6)
         Me.btRel.Name = "btRel"
         Me.btRel.Size = New System.Drawing.Size(162, 52)
@@ -376,7 +148,7 @@ Partial Class frmVendas
         Me.btnNovo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnNovo.ForeColor = System.Drawing.Color.Black
         Me.btnNovo.Image = CType(resources.GetObject("btnNovo.Image"), System.Drawing.Image)
-        Me.btnNovo.Location = New System.Drawing.Point(7, 17)
+        Me.btnNovo.Location = New System.Drawing.Point(14, 418)
         Me.btnNovo.Margin = New System.Windows.Forms.Padding(7, 6, 7, 6)
         Me.btnNovo.Name = "btnNovo"
         Me.btnNovo.Size = New System.Drawing.Size(81, 37)
@@ -396,7 +168,7 @@ Partial Class frmVendas
         Me.btSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btSair.ForeColor = System.Drawing.Color.Black
         Me.btSair.Image = CType(resources.GetObject("btSair.Image"), System.Drawing.Image)
-        Me.btSair.Location = New System.Drawing.Point(482, 19)
+        Me.btSair.Location = New System.Drawing.Point(297, 456)
         Me.btSair.Margin = New System.Windows.Forms.Padding(7, 6, 7, 6)
         Me.btSair.Name = "btSair"
         Me.btSair.Size = New System.Drawing.Size(73, 33)
@@ -416,7 +188,7 @@ Partial Class frmVendas
         Me.btnSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnSalvar.ForeColor = System.Drawing.Color.Black
         Me.btnSalvar.Image = CType(resources.GetObject("btnSalvar.Image"), System.Drawing.Image)
-        Me.btnSalvar.Location = New System.Drawing.Point(94, 17)
+        Me.btnSalvar.Location = New System.Drawing.Point(109, 418)
         Me.btnSalvar.Margin = New System.Windows.Forms.Padding(7, 6, 7, 6)
         Me.btnSalvar.Name = "btnSalvar"
         Me.btnSalvar.Size = New System.Drawing.Size(95, 37)
@@ -436,7 +208,7 @@ Partial Class frmVendas
         Me.btnExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnExcluir.ForeColor = System.Drawing.Color.Black
         Me.btnExcluir.Image = CType(resources.GetObject("btnExcluir.Image"), System.Drawing.Image)
-        Me.btnExcluir.Location = New System.Drawing.Point(195, 17)
+        Me.btnExcluir.Location = New System.Drawing.Point(218, 418)
         Me.btnExcluir.Margin = New System.Windows.Forms.Padding(7, 6, 7, 6)
         Me.btnExcluir.Name = "btnExcluir"
         Me.btnExcluir.Size = New System.Drawing.Size(93, 37)
@@ -446,14 +218,162 @@ Partial Class frmVendas
         Me.btnExcluir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnExcluir.UseVisualStyleBackColor = False
         '
+        'txtBuscar
+        '
+        Me.txtBuscar.Location = New System.Drawing.Point(343, 1)
+        Me.txtBuscar.Margin = New System.Windows.Forms.Padding(5)
+        Me.txtBuscar.Name = "txtBuscar"
+        Me.txtBuscar.Size = New System.Drawing.Size(82, 23)
+        Me.txtBuscar.TabIndex = 216
+        Me.txtBuscar.Visible = False
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.Black
+        Me.Label1.Location = New System.Drawing.Point(280, 5)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(53, 16)
+        Me.Label1.TabIndex = 215
+        Me.Label1.Text = "Buscar:"
+        Me.Label1.Visible = False
+        '
+        'txtNum
+        '
+        Me.txtNum.Enabled = False
+        Me.txtNum.Location = New System.Drawing.Point(162, 1)
+        Me.txtNum.Name = "txtNum"
+        Me.txtNum.Size = New System.Drawing.Size(86, 23)
+        Me.txtNum.TabIndex = 217
+        Me.txtNum.Visible = False
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.Color.Black
+        Me.Label2.Location = New System.Drawing.Point(69, 5)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(85, 16)
+        Me.Label2.TabIndex = 218
+        Me.Label2.Text = "Núm. Venda:"
+        Me.Label2.Visible = False
+        '
+        'txtEstoque
+        '
+        Me.txtEstoque.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.txtEstoque.Enabled = False
+        Me.txtEstoque.Font = New System.Drawing.Font("Microsoft Sans Serif", 22.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtEstoque.Location = New System.Drawing.Point(448, 497)
+        Me.txtEstoque.Name = "txtEstoque"
+        Me.txtEstoque.Size = New System.Drawing.Size(182, 34)
+        Me.txtEstoque.TabIndex = 219
+        '
+        'dg
+        '
+        Me.dg.AllowUserToAddRows = False
+        Me.dg.AllowUserToDeleteRows = False
+        Me.dg.BackgroundColor = System.Drawing.Color.White
+        Me.dg.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle5.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dg.DefaultCellStyle = DataGridViewCellStyle5
+        Me.dg.GridColor = System.Drawing.Color.Teal
+        Me.dg.Location = New System.Drawing.Point(6, 60)
+        Me.dg.Margin = New System.Windows.Forms.Padding(4)
+        Me.dg.Name = "dg"
+        Me.dg.ReadOnly = True
+        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.dg.RowsDefaultCellStyle = DataGridViewCellStyle6
+        Me.dg.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.dg.Size = New System.Drawing.Size(435, 244)
+        Me.dg.TabIndex = 221
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.ForeColor = System.Drawing.Color.White
+        Me.Label9.Location = New System.Drawing.Point(380, 454)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(26, 17)
+        Me.Label9.TabIndex = 223
+        Me.Label9.Text = "R$"
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 25.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.ForeColor = System.Drawing.Color.Black
+        Me.Label5.Location = New System.Drawing.Point(920, 158)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(61, 39)
+        Me.Label5.TabIndex = 224
+        Me.Label5.Text = "R$"
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.ForeColor = System.Drawing.Color.Black
+        Me.Label6.Location = New System.Drawing.Point(435, 4)
+        Me.Label6.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(103, 16)
+        Me.Label6.TabIndex = 225
+        Me.Label6.Text = "Quant. Vendida:"
+        Me.Label6.Visible = False
+        '
+        'txtQuantVendida
+        '
+        Me.txtQuantVendida.Enabled = False
+        Me.txtQuantVendida.Location = New System.Drawing.Point(546, 1)
+        Me.txtQuantVendida.Name = "txtQuantVendida"
+        Me.txtQuantVendida.Size = New System.Drawing.Size(55, 23)
+        Me.txtQuantVendida.TabIndex = 226
+        Me.txtQuantVendida.Visible = False
+        '
+        'txtCodBarras
+        '
+        Me.txtCodBarras.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.txtCodBarras.Font = New System.Drawing.Font("Microsoft Sans Serif", 25.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtCodBarras.Location = New System.Drawing.Point(448, 75)
+        Me.txtCodBarras.Name = "txtCodBarras"
+        Me.txtCodBarras.Size = New System.Drawing.Size(461, 38)
+        Me.txtCodBarras.TabIndex = 227
+        '
+        'pbImagem
+        '
+        Me.pbImagem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.pbImagem.Location = New System.Drawing.Point(658, 339)
+        Me.pbImagem.Margin = New System.Windows.Forms.Padding(4)
+        Me.pbImagem.Name = "pbImagem"
+        Me.pbImagem.Size = New System.Drawing.Size(190, 190)
+        Me.pbImagem.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.pbImagem.TabIndex = 222
+        Me.pbImagem.TabStop = False
+        '
         'frmVendas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(1186, 577)
-        Me.Controls.Add(Me.Label12)
+        Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
+        Me.ClientSize = New System.Drawing.Size(1182, 584)
+        Me.Controls.Add(Me.btSair)
+        Me.Controls.Add(Me.btRel)
         Me.Controls.Add(Me.txtCodBarras)
+        Me.Controls.Add(Me.btnNovo)
+        Me.Controls.Add(Me.btnExcluir)
+        Me.Controls.Add(Me.btnSalvar)
         Me.Controls.Add(Me.txtQuantVendida)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.Label5)
@@ -461,22 +381,15 @@ Partial Class frmVendas
         Me.Controls.Add(Me.pbImagem)
         Me.Controls.Add(Me.dg)
         Me.Controls.Add(Me.txtEstoque)
-        Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.txtNum)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.txtBuscar)
         Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.GroupBox1)
-        Me.Controls.Add(Me.Label11)
         Me.Controls.Add(Me.lblTotal)
         Me.Controls.Add(Me.txtValorVenda)
         Me.Controls.Add(Me.cbCliente)
-        Me.Controls.Add(Me.Label10)
         Me.Controls.Add(Me.txtCodigo)
         Me.Controls.Add(Me.cbProduto)
-        Me.Controls.Add(Me.Label4)
-        Me.Controls.Add(Me.Label8)
-        Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.txtQuantidade)
         Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ForeColor = System.Drawing.Color.Black
@@ -488,7 +401,6 @@ Partial Class frmVendas
         Me.Name = "frmVendas"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Vendas - PDV"
-        Me.GroupBox1.ResumeLayout(False)
         CType(Me.dg, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pbImagem, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
@@ -498,16 +410,10 @@ Partial Class frmVendas
 
     Friend WithEvents txtValorVenda As TextBox
     Friend WithEvents txtCodigo As TextBox
-    Friend WithEvents Label4 As Label
-    Friend WithEvents Label7 As Label
     Friend WithEvents txtQuantidade As TextBox
-    Friend WithEvents Label11 As Label
     Friend WithEvents lblTotal As Label
     Friend WithEvents cbProduto As ComboBox
     Friend WithEvents cbCliente As ComboBox
-    Friend WithEvents Label10 As Label
-    Friend WithEvents Label8 As Label
-    Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents btnNovo As Button
     Friend WithEvents btSair As Button
     Friend WithEvents btnSalvar As Button
@@ -517,7 +423,6 @@ Partial Class frmVendas
     Friend WithEvents txtNum As TextBox
     Friend WithEvents Label2 As Label
     Friend WithEvents txtEstoque As TextBox
-    Friend WithEvents Label3 As Label
     Friend WithEvents dg As DataGridView
     Friend WithEvents pbImagem As PictureBox
     Friend WithEvents btRel As Button
@@ -526,5 +431,4 @@ Partial Class frmVendas
     Friend WithEvents Label6 As Label
     Friend WithEvents txtQuantVendida As TextBox
     Friend WithEvents txtCodBarras As TextBox
-    Friend WithEvents Label12 As Label
 End Class
