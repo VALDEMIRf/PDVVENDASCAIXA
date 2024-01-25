@@ -25,8 +25,12 @@ Public Class frmVendas
         Try
             abrir()
 
-            da = New SqlDataAdapter("pa_Vendas_Listar", con)
+            'da = New SqlDataAdapter("pa_Vendas_Listar", con)
+            da = New SqlDataAdapter("pa_Vendas_Lista_Geral", con)
             da.SelectCommand.CommandType = CommandType.StoredProcedure
+
+            da.SelectCommand.Parameters.AddWithValue("@data", Now.ToShortDateString)
+            da.SelectCommand.Parameters.AddWithValue("@funcionario", usuarioNome)
 
             da.Fill(dt)
             dg.DataSource = dt
@@ -84,11 +88,18 @@ Public Class frmVendas
     Private Sub Limpar()
         txtCodBarras.Focus()
         txtNum.Text = ""
-        txtQuantidade.Text = "1"
+        txtQuantidade.Text = "0"
         txtBuscar.Text = ""
         btRel.Enabled = False
         txtCodBarras.Text = ""
         pbImagem.Image = Nothing
+        lblTotalUnit.Text = ""
+        lblTotal.Text = ""
+        txtDesconto.Text = ""
+        lblTotalFinal.Text = ""
+        txtValorRecebido.Text = ""
+        lblTroco.Text = ""
+        txtCodBarras.Text = ""
     End Sub
 
     Sub CarregarProdutos()
@@ -135,6 +146,7 @@ Public Class frmVendas
         cbCliente.Text = "CONSUMIDOR"
         CarregarProdutos()
         gerarnum()
+        calcularTotal()
     End Sub
 
     Private Sub cbProduto_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbProduto.SelectedIndexChanged
@@ -312,7 +324,7 @@ Public Class frmVendas
 
                 cbCliente.Enabled = False
                 txtNum.Enabled = False
-                txtQuantidade.Text = "1"
+                txtQuantidade.Text = "0"
 
                 btRel.Enabled = True
 
@@ -587,6 +599,18 @@ Public Class frmVendas
     End Sub
 
     Private Sub btRel_Click(sender As Object, e As EventArgs) Handles btRel.Click
+
+        Dim decisao As Integer = MsgBox("Deseja imprimir o comprovante?", MsgBoxStyle.Question + MsgBoxStyle.OkCancel)
+
+        If decisao = 1 Then
+
+            imprimirComprovante()
+        Else
+            Limpar()
+        End If
+    End Sub
+
+    Sub imprimirComprovante()
         If txtNum.Text = "" Then
             MsgBox("Selecione uma venda na tabela!!!")
             Exit Sub
@@ -594,7 +618,21 @@ Public Class frmVendas
 
         Dim num As String
         num = txtNum.Text
-        Dim form = New frmRelComprovante(num)
+
+        Dim subTotal As String
+        Dim desconto As String
+        Dim totalCompra As String
+        Dim valorRecebido As String
+        Dim troco As String
+
+
+        subTotal = lblTotal.Text
+        desconto = txtDesconto.Text
+        totalCompra = lblTotalFinal.Text
+        valorRecebido = txtValorRecebido.Text
+        troco = lblTroco.Text
+
+        Dim form = New frmRelComprovante(num, subTotal, desconto, totalCompra, valorRecebido, troco)
         form.ShowDialog()
     End Sub
 
@@ -632,5 +670,52 @@ Public Class frmVendas
 
     Private Sub txtCodBarras_TextChanged(sender As Object, e As EventArgs) Handles txtCodBarras.TextChanged
         atualizarValorCod()
+    End Sub
+
+    Private Sub txtValorRecebido_TextChanged(sender As Object, e As EventArgs) Handles txtValorRecebido.TextChanged
+        If lblTotalFinal.Text <> "0" And txtValorRecebido.Text <> "" Then
+            Dim totalFinal As Decimal
+            Dim valorPago As Decimal
+            Dim total As Decimal
+            totalFinal = lblTotalFinal.Text
+            valorPago = txtValorRecebido.Text
+            total = valorPago - totalFinal
+            lblTroco.Text = total
+
+        End If
+
+
+    End Sub
+
+    Private Sub txtQuantidade_TextChanged(sender As Object, e As EventArgs) Handles txtQuantidade.TextChanged
+        calcularTotal()
+    End Sub
+
+    Sub calcularTotal()
+        If txtQuantidade.Text <> "0" And txtValorVenda.Text <> "" Then
+            Dim valor As Double
+            Dim quant As Decimal
+            Dim total As Decimal
+            valor = txtValorVenda.Text
+            quant = txtQuantidade.Text
+            total = valor * quant
+            lblTotalUnit.Text = total
+        End If
+    End Sub
+
+    Private Sub txtDesconto_TextChanged(sender As Object, e As EventArgs) Handles txtDesconto.TextChanged
+        If lblTotal.Text <> "0" And txtDesconto.Text <> "" Then
+            Dim subTotal As Decimal
+            Dim desc As Decimal
+            Dim total As Decimal
+            subTotal = lblTotal.Text
+            desc = txtDesconto.Text
+            total = subTotal - desc
+            lblTotalFinal.Text = total
+        End If
+    End Sub
+
+    Private Sub lblTroco_Click(sender As Object, e As EventArgs) Handles lblTroco.Click
+
     End Sub
 End Class

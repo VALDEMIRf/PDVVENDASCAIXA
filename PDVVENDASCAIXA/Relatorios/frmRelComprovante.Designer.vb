@@ -24,13 +24,24 @@ Partial Class frmRelComprovante
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim ReportDataSource1 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
-        Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
-        Me.VendasDataSet1 = New PDVVENDASCAIXA.VendasDataSet1()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmRelComprovante))
         Me.ComprovanteBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.VendasDataSet1 = New PDVVENDASCAIXA.VendasDataSet1()
+        Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
         Me.ComprovanteTableAdapter = New PDVVENDASCAIXA.VendasDataSet1TableAdapters.ComprovanteTableAdapter()
-        CType(Me.VendasDataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ComprovanteBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.VendasDataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
+        '
+        'ComprovanteBindingSource
+        '
+        Me.ComprovanteBindingSource.DataMember = "Comprovante"
+        Me.ComprovanteBindingSource.DataSource = Me.VendasDataSet1
+        '
+        'VendasDataSet1
+        '
+        Me.VendasDataSet1.DataSetName = "VendasDataSet1"
+        Me.VendasDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'ReportViewer1
         '
@@ -42,18 +53,8 @@ Partial Class frmRelComprovante
         Me.ReportViewer1.Location = New System.Drawing.Point(0, 0)
         Me.ReportViewer1.Name = "ReportViewer1"
         Me.ReportViewer1.ServerReport.BearerToken = Nothing
-        Me.ReportViewer1.Size = New System.Drawing.Size(800, 450)
+        Me.ReportViewer1.Size = New System.Drawing.Size(800, 541)
         Me.ReportViewer1.TabIndex = 0
-        '
-        'VendasDataSet1
-        '
-        Me.VendasDataSet1.DataSetName = "VendasDataSet1"
-        Me.VendasDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'ComprovanteBindingSource
-        '
-        Me.ComprovanteBindingSource.DataMember = "Comprovante"
-        Me.ComprovanteBindingSource.DataSource = Me.VendasDataSet1
         '
         'ComprovanteTableAdapter
         '
@@ -63,15 +64,16 @@ Partial Class frmRelComprovante
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.ClientSize = New System.Drawing.Size(800, 541)
         Me.Controls.Add(Me.ReportViewer1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "frmRelComprovante"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Comprovante da Venda"
-        CType(Me.VendasDataSet1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ComprovanteBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.VendasDataSet1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

@@ -114,10 +114,10 @@ Public Class frmListaVendas
 
     Private Sub rbData_CheckedChanged(sender As Object, e As EventArgs) Handles rbData.CheckedChanged
         cbCliente.Text = ""
-        cbFuncionario.Text = ""
+        'cbFuncionario.Text = ""
 
         cbCliente.Visible = False
-        cbFuncionario.Visible = False
+        cbFuncionario.Visible = True
         dtData.Visible = True
     End Sub
 
@@ -189,8 +189,6 @@ Public Class frmListaVendas
             fechar()
         End Try
     End Sub
-
-
 
     Private Sub btSair_Click(sender As Object, e As EventArgs) Handles btSair.Click
         Me.Close()
