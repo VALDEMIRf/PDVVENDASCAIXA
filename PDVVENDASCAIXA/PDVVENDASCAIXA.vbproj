@@ -47,6 +47,9 @@
   <PropertyGroup>
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>box-sale.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="BouncyCastle.Crypto, Version=1.8.9.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
       <HintPath>..\packages\BouncyCastle.1.8.9\lib\BouncyCastle.Crypto.dll</HintPath>
@@ -737,7 +740,10 @@
     <Content Include="backgrounds\tela de login.jpg" />
     <Content Include="backgrounds\TELA DE VENDA ALTERADA.jpg" />
     <Content Include="backgrounds\TELA PRINCIPAL MENU AJUSTADA.jpg" />
+    <Content Include="box-sale.ico" />
+    <Content Include="icones\box-sale.ico" />
     <Content Include="imagens\3d bar chart.gif" />
+    <Content Include="imagens\Bagg-box.32.png" />
     <Content Include="imagens\Camera-32.png" />
     <Content Include="imagens\Close.32.png" />
     <Content Include="imagens\controle de estoque.png" />

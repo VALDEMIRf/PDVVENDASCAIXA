@@ -184,14 +184,16 @@ Public Class frmProdutos
     End Sub
 
     Private Sub btnNovo_Click(sender As Object, e As EventArgs) Handles btnNovo.Click
+        If txtCodBarras.Text <> "" Then
+            HabilitarCampos()
+            Limpar()
+            btnSalvar.Enabled = True
+            btnEditar.Enabled = False
+            btnExcluir.Enabled = False
+            ' CriarCodigoBarras()
+            txtCodBarras.Focus()
+        End If
 
-        HabilitarCampos()
-        Limpar()
-        btnSalvar.Enabled = True
-        btnEditar.Enabled = False
-        btnExcluir.Enabled = False
-        ' CriarCodigoBarras()
-        txtCodBarras.Focus()
     End Sub
 
     Private Sub btnSalvar_Click(sender As Object, e As EventArgs) Handles btnSalvar.Click

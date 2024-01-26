@@ -111,7 +111,7 @@ Partial Class frmPrincipal
         '
         Me.ClientesToolStripMenuItem.Image = CType(resources.GetObject("ClientesToolStripMenuItem.Image"), System.Drawing.Image)
         Me.ClientesToolStripMenuItem.Name = "ClientesToolStripMenuItem"
-        Me.ClientesToolStripMenuItem.Size = New System.Drawing.Size(156, 24)
+        Me.ClientesToolStripMenuItem.Size = New System.Drawing.Size(180, 24)
         Me.ClientesToolStripMenuItem.Text = "Clientes"
         '
         'CargosToolStripMenuItem
@@ -147,7 +147,7 @@ Partial Class frmPrincipal
         Me.ProdutosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ProdutosToolStripMenuItem1, Me.CategoriasToolStripMenuItem, Me.UnidadeDeMedidaToolStripMenuItem})
         Me.ProdutosToolStripMenuItem.Image = CType(resources.GetObject("ProdutosToolStripMenuItem.Image"), System.Drawing.Image)
         Me.ProdutosToolStripMenuItem.Name = "ProdutosToolStripMenuItem"
-        Me.ProdutosToolStripMenuItem.Size = New System.Drawing.Size(156, 24)
+        Me.ProdutosToolStripMenuItem.Size = New System.Drawing.Size(180, 24)
         Me.ProdutosToolStripMenuItem.Text = "Produtos"
         '
         'ProdutosToolStripMenuItem1
