@@ -26,22 +26,42 @@ Partial Class frmRelCaixa
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmRelCaixa))
         Dim ReportDataSource1 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
         Dim ReportDataSource2 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
+        Me.TbCaixaBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.Caixa1DataSet1 = New PDVVENDASCAIXA.caixa1DataSet1()
+        Me.ListaVendasGeralBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.VendasDataSet1 = New PDVVENDASCAIXA.VendasDataSet1()
         Me.btSair = New System.Windows.Forms.Button()
         Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.cbFuncionario = New System.Windows.Forms.ComboBox()
         Me.dtData = New System.Windows.Forms.DateTimePicker()
-        Me.Caixa1DataSet1 = New PDVVENDASCAIXA.caixa1DataSet1()
-        Me.TbCaixaBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.TbCaixaTableAdapter = New PDVVENDASCAIXA.caixa1DataSet1TableAdapters.tbCaixaTableAdapter()
-        Me.VendasDataSet1 = New PDVVENDASCAIXA.VendasDataSet1()
-        Me.ListaVendasGeralBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.ListaVendasGeralTableAdapter = New PDVVENDASCAIXA.VendasDataSet1TableAdapters.ListaVendasGeralTableAdapter()
-        CType(Me.Caixa1DataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TbCaixaBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.VendasDataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Caixa1DataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ListaVendasGeralBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.VendasDataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
+        '
+        'TbCaixaBindingSource
+        '
+        Me.TbCaixaBindingSource.DataMember = "tbCaixa"
+        Me.TbCaixaBindingSource.DataSource = Me.Caixa1DataSet1
+        '
+        'Caixa1DataSet1
+        '
+        Me.Caixa1DataSet1.DataSetName = "caixa1DataSet1"
+        Me.Caixa1DataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'ListaVendasGeralBindingSource
+        '
+        Me.ListaVendasGeralBindingSource.DataMember = "ListaVendasGeral"
+        Me.ListaVendasGeralBindingSource.DataSource = Me.VendasDataSet1
+        '
+        'VendasDataSet1
+        '
+        Me.VendasDataSet1.DataSetName = "VendasDataSet1"
+        Me.VendasDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'btSair
         '
@@ -71,7 +91,7 @@ Partial Class frmRelCaixa
         Me.ReportViewer1.Location = New System.Drawing.Point(1, 50)
         Me.ReportViewer1.Name = "ReportViewer1"
         Me.ReportViewer1.ServerReport.BearerToken = Nothing
-        Me.ReportViewer1.Size = New System.Drawing.Size(797, 503)
+        Me.ReportViewer1.Size = New System.Drawing.Size(797, 557)
         Me.ReportViewer1.TabIndex = 3
         '
         'Label1
@@ -101,29 +121,9 @@ Partial Class frmRelCaixa
         Me.dtData.Size = New System.Drawing.Size(99, 20)
         Me.dtData.TabIndex = 4
         '
-        'Caixa1DataSet1
-        '
-        Me.Caixa1DataSet1.DataSetName = "caixa1DataSet1"
-        Me.Caixa1DataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'TbCaixaBindingSource
-        '
-        Me.TbCaixaBindingSource.DataMember = "tbCaixa"
-        Me.TbCaixaBindingSource.DataSource = Me.Caixa1DataSet1
-        '
         'TbCaixaTableAdapter
         '
         Me.TbCaixaTableAdapter.ClearBeforeFill = True
-        '
-        'VendasDataSet1
-        '
-        Me.VendasDataSet1.DataSetName = "VendasDataSet1"
-        Me.VendasDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'ListaVendasGeralBindingSource
-        '
-        Me.ListaVendasGeralBindingSource.DataMember = "ListaVendasGeral"
-        Me.ListaVendasGeralBindingSource.DataSource = Me.VendasDataSet1
         '
         'ListaVendasGeralTableAdapter
         '
@@ -133,8 +133,8 @@ Partial Class frmRelCaixa
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.SteelBlue
-        Me.ClientSize = New System.Drawing.Size(800, 557)
+        Me.BackColor = System.Drawing.Color.LightSkyBlue
+        Me.ClientSize = New System.Drawing.Size(800, 607)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.cbFuncionario)
         Me.Controls.Add(Me.dtData)
@@ -146,10 +146,10 @@ Partial Class frmRelCaixa
         Me.Name = "frmRelCaixa"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Relatório Final de Caixa"
-        CType(Me.Caixa1DataSet1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TbCaixaBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.VendasDataSet1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Caixa1DataSet1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ListaVendasGeralBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.VendasDataSet1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

@@ -64,44 +64,60 @@ Public Class frmFuncionarios
 
     Private Sub FormatarDG()
         dg.Columns(0).Visible = False
-        dg.Columns(3).Visible = False
-        dg.Columns(4).Visible = False
-        dg.Columns(2).Visible = False
         dg.Columns(7).Visible = False
-        dg.Columns(20).Visible = False
+        dg.Columns(8).Visible = False
+        dg.Columns(14).Visible = False
+        dg.Columns(15).Visible = False
+        dg.Columns(16).Visible = False
+        dg.Columns(17).Visible = False
+        dg.Columns(18).Visible = False
+        dg.Columns(19).Visible = False
+        dg.Columns(28).Visible = False
+        dg.Columns(29).Visible = False
+        dg.Columns(30).Visible = False
 
+        dg.Columns(0).HeaderText = "id"
         dg.Columns(1).HeaderText = "Nome"
-        dg.Columns(2).HeaderText = "Sexo"
+        dg.Columns(2).HeaderText = "CPF"
         dg.Columns(3).HeaderText = "RG"
-        dg.Columns(4).HeaderText = "CPF"
-        dg.Columns(5).HeaderText = "Telefone"
-        dg.Columns(6).HeaderText = "Email"
-        dg.Columns(7).HeaderText = "dtNasc"
-        dg.Columns(8).HeaderText = "CEP"
-        dg.Columns(9).HeaderText = "UF"
-        dg.Columns(10).HeaderText = "Endereço"
-        dg.Columns(11).HeaderText = "Num"
-        dg.Columns(12).HeaderText = "Compl"
-        dg.Columns(13).HeaderText = "Compl2"
-        dg.Columns(14).HeaderText = "Bairro"
-        dg.Columns(15).HeaderText = "Cidade"
-        dg.Columns(16).HeaderText = "Cargo"
-        dg.Columns(17).HeaderText = "Turno"
-        dg.Columns(18).HeaderText = "Dt Contratação"
-        dg.Columns(19).HeaderText = "Dt Demissão"
+        dg.Columns(4).HeaderText = "PIS"
+        dg.Columns(5).HeaderText = "Tel Res"
+        dg.Columns(6).HeaderText = "Tel Cel"
+        'dg.Columns(7).HeaderText = "CTPS"
+        ' dg.Columns(8).HeaderText = "SERIE"
+        dg.Columns(9).HeaderText = "Salário"
+        dg.Columns(10).HeaderText = "Email"
+        dg.Columns(11).HeaderText = "Sexo"
+        dg.Columns(12).HeaderText = "dtNasc."
+        dg.Columns(13).HeaderText = "Cargo"
+        'dg.Columns(14).HeaderText = "Dt Contratação"
+        'dg.Columns(15).HeaderText = "Dt Demissão"
+        'dg.Columns(16).HeaderText = "Hora Inicial"
+        'dg.Columns(17).HeaderText = "Intervalo"
+        'dg.Columns(18).HeaderText = "Retorno"
+        'dg.Columns(19).HeaderText = "Fim do exp."
+        dg.Columns(20).HeaderText = "CEP"
+        dg.Columns(21).HeaderText = "UF"
+        dg.Columns(22).HeaderText = "Endereço"
+        dg.Columns(23).HeaderText = "Num."
+        dg.Columns(24).HeaderText = "Compl1"
+        dg.Columns(25).HeaderText = "Compl2"
+        dg.Columns(26).HeaderText = "Bairro"
+        dg.Columns(27).HeaderText = "Cidade"
+        '   dg.Columns(28).HeaderText = "Foto"
 
 
-        dg.Columns(5).Width = 130
-        dg.Columns(6).Width = 150
-        dg.Columns(8).Width = 65
-        dg.Columns(9).Width = 30
-        dg.Columns(10).Width = 170
-        dg.Columns(11).Width = 45
-        dg.Columns(12).Width = 110
-        dg.Columns(13).Width = 110
-        dg.Columns(14).Width = 150
-        dg.Columns(15).Width = 150
-        dg.Columns(16).Width = 65
+        'dg.Columns(5).Width = 130
+        'dg.Columns(6).Width = 150
+        'dg.Columns(8).Width = 65
+        'dg.Columns(9).Width = 30
+        'dg.Columns(10).Width = 170
+        'dg.Columns(11).Width = 45
+        'dg.Columns(12).Width = 110
+        'dg.Columns(13).Width = 110
+        'dg.Columns(14).Width = 150
+        'dg.Columns(15).Width = 150
+        'dg.Columns(16).Width = 65
 
     End Sub
 
@@ -122,9 +138,19 @@ Public Class frmFuncionarios
         txtCompl.Enabled = False
         txtCEP.Enabled = False
         cbCargo.Enabled = False
-        cbTurno.Enabled = False
         dtData.Enabled = False
         txtdtDemissao.Enabled = False
+        txtPIS.Enabled = False
+        txtTel.Enabled = False
+        txtCel.Enabled = False
+        txtCTPS.Enabled = False
+        txtSerie.Enabled = False
+        txtSalario.Enabled = False
+        txtEntrada.Enabled = False
+        txtSaida.Enabled = False
+        txtEntrada2.Enabled = False
+        txtSaida2.Enabled = False
+
     End Sub
 
     Private Sub HabilitarCampos()
@@ -139,9 +165,18 @@ Public Class frmFuncionarios
         txtCompl.Enabled = True
         txtCEP.Enabled = True
         cbCargo.Enabled = True
-        cbTurno.Enabled = True
         dtData.Enabled = True
         txtdtDemissao.Enabled = True
+        txtPIS.Enabled = True
+        txtTel.Enabled = True
+        txtCel.Enabled = True
+        txtCTPS.Enabled = True
+        txtSerie.Enabled = True
+        txtSalario.Enabled = True
+        txtEntrada.Enabled = True
+        txtSaida.Enabled = True
+        txtEntrada2.Enabled = True
+        txtSaida2.Enabled = True
     End Sub
 
     Private Sub Limpar()
@@ -162,10 +197,20 @@ Public Class frmFuncionarios
         txtUF.Text = Nothing
         txtCEP.Text = ""
         cbCargo.Text = Nothing
-        cbTurno.Text = Nothing
         dtData.Text = ""
         txtdtDemissao.Text = ""
         txtBuscar.Text = ""
+        txtPIS.Text = ""
+        txtTel.Text = ""
+        txtCel.Text = ""
+        txtCTPS.Text = ""
+        txtSerie.Text = ""
+        txtSalario.Text = ""
+        txtEntrada.Text = ""
+        txtSaida.Text = ""
+        txtEntrada2.Text = ""
+        txtSaida2.Text = ""
+
 
         carregarImagem()
     End Sub
@@ -199,14 +244,6 @@ Public Class frmFuncionarios
 
         If txtCPF.Text <> "" And txtNome.Text <> "" Then
 
-            'If pbImagem.Image.Equals(Nothing) Then
-            '    errErro.SetError(pbImagem, "Escolha uma imagem")
-            '    Exit Sub
-            'Else
-            '    '  pbImagem.Image = My.Resources.sem_rosto
-            'End If
-
-
             Try
 
                 'CARREGANDO IMAGEM NO BANCO
@@ -214,16 +251,30 @@ Public Class frmFuncionarios
                 ImagemCarregada.Save(MS, System.Drawing.Imaging.ImageFormat.Jpeg)
                 Dim byteArray = MS.ToArray
 
+                Dim vlSalario = Replace(txtSalario.Text, ",", ".")
+
                 abrir()
                 cmd = New SqlCommand("pa_funcionario_Salvar", con)
                 cmd.CommandType = CommandType.StoredProcedure
                 cmd.Parameters.AddWithValue("@nome", txtNome.Text)
-                cmd.Parameters.AddWithValue("@sexo", cbSexo.Text)
-                cmd.Parameters.AddWithValue("@rg", txtRG.Text)
                 cmd.Parameters.AddWithValue("@cpf", txtCPF.Text)
-                cmd.Parameters.AddWithValue("@telcel", txtTel.Text)
+                cmd.Parameters.AddWithValue("@rg", txtRG.Text)
+                cmd.Parameters.AddWithValue("@pis", txtPIS.Text)
+                cmd.Parameters.AddWithValue("@telRes", txtTel.Text)
+                cmd.Parameters.AddWithValue("@telcel", txtCel.Text)
+                cmd.Parameters.AddWithValue("@ctps", txtCTPS.Text)
+                cmd.Parameters.AddWithValue("@serie", txtSerie.Text)
+                cmd.Parameters.AddWithValue("@salario", vlSalario)
                 cmd.Parameters.AddWithValue("@email", txtEmail.Text)
+                cmd.Parameters.AddWithValue("@sexo", cbSexo.Text)
                 cmd.Parameters.AddWithValue("@dtNasc", txtdtNasc.Text)
+                cmd.Parameters.AddWithValue("@idCargo", cbCargo.SelectedValue)
+                cmd.Parameters.AddWithValue("@data_contratado", dtData.Text)
+                cmd.Parameters.AddWithValue("@data_demissao", txtdtDemissao.Text)
+                cmd.Parameters.AddWithValue("@horaentrada", txtEntrada.Text)
+                cmd.Parameters.AddWithValue("@horasaida", txtSaida.Text)
+                cmd.Parameters.AddWithValue("@horaentrada2", txtEntrada2.Text)
+                cmd.Parameters.AddWithValue("@horasaida2", txtSaida2.Text)
                 cmd.Parameters.AddWithValue("@cep", txtCEP.Text)
                 cmd.Parameters.AddWithValue("@UF", txtUF.Text)
                 cmd.Parameters.AddWithValue("@endereco", txtEndereco.Text)
@@ -232,10 +283,6 @@ Public Class frmFuncionarios
                 cmd.Parameters.AddWithValue("@complemento2", txtComplemento.Text)
                 cmd.Parameters.AddWithValue("@bairro", txtBairro.Text)
                 cmd.Parameters.AddWithValue("@cidade", txtCidade.Text)
-                cmd.Parameters.AddWithValue("@idCargo", cbCargo.SelectedValue)
-                cmd.Parameters.AddWithValue("@turno", cbTurno.Text)
-                cmd.Parameters.AddWithValue("@data_contratado", dtData.Text)
-                cmd.Parameters.AddWithValue("@data_demissao", txtdtDemissao.Text)
                 cmd.Parameters.AddWithValue("@imagem", byteArray)
                 cmd.Parameters.Add("@mensagem", SqlDbType.VarChar, 100).Direction = 2
                 cmd.ExecuteNonQuery()
@@ -268,17 +315,29 @@ Public Class frmFuncionarios
                 ImagemCarregada.Save(MS, System.Drawing.Imaging.ImageFormat.Jpeg)
                 Dim byteArray = MS.ToArray
 
-
+                Dim vlSalario = Replace(txtSalario.Text, ",", ".")
                 abrir()
                 cmd = New SqlCommand("pa_funcionario_Editar", con)
                 cmd.CommandType = CommandType.StoredProcedure
                 cmd.Parameters.AddWithValue("@nome", txtNome.Text)
-                cmd.Parameters.AddWithValue("@sexo", cbSexo.Text)
-                cmd.Parameters.AddWithValue("@rg", txtRG.Text)
                 cmd.Parameters.AddWithValue("@cpf", txtCPF.Text)
-                cmd.Parameters.AddWithValue("@telcel", txtTel.Text)
+                cmd.Parameters.AddWithValue("@rg", txtRG.Text)
+                cmd.Parameters.AddWithValue("@pis", txtPIS.Text)
+                cmd.Parameters.AddWithValue("@telRes", txtTel.Text)
+                cmd.Parameters.AddWithValue("@telcel", txtCel.Text)
+                cmd.Parameters.AddWithValue("@ctps", txtCTPS.Text)
+                cmd.Parameters.AddWithValue("@serie", txtSerie.Text)
+                cmd.Parameters.AddWithValue("@salario", vlSalario)
                 cmd.Parameters.AddWithValue("@email", txtEmail.Text)
+                cmd.Parameters.AddWithValue("@sexo", cbSexo.Text)
                 cmd.Parameters.AddWithValue("@dtNasc", txtdtNasc.Text)
+                cmd.Parameters.AddWithValue("@idCargo", cbCargo.SelectedValue)
+                cmd.Parameters.AddWithValue("@data_contratado", dtData.Text)
+                cmd.Parameters.AddWithValue("@data_demissao", txtdtDemissao.Text)
+                cmd.Parameters.AddWithValue("@horaentrada", txtEntrada.Text)
+                cmd.Parameters.AddWithValue("@horasaida", txtSaida.Text)
+                cmd.Parameters.AddWithValue("@horaentrada2", txtEntrada2.Text)
+                cmd.Parameters.AddWithValue("@horasaida2", txtSaida2.Text)
                 cmd.Parameters.AddWithValue("@cep", txtCEP.Text)
                 cmd.Parameters.AddWithValue("@UF", txtUF.Text)
                 cmd.Parameters.AddWithValue("@endereco", txtEndereco.Text)
@@ -287,10 +346,6 @@ Public Class frmFuncionarios
                 cmd.Parameters.AddWithValue("@complemento2", txtComplemento.Text)
                 cmd.Parameters.AddWithValue("@bairro", txtBairro.Text)
                 cmd.Parameters.AddWithValue("@cidade", txtCidade.Text)
-                cmd.Parameters.AddWithValue("@idCargo", cbCargo.SelectedValue)
-                cmd.Parameters.AddWithValue("@turno", cbTurno.Text)
-                cmd.Parameters.AddWithValue("@data_contratado", dtData.Text)
-                cmd.Parameters.AddWithValue("@data_demissao", txtdtDemissao.Text)
                 cmd.Parameters.AddWithValue("@imagem", byteArray)
                 cmd.Parameters.Add("@mensagem", SqlDbType.VarChar, 100).Direction = 2
                 cmd.ExecuteNonQuery()
@@ -382,7 +437,7 @@ Public Class frmFuncionarios
                 ContarLinhas()
 
             Catch ex As Exception
-                MessageBox.Show("Erro ao Listar" + ex.Message)
+                MessageBox.Show("Erro ao Listar" + ex.Message.ToString)
                 fechar()
             End Try
         End If
@@ -427,26 +482,34 @@ Public Class frmFuncionarios
         txtCPF.Enabled = False
 
         txtNome.Text = dg.CurrentRow.Cells(1).Value
-        cbSexo.Text = dg.CurrentRow.Cells(2).Value
+        txtCPF.Text = dg.CurrentRow.Cells(2).Value
         txtRG.Text = dg.CurrentRow.Cells(3).Value
-        txtCPF.Text = dg.CurrentRow.Cells(4).Value
+        txtPIS.Text = dg.CurrentRow.Cells(4).Value
         txtTel.Text = dg.CurrentRow.Cells(5).Value
-        txtEmail.Text = dg.CurrentRow.Cells(6).Value
-        txtdtNasc.Text = dg.CurrentRow.Cells(7).Value
-        txtCEP.Text = dg.CurrentRow.Cells(8).Value
-        txtUF.Text = dg.CurrentRow.Cells(9).Value
-        txtEndereco.Text = dg.CurrentRow.Cells(10).Value
-        txtNumero.Text = dg.CurrentRow.Cells(11).Value
-        txtCompl.Text = dg.CurrentRow.Cells(12).Value
-        txtComplemento.Text = dg.CurrentRow.Cells(13).Value
-        txtBairro.Text = dg.CurrentRow.Cells(14).Value
-        txtCidade.Text = dg.CurrentRow.Cells(15).Value
-        cbCargo.Text = dg.CurrentRow.Cells(16).Value
-        cbTurno.Text = dg.CurrentRow.Cells(17).Value
-        dtData.Text = dg.CurrentRow.Cells(18).Value
-        txtdtDemissao.Text = dg.CurrentRow.Cells(19).Value
+        txtCel.Text = dg.CurrentRow.Cells(6).Value
+        txtCTPS.Text = dg.CurrentRow.Cells(7).Value
+        txtSerie.Text = dg.CurrentRow.Cells(8).Value
+        txtSalario.Text = dg.CurrentRow.Cells(9).Value
+        txtEmail.Text = dg.CurrentRow.Cells(10).Value
+        cbSexo.Text = dg.CurrentRow.Cells(11).Value
+        txtdtNasc.Text = dg.CurrentRow.Cells(12).Value
+        cbCargo.Text = dg.CurrentRow.Cells(13).Value
+        dtData.Text = dg.CurrentRow.Cells(14).Value
+        txtdtDemissao.Text = dg.CurrentRow.Cells(15).Value
+        txtEntrada.Text = dg.CurrentRow.Cells(16).Value
+        txtSaida.Text = dg.CurrentRow.Cells(17).Value
+        txtEntrada2.Text = dg.CurrentRow.Cells(18).Value
+        txtSaida2.Text = dg.CurrentRow.Cells(19).Value
+        txtCEP.Text = dg.CurrentRow.Cells(20).Value
+        txtUF.Text = dg.CurrentRow.Cells(21).Value
+        txtEndereco.Text = dg.CurrentRow.Cells(22).Value
+        txtNumero.Text = dg.CurrentRow.Cells(23).Value
+        txtCompl.Text = dg.CurrentRow.Cells(24).Value
+        txtComplemento.Text = dg.CurrentRow.Cells(25).Value
+        txtBairro.Text = dg.CurrentRow.Cells(26).Value
+        txtCidade.Text = dg.CurrentRow.Cells(27).Value
 
-        Dim tempImagem As Byte() = DirectCast(dg.CurrentRow.Cells(20).Value, Byte())
+        Dim tempImagem As Byte() = DirectCast(dg.CurrentRow.Cells(28).Value, Byte())
         If tempImagem Is Nothing Then
             MessageBox.Show("Imagem não localizada", "Erro")
             Exit Sub
@@ -488,17 +551,6 @@ Public Class frmFuncionarios
         pbImagem.Image = ImagemCarregada
         req.Abort()
 
-
-
-        ' ImagemCarregada = Image.FromFile("C:\Users\valde\OneDrive\Documentos\Visual Studio 2017\Projetos\PDV\PDV\imagens\imagesemfoto.jpg")
-        '  pbImagem.Image = My.Resources.imagesemfoto
-
-        'ImagemCarregada = Image.FromFile(\ imaagens \ imagesemfoto.jpg)
-        ' pbImagem.Image = ImagemCarregada
-
-        ' Catch ex As Exception
-        '    MsgBox("<< Erro ao ler a imagem >> " & ex.Message.ToString)
-        ' End Try
-
     End Sub
+
 End Class
