@@ -639,4 +639,9 @@ Public Class frmPrincipal
         Dim form = New frmProdutoConsultaSimples
         form.ShowDialog()
     End Sub
+
+    Private Sub ContasAPagarToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ContasAPagarToolStripMenuItem.Click
+        Dim form = New frmContasPagar
+        form.ShowDialog()
+    End Sub
 End Class

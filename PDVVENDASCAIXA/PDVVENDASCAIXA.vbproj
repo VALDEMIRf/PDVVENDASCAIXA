@@ -213,6 +213,12 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="mdlFuncoesDiversas.vb" />
+    <Compile Include="Movimentacao\frmContasPagar.Designer.vb">
+      <DependentUpon>frmContasPagar.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Movimentacao\frmContasPagar.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Movimentacao\frmServicos.Designer.vb">
       <DependentUpon>frmServicos.vb</DependentUpon>
     </Compile>
@@ -408,6 +414,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Estoque\frmTesteValor.resx">
       <DependentUpon>frmTesteValor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Movimentacao\frmContasPagar.resx">
+      <DependentUpon>frmContasPagar.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Movimentacao\frmServicos.resx">
       <DependentUpon>frmServicos.vb</DependentUpon>

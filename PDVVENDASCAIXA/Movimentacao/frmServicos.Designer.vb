@@ -751,7 +751,7 @@ Partial Class frmServicos
         Me.dgvServico.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
         Me.dgvServico.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvServico.GridColor = System.Drawing.SystemColors.HotTrack
-        Me.dgvServico.Location = New System.Drawing.Point(12, 55)
+        Me.dgvServico.Location = New System.Drawing.Point(9, 56)
         Me.dgvServico.Margin = New System.Windows.Forms.Padding(12, 10, 12, 10)
         Me.dgvServico.Name = "dgvServico"
         Me.dgvServico.ReadOnly = True
