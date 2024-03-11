@@ -42,36 +42,38 @@ Public Class frmNivelBaixo
     End Sub
 
     Private Sub FormatarDG()
-        dg.Columns(0).Visible = False
-        dg.Columns(3).Visible = False
-        dg.Columns(4).Visible = False
-        dg.Columns(5).Visible = False
-        dg.Columns(7).Visible = False
-        dg.Columns(8).Visible = False
-        dg.Columns(10).Visible = False
+        With dg
+            .Columns(0).Visible = False
+            .Columns(3).Visible = False
+            .Columns(4).Visible = False
+            .Columns(5).Visible = False
+            .Columns(7).Visible = False
+            .Columns(8).Visible = False
+            .Columns(10).Visible = False
 
 
-        dg.Columns(1).HeaderText = "Produto"
-        dg.Columns(2).HeaderText = "Descrição"
-        ' dg.Columns(3).HeaderText = "Fornecedor"
-        'dg.Columns(4).HeaderText = "Categoria"
-        ' dg.Columns(5).HeaderText = "Unidade"
-        dg.Columns(6).HeaderText = "Quantidade" '
-        ' dg.Columns(7).HeaderText = "Vlr de Compra"
-        ' dg.Columns(8).HeaderText = "Vlr de Venda"
-        dg.Columns(9).HeaderText = "Dt Cadastro"
-        dg.Columns(11).HeaderText = "Nível Mínimo"
+            .Columns(1).HeaderText = "Produto"
+            .Columns(2).HeaderText = "Descrição"
+            ' .Columns(3).HeaderText = "Fornecedor"
+            '.Columns(4).HeaderText = "Categoria"
+            ' .Columns(5).HeaderText = "Unidade"
+            .Columns(6).HeaderText = "Quantidade" '
+            ' .Columns(7).HeaderText = "Vlr de Compra"
+            ' .Columns(8).HeaderText = "Vlr de Venda"
+            .Columns(9).HeaderText = "Dt Cadastro"
+            .Columns(11).HeaderText = "Nível Mínimo"
 
+            .Columns(1).Width = 180
+            .Columns(2).Width = 200
+            '.Columns(3).Width = 260
+            '.Columns(4).Width = 120
+            '.Columns(5).Width = 80
+            '.Columns(6).Width = 45
+            '.Columns(7).Width = 100
+            '.Columns(8).Width = 100
+            '.Columns(9).Width = 80
+        End With
 
-        dg.Columns(1).Width = 180
-        dg.Columns(2).Width = 200
-        'dg.Columns(3).Width = 260
-        'dg.Columns(4).Width = 120
-        'dg.Columns(5).Width = 80
-        'dg.Columns(6).Width = 45
-        'dg.Columns(7).Width = 100
-        'dg.Columns(8).Width = 100
-        'dg.Columns(9).Width = 80
     End Sub
 
     Private Sub dg_DoubleClick(sender As Object, e As EventArgs) Handles dg.DoubleClick

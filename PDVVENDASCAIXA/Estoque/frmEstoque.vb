@@ -6,12 +6,8 @@ Public Class frmEstoque
     Dim id_produto As Integer
 
     Sub New(id_produto As Integer)
-
         InitializeComponent()
         Me.id_produto = id_produto
-
-
-
     End Sub
 
     Private Sub frmEstoque_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -63,32 +59,32 @@ Public Class frmEstoque
     End Sub
 
     Private Sub FormatarDG()
-        dg.Columns(0).Visible = False
-        dg.Columns(7).Visible = False
-        dg.Columns(8).Visible = False
+        With dg
+            .Columns(0).Visible = False
+            .Columns(7).Visible = False
+            .Columns(8).Visible = False
 
-        dg.Columns(1).HeaderText = "Produto"
-        dg.Columns(2).HeaderText = "Descrição"
-        dg.Columns(3).HeaderText = "Quantidade"
-        dg.Columns(4).HeaderText = "Data"
-        dg.Columns(5).HeaderText = "Funcionário"
-        dg.Columns(6).HeaderText = "Motivo"
+            .Columns(1).HeaderText = "Produto"
+            .Columns(2).HeaderText = "Descrição"
+            .Columns(3).HeaderText = "Quantidade"
+            .Columns(4).HeaderText = "Data"
+            .Columns(5).HeaderText = "Funcionário"
+            .Columns(6).HeaderText = "Motivo"
 
-        dg.Columns(1).Width = 180
-        dg.Columns(2).Width = 180
-        'dg.Columns(3).Width = 130
-        'dg.Columns(4).Width = 90
-        'dg.Columns(5).Width = 90
-        dg.Columns(6).Width = 150
-        'dg.Columns(7).Width = 150
-
+            .Columns(1).Width = 180
+            .Columns(2).Width = 180
+            '.Columns(3).Width = 130
+            '.Columns(4).Width = 90
+            '.Columns(5).Width = 90
+            .Columns(6).Width = 150
+            '.Columns(7).Width = 150
+        End With
     End Sub
 
     Private Sub DesabilitarCampos()
         cbDescricao.Enabled = False
         txtQuantidade.Enabled = False
         cbProduto.Enabled = False
-
 
     End Sub
 
@@ -97,11 +93,9 @@ Public Class frmEstoque
         txtQuantidade.Enabled = True
         cbProduto.Enabled = True
 
-
     End Sub
 
     Private Sub Limpar()
-
         txtQuantidade.Text = ""
         cbBuscar.Text = ""
         txtBuscarProd.Text = ""
@@ -171,25 +165,15 @@ Public Class frmEstoque
         Dim cmd As SqlCommand
 
         If txtQuantidade.Text <> "" Then
-            '    If pbImagem.Image.Equals(Nothing) Then
-            '        errErro.SetError(pbImagem, "Escolha uma imagem")
-            '        Exit Sub
-            '    Else
-            '        'MessageBox.Show("certo")
-            '    End If
 
             Try
-
-                'quant_vendida = txtQuantVendida.Text
-                'TotQuantidade = quant_vendida + quantidade
 
                 abrir()
 
                 'ABATENDO QUANTIDADE EM ESTOQUE
                 Dim quantidade As Decimal
                 Dim estoque As Decimal
-                '  Dim quant_vendida As Decimal
-                '  Dim TotQuantidade As Decimal
+
                 Dim Totestoque As Decimal
 
                 quantidade = txtQuantidade.Text
@@ -224,12 +208,6 @@ Public Class frmEstoque
                 Else
                     cmd.Parameters.AddWithValue("@motivo", txtMotivo.Text)
                 End If
-                'cmd.Parameters.AddWithValue("@imagem", byteArray)
-                'cmd.Parameters.AddWithValue("@nivel_minimo", txtNivel.Text)
-
-                ' cmd.Parameters.AddWithValue("@quant_vendida", 0)
-                ' cmd.Parameters.AddWithValue("@codigo_barras", txtCodBarras.Text)+
-
 
                 cmd.Parameters.Add("@mensagem", SqlDbType.VarChar, 100).Direction = 2
                 cmd.ExecuteNonQuery()
@@ -273,8 +251,7 @@ Public Class frmEstoque
                 'ABATENDO QUANTIDADE EM ESTOQUE
                 Dim quantidade As Decimal
                 Dim estoque As Decimal
-                '  Dim quant_vendida As Decimal
-                '  Dim TotQuantidade As Decimal
+
                 Dim Totestoque As Decimal
 
                 quantidade = txtQuantidade.Text

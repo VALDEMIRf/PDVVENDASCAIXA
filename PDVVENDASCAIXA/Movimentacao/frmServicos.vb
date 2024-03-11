@@ -100,53 +100,55 @@ Public Class frmServicos
 
     Private Sub FormatarDG()
 
-        dgvServico.Columns(22).Visible = False
-        dgvServico.Columns(21).Visible = False
+        With dgvServico
+            .Columns(22).Visible = False
+            .Columns(21).Visible = False
 
-        dgvServico.Columns(0).HeaderText = "Núm. OS"
-        dgvServico.Columns(1).HeaderText = "Cliente"
-        dgvServico.Columns(2).HeaderText = "Entrada"
-        dgvServico.Columns(3).HeaderText = "CEP"
-        dgvServico.Columns(4).HeaderText = "UF"
-        dgvServico.Columns(5).HeaderText = "Endereço"
-        dgvServico.Columns(6).HeaderText = "Num."
-        dgvServico.Columns(7).HeaderText = "Complemento2."
-        dgvServico.Columns(8).HeaderText = "Compl"
-        dgvServico.Columns(9).HeaderText = "Bairro"
-        dgvServico.Columns(10).HeaderText = "Cidade"
-        dgvServico.Columns(11).HeaderText = "Tel. Residencial"
-        dgvServico.Columns(12).HeaderText = "Tel. Celular"
-        dgvServico.Columns(13).HeaderText = "Email"
-        dgvServico.Columns(14).HeaderText = "Serviço"
-        dgvServico.Columns(15).HeaderText = "Responsável"
-        dgvServico.Columns(16).HeaderText = "Garantia"
-        dgvServico.Columns(17).HeaderText = "Data de Entrega"
-        dgvServico.Columns(18).HeaderText = "Valor"
-        dgvServico.Columns(19).HeaderText = "Status do Pag."
-        dgvServico.Columns(20).HeaderText = "Observações"
-        dgvServico.Columns(21).HeaderText = "idClienteidTipo"
-        dgvServico.Columns(22).HeaderText = "idTipo"
+            .Columns(0).HeaderText = "Núm. OS"
+            .Columns(1).HeaderText = "Cliente"
+            .Columns(2).HeaderText = "Entrada"
+            .Columns(3).HeaderText = "CEP"
+            .Columns(4).HeaderText = "UF"
+            .Columns(5).HeaderText = "Endereço"
+            .Columns(6).HeaderText = "Num."
+            .Columns(7).HeaderText = "Complemento2."
+            .Columns(8).HeaderText = "Compl"
+            .Columns(9).HeaderText = "Bairro"
+            .Columns(10).HeaderText = "Cidade"
+            .Columns(11).HeaderText = "Tel. Residencial"
+            .Columns(12).HeaderText = "Tel. Celular"
+            .Columns(13).HeaderText = "Email"
+            .Columns(14).HeaderText = "Serviço"
+            .Columns(15).HeaderText = "Responsável"
+            .Columns(16).HeaderText = "Garantia"
+            .Columns(17).HeaderText = "Data de Entrega"
+            .Columns(18).HeaderText = "Valor"
+            .Columns(19).HeaderText = "Status do Pag."
+            .Columns(20).HeaderText = "Observações"
+            .Columns(21).HeaderText = "idClienteidTipo"
+            .Columns(22).HeaderText = "idTipo"
 
-        dgvServico.Columns(0).Width = 50
-        dgvServico.Columns(1).Width = 180
-        dgvServico.Columns(2).Width = 100
-        dgvServico.Columns(3).Width = 90
-        dgvServico.Columns(4).Width = 45
-        dgvServico.Columns(5).Width = 200
-        dgvServico.Columns(6).Width = 50
-        dgvServico.Columns(7).Width = 150
-        dgvServico.Columns(8).Width = 150
-        dgvServico.Columns(9).Width = 150
-        dgvServico.Columns(10).Width = 120
-        dgvServico.Columns(11).Width = 120
-        dgvServico.Columns(12).Width = 200
-        dgvServico.Columns(13).Width = 200
-        dgvServico.Columns(14).Width = 200
-        dgvServico.Columns(15).Width = 120
-        dgvServico.Columns(16).Width = 100
-        dgvServico.Columns(17).Width = 100
-        dgvServico.Columns(18).Width = 180
-        dgvServico.Columns(19).Width = 250
+            .Columns(0).Width = 50
+            .Columns(1).Width = 180
+            .Columns(2).Width = 100
+            .Columns(3).Width = 90
+            .Columns(4).Width = 45
+            .Columns(5).Width = 200
+            .Columns(6).Width = 50
+            .Columns(7).Width = 150
+            .Columns(8).Width = 150
+            .Columns(9).Width = 150
+            .Columns(10).Width = 120
+            .Columns(11).Width = 120
+            .Columns(12).Width = 200
+            .Columns(13).Width = 200
+            .Columns(14).Width = 200
+            .Columns(15).Width = 120
+            .Columns(16).Width = 100
+            .Columns(17).Width = 100
+            .Columns(18).Width = 180
+            .Columns(19).Width = 250
+        End With
 
     End Sub
 
@@ -209,7 +211,6 @@ Public Class frmServicos
         End Try
 
     End Sub
-
     Private Sub ContarLinhas()
         Dim total As Integer = dgvServico.Rows.Count
         lblTotal.Text = CInt(total)
@@ -261,13 +262,6 @@ Public Class frmServicos
         If cbCliente.Text <> "" Then
 
             Dim valor1 = Replace(txtValor.Text, ",", ".")
-            '  txtValor.Text = String.Format("{0:n2}")
-
-            ' Dim aNumber As Double = Math.PI
-
-            ' txtValor.Text = String.Format("{0:n2}", aNumber)
-
-
 
             Try
                 abrir()

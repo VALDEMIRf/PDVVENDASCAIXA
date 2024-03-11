@@ -81,24 +81,27 @@ Public Class frmConsultaEstoque
     End Sub
 
     Private Sub FormatarDG()
-        dg.Columns(0).Visible = False
-        dg.Columns(7).Visible = False
-        dg.Columns(8).Visible = False
 
-        dg.Columns(1).HeaderText = "Produto"
-        dg.Columns(2).HeaderText = "Descrição"
-        dg.Columns(3).HeaderText = "Quantidade"
-        dg.Columns(4).HeaderText = "Data"
-        dg.Columns(5).HeaderText = "Funcionário"
-        dg.Columns(6).HeaderText = "Motivo"
+        With dg
+            .Columns(0).Visible = False
+            .Columns(7).Visible = False
+            .Columns(8).Visible = False
 
-        dg.Columns(1).Width = 100
-        'dg.Columns(2).Width = 180
-        'dg.Columns(3).Width = 130
-        'dg.Columns(4).Width = 90
-        'dg.Columns(5).Width = 90
-        'dg.Columns(6).Width = 70
-        'dg.Columns(7).Width = 150
+            .Columns(1).HeaderText = "Produto"
+            .Columns(2).HeaderText = "Descrição"
+            .Columns(3).HeaderText = "Quantidade"
+            .Columns(4).HeaderText = "Data"
+            .Columns(5).HeaderText = "Funcionário"
+            .Columns(6).HeaderText = "Motivo"
+
+            .Columns(1).Width = 100
+            '.Columns(2).Width = 180
+            '.Columns(3).Width = 130
+            '.Columns(4).Width = 90
+            '.Columns(5).Width = 90
+            '.Columns(6).Width = 70
+            '.Columns(7).Width = 150
+        End With
 
     End Sub
 

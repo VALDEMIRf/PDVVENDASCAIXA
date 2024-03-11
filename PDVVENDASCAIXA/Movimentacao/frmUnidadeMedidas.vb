@@ -40,11 +40,11 @@ Public Class frmUnidadeMedidas
     End Sub
 
     Private Sub FormatarDG()
-        dgvUnidade.Columns(0).Visible = False
-
-        dgvUnidade.Columns(1).HeaderText = "Unidade"
-
-        dgvUnidade.Columns(1).Width = 100
+        With dgvUnidade
+            .Columns(0).Visible = False
+            .Columns(1).HeaderText = "Unidade"
+            .Columns(1).Width = 100
+        End With
 
     End Sub
 

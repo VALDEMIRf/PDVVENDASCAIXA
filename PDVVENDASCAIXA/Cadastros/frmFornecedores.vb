@@ -37,45 +37,48 @@ Public Class frmFornecedores
     End Sub
 
     Private Sub FormatarDG()
-        dg.Columns(0).Visible = False
-        dg.Columns(2).Visible = False
-        dg.Columns(4).Visible = False
-        dg.Columns(5).Visible = False
-        dg.Columns(6).Visible = False
-        dg.Columns(7).Visible = False
-        dg.Columns(8).Visible = False
-        dg.Columns(9).Visible = False
-        dg.Columns(10).Visible = False
-        dg.Columns(11).Visible = False
-        dg.Columns(12).Visible = False
-        dg.Columns(13).Visible = False
-        dg.Columns(14).Visible = False
-        dg.Columns(15).Visible = False
-        dg.Columns(16).Visible = False
-        dg.Columns(17).Visible = False
-        dg.Columns(18).Visible = False
 
-        dg.Columns(1).HeaderText = "CNPJ"
-        dg.Columns(2).HeaderText = "ABERTURA"
-        dg.Columns(3).HeaderText = "Nome da Empresa"
-        dg.Columns(4).HeaderText = "Fantasia"
-        dg.Columns(5).HeaderText = "Endereço N°"
-        dg.Columns(6).HeaderText = "Nº "
-        dg.Columns(7).HeaderText = "Compl."
-        dg.Columns(8).HeaderText = "Bairro"
-        dg.Columns(9).HeaderText = "Cidade"
-        dg.Columns(10).HeaderText = "UF"
-        dg.Columns(11).HeaderText = "Cep"
-        dg.Columns(12).HeaderText = "Telefone"
-        dg.Columns(13).HeaderText = "Email"
-        dg.Columns(14).HeaderText = "Situação"
-        dg.Columns(15).HeaderText = "Motivo"
-        dg.Columns(16).HeaderText = "Contato"
-        dg.Columns(17).HeaderText = "Tel. Contato"
-        dg.Columns(18).HeaderText = "Dt. Cadastro"
+        With dg
+            .Columns(0).Visible = False
+            .Columns(2).Visible = False
+            .Columns(4).Visible = False
+            .Columns(5).Visible = False
+            .Columns(6).Visible = False
+            .Columns(7).Visible = False
+            .Columns(8).Visible = False
+            .Columns(9).Visible = False
+            .Columns(10).Visible = False
+            .Columns(11).Visible = False
+            .Columns(12).Visible = False
+            .Columns(13).Visible = False
+            .Columns(14).Visible = False
+            .Columns(15).Visible = False
+            .Columns(16).Visible = False
+            .Columns(17).Visible = False
+            .Columns(18).Visible = False
 
-        dg.Columns(1).Width = 150
-        dg.Columns(2).Width = 300
+            .Columns(1).HeaderText = "CNPJ"
+            .Columns(2).HeaderText = "ABERTURA"
+            .Columns(3).HeaderText = "Nome da Empresa"
+            .Columns(4).HeaderText = "Fantasia"
+            .Columns(5).HeaderText = "Endereço N°"
+            .Columns(6).HeaderText = "Nº "
+            .Columns(7).HeaderText = "Compl."
+            .Columns(8).HeaderText = "Bairro"
+            .Columns(9).HeaderText = "Cidade"
+            .Columns(10).HeaderText = "UF"
+            .Columns(11).HeaderText = "Cep"
+            .Columns(12).HeaderText = "Telefone"
+            .Columns(13).HeaderText = "Email"
+            .Columns(14).HeaderText = "Situação"
+            .Columns(15).HeaderText = "Motivo"
+            .Columns(16).HeaderText = "Contato"
+            .Columns(17).HeaderText = "Tel. Contato"
+            .Columns(18).HeaderText = "Dt. Cadastro"
+
+            .Columns(1).Width = 150
+            .Columns(2).Width = 300
+        End With
 
     End Sub
 

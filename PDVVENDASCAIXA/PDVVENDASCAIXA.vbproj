@@ -219,12 +219,6 @@
     <Compile Include="Movimentacao\frmContasReceber.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Movimentacao\frmGravaContasPagar.Designer.vb">
-      <DependentUpon>frmGravaContasPagar.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Movimentacao\frmGravaContasPagar.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Movimentacao\frmServicos.Designer.vb">
       <DependentUpon>frmServicos.vb</DependentUpon>
     </Compile>
@@ -423,9 +417,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Movimentacao\frmContasReceber.resx">
       <DependentUpon>frmContasReceber.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Movimentacao\frmGravaContasPagar.resx">
-      <DependentUpon>frmGravaContasPagar.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Movimentacao\frmServicos.resx">
       <DependentUpon>frmServicos.vb</DependentUpon>

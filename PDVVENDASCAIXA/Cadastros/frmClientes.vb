@@ -116,51 +116,54 @@ Public Class frmClientes
     End Sub
 
     Private Sub FormatarDG()
-        dg.Columns(0).Visible = False
-        dg.Columns(3).Visible = False
-        dg.Columns(4).Visible = False
-        dg.Columns(5).Visible = False
-        dg.Columns(6).Visible = False
-        dg.Columns(20).Visible = False
-        dg.Columns(21).Visible = False
 
-        dg.Columns(1).HeaderText = "Nome"
-        dg.Columns(2).HeaderText = "CPF"
-        dg.Columns(3).HeaderText = "RG"
-        dg.Columns(4).HeaderText = "Est. Civil"
-        dg.Columns(5).HeaderText = "Naturalidade"
-        dg.Columns(6).HeaderText = "Sexo"
-        dg.Columns(7).HeaderText = "Nascimento"
-        dg.Columns(8).HeaderText = "Telefone"
-        dg.Columns(9).HeaderText = "Celular"
-        dg.Columns(10).HeaderText = "Email"
-        dg.Columns(11).HeaderText = "CEP"
-        dg.Columns(12).HeaderText = "UF"
-        dg.Columns(13).HeaderText = "Endereço"
-        dg.Columns(14).HeaderText = "Num"
-        dg.Columns(15).HeaderText = "Compl"
-        dg.Columns(16).HeaderText = "Compl2"
-        dg.Columns(17).HeaderText = "Bairro"
-        dg.Columns(18).HeaderText = "Cidade"
-        dg.Columns(19).HeaderText = "Obs."
-        dg.Columns(20).HeaderText = "Data Cadastro"
+        With dg
+            .Columns(0).Visible = False
+            .Columns(3).Visible = False
+            .Columns(4).Visible = False
+            .Columns(5).Visible = False
+            .Columns(6).Visible = False
+            .Columns(20).Visible = False
+            .Columns(21).Visible = False
 
-        dg.Columns(1).Width = 150
-        dg.Columns(2).Width = 110
-        dg.Columns(5).Width = 100
-        dg.Columns(6).Width = 80
-        dg.Columns(7).Width = 100
-        dg.Columns(8).Width = 120
-        dg.Columns(9).Width = 120
-        dg.Columns(10).Width = 200
-        dg.Columns(11).Width = 80
-        dg.Columns(12).Width = 30
-        dg.Columns(13).Width = 140
-        dg.Columns(14).Width = 75
-        dg.Columns(15).Width = 150
-        dg.Columns(16).Width = 150
-        dg.Columns(17).Width = 150
-        dg.Columns(19).Width = 180
+            .Columns(1).HeaderText = "Nome"
+            .Columns(2).HeaderText = "CPF"
+            .Columns(3).HeaderText = "RG"
+            .Columns(4).HeaderText = "Est. Civil"
+            .Columns(5).HeaderText = "Naturalidade"
+            .Columns(6).HeaderText = "Sexo"
+            .Columns(7).HeaderText = "Nascimento"
+            .Columns(8).HeaderText = "Telefone"
+            .Columns(9).HeaderText = "Celular"
+            .Columns(10).HeaderText = "Email"
+            .Columns(11).HeaderText = "CEP"
+            .Columns(12).HeaderText = "UF"
+            .Columns(13).HeaderText = "Endereço"
+            .Columns(14).HeaderText = "Num"
+            .Columns(15).HeaderText = "Compl"
+            .Columns(16).HeaderText = "Compl2"
+            .Columns(17).HeaderText = "Bairro"
+            .Columns(18).HeaderText = "Cidade"
+            .Columns(19).HeaderText = "Obs."
+            .Columns(20).HeaderText = "Data Cadastro"
+
+            .Columns(1).Width = 150
+            .Columns(2).Width = 110
+            .Columns(5).Width = 100
+            .Columns(6).Width = 80
+            .Columns(7).Width = 100
+            .Columns(8).Width = 120
+            .Columns(9).Width = 120
+            .Columns(10).Width = 200
+            .Columns(11).Width = 80
+            .Columns(12).Width = 30
+            .Columns(13).Width = 140
+            .Columns(14).Width = 75
+            .Columns(15).Width = 150
+            .Columns(16).Width = 150
+            .Columns(17).Width = 150
+            .Columns(19).Width = 180
+        End With
 
     End Sub
 
@@ -362,7 +365,6 @@ Public Class frmClientes
             txtTelPJ.Text = cliente.telefone
         Catch ex As Exception
 
-            '  MessageBox.Show("CNPJ Incorreto, digite um CNPJ válido!!!" + ex.Message.ToString)
             MessageBox.Show("CNPJ Incorreto, digite um CNPJ válido!!!", "ERRO" + ex.Message.ToString)
         End Try
 
@@ -590,42 +592,43 @@ Public Class frmClientes
     End Sub
 
     Private Sub FormatarDGPJ()
-        dgPJ.Columns(0).Visible = False
-        dgPJ.Columns(15).Visible = False
-        '  dgPJ.Columns(6).Visible = False
 
+        With dgPJ
+            .Columns(0).Visible = False
+            .Columns(15).Visible = False
+            '  .Columns(6).Visible = False
 
+            .Columns(1).HeaderText = "Nome"
+            .Columns(2).HeaderText = "Fantasia"
+            .Columns(3).HeaderText = "CNPJ"
+            .Columns(4).HeaderText = "Inscr. Estadual"
+            .Columns(5).HeaderText = "Telefone"
+            .Columns(6).HeaderText = "Email"
+            .Columns(7).HeaderText = "CEP"
+            .Columns(8).HeaderText = "UF"
+            .Columns(9).HeaderText = "Endereço"
+            .Columns(10).HeaderText = "Num"
+            .Columns(11).HeaderText = "Compl"
+            .Columns(12).HeaderText = "Bairro"
+            .Columns(13).HeaderText = "Cidade"
+            .Columns(14).HeaderText = "Obs."
+            .Columns(15).HeaderText = "Situação"
+            .Columns(16).HeaderText = "Motivo"
+            .Columns(17).HeaderText = "Data Cadastro"
+            .Columns(18).HeaderText = "Tipo"
 
-        dgPJ.Columns(1).HeaderText = "Nome"
-        dgPJ.Columns(2).HeaderText = "Fantasia"
-        dgPJ.Columns(3).HeaderText = "CNPJ"
-        dgPJ.Columns(4).HeaderText = "Inscr. Estadual"
-        dgPJ.Columns(5).HeaderText = "Telefone"
-        dgPJ.Columns(6).HeaderText = "Email"
-        dgPJ.Columns(7).HeaderText = "CEP"
-        dgPJ.Columns(8).HeaderText = "UF"
-        dgPJ.Columns(9).HeaderText = "Endereço"
-        dgPJ.Columns(10).HeaderText = "Num"
-        dgPJ.Columns(11).HeaderText = "Compl"
-        dgPJ.Columns(12).HeaderText = "Bairro"
-        dgPJ.Columns(13).HeaderText = "Cidade"
-        dgPJ.Columns(14).HeaderText = "Obs."
-        dgPJ.Columns(15).HeaderText = "Situação"
-        dgPJ.Columns(16).HeaderText = "Motivo"
-        dgPJ.Columns(17).HeaderText = "Data Cadastro"
-        dgPJ.Columns(18).HeaderText = "Tipo"
-
-        dgPJ.Columns(1).Width = 150
-        dgPJ.Columns(2).Width = 100
-        dgPJ.Columns(3).Width = 100
-        dgPJ.Columns(6).Width = 80
-        dgPJ.Columns(7).Width = 100
-        dgPJ.Columns(8).Width = 120
-        dgPJ.Columns(9).Width = 120
-        dgPJ.Columns(10).Width = 50
-        dgPJ.Columns(11).Width = 80
-        dgPJ.Columns(12).Width = 100
-        dgPJ.Columns(13).Width = 100
+            .Columns(1).Width = 150
+            .Columns(2).Width = 100
+            .Columns(3).Width = 100
+            .Columns(6).Width = 80
+            .Columns(7).Width = 100
+            .Columns(8).Width = 120
+            .Columns(9).Width = 120
+            .Columns(10).Width = 50
+            .Columns(11).Width = 80
+            .Columns(12).Width = 100
+            .Columns(13).Width = 100
+        End With
 
     End Sub
 

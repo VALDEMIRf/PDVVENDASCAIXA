@@ -63,61 +63,63 @@ Public Class frmFuncionarios
     End Sub
 
     Private Sub FormatarDG()
-        dg.Columns(0).Visible = False
-        dg.Columns(7).Visible = False
-        dg.Columns(8).Visible = False
-        dg.Columns(14).Visible = False
-        dg.Columns(15).Visible = False
-        dg.Columns(16).Visible = False
-        dg.Columns(17).Visible = False
-        dg.Columns(18).Visible = False
-        dg.Columns(19).Visible = False
-        dg.Columns(28).Visible = False
-        dg.Columns(29).Visible = False
-        dg.Columns(30).Visible = False
+        With dg
+            .Columns(0).Visible = False
+            .Columns(7).Visible = False
+            .Columns(8).Visible = False
+            .Columns(14).Visible = False
+            .Columns(15).Visible = False
+            .Columns(16).Visible = False
+            .Columns(17).Visible = False
+            .Columns(18).Visible = False
+            .Columns(19).Visible = False
+            .Columns(28).Visible = False
+            .Columns(29).Visible = False
+            .Columns(30).Visible = False
 
-        dg.Columns(0).HeaderText = "id"
-        dg.Columns(1).HeaderText = "Nome"
-        dg.Columns(2).HeaderText = "CPF"
-        dg.Columns(3).HeaderText = "RG"
-        dg.Columns(4).HeaderText = "PIS"
-        dg.Columns(5).HeaderText = "Tel Res"
-        dg.Columns(6).HeaderText = "Tel Cel"
-        'dg.Columns(7).HeaderText = "CTPS"
-        ' dg.Columns(8).HeaderText = "SERIE"
-        dg.Columns(9).HeaderText = "Salário"
-        dg.Columns(10).HeaderText = "Email"
-        dg.Columns(11).HeaderText = "Sexo"
-        dg.Columns(12).HeaderText = "dtNasc."
-        dg.Columns(13).HeaderText = "Cargo"
-        'dg.Columns(14).HeaderText = "Dt Contratação"
-        'dg.Columns(15).HeaderText = "Dt Demissão"
-        'dg.Columns(16).HeaderText = "Hora Inicial"
-        'dg.Columns(17).HeaderText = "Intervalo"
-        'dg.Columns(18).HeaderText = "Retorno"
-        'dg.Columns(19).HeaderText = "Fim do exp."
-        dg.Columns(20).HeaderText = "CEP"
-        dg.Columns(21).HeaderText = "UF"
-        dg.Columns(22).HeaderText = "Endereço"
-        dg.Columns(23).HeaderText = "Num."
-        dg.Columns(24).HeaderText = "Compl1"
-        dg.Columns(25).HeaderText = "Compl2"
-        dg.Columns(26).HeaderText = "Bairro"
-        dg.Columns(27).HeaderText = "Cidade"
-        '   dg.Columns(28).HeaderText = "Foto"
+            .Columns(0).HeaderText = "id"
+            .Columns(1).HeaderText = "Nome"
+            .Columns(2).HeaderText = "CPF"
+            .Columns(3).HeaderText = "RG"
+            .Columns(4).HeaderText = "PIS"
+            .Columns(5).HeaderText = "Tel Res"
+            .Columns(6).HeaderText = "Tel Cel"
+            '.Columns(7).HeaderText = "CTPS"
+            ' .Columns(8).HeaderText = "SERIE"
+            .Columns(9).HeaderText = "Salário"
+            .Columns(10).HeaderText = "Email"
+            .Columns(11).HeaderText = "Sexo"
+            .Columns(12).HeaderText = "dtNasc."
+            .Columns(13).HeaderText = "Cargo"
+            '.Columns(14).HeaderText = "Dt Contratação"
+            '.Columns(15).HeaderText = "Dt Demissão"
+            '.Columns(16).HeaderText = "Hora Inicial"
+            '.Columns(17).HeaderText = "Intervalo"
+            '.Columns(18).HeaderText = "Retorno"
+            '.Columns(19).HeaderText = "Fim do exp."
+            .Columns(20).HeaderText = "CEP"
+            .Columns(21).HeaderText = "UF"
+            .Columns(22).HeaderText = "Endereço"
+            .Columns(23).HeaderText = "Num."
+            .Columns(24).HeaderText = "Compl1"
+            .Columns(25).HeaderText = "Compl2"
+            .Columns(26).HeaderText = "Bairro"
+            .Columns(27).HeaderText = "Cidade"
+            '   .Columns(28).HeaderText = "Foto"
 
 
-        'dg.Columns(5).Width = 130
-        'dg.Columns(6).Width = 150
-        'dg.Columns(8).Width = 65
-        'dg.Columns(9).Width = 30
-        'dg.Columns(10).Width = 170
-        'dg.Columns(11).Width = 45
-        'dg.Columns(12).Width = 110
-        'dg.Columns(13).Width = 110
-        'dg.Columns(14).Width = 150
-        'dg.Columns(15).Width = 150
-        'dg.Columns(16).Width = 65
+            '.Columns(5).Width = 130
+            '.Columns(6).Width = 150
+            '.Columns(8).Width = 65
+            '.Columns(9).Width = 30
+            '.Columns(10).Width = 170
+            '.Columns(11).Width = 45
+            '.Columns(12).Width = 110
+            '.Columns(13).Width = 110
+            '.Columns(14).Width = 150
+            '.Columns(15).Width = 150
+            '.Columns(16).Width = 65
+        End With
 
     End Sub
 

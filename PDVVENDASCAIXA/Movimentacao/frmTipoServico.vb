@@ -41,11 +41,12 @@ Public Class frmTipoServico
     End Sub
 
     Private Sub FormatarDG()
-        dgvTipo.Columns(0).Visible = False
 
-        dgvTipo.Columns(1).HeaderText = "Tipo de Serviço"
-
-        dgvTipo.Columns(1).Width = 150
+        With dgvTipo
+            .Columns(0).Visible = False
+            .Columns(1).HeaderText = "Tipo de Serviço"
+            .Columns(1).Width = 150
+        End With
 
     End Sub
 
@@ -139,9 +140,6 @@ Public Class frmTipoServico
 
                 carregaGrid()
                 Limpar()
-
-                ' btnExcluir.Enabled = False
-                '   btnEditar.Enabled = False
 
             Catch ex As Exception
                 MessageBox.Show("Erro ao excluir os dados" + ex.Message)

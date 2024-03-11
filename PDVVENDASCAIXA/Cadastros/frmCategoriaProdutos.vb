@@ -33,7 +33,6 @@ Public Class frmCategoriaProdutos
         End Try
     End Sub
 
-
     Private Sub Limpar()
         txtCategoria.Focus()
         txtCategoria.Text = ""
@@ -41,11 +40,11 @@ Public Class frmCategoriaProdutos
     End Sub
 
     Private Sub FormatarDG()
-        dgvCategoria.Columns(0).Visible = False
-
-        dgvCategoria.Columns(1).HeaderText = "Categoria"
-
-        dgvCategoria.Columns(1).Width = 150
+        With dgvCategoria
+            .Columns(0).Visible = False
+            .Columns(1).HeaderText = "Categoria"
+            .Columns(1).Width = 150
+        End With
 
     End Sub
 

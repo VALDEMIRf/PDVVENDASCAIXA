@@ -5,14 +5,10 @@ Public Class frmVendas
     Private Sub frmVendas_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         DesabilitarCampos()
         btnSalvar.Enabled = False
-
-
         CarregarClientes()
-
         ' Listar()
 
         txtCodBarras.Focus()
-
         btnExcluir.Enabled = False
         btRel.Enabled = False
         totalizar()
@@ -45,29 +41,32 @@ Public Class frmVendas
     End Sub
 
     Private Sub FormatarDG()
-        dg.Columns(0).Visible = False
-        dg.Columns(9).Visible = False
-        dg.Columns(10).Visible = False
-        dg.Columns(3).Visible = False
-        dg.Columns(7).Visible = False
-        dg.Columns(8).Visible = False
 
-        dg.Columns(1).HeaderText = "Núm. Venda"
-        dg.Columns(2).HeaderText = "Produto"
-        '  dg.Columns(3).HeaderText = "Cliente"
-        dg.Columns(4).HeaderText = "Valor Unit."
-        dg.Columns(5).HeaderText = "Quant."
-        dg.Columns(6).HeaderText = "Valor Total"
-        ' dg.Columns(7).HeaderText = "Funcionário"
-        ' dg.Columns(8).HeaderText = "Dt. Venda"
+        With dg
+            .Columns(0).Visible = False
+            .Columns(9).Visible = False
+            .Columns(10).Visible = False
+            .Columns(3).Visible = False
+            .Columns(7).Visible = False
+            .Columns(8).Visible = False
 
-        'dg.Columns(1).Width = 70
-        'dg.Columns(2).Width = 180
-        'dg.Columns(3).Width = 130
-        dg.Columns(4).Width = 70
-        dg.Columns(5).Width = 50
-        dg.Columns(6).Width = 70
-        'dg.Columns(7).Width = 150
+            .Columns(1).HeaderText = "Núm. Venda"
+            .Columns(2).HeaderText = "Produto"
+            '  .Columns(3).HeaderText = "Cliente"
+            .Columns(4).HeaderText = "Valor Unit."
+            .Columns(5).HeaderText = "Quant."
+            .Columns(6).HeaderText = "Valor Total"
+            ' .Columns(7).HeaderText = "Funcionário"
+            ' .Columns(8).HeaderText = "Dt. Venda"
+
+            '.Columns(1).Width = 70
+            '.Columns(2).Width = 180
+            '.Columns(3).Width = 130
+            .Columns(4).Width = 70
+            .Columns(5).Width = 50
+            .Columns(6).Width = 70
+            '.Columns(7).Width = 150
+        End With
 
     End Sub
 
@@ -583,16 +582,12 @@ Public Class frmVendas
         btnSalvar.Enabled = True
         cbProduto.Enabled = True
 
-        ' dg.DataSource.Clear()
-
-        '  HabilitarCampos()
-
         txtCodigo.Text = dg.CurrentRow.Cells(0).Value
         txtNum.Text = dg.CurrentRow.Cells(1).Value
         cbProduto.Text = dg.CurrentRow.Cells(2).Value
         cbCliente.Text = dg.CurrentRow.Cells(3).Value
         txtQuantidade.Text = dg.CurrentRow.Cells(5).Value
-        ' txtValorVenda.Text = dg.CurrentRow.Cells(5).Value
+
     End Sub
 
     Private Sub txtBuscar_TextChanged(sender As Object, e As EventArgs) Handles txtBuscar.TextChanged
@@ -660,7 +655,7 @@ Public Class frmVendas
     End Sub
 
     Private Sub gerarnum()
-        Dim cmd As New SqlCommand("pa_Vendas_buscarNum", con)  'pa_VendaSbuscarNumero
+        Dim cmd As New SqlCommand("pa_Vendas_buscarNum", con)
         Try
             abrir()
             cmd.CommandType = 4
@@ -670,7 +665,6 @@ Public Class frmVendas
 
             Dim num As Integer = cmd.Parameters("@num_vendas").Value
 
-            ' Dim hora As String = Now.Second
             Dim numAleatorio As Random = New Random()
             Dim valorInteiro As Integer = numAleatorio.Next(10000000)
             Dim num_final As Integer

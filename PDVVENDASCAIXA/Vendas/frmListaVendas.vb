@@ -71,26 +71,29 @@ Public Class frmListaVendas
     End Sub
 
     Private Sub FormatarDG()
-        dg.Columns(0).Visible = False
-        dg.Columns(9).Visible = False
-        dg.Columns(10).Visible = False
 
-        dg.Columns(1).HeaderText = "Núm. Venda"
-        dg.Columns(2).HeaderText = "Produto"
-        dg.Columns(3).HeaderText = "Cliente"
-        dg.Columns(4).HeaderText = "Valor Unit."
-        dg.Columns(5).HeaderText = "Quantidade"
-        dg.Columns(6).HeaderText = "Valor Total"
-        dg.Columns(7).HeaderText = "Funcionário"
-        dg.Columns(8).HeaderText = "Dt. Venda"
+        With dg
+            .Columns(0).Visible = False
+            .Columns(9).Visible = False
+            .Columns(10).Visible = False
 
-        dg.Columns(1).Width = 70
-        dg.Columns(2).Width = 180
-        dg.Columns(3).Width = 130
-        dg.Columns(4).Width = 90
-        dg.Columns(5).Width = 90
-        dg.Columns(6).Width = 70
-        dg.Columns(7).Width = 150
+            .Columns(1).HeaderText = "Núm. Venda"
+            .Columns(2).HeaderText = "Produto"
+            .Columns(3).HeaderText = "Cliente"
+            .Columns(4).HeaderText = "Valor Unit."
+            .Columns(5).HeaderText = "Quantidade"
+            .Columns(6).HeaderText = "Valor Total"
+            .Columns(7).HeaderText = "Funcionário"
+            .Columns(8).HeaderText = "Dt. Venda"
+
+            .Columns(1).Width = 70
+            .Columns(2).Width = 180
+            .Columns(3).Width = 130
+            .Columns(4).Width = 90
+            .Columns(5).Width = 90
+            .Columns(6).Width = 70
+            .Columns(7).Width = 150
+        End With
 
     End Sub
 
@@ -114,7 +117,6 @@ Public Class frmListaVendas
 
     Private Sub rbData_CheckedChanged(sender As Object, e As EventArgs) Handles rbData.CheckedChanged
         cbCliente.Text = ""
-        'cbFuncionario.Text = ""
 
         cbCliente.Visible = False
         cbFuncionario.Visible = True
@@ -153,7 +155,7 @@ Public Class frmListaVendas
 
             da = New SqlDataAdapter("pa_Vendas_ListaCliente", con)
             da.SelectCommand.CommandType = CommandType.StoredProcedure
-            da.SelectCommand.Parameters.AddWithValue("@cliente", cbCliente.SelectedValue) 'cbCliente.SelectedValue
+            da.SelectCommand.Parameters.AddWithValue("@cliente", cbCliente.SelectedValue)
 
             da.Fill(dt)
             dg.DataSource = dt

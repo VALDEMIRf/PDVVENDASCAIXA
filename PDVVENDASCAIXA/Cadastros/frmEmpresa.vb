@@ -32,38 +32,40 @@ Public Class frmEmpresa
     End Sub
 
     Private Sub FormatarDG()
-        dg.Columns(0).Visible = False
-        dg.Columns(3).Visible = False
-        dg.Columns(4).Visible = False
-        dg.Columns(5).Visible = False
-        dg.Columns(6).Visible = False
-        dg.Columns(7).Visible = False
-        dg.Columns(8).Visible = False
-        dg.Columns(9).Visible = False
-        dg.Columns(10).Visible = False
-        dg.Columns(11).Visible = False
-        dg.Columns(12).Visible = False
-        dg.Columns(13).Visible = False
-        dg.Columns(14).Visible = False
 
-        dg.Columns(1).HeaderText = "CNPJ"
-        dg.Columns(2).HeaderText = "Nome da Empresa"
-        dg.Columns(3).HeaderText = "Fantasia"
-        dg.Columns(4).HeaderText = "Endereço"
-        dg.Columns(5).HeaderText = "N°"
-        dg.Columns(6).HeaderText = "Compl."
-        dg.Columns(7).HeaderText = "Bairro"
-        dg.Columns(8).HeaderText = "Cidade"
-        dg.Columns(9).HeaderText = "UF"
-        dg.Columns(10).HeaderText = "Cep"
-        dg.Columns(11).HeaderText = "Telefone"
-        dg.Columns(12).HeaderText = "Celular"
-        dg.Columns(13).HeaderText = "Email"
-        dg.Columns(14).HeaderText = "Dt. Cadastro"
+        With dg
+            .Columns(0).Visible = False
+            .Columns(3).Visible = False
+            .Columns(4).Visible = False
+            .Columns(5).Visible = False
+            .Columns(6).Visible = False
+            .Columns(7).Visible = False
+            .Columns(8).Visible = False
+            .Columns(9).Visible = False
+            .Columns(10).Visible = False
+            .Columns(11).Visible = False
+            ' .Columns(12).Visible = False
+            ' .Columns(13).Visible = False
+            .Columns(14).Visible = False
 
-        dg.Columns(1).Width = 140
-        dg.Columns(2).Width = 350
+            .Columns(1).HeaderText = "CNPJ"
+            .Columns(2).HeaderText = "Nome da Empresa"
+            .Columns(3).HeaderText = "Fantasia"
+            .Columns(4).HeaderText = "Endereço"
+            .Columns(5).HeaderText = "N°"
+            .Columns(6).HeaderText = "Compl."
+            .Columns(7).HeaderText = "Bairro"
+            .Columns(8).HeaderText = "Cidade"
+            .Columns(9).HeaderText = "UF"
+            .Columns(10).HeaderText = "Cep"
+            .Columns(11).HeaderText = "Telefone"
+            .Columns(12).HeaderText = "Celular"
+            .Columns(13).HeaderText = "Email"
+            .Columns(14).HeaderText = "Dt. Cadastro"
 
+            .Columns(1).Width = 140
+            .Columns(2).Width = 350
+        End With
 
     End Sub
 

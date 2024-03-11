@@ -40,12 +40,11 @@ Public Class frmCargos
     End Sub
 
     Private Sub FormatarDG()
-        dgCargos.Columns(0).Visible = False
-
-        dgCargos.Columns(1).HeaderText = "Cargos"
-
-        dgCargos.Columns(1).Width = 150
-
+        With dgCargos
+            .Columns(0).Visible = False
+            .Columns(1).HeaderText = "Cargos"
+            .Columns(1).Width = 150
+        End With
     End Sub
 
     Private Sub btNovo_Click(sender As Object, e As EventArgs) Handles btNovo.Click
