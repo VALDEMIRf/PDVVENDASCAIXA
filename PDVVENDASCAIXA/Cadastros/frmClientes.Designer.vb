@@ -125,7 +125,7 @@ Partial Class frmClientes
         Me.txtCNPJ = New System.Windows.Forms.MaskedTextBox()
         Me.Label18 = New System.Windows.Forms.Label()
         Me.lblCodigo = New System.Windows.Forms.Label()
-        Me.lblSair = New System.Windows.Forms.Label()
+        Me.btSair = New System.Windows.Forms.Button()
         Me.TabControl1.SuspendLayout()
         Me.Cadastro.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -139,7 +139,7 @@ Partial Class frmClientes
         '
         Me.TabControl1.Controls.Add(Me.Cadastro)
         Me.TabControl1.Controls.Add(Me.PessoaJuridica)
-        Me.TabControl1.Location = New System.Drawing.Point(5, 39)
+        Me.TabControl1.Location = New System.Drawing.Point(6, 42)
         Me.TabControl1.Margin = New System.Windows.Forms.Padding(4)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
@@ -148,7 +148,7 @@ Partial Class frmClientes
         '
         'Cadastro
         '
-        Me.Cadastro.BackColor = System.Drawing.Color.Teal
+        Me.Cadastro.BackColor = System.Drawing.Color.SteelBlue
         Me.Cadastro.Controls.Add(Me.Label7)
         Me.Cadastro.Controls.Add(Me.lblTotal)
         Me.Cadastro.Controls.Add(Me.GroupBox1)
@@ -810,7 +810,7 @@ Partial Class frmClientes
         '
         'PessoaJuridica
         '
-        Me.PessoaJuridica.BackColor = System.Drawing.Color.Teal
+        Me.PessoaJuridica.BackColor = System.Drawing.Color.SteelBlue
         Me.PessoaJuridica.Controls.Add(Me.Label33)
         Me.PessoaJuridica.Controls.Add(Me.lblTotalPJ)
         Me.PessoaJuridica.Controls.Add(Me.Label27)
@@ -1394,7 +1394,7 @@ Partial Class frmClientes
         Me.Label18.AutoSize = True
         Me.Label18.Font = New System.Drawing.Font("Arial", 22.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label18.ForeColor = System.Drawing.Color.White
-        Me.Label18.Location = New System.Drawing.Point(284, 5)
+        Me.Label18.Location = New System.Drawing.Point(205, 5)
         Me.Label18.Name = "Label18"
         Me.Label18.Size = New System.Drawing.Size(486, 35)
         Me.Label18.TabIndex = 128
@@ -1404,38 +1404,49 @@ Partial Class frmClientes
         '
         Me.lblCodigo.AutoSize = True
         Me.lblCodigo.ForeColor = System.Drawing.Color.White
-        Me.lblCodigo.Location = New System.Drawing.Point(838, 23)
+        Me.lblCodigo.Location = New System.Drawing.Point(772, 40)
         Me.lblCodigo.Name = "lblCodigo"
         Me.lblCodigo.Size = New System.Drawing.Size(13, 17)
         Me.lblCodigo.TabIndex = 324
         Me.lblCodigo.Text = "-"
         Me.lblCodigo.Visible = False
         '
-        'lblSair
+        'btSair
         '
-        Me.lblSair.AutoSize = True
-        Me.lblSair.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.lblSair.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblSair.ForeColor = System.Drawing.Color.White
-        Me.lblSair.Location = New System.Drawing.Point(12, 5)
-        Me.lblSair.Name = "lblSair"
-        Me.lblSair.Size = New System.Drawing.Size(34, 18)
-        Me.lblSair.TabIndex = 325
-        Me.lblSair.Text = "Sair"
+        Me.btSair.BackColor = System.Drawing.Color.Transparent
+        Me.btSair.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btSair.Enabled = False
+        Me.btSair.FlatAppearance.BorderSize = 0
+        Me.btSair.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Azure
+        Me.btSair.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
+        Me.btSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btSair.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btSair.ForeColor = System.Drawing.Color.White
+        Me.btSair.Image = CType(resources.GetObject("btSair.Image"), System.Drawing.Image)
+        Me.btSair.Location = New System.Drawing.Point(827, 14)
+        Me.btSair.Margin = New System.Windows.Forms.Padding(5)
+        Me.btSair.Name = "btSair"
+        Me.btSair.Size = New System.Drawing.Size(65, 34)
+        Me.btSair.TabIndex = 325
+        Me.btSair.Text = "Sair"
+        Me.btSair.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btSair.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btSair.UseVisualStyleBackColor = False
         '
         'frmClientes
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.Teal
+        Me.BackColor = System.Drawing.Color.SteelBlue
         Me.ClientSize = New System.Drawing.Size(916, 557)
-        Me.Controls.Add(Me.lblSair)
+        Me.Controls.Add(Me.btSair)
         Me.Controls.Add(Me.lblCodigo)
         Me.Controls.Add(Me.Label18)
         Me.Controls.Add(Me.TabControl1)
         Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.KeyPreview = True
         Me.Margin = New System.Windows.Forms.Padding(4)
         Me.MaximizeBox = False
         Me.MinimizeBox = False
@@ -1556,9 +1567,9 @@ Partial Class frmClientes
     Friend WithEvents rbNomePJ As RadioButton
     Friend WithEvents txtBuscarCNPJ As MaskedTextBox
     Friend WithEvents dgPJ As DataGridView
-    Friend WithEvents lblSair As Label
     Friend WithEvents Label27 As Label
     Friend WithEvents txtObsPj As TextBox
     Friend WithEvents Label33 As Label
     Friend WithEvents lblTotalPJ As Label
+    Friend WithEvents btSair As Button
 End Class

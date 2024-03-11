@@ -167,7 +167,7 @@ Partial Class frmProdutoConsultaSimples
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 18.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.Teal
+        Me.BackColor = System.Drawing.Color.SteelBlue
         Me.ClientSize = New System.Drawing.Size(445, 255)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.btFechar)

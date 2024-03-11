@@ -87,6 +87,8 @@ Partial Class frmFuncionarios
         Me.pbImagem = New System.Windows.Forms.PictureBox()
         Me.btImagem = New System.Windows.Forms.Button()
         Me.Consulta = New System.Windows.Forms.TabPage()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.lblTotal = New System.Windows.Forms.Label()
         Me.dg = New System.Windows.Forms.DataGridView()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.rbCPF = New System.Windows.Forms.RadioButton()
@@ -94,8 +96,6 @@ Partial Class frmFuncionarios
         Me.txtBuscar = New System.Windows.Forms.TextBox()
         Me.rbNome = New System.Windows.Forms.RadioButton()
         Me.txtBuscarCPF = New System.Windows.Forms.MaskedTextBox()
-        Me.Label11 = New System.Windows.Forms.Label()
-        Me.lblTotal = New System.Windows.Forms.Label()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.btSair = New System.Windows.Forms.Button()
         Me.btExcluir = New System.Windows.Forms.Button()
@@ -129,7 +129,7 @@ Partial Class frmFuncionarios
         '
         'Cadastro
         '
-        Me.Cadastro.BackColor = System.Drawing.Color.Teal
+        Me.Cadastro.BackColor = System.Drawing.Color.SteelBlue
         Me.Cadastro.Controls.Add(Me.GroupBox6)
         Me.Cadastro.Controls.Add(Me.GroupBox4)
         Me.Cadastro.Controls.Add(Me.GroupBox2)
@@ -790,7 +790,7 @@ Partial Class frmFuncionarios
         '
         'Consulta
         '
-        Me.Consulta.BackColor = System.Drawing.Color.Teal
+        Me.Consulta.BackColor = System.Drawing.Color.SteelBlue
         Me.Consulta.Controls.Add(Me.Label11)
         Me.Consulta.Controls.Add(Me.lblTotal)
         Me.Consulta.Controls.Add(Me.dg)
@@ -801,6 +801,30 @@ Partial Class frmFuncionarios
         Me.Consulta.Size = New System.Drawing.Size(903, 394)
         Me.Consulta.TabIndex = 1
         Me.Consulta.Text = "Consulta"
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label11.ForeColor = System.Drawing.Color.White
+        Me.Label11.Location = New System.Drawing.Point(809, 362)
+        Me.Label11.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(45, 18)
+        Me.Label11.TabIndex = 112
+        Me.Label11.Text = "Total:"
+        '
+        'lblTotal
+        '
+        Me.lblTotal.AutoSize = True
+        Me.lblTotal.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTotal.ForeColor = System.Drawing.Color.White
+        Me.lblTotal.Location = New System.Drawing.Point(858, 361)
+        Me.lblTotal.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblTotal.Name = "lblTotal"
+        Me.lblTotal.Size = New System.Drawing.Size(13, 18)
+        Me.lblTotal.TabIndex = 111
+        Me.lblTotal.Text = "-"
         '
         'dg
         '
@@ -884,30 +908,6 @@ Partial Class frmFuncionarios
         Me.txtBuscarCPF.Name = "txtBuscarCPF"
         Me.txtBuscarCPF.Size = New System.Drawing.Size(171, 23)
         Me.txtBuscarCPF.TabIndex = 30
-        '
-        'Label11
-        '
-        Me.Label11.AutoSize = True
-        Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.ForeColor = System.Drawing.Color.White
-        Me.Label11.Location = New System.Drawing.Point(809, 362)
-        Me.Label11.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(45, 18)
-        Me.Label11.TabIndex = 112
-        Me.Label11.Text = "Total:"
-        '
-        'lblTotal
-        '
-        Me.lblTotal.AutoSize = True
-        Me.lblTotal.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblTotal.ForeColor = System.Drawing.Color.White
-        Me.lblTotal.Location = New System.Drawing.Point(858, 361)
-        Me.lblTotal.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.lblTotal.Name = "lblTotal"
-        Me.lblTotal.Size = New System.Drawing.Size(13, 18)
-        Me.lblTotal.TabIndex = 111
-        Me.lblTotal.Text = "-"
         '
         'GroupBox3
         '
@@ -1005,7 +1005,7 @@ Partial Class frmFuncionarios
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.Teal
+        Me.BackColor = System.Drawing.Color.SteelBlue
         Me.ClientSize = New System.Drawing.Size(930, 518)
         Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.TabControl1)

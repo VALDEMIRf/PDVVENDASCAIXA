@@ -55,6 +55,7 @@ Partial Class frmVendas
         Me.txtValorRecebido = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.txtNomeProd = New System.Windows.Forms.TextBox()
         CType(Me.dg, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pbImagem, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -313,10 +314,10 @@ Partial Class frmVendas
         'txtCodBarras
         '
         Me.txtCodBarras.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.txtCodBarras.Font = New System.Drawing.Font("Microsoft Sans Serif", 25.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtCodBarras.Location = New System.Drawing.Point(448, 75)
+        Me.txtCodBarras.Font = New System.Drawing.Font("Microsoft Sans Serif", 30.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtCodBarras.Location = New System.Drawing.Point(448, 71)
         Me.txtCodBarras.Name = "txtCodBarras"
-        Me.txtCodBarras.Size = New System.Drawing.Size(461, 38)
+        Me.txtCodBarras.Size = New System.Drawing.Size(461, 46)
         Me.txtCodBarras.TabIndex = 1
         '
         'pbImagem
@@ -439,6 +440,16 @@ Partial Class frmVendas
         Me.Label2.TabIndex = 237
         Me.Label2.Text = "R$"
         '
+        'txtNomeProd
+        '
+        Me.txtNomeProd.Font = New System.Drawing.Font("Arial", 30.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte), True)
+        Me.txtNomeProd.Location = New System.Drawing.Point(442, 141)
+        Me.txtNomeProd.Multiline = True
+        Me.txtNomeProd.Name = "txtNomeProd"
+        Me.txtNomeProd.Size = New System.Drawing.Size(467, 68)
+        Me.txtNomeProd.TabIndex = 238
+        Me.txtNomeProd.Text = "CAIXA DISPONÍVEL"
+        '
         'frmVendas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -446,6 +457,7 @@ Partial Class frmVendas
         Me.BackColor = System.Drawing.Color.White
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.ClientSize = New System.Drawing.Size(1186, 584)
+        Me.Controls.Add(Me.txtNomeProd)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.txtValorRecebido)
@@ -480,6 +492,7 @@ Partial Class frmVendas
         Me.ForeColor = System.Drawing.Color.Black
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.KeyPreview = True
         Me.Margin = New System.Windows.Forms.Padding(4)
         Me.MaximizeBox = False
         Me.MinimizeBox = False
@@ -523,4 +536,5 @@ Partial Class frmVendas
     Friend WithEvents txtValorRecebido As TextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
+    Friend WithEvents txtNomeProd As TextBox
 End Class

@@ -111,7 +111,7 @@ Partial Class frmServicos
         '
         'Cadastro
         '
-        Me.Cadastro.BackColor = System.Drawing.Color.Teal
+        Me.Cadastro.BackColor = System.Drawing.Color.SteelBlue
         Me.Cadastro.Controls.Add(Me.mktDtEntrada)
         Me.Cadastro.Controls.Add(Me.Label13)
         Me.Cadastro.Controls.Add(Me.GroupBox3)
@@ -647,7 +647,7 @@ Partial Class frmServicos
         '
         'Consulta
         '
-        Me.Consulta.BackColor = System.Drawing.Color.Teal
+        Me.Consulta.BackColor = System.Drawing.Color.SteelBlue
         Me.Consulta.Controls.Add(Me.txtNumeroOrdem)
         Me.Consulta.Controls.Add(Me.rbNumeroServico)
         Me.Consulta.Controls.Add(Me.txtBuscar)
@@ -904,7 +904,7 @@ Partial Class frmServicos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.Teal
+        Me.BackColor = System.Drawing.Color.SteelBlue
         Me.ClientSize = New System.Drawing.Size(1030, 517)
         Me.Controls.Add(Me.GroupBox5)
         Me.Controls.Add(Me.TabControl1)

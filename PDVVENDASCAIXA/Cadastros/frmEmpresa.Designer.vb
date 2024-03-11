@@ -78,7 +78,7 @@ Partial Class frmEmpresa
         Me.dg.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dg.GridColor = System.Drawing.SystemColors.HotTrack
         Me.dg.Location = New System.Drawing.Point(6, 366)
-        Me.dg.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
+        Me.dg.Margin = New System.Windows.Forms.Padding(5)
         Me.dg.Name = "dg"
         Me.dg.ReadOnly = True
         Me.dg.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
@@ -88,7 +88,7 @@ Partial Class frmEmpresa
         'txtCEP
         '
         Me.txtCEP.Location = New System.Drawing.Point(305, 268)
-        Me.txtCEP.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtCEP.Margin = New System.Windows.Forms.Padding(4)
         Me.txtCEP.Mask = "00000-999"
         Me.txtCEP.Name = "txtCEP"
         Me.txtCEP.Size = New System.Drawing.Size(80, 23)
@@ -97,7 +97,7 @@ Partial Class frmEmpresa
         'txtTelResidencial
         '
         Me.txtTelResidencial.Location = New System.Drawing.Point(86, 299)
-        Me.txtTelResidencial.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtTelResidencial.Margin = New System.Windows.Forms.Padding(4)
         Me.txtTelResidencial.Mask = "(99) 0000-0000"
         Me.txtTelResidencial.Name = "txtTelResidencial"
         Me.txtTelResidencial.Size = New System.Drawing.Size(104, 23)
@@ -106,7 +106,7 @@ Partial Class frmEmpresa
         'txtCelular
         '
         Me.txtCelular.Location = New System.Drawing.Point(264, 299)
-        Me.txtCelular.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtCelular.Margin = New System.Windows.Forms.Padding(4)
         Me.txtCelular.Mask = "(99) 00000-0000"
         Me.txtCelular.Name = "txtCelular"
         Me.txtCelular.Size = New System.Drawing.Size(121, 23)
@@ -437,7 +437,7 @@ Partial Class frmEmpresa
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.Teal
+        Me.BackColor = System.Drawing.Color.SteelBlue
         Me.ClientSize = New System.Drawing.Size(533, 457)
         Me.Controls.Add(Me.btSair)
         Me.Controls.Add(Me.btnSalvar)
@@ -473,7 +473,7 @@ Partial Class frmEmpresa
         Me.Controls.Add(Me.Label28)
         Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "frmEmpresa"

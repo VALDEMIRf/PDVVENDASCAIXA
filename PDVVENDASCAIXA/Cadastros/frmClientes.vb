@@ -176,7 +176,9 @@ Public Class frmClientes
         btnSalvar.Enabled = True
         btnEditar.Enabled = False
         btnExcluir.Enabled = False
+
     End Sub
+
 
     Private Sub btnSalvar_Click(sender As Object, e As EventArgs) Handles btnSalvar.Click
         Dim cmd As SqlCommand
@@ -452,7 +454,7 @@ Public Class frmClientes
         txtBuscarCPF.Focus()
     End Sub
 
-    Private Sub lblSair_Click(sender As Object, e As EventArgs) Handles lblSair.Click
+    Private Sub lblSair_Click(sender As Object, e As EventArgs)
         Me.Close()
     End Sub
 
@@ -726,5 +728,45 @@ Public Class frmClientes
                 fechar()
             End Try
         End If
+    End Sub
+
+    Private Sub frmClientes_KeyDown(sender As Object, e As KeyEventArgs) Handles MyBase.KeyDown
+        'If e.KeyCode = Keys.F1 Then
+        '    botaoNovo()
+        'End If
+        'If e.KeyCode = Keys.F2 Then
+        '    botaoBuscarCep()
+        'End If
+
+        Select Case e.KeyCode
+            Case Keys.F1
+                btnNovo.PerformClick()
+            Case Keys.F2
+                btBuscarCEP.PerformClick()
+            Case Keys.F3
+                btnEditar.PerformClick()
+            Case Keys.F4
+                btnExcluir.PerformClick()
+            Case Keys.F5
+                btBuscarCNPJ.PerformClick()
+            Case Keys.F6
+                btNovoPJ.PerformClick()
+            Case Keys.F7
+                btSalvarPJ.PerformClick()
+            Case Keys.F8
+                btEscluirPJ.PerformClick()
+
+            Case Keys.Escape
+                Me.Close()
+
+        End Select
+    End Sub
+
+    Private Sub btSair_Click(sender As Object, e As EventArgs)
+        Me.Close()
+    End Sub
+
+    Private Sub btSair_Click_1(sender As Object, e As EventArgs) Handles btSair.Click
+        Me.Close()
     End Sub
 End Class

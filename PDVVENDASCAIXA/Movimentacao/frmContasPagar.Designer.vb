@@ -23,175 +23,41 @@ Partial Class frmContasPagar
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmContasPagar))
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.Label9 = New System.Windows.Forms.Label()
-        Me.txtNDoc = New System.Windows.Forms.TextBox()
-        Me.txtDescricao = New System.Windows.Forms.TextBox()
-        Me.txtValor = New System.Windows.Forms.TextBox()
-        Me.txtEmpresa = New System.Windows.Forms.TextBox()
-        Me.txtReferencia = New System.Windows.Forms.MaskedTextBox()
-        Me.txtVencimento = New System.Windows.Forms.MaskedTextBox()
-        Me.txtDtPagto = New System.Windows.Forms.MaskedTextBox()
-        Me.txtSituacao = New System.Windows.Forms.ComboBox()
         Me.dgContasPagar = New System.Windows.Forms.DataGridView()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.lblTotal = New System.Windows.Forms.Label()
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
-        Me.btNovo = New System.Windows.Forms.Button()
         Me.btSalvar = New System.Windows.Forms.Button()
         Me.btnEditar = New System.Windows.Forms.Button()
         Me.btSair = New System.Windows.Forms.Button()
         Me.btnExcluir = New System.Windows.Forms.Button()
+        Me.btNovo = New System.Windows.Forms.Button()
         Me.lblCodigo = New System.Windows.Forms.Label()
+        Me.txtTotalContasPagar = New System.Windows.Forms.TextBox()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.txtTotalContasNaoPagas = New System.Windows.Forms.TextBox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.txtTotalContasPagas = New System.Windows.Forms.TextBox()
+        Me.txtData = New System.Windows.Forms.TextBox()
+        Me.txtCodigo = New System.Windows.Forms.TextBox()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.txtSituacao = New System.Windows.Forms.ComboBox()
+        Me.txtVencimento = New System.Windows.Forms.MaskedTextBox()
+        Me.txtEmpresa = New System.Windows.Forms.TextBox()
+        Me.txtValor = New System.Windows.Forms.TextBox()
+        Me.txtDescricao = New System.Windows.Forms.TextBox()
+        Me.txtNDoc = New System.Windows.Forms.TextBox()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.Label12 = New System.Windows.Forms.Label()
         CType(Me.dgContasPagar, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox5.SuspendLayout()
         Me.SuspendLayout()
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(6, 12)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(111, 18)
-        Me.Label1.TabIndex = 0
-        Me.Label1.Text = "N° Documento:"
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(331, 13)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(80, 18)
-        Me.Label2.TabIndex = 1
-        Me.Label2.Text = "Descrição:"
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(737, 11)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(46, 18)
-        Me.Label3.TabIndex = 2
-        Me.Label3.Text = "Valor:"
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(41, 42)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(72, 18)
-        Me.Label4.TabIndex = 3
-        Me.Label4.Text = "Empresa:"
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(907, 9)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(83, 18)
-        Me.Label5.TabIndex = 4
-        Me.Label5.Text = "Referência:"
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(489, 43)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(90, 18)
-        Me.Label6.TabIndex = 5
-        Me.Label6.Text = "Vencimento:"
-        '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(688, 42)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(123, 18)
-        Me.Label8.TabIndex = 7
-        Me.Label8.Text = "Data Pagamento:"
-        '
-        'Label9
-        '
-        Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(934, 42)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(70, 18)
-        Me.Label9.TabIndex = 8
-        Me.Label9.Text = "Situação:"
-        '
-        'txtNDoc
-        '
-        Me.txtNDoc.Enabled = False
-        Me.txtNDoc.Location = New System.Drawing.Point(119, 9)
-        Me.txtNDoc.Name = "txtNDoc"
-        Me.txtNDoc.Size = New System.Drawing.Size(206, 24)
-        Me.txtNDoc.TabIndex = 15
-        '
-        'txtDescricao
-        '
-        Me.txtDescricao.Enabled = False
-        Me.txtDescricao.Location = New System.Drawing.Point(414, 9)
-        Me.txtDescricao.Name = "txtDescricao"
-        Me.txtDescricao.Size = New System.Drawing.Size(310, 24)
-        Me.txtDescricao.TabIndex = 16
-        '
-        'txtValor
-        '
-        Me.txtValor.Enabled = False
-        Me.txtValor.Location = New System.Drawing.Point(789, 7)
-        Me.txtValor.Name = "txtValor"
-        Me.txtValor.Size = New System.Drawing.Size(100, 24)
-        Me.txtValor.TabIndex = 17
-        '
-        'txtEmpresa
-        '
-        Me.txtEmpresa.Enabled = False
-        Me.txtEmpresa.Location = New System.Drawing.Point(119, 39)
-        Me.txtEmpresa.Name = "txtEmpresa"
-        Me.txtEmpresa.Size = New System.Drawing.Size(359, 24)
-        Me.txtEmpresa.TabIndex = 18
-        '
-        'txtReferencia
-        '
-        Me.txtReferencia.Location = New System.Drawing.Point(996, 6)
-        Me.txtReferencia.Mask = "00/00/0000"
-        Me.txtReferencia.Name = "txtReferencia"
-        Me.txtReferencia.Size = New System.Drawing.Size(87, 24)
-        Me.txtReferencia.TabIndex = 20
-        Me.txtReferencia.ValidatingType = GetType(Date)
-        '
-        'txtVencimento
-        '
-        Me.txtVencimento.Location = New System.Drawing.Point(583, 39)
-        Me.txtVencimento.Mask = "00/00/0000"
-        Me.txtVencimento.Name = "txtVencimento"
-        Me.txtVencimento.Size = New System.Drawing.Size(87, 24)
-        Me.txtVencimento.TabIndex = 21
-        Me.txtVencimento.ValidatingType = GetType(Date)
-        '
-        'txtDtPagto
-        '
-        Me.txtDtPagto.Location = New System.Drawing.Point(817, 39)
-        Me.txtDtPagto.Mask = "00/00/0000"
-        Me.txtDtPagto.Name = "txtDtPagto"
-        Me.txtDtPagto.Size = New System.Drawing.Size(87, 24)
-        Me.txtDtPagto.TabIndex = 23
-        Me.txtDtPagto.ValidatingType = GetType(Date)
-        '
-        'txtSituacao
-        '
-        Me.txtSituacao.FormattingEnabled = True
-        Me.txtSituacao.Items.AddRange(New Object() {"Sim", "Não"})
-        Me.txtSituacao.Location = New System.Drawing.Point(1006, 37)
-        Me.txtSituacao.Name = "txtSituacao"
-        Me.txtSituacao.Size = New System.Drawing.Size(77, 26)
-        Me.txtSituacao.TabIndex = 24
         '
         'dgContasPagar
         '
@@ -201,12 +67,12 @@ Partial Class frmContasPagar
         Me.dgContasPagar.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.dgContasPagar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgContasPagar.GridColor = System.Drawing.Color.DarkBlue
-        Me.dgContasPagar.Location = New System.Drawing.Point(9, 76)
+        Me.dgContasPagar.Location = New System.Drawing.Point(4, 133)
         Me.dgContasPagar.Margin = New System.Windows.Forms.Padding(12, 10, 12, 10)
         Me.dgContasPagar.Name = "dgContasPagar"
         Me.dgContasPagar.ReadOnly = True
         Me.dgContasPagar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgContasPagar.Size = New System.Drawing.Size(1096, 375)
+        Me.dgContasPagar.Size = New System.Drawing.Size(985, 306)
         Me.dgContasPagar.TabIndex = 190
         '
         'Label10
@@ -215,12 +81,12 @@ Partial Class frmContasPagar
         Me.Label10.BackColor = System.Drawing.Color.Transparent
         Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label10.ForeColor = System.Drawing.Color.White
-        Me.Label10.Location = New System.Drawing.Point(918, 461)
+        Me.Label10.Location = New System.Drawing.Point(814, 469)
         Me.Label10.Margin = New System.Windows.Forms.Padding(8, 0, 8, 0)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(48, 20)
+        Me.Label10.Size = New System.Drawing.Size(97, 20)
         Me.Label10.TabIndex = 192
-        Me.Label10.Text = "Total:"
+        Me.Label10.Text = "Nº de linhas:"
         '
         'lblTotal
         '
@@ -228,7 +94,7 @@ Partial Class frmContasPagar
         Me.lblTotal.BackColor = System.Drawing.Color.Transparent
         Me.lblTotal.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblTotal.ForeColor = System.Drawing.Color.White
-        Me.lblTotal.Location = New System.Drawing.Point(980, 461)
+        Me.lblTotal.Location = New System.Drawing.Point(932, 469)
         Me.lblTotal.Margin = New System.Windows.Forms.Padding(8, 0, 8, 0)
         Me.lblTotal.Name = "lblTotal"
         Me.lblTotal.Size = New System.Drawing.Size(14, 20)
@@ -237,38 +103,18 @@ Partial Class frmContasPagar
         '
         'GroupBox5
         '
-        Me.GroupBox5.Controls.Add(Me.btNovo)
         Me.GroupBox5.Controls.Add(Me.btSalvar)
         Me.GroupBox5.Controls.Add(Me.btnEditar)
         Me.GroupBox5.Controls.Add(Me.btSair)
         Me.GroupBox5.Controls.Add(Me.btnExcluir)
-        Me.GroupBox5.Location = New System.Drawing.Point(9, 456)
+        Me.GroupBox5.Controls.Add(Me.btNovo)
+        Me.GroupBox5.Location = New System.Drawing.Point(11, 513)
         Me.GroupBox5.Margin = New System.Windows.Forms.Padding(4)
         Me.GroupBox5.Name = "GroupBox5"
         Me.GroupBox5.Padding = New System.Windows.Forms.Padding(4)
-        Me.GroupBox5.Size = New System.Drawing.Size(547, 60)
+        Me.GroupBox5.Size = New System.Drawing.Size(476, 60)
         Me.GroupBox5.TabIndex = 194
         Me.GroupBox5.TabStop = False
-        '
-        'btNovo
-        '
-        Me.btNovo.BackColor = System.Drawing.Color.Transparent
-        Me.btNovo.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btNovo.FlatAppearance.BorderSize = 0
-        Me.btNovo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSteelBlue
-        Me.btNovo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSkyBlue
-        Me.btNovo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btNovo.ForeColor = System.Drawing.Color.White
-        Me.btNovo.Image = CType(resources.GetObject("btNovo.Image"), System.Drawing.Image)
-        Me.btNovo.Location = New System.Drawing.Point(9, 15)
-        Me.btNovo.Margin = New System.Windows.Forms.Padding(5)
-        Me.btNovo.Name = "btNovo"
-        Me.btNovo.Size = New System.Drawing.Size(87, 37)
-        Me.btNovo.TabIndex = 17
-        Me.btNovo.Text = "Novo"
-        Me.btNovo.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.btNovo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btNovo.UseVisualStyleBackColor = False
         '
         'btSalvar
         '
@@ -280,7 +126,7 @@ Partial Class frmContasPagar
         Me.btSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btSalvar.ForeColor = System.Drawing.Color.White
         Me.btSalvar.Image = CType(resources.GetObject("btSalvar.Image"), System.Drawing.Image)
-        Me.btSalvar.Location = New System.Drawing.Point(100, 15)
+        Me.btSalvar.Location = New System.Drawing.Point(96, 15)
         Me.btSalvar.Margin = New System.Windows.Forms.Padding(5)
         Me.btSalvar.Name = "btSalvar"
         Me.btSalvar.Size = New System.Drawing.Size(89, 35)
@@ -300,7 +146,7 @@ Partial Class frmContasPagar
         Me.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnEditar.ForeColor = System.Drawing.Color.White
         Me.btnEditar.Image = CType(resources.GetObject("btnEditar.Image"), System.Drawing.Image)
-        Me.btnEditar.Location = New System.Drawing.Point(207, 15)
+        Me.btnEditar.Location = New System.Drawing.Point(190, 15)
         Me.btnEditar.Margin = New System.Windows.Forms.Padding(5)
         Me.btnEditar.Name = "btnEditar"
         Me.btnEditar.Size = New System.Drawing.Size(90, 35)
@@ -320,7 +166,7 @@ Partial Class frmContasPagar
         Me.btSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btSair.ForeColor = System.Drawing.Color.White
         Me.btSair.Image = CType(resources.GetObject("btSair.Image"), System.Drawing.Image)
-        Me.btSair.Location = New System.Drawing.Point(453, 15)
+        Me.btSair.Location = New System.Drawing.Point(374, 15)
         Me.btSair.Margin = New System.Windows.Forms.Padding(5)
         Me.btSair.Name = "btSair"
         Me.btSair.Size = New System.Drawing.Size(85, 35)
@@ -340,54 +186,319 @@ Partial Class frmContasPagar
         Me.btnExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnExcluir.ForeColor = System.Drawing.Color.White
         Me.btnExcluir.Image = CType(resources.GetObject("btnExcluir.Image"), System.Drawing.Image)
-        Me.btnExcluir.Location = New System.Drawing.Point(307, 15)
+        Me.btnExcluir.Location = New System.Drawing.Point(276, 12)
         Me.btnExcluir.Margin = New System.Windows.Forms.Padding(5)
         Me.btnExcluir.Name = "btnExcluir"
-        Me.btnExcluir.Size = New System.Drawing.Size(108, 35)
+        Me.btnExcluir.Size = New System.Drawing.Size(101, 45)
         Me.btnExcluir.TabIndex = 20
         Me.btnExcluir.Text = "Excluir"
         Me.btnExcluir.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btnExcluir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnExcluir.UseVisualStyleBackColor = False
         '
+        'btNovo
+        '
+        Me.btNovo.BackColor = System.Drawing.Color.Transparent
+        Me.btNovo.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btNovo.FlatAppearance.BorderSize = 0
+        Me.btNovo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSteelBlue
+        Me.btNovo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSkyBlue
+        Me.btNovo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btNovo.ForeColor = System.Drawing.Color.White
+        Me.btNovo.Image = CType(resources.GetObject("btNovo.Image"), System.Drawing.Image)
+        Me.btNovo.Location = New System.Drawing.Point(5, 15)
+        Me.btNovo.Margin = New System.Windows.Forms.Padding(5)
+        Me.btNovo.Name = "btNovo"
+        Me.btNovo.Size = New System.Drawing.Size(87, 37)
+        Me.btNovo.TabIndex = 17
+        Me.btNovo.Text = "Novo"
+        Me.btNovo.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btNovo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btNovo.UseVisualStyleBackColor = False
+        '
         'lblCodigo
         '
         Me.lblCodigo.AutoSize = True
-        Me.lblCodigo.Location = New System.Drawing.Point(6, 43)
+        Me.lblCodigo.Location = New System.Drawing.Point(1136, 6)
         Me.lblCodigo.Name = "lblCodigo"
         Me.lblCodigo.Size = New System.Drawing.Size(13, 18)
         Me.lblCodigo.TabIndex = 195
         Me.lblCodigo.Text = "-"
         '
+        'txtTotalContasPagar
+        '
+        Me.txtTotalContasPagar.BackColor = System.Drawing.Color.White
+        Me.txtTotalContasPagar.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtTotalContasPagar.ForeColor = System.Drawing.Color.DarkRed
+        Me.txtTotalContasPagar.Location = New System.Drawing.Point(419, 471)
+        Me.txtTotalContasPagar.Multiline = True
+        Me.txtTotalContasPagar.Name = "txtTotalContasPagar"
+        Me.txtTotalContasPagar.ReadOnly = True
+        Me.txtTotalContasPagar.Size = New System.Drawing.Size(193, 33)
+        Me.txtTotalContasPagar.TabIndex = 196
+        Me.txtTotalContasPagar.Text = "R$ 0,00"
+        Me.txtTotalContasPagar.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.BackColor = System.Drawing.Color.Transparent
+        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.ForeColor = System.Drawing.Color.White
+        Me.Label7.Location = New System.Drawing.Point(412, 448)
+        Me.Label7.Margin = New System.Windows.Forms.Padding(8, 0, 8, 0)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(181, 20)
+        Me.Label7.TabIndex = 197
+        Me.Label7.Text = "Total de contas a Pagar:"
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.BackColor = System.Drawing.Color.Transparent
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.White
+        Me.Label1.Location = New System.Drawing.Point(203, 449)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(8, 0, 8, 0)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(181, 20)
+        Me.Label1.TabIndex = 199
+        Me.Label1.Text = "Total Contas Não Pagas"
+        '
+        'txtTotalContasNaoPagas
+        '
+        Me.txtTotalContasNaoPagas.BackColor = System.Drawing.Color.White
+        Me.txtTotalContasNaoPagas.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtTotalContasNaoPagas.ForeColor = System.Drawing.Color.Green
+        Me.txtTotalContasNaoPagas.Location = New System.Drawing.Point(210, 472)
+        Me.txtTotalContasNaoPagas.Multiline = True
+        Me.txtTotalContasNaoPagas.Name = "txtTotalContasNaoPagas"
+        Me.txtTotalContasNaoPagas.ReadOnly = True
+        Me.txtTotalContasNaoPagas.Size = New System.Drawing.Size(193, 33)
+        Me.txtTotalContasNaoPagas.TabIndex = 198
+        Me.txtTotalContasNaoPagas.Text = "R$ 0,00"
+        Me.txtTotalContasNaoPagas.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.BackColor = System.Drawing.Color.Transparent
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.Color.White
+        Me.Label2.Location = New System.Drawing.Point(3, 448)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(8, 0, 8, 0)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(148, 20)
+        Me.Label2.TabIndex = 201
+        Me.Label2.Text = "Total Contas Pagas"
+        '
+        'txtTotalContasPagas
+        '
+        Me.txtTotalContasPagas.BackColor = System.Drawing.Color.White
+        Me.txtTotalContasPagas.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtTotalContasPagas.ForeColor = System.Drawing.Color.Blue
+        Me.txtTotalContasPagas.Location = New System.Drawing.Point(10, 471)
+        Me.txtTotalContasPagas.Multiline = True
+        Me.txtTotalContasPagas.Name = "txtTotalContasPagas"
+        Me.txtTotalContasPagas.ReadOnly = True
+        Me.txtTotalContasPagas.Size = New System.Drawing.Size(193, 33)
+        Me.txtTotalContasPagas.TabIndex = 200
+        Me.txtTotalContasPagas.Text = "R$ 0,00"
+        Me.txtTotalContasPagas.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'txtData
+        '
+        Me.txtData.Enabled = False
+        Me.txtData.Location = New System.Drawing.Point(889, 71)
+        Me.txtData.Name = "txtData"
+        Me.txtData.Size = New System.Drawing.Size(101, 24)
+        Me.txtData.TabIndex = 215
+        '
+        'txtCodigo
+        '
+        Me.txtCodigo.Enabled = False
+        Me.txtCodigo.Location = New System.Drawing.Point(936, 102)
+        Me.txtCodigo.Name = "txtCodigo"
+        Me.txtCodigo.ReadOnly = True
+        Me.txtCodigo.Size = New System.Drawing.Size(51, 24)
+        Me.txtCodigo.TabIndex = 214
+        Me.txtCodigo.Visible = False
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.Color.White
+        Me.Label3.Location = New System.Drawing.Point(5, 72)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(76, 20)
+        Me.Label3.TabIndex = 213
+        Me.Label3.Text = "N° Docto:"
+        '
+        'txtSituacao
+        '
+        Me.txtSituacao.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.txtSituacao.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.txtSituacao.FormattingEnabled = True
+        Me.txtSituacao.Items.AddRange(New Object() {"aberto", "pago", "baixada"})
+        Me.txtSituacao.Location = New System.Drawing.Point(687, 95)
+        Me.txtSituacao.Name = "txtSituacao"
+        Me.txtSituacao.Size = New System.Drawing.Size(87, 26)
+        Me.txtSituacao.TabIndex = 212
+        '
+        'txtVencimento
+        '
+        Me.txtVencimento.Location = New System.Drawing.Point(687, 69)
+        Me.txtVencimento.Mask = "00/00/0000"
+        Me.txtVencimento.Name = "txtVencimento"
+        Me.txtVencimento.Size = New System.Drawing.Size(87, 24)
+        Me.txtVencimento.TabIndex = 211
+        Me.txtVencimento.ValidatingType = GetType(Date)
+        '
+        'txtEmpresa
+        '
+        Me.txtEmpresa.Enabled = False
+        Me.txtEmpresa.Location = New System.Drawing.Point(303, 101)
+        Me.txtEmpresa.Name = "txtEmpresa"
+        Me.txtEmpresa.Size = New System.Drawing.Size(271, 24)
+        Me.txtEmpresa.TabIndex = 210
+        '
+        'txtValor
+        '
+        Me.txtValor.Enabled = False
+        Me.txtValor.Location = New System.Drawing.Point(84, 99)
+        Me.txtValor.Name = "txtValor"
+        Me.txtValor.Size = New System.Drawing.Size(100, 24)
+        Me.txtValor.TabIndex = 209
+        '
+        'txtDescricao
+        '
+        Me.txtDescricao.Enabled = False
+        Me.txtDescricao.Location = New System.Drawing.Point(303, 68)
+        Me.txtDescricao.Name = "txtDescricao"
+        Me.txtDescricao.Size = New System.Drawing.Size(271, 24)
+        Me.txtDescricao.TabIndex = 208
+        '
+        'txtNDoc
+        '
+        Me.txtNDoc.Enabled = False
+        Me.txtNDoc.Location = New System.Drawing.Point(84, 69)
+        Me.txtNDoc.Name = "txtNDoc"
+        Me.txtNDoc.Size = New System.Drawing.Size(125, 24)
+        Me.txtNDoc.TabIndex = 207
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.ForeColor = System.Drawing.Color.White
+        Me.Label9.Location = New System.Drawing.Point(585, 100)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(76, 20)
+        Me.Label9.TabIndex = 206
+        Me.Label9.Text = "Situação:"
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.ForeColor = System.Drawing.Color.White
+        Me.Label6.Location = New System.Drawing.Point(589, 74)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(98, 20)
+        Me.Label6.TabIndex = 205
+        Me.Label6.Text = "Vencimento:"
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.ForeColor = System.Drawing.Color.White
+        Me.Label4.Location = New System.Drawing.Point(222, 104)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(77, 20)
+        Me.Label4.TabIndex = 204
+        Me.Label4.Text = "Empresa:"
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.ForeColor = System.Drawing.Color.White
+        Me.Label5.Location = New System.Drawing.Point(31, 101)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(50, 20)
+        Me.Label5.TabIndex = 203
+        Me.Label5.Text = "Valor:"
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.ForeColor = System.Drawing.Color.White
+        Me.Label8.Location = New System.Drawing.Point(218, 71)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(84, 20)
+        Me.Label8.TabIndex = 202
+        Me.Label8.Text = "Descrição:"
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label11.ForeColor = System.Drawing.Color.White
+        Me.Label11.Location = New System.Drawing.Point(781, 73)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(102, 20)
+        Me.Label11.TabIndex = 216
+        Me.Label11.Text = "Dt Alteração:"
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.Font = New System.Drawing.Font("Constantia", 30.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label12.ForeColor = System.Drawing.Color.White
+        Me.Label12.Location = New System.Drawing.Point(278, 8)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(354, 49)
+        Me.Label12.TabIndex = 217
+        Me.Label12.Text = "CONTAS A PAGAR"
+        '
         'frmContasPagar
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 18.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.Teal
-        Me.ClientSize = New System.Drawing.Size(1110, 531)
-        Me.Controls.Add(Me.lblCodigo)
-        Me.Controls.Add(Me.GroupBox5)
-        Me.Controls.Add(Me.dgContasPagar)
-        Me.Controls.Add(Me.Label10)
-        Me.Controls.Add(Me.lblTotal)
+        Me.BackColor = System.Drawing.Color.SteelBlue
+        Me.ClientSize = New System.Drawing.Size(999, 577)
+        Me.Controls.Add(Me.Label12)
+        Me.Controls.Add(Me.Label11)
+        Me.Controls.Add(Me.txtData)
+        Me.Controls.Add(Me.txtCodigo)
+        Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.txtSituacao)
-        Me.Controls.Add(Me.txtDtPagto)
         Me.Controls.Add(Me.txtVencimento)
-        Me.Controls.Add(Me.txtReferencia)
         Me.Controls.Add(Me.txtEmpresa)
         Me.Controls.Add(Me.txtValor)
         Me.Controls.Add(Me.txtDescricao)
         Me.Controls.Add(Me.txtNDoc)
         Me.Controls.Add(Me.Label9)
-        Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.Label6)
-        Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.Label4)
-        Me.Controls.Add(Me.Label3)
+        Me.Controls.Add(Me.Label5)
+        Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.txtTotalContasPagas)
         Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.txtTotalContasNaoPagas)
+        Me.Controls.Add(Me.Label7)
+        Me.Controls.Add(Me.txtTotalContasPagar)
+        Me.Controls.Add(Me.lblCodigo)
+        Me.Controls.Add(Me.GroupBox5)
+        Me.Controls.Add(Me.dgContasPagar)
+        Me.Controls.Add(Me.Label10)
+        Me.Controls.Add(Me.lblTotal)
         Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ForeColor = System.Drawing.Color.White
+        Me.ForeColor = System.Drawing.Color.Black
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Margin = New System.Windows.Forms.Padding(4)
@@ -402,23 +513,6 @@ Partial Class frmContasPagar
         Me.PerformLayout()
 
     End Sub
-
-    Friend WithEvents Label1 As Label
-    Friend WithEvents Label2 As Label
-    Friend WithEvents Label3 As Label
-    Friend WithEvents Label4 As Label
-    Friend WithEvents Label5 As Label
-    Friend WithEvents Label6 As Label
-    Friend WithEvents Label8 As Label
-    Friend WithEvents Label9 As Label
-    Friend WithEvents txtNDoc As TextBox
-    Friend WithEvents txtDescricao As TextBox
-    Friend WithEvents txtValor As TextBox
-    Friend WithEvents txtEmpresa As TextBox
-    Friend WithEvents txtReferencia As MaskedTextBox
-    Friend WithEvents txtVencimento As MaskedTextBox
-    Friend WithEvents txtDtPagto As MaskedTextBox
-    Friend WithEvents txtSituacao As ComboBox
     Friend WithEvents dgContasPagar As DataGridView
     Friend WithEvents Label10 As Label
     Friend WithEvents lblTotal As Label
@@ -429,4 +523,26 @@ Partial Class frmContasPagar
     Friend WithEvents btSair As Button
     Friend WithEvents btnExcluir As Button
     Friend WithEvents lblCodigo As Label
+    Friend WithEvents txtTotalContasPagar As TextBox
+    Friend WithEvents Label7 As Label
+    Friend WithEvents Label1 As Label
+    Friend WithEvents txtTotalContasNaoPagas As TextBox
+    Friend WithEvents Label2 As Label
+    Friend WithEvents txtTotalContasPagas As TextBox
+    Friend WithEvents txtData As TextBox
+    Friend WithEvents txtCodigo As TextBox
+    Friend WithEvents Label3 As Label
+    Friend WithEvents txtSituacao As ComboBox
+    Friend WithEvents txtVencimento As MaskedTextBox
+    Friend WithEvents txtEmpresa As TextBox
+    Friend WithEvents txtValor As TextBox
+    Friend WithEvents txtDescricao As TextBox
+    Friend WithEvents txtNDoc As TextBox
+    Friend WithEvents Label9 As Label
+    Friend WithEvents Label6 As Label
+    Friend WithEvents Label4 As Label
+    Friend WithEvents Label5 As Label
+    Friend WithEvents Label8 As Label
+    Friend WithEvents Label11 As Label
+    Friend WithEvents Label12 As Label
 End Class

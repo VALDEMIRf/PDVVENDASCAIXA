@@ -206,17 +206,23 @@
     <Compile Include="Estoque\frmNivelBaixo.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Estoque\frmTesteValor.Designer.vb">
-      <DependentUpon>frmTesteValor.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Estoque\frmTesteValor.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="mdlFuncoesDiversas.vb" />
     <Compile Include="Movimentacao\frmContasPagar.Designer.vb">
       <DependentUpon>frmContasPagar.vb</DependentUpon>
     </Compile>
     <Compile Include="Movimentacao\frmContasPagar.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Movimentacao\frmContasReceber.Designer.vb">
+      <DependentUpon>frmContasReceber.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Movimentacao\frmContasReceber.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Movimentacao\frmGravaContasPagar.Designer.vb">
+      <DependentUpon>frmGravaContasPagar.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Movimentacao\frmGravaContasPagar.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Movimentacao\frmServicos.Designer.vb">
@@ -412,11 +418,14 @@
     <EmbeddedResource Include="Estoque\frmNivelBaixo.resx">
       <DependentUpon>frmNivelBaixo.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Estoque\frmTesteValor.resx">
-      <DependentUpon>frmTesteValor.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Movimentacao\frmContasPagar.resx">
       <DependentUpon>frmContasPagar.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Movimentacao\frmContasReceber.resx">
+      <DependentUpon>frmContasReceber.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Movimentacao\frmGravaContasPagar.resx">
+      <DependentUpon>frmGravaContasPagar.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Movimentacao\frmServicos.resx">
       <DependentUpon>frmServicos.vb</DependentUpon>
@@ -750,14 +759,24 @@
     <Content Include="backgrounds\TELA DE VENDA ALTERADA.jpg" />
     <Content Include="backgrounds\TELA PRINCIPAL MENU AJUSTADA.jpg" />
     <Content Include="box-sale.ico" />
+    <Content Include="icones\Aha-Soft-Business-Toolbar-Payment.ico" />
     <Content Include="icones\box-sale.ico" />
+    <Content Include="icones\dollar.ico" />
+    <Content Include="icones\Fatcow-Farm-Fresh-Coins-in-hand.ico" />
+    <Content Include="icones\Fatcow-Farm-Fresh-Company-generosity.ico" />
     <Content Include="imagens\3d bar chart.gif" />
+    <Content Include="imagens\Aha-Soft-Business-Toolbar-Payment.32.png" />
     <Content Include="imagens\Bagg-box.32.png" />
     <Content Include="imagens\Camera-32.png" />
     <Content Include="imagens\Close.32.png" />
     <Content Include="imagens\controle de estoque.png" />
     <Content Include="imagens\Delete.gif" />
+    <Content Include="imagens\Exit.png" />
+    <Content Include="imagens\Fatcow-Farm-Fresh-Company-generosity.32.png" />
+    <Content Include="imagens\Fatcow-Farm-Fresh-Mixer.32.png" />
+    <Content Include="imagens\Fatcow-Farm-Fresh-Send-receive-all-folders.32.png" />
     <Content Include="imagens\Filter.gif" />
+    <Content Include="imagens\Folder.png" />
     <Content Include="imagens\Home.gif" />
     <Content Include="imagens\icons8_money_100px.png" />
     <Content Include="imagens\Info.gif" />

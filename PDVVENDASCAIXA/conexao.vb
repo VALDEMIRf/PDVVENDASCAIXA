@@ -16,9 +16,10 @@ Module conexao
             End If
         End Sub
 
-        Public usuarioNome As String
-
+    Public usuarioNome As String
     Public empresaNome As String
+    Public intPergunta As Integer
+    Public intCodigoLancamento As Integer = 0
 
 End Module
 
