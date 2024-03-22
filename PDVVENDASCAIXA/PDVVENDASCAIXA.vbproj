@@ -225,6 +225,12 @@
     <Compile Include="Movimentacao\frmServicos.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Movimentacao\frmTipoDocumento.Designer.vb">
+      <DependentUpon>frmTipoDocumento.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Movimentacao\frmTipoDocumento.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Movimentacao\frmTipoServico.Designer.vb">
       <DependentUpon>frmTipoServico.vb</DependentUpon>
     </Compile>
@@ -420,6 +426,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Movimentacao\frmServicos.resx">
       <DependentUpon>frmServicos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Movimentacao\frmTipoDocumento.resx">
+      <DependentUpon>frmTipoDocumento.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Movimentacao\frmTipoServico.resx">
       <DependentUpon>frmTipoServico.vb</DependentUpon>

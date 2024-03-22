@@ -7,9 +7,34 @@ Public Class frmContasPagar
 
         btSalvar.Enabled = False
         Listar()
+        CarregarTipoDocumento()
 
         btnEditar.Enabled = False
         btnExcluir.Enabled = False
+    End Sub
+
+    Private Sub frmContasPagar_Activated(sender As Object, e As EventArgs) Handles MyBase.Activated
+        Listar()
+        CarregarTipoDocumento()
+    End Sub
+
+    Sub CarregarTipoDocumento()
+        Dim DT As New DataTable
+        Dim DA As SqlDataAdapter
+        Try
+            abrir()
+            'DA = New SqlDataAdapter("SELECT * FROM tbTipoServico", con)
+            DA = New SqlDataAdapter("pa_tipoDocto_listar", con)
+
+            DA.Fill(DT)
+            txtTipoDocto.DisplayMember = "tipoDocto"
+            txtTipoDocto.ValueMember = "id_tipo"
+            txtTipoDocto.DataSource = DT
+        Catch ex As Exception : MessageBox.Show(ex.Message.ToString)
+        Finally
+            fechar()
+        End Try
+
     End Sub
 
     Private Sub DesabilitarCampos()
@@ -20,8 +45,7 @@ Public Class frmContasPagar
         txtEmpresa.Enabled = False
         txtSituacao.Enabled = False
         txtData.Enabled = False
-
-
+        txtTipoDocto.Enabled = False
     End Sub
 
     Private Sub HabilitarCampos()
@@ -32,6 +56,7 @@ Public Class frmContasPagar
         txtSituacao.Enabled = True
         txtValor.Enabled = True
         txtVencimento.Enabled = True
+        txtTipoDocto.Enabled = True
     End Sub
 
     Private Sub Limpar()
@@ -41,6 +66,7 @@ Public Class frmContasPagar
         txtDescricao.Text = ""
         txtEmpresa.Text = ""
         txtSituacao.Text = Nothing
+        txtTipoDocto.Text = Nothing
         txtValor.Text = ""
         txtVencimento.Text = ""
         txtData.Text = ""
@@ -74,24 +100,27 @@ Public Class frmContasPagar
 
         With dgContasPagar
             .Columns(0).Visible = False
+            .Columns(9).Visible = False
+            .Columns(10).Visible = False
 
-            .Columns(1).HeaderText = "Documento"
-            .Columns(2).HeaderText = "Descrição"
-            .Columns(3).HeaderText = "valor"
-            .Columns(4).HeaderText = "Empresa"
-            .Columns(5).HeaderText = "Vencimento"
-            .Columns(6).HeaderText = "Situação"
-            .Columns(7).HeaderText = "Dt Cadastro"
+            .Columns(1).HeaderText = "Descrição"
+            .Columns(2).HeaderText = "Empresa"
+            .Columns(3).HeaderText = "Tipo Docto"
+            .Columns(4).HeaderText = "Nr. Docto"
+            .Columns(5).HeaderText = "valor"
+            .Columns(6).HeaderText = "Vencimento"
+            .Columns(7).HeaderText = "Situação"
+            .Columns(8).HeaderText = "Dt Cadastro"
 
-            .Columns(3).DefaultCellStyle.Format = "c"
+            .Columns(5).DefaultCellStyle.Format = "c"
 
-            .Columns(1).Width = 90
+            .Columns(1).Width = 200
             .Columns(2).Width = 200
-            .Columns(3).Width = 120
-            .Columns(4).Width = 220
+            .Columns(3).Width = 85
+            .Columns(4).Width = 90
             .Columns(5).Width = 90
-            .Columns(6).Width = 75
-            .Columns(7).Width = 90
+            .Columns(6).Width = 88
+            .Columns(7).Width = 80
 
         End With
 
@@ -126,8 +155,9 @@ Public Class frmContasPagar
                 cmd.CommandType = CommandType.StoredProcedure
                 cmd.Parameters.AddWithValue("@numDocto", txtNDoc.Text)
                 cmd.Parameters.AddWithValue("@descricao", txtDescricao.Text)
-                cmd.Parameters.AddWithValue("@valor", valor1)
                 cmd.Parameters.AddWithValue("@empresa", txtEmpresa.Text)
+                cmd.Parameters.AddWithValue("@id_tipo", txtTipoDocto.SelectedValue)
+                cmd.Parameters.AddWithValue("@valor", valor1)
                 cmd.Parameters.AddWithValue("@vencimento", txtVencimento.Text)
                 cmd.Parameters.AddWithValue("@situacao", txtSituacao.Text)
                 cmd.Parameters.AddWithValue("@data_cadastro", Now.ToShortDateString)
@@ -244,12 +274,6 @@ Public Class frmContasPagar
         HabilitarCampos()
         btnEditar.Enabled = True
 
-
-        'intCodigoLancamento = dgContasPagar.CurrentRow().Cells("id_conta").Value
-
-        'frmGravaContasPagar.ShowDialog()
-
-
         txtCodigo.Text = dgContasPagar.CurrentRow.Cells(0).Value
         txtNDoc.Text = dgContasPagar.CurrentRow.Cells(1).Value
         txtDescricao.Text = dgContasPagar.CurrentRow.Cells(2).Value
@@ -285,8 +309,11 @@ Public Class frmContasPagar
         txtTotalContasPagar.Text = FormatCurrency(dblTotalContas)
     End Sub
 
-    Private Sub frmContasPagar_Activated(sender As Object, e As EventArgs) Handles MyBase.Activated
-        Listar()
+
+
+    Private Sub btTipoDocumento_Click(sender As Object, e As EventArgs) Handles btTipoDocumento.Click
+        Dim form = New frmTipoDocumento
+        form.ShowDialog()
     End Sub
 
 

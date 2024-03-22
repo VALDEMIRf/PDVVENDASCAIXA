@@ -48,6 +48,7 @@ Partial Class frmServicos
         Me.cbCliente = New System.Windows.Forms.ComboBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.btTipoServico = New System.Windows.Forms.Button()
         Me.cbStatusPgto = New System.Windows.Forms.ComboBox()
         Me.txtValor = New System.Windows.Forms.TextBox()
         Me.cbTipoServico = New System.Windows.Forms.ComboBox()
@@ -378,6 +379,7 @@ Partial Class frmServicos
         'GroupBox2
         '
         Me.GroupBox2.BackColor = System.Drawing.Color.Transparent
+        Me.GroupBox2.Controls.Add(Me.btTipoServico)
         Me.GroupBox2.Controls.Add(Me.cbStatusPgto)
         Me.GroupBox2.Controls.Add(Me.txtValor)
         Me.GroupBox2.Controls.Add(Me.cbTipoServico)
@@ -400,12 +402,25 @@ Partial Class frmServicos
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Dados do Atendimento"
         '
+        'btTipoServico
+        '
+        Me.btTipoServico.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btTipoServico.FlatAppearance.BorderSize = 0
+        Me.btTipoServico.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btTipoServico.Image = CType(resources.GetObject("btTipoServico.Image"), System.Drawing.Image)
+        Me.btTipoServico.Location = New System.Drawing.Point(373, 27)
+        Me.btTipoServico.Name = "btTipoServico"
+        Me.btTipoServico.Size = New System.Drawing.Size(35, 23)
+        Me.btTipoServico.TabIndex = 125
+        Me.btTipoServico.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btTipoServico.UseVisualStyleBackColor = True
+        '
         'cbStatusPgto
         '
         Me.cbStatusPgto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbStatusPgto.FormattingEnabled = True
         Me.cbStatusPgto.Items.AddRange(New Object() {"", "Ordem Paga", "Aguardando Pagamento", "Aguardando Aprovação", "Aprovado", "Não Aprovado", "Aguardando Peças", "Realizando Serviço", "Serviço Concluído", "Retirado"})
-        Me.cbStatusPgto.Location = New System.Drawing.Point(144, 169)
+        Me.cbStatusPgto.Location = New System.Drawing.Point(115, 169)
         Me.cbStatusPgto.Margin = New System.Windows.Forms.Padding(5)
         Me.cbStatusPgto.Name = "cbStatusPgto"
         Me.cbStatusPgto.Size = New System.Drawing.Size(259, 21)
@@ -413,7 +428,7 @@ Partial Class frmServicos
         '
         'txtValor
         '
-        Me.txtValor.Location = New System.Drawing.Point(291, 134)
+        Me.txtValor.Location = New System.Drawing.Point(262, 134)
         Me.txtValor.Margin = New System.Windows.Forms.Padding(8, 7, 8, 7)
         Me.txtValor.Name = "txtValor"
         Me.txtValor.Size = New System.Drawing.Size(115, 20)
@@ -423,7 +438,7 @@ Partial Class frmServicos
         '
         Me.cbTipoServico.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbTipoServico.FormattingEnabled = True
-        Me.cbTipoServico.Location = New System.Drawing.Point(145, 30)
+        Me.cbTipoServico.Location = New System.Drawing.Point(116, 30)
         Me.cbTipoServico.Margin = New System.Windows.Forms.Padding(5)
         Me.cbTipoServico.Name = "cbTipoServico"
         Me.cbTipoServico.Size = New System.Drawing.Size(262, 21)
@@ -434,7 +449,7 @@ Partial Class frmServicos
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.ForeColor = System.Drawing.Color.White
-        Me.Label8.Location = New System.Drawing.Point(38, 172)
+        Me.Label8.Location = New System.Drawing.Point(9, 172)
         Me.Label8.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(90, 16)
@@ -443,7 +458,7 @@ Partial Class frmServicos
         '
         'mktDtEntrega
         '
-        Me.mktDtEntrega.Location = New System.Drawing.Point(145, 134)
+        Me.mktDtEntrega.Location = New System.Drawing.Point(116, 134)
         Me.mktDtEntrega.Margin = New System.Windows.Forms.Padding(5)
         Me.mktDtEntrega.Mask = "00/00/0000"
         Me.mktDtEntrega.Name = "mktDtEntrega"
@@ -456,7 +471,7 @@ Partial Class frmServicos
         Me.Label12.AutoSize = True
         Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label12.ForeColor = System.Drawing.Color.White
-        Me.Label12.Location = New System.Drawing.Point(240, 139)
+        Me.Label12.Location = New System.Drawing.Point(211, 139)
         Me.Label12.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(43, 16)
@@ -468,7 +483,7 @@ Partial Class frmServicos
         Me.cbGarantia.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbGarantia.FormattingEnabled = True
         Me.cbGarantia.Items.AddRange(New Object() {"", "1 Mês", "2 Meses", "3 Meses", "6 Meses", "1 Ano"})
-        Me.cbGarantia.Location = New System.Drawing.Point(144, 99)
+        Me.cbGarantia.Location = New System.Drawing.Point(115, 99)
         Me.cbGarantia.Margin = New System.Windows.Forms.Padding(5)
         Me.cbGarantia.Name = "cbGarantia"
         Me.cbGarantia.Size = New System.Drawing.Size(261, 21)
@@ -478,7 +493,7 @@ Partial Class frmServicos
         '
         Me.Label3.AutoSize = True
         Me.Label3.ForeColor = System.Drawing.Color.White
-        Me.Label3.Location = New System.Drawing.Point(46, 38)
+        Me.Label3.Location = New System.Drawing.Point(17, 38)
         Me.Label3.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(85, 13)
@@ -488,7 +503,7 @@ Partial Class frmServicos
         'Label21
         '
         Me.Label21.AutoSize = True
-        Me.Label21.Location = New System.Drawing.Point(52, 139)
+        Me.Label21.Location = New System.Drawing.Point(23, 139)
         Me.Label21.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.Label21.Name = "Label21"
         Me.Label21.Size = New System.Drawing.Size(76, 13)
@@ -497,7 +512,7 @@ Partial Class frmServicos
         '
         'txtResponsavel
         '
-        Me.txtResponsavel.Location = New System.Drawing.Point(144, 66)
+        Me.txtResponsavel.Location = New System.Drawing.Point(115, 66)
         Me.txtResponsavel.Margin = New System.Windows.Forms.Padding(8, 7, 8, 7)
         Me.txtResponsavel.Name = "txtResponsavel"
         Me.txtResponsavel.Size = New System.Drawing.Size(261, 20)
@@ -508,7 +523,7 @@ Partial Class frmServicos
         Me.Label10.AutoSize = True
         Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label10.ForeColor = System.Drawing.Color.White
-        Me.Label10.Location = New System.Drawing.Point(39, 69)
+        Me.Label10.Location = New System.Drawing.Point(10, 69)
         Me.Label10.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(92, 16)
@@ -520,7 +535,7 @@ Partial Class frmServicos
         Me.Label11.AutoSize = True
         Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label11.ForeColor = System.Drawing.Color.White
-        Me.Label11.Location = New System.Drawing.Point(69, 107)
+        Me.Label11.Location = New System.Drawing.Point(40, 107)
         Me.Label11.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(62, 16)
@@ -997,4 +1012,5 @@ Partial Class frmServicos
     Friend WithEvents txtComplemento As TextBox
     Friend WithEvents txtNumeroOrdem As TextBox
     Friend WithEvents rbNumeroServico As RadioButton
+    Friend WithEvents btTipoServico As Button
 End Class

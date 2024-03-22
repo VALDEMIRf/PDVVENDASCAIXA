@@ -112,11 +112,6 @@ Public Class frmPrincipal
         form.ShowDialog()
     End Sub
 
-    Private Sub TiposDeServiçosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles TiposDeServiçosToolStripMenuItem.Click
-        Dim form = New frmTipoServico
-        form.ShowDialog()
-    End Sub
-
     Private Sub SairToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles SairToolStripMenuItem1.Click
         Application.Exit()
     End Sub

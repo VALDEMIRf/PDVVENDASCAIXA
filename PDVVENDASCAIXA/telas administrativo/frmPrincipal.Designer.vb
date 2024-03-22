@@ -41,7 +41,6 @@ Partial Class frmPrincipal
         Me.NíveisBaixoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MovimentaçãoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.OrdemDeServiçoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.TiposDeServiçosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ContasAPagarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ContasAReceberToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.VendasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -185,26 +184,26 @@ Partial Class frmPrincipal
         '
         Me.EntradaSaídaToolStripMenuItem.Image = CType(resources.GetObject("EntradaSaídaToolStripMenuItem.Image"), System.Drawing.Image)
         Me.EntradaSaídaToolStripMenuItem.Name = "EntradaSaídaToolStripMenuItem"
-        Me.EntradaSaídaToolStripMenuItem.Size = New System.Drawing.Size(180, 24)
+        Me.EntradaSaídaToolStripMenuItem.Size = New System.Drawing.Size(162, 24)
         Me.EntradaSaídaToolStripMenuItem.Text = "Entrada / Saída"
         '
         'ConsultasToolStripMenuItem
         '
         Me.ConsultasToolStripMenuItem.Image = CType(resources.GetObject("ConsultasToolStripMenuItem.Image"), System.Drawing.Image)
         Me.ConsultasToolStripMenuItem.Name = "ConsultasToolStripMenuItem"
-        Me.ConsultasToolStripMenuItem.Size = New System.Drawing.Size(180, 24)
+        Me.ConsultasToolStripMenuItem.Size = New System.Drawing.Size(162, 24)
         Me.ConsultasToolStripMenuItem.Text = "Consultas"
         '
         'NíveisBaixoToolStripMenuItem
         '
         Me.NíveisBaixoToolStripMenuItem.Image = CType(resources.GetObject("NíveisBaixoToolStripMenuItem.Image"), System.Drawing.Image)
         Me.NíveisBaixoToolStripMenuItem.Name = "NíveisBaixoToolStripMenuItem"
-        Me.NíveisBaixoToolStripMenuItem.Size = New System.Drawing.Size(180, 24)
+        Me.NíveisBaixoToolStripMenuItem.Size = New System.Drawing.Size(162, 24)
         Me.NíveisBaixoToolStripMenuItem.Text = "Níveis Baixo"
         '
         'MovimentaçãoToolStripMenuItem
         '
-        Me.MovimentaçãoToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.OrdemDeServiçoToolStripMenuItem, Me.TiposDeServiçosToolStripMenuItem, Me.ContasAPagarToolStripMenuItem, Me.ContasAReceberToolStripMenuItem})
+        Me.MovimentaçãoToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.OrdemDeServiçoToolStripMenuItem, Me.ContasAPagarToolStripMenuItem, Me.ContasAReceberToolStripMenuItem})
         Me.MovimentaçãoToolStripMenuItem.ForeColor = System.Drawing.Color.Black
         Me.MovimentaçãoToolStripMenuItem.Image = CType(resources.GetObject("MovimentaçãoToolStripMenuItem.Image"), System.Drawing.Image)
         Me.MovimentaçãoToolStripMenuItem.Name = "MovimentaçãoToolStripMenuItem"
@@ -217,13 +216,6 @@ Partial Class frmPrincipal
         Me.OrdemDeServiçoToolStripMenuItem.Name = "OrdemDeServiçoToolStripMenuItem"
         Me.OrdemDeServiçoToolStripMenuItem.Size = New System.Drawing.Size(180, 24)
         Me.OrdemDeServiçoToolStripMenuItem.Text = "Ordem de Serviço"
-        '
-        'TiposDeServiçosToolStripMenuItem
-        '
-        Me.TiposDeServiçosToolStripMenuItem.Image = CType(resources.GetObject("TiposDeServiçosToolStripMenuItem.Image"), System.Drawing.Image)
-        Me.TiposDeServiçosToolStripMenuItem.Name = "TiposDeServiçosToolStripMenuItem"
-        Me.TiposDeServiçosToolStripMenuItem.Size = New System.Drawing.Size(180, 24)
-        Me.TiposDeServiçosToolStripMenuItem.Text = "Tipos de Serviços"
         '
         'ContasAPagarToolStripMenuItem
         '
@@ -664,7 +656,6 @@ Partial Class frmPrincipal
     Friend WithEvents NíveisBaixoToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents MovimentaçãoToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents OrdemDeServiçoToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents TiposDeServiçosToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents VendasToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents PDVRegistrarVendaToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ListarVendasToolStripMenuItem As ToolStripMenuItem

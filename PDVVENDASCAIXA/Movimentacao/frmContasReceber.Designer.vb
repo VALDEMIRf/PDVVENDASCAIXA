@@ -54,175 +54,215 @@ Partial Class frmContasReceber
         '
         Me.ComboBox1.FormattingEnabled = True
         Me.ComboBox1.Items.AddRange(New Object() {"Pagar", "Receber"})
-        Me.ComboBox1.Location = New System.Drawing.Point(12, 35)
+        Me.ComboBox1.Location = New System.Drawing.Point(18, 54)
+        Me.ComboBox1.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(121, 21)
+        Me.ComboBox1.Size = New System.Drawing.Size(180, 28)
         Me.ComboBox1.TabIndex = 0
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(12, 19)
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.White
+        Me.Label1.Location = New System.Drawing.Point(18, 29)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(54, 13)
+        Me.Label1.Size = New System.Drawing.Size(79, 20)
         Me.Label1.TabIndex = 1
         Me.Label1.Text = "Opereção"
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(147, 19)
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.Color.White
+        Me.Label2.Location = New System.Drawing.Point(220, 29)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(46, 13)
+        Me.Label2.Size = New System.Drawing.Size(70, 20)
         Me.Label2.TabIndex = 2
         Me.Label2.Text = "Emissão"
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(232, 19)
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.Color.White
+        Me.Label3.Location = New System.Drawing.Point(348, 29)
+        Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(63, 13)
+        Me.Label3.Size = New System.Drawing.Size(94, 20)
         Me.Label3.TabIndex = 3
         Me.Label3.Text = "Vencimento"
         '
         'MaskedTextBox1
         '
-        Me.MaskedTextBox1.Location = New System.Drawing.Point(139, 36)
+        Me.MaskedTextBox1.Location = New System.Drawing.Point(208, 55)
+        Me.MaskedTextBox1.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.MaskedTextBox1.Mask = "00/00/0000"
         Me.MaskedTextBox1.Name = "MaskedTextBox1"
-        Me.MaskedTextBox1.Size = New System.Drawing.Size(73, 20)
+        Me.MaskedTextBox1.Size = New System.Drawing.Size(108, 26)
         Me.MaskedTextBox1.TabIndex = 4
         Me.MaskedTextBox1.ValidatingType = GetType(Date)
         '
         'MaskedTextBox2
         '
-        Me.MaskedTextBox2.Location = New System.Drawing.Point(235, 36)
+        Me.MaskedTextBox2.Location = New System.Drawing.Point(352, 55)
+        Me.MaskedTextBox2.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.MaskedTextBox2.Mask = "00/00/0000"
         Me.MaskedTextBox2.Name = "MaskedTextBox2"
-        Me.MaskedTextBox2.Size = New System.Drawing.Size(73, 20)
+        Me.MaskedTextBox2.Size = New System.Drawing.Size(108, 26)
         Me.MaskedTextBox2.TabIndex = 5
         Me.MaskedTextBox2.ValidatingType = GetType(Date)
         '
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(337, 19)
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.ForeColor = System.Drawing.Color.White
+        Me.Label4.Location = New System.Drawing.Point(506, 29)
+        Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(42, 13)
+        Me.Label4.Size = New System.Drawing.Size(59, 20)
         Me.Label4.TabIndex = 6
         Me.Label4.Text = "Nº Doc"
         '
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(12, 69)
+        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.ForeColor = System.Drawing.Color.White
+        Me.Label6.Location = New System.Drawing.Point(22, 90)
+        Me.Label6.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(48, 13)
+        Me.Label6.Size = New System.Drawing.Size(71, 20)
         Me.Label6.TabIndex = 8
         Me.Label6.Text = "Histórico"
         '
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(220, 69)
+        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.ForeColor = System.Drawing.Color.White
+        Me.Label7.Location = New System.Drawing.Point(334, 90)
+        Me.Label7.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(121, 13)
+        Me.Label7.Size = New System.Drawing.Size(179, 20)
         Me.Label7.TabIndex = 9
         Me.Label7.Text = "Centro de custos/Grupo"
         '
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(412, 110)
+        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.ForeColor = System.Drawing.Color.White
+        Me.Label8.Location = New System.Drawing.Point(622, 158)
+        Me.Label8.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(49, 13)
+        Me.Label8.Size = New System.Drawing.Size(71, 20)
         Me.Label8.TabIndex = 10
         Me.Label8.Text = "Telefone"
         '
         'Label11
         '
         Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(18, 110)
+        Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label11.ForeColor = System.Drawing.Color.White
+        Me.Label11.Location = New System.Drawing.Point(31, 158)
+        Me.Label11.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(98, 13)
+        Me.Label11.Size = New System.Drawing.Size(144, 20)
         Me.Label11.TabIndex = 13
         Me.Label11.Text = "Cliente/Fornecedor"
         '
         'Label12
         '
         Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(448, 19)
+        Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label12.ForeColor = System.Drawing.Color.White
+        Me.Label12.Location = New System.Drawing.Point(672, 29)
+        Me.Label12.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(31, 13)
+        Me.Label12.Size = New System.Drawing.Size(46, 20)
         Me.Label12.TabIndex = 14
         Me.Label12.Text = "Valor"
         '
         'Label13
         '
         Me.Label13.AutoSize = True
-        Me.Label13.Location = New System.Drawing.Point(548, 18)
+        Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label13.ForeColor = System.Drawing.Color.White
+        Me.Label13.Location = New System.Drawing.Point(822, 28)
+        Me.Label13.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(28, 13)
+        Me.Label13.Size = New System.Drawing.Size(39, 20)
         Me.Label13.TabIndex = 15
         Me.Label13.Text = "Tipo"
         '
         'TextBox1
         '
-        Me.TextBox1.Location = New System.Drawing.Point(327, 35)
+        Me.TextBox1.Location = New System.Drawing.Point(490, 54)
+        Me.TextBox1.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(100, 20)
+        Me.TextBox1.Size = New System.Drawing.Size(148, 26)
         Me.TextBox1.TabIndex = 16
         '
         'TextBox2
         '
-        Me.TextBox2.Location = New System.Drawing.Point(433, 35)
+        Me.TextBox2.Location = New System.Drawing.Point(650, 54)
+        Me.TextBox2.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(100, 20)
+        Me.TextBox2.Size = New System.Drawing.Size(148, 26)
         Me.TextBox2.TabIndex = 17
         '
         'ComboBox2
         '
         Me.ComboBox2.FormattingEnabled = True
         Me.ComboBox2.Items.AddRange(New Object() {"Cheque", "Dinhero", "Duplicata", "Luz", "Água", "Boleto"})
-        Me.ComboBox2.Location = New System.Drawing.Point(539, 34)
+        Me.ComboBox2.Location = New System.Drawing.Point(808, 52)
+        Me.ComboBox2.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.ComboBox2.Name = "ComboBox2"
-        Me.ComboBox2.Size = New System.Drawing.Size(121, 21)
+        Me.ComboBox2.Size = New System.Drawing.Size(180, 28)
         Me.ComboBox2.TabIndex = 18
         '
         'ComboBox3
         '
         Me.ComboBox3.FormattingEnabled = True
         Me.ComboBox3.Items.AddRange(New Object() {"Pagar", "Receber"})
-        Me.ComboBox3.Location = New System.Drawing.Point(12, 85)
+        Me.ComboBox3.Location = New System.Drawing.Point(22, 115)
+        Me.ComboBox3.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.ComboBox3.Name = "ComboBox3"
-        Me.ComboBox3.Size = New System.Drawing.Size(158, 21)
+        Me.ComboBox3.Size = New System.Drawing.Size(235, 28)
         Me.ComboBox3.TabIndex = 19
         '
         'ComboBox4
         '
         Me.ComboBox4.FormattingEnabled = True
         Me.ComboBox4.Items.AddRange(New Object() {"Pagar", "Receber"})
-        Me.ComboBox4.Location = New System.Drawing.Point(212, 85)
+        Me.ComboBox4.Location = New System.Drawing.Point(322, 115)
+        Me.ComboBox4.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.ComboBox4.Name = "ComboBox4"
-        Me.ComboBox4.Size = New System.Drawing.Size(389, 21)
+        Me.ComboBox4.Size = New System.Drawing.Size(582, 28)
         Me.ComboBox4.TabIndex = 20
         '
         'ComboBox5
         '
         Me.ComboBox5.FormattingEnabled = True
         Me.ComboBox5.Items.AddRange(New Object() {"Pagar", "Receber"})
-        Me.ComboBox5.Location = New System.Drawing.Point(12, 126)
+        Me.ComboBox5.Location = New System.Drawing.Point(22, 183)
+        Me.ComboBox5.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.ComboBox5.Name = "ComboBox5"
-        Me.ComboBox5.Size = New System.Drawing.Size(382, 21)
+        Me.ComboBox5.Size = New System.Drawing.Size(571, 28)
         Me.ComboBox5.TabIndex = 21
         '
         'MaskedTextBox3
         '
-        Me.MaskedTextBox3.Location = New System.Drawing.Point(406, 126)
+        Me.MaskedTextBox3.Location = New System.Drawing.Point(613, 183)
+        Me.MaskedTextBox3.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.MaskedTextBox3.Mask = "(99) 0 000-0000"
         Me.MaskedTextBox3.Name = "MaskedTextBox3"
-        Me.MaskedTextBox3.Size = New System.Drawing.Size(89, 20)
+        Me.MaskedTextBox3.Size = New System.Drawing.Size(132, 26)
         Me.MaskedTextBox3.TabIndex = 22
         '
         'dgContasPagar
@@ -233,12 +273,12 @@ Partial Class frmContasReceber
         Me.dgContasPagar.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.dgContasPagar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgContasPagar.GridColor = System.Drawing.Color.DarkBlue
-        Me.dgContasPagar.Location = New System.Drawing.Point(12, 159)
-        Me.dgContasPagar.Margin = New System.Windows.Forms.Padding(12, 10, 12, 10)
+        Me.dgContasPagar.Location = New System.Drawing.Point(18, 245)
+        Me.dgContasPagar.Margin = New System.Windows.Forms.Padding(18, 15, 18, 15)
         Me.dgContasPagar.Name = "dgContasPagar"
         Me.dgContasPagar.ReadOnly = True
         Me.dgContasPagar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgContasPagar.Size = New System.Drawing.Size(669, 198)
+        Me.dgContasPagar.Size = New System.Drawing.Size(1004, 305)
         Me.dgContasPagar.TabIndex = 191
         '
         'Button1
@@ -248,9 +288,10 @@ Partial Class frmContasReceber
         Me.Button1.FlatAppearance.BorderSize = 0
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button1.Image = CType(resources.GetObject("Button1.Image"), System.Drawing.Image)
-        Me.Button1.Location = New System.Drawing.Point(666, 30)
+        Me.Button1.Location = New System.Drawing.Point(999, 46)
+        Me.Button1.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(36, 29)
+        Me.Button1.Size = New System.Drawing.Size(54, 45)
         Me.Button1.TabIndex = 192
         Me.Button1.UseVisualStyleBackColor = True
         '
@@ -261,9 +302,10 @@ Partial Class frmContasReceber
         Me.Button2.FlatAppearance.BorderSize = 0
         Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button2.Image = CType(resources.GetObject("Button2.Image"), System.Drawing.Image)
-        Me.Button2.Location = New System.Drawing.Point(176, 80)
+        Me.Button2.Location = New System.Drawing.Point(268, 107)
+        Me.Button2.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(36, 29)
+        Me.Button2.Size = New System.Drawing.Size(54, 45)
         Me.Button2.TabIndex = 193
         Me.Button2.UseVisualStyleBackColor = True
         '
@@ -274,18 +316,19 @@ Partial Class frmContasReceber
         Me.Button3.FlatAppearance.BorderSize = 0
         Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button3.Image = CType(resources.GetObject("Button3.Image"), System.Drawing.Image)
-        Me.Button3.Location = New System.Drawing.Point(607, 77)
+        Me.Button3.Location = New System.Drawing.Point(914, 102)
+        Me.Button3.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(36, 29)
+        Me.Button3.Size = New System.Drawing.Size(54, 45)
         Me.Button3.TabIndex = 194
         Me.Button3.UseVisualStyleBackColor = True
         '
         'frmContasReceber
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.SteelBlue
-        Me.ClientSize = New System.Drawing.Size(737, 450)
+        Me.ClientSize = New System.Drawing.Size(1106, 692)
         Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Button1)
@@ -310,8 +353,11 @@ Partial Class frmContasReceber
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.ComboBox1)
+        Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ForeColor = System.Drawing.Color.White
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "frmContasReceber"

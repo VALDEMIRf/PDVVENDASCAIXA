@@ -528,4 +528,13 @@ Public Class frmServicos
             End Try
         End If
     End Sub
+
+    Private Sub btTipoServico_Click(sender As Object, e As EventArgs) Handles btTipoServico.Click
+        Dim form = New frmTipoServico
+        form.ShowDialog()
+    End Sub
+
+    Private Sub frmServicos_Activated(sender As Object, e As EventArgs) Handles MyBase.Activated
+        CarregarTipoServico()
+    End Sub
 End Class
