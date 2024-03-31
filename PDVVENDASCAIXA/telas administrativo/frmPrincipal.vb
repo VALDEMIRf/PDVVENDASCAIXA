@@ -94,10 +94,6 @@ Public Class frmPrincipal
         form.ShowDialog()
     End Sub
 
-    Private Sub CategoriasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CategoriasToolStripMenuItem.Click
-        Dim form = New frmCategoriaProdutos
-        form.ShowDialog()
-    End Sub
 
     Private Sub EmpresaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EmpresaToolStripMenuItem.Click
         Dim formP As Form
@@ -107,10 +103,7 @@ Public Class frmPrincipal
         form.ShowDialog()
     End Sub
 
-    Private Sub UnidadeDeMedidaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles UnidadeDeMedidaToolStripMenuItem.Click
-        Dim form = New frmUnidadeMedidas
-        form.ShowDialog()
-    End Sub
+
 
     Private Sub SairToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles SairToolStripMenuItem1.Click
         Application.Exit()
@@ -131,12 +124,6 @@ Public Class frmPrincipal
         Dim form = New frmServicos
         form.ShowDialog()
     End Sub
-
-    Private Sub ProdutosToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles ProdutosToolStripMenuItem1.Click
-        Dim form = New frmProdutos
-        form.ShowDialog()
-    End Sub
-
 
     Private Sub FormatarDG()
         dg.Columns(0).Visible = False
@@ -637,6 +624,11 @@ Public Class frmPrincipal
 
     Private Sub ContasAPagarToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ContasAPagarToolStripMenuItem.Click
         Dim form = New frmContasPagar
+        form.ShowDialog()
+    End Sub
+
+    Private Sub ProdutosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ProdutosToolStripMenuItem.Click
+        Dim form = New frmProdutos
         form.ShowDialog()
     End Sub
 End Class

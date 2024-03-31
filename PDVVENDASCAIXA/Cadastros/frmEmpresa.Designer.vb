@@ -82,7 +82,7 @@ Partial Class frmEmpresa
         Me.dg.Name = "dg"
         Me.dg.ReadOnly = True
         Me.dg.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dg.Size = New System.Drawing.Size(762, 141)
+        Me.dg.Size = New System.Drawing.Size(762, 139)
         Me.dg.TabIndex = 276
         '
         'txtCEP

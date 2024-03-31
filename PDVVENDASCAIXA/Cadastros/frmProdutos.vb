@@ -22,6 +22,12 @@ Public Class frmProdutos
         btnExcluir.Enabled = False
     End Sub
 
+    Private Sub frmProdutos_Activated(sender As Object, e As EventArgs) Handles MyBase.Activated
+        CarregarCategoriaProdutos()
+        CarregarUnidadesMedidas()
+        CarregarFornecedor()
+    End Sub
+
     Sub CarregarFornecedor()
         Dim DT As New DataTable
         Dim DA As SqlDataAdapter
@@ -139,7 +145,7 @@ Public Class frmProdutos
         cbFornecedor.Text = Nothing
         cbUnidade.Text = Nothing
         cbCategoria.Text = Nothing
-        txtCodBarras.Text = ""
+        ' txtCodBarras.Text = ""
         imgCodBar.Image = Nothing
         carregarImagem()
 
@@ -189,10 +195,10 @@ Public Class frmProdutos
     Private Sub btnNovo_Click(sender As Object, e As EventArgs) Handles btnNovo.Click
         If txtCodBarras.Text <> "" Then
             HabilitarCampos()
-            Limpar()
+            ' Limpar()
             btnSalvar.Enabled = True
-            btnEditar.Enabled = False
-            btnExcluir.Enabled = False
+            '  btnEditar.Enabled = False
+            '  btnExcluir.Enabled = False
             ' CriarCodigoBarras()
             txtCodBarras.Focus()
         End If
@@ -482,5 +488,18 @@ Public Class frmProdutos
         e.Graphics.DrawImage(bmp, 0, 0)
     End Sub
 
+    Private Sub btCategorias_Click(sender As Object, e As EventArgs) Handles btCategorias.Click
+        Dim form = New frmCategoriaProdutos
+        form.ShowDialog()
+    End Sub
 
+    Private Sub btUnidadesMedidas_Click(sender As Object, e As EventArgs) Handles btUnidadesMedidas.Click
+        Dim form = New frmUnidadeMedidas
+        form.ShowDialog()
+    End Sub
+
+    Private Sub btFornecedores_Click(sender As Object, e As EventArgs) Handles btFornecedores.Click
+        Dim form = New frmFornecedores
+        form.ShowDialog()
+    End Sub
 End Class

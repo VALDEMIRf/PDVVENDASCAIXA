@@ -208,7 +208,7 @@ Partial Class frmCategoriaProdutos
         Me.MinimizeBox = False
         Me.Name = "frmCategoriaProdutos"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "frmCategoriaProdutos"
+        Me.Text = "Categorias de Produtos"
         CType(Me.dgvCategoria, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
         CType(Me.errErro, System.ComponentModel.ISupportInitialize).EndInit()

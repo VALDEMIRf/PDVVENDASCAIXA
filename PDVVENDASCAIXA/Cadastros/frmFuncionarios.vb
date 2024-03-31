@@ -218,18 +218,20 @@ Public Class frmFuncionarios
     End Sub
 
     Private Sub btBuscarCEP_Click(sender As Object, e As EventArgs) Handles btBuscarCEP.Click
-        Try
-            Dim ws = New WSCEP.AtendeClienteClient()
-            Dim resposta = ws.consultaCEP(txtCEP.Text)
-            txtEndereco.Text = resposta.end
-            txtComplemento.Text = resposta.complemento2
-            txtBairro.Text = resposta.bairro
-            txtCidade.Text = resposta.cidade
-            txtUF.Text = resposta.uf
+        ObterCep(txtCEP.Text)
 
-        Catch ex As Exception
-            MsgBox("Erro ao buscar o CEP.!" & ex.Message.ToString, vbCritical)
-        End Try
+        'Try
+        '    Dim ws = New WSCEP.AtendeClienteClient()
+        '    Dim resposta = ws.consultaCEP(txtCEP.Text)
+        '    txtEndereco.Text = resposta.end
+        '    txtComplemento.Text = resposta.complemento2
+        '    txtBairro.Text = resposta.bairro
+        '    txtCidade.Text = resposta.cidade
+        '    txtUF.Text = resposta.uf
+
+        'Catch ex As Exception
+        '    MsgBox("Erro ao buscar o CEP.!" & ex.Message.ToString, vbCritical)
+        'End Try
     End Sub
 
     Private Sub btNovo_Click(sender As Object, e As EventArgs) Handles btNovo.Click
@@ -555,4 +557,18 @@ Public Class frmFuncionarios
 
     End Sub
 
+    Private Sub ObterCep(cep As String)
+
+        Dim dsCep = clsCep.ObterCep(cep)
+        Try
+            txtEndereco.Text = UTF8_to_ISO(dsCep.logradouro)
+            txtComplemento.Text = UTF8_to_ISO(dsCep.complemento)
+            txtBairro.Text = UTF8_to_ISO(dsCep.bairro)
+            txtCidade.Text = UTF8_to_ISO(dsCep.localidade)
+            txtUF.Text = dsCep.uf
+        Catch ex As Exception
+            MessageBox.Show("CEP Incorreto, digite um CEP válido!!!", "ERRO")
+        End Try
+
+    End Sub
 End Class

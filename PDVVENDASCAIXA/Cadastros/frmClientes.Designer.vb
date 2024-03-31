@@ -1415,7 +1415,6 @@ Partial Class frmClientes
         '
         Me.btSair.BackColor = System.Drawing.Color.Transparent
         Me.btSair.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btSair.Enabled = False
         Me.btSair.FlatAppearance.BorderSize = 0
         Me.btSair.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Azure
         Me.btSair.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
@@ -1423,10 +1422,10 @@ Partial Class frmClientes
         Me.btSair.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btSair.ForeColor = System.Drawing.Color.White
         Me.btSair.Image = CType(resources.GetObject("btSair.Image"), System.Drawing.Image)
-        Me.btSair.Location = New System.Drawing.Point(827, 14)
+        Me.btSair.Location = New System.Drawing.Point(807, 14)
         Me.btSair.Margin = New System.Windows.Forms.Padding(5)
         Me.btSair.Name = "btSair"
-        Me.btSair.Size = New System.Drawing.Size(65, 34)
+        Me.btSair.Size = New System.Drawing.Size(73, 30)
         Me.btSair.TabIndex = 325
         Me.btSair.Text = "Sair"
         Me.btSair.TextAlign = System.Drawing.ContentAlignment.MiddleRight

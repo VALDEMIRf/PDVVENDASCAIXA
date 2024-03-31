@@ -176,6 +176,7 @@
     <Compile Include="Caixa\frmSangria.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="classes\clsCep.vb" />
     <Compile Include="classes\CNPJ.vb" />
     <Compile Include="conexao.vb" />
     <Compile Include="Connected Services\WSCEP\Reference.vb">

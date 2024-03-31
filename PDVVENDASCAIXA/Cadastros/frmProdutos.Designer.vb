@@ -66,6 +66,9 @@ Partial Class frmProdutos
         Me.lblTotal = New System.Windows.Forms.Label()
         Me.PrintDocument1 = New System.Drawing.Printing.PrintDocument()
         Me.PrintPreviewDialog1 = New System.Windows.Forms.PrintPreviewDialog()
+        Me.btCategorias = New System.Windows.Forms.Button()
+        Me.btUnidadesMedidas = New System.Windows.Forms.Button()
+        Me.btFornecedores = New System.Windows.Forms.Button()
         CType(Me.dg, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         CType(Me.errErro, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -283,7 +286,7 @@ Partial Class frmProdutos
         Me.Label13.BackColor = System.Drawing.Color.SteelBlue
         Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label13.ForeColor = System.Drawing.Color.White
-        Me.Label13.Location = New System.Drawing.Point(405, 102)
+        Me.Label13.Location = New System.Drawing.Point(541, 102)
         Me.Label13.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(127, 18)
@@ -295,7 +298,7 @@ Partial Class frmProdutos
         Me.cbUnidade.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbUnidade.Enabled = False
         Me.cbUnidade.FormattingEnabled = True
-        Me.cbUnidade.Location = New System.Drawing.Point(784, 44)
+        Me.cbUnidade.Location = New System.Drawing.Point(778, 44)
         Me.cbUnidade.Name = "cbUnidade"
         Me.cbUnidade.Size = New System.Drawing.Size(74, 21)
         Me.cbUnidade.TabIndex = 229
@@ -304,7 +307,7 @@ Partial Class frmProdutos
         '
         Me.Label12.AutoSize = True
         Me.Label12.ForeColor = System.Drawing.Color.White
-        Me.Label12.Location = New System.Drawing.Point(730, 49)
+        Me.Label12.Location = New System.Drawing.Point(723, 49)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(50, 13)
         Me.Label12.TabIndex = 247
@@ -340,7 +343,7 @@ Partial Class frmProdutos
         '
         'txtNivel
         '
-        Me.txtNivel.Location = New System.Drawing.Point(652, 45)
+        Me.txtNivel.Location = New System.Drawing.Point(643, 45)
         Me.txtNivel.Margin = New System.Windows.Forms.Padding(5)
         Me.txtNivel.Name = "txtNivel"
         Me.txtNivel.Size = New System.Drawing.Size(71, 20)
@@ -363,7 +366,7 @@ Partial Class frmProdutos
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.ForeColor = System.Drawing.Color.White
-        Me.Label6.Location = New System.Drawing.Point(563, 47)
+        Me.Label6.Location = New System.Drawing.Point(552, 47)
         Me.Label6.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(88, 16)
@@ -398,7 +401,7 @@ Partial Class frmProdutos
         '
         'txtCodBarras
         '
-        Me.txtCodBarras.Location = New System.Drawing.Point(536, 101)
+        Me.txtCodBarras.Location = New System.Drawing.Point(672, 101)
         Me.txtCodBarras.Margin = New System.Windows.Forms.Padding(5)
         Me.txtCodBarras.Name = "txtCodBarras"
         Me.txtCodBarras.Size = New System.Drawing.Size(187, 20)
@@ -493,7 +496,7 @@ Partial Class frmProdutos
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.ForeColor = System.Drawing.Color.White
-        Me.Label7.Location = New System.Drawing.Point(414, 46)
+        Me.Label7.Location = New System.Drawing.Point(401, 46)
         Me.Label7.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(81, 16)
@@ -502,7 +505,7 @@ Partial Class frmProdutos
         '
         'txtQuantidade
         '
-        Me.txtQuantidade.Location = New System.Drawing.Point(496, 44)
+        Me.txtQuantidade.Location = New System.Drawing.Point(483, 44)
         Me.txtQuantidade.Margin = New System.Windows.Forms.Padding(5)
         Me.txtQuantidade.Name = "txtQuantidade"
         Me.txtQuantidade.Size = New System.Drawing.Size(58, 20)
@@ -559,12 +562,72 @@ Partial Class frmProdutos
         Me.PrintPreviewDialog1.Name = "PrintPreviewDialog1"
         Me.PrintPreviewDialog1.Visible = False
         '
+        'btCategorias
+        '
+        Me.btCategorias.BackColor = System.Drawing.Color.Transparent
+        Me.btCategorias.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btCategorias.FlatAppearance.BorderSize = 0
+        Me.btCategorias.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSteelBlue
+        Me.btCategorias.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSkyBlue
+        Me.btCategorias.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btCategorias.ForeColor = System.Drawing.Color.White
+        Me.btCategorias.Image = CType(resources.GetObject("btCategorias.Image"), System.Drawing.Image)
+        Me.btCategorias.Location = New System.Drawing.Point(328, 125)
+        Me.btCategorias.Margin = New System.Windows.Forms.Padding(5)
+        Me.btCategorias.Name = "btCategorias"
+        Me.btCategorias.Size = New System.Drawing.Size(35, 27)
+        Me.btCategorias.TabIndex = 254
+        Me.btCategorias.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btCategorias.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btCategorias.UseVisualStyleBackColor = False
+        '
+        'btUnidadesMedidas
+        '
+        Me.btUnidadesMedidas.BackColor = System.Drawing.Color.Transparent
+        Me.btUnidadesMedidas.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btUnidadesMedidas.FlatAppearance.BorderSize = 0
+        Me.btUnidadesMedidas.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSteelBlue
+        Me.btUnidadesMedidas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSkyBlue
+        Me.btUnidadesMedidas.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btUnidadesMedidas.ForeColor = System.Drawing.Color.White
+        Me.btUnidadesMedidas.Image = CType(resources.GetObject("btUnidadesMedidas.Image"), System.Drawing.Image)
+        Me.btUnidadesMedidas.Location = New System.Drawing.Point(856, 40)
+        Me.btUnidadesMedidas.Margin = New System.Windows.Forms.Padding(5)
+        Me.btUnidadesMedidas.Name = "btUnidadesMedidas"
+        Me.btUnidadesMedidas.Size = New System.Drawing.Size(35, 27)
+        Me.btUnidadesMedidas.TabIndex = 255
+        Me.btUnidadesMedidas.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btUnidadesMedidas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btUnidadesMedidas.UseVisualStyleBackColor = False
+        '
+        'btFornecedores
+        '
+        Me.btFornecedores.BackColor = System.Drawing.Color.Transparent
+        Me.btFornecedores.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btFornecedores.FlatAppearance.BorderSize = 0
+        Me.btFornecedores.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSteelBlue
+        Me.btFornecedores.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSkyBlue
+        Me.btFornecedores.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btFornecedores.ForeColor = System.Drawing.Color.White
+        Me.btFornecedores.Image = CType(resources.GetObject("btFornecedores.Image"), System.Drawing.Image)
+        Me.btFornecedores.Location = New System.Drawing.Point(397, 95)
+        Me.btFornecedores.Margin = New System.Windows.Forms.Padding(5)
+        Me.btFornecedores.Name = "btFornecedores"
+        Me.btFornecedores.Size = New System.Drawing.Size(35, 27)
+        Me.btFornecedores.TabIndex = 256
+        Me.btFornecedores.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btFornecedores.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btFornecedores.UseVisualStyleBackColor = False
+        '
         'frmProdutos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.SteelBlue
         Me.ClientSize = New System.Drawing.Size(1035, 557)
+        Me.Controls.Add(Me.btFornecedores)
+        Me.Controls.Add(Me.btUnidadesMedidas)
+        Me.Controls.Add(Me.btCategorias)
         Me.Controls.Add(Me.Label11)
         Me.Controls.Add(Me.lblTotal)
         Me.Controls.Add(Me.dg)
@@ -655,4 +718,7 @@ Partial Class frmProdutos
     Friend WithEvents lblTotal As Label
     Friend WithEvents PrintDocument1 As Printing.PrintDocument
     Friend WithEvents PrintPreviewDialog1 As PrintPreviewDialog
+    Friend WithEvents btUnidadesMedidas As Button
+    Friend WithEvents btCategorias As Button
+    Friend WithEvents btFornecedores As Button
 End Class

@@ -52,7 +52,7 @@ Partial Class frmUnidadeMedidas
         Me.dgvUnidade.Name = "dgvUnidade"
         Me.dgvUnidade.ReadOnly = True
         Me.dgvUnidade.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvUnidade.Size = New System.Drawing.Size(344, 310)
+        Me.dgvUnidade.Size = New System.Drawing.Size(168, 210)
         Me.dgvUnidade.TabIndex = 32
         '
         'txtUnidade
@@ -60,7 +60,7 @@ Partial Class frmUnidadeMedidas
         Me.txtUnidade.Location = New System.Drawing.Point(5, 47)
         Me.txtUnidade.Margin = New System.Windows.Forms.Padding(4)
         Me.txtUnidade.Name = "txtUnidade"
-        Me.txtUnidade.Size = New System.Drawing.Size(341, 20)
+        Me.txtUnidade.Size = New System.Drawing.Size(167, 20)
         Me.txtUnidade.TabIndex = 31
         '
         'lblUnidade
@@ -68,7 +68,7 @@ Partial Class frmUnidadeMedidas
         Me.lblUnidade.AutoSize = True
         Me.lblUnidade.BackColor = System.Drawing.Color.Transparent
         Me.lblUnidade.ForeColor = System.Drawing.Color.White
-        Me.lblUnidade.Location = New System.Drawing.Point(331, 9)
+        Me.lblUnidade.Location = New System.Drawing.Point(13, 9)
         Me.lblUnidade.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblUnidade.Name = "lblUnidade"
         Me.lblUnidade.Size = New System.Drawing.Size(13, 13)
@@ -96,11 +96,11 @@ Partial Class frmUnidadeMedidas
         Me.GroupBox1.Controls.Add(Me.btExcluir)
         Me.GroupBox1.Controls.Add(Me.btSalvar)
         Me.GroupBox1.Controls.Add(Me.btAlterar)
-        Me.GroupBox1.Location = New System.Drawing.Point(366, 47)
+        Me.GroupBox1.Location = New System.Drawing.Point(177, 46)
         Me.GroupBox1.Margin = New System.Windows.Forms.Padding(4)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Padding = New System.Windows.Forms.Padding(4)
-        Me.GroupBox1.Size = New System.Drawing.Size(143, 342)
+        Me.GroupBox1.Size = New System.Drawing.Size(143, 242)
         Me.GroupBox1.TabIndex = 33
         Me.GroupBox1.TabStop = False
         '
@@ -132,7 +132,7 @@ Partial Class frmUnidadeMedidas
         Me.brSair.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.brSair.ForeColor = System.Drawing.Color.White
         Me.brSair.Image = CType(resources.GetObject("brSair.Image"), System.Drawing.Image)
-        Me.brSair.Location = New System.Drawing.Point(4, 286)
+        Me.brSair.Location = New System.Drawing.Point(5, 200)
         Me.brSair.Margin = New System.Windows.Forms.Padding(4)
         Me.brSair.Name = "brSair"
         Me.brSair.Size = New System.Drawing.Size(90, 35)
@@ -151,7 +151,7 @@ Partial Class frmUnidadeMedidas
         Me.btExcluir.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btExcluir.ForeColor = System.Drawing.Color.White
         Me.btExcluir.Image = CType(resources.GetObject("btExcluir.Image"), System.Drawing.Image)
-        Me.btExcluir.Location = New System.Drawing.Point(12, 215)
+        Me.btExcluir.Location = New System.Drawing.Point(12, 157)
         Me.btExcluir.Margin = New System.Windows.Forms.Padding(4)
         Me.btExcluir.Name = "btExcluir"
         Me.btExcluir.Size = New System.Drawing.Size(90, 35)
@@ -170,7 +170,7 @@ Partial Class frmUnidadeMedidas
         Me.btSalvar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btSalvar.ForeColor = System.Drawing.Color.White
         Me.btSalvar.Image = CType(resources.GetObject("btSalvar.Image"), System.Drawing.Image)
-        Me.btSalvar.Location = New System.Drawing.Point(7, 81)
+        Me.btSalvar.Location = New System.Drawing.Point(7, 65)
         Me.btSalvar.Margin = New System.Windows.Forms.Padding(4)
         Me.btSalvar.Name = "btSalvar"
         Me.btSalvar.Size = New System.Drawing.Size(90, 35)
@@ -189,7 +189,7 @@ Partial Class frmUnidadeMedidas
         Me.btAlterar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btAlterar.ForeColor = System.Drawing.Color.White
         Me.btAlterar.Image = CType(resources.GetObject("btAlterar.Image"), System.Drawing.Image)
-        Me.btAlterar.Location = New System.Drawing.Point(8, 149)
+        Me.btAlterar.Location = New System.Drawing.Point(8, 112)
         Me.btAlterar.Margin = New System.Windows.Forms.Padding(4)
         Me.btAlterar.Name = "btAlterar"
         Me.btAlterar.Size = New System.Drawing.Size(90, 35)
@@ -208,7 +208,7 @@ Partial Class frmUnidadeMedidas
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.SteelBlue
-        Me.ClientSize = New System.Drawing.Size(531, 402)
+        Me.ClientSize = New System.Drawing.Size(325, 297)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.dgvUnidade)
         Me.Controls.Add(Me.txtUnidade)

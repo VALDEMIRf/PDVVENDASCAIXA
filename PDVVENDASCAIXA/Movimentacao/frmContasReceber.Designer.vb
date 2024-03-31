@@ -47,6 +47,7 @@ Partial Class frmContasReceber
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
+        Me.Label5 = New System.Windows.Forms.Label()
         CType(Me.dgContasPagar, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -54,7 +55,7 @@ Partial Class frmContasReceber
         '
         Me.ComboBox1.FormattingEnabled = True
         Me.ComboBox1.Items.AddRange(New Object() {"Pagar", "Receber"})
-        Me.ComboBox1.Location = New System.Drawing.Point(18, 54)
+        Me.ComboBox1.Location = New System.Drawing.Point(18, 299)
         Me.ComboBox1.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.ComboBox1.Name = "ComboBox1"
         Me.ComboBox1.Size = New System.Drawing.Size(180, 28)
@@ -65,7 +66,7 @@ Partial Class frmContasReceber
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(18, 29)
+        Me.Label1.Location = New System.Drawing.Point(18, 274)
         Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(79, 20)
@@ -77,7 +78,7 @@ Partial Class frmContasReceber
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.White
-        Me.Label2.Location = New System.Drawing.Point(220, 29)
+        Me.Label2.Location = New System.Drawing.Point(220, 274)
         Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(70, 20)
@@ -89,7 +90,7 @@ Partial Class frmContasReceber
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.White
-        Me.Label3.Location = New System.Drawing.Point(348, 29)
+        Me.Label3.Location = New System.Drawing.Point(348, 274)
         Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(94, 20)
@@ -98,7 +99,7 @@ Partial Class frmContasReceber
         '
         'MaskedTextBox1
         '
-        Me.MaskedTextBox1.Location = New System.Drawing.Point(208, 55)
+        Me.MaskedTextBox1.Location = New System.Drawing.Point(208, 300)
         Me.MaskedTextBox1.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.MaskedTextBox1.Mask = "00/00/0000"
         Me.MaskedTextBox1.Name = "MaskedTextBox1"
@@ -108,7 +109,7 @@ Partial Class frmContasReceber
         '
         'MaskedTextBox2
         '
-        Me.MaskedTextBox2.Location = New System.Drawing.Point(352, 55)
+        Me.MaskedTextBox2.Location = New System.Drawing.Point(352, 300)
         Me.MaskedTextBox2.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.MaskedTextBox2.Mask = "00/00/0000"
         Me.MaskedTextBox2.Name = "MaskedTextBox2"
@@ -121,7 +122,7 @@ Partial Class frmContasReceber
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.White
-        Me.Label4.Location = New System.Drawing.Point(506, 29)
+        Me.Label4.Location = New System.Drawing.Point(506, 274)
         Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(59, 20)
@@ -133,7 +134,7 @@ Partial Class frmContasReceber
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.ForeColor = System.Drawing.Color.White
-        Me.Label6.Location = New System.Drawing.Point(22, 90)
+        Me.Label6.Location = New System.Drawing.Point(22, 335)
         Me.Label6.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(71, 20)
@@ -145,7 +146,7 @@ Partial Class frmContasReceber
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.ForeColor = System.Drawing.Color.White
-        Me.Label7.Location = New System.Drawing.Point(334, 90)
+        Me.Label7.Location = New System.Drawing.Point(334, 335)
         Me.Label7.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(179, 20)
@@ -157,7 +158,7 @@ Partial Class frmContasReceber
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.ForeColor = System.Drawing.Color.White
-        Me.Label8.Location = New System.Drawing.Point(622, 158)
+        Me.Label8.Location = New System.Drawing.Point(622, 403)
         Me.Label8.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(71, 20)
@@ -169,7 +170,7 @@ Partial Class frmContasReceber
         Me.Label11.AutoSize = True
         Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label11.ForeColor = System.Drawing.Color.White
-        Me.Label11.Location = New System.Drawing.Point(31, 158)
+        Me.Label11.Location = New System.Drawing.Point(31, 403)
         Me.Label11.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(144, 20)
@@ -181,7 +182,7 @@ Partial Class frmContasReceber
         Me.Label12.AutoSize = True
         Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label12.ForeColor = System.Drawing.Color.White
-        Me.Label12.Location = New System.Drawing.Point(672, 29)
+        Me.Label12.Location = New System.Drawing.Point(672, 274)
         Me.Label12.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(46, 20)
@@ -193,7 +194,7 @@ Partial Class frmContasReceber
         Me.Label13.AutoSize = True
         Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label13.ForeColor = System.Drawing.Color.White
-        Me.Label13.Location = New System.Drawing.Point(822, 28)
+        Me.Label13.Location = New System.Drawing.Point(822, 273)
         Me.Label13.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(39, 20)
@@ -202,7 +203,7 @@ Partial Class frmContasReceber
         '
         'TextBox1
         '
-        Me.TextBox1.Location = New System.Drawing.Point(490, 54)
+        Me.TextBox1.Location = New System.Drawing.Point(490, 299)
         Me.TextBox1.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(148, 26)
@@ -210,7 +211,7 @@ Partial Class frmContasReceber
         '
         'TextBox2
         '
-        Me.TextBox2.Location = New System.Drawing.Point(650, 54)
+        Me.TextBox2.Location = New System.Drawing.Point(650, 299)
         Me.TextBox2.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.TextBox2.Name = "TextBox2"
         Me.TextBox2.Size = New System.Drawing.Size(148, 26)
@@ -220,7 +221,7 @@ Partial Class frmContasReceber
         '
         Me.ComboBox2.FormattingEnabled = True
         Me.ComboBox2.Items.AddRange(New Object() {"Cheque", "Dinhero", "Duplicata", "Luz", "Água", "Boleto"})
-        Me.ComboBox2.Location = New System.Drawing.Point(808, 52)
+        Me.ComboBox2.Location = New System.Drawing.Point(808, 297)
         Me.ComboBox2.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.ComboBox2.Name = "ComboBox2"
         Me.ComboBox2.Size = New System.Drawing.Size(180, 28)
@@ -230,7 +231,7 @@ Partial Class frmContasReceber
         '
         Me.ComboBox3.FormattingEnabled = True
         Me.ComboBox3.Items.AddRange(New Object() {"Pagar", "Receber"})
-        Me.ComboBox3.Location = New System.Drawing.Point(22, 115)
+        Me.ComboBox3.Location = New System.Drawing.Point(22, 360)
         Me.ComboBox3.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.ComboBox3.Name = "ComboBox3"
         Me.ComboBox3.Size = New System.Drawing.Size(235, 28)
@@ -240,7 +241,7 @@ Partial Class frmContasReceber
         '
         Me.ComboBox4.FormattingEnabled = True
         Me.ComboBox4.Items.AddRange(New Object() {"Pagar", "Receber"})
-        Me.ComboBox4.Location = New System.Drawing.Point(322, 115)
+        Me.ComboBox4.Location = New System.Drawing.Point(322, 360)
         Me.ComboBox4.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.ComboBox4.Name = "ComboBox4"
         Me.ComboBox4.Size = New System.Drawing.Size(582, 28)
@@ -250,7 +251,7 @@ Partial Class frmContasReceber
         '
         Me.ComboBox5.FormattingEnabled = True
         Me.ComboBox5.Items.AddRange(New Object() {"Pagar", "Receber"})
-        Me.ComboBox5.Location = New System.Drawing.Point(22, 183)
+        Me.ComboBox5.Location = New System.Drawing.Point(22, 428)
         Me.ComboBox5.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.ComboBox5.Name = "ComboBox5"
         Me.ComboBox5.Size = New System.Drawing.Size(571, 28)
@@ -258,7 +259,7 @@ Partial Class frmContasReceber
         '
         'MaskedTextBox3
         '
-        Me.MaskedTextBox3.Location = New System.Drawing.Point(613, 183)
+        Me.MaskedTextBox3.Location = New System.Drawing.Point(613, 428)
         Me.MaskedTextBox3.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.MaskedTextBox3.Mask = "(99) 0 000-0000"
         Me.MaskedTextBox3.Name = "MaskedTextBox3"
@@ -273,12 +274,12 @@ Partial Class frmContasReceber
         Me.dgContasPagar.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.dgContasPagar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgContasPagar.GridColor = System.Drawing.Color.DarkBlue
-        Me.dgContasPagar.Location = New System.Drawing.Point(18, 245)
+        Me.dgContasPagar.Location = New System.Drawing.Point(18, 501)
         Me.dgContasPagar.Margin = New System.Windows.Forms.Padding(18, 15, 18, 15)
         Me.dgContasPagar.Name = "dgContasPagar"
         Me.dgContasPagar.ReadOnly = True
         Me.dgContasPagar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgContasPagar.Size = New System.Drawing.Size(1004, 305)
+        Me.dgContasPagar.Size = New System.Drawing.Size(1004, 49)
         Me.dgContasPagar.TabIndex = 191
         '
         'Button1
@@ -288,7 +289,7 @@ Partial Class frmContasReceber
         Me.Button1.FlatAppearance.BorderSize = 0
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button1.Image = CType(resources.GetObject("Button1.Image"), System.Drawing.Image)
-        Me.Button1.Location = New System.Drawing.Point(999, 46)
+        Me.Button1.Location = New System.Drawing.Point(999, 291)
         Me.Button1.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(54, 45)
@@ -302,7 +303,7 @@ Partial Class frmContasReceber
         Me.Button2.FlatAppearance.BorderSize = 0
         Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button2.Image = CType(resources.GetObject("Button2.Image"), System.Drawing.Image)
-        Me.Button2.Location = New System.Drawing.Point(268, 107)
+        Me.Button2.Location = New System.Drawing.Point(268, 352)
         Me.Button2.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(54, 45)
@@ -316,12 +317,23 @@ Partial Class frmContasReceber
         Me.Button3.FlatAppearance.BorderSize = 0
         Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button3.Image = CType(resources.GetObject("Button3.Image"), System.Drawing.Image)
-        Me.Button3.Location = New System.Drawing.Point(914, 102)
+        Me.Button3.Location = New System.Drawing.Point(914, 347)
         Me.Button3.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(54, 45)
         Me.Button3.TabIndex = 194
         Me.Button3.UseVisualStyleBackColor = True
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Constantia", 30.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.ForeColor = System.Drawing.Color.White
+        Me.Label5.Location = New System.Drawing.Point(313, 9)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(400, 49)
+        Me.Label5.TabIndex = 218
+        Me.Label5.Text = "CONTAS A RECEBER"
         '
         'frmContasReceber
         '
@@ -329,6 +341,7 @@ Partial Class frmContasReceber
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.SteelBlue
         Me.ClientSize = New System.Drawing.Size(1106, 692)
+        Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Button1)
@@ -393,4 +406,5 @@ Partial Class frmContasReceber
     Friend WithEvents Button1 As Button
     Friend WithEvents Button2 As Button
     Friend WithEvents Button3 As Button
+    Friend WithEvents Label5 As Label
 End Class
