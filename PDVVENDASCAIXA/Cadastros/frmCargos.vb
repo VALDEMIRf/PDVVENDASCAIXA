@@ -160,4 +160,6 @@ Public Class frmCargos
         lblCargo.Text = dgCargos.CurrentRow.Cells(0).Value
         txtCargo.Text = dgCargos.CurrentRow.Cells(1).Value
     End Sub
+
+
 End Class

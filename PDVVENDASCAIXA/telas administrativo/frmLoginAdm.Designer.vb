@@ -109,6 +109,7 @@ Partial Class frmLoginAdm
         Me.btnCancelar.FlatAppearance.BorderSize = 0
         Me.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCancelar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnCancelar.ForeColor = System.Drawing.Color.White
         Me.btnCancelar.Image = CType(resources.GetObject("btnCancelar.Image"), System.Drawing.Image)
         Me.btnCancelar.Location = New System.Drawing.Point(247, 123)
         Me.btnCancelar.Name = "btnCancelar"

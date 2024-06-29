@@ -23,7 +23,6 @@ Partial Class frmRelCaixa
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmRelCaixa))
         Dim ReportDataSource1 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
         Dim ReportDataSource2 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
         Me.TbCaixaBindingSource = New System.Windows.Forms.BindingSource(Me.components)
@@ -70,10 +69,9 @@ Partial Class frmRelCaixa
         Me.btSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btSair.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btSair.ForeColor = System.Drawing.Color.White
-        Me.btSair.Image = CType(resources.GetObject("btSair.Image"), System.Drawing.Image)
         Me.btSair.Location = New System.Drawing.Point(12, 12)
         Me.btSair.Name = "btSair"
-        Me.btSair.Size = New System.Drawing.Size(84, 32)
+        Me.btSair.Size = New System.Drawing.Size(59, 32)
         Me.btSair.TabIndex = 2
         Me.btSair.Text = "Sair"
         Me.btSair.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText

@@ -25,15 +25,15 @@ Partial Class frmTipoDocumento
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmTipoDocumento))
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.dgvTipo = New System.Windows.Forms.DataGridView()
-        Me.txtTipoDocumento = New System.Windows.Forms.TextBox()
-        Me.lblTipo = New System.Windows.Forms.Label()
-        Me.Label1 = New System.Windows.Forms.Label()
         Me.btNovo = New System.Windows.Forms.Button()
         Me.brSair = New System.Windows.Forms.Button()
         Me.btExcluir = New System.Windows.Forms.Button()
         Me.btSalvar = New System.Windows.Forms.Button()
         Me.btAlterar = New System.Windows.Forms.Button()
+        Me.dgvTipo = New System.Windows.Forms.DataGridView()
+        Me.txtTipoDocumento = New System.Windows.Forms.TextBox()
+        Me.lblTipo = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.errErro = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.GroupBox1.SuspendLayout()
         CType(Me.dgvTipo, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -52,51 +52,6 @@ Partial Class frmTipoDocumento
         Me.GroupBox1.Size = New System.Drawing.Size(93, 229)
         Me.GroupBox1.TabIndex = 25
         Me.GroupBox1.TabStop = False
-        '
-        'dgvTipo
-        '
-        Me.dgvTipo.AllowUserToAddRows = False
-        Me.dgvTipo.AllowUserToDeleteRows = False
-        Me.dgvTipo.BackgroundColor = System.Drawing.Color.White
-        Me.dgvTipo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvTipo.GridColor = System.Drawing.SystemColors.ActiveCaption
-        Me.dgvTipo.Location = New System.Drawing.Point(3, 54)
-        Me.dgvTipo.Name = "dgvTipo"
-        Me.dgvTipo.ReadOnly = True
-        Me.dgvTipo.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvTipo.Size = New System.Drawing.Size(205, 207)
-        Me.dgvTipo.TabIndex = 24
-        '
-        'txtTipoDocumento
-        '
-        Me.txtTipoDocumento.Location = New System.Drawing.Point(3, 32)
-        Me.txtTipoDocumento.Name = "txtTipoDocumento"
-        Me.txtTipoDocumento.Size = New System.Drawing.Size(205, 20)
-        Me.txtTipoDocumento.TabIndex = 23
-        '
-        'lblTipo
-        '
-        Me.lblTipo.AutoSize = True
-        Me.lblTipo.BackColor = System.Drawing.Color.Transparent
-        Me.lblTipo.ForeColor = System.Drawing.Color.White
-        Me.lblTipo.Location = New System.Drawing.Point(307, 9)
-        Me.lblTipo.Name = "lblTipo"
-        Me.lblTipo.Size = New System.Drawing.Size(13, 13)
-        Me.lblTipo.TabIndex = 22
-        Me.lblTipo.Text = "0"
-        Me.lblTipo.Visible = False
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.BackColor = System.Drawing.Color.Transparent
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(12, 9)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(196, 20)
-        Me.Label1.TabIndex = 21
-        Me.Label1.Text = "TIPO DE DOCUMENTO"
         '
         'btNovo
         '
@@ -187,6 +142,51 @@ Partial Class frmTipoDocumento
         Me.btAlterar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btAlterar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btAlterar.UseVisualStyleBackColor = False
+        '
+        'dgvTipo
+        '
+        Me.dgvTipo.AllowUserToAddRows = False
+        Me.dgvTipo.AllowUserToDeleteRows = False
+        Me.dgvTipo.BackgroundColor = System.Drawing.Color.White
+        Me.dgvTipo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvTipo.GridColor = System.Drawing.SystemColors.ActiveCaption
+        Me.dgvTipo.Location = New System.Drawing.Point(3, 54)
+        Me.dgvTipo.Name = "dgvTipo"
+        Me.dgvTipo.ReadOnly = True
+        Me.dgvTipo.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.dgvTipo.Size = New System.Drawing.Size(205, 207)
+        Me.dgvTipo.TabIndex = 24
+        '
+        'txtTipoDocumento
+        '
+        Me.txtTipoDocumento.Location = New System.Drawing.Point(3, 32)
+        Me.txtTipoDocumento.Name = "txtTipoDocumento"
+        Me.txtTipoDocumento.Size = New System.Drawing.Size(205, 20)
+        Me.txtTipoDocumento.TabIndex = 23
+        '
+        'lblTipo
+        '
+        Me.lblTipo.AutoSize = True
+        Me.lblTipo.BackColor = System.Drawing.Color.Transparent
+        Me.lblTipo.ForeColor = System.Drawing.Color.White
+        Me.lblTipo.Location = New System.Drawing.Point(307, 9)
+        Me.lblTipo.Name = "lblTipo"
+        Me.lblTipo.Size = New System.Drawing.Size(13, 13)
+        Me.lblTipo.TabIndex = 22
+        Me.lblTipo.Text = "0"
+        Me.lblTipo.Visible = False
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.BackColor = System.Drawing.Color.Transparent
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.White
+        Me.Label1.Location = New System.Drawing.Point(12, 9)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(196, 20)
+        Me.Label1.TabIndex = 21
+        Me.Label1.Text = "TIPO DE DOCUMENTO"
         '
         'errErro
         '

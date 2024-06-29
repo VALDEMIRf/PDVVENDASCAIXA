@@ -221,7 +221,7 @@ Partial Class frmFornecedores
         Me.btBuscarEmpresa.ForeColor = System.Drawing.Color.Black
         Me.btBuscarEmpresa.Image = CType(resources.GetObject("btBuscarEmpresa.Image"), System.Drawing.Image)
         Me.btBuscarEmpresa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btBuscarEmpresa.Location = New System.Drawing.Point(248, 6)
+        Me.btBuscarEmpresa.Location = New System.Drawing.Point(243, 4)
         Me.btBuscarEmpresa.Margin = New System.Windows.Forms.Padding(8, 7, 8, 7)
         Me.btBuscarEmpresa.Name = "btBuscarEmpresa"
         Me.btBuscarEmpresa.Size = New System.Drawing.Size(35, 27)

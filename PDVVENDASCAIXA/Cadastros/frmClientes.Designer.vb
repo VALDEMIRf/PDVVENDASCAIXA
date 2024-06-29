@@ -149,6 +149,7 @@ Partial Class frmClientes
         'Cadastro
         '
         Me.Cadastro.BackColor = System.Drawing.Color.SteelBlue
+        Me.Cadastro.Controls.Add(Me.btSair)
         Me.Cadastro.Controls.Add(Me.Label7)
         Me.Cadastro.Controls.Add(Me.lblTotal)
         Me.Cadastro.Controls.Add(Me.GroupBox1)
@@ -453,7 +454,7 @@ Partial Class frmClientes
         Me.btnSalvar.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSalvar.ForeColor = System.Drawing.Color.White
         Me.btnSalvar.Image = CType(resources.GetObject("btnSalvar.Image"), System.Drawing.Image)
-        Me.btnSalvar.Location = New System.Drawing.Point(127, 420)
+        Me.btnSalvar.Location = New System.Drawing.Point(127, 423)
         Me.btnSalvar.Margin = New System.Windows.Forms.Padding(5)
         Me.btnSalvar.Name = "btnSalvar"
         Me.btnSalvar.Size = New System.Drawing.Size(88, 37)
@@ -469,7 +470,7 @@ Partial Class frmClientes
         Me.btBuscarCEP.FlatAppearance.BorderSize = 0
         Me.btBuscarCEP.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btBuscarCEP.Image = CType(resources.GetObject("btBuscarCEP.Image"), System.Drawing.Image)
-        Me.btBuscarCEP.Location = New System.Drawing.Point(641, 8)
+        Me.btBuscarCEP.Location = New System.Drawing.Point(633, 4)
         Me.btBuscarCEP.Name = "btBuscarCEP"
         Me.btBuscarCEP.Size = New System.Drawing.Size(37, 26)
         Me.btBuscarCEP.TabIndex = 304
@@ -1362,7 +1363,7 @@ Partial Class frmClientes
         Me.btBuscarCNPJ.FlatAppearance.BorderSize = 0
         Me.btBuscarCNPJ.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btBuscarCNPJ.Image = CType(resources.GetObject("btBuscarCNPJ.Image"), System.Drawing.Image)
-        Me.btBuscarCNPJ.Location = New System.Drawing.Point(249, 15)
+        Me.btBuscarCNPJ.Location = New System.Drawing.Point(247, 11)
         Me.btBuscarCNPJ.Name = "btBuscarCNPJ"
         Me.btBuscarCNPJ.Size = New System.Drawing.Size(37, 26)
         Me.btBuscarCNPJ.TabIndex = 293
@@ -1422,7 +1423,7 @@ Partial Class frmClientes
         Me.btSair.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btSair.ForeColor = System.Drawing.Color.White
         Me.btSair.Image = CType(resources.GetObject("btSair.Image"), System.Drawing.Image)
-        Me.btSair.Location = New System.Drawing.Point(807, 14)
+        Me.btSair.Location = New System.Drawing.Point(437, 426)
         Me.btSair.Margin = New System.Windows.Forms.Padding(5)
         Me.btSair.Name = "btSair"
         Me.btSair.Size = New System.Drawing.Size(73, 30)
@@ -1438,7 +1439,6 @@ Partial Class frmClientes
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.SteelBlue
         Me.ClientSize = New System.Drawing.Size(916, 557)
-        Me.Controls.Add(Me.btSair)
         Me.Controls.Add(Me.lblCodigo)
         Me.Controls.Add(Me.Label18)
         Me.Controls.Add(Me.TabControl1)

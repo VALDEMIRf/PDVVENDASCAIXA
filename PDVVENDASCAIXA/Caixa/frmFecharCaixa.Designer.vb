@@ -34,12 +34,12 @@ Partial Class frmFecharCaixa
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.Label4 = New System.Windows.Forms.Label()
         Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.TextBox3 = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.Label4 = New System.Windows.Forms.Label()
         CType(Me.dg, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
@@ -195,27 +195,6 @@ Partial Class frmFecharCaixa
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Total Caixa"
         '
-        'TextBox1
-        '
-        Me.TextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox1.Location = New System.Drawing.Point(112, 51)
-        Me.TextBox1.Margin = New System.Windows.Forms.Padding(7, 6, 7, 6)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(89, 26)
-        Me.TextBox1.TabIndex = 200
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.ForeColor = System.Drawing.Color.White
-        Me.Label4.Location = New System.Drawing.Point(11, 54)
-        Me.Label4.Margin = New System.Windows.Forms.Padding(7, 0, 7, 0)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(101, 20)
-        Me.Label4.TabIndex = 199
-        Me.Label4.Text = "Dinheiro:  R$"
-        '
         'TextBox2
         '
         Me.TextBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -257,6 +236,27 @@ Partial Class frmFecharCaixa
         Me.Label6.Size = New System.Drawing.Size(101, 20)
         Me.Label6.TabIndex = 201
         Me.Label6.Text = "Dinheiro:  R$"
+        '
+        'TextBox1
+        '
+        Me.TextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox1.Location = New System.Drawing.Point(112, 51)
+        Me.TextBox1.Margin = New System.Windows.Forms.Padding(7, 6, 7, 6)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(89, 26)
+        Me.TextBox1.TabIndex = 200
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.ForeColor = System.Drawing.Color.White
+        Me.Label4.Location = New System.Drawing.Point(11, 54)
+        Me.Label4.Margin = New System.Windows.Forms.Padding(7, 0, 7, 0)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(101, 20)
+        Me.Label4.TabIndex = 199
+        Me.Label4.Text = "Dinheiro:  R$"
         '
         'frmFecharCaixa
         '

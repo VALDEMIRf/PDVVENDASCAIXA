@@ -132,7 +132,7 @@ Partial Class frmProdutoConsultaSimples
         Me.btConsulta.FlatAppearance.BorderSize = 0
         Me.btConsulta.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btConsulta.Image = CType(resources.GetObject("btConsulta.Image"), System.Drawing.Image)
-        Me.btConsulta.Location = New System.Drawing.Point(394, 77)
+        Me.btConsulta.Location = New System.Drawing.Point(386, 74)
         Me.btConsulta.Margin = New System.Windows.Forms.Padding(4)
         Me.btConsulta.Name = "btConsulta"
         Me.btConsulta.Size = New System.Drawing.Size(48, 31)
@@ -144,12 +144,12 @@ Partial Class frmProdutoConsultaSimples
         Me.btFechar.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btFechar.FlatAppearance.BorderSize = 0
         Me.btFechar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btFechar.Image = CType(resources.GetObject("btFechar.Image"), System.Drawing.Image)
-        Me.btFechar.Location = New System.Drawing.Point(386, 205)
+        Me.btFechar.Location = New System.Drawing.Point(372, 205)
         Me.btFechar.Margin = New System.Windows.Forms.Padding(4)
         Me.btFechar.Name = "btFechar"
-        Me.btFechar.Size = New System.Drawing.Size(40, 37)
+        Me.btFechar.Size = New System.Drawing.Size(54, 37)
         Me.btFechar.TabIndex = 2
+        Me.btFechar.Text = "Sair"
         Me.btFechar.UseVisualStyleBackColor = True
         '
         'Label6

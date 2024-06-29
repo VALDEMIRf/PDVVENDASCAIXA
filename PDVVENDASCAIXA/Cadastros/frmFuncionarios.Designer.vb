@@ -620,7 +620,7 @@ Partial Class frmFuncionarios
         Me.btBuscarCEP.FlatAppearance.BorderSize = 0
         Me.btBuscarCEP.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btBuscarCEP.Image = CType(resources.GetObject("btBuscarCEP.Image"), System.Drawing.Image)
-        Me.btBuscarCEP.Location = New System.Drawing.Point(165, 18)
+        Me.btBuscarCEP.Location = New System.Drawing.Point(159, 18)
         Me.btBuscarCEP.Name = "btBuscarCEP"
         Me.btBuscarCEP.Size = New System.Drawing.Size(37, 26)
         Me.btBuscarCEP.TabIndex = 21

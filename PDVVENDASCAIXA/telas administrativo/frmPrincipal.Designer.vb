@@ -159,21 +159,21 @@ Partial Class frmPrincipal
         '
         Me.EntradaSaídaToolStripMenuItem.Image = CType(resources.GetObject("EntradaSaídaToolStripMenuItem.Image"), System.Drawing.Image)
         Me.EntradaSaídaToolStripMenuItem.Name = "EntradaSaídaToolStripMenuItem"
-        Me.EntradaSaídaToolStripMenuItem.Size = New System.Drawing.Size(162, 24)
+        Me.EntradaSaídaToolStripMenuItem.Size = New System.Drawing.Size(180, 24)
         Me.EntradaSaídaToolStripMenuItem.Text = "Entrada / Saída"
         '
         'ConsultasToolStripMenuItem
         '
         Me.ConsultasToolStripMenuItem.Image = CType(resources.GetObject("ConsultasToolStripMenuItem.Image"), System.Drawing.Image)
         Me.ConsultasToolStripMenuItem.Name = "ConsultasToolStripMenuItem"
-        Me.ConsultasToolStripMenuItem.Size = New System.Drawing.Size(162, 24)
+        Me.ConsultasToolStripMenuItem.Size = New System.Drawing.Size(180, 24)
         Me.ConsultasToolStripMenuItem.Text = "Consultas"
         '
         'NíveisBaixoToolStripMenuItem
         '
         Me.NíveisBaixoToolStripMenuItem.Image = CType(resources.GetObject("NíveisBaixoToolStripMenuItem.Image"), System.Drawing.Image)
         Me.NíveisBaixoToolStripMenuItem.Name = "NíveisBaixoToolStripMenuItem"
-        Me.NíveisBaixoToolStripMenuItem.Size = New System.Drawing.Size(162, 24)
+        Me.NíveisBaixoToolStripMenuItem.Size = New System.Drawing.Size(180, 24)
         Me.NíveisBaixoToolStripMenuItem.Text = "Níveis Baixo"
         '
         'MovimentaçãoToolStripMenuItem
@@ -189,21 +189,21 @@ Partial Class frmPrincipal
         '
         Me.OrdemDeServiçoToolStripMenuItem.Image = CType(resources.GetObject("OrdemDeServiçoToolStripMenuItem.Image"), System.Drawing.Image)
         Me.OrdemDeServiçoToolStripMenuItem.Name = "OrdemDeServiçoToolStripMenuItem"
-        Me.OrdemDeServiçoToolStripMenuItem.Size = New System.Drawing.Size(178, 24)
+        Me.OrdemDeServiçoToolStripMenuItem.Size = New System.Drawing.Size(180, 24)
         Me.OrdemDeServiçoToolStripMenuItem.Text = "Ordem de Serviço"
         '
         'ContasAPagarToolStripMenuItem
         '
         Me.ContasAPagarToolStripMenuItem.Image = CType(resources.GetObject("ContasAPagarToolStripMenuItem.Image"), System.Drawing.Image)
         Me.ContasAPagarToolStripMenuItem.Name = "ContasAPagarToolStripMenuItem"
-        Me.ContasAPagarToolStripMenuItem.Size = New System.Drawing.Size(178, 24)
+        Me.ContasAPagarToolStripMenuItem.Size = New System.Drawing.Size(180, 24)
         Me.ContasAPagarToolStripMenuItem.Text = "Contas a Pagar"
         '
         'ContasAReceberToolStripMenuItem
         '
         Me.ContasAReceberToolStripMenuItem.Image = CType(resources.GetObject("ContasAReceberToolStripMenuItem.Image"), System.Drawing.Image)
         Me.ContasAReceberToolStripMenuItem.Name = "ContasAReceberToolStripMenuItem"
-        Me.ContasAReceberToolStripMenuItem.Size = New System.Drawing.Size(178, 24)
+        Me.ContasAReceberToolStripMenuItem.Size = New System.Drawing.Size(180, 24)
         Me.ContasAReceberToolStripMenuItem.Text = "Contas a Receber"
         '
         'VendasToolStripMenuItem
