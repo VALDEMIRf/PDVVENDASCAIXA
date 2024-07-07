@@ -24,6 +24,7 @@ Partial Class frmPrincipal
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmPrincipal))
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.CadastrosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ClientesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -42,6 +43,8 @@ Partial Class frmPrincipal
         Me.ContasAReceberToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.VendasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PDVRegistrarVendaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Modelo1ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Modelo2ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ListarVendasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SangriaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ReforçosAsCaixaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -108,42 +111,42 @@ Partial Class frmPrincipal
         '
         Me.ClientesToolStripMenuItem.Image = CType(resources.GetObject("ClientesToolStripMenuItem.Image"), System.Drawing.Image)
         Me.ClientesToolStripMenuItem.Name = "ClientesToolStripMenuItem"
-        Me.ClientesToolStripMenuItem.Size = New System.Drawing.Size(180, 24)
+        Me.ClientesToolStripMenuItem.Size = New System.Drawing.Size(156, 24)
         Me.ClientesToolStripMenuItem.Text = "Clientes"
         '
         'CargosToolStripMenuItem
         '
         Me.CargosToolStripMenuItem.Image = CType(resources.GetObject("CargosToolStripMenuItem.Image"), System.Drawing.Image)
         Me.CargosToolStripMenuItem.Name = "CargosToolStripMenuItem"
-        Me.CargosToolStripMenuItem.Size = New System.Drawing.Size(180, 24)
+        Me.CargosToolStripMenuItem.Size = New System.Drawing.Size(156, 24)
         Me.CargosToolStripMenuItem.Text = "Cargos"
         '
         'FuncionáriosToolStripMenuItem
         '
         Me.FuncionáriosToolStripMenuItem.Image = CType(resources.GetObject("FuncionáriosToolStripMenuItem.Image"), System.Drawing.Image)
         Me.FuncionáriosToolStripMenuItem.Name = "FuncionáriosToolStripMenuItem"
-        Me.FuncionáriosToolStripMenuItem.Size = New System.Drawing.Size(180, 24)
+        Me.FuncionáriosToolStripMenuItem.Size = New System.Drawing.Size(156, 24)
         Me.FuncionáriosToolStripMenuItem.Text = "Funcionários"
         '
         'FornecedoresToolStripMenuItem
         '
         Me.FornecedoresToolStripMenuItem.Image = CType(resources.GetObject("FornecedoresToolStripMenuItem.Image"), System.Drawing.Image)
         Me.FornecedoresToolStripMenuItem.Name = "FornecedoresToolStripMenuItem"
-        Me.FornecedoresToolStripMenuItem.Size = New System.Drawing.Size(180, 24)
+        Me.FornecedoresToolStripMenuItem.Size = New System.Drawing.Size(156, 24)
         Me.FornecedoresToolStripMenuItem.Text = "Fornecedores"
         '
         'EmpresaToolStripMenuItem
         '
         Me.EmpresaToolStripMenuItem.Image = CType(resources.GetObject("EmpresaToolStripMenuItem.Image"), System.Drawing.Image)
         Me.EmpresaToolStripMenuItem.Name = "EmpresaToolStripMenuItem"
-        Me.EmpresaToolStripMenuItem.Size = New System.Drawing.Size(180, 24)
+        Me.EmpresaToolStripMenuItem.Size = New System.Drawing.Size(156, 24)
         Me.EmpresaToolStripMenuItem.Text = "Empresa"
         '
         'ProdutosToolStripMenuItem
         '
         Me.ProdutosToolStripMenuItem.Image = CType(resources.GetObject("ProdutosToolStripMenuItem.Image"), System.Drawing.Image)
         Me.ProdutosToolStripMenuItem.Name = "ProdutosToolStripMenuItem"
-        Me.ProdutosToolStripMenuItem.Size = New System.Drawing.Size(180, 24)
+        Me.ProdutosToolStripMenuItem.Size = New System.Drawing.Size(156, 24)
         Me.ProdutosToolStripMenuItem.Text = "Produtos"
         '
         'EstoqueToolStripMenuItem
@@ -159,21 +162,21 @@ Partial Class frmPrincipal
         '
         Me.EntradaSaídaToolStripMenuItem.Image = CType(resources.GetObject("EntradaSaídaToolStripMenuItem.Image"), System.Drawing.Image)
         Me.EntradaSaídaToolStripMenuItem.Name = "EntradaSaídaToolStripMenuItem"
-        Me.EntradaSaídaToolStripMenuItem.Size = New System.Drawing.Size(180, 24)
+        Me.EntradaSaídaToolStripMenuItem.Size = New System.Drawing.Size(162, 24)
         Me.EntradaSaídaToolStripMenuItem.Text = "Entrada / Saída"
         '
         'ConsultasToolStripMenuItem
         '
         Me.ConsultasToolStripMenuItem.Image = CType(resources.GetObject("ConsultasToolStripMenuItem.Image"), System.Drawing.Image)
         Me.ConsultasToolStripMenuItem.Name = "ConsultasToolStripMenuItem"
-        Me.ConsultasToolStripMenuItem.Size = New System.Drawing.Size(180, 24)
+        Me.ConsultasToolStripMenuItem.Size = New System.Drawing.Size(162, 24)
         Me.ConsultasToolStripMenuItem.Text = "Consultas"
         '
         'NíveisBaixoToolStripMenuItem
         '
         Me.NíveisBaixoToolStripMenuItem.Image = CType(resources.GetObject("NíveisBaixoToolStripMenuItem.Image"), System.Drawing.Image)
         Me.NíveisBaixoToolStripMenuItem.Name = "NíveisBaixoToolStripMenuItem"
-        Me.NíveisBaixoToolStripMenuItem.Size = New System.Drawing.Size(180, 24)
+        Me.NíveisBaixoToolStripMenuItem.Size = New System.Drawing.Size(162, 24)
         Me.NíveisBaixoToolStripMenuItem.Text = "Níveis Baixo"
         '
         'MovimentaçãoToolStripMenuItem
@@ -217,10 +220,25 @@ Partial Class frmPrincipal
         '
         'PDVRegistrarVendaToolStripMenuItem
         '
+        Me.PDVRegistrarVendaToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Modelo1ToolStripMenuItem, Me.Modelo2ToolStripMenuItem})
         Me.PDVRegistrarVendaToolStripMenuItem.Image = CType(resources.GetObject("PDVRegistrarVendaToolStripMenuItem.Image"), System.Drawing.Image)
         Me.PDVRegistrarVendaToolStripMenuItem.Name = "PDVRegistrarVendaToolStripMenuItem"
         Me.PDVRegistrarVendaToolStripMenuItem.Size = New System.Drawing.Size(200, 24)
         Me.PDVRegistrarVendaToolStripMenuItem.Text = "PDV - Registrar Venda"
+        '
+        'Modelo1ToolStripMenuItem
+        '
+        Me.Modelo1ToolStripMenuItem.Image = CType(resources.GetObject("Modelo1ToolStripMenuItem.Image"), System.Drawing.Image)
+        Me.Modelo1ToolStripMenuItem.Name = "Modelo1ToolStripMenuItem"
+        Me.Modelo1ToolStripMenuItem.Size = New System.Drawing.Size(159, 24)
+        Me.Modelo1ToolStripMenuItem.Text = "Tela Modelo 1"
+        '
+        'Modelo2ToolStripMenuItem
+        '
+        Me.Modelo2ToolStripMenuItem.Image = CType(resources.GetObject("Modelo2ToolStripMenuItem.Image"), System.Drawing.Image)
+        Me.Modelo2ToolStripMenuItem.Name = "Modelo2ToolStripMenuItem"
+        Me.Modelo2ToolStripMenuItem.Size = New System.Drawing.Size(159, 24)
+        Me.Modelo2ToolStripMenuItem.Text = "Tela Modelo 2"
         '
         'ListarVendasToolStripMenuItem
         '
@@ -371,6 +389,9 @@ Partial Class frmPrincipal
         '
         Me.dg.AllowUserToAddRows = False
         Me.dg.AllowUserToDeleteRows = False
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.DarkGray
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.DarkBlue
+        Me.dg.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.dg.BackgroundColor = System.Drawing.Color.White
         Me.dg.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dg.GridColor = System.Drawing.SystemColors.HotTrack
@@ -668,4 +689,6 @@ Partial Class frmPrincipal
     Friend WithEvents Label1 As Label
     Friend WithEvents ContasAPagarToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ContasAReceberToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents Modelo1ToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents Modelo2ToolStripMenuItem As ToolStripMenuItem
 End Class

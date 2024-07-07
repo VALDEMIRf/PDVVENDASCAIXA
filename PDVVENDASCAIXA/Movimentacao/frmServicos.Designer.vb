@@ -107,7 +107,7 @@ Partial Class frmServicos
         Me.TabControl1.Margin = New System.Windows.Forms.Padding(4)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(1010, 426)
+        Me.TabControl1.Size = New System.Drawing.Size(1081, 426)
         Me.TabControl1.TabIndex = 192
         '
         'Cadastro
@@ -129,13 +129,13 @@ Partial Class frmServicos
         Me.Cadastro.Margin = New System.Windows.Forms.Padding(4)
         Me.Cadastro.Name = "Cadastro"
         Me.Cadastro.Padding = New System.Windows.Forms.Padding(4)
-        Me.Cadastro.Size = New System.Drawing.Size(1002, 400)
+        Me.Cadastro.Size = New System.Drawing.Size(1073, 400)
         Me.Cadastro.TabIndex = 0
         Me.Cadastro.Text = "Cadastro"
         '
         'mktDtEntrada
         '
-        Me.mktDtEntrada.Location = New System.Drawing.Point(390, 45)
+        Me.mktDtEntrada.Location = New System.Drawing.Point(423, 42)
         Me.mktDtEntrada.Margin = New System.Windows.Forms.Padding(5)
         Me.mktDtEntrada.Mask = "00/00/0000"
         Me.mktDtEntrada.Name = "mktDtEntrada"
@@ -146,11 +146,12 @@ Partial Class frmServicos
         'Label13
         '
         Me.Label13.AutoSize = True
+        Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label13.ForeColor = System.Drawing.Color.White
-        Me.Label13.Location = New System.Drawing.Point(318, 48)
+        Me.Label13.Location = New System.Drawing.Point(339, 44)
         Me.Label13.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(50, 13)
+        Me.Label13.Size = New System.Drawing.Size(74, 20)
         Me.Label13.TabIndex = 14
         Me.Label13.Text = " Entrada:"
         '
@@ -173,12 +174,13 @@ Partial Class frmServicos
         Me.GroupBox3.Controls.Add(Me.Label19)
         Me.GroupBox3.Controls.Add(Me.txtCidade)
         Me.GroupBox3.Controls.Add(Me.Label20)
+        Me.GroupBox3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox3.ForeColor = System.Drawing.Color.White
         Me.GroupBox3.Location = New System.Drawing.Point(16, 75)
         Me.GroupBox3.Margin = New System.Windows.Forms.Padding(5)
         Me.GroupBox3.Name = "GroupBox3"
         Me.GroupBox3.Padding = New System.Windows.Forms.Padding(5)
-        Me.GroupBox3.Size = New System.Drawing.Size(498, 171)
+        Me.GroupBox3.Size = New System.Drawing.Size(498, 212)
         Me.GroupBox3.TabIndex = 178
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Local do Serviço"
@@ -186,28 +188,28 @@ Partial Class frmServicos
         'txtComplemento
         '
         Me.txtComplemento.Enabled = False
-        Me.txtComplemento.Location = New System.Drawing.Point(242, 67)
+        Me.txtComplemento.Location = New System.Drawing.Point(265, 78)
         Me.txtComplemento.Margin = New System.Windows.Forms.Padding(8, 7, 8, 7)
         Me.txtComplemento.Name = "txtComplemento"
-        Me.txtComplemento.Size = New System.Drawing.Size(203, 20)
+        Me.txtComplemento.Size = New System.Drawing.Size(203, 26)
         Me.txtComplemento.TabIndex = 124
         '
         'txtCompl
         '
-        Me.txtCompl.Location = New System.Drawing.Point(71, 89)
+        Me.txtCompl.Location = New System.Drawing.Point(94, 107)
         Me.txtCompl.Margin = New System.Windows.Forms.Padding(8, 7, 8, 7)
         Me.txtCompl.Name = "txtCompl"
-        Me.txtCompl.Size = New System.Drawing.Size(203, 20)
+        Me.txtCompl.Size = New System.Drawing.Size(203, 26)
         Me.txtCompl.TabIndex = 6
         '
         'Label25
         '
         Me.Label25.AutoSize = True
         Me.Label25.ForeColor = System.Drawing.Color.White
-        Me.Label25.Location = New System.Drawing.Point(14, 93)
+        Me.Label25.Location = New System.Drawing.Point(31, 111)
         Me.Label25.Margin = New System.Windows.Forms.Padding(8, 0, 8, 0)
         Me.Label25.Name = "Label25"
-        Me.Label25.Size = New System.Drawing.Size(42, 13)
+        Me.Label25.Size = New System.Drawing.Size(62, 20)
         Me.Label25.TabIndex = 123
         Me.Label25.Text = "Compl.:"
         '
@@ -217,7 +219,7 @@ Partial Class frmServicos
         Me.btBuscarCEP.FlatAppearance.BorderSize = 0
         Me.btBuscarCEP.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btBuscarCEP.Image = CType(resources.GetObject("btBuscarCEP.Image"), System.Drawing.Image)
-        Me.btBuscarCEP.Location = New System.Drawing.Point(159, 17)
+        Me.btBuscarCEP.Location = New System.Drawing.Point(182, 14)
         Me.btBuscarCEP.Name = "btBuscarCEP"
         Me.btBuscarCEP.Size = New System.Drawing.Size(35, 23)
         Me.btBuscarCEP.TabIndex = 4
@@ -228,48 +230,48 @@ Partial Class frmServicos
         '
         Me.Label14.AutoSize = True
         Me.Label14.ForeColor = System.Drawing.Color.White
-        Me.Label14.Location = New System.Drawing.Point(12, 46)
+        Me.Label14.Location = New System.Drawing.Point(3, 53)
         Me.Label14.Margin = New System.Windows.Forms.Padding(8, 0, 8, 0)
         Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(56, 13)
+        Me.Label14.Size = New System.Drawing.Size(82, 20)
         Me.Label14.TabIndex = 61
         Me.Label14.Text = "Endereço:"
         '
         'txtEndereco
         '
         Me.txtEndereco.Enabled = False
-        Me.txtEndereco.Location = New System.Drawing.Point(71, 43)
+        Me.txtEndereco.Location = New System.Drawing.Point(94, 49)
         Me.txtEndereco.Margin = New System.Windows.Forms.Padding(8, 7, 8, 7)
         Me.txtEndereco.Name = "txtEndereco"
-        Me.txtEndereco.Size = New System.Drawing.Size(377, 20)
+        Me.txtEndereco.Size = New System.Drawing.Size(377, 26)
         Me.txtEndereco.TabIndex = 6
         '
         'txtNumero
         '
-        Me.txtNumero.Location = New System.Drawing.Point(71, 65)
+        Me.txtNumero.Location = New System.Drawing.Point(94, 76)
         Me.txtNumero.Margin = New System.Windows.Forms.Padding(8, 7, 8, 7)
         Me.txtNumero.Name = "txtNumero"
-        Me.txtNumero.Size = New System.Drawing.Size(73, 20)
+        Me.txtNumero.Size = New System.Drawing.Size(73, 26)
         Me.txtNumero.TabIndex = 5
         '
         'Label15
         '
         Me.Label15.AutoSize = True
         Me.Label15.ForeColor = System.Drawing.Color.White
-        Me.Label15.Location = New System.Drawing.Point(38, 70)
+        Me.Label15.Location = New System.Drawing.Point(61, 81)
         Me.Label15.Margin = New System.Windows.Forms.Padding(8, 0, 8, 0)
         Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(22, 13)
+        Me.Label15.Size = New System.Drawing.Size(29, 20)
         Me.Label15.TabIndex = 83
         Me.Label15.Text = "N°:"
         '
         'txtCEP
         '
-        Me.txtCEP.Location = New System.Drawing.Point(71, 19)
+        Me.txtCEP.Location = New System.Drawing.Point(94, 18)
         Me.txtCEP.Margin = New System.Windows.Forms.Padding(8, 7, 8, 7)
         Me.txtCEP.Mask = "00000-999"
         Me.txtCEP.Name = "txtCEP"
-        Me.txtCEP.Size = New System.Drawing.Size(82, 20)
+        Me.txtCEP.Size = New System.Drawing.Size(82, 26)
         Me.txtCEP.TabIndex = 3
         '
         'Label17
@@ -279,17 +281,17 @@ Partial Class frmServicos
         Me.Label17.Location = New System.Drawing.Point(38, 21)
         Me.Label17.Margin = New System.Windows.Forms.Padding(8, 0, 8, 0)
         Me.Label17.Name = "Label17"
-        Me.Label17.Size = New System.Drawing.Size(31, 13)
+        Me.Label17.Size = New System.Drawing.Size(45, 20)
         Me.Label17.TabIndex = 94
         Me.Label17.Text = "CEP:"
         '
         'txtBairro
         '
         Me.txtBairro.Enabled = False
-        Me.txtBairro.Location = New System.Drawing.Point(71, 113)
+        Me.txtBairro.Location = New System.Drawing.Point(94, 135)
         Me.txtBairro.Margin = New System.Windows.Forms.Padding(8, 7, 8, 7)
         Me.txtBairro.Name = "txtBairro"
-        Me.txtBairro.Size = New System.Drawing.Size(377, 20)
+        Me.txtBairro.Size = New System.Drawing.Size(377, 26)
         Me.txtBairro.TabIndex = 9
         '
         'txtUF
@@ -301,17 +303,17 @@ Partial Class frmServicos
         Me.txtUF.Location = New System.Drawing.Point(388, 16)
         Me.txtUF.Margin = New System.Windows.Forms.Padding(8, 7, 8, 7)
         Me.txtUF.Name = "txtUF"
-        Me.txtUF.Size = New System.Drawing.Size(60, 21)
+        Me.txtUF.Size = New System.Drawing.Size(60, 28)
         Me.txtUF.TabIndex = 11
         '
         'Label18
         '
         Me.Label18.AutoSize = True
         Me.Label18.ForeColor = System.Drawing.Color.White
-        Me.Label18.Location = New System.Drawing.Point(23, 120)
+        Me.Label18.Location = New System.Drawing.Point(35, 141)
         Me.Label18.Margin = New System.Windows.Forms.Padding(8, 0, 8, 0)
         Me.Label18.Name = "Label18"
-        Me.Label18.Size = New System.Drawing.Size(37, 13)
+        Me.Label18.Size = New System.Drawing.Size(55, 20)
         Me.Label18.TabIndex = 92
         Me.Label18.Text = "Bairro:"
         '
@@ -322,33 +324,33 @@ Partial Class frmServicos
         Me.Label19.Location = New System.Drawing.Point(353, 19)
         Me.Label19.Margin = New System.Windows.Forms.Padding(8, 0, 8, 0)
         Me.Label19.Name = "Label19"
-        Me.Label19.Size = New System.Drawing.Size(24, 13)
+        Me.Label19.Size = New System.Drawing.Size(35, 20)
         Me.Label19.TabIndex = 87
         Me.Label19.Text = "UF:"
         '
         'txtCidade
         '
         Me.txtCidade.Enabled = False
-        Me.txtCidade.Location = New System.Drawing.Point(71, 135)
+        Me.txtCidade.Location = New System.Drawing.Point(94, 164)
         Me.txtCidade.Margin = New System.Windows.Forms.Padding(8, 7, 8, 7)
         Me.txtCidade.Name = "txtCidade"
-        Me.txtCidade.Size = New System.Drawing.Size(375, 20)
+        Me.txtCidade.Size = New System.Drawing.Size(375, 26)
         Me.txtCidade.TabIndex = 10
         '
         'Label20
         '
         Me.Label20.AutoSize = True
         Me.Label20.ForeColor = System.Drawing.Color.White
-        Me.Label20.Location = New System.Drawing.Point(17, 142)
+        Me.Label20.Location = New System.Drawing.Point(27, 171)
         Me.Label20.Margin = New System.Windows.Forms.Padding(8, 0, 8, 0)
         Me.Label20.Name = "Label20"
-        Me.Label20.Size = New System.Drawing.Size(43, 13)
+        Me.Label20.Size = New System.Drawing.Size(63, 20)
         Me.Label20.TabIndex = 88
         Me.Label20.Text = "Cidade:"
         '
         'txtNumServico
         '
-        Me.txtNumServico.Location = New System.Drawing.Point(479, 10)
+        Me.txtNumServico.Location = New System.Drawing.Point(455, 7)
         Me.txtNumServico.Margin = New System.Windows.Forms.Padding(5)
         Me.txtNumServico.Name = "txtNumServico"
         Me.txtNumServico.Size = New System.Drawing.Size(59, 20)
@@ -368,11 +370,12 @@ Partial Class frmServicos
         'Label2
         '
         Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.White
-        Me.Label2.Location = New System.Drawing.Point(15, 44)
+        Me.Label2.Location = New System.Drawing.Point(15, 42)
         Me.Label2.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(42, 13)
+        Me.Label2.Size = New System.Drawing.Size(62, 20)
         Me.Label2.TabIndex = 3
         Me.Label2.Text = "Cliente:"
         '
@@ -392,12 +395,13 @@ Partial Class frmServicos
         Me.GroupBox2.Controls.Add(Me.txtResponsavel)
         Me.GroupBox2.Controls.Add(Me.Label10)
         Me.GroupBox2.Controls.Add(Me.Label11)
+        Me.GroupBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox2.ForeColor = System.Drawing.Color.White
         Me.GroupBox2.Location = New System.Drawing.Point(548, 18)
         Me.GroupBox2.Margin = New System.Windows.Forms.Padding(5)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Padding = New System.Windows.Forms.Padding(5)
-        Me.GroupBox2.Size = New System.Drawing.Size(426, 203)
+        Me.GroupBox2.Size = New System.Drawing.Size(448, 203)
         Me.GroupBox2.TabIndex = 179
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Dados do Atendimento"
@@ -408,7 +412,7 @@ Partial Class frmServicos
         Me.btTipoServico.FlatAppearance.BorderSize = 0
         Me.btTipoServico.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btTipoServico.Image = CType(resources.GetObject("btTipoServico.Image"), System.Drawing.Image)
-        Me.btTipoServico.Location = New System.Drawing.Point(373, 27)
+        Me.btTipoServico.Location = New System.Drawing.Point(406, 26)
         Me.btTipoServico.Name = "btTipoServico"
         Me.btTipoServico.Size = New System.Drawing.Size(35, 23)
         Me.btTipoServico.TabIndex = 125
@@ -420,61 +424,61 @@ Partial Class frmServicos
         Me.cbStatusPgto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbStatusPgto.FormattingEnabled = True
         Me.cbStatusPgto.Items.AddRange(New Object() {"", "Ordem Paga", "Aguardando Pagamento", "Aguardando Aprovação", "Aprovado", "Não Aprovado", "Aguardando Peças", "Realizando Serviço", "Serviço Concluído", "Retirado"})
-        Me.cbStatusPgto.Location = New System.Drawing.Point(115, 169)
+        Me.cbStatusPgto.Location = New System.Drawing.Point(145, 169)
         Me.cbStatusPgto.Margin = New System.Windows.Forms.Padding(5)
         Me.cbStatusPgto.Name = "cbStatusPgto"
-        Me.cbStatusPgto.Size = New System.Drawing.Size(259, 21)
+        Me.cbStatusPgto.Size = New System.Drawing.Size(259, 28)
         Me.cbStatusPgto.TabIndex = 15
         '
         'txtValor
         '
-        Me.txtValor.Location = New System.Drawing.Point(262, 134)
+        Me.txtValor.Location = New System.Drawing.Point(292, 134)
         Me.txtValor.Margin = New System.Windows.Forms.Padding(8, 7, 8, 7)
         Me.txtValor.Name = "txtValor"
-        Me.txtValor.Size = New System.Drawing.Size(115, 20)
+        Me.txtValor.Size = New System.Drawing.Size(115, 26)
         Me.txtValor.TabIndex = 14
         '
         'cbTipoServico
         '
         Me.cbTipoServico.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbTipoServico.FormattingEnabled = True
-        Me.cbTipoServico.Location = New System.Drawing.Point(116, 30)
+        Me.cbTipoServico.Location = New System.Drawing.Point(146, 26)
         Me.cbTipoServico.Margin = New System.Windows.Forms.Padding(5)
         Me.cbTipoServico.Name = "cbTipoServico"
-        Me.cbTipoServico.Size = New System.Drawing.Size(262, 21)
+        Me.cbTipoServico.Size = New System.Drawing.Size(262, 28)
         Me.cbTipoServico.TabIndex = 10
         '
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.ForeColor = System.Drawing.Color.White
-        Me.Label8.Location = New System.Drawing.Point(9, 172)
+        Me.Label8.Location = New System.Drawing.Point(26, 173)
         Me.Label8.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(90, 16)
+        Me.Label8.Size = New System.Drawing.Size(110, 20)
         Me.Label8.TabIndex = 9
         Me.Label8.Text = "Status Pagto.:"
         '
         'mktDtEntrega
         '
-        Me.mktDtEntrega.Location = New System.Drawing.Point(116, 134)
+        Me.mktDtEntrega.Location = New System.Drawing.Point(146, 134)
         Me.mktDtEntrega.Margin = New System.Windows.Forms.Padding(5)
         Me.mktDtEntrega.Mask = "00/00/0000"
         Me.mktDtEntrega.Name = "mktDtEntrega"
-        Me.mktDtEntrega.Size = New System.Drawing.Size(85, 20)
+        Me.mktDtEntrega.Size = New System.Drawing.Size(85, 26)
         Me.mktDtEntrega.TabIndex = 13
         Me.mktDtEntrega.ValidatingType = GetType(Date)
         '
         'Label12
         '
         Me.Label12.AutoSize = True
-        Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label12.ForeColor = System.Drawing.Color.White
-        Me.Label12.Location = New System.Drawing.Point(211, 139)
+        Me.Label12.Location = New System.Drawing.Point(241, 139)
         Me.Label12.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(43, 16)
+        Me.Label12.Size = New System.Drawing.Size(50, 20)
         Me.Label12.TabIndex = 13
         Me.Label12.Text = "Valor:"
         '
@@ -483,20 +487,20 @@ Partial Class frmServicos
         Me.cbGarantia.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbGarantia.FormattingEnabled = True
         Me.cbGarantia.Items.AddRange(New Object() {"", "1 Mês", "2 Meses", "3 Meses", "6 Meses", "1 Ano"})
-        Me.cbGarantia.Location = New System.Drawing.Point(115, 99)
+        Me.cbGarantia.Location = New System.Drawing.Point(145, 99)
         Me.cbGarantia.Margin = New System.Windows.Forms.Padding(5)
         Me.cbGarantia.Name = "cbGarantia"
-        Me.cbGarantia.Size = New System.Drawing.Size(261, 21)
+        Me.cbGarantia.Size = New System.Drawing.Size(261, 28)
         Me.cbGarantia.TabIndex = 12
         '
         'Label3
         '
         Me.Label3.AutoSize = True
         Me.Label3.ForeColor = System.Drawing.Color.White
-        Me.Label3.Location = New System.Drawing.Point(17, 38)
+        Me.Label3.Location = New System.Drawing.Point(23, 32)
         Me.Label3.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(85, 13)
+        Me.Label3.Size = New System.Drawing.Size(121, 20)
         Me.Label3.TabIndex = 4
         Me.Label3.Text = "Tipo de Serviço:"
         '
@@ -506,46 +510,46 @@ Partial Class frmServicos
         Me.Label21.Location = New System.Drawing.Point(23, 139)
         Me.Label21.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.Label21.Name = "Label21"
-        Me.Label21.Size = New System.Drawing.Size(76, 13)
+        Me.Label21.Size = New System.Drawing.Size(113, 20)
         Me.Label21.TabIndex = 16
         Me.Label21.Text = "Dt de Entrega:"
         '
         'txtResponsavel
         '
-        Me.txtResponsavel.Location = New System.Drawing.Point(115, 66)
+        Me.txtResponsavel.Location = New System.Drawing.Point(145, 66)
         Me.txtResponsavel.Margin = New System.Windows.Forms.Padding(8, 7, 8, 7)
         Me.txtResponsavel.Name = "txtResponsavel"
-        Me.txtResponsavel.Size = New System.Drawing.Size(261, 20)
+        Me.txtResponsavel.Size = New System.Drawing.Size(261, 26)
         Me.txtResponsavel.TabIndex = 11
         '
         'Label10
         '
         Me.Label10.AutoSize = True
-        Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label10.ForeColor = System.Drawing.Color.White
-        Me.Label10.Location = New System.Drawing.Point(10, 69)
+        Me.Label10.Location = New System.Drawing.Point(39, 72)
         Me.Label10.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(92, 16)
+        Me.Label10.Size = New System.Drawing.Size(105, 20)
         Me.Label10.TabIndex = 11
         Me.Label10.Text = "Responsável:"
         '
         'Label11
         '
         Me.Label11.AutoSize = True
-        Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label11.ForeColor = System.Drawing.Color.White
-        Me.Label11.Location = New System.Drawing.Point(40, 107)
+        Me.Label11.Location = New System.Drawing.Point(60, 107)
         Me.Label11.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(62, 16)
+        Me.Label11.Size = New System.Drawing.Size(75, 20)
         Me.Label11.TabIndex = 12
         Me.Label11.Text = "Garantia:"
         '
         'txtCodigo
         '
         Me.txtCodigo.Enabled = False
-        Me.txtCodigo.Location = New System.Drawing.Point(87, 7)
+        Me.txtCodigo.Location = New System.Drawing.Point(94, 10)
         Me.txtCodigo.Margin = New System.Windows.Forms.Padding(8, 7, 8, 7)
         Me.txtCodigo.Name = "txtCodigo"
         Me.txtCodigo.Size = New System.Drawing.Size(75, 20)
@@ -560,8 +564,9 @@ Partial Class frmServicos
         Me.GroupBox4.Controls.Add(Me.Label6)
         Me.GroupBox4.Controls.Add(Me.txtEmail)
         Me.GroupBox4.Controls.Add(Me.Label4)
+        Me.GroupBox4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox4.ForeColor = System.Drawing.Color.White
-        Me.GroupBox4.Location = New System.Drawing.Point(16, 262)
+        Me.GroupBox4.Location = New System.Drawing.Point(16, 297)
         Me.GroupBox4.Margin = New System.Windows.Forms.Padding(5)
         Me.GroupBox4.Name = "GroupBox4"
         Me.GroupBox4.Padding = New System.Windows.Forms.Padding(5)
@@ -576,7 +581,7 @@ Partial Class frmServicos
         Me.txtTelCel.Margin = New System.Windows.Forms.Padding(8, 7, 8, 7)
         Me.txtTelCel.Mask = "(00) 00000-0000"
         Me.txtTelCel.Name = "txtTelCel"
-        Me.txtTelCel.Size = New System.Drawing.Size(132, 20)
+        Me.txtTelCel.Size = New System.Drawing.Size(132, 26)
         Me.txtTelCel.TabIndex = 8
         '
         'Label7
@@ -585,7 +590,7 @@ Partial Class frmServicos
         Me.Label7.Location = New System.Drawing.Point(278, 32)
         Me.Label7.Margin = New System.Windows.Forms.Padding(8, 0, 8, 0)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(42, 13)
+        Me.Label7.Size = New System.Drawing.Size(62, 20)
         Me.Label7.TabIndex = 70
         Me.Label7.Text = "Celular:"
         '
@@ -595,7 +600,7 @@ Partial Class frmServicos
         Me.txtTelRes.Margin = New System.Windows.Forms.Padding(8, 7, 8, 7)
         Me.txtTelRes.Mask = "(00) 00000-0000"
         Me.txtTelRes.Name = "txtTelRes"
-        Me.txtTelRes.Size = New System.Drawing.Size(126, 20)
+        Me.txtTelRes.Size = New System.Drawing.Size(126, 26)
         Me.txtTelRes.TabIndex = 7
         '
         'Label6
@@ -604,7 +609,7 @@ Partial Class frmServicos
         Me.Label6.Location = New System.Drawing.Point(15, 27)
         Me.Label6.Margin = New System.Windows.Forms.Padding(8, 0, 8, 0)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(52, 13)
+        Me.Label6.Size = New System.Drawing.Size(75, 20)
         Me.Label6.TabIndex = 67
         Me.Label6.Text = "Telefone:"
         '
@@ -613,7 +618,7 @@ Partial Class frmServicos
         Me.txtEmail.Location = New System.Drawing.Point(88, 63)
         Me.txtEmail.Margin = New System.Windows.Forms.Padding(8, 7, 8, 7)
         Me.txtEmail.Name = "txtEmail"
-        Me.txtEmail.Size = New System.Drawing.Size(392, 20)
+        Me.txtEmail.Size = New System.Drawing.Size(392, 26)
         Me.txtEmail.TabIndex = 9
         '
         'Label4
@@ -622,7 +627,7 @@ Partial Class frmServicos
         Me.Label4.Location = New System.Drawing.Point(37, 66)
         Me.Label4.Margin = New System.Windows.Forms.Padding(8, 0, 8, 0)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(35, 13)
+        Me.Label4.Size = New System.Drawing.Size(52, 20)
         Me.Label4.TabIndex = 68
         Me.Label4.Text = "Email:"
         '
@@ -630,12 +635,12 @@ Partial Class frmServicos
         '
         Me.Label9.AutoSize = True
         Me.Label9.BackColor = System.Drawing.Color.Transparent
-        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label9.ForeColor = System.Drawing.Color.White
         Me.Label9.Location = New System.Drawing.Point(554, 237)
         Me.Label9.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(101, 18)
+        Me.Label9.Size = New System.Drawing.Size(106, 20)
         Me.Label9.TabIndex = 180
         Me.Label9.Text = "Observações:"
         '
@@ -643,11 +648,12 @@ Partial Class frmServicos
         '
         Me.Label22.AutoSize = True
         Me.Label22.BackColor = System.Drawing.Color.Transparent
+        Me.Label22.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label22.ForeColor = System.Drawing.Color.White
         Me.Label22.Location = New System.Drawing.Point(13, 10)
         Me.Label22.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.Label22.Name = "Label22"
-        Me.Label22.Size = New System.Drawing.Size(58, 13)
+        Me.Label22.Size = New System.Drawing.Size(82, 20)
         Me.Label22.TabIndex = 177
         Me.Label22.Text = "N° da OS.:"
         '
@@ -677,13 +683,13 @@ Partial Class frmServicos
         Me.Consulta.Margin = New System.Windows.Forms.Padding(4)
         Me.Consulta.Name = "Consulta"
         Me.Consulta.Padding = New System.Windows.Forms.Padding(4)
-        Me.Consulta.Size = New System.Drawing.Size(1002, 400)
+        Me.Consulta.Size = New System.Drawing.Size(1073, 400)
         Me.Consulta.TabIndex = 1
         Me.Consulta.Text = "Consulta"
         '
         'txtNumeroOrdem
         '
-        Me.txtNumeroOrdem.Location = New System.Drawing.Point(415, 20)
+        Me.txtNumeroOrdem.Location = New System.Drawing.Point(433, 21)
         Me.txtNumeroOrdem.Name = "txtNumeroOrdem"
         Me.txtNumeroOrdem.Size = New System.Drawing.Size(150, 20)
         Me.txtNumeroOrdem.TabIndex = 201
@@ -691,12 +697,12 @@ Partial Class frmServicos
         'rbNumeroServico
         '
         Me.rbNumeroServico.AutoSize = True
-        Me.rbNumeroServico.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.rbNumeroServico.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.rbNumeroServico.ForeColor = System.Drawing.Color.White
-        Me.rbNumeroServico.Location = New System.Drawing.Point(253, 19)
+        Me.rbNumeroServico.Location = New System.Drawing.Point(253, 20)
         Me.rbNumeroServico.Margin = New System.Windows.Forms.Padding(4)
         Me.rbNumeroServico.Name = "rbNumeroServico"
-        Me.rbNumeroServico.Size = New System.Drawing.Size(154, 22)
+        Me.rbNumeroServico.Size = New System.Drawing.Size(161, 24)
         Me.rbNumeroServico.TabIndex = 200
         Me.rbNumeroServico.TabStop = True
         Me.rbNumeroServico.Text = "Número de Serviço"
@@ -704,7 +710,7 @@ Partial Class frmServicos
         '
         'txtBuscar
         '
-        Me.txtBuscar.Location = New System.Drawing.Point(414, 20)
+        Me.txtBuscar.Location = New System.Drawing.Point(435, 21)
         Me.txtBuscar.Margin = New System.Windows.Forms.Padding(7, 6, 7, 6)
         Me.txtBuscar.Name = "txtBuscar"
         Me.txtBuscar.Size = New System.Drawing.Size(150, 20)
@@ -713,7 +719,7 @@ Partial Class frmServicos
         'dtData
         '
         Me.dtData.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtData.Location = New System.Drawing.Point(415, 21)
+        Me.dtData.Location = New System.Drawing.Point(435, 21)
         Me.dtData.Margin = New System.Windows.Forms.Padding(4)
         Me.dtData.Name = "dtData"
         Me.dtData.Size = New System.Drawing.Size(150, 20)
@@ -722,12 +728,12 @@ Partial Class frmServicos
         'rbData
         '
         Me.rbData.AutoSize = True
-        Me.rbData.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.rbData.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.rbData.ForeColor = System.Drawing.Color.White
-        Me.rbData.Location = New System.Drawing.Point(92, 18)
+        Me.rbData.Location = New System.Drawing.Point(92, 21)
         Me.rbData.Margin = New System.Windows.Forms.Padding(4)
         Me.rbData.Name = "rbData"
-        Me.rbData.Size = New System.Drawing.Size(57, 22)
+        Me.rbData.Size = New System.Drawing.Size(62, 24)
         Me.rbData.TabIndex = 197
         Me.rbData.TabStop = True
         Me.rbData.Text = "Data"
@@ -736,12 +742,12 @@ Partial Class frmServicos
         'rbCliente
         '
         Me.rbCliente.AutoSize = True
-        Me.rbCliente.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.rbCliente.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.rbCliente.ForeColor = System.Drawing.Color.White
-        Me.rbCliente.Location = New System.Drawing.Point(165, 18)
+        Me.rbCliente.Location = New System.Drawing.Point(165, 20)
         Me.rbCliente.Margin = New System.Windows.Forms.Padding(4)
         Me.rbCliente.Name = "rbCliente"
-        Me.rbCliente.Size = New System.Drawing.Size(71, 22)
+        Me.rbCliente.Size = New System.Drawing.Size(76, 24)
         Me.rbCliente.TabIndex = 195
         Me.rbCliente.TabStop = True
         Me.rbCliente.Text = "Cliente"
@@ -750,12 +756,12 @@ Partial Class frmServicos
         'Label24
         '
         Me.Label24.AutoSize = True
-        Me.Label24.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label24.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label24.ForeColor = System.Drawing.Color.White
-        Me.Label24.Location = New System.Drawing.Point(21, 19)
+        Me.Label24.Location = New System.Drawing.Point(21, 22)
         Me.Label24.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label24.Name = "Label24"
-        Me.Label24.Size = New System.Drawing.Size(59, 18)
+        Me.Label24.Size = New System.Drawing.Size(63, 20)
         Me.Label24.TabIndex = 194
         Me.Label24.Text = "Buscar:"
         '
@@ -771,7 +777,7 @@ Partial Class frmServicos
         Me.dgvServico.Name = "dgvServico"
         Me.dgvServico.ReadOnly = True
         Me.dgvServico.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvServico.Size = New System.Drawing.Size(978, 301)
+        Me.dgvServico.Size = New System.Drawing.Size(1048, 301)
         Me.dgvServico.TabIndex = 182
         '
         'Label1
@@ -811,7 +817,7 @@ Partial Class frmServicos
         Me.GroupBox5.Margin = New System.Windows.Forms.Padding(4)
         Me.GroupBox5.Name = "GroupBox5"
         Me.GroupBox5.Padding = New System.Windows.Forms.Padding(4)
-        Me.GroupBox5.Size = New System.Drawing.Size(470, 60)
+        Me.GroupBox5.Size = New System.Drawing.Size(622, 60)
         Me.GroupBox5.TabIndex = 193
         Me.GroupBox5.TabStop = False
         '
@@ -823,9 +829,10 @@ Partial Class frmServicos
         Me.btNovo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSteelBlue
         Me.btNovo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSkyBlue
         Me.btNovo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btNovo.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btNovo.ForeColor = System.Drawing.Color.White
         Me.btNovo.Image = CType(resources.GetObject("btNovo.Image"), System.Drawing.Image)
-        Me.btNovo.Location = New System.Drawing.Point(9, 15)
+        Me.btNovo.Location = New System.Drawing.Point(3, 14)
         Me.btNovo.Margin = New System.Windows.Forms.Padding(5)
         Me.btNovo.Name = "btNovo"
         Me.btNovo.Size = New System.Drawing.Size(87, 37)
@@ -843,9 +850,10 @@ Partial Class frmServicos
         Me.btSalvar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSteelBlue
         Me.btSalvar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSkyBlue
         Me.btSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btSalvar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btSalvar.ForeColor = System.Drawing.Color.White
         Me.btSalvar.Image = CType(resources.GetObject("btSalvar.Image"), System.Drawing.Image)
-        Me.btSalvar.Location = New System.Drawing.Point(100, 15)
+        Me.btSalvar.Location = New System.Drawing.Point(112, 16)
         Me.btSalvar.Margin = New System.Windows.Forms.Padding(5)
         Me.btSalvar.Name = "btSalvar"
         Me.btSalvar.Size = New System.Drawing.Size(89, 35)
@@ -863,9 +871,10 @@ Partial Class frmServicos
         Me.btnEditar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSteelBlue
         Me.btnEditar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSkyBlue
         Me.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnEditar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnEditar.ForeColor = System.Drawing.Color.White
         Me.btnEditar.Image = CType(resources.GetObject("btnEditar.Image"), System.Drawing.Image)
-        Me.btnEditar.Location = New System.Drawing.Point(198, 15)
+        Me.btnEditar.Location = New System.Drawing.Point(233, 16)
         Me.btnEditar.Margin = New System.Windows.Forms.Padding(5)
         Me.btnEditar.Name = "btnEditar"
         Me.btnEditar.Size = New System.Drawing.Size(90, 35)
@@ -883,9 +892,10 @@ Partial Class frmServicos
         Me.btSair.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSteelBlue
         Me.btSair.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSkyBlue
         Me.btSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btSair.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btSair.ForeColor = System.Drawing.Color.White
         Me.btSair.Image = CType(resources.GetObject("btSair.Image"), System.Drawing.Image)
-        Me.btSair.Location = New System.Drawing.Point(381, 15)
+        Me.btSair.Location = New System.Drawing.Point(474, 16)
         Me.btSair.Margin = New System.Windows.Forms.Padding(5)
         Me.btSair.Name = "btSair"
         Me.btSair.Size = New System.Drawing.Size(85, 35)
@@ -903,9 +913,10 @@ Partial Class frmServicos
         Me.btnExcluir.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSteelBlue
         Me.btnExcluir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSkyBlue
         Me.btnExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnExcluir.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnExcluir.ForeColor = System.Drawing.Color.White
         Me.btnExcluir.Image = CType(resources.GetObject("btnExcluir.Image"), System.Drawing.Image)
-        Me.btnExcluir.Location = New System.Drawing.Point(294, 15)
+        Me.btnExcluir.Location = New System.Drawing.Point(357, 15)
         Me.btnExcluir.Margin = New System.Windows.Forms.Padding(5)
         Me.btnExcluir.Name = "btnExcluir"
         Me.btnExcluir.Size = New System.Drawing.Size(90, 35)
@@ -920,7 +931,7 @@ Partial Class frmServicos
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.SteelBlue
-        Me.ClientSize = New System.Drawing.Size(1030, 517)
+        Me.ClientSize = New System.Drawing.Size(1100, 517)
         Me.Controls.Add(Me.GroupBox5)
         Me.Controls.Add(Me.TabControl1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D

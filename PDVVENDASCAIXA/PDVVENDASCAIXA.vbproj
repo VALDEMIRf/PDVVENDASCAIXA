@@ -375,6 +375,12 @@
     <Compile Include="Vendas\frmVendas.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Vendas\frmVendas2.Designer.vb">
+      <DependentUpon>frmVendas2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vendas\frmVendas2.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Cadastros\frmCargos.resx">
@@ -500,6 +506,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vendas\frmVendas.resx">
       <DependentUpon>frmVendas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vendas\frmVendas2.resx">
+      <DependentUpon>frmVendas2.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -762,6 +771,10 @@
     <Content Include="box-sale.ico" />
     <Content Include="icones\Aha-Soft-Business-Toolbar-Payment.ico" />
     <Content Include="icones\box-sale.ico" />
+    <Content Include="icones\Cash-register.ico" />
+    <Content Include="icones\Cash-register2.ico" />
+    <Content Include="icones\Dollar verde.ico" />
+    <Content Include="icones\Dollar vermelho.ico" />
     <Content Include="icones\dollar.ico" />
     <Content Include="icones\Fatcow-Farm-Fresh-Coins-in-hand.ico" />
     <Content Include="icones\Fatcow-Farm-Fresh-Company-generosity.ico" />
@@ -776,9 +789,11 @@
     <Content Include="imagens\icons8_money_100px.png" />
     <Content Include="imagens\Modify.gif" />
     <Content Include="imagens\Recarregar.png" />
+    <Content Include="imgPequenas\Aha-Soft-Large-Business-Cash-register.24.png" />
     <Content Include="imgPequenas\Apply.png" />
     <Content Include="imgPequenas\Blue key.png" />
     <Content Include="imgPequenas\Boss.png" />
+    <Content Include="imgPequenas\Calculator.png" />
     <Content Include="imgPequenas\Calendar.png" />
     <Content Include="imgPequenas\Close.png" />
     <Content Include="imgPequenas\Create.png" />
@@ -795,6 +810,7 @@
     <Content Include="imgPequenas\New document.png" />
     <Content Include="imgPequenas\OK.png" />
     <Content Include="imgPequenas\Report.png" />
+    <Content Include="imgPequenas\Sales-report.24.png" />
     <Content Include="imgPequenas\Table.png" />
     <Content Include="imgPequenas\Text preview.png" />
     <Content Include="imgPequenas\User group.png" />

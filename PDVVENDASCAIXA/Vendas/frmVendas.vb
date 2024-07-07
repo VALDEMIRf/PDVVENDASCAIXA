@@ -82,24 +82,26 @@ Public Class frmVendas
         txtQuantidade.Enabled = True
         cbCliente.Enabled = True
         cbProduto.Enabled = True
+
     End Sub
 
     Private Sub Limpar()
         txtCodBarras.Focus()
         txtNum.Text = ""
-        txtQuantidade.Text = "0"
+        txtQuantidade.Text = "1"
         txtBuscar.Text = ""
         btRel.Enabled = False
         txtCodBarras.Text = ""
         pbImagem.Image = Nothing
-        lblTotalUnit.Text = ""
+        lblTotalUnit.Text = " "
         lblTotal.Text = ""
         txtDesconto.Text = ""
         lblTotalFinal.Text = ""
         txtValorRecebido.Text = ""
         lblTroco.Text = ""
+
         txtCodBarras.Text = ""
-        txtNomeProd.Text = "CAIXA DISPONÍVEL"
+
     End Sub
 
     Sub CarregarProdutos()
@@ -749,12 +751,8 @@ Public Class frmVendas
             cbProduto.SelectedValue = id_produto
 
             Dim nomeProd As String = cmd.Parameters("@nome").Value
-            txtNomeProd.Text = nomeProd
 
             My.Computer.Audio.Play(My.Resources.barCode, AudioPlayMode.WaitToComplete)
-
-
-
 
         Catch ex As Exception
             'MsgBox("Produto não Encontrado")
@@ -767,6 +765,11 @@ Public Class frmVendas
     End Sub
 
     Private Sub txtValorRecebido_TextChanged(sender As Object, e As EventArgs) Handles txtValorRecebido.TextChanged
+        If txtDesconto.Text = "" Then
+            MsgBox("Digite um valor a partir de 0")
+            txtDesconto.Focus()
+        End If
+
         If lblTotalFinal.Text <> "0" And txtValorRecebido.Text <> "" Then
             Dim totalFinal As Decimal
             Dim valorPago As Decimal
@@ -782,7 +785,12 @@ Public Class frmVendas
     End Sub
 
     Private Sub txtQuantidade_TextChanged(sender As Object, e As EventArgs) Handles txtQuantidade.TextChanged
-        calcularTotal()
+        If txtQuantidade.Text = "" Then
+            MsgBox("Digite um valor numérico a partir de 1")
+        Else
+            calcularTotal()
+        End If
+
     End Sub
 
     Sub calcularTotal()
@@ -794,6 +802,8 @@ Public Class frmVendas
             quant = txtQuantidade.Text
             total = valor * quant
             lblTotalUnit.Text = total
+        Else
+            txtQuantidade.Text = "1"
         End If
 
         ' botaoSalvar()
@@ -841,5 +851,9 @@ Public Class frmVendas
         ' botaoSalvar()
         '    txtCodBarras.Text = ""
         'End If
+    End Sub
+
+    Private Sub txtQuantidade_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtQuantidade.KeyPress
+        permiteSoNumeros(sender, e)
     End Sub
 End Class

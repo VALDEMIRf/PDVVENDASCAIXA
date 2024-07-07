@@ -74,6 +74,16 @@ Public Class frmPrincipal
         End Try
     End Sub
 
+    'MENU CADASTROS
+    Private Sub ClientesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ClientesToolStripMenuItem.Click
+        Dim form = New frmClientes
+        form.ShowDialog()
+    End Sub
+
+    Private Sub CargosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CargosToolStripMenuItem.Click
+        Dim form = New frmCargos
+        form.ShowDialog()
+    End Sub
 
     Private Sub FuncionáriosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles FuncionáriosToolStripMenuItem.Click
         Dim formP As Form
@@ -82,11 +92,6 @@ Public Class frmPrincipal
         Dim form = New frmLoginAdm(formP)
         form.ShowDialog()
 
-    End Sub
-
-    Private Sub CargosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CargosToolStripMenuItem.Click
-        Dim form = New frmCargos
-        form.ShowDialog()
     End Sub
 
     Private Sub FornecedoresToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles FornecedoresToolStripMenuItem.Click
@@ -103,8 +108,172 @@ Public Class frmPrincipal
         form.ShowDialog()
     End Sub
 
+    Private Sub ProdutosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ProdutosToolStripMenuItem.Click
+        Dim form = New frmProdutos
+        form.ShowDialog()
+    End Sub
+
+    'MENU ESTOQUE
+    Private Sub EntradaSaídaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EntradaSaídaToolStripMenuItem.Click
+        Dim form = New frmEstoque(0)
+        form.ShowDialog()
+    End Sub
+
+    Private Sub ConsultasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ConsultasToolStripMenuItem.Click
+        Dim form = New frmConsultaEstoque
+        form.ShowDialog()
+    End Sub
+
+    Private Sub NíveisBaixoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NíveisBaixoToolStripMenuItem.Click
+        Dim form = New frmNivelBaixo
+        form.ShowDialog()
+    End Sub
+
+    'MENU MOVIMENTAÇÃO
+    Private Sub OrdemDeServiçoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles OrdemDeServiçoToolStripMenuItem.Click
+        Dim form = New frmServicos
+        form.ShowDialog()
+    End Sub
+
+    Private Sub ContasAPagarToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ContasAPagarToolStripMenuItem.Click
+        Dim form = New frmContasPagar
+        form.ShowDialog()
+    End Sub
+
+    Private Sub ContasAReceberToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ContasAReceberToolStripMenuItem.Click
+        Dim form = New frmContasReceber
+        form.ShowDialog()
+    End Sub
+
+    'MENU VENDAS
+    Private Sub Modelo1ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles Modelo1ToolStripMenuItem.Click
+        data = Now.ToShortDateString()
+
+        Dim cmd As New SqlCommand("pa_caixa_verificar_abertura", con)
+
+        Try
+            abrir()
+            cmd.CommandType = 4
+            With cmd.Parameters
+                .AddWithValue("@data", data)
+                .AddWithValue("@funcionario", usuarioNome)
+                .Add("@msg", SqlDbType.VarChar, 100).Direction = 2
+                cmd.ExecuteNonQuery()
+            End With
+
+            Dim msg As String = cmd.Parameters("@msg").Value
 
 
+            If (msg = "Abra primeiro o Caixa" Or lblTextoCaixa.Text = "CAIXA FECHADO") Then
+                MessageBox.Show("O Caixa não está aberto! ")
+
+            Else
+                Dim form = New frmVendas
+                form.ShowDialog()
+            End If
+
+        Catch ex As Exception
+            MessageBox.Show("Erro ao Acessar! " + ex.Message.ToString)
+        Finally
+            fechar()
+        End Try
+    End Sub
+
+    Private Sub Modelo2ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles Modelo2ToolStripMenuItem.Click
+        data = Now.ToShortDateString()
+
+        Dim cmd As New SqlCommand("pa_caixa_verificar_abertura", con)
+
+        Try
+            abrir()
+            cmd.CommandType = 4
+            With cmd.Parameters
+                .AddWithValue("@data", data)
+                .AddWithValue("@funcionario", usuarioNome)
+                .Add("@msg", SqlDbType.VarChar, 100).Direction = 2
+                cmd.ExecuteNonQuery()
+            End With
+
+            Dim msg As String = cmd.Parameters("@msg").Value
+
+
+            If (msg = "Abra primeiro o Caixa" Or lblTextoCaixa.Text = "CAIXA FECHADO") Then
+                MessageBox.Show("O Caixa não está aberto! ")
+
+            Else
+                Dim form = New frmVendas2
+                form.ShowDialog()
+            End If
+
+        Catch ex As Exception
+            MessageBox.Show("Erro ao Acessar! " + ex.Message.ToString)
+        Finally
+            fechar()
+        End Try
+    End Sub
+
+    Private Sub ListarVendasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ListarVendasToolStripMenuItem.Click
+        Dim form = New frmListaVendas
+        form.ShowDialog()
+    End Sub
+
+    Private Sub SangriaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SangriaToolStripMenuItem.Click
+        Dim formP As Form
+        formP = frmSangria
+
+        Dim form = New frmLoginAdm(formP)
+        form.ShowDialog()
+    End Sub
+
+    Private Sub ReforçosAsCaixaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ReforçosAsCaixaToolStripMenuItem.Click
+        Dim formP As Form
+        formP = frmReforcoCaixa
+
+        Dim form = New frmLoginAdm(formP)
+        form.ShowDialog()
+    End Sub
+
+    'MWNU RELATÓRIOS
+    Private Sub CatálogoDeProdutosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CatálogoDeProdutosToolStripMenuItem.Click
+        Dim form = New frmRelProdutos
+        form.ShowDialog()
+    End Sub
+
+    Private Sub RelatórioDoCaixaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RelatórioDoCaixaToolStripMenuItem.Click
+        Dim form = New frmRelCaixa
+        form.ShowDialog()
+    End Sub
+
+    Private Sub EntradaSaídaToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles EntradaSaídaToolStripMenuItem1.Click
+        Dim form = New frmRelEstoque
+        form.ShowDialog()
+    End Sub
+
+    Private Sub NíveisDoEstoqueToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NíveisDoEstoqueToolStripMenuItem.Click
+        Dim form = New frmRelNiveis
+        form.ShowDialog()
+    End Sub
+
+    Private Sub ProdutosMaisVendidosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ProdutosMaisVendidosToolStripMenuItem.Click
+        Dim form = New frmRelProdutosVendidos
+        form.ShowDialog()
+    End Sub
+
+    Private Sub VendasPorFuncionárioToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles VendasPorFuncionárioToolStripMenuItem.Click
+        Dim form = New frmRelVendaData
+        form.ShowDialog()
+    End Sub
+    Private Sub FiltroDeVendasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles FiltroDeVendasToolStripMenuItem.Click
+        Dim form = New frmRelVenda
+        form.ShowDialog()
+    End Sub
+
+    Private Sub ServiçosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ServiçosToolStripMenuItem.Click
+        Dim form = New frmRelServicos
+        form.ShowDialog()
+    End Sub
+
+    'MENU SAIR
     Private Sub SairToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles SairToolStripMenuItem1.Click
         Application.Exit()
     End Sub
@@ -113,16 +282,6 @@ Public Class frmPrincipal
         Me.Hide()
         form.ShowDialog()
 
-    End Sub
-
-    Private Sub ClientesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ClientesToolStripMenuItem.Click
-        Dim form = New frmClientes
-        form.ShowDialog()
-    End Sub
-
-    Private Sub OrdemDeServiçoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles OrdemDeServiçoToolStripMenuItem.Click
-        Dim form = New frmServicos
-        form.ShowDialog()
     End Sub
 
     Private Sub FormatarDG()
@@ -178,75 +337,6 @@ Public Class frmPrincipal
         lblData.Text = Now.ToShortDateString()
     End Sub
 
-    Private Sub PDVRegistrarVendaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PDVRegistrarVendaToolStripMenuItem.Click
-        data = Now.ToShortDateString()
-
-        Dim cmd As New SqlCommand("pa_caixa_verificar_abertura", con)
-
-        Try
-            abrir()
-            cmd.CommandType = 4
-            With cmd.Parameters
-                .AddWithValue("@data", data)
-                .AddWithValue("@funcionario", usuarioNome)
-                .Add("@msg", SqlDbType.VarChar, 100).Direction = 2
-                cmd.ExecuteNonQuery()
-            End With
-
-            Dim msg As String = cmd.Parameters("@msg").Value
-
-
-            If (msg = "Abra primeiro o Caixa" Or lblTextoCaixa.Text = "CAIXA FECHADO") Then
-                MessageBox.Show("O Caixa não está aberto! ")
-
-            Else
-                Dim form = New frmVendas
-                form.ShowDialog()
-            End If
-
-        Catch ex As Exception
-            MessageBox.Show("Erro ao Acessar! " + ex.Message.ToString)
-        Finally
-            fechar()
-        End Try
-    End Sub
-
-    Private Sub ListarVendasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ListarVendasToolStripMenuItem.Click
-        Dim form = New frmListaVendas
-        form.ShowDialog()
-    End Sub
-
-    Private Sub CatálogoDeProdutosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CatálogoDeProdutosToolStripMenuItem.Click
-        Dim form = New frmRelProdutos
-        form.ShowDialog()
-    End Sub
-
-    Private Sub FiltroDeVendasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles FiltroDeVendasToolStripMenuItem.Click
-        Dim form = New frmRelVenda
-        form.ShowDialog()
-    End Sub
-
-    Private Sub ServiçosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ServiçosToolStripMenuItem.Click
-        Dim form = New frmRelServicos
-        form.ShowDialog()
-    End Sub
-
-    Private Sub SangriaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SangriaToolStripMenuItem.Click
-        Dim formP As Form
-        formP = frmSangria
-
-        Dim form = New frmLoginAdm(formP)
-        form.ShowDialog()
-    End Sub
-
-    Private Sub ReforçosAsCaixaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ReforçosAsCaixaToolStripMenuItem.Click
-        Dim formP As Form
-        formP = frmReforcoCaixa
-
-        Dim form = New frmLoginAdm(formP)
-        form.ShowDialog()
-    End Sub
-
     Sub carregarImagem()
 
         If abertura = True Then
@@ -278,7 +368,6 @@ Public Class frmPrincipal
             End With
 
             Dim msg As String = cmd.Parameters("@msg").Value
-
 
             '  If (msg = "Abra primeiro o Caixa" Or lblTextoCaixa.Text = "CAIXA FECHADO") Then
             If (msg = "Abra primeiro o Caixa") Then
@@ -423,6 +512,112 @@ Public Class frmPrincipal
 
     End Sub
 
+    Private Sub carregarReforco()
+        Dim cmd As New SqlCommand("pa_Reforco_listar_VALOR", con)
+
+        Try
+            abrir()
+
+            Dim vlReforco = Replace(lblReforco.Text, ",", ".")
+
+            abrir()
+            cmd = New SqlCommand("pa_Reforco_salvar", con)
+            cmd.CommandType = CommandType.StoredProcedure
+            ' cmd.Parameters.AddWithValue("@dataF", Now.ToShortDateString())
+            cmd.Parameters.AddWithValue("@horaF", Now.ToLongTimeString())
+            ' cmd.Parameters.AddWithValue("@funcionario", usuarioNome)
+            cmd.Parameters.AddWithValue("@valor", vlReforco)
+            cmd.Parameters.AddWithValue("@motivo", "")
+            cmd.Parameters.Add("@mensagem", SqlDbType.VarChar, 100).Direction = 2
+            cmd.ExecuteNonQuery()
+
+            Dim msg As String = cmd.Parameters("@mensagem").Value.ToString
+
+            cmd.CommandType = 4
+            cmd.Parameters.AddWithValue("@dataF", Now.ToShortDateString())
+            cmd.Parameters.AddWithValue("@funcionario", usuarioNome)
+            cmd.Parameters.Add("@valor", SqlDbType.Decimal).Direction = 2
+
+            cmd.ExecuteNonQuery()
+
+            Dim valor_reforco As Decimal = cmd.Parameters("@valor").Value
+            lblReforco.Text = CStr(valor_reforco)
+
+        Catch ex As Exception : MessageBox.Show(ex.Message.ToString)
+        Finally
+            fechar()
+        End Try
+    End Sub
+
+    Sub verificarFechamento()
+        Dim cmd As SqlCommand
+
+        Try
+            abrir()
+
+            cmd = New SqlCommand("SELECT * FROM tbCaixa WHERE funcionario=@func AND data_ab=@data", con)
+
+            cmd.Parameters.AddWithValue("@func", usuarioNome)
+            cmd.Parameters.AddWithValue("@data", Now.ToShortDateString)
+
+            'da = New SqlDataAdapter("pa_Vendas_ListaGeral", con)
+            'da.SelectCommand.CommandType = CommandType.StoredProcedure
+            'cmd.Parameters.AddWithValue("@func", usuarioNome)
+            'cmd.Parameters.AddWithValue("@data", Now.ToShortDateString)
+            'da = New SqlDataAdapter(cmd)
+            'da.Fill(dt)
+            'dg.DataSource = dt
+
+            FormatarDG()
+
+        Catch ex As Exception
+            MessageBox.Show("Erro ao Listar os dados do caixa" + ex.Message.ToString)
+        Finally
+            fechar()
+        End Try
+    End Sub
+
+
+    Sub VerificarNiveis()
+        Dim cmd As New SqlCommand("pa_verificar_nivelBaixo", con)
+
+        Try
+            abrir()
+            cmd.CommandType = 4
+            With cmd.Parameters
+
+                .Add("@msg", SqlDbType.VarChar, 100).Direction = 2
+                cmd.ExecuteNonQuery()
+            End With
+
+            Dim msg As String = cmd.Parameters("@msg").Value
+            If (msg = "Estoque Baixo") Then
+                'MsgBox("O Nível de estoque está baixo")
+
+                imagemNivel.Image = My.Resources.btVermelho
+                lblNivel.Text = "ESTOQUE BAIXO"
+
+            Else
+                imagemNivel.Image = My.Resources.btVerde
+                lblNivel.Text = "ESTOQUE BOM"
+
+            End If
+
+        Catch ex As Exception
+            MessageBox.Show("Erro ao Listar" + ex.Message)
+            fechar()
+        End Try
+    End Sub
+
+    Private Sub imagemNivel_Click(sender As Object, e As EventArgs) Handles imagemNivel.Click
+        Dim form = New frmNivelBaixo
+        form.ShowDialog()
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs)
+        Dim form = New frmProdutoConsultaSimples
+        form.ShowDialog()
+    End Sub
 
 
     'Private Sub carregarSangria()
@@ -466,169 +661,10 @@ Public Class frmPrincipal
 
     'End Sub
 
-    Private Sub carregarReforco()
-        Dim cmd As New SqlCommand("pa_Reforco_listar_VALOR", con)
-
-        Try
-            abrir()
-
-            Dim vlReforco = Replace(lblReforco.Text, ",", ".")
-
-            abrir()
-            cmd = New SqlCommand("pa_Reforco_salvar", con)
-            cmd.CommandType = CommandType.StoredProcedure
-            ' cmd.Parameters.AddWithValue("@dataF", Now.ToShortDateString())
-            cmd.Parameters.AddWithValue("@horaF", Now.ToLongTimeString())
-            ' cmd.Parameters.AddWithValue("@funcionario", usuarioNome)
-            cmd.Parameters.AddWithValue("@valor", vlReforco)
-            cmd.Parameters.AddWithValue("@motivo", "")
-            cmd.Parameters.Add("@mensagem", SqlDbType.VarChar, 100).Direction = 2
-            cmd.ExecuteNonQuery()
-
-            Dim msg As String = cmd.Parameters("@mensagem").Value.ToString
 
 
 
 
 
-            cmd.CommandType = 4
-            cmd.Parameters.AddWithValue("@dataF", Now.ToShortDateString())
-            cmd.Parameters.AddWithValue("@funcionario", usuarioNome)
-            cmd.Parameters.Add("@valor", SqlDbType.Decimal).Direction = 2
 
-
-            cmd.ExecuteNonQuery()
-
-            Dim valor_reforco As Decimal = cmd.Parameters("@valor").Value
-            lblReforco.Text = CStr(valor_reforco)
-
-
-        Catch ex As Exception : MessageBox.Show(ex.Message.ToString)
-        Finally
-            fechar()
-        End Try
-    End Sub
-
-    Sub verificarFechamento()
-        Dim cmd As SqlCommand
-
-        Try
-            abrir()
-
-            cmd = New SqlCommand("SELECT * FROM tbCaixa WHERE funcionario=@func AND data_ab=@data", con)
-
-            cmd.Parameters.AddWithValue("@func", usuarioNome)
-            cmd.Parameters.AddWithValue("@data", Now.ToShortDateString)
-
-
-
-
-
-            'da = New SqlDataAdapter("pa_Vendas_ListaGeral", con)
-            'da.SelectCommand.CommandType = CommandType.StoredProcedure
-            'cmd.Parameters.AddWithValue("@func", usuarioNome)
-            'cmd.Parameters.AddWithValue("@data", Now.ToShortDateString)
-            'da = New SqlDataAdapter(cmd)
-            'da.Fill(dt)
-            'dg.DataSource = dt
-
-            FormatarDG()
-
-        Catch ex As Exception
-            MessageBox.Show("Erro ao Listar os dados do caixa" + ex.Message.ToString)
-        Finally
-            fechar()
-        End Try
-    End Sub
-
-    Private Sub RelatórioDoCaixaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RelatórioDoCaixaToolStripMenuItem.Click
-        Dim form = New frmRelCaixa
-        form.ShowDialog()
-    End Sub
-
-    Private Sub EntradaSaídaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EntradaSaídaToolStripMenuItem.Click
-        Dim form = New frmEstoque(0)
-        form.ShowDialog()
-    End Sub
-
-    Private Sub ConsultasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ConsultasToolStripMenuItem.Click
-        Dim form = New frmConsultaEstoque
-        form.ShowDialog()
-    End Sub
-
-    Private Sub EntradaSaídaToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles EntradaSaídaToolStripMenuItem1.Click
-        Dim form = New frmRelEstoque
-        form.ShowDialog()
-    End Sub
-
-    Private Sub NíveisBaixoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NíveisBaixoToolStripMenuItem.Click
-        Dim form = New frmNivelBaixo
-        form.ShowDialog()
-    End Sub
-
-    Private Sub NíveisDoEstoqueToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NíveisDoEstoqueToolStripMenuItem.Click
-        Dim form = New frmRelNiveis
-        form.ShowDialog()
-    End Sub
-
-    Sub VerificarNiveis()
-        Dim cmd As New SqlCommand("pa_verificar_nivelBaixo", con)
-
-        Try
-            abrir()
-            cmd.CommandType = 4
-            With cmd.Parameters
-
-                .Add("@msg", SqlDbType.VarChar, 100).Direction = 2
-                cmd.ExecuteNonQuery()
-            End With
-
-            Dim msg As String = cmd.Parameters("@msg").Value
-            If (msg = "Estoque Baixo") Then
-                'MsgBox("O Nível de estoque está baixo")
-
-                imagemNivel.Image = My.Resources.btVermelho
-                lblNivel.Text = "ESTOQUE BAIXO"
-
-            Else
-                imagemNivel.Image = My.Resources.btVerde
-                lblNivel.Text = "ESTOQUE BOM"
-
-            End If
-
-        Catch ex As Exception
-            MessageBox.Show("Erro ao Listar" + ex.Message)
-            fechar()
-        End Try
-    End Sub
-
-    Private Sub imagemNivel_Click(sender As Object, e As EventArgs) Handles imagemNivel.Click
-        Dim form = New frmNivelBaixo
-        form.ShowDialog()
-    End Sub
-
-    Private Sub ProdutosMaisVendidosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ProdutosMaisVendidosToolStripMenuItem.Click
-        Dim form = New frmRelProdutosVendidos
-        form.ShowDialog()
-    End Sub
-
-    Private Sub VendasPorFuncionárioToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles VendasPorFuncionárioToolStripMenuItem.Click
-        Dim form = New frmRelVendaData
-        form.ShowDialog()
-    End Sub
-
-    Private Sub Button1_Click(sender As Object, e As EventArgs)
-        Dim form = New frmProdutoConsultaSimples
-        form.ShowDialog()
-    End Sub
-
-    Private Sub ContasAPagarToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ContasAPagarToolStripMenuItem.Click
-        Dim form = New frmContasPagar
-        form.ShowDialog()
-    End Sub
-
-    Private Sub ProdutosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ProdutosToolStripMenuItem.Click
-        Dim form = New frmProdutos
-        form.ShowDialog()
-    End Sub
 End Class

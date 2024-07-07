@@ -55,7 +55,6 @@ Partial Class frmVendas
         Me.txtValorRecebido = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.txtNomeProd = New System.Windows.Forms.TextBox()
         CType(Me.dg, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pbImagem, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -89,7 +88,7 @@ Partial Class frmVendas
         Me.txtQuantidade.Name = "txtQuantidade"
         Me.txtQuantidade.Size = New System.Drawing.Size(181, 34)
         Me.txtQuantidade.TabIndex = 2
-        Me.txtQuantidade.Text = "0"
+        Me.txtQuantidade.Text = "1"
         '
         'lblTotal
         '
@@ -113,7 +112,7 @@ Partial Class frmVendas
         Me.cbProduto.Location = New System.Drawing.Point(448, 167)
         Me.cbProduto.Name = "cbProduto"
         Me.cbProduto.Size = New System.Drawing.Size(461, 39)
-        Me.cbProduto.TabIndex = 194
+        Me.cbProduto.TabIndex = 20000
         '
         'cbCliente
         '
@@ -440,16 +439,6 @@ Partial Class frmVendas
         Me.Label2.TabIndex = 237
         Me.Label2.Text = "R$"
         '
-        'txtNomeProd
-        '
-        Me.txtNomeProd.Font = New System.Drawing.Font("Arial", 30.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte), True)
-        Me.txtNomeProd.Location = New System.Drawing.Point(442, 141)
-        Me.txtNomeProd.Multiline = True
-        Me.txtNomeProd.Name = "txtNomeProd"
-        Me.txtNomeProd.Size = New System.Drawing.Size(467, 68)
-        Me.txtNomeProd.TabIndex = 238
-        Me.txtNomeProd.Text = "CAIXA DISPONÍVEL"
-        '
         'frmVendas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -457,7 +446,6 @@ Partial Class frmVendas
         Me.BackColor = System.Drawing.Color.White
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.ClientSize = New System.Drawing.Size(1186, 584)
-        Me.Controls.Add(Me.txtNomeProd)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.txtValorRecebido)
@@ -536,5 +524,4 @@ Partial Class frmVendas
     Friend WithEvents txtValorRecebido As TextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
-    Friend WithEvents txtNomeProd As TextBox
 End Class
