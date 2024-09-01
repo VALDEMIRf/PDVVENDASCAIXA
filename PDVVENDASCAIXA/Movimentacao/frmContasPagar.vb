@@ -7,28 +7,48 @@ Public Class frmContasPagar
 
         btSalvar.Enabled = False
         Listar()
-        CarregarTipoDocumento()
+        CarregarCatContas()
+        CarregarFornecedor()
 
         btnEditar.Enabled = False
         btnExcluir.Enabled = False
     End Sub
 
-    Private Sub frmContasPagar_Activated(sender As Object, e As EventArgs) Handles MyBase.Activated
-        Listar()
-        CarregarTipoDocumento()
-    End Sub
-
-    Sub CarregarTipoDocumento()
+    Private Sub CarregarFornecedor()
         Dim DT As New DataTable
         Dim DA As SqlDataAdapter
         Try
             abrir()
             'DA = New SqlDataAdapter("SELECT * FROM tbTipoServico", con)
-            DA = New SqlDataAdapter("pa_tipoDocto_listar", con)
+            DA = New SqlDataAdapter("pa_fornecedor_listar", con)
 
             DA.Fill(DT)
-            txtTipoDocto.DisplayMember = "tipoDocto"
-            txtTipoDocto.ValueMember = "id_tipo"
+            txtEmpresa.DisplayMember = "razaoSocial"
+            txtEmpresa.ValueMember = "id_fornecedor"
+            txtEmpresa.DataSource = DT
+        Catch ex As Exception : MessageBox.Show(ex.Message.ToString)
+        Finally
+            fechar()
+        End Try
+    End Sub
+
+    Private Sub frmContasPagar_Activated(sender As Object, e As EventArgs) Handles MyBase.Activated
+        Listar()
+        CarregarCatContas()
+        CarregarFornecedor()
+    End Sub
+
+    Sub CarregarCatContas()
+        Dim DT As New DataTable
+        Dim DA As SqlDataAdapter
+        Try
+            abrir()
+            'DA = New SqlDataAdapter("SELECT * FROM tbTipoServico", con)
+            DA = New SqlDataAdapter("pa_catContas_listar", con)
+
+            DA.Fill(DT)
+            txtTipoDocto.DisplayMember = "descricaocategoriacontas"
+            txtTipoDocto.ValueMember = "id_categoriacontas"
             txtTipoDocto.DataSource = DT
         Catch ex As Exception : MessageBox.Show(ex.Message.ToString)
         Finally
@@ -64,7 +84,7 @@ Public Class frmContasPagar
         txtCodigo.Text = "Novo"
         txtNDoc.Text = ""
         txtDescricao.Text = ""
-        txtEmpresa.Text = ""
+        txtEmpresa.Text = Nothing
         txtSituacao.Text = Nothing
         txtTipoDocto.Text = Nothing
         txtValor.Text = ""
@@ -155,7 +175,7 @@ Public Class frmContasPagar
                 cmd.CommandType = CommandType.StoredProcedure
                 cmd.Parameters.AddWithValue("@numDocto", txtNDoc.Text)
                 cmd.Parameters.AddWithValue("@descricao", txtDescricao.Text)
-                cmd.Parameters.AddWithValue("@empresa", txtEmpresa.Text)
+                cmd.Parameters.AddWithValue("@id_fornecedor", txtEmpresa.SelectedValue)
                 cmd.Parameters.AddWithValue("@id_tipo", txtTipoDocto.SelectedValue)
                 cmd.Parameters.AddWithValue("@valor", valor1)
                 cmd.Parameters.AddWithValue("@vencimento", txtVencimento.Text)
@@ -193,7 +213,7 @@ Public Class frmContasPagar
                 cmd.Parameters.AddWithValue("@id_conta", txtCodigo.Text)
                 cmd.Parameters.AddWithValue("@descricao", txtDescricao.Text)
                 cmd.Parameters.AddWithValue("@valor", valor1)
-                cmd.Parameters.AddWithValue("@empresa", txtEmpresa.Text)
+                'cmd.Parameters.AddWithValue("@empresa", txtEmpresa.Text)
                 cmd.Parameters.AddWithValue("@vencimento", txtVencimento.Text)
                 cmd.Parameters.AddWithValue("@situacao", txtSituacao.Text)
 
@@ -316,5 +336,8 @@ Public Class frmContasPagar
         form.ShowDialog()
     End Sub
 
-
+    Private Sub btFornecedor_Click(sender As Object, e As EventArgs) Handles btFornecedor.Click
+        Dim form = New frmFornecedores
+        form.ShowDialog()
+    End Sub
 End Class

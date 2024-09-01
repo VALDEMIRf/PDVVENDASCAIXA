@@ -59,7 +59,7 @@ SELECT id_categoria, categoria FROM tbCategoriaProdutos WHERE (id_categoria = @i
               <DbSource ConnectionRef="PDVConnectionString (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        p.id_produto, p.nome, p.descricao, cat.categoria, p.id_fornecedor, p.id_categoria, cat.id_categoria AS Expr1, p.id_unidade, p.quantidade, p.valor_compra, p.valor_venda, p.data_cadastro, p.imagem, p.nivel_minimo, 
+                    <CommandText>SELECT        p.id_produto, p.nome, p.descricao, cat.categoria, p.quantidade, p.valor_compra, p.valor_venda, p.data_cadastro, p.imagem, p.nivel_minimo, p.id_fornecedor, p.id_categoria, cat.id_categoria AS Expr1, p.id_unidade, 
                          p.quant_vendida
 FROM            tbProdutos AS p INNER JOIN
                          tbCategoriaProdutos AS cat ON p.id_categoria = cat.id_categoria</CommandText>
@@ -287,6 +287,34 @@ ORDER BY ven.num_vendas DESC</CommandText>
             </Mappings>
             <Sources />
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="CATALOGOPRODUTOSTableAdapter" GeneratorDataComponentClassName="CATALOGOPRODUTOSTableAdapter" Name="CATALOGOPRODUTOS" UserDataComponentName="CATALOGOPRODUTOSTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="PDVConnectionString (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        p.id_produto, p.nome, p.descricao, cat.categoria, p.quantidade, p.valorVenda, p.imagem, p.valor_venda, p.id_categoria, cat.id_categoria AS Expr1, p.id_unidade
+FROM            tbProdutos AS p INNER JOIN
+                         tbCategoriaProdutos AS cat ON p.id_categoria = cat.id_categoria</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="id_produto" DataSetColumn="id_produto" />
+              <Mapping SourceColumn="nome" DataSetColumn="nome" />
+              <Mapping SourceColumn="descricao" DataSetColumn="descricao" />
+              <Mapping SourceColumn="categoria" DataSetColumn="categoria" />
+              <Mapping SourceColumn="quantidade" DataSetColumn="quantidade" />
+              <Mapping SourceColumn="valor_venda" DataSetColumn="valor_venda" />
+              <Mapping SourceColumn="imagem" DataSetColumn="imagem" />
+              <Mapping SourceColumn="id_categoria" DataSetColumn="id_categoria" />
+              <Mapping SourceColumn="Expr1" DataSetColumn="Expr1" />
+              <Mapping SourceColumn="id_unidade" DataSetColumn="id_unidade" />
+              <Mapping SourceColumn="valorVenda" DataSetColumn="valorVenda" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
         </Tables>
         <Sources />
       </DataSource>
@@ -295,7 +323,7 @@ ORDER BY ven.num_vendas DESC</CommandText>
   <xs:element name="ProdutosDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="ProdutosDataSet" msprop:Generator_UserDSName="ProdutosDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="tbCategoriaProdutos" msprop:Generator_TableClassName="tbCategoriaProdutosDataTable" msprop:Generator_TableVarName="tabletbCategoriaProdutos" msprop:Generator_RowChangedName="tbCategoriaProdutosRowChanged" msprop:Generator_TablePropName="tbCategoriaProdutos" msprop:Generator_RowDeletingName="tbCategoriaProdutosRowDeleting" msprop:Generator_RowChangingName="tbCategoriaProdutosRowChanging" msprop:Generator_RowEvHandlerName="tbCategoriaProdutosRowChangeEventHandler" msprop:Generator_RowDeletedName="tbCategoriaProdutosRowDeleted" msprop:Generator_RowClassName="tbCategoriaProdutosRow" msprop:Generator_UserTableName="tbCategoriaProdutos" msprop:Generator_RowEvArgName="tbCategoriaProdutosRowChangeEvent">
+        <xs:element name="tbCategoriaProdutos" msprop:Generator_TableClassName="tbCategoriaProdutosDataTable" msprop:Generator_TableVarName="tabletbCategoriaProdutos" msprop:Generator_TablePropName="tbCategoriaProdutos" msprop:Generator_RowDeletingName="tbCategoriaProdutosRowDeleting" msprop:Generator_RowChangingName="tbCategoriaProdutosRowChanging" msprop:Generator_RowEvHandlerName="tbCategoriaProdutosRowChangeEventHandler" msprop:Generator_RowDeletedName="tbCategoriaProdutosRowDeleted" msprop:Generator_UserTableName="tbCategoriaProdutos" msprop:Generator_RowChangedName="tbCategoriaProdutosRowChanged" msprop:Generator_RowEvArgName="tbCategoriaProdutosRowChangeEvent" msprop:Generator_RowClassName="tbCategoriaProdutosRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id_categoria" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid_categoria" msprop:Generator_ColumnPropNameInRow="id_categoria" msprop:Generator_ColumnPropNameInTable="id_categoriaColumn" msprop:Generator_UserColumnName="id_categoria" type="xs:int" />
@@ -309,7 +337,7 @@ ORDER BY ven.num_vendas DESC</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="tbProdutos" msprop:Generator_TableClassName="tbProdutosDataTable" msprop:Generator_TableVarName="tabletbProdutos" msprop:Generator_RowChangedName="tbProdutosRowChanged" msprop:Generator_TablePropName="tbProdutos" msprop:Generator_RowDeletingName="tbProdutosRowDeleting" msprop:Generator_RowChangingName="tbProdutosRowChanging" msprop:Generator_RowEvHandlerName="tbProdutosRowChangeEventHandler" msprop:Generator_RowDeletedName="tbProdutosRowDeleted" msprop:Generator_RowClassName="tbProdutosRow" msprop:Generator_UserTableName="tbProdutos" msprop:Generator_RowEvArgName="tbProdutosRowChangeEvent">
+        <xs:element name="tbProdutos" msprop:Generator_TableClassName="tbProdutosDataTable" msprop:Generator_TableVarName="tabletbProdutos" msprop:Generator_TablePropName="tbProdutos" msprop:Generator_RowDeletingName="tbProdutosRowDeleting" msprop:Generator_RowChangingName="tbProdutosRowChanging" msprop:Generator_RowEvHandlerName="tbProdutosRowChangeEventHandler" msprop:Generator_RowDeletedName="tbProdutosRowDeleted" msprop:Generator_UserTableName="tbProdutos" msprop:Generator_RowChangedName="tbProdutosRowChanged" msprop:Generator_RowEvArgName="tbProdutosRowChangeEvent" msprop:Generator_RowClassName="tbProdutosRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id_produto" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid_produto" msprop:Generator_ColumnPropNameInRow="id_produto" msprop:Generator_ColumnPropNameInTable="id_produtoColumn" msprop:Generator_UserColumnName="id_produto" type="xs:int" />
@@ -350,7 +378,7 @@ ORDER BY ven.num_vendas DESC</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="tbUnidadeMedida" msprop:Generator_TableClassName="tbUnidadeMedidaDataTable" msprop:Generator_TableVarName="tabletbUnidadeMedida" msprop:Generator_RowChangedName="tbUnidadeMedidaRowChanged" msprop:Generator_TablePropName="tbUnidadeMedida" msprop:Generator_RowDeletingName="tbUnidadeMedidaRowDeleting" msprop:Generator_RowChangingName="tbUnidadeMedidaRowChanging" msprop:Generator_RowEvHandlerName="tbUnidadeMedidaRowChangeEventHandler" msprop:Generator_RowDeletedName="tbUnidadeMedidaRowDeleted" msprop:Generator_RowClassName="tbUnidadeMedidaRow" msprop:Generator_UserTableName="tbUnidadeMedida" msprop:Generator_RowEvArgName="tbUnidadeMedidaRowChangeEvent">
+        <xs:element name="tbUnidadeMedida" msprop:Generator_TableClassName="tbUnidadeMedidaDataTable" msprop:Generator_TableVarName="tabletbUnidadeMedida" msprop:Generator_TablePropName="tbUnidadeMedida" msprop:Generator_RowDeletingName="tbUnidadeMedidaRowDeleting" msprop:Generator_RowChangingName="tbUnidadeMedidaRowChanging" msprop:Generator_RowEvHandlerName="tbUnidadeMedidaRowChangeEventHandler" msprop:Generator_RowDeletedName="tbUnidadeMedidaRowDeleted" msprop:Generator_UserTableName="tbUnidadeMedida" msprop:Generator_RowChangedName="tbUnidadeMedidaRowChanged" msprop:Generator_RowEvArgName="tbUnidadeMedidaRowChangeEvent" msprop:Generator_RowClassName="tbUnidadeMedidaRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id_unidade" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid_unidade" msprop:Generator_ColumnPropNameInRow="id_unidade" msprop:Generator_ColumnPropNameInTable="id_unidadeColumn" msprop:Generator_UserColumnName="id_unidade" type="xs:int" />
@@ -364,7 +392,7 @@ ORDER BY ven.num_vendas DESC</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="NiveisBaixo" msprop:Generator_TableClassName="NiveisBaixoDataTable" msprop:Generator_TableVarName="tableNiveisBaixo" msprop:Generator_RowChangedName="NiveisBaixoRowChanged" msprop:Generator_TablePropName="NiveisBaixo" msprop:Generator_RowDeletingName="NiveisBaixoRowDeleting" msprop:Generator_RowChangingName="NiveisBaixoRowChanging" msprop:Generator_RowEvHandlerName="NiveisBaixoRowChangeEventHandler" msprop:Generator_RowDeletedName="NiveisBaixoRowDeleted" msprop:Generator_RowClassName="NiveisBaixoRow" msprop:Generator_UserTableName="NiveisBaixo" msprop:Generator_RowEvArgName="NiveisBaixoRowChangeEvent">
+        <xs:element name="NiveisBaixo" msprop:Generator_TableClassName="NiveisBaixoDataTable" msprop:Generator_TableVarName="tableNiveisBaixo" msprop:Generator_TablePropName="NiveisBaixo" msprop:Generator_RowDeletingName="NiveisBaixoRowDeleting" msprop:Generator_RowChangingName="NiveisBaixoRowChanging" msprop:Generator_RowEvHandlerName="NiveisBaixoRowChangeEventHandler" msprop:Generator_RowDeletedName="NiveisBaixoRowDeleted" msprop:Generator_UserTableName="NiveisBaixo" msprop:Generator_RowChangedName="NiveisBaixoRowChanged" msprop:Generator_RowEvArgName="NiveisBaixoRowChangeEvent" msprop:Generator_RowClassName="NiveisBaixoRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id_produto" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid_produto" msprop:Generator_ColumnPropNameInRow="id_produto" msprop:Generator_ColumnPropNameInTable="id_produtoColumn" msprop:Generator_UserColumnName="id_produto" type="xs:int" />
@@ -394,7 +422,7 @@ ORDER BY ven.num_vendas DESC</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="QuantidadeVendidaPorData" msprop:Generator_TableClassName="QuantidadeVendidaPorDataDataTable" msprop:Generator_TableVarName="tableQuantidadeVendidaPorData" msprop:Generator_RowChangedName="QuantidadeVendidaPorDataRowChanged" msprop:Generator_TablePropName="QuantidadeVendidaPorData" msprop:Generator_RowDeletingName="QuantidadeVendidaPorDataRowDeleting" msprop:Generator_RowChangingName="QuantidadeVendidaPorDataRowChanging" msprop:Generator_RowEvHandlerName="QuantidadeVendidaPorDataRowChangeEventHandler" msprop:Generator_RowDeletedName="QuantidadeVendidaPorDataRowDeleted" msprop:Generator_RowClassName="QuantidadeVendidaPorDataRow" msprop:Generator_UserTableName="QuantidadeVendidaPorData" msprop:Generator_RowEvArgName="QuantidadeVendidaPorDataRowChangeEvent">
+        <xs:element name="QuantidadeVendidaPorData" msprop:Generator_TableClassName="QuantidadeVendidaPorDataDataTable" msprop:Generator_TableVarName="tableQuantidadeVendidaPorData" msprop:Generator_TablePropName="QuantidadeVendidaPorData" msprop:Generator_RowDeletingName="QuantidadeVendidaPorDataRowDeleting" msprop:Generator_RowChangingName="QuantidadeVendidaPorDataRowChanging" msprop:Generator_RowEvHandlerName="QuantidadeVendidaPorDataRowChangeEventHandler" msprop:Generator_RowDeletedName="QuantidadeVendidaPorDataRowDeleted" msprop:Generator_UserTableName="QuantidadeVendidaPorData" msprop:Generator_RowChangedName="QuantidadeVendidaPorDataRowChanged" msprop:Generator_RowEvArgName="QuantidadeVendidaPorDataRowChangeEvent" msprop:Generator_RowClassName="QuantidadeVendidaPorDataRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id_vendas" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid_vendas" msprop:Generator_ColumnPropNameInRow="id_vendas" msprop:Generator_ColumnPropNameInTable="id_vendasColumn" msprop:Generator_UserColumnName="id_vendas" type="xs:int" />
@@ -442,6 +470,41 @@ ORDER BY ven.num_vendas DESC</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="CATALOGOPRODUTOS" msprop:Generator_TableClassName="CATALOGOPRODUTOSDataTable" msprop:Generator_TableVarName="tableCATALOGOPRODUTOS" msprop:Generator_TablePropName="CATALOGOPRODUTOS" msprop:Generator_RowDeletingName="CATALOGOPRODUTOSRowDeleting" msprop:Generator_RowChangingName="CATALOGOPRODUTOSRowChanging" msprop:Generator_RowEvHandlerName="CATALOGOPRODUTOSRowChangeEventHandler" msprop:Generator_RowDeletedName="CATALOGOPRODUTOSRowDeleted" msprop:Generator_UserTableName="CATALOGOPRODUTOS" msprop:Generator_RowChangedName="CATALOGOPRODUTOSRowChanged" msprop:Generator_RowEvArgName="CATALOGOPRODUTOSRowChangeEvent" msprop:Generator_RowClassName="CATALOGOPRODUTOSRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id_produto" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid_produto" msprop:Generator_ColumnPropNameInRow="id_produto" msprop:Generator_ColumnPropNameInTable="id_produtoColumn" msprop:Generator_UserColumnName="id_produto" type="xs:int" />
+              <xs:element name="nome" msprop:Generator_ColumnVarNameInTable="columnnome" msprop:Generator_ColumnPropNameInRow="nome" msprop:Generator_ColumnPropNameInTable="nomeColumn" msprop:Generator_UserColumnName="nome">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="descricao" msprop:Generator_ColumnVarNameInTable="columndescricao" msprop:Generator_ColumnPropNameInRow="descricao" msprop:Generator_ColumnPropNameInTable="descricaoColumn" msprop:Generator_UserColumnName="descricao">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="categoria" msprop:Generator_ColumnVarNameInTable="columncategoria" msprop:Generator_ColumnPropNameInRow="categoria" msprop:Generator_ColumnPropNameInTable="categoriaColumn" msprop:Generator_UserColumnName="categoria">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="quantidade" msprop:Generator_ColumnVarNameInTable="columnquantidade" msprop:Generator_ColumnPropNameInRow="quantidade" msprop:Generator_ColumnPropNameInTable="quantidadeColumn" msprop:Generator_UserColumnName="quantidade" type="xs:int" />
+              <xs:element name="valor_venda" msprop:Generator_ColumnVarNameInTable="columnvalor_venda" msprop:Generator_ColumnPropNameInRow="valor_venda" msprop:Generator_ColumnPropNameInTable="valor_vendaColumn" msprop:Generator_UserColumnName="valor_venda" type="xs:double" minOccurs="0" />
+              <xs:element name="imagem" msprop:Generator_ColumnVarNameInTable="columnimagem" msprop:Generator_ColumnPropNameInRow="imagem" msprop:Generator_ColumnPropNameInTable="imagemColumn" msprop:Generator_UserColumnName="imagem" type="xs:base64Binary" minOccurs="0" />
+              <xs:element name="id_categoria" msprop:Generator_ColumnVarNameInTable="columnid_categoria" msprop:Generator_ColumnPropNameInRow="id_categoria" msprop:Generator_ColumnPropNameInTable="id_categoriaColumn" msprop:Generator_UserColumnName="id_categoria" type="xs:int" minOccurs="0" />
+              <xs:element name="Expr1" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnExpr1" msprop:Generator_ColumnPropNameInRow="Expr1" msprop:Generator_ColumnPropNameInTable="Expr1Column" msprop:Generator_UserColumnName="Expr1" type="xs:int" />
+              <xs:element name="id_unidade" msprop:Generator_ColumnVarNameInTable="columnid_unidade" msprop:Generator_ColumnPropNameInRow="id_unidade" msprop:Generator_ColumnPropNameInTable="id_unidadeColumn" msprop:Generator_UserColumnName="id_unidade" type="xs:int" minOccurs="0" />
+              <xs:element name="valorVenda" msprop:Generator_ColumnVarNameInTable="columnvalorVenda" msprop:Generator_ColumnPropNameInRow="valorVenda" msprop:Generator_ColumnPropNameInTable="valorVendaColumn" msprop:Generator_UserColumnName="valorVenda" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
     <xs:unique name="Constraint1" msdata:PrimaryKey="true">
@@ -464,14 +527,19 @@ ORDER BY ven.num_vendas DESC</CommandText>
       <xs:selector xpath=".//mstns:QuantidadeVendidaPorData" />
       <xs:field xpath="mstns:id_vendas" />
     </xs:unique>
+    <xs:unique name="CATALOGOPRODUTOS_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:CATALOGOPRODUTOS" />
+      <xs:field xpath="mstns:id_produto" />
+      <xs:field xpath="mstns:Expr1" />
+    </xs:unique>
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="FK_tbProdutos_tbCategoriaProdutos" msdata:parent="tbCategoriaProdutos" msdata:child="tbProdutos" msdata:parentkey="id_categoria" msdata:childkey="id_categoria" msprop:Generator_UserChildTable="tbProdutos" msprop:Generator_ChildPropName="GettbProdutosRows" msprop:Generator_UserRelationName="FK_tbProdutos_tbCategoriaProdutos" msprop:Generator_RelationVarName="relationFK_tbProdutos_tbCategoriaProdutos" msprop:Generator_UserParentTable="tbCategoriaProdutos" msprop:Generator_ParentPropName="tbCategoriaProdutosRow" />
-      <msdata:Relationship name="FK_tbProdutos_tbUnidadeMedida" msdata:parent="tbUnidadeMedida" msdata:child="tbProdutos" msdata:parentkey="id_unidade" msdata:childkey="id_unidade" msprop:Generator_UserChildTable="tbProdutos" msprop:Generator_ChildPropName="GettbProdutosRows" msprop:Generator_UserRelationName="FK_tbProdutos_tbUnidadeMedida" msprop:Generator_ParentPropName="tbUnidadeMedidaRow" msprop:Generator_RelationVarName="relationFK_tbProdutos_tbUnidadeMedida" msprop:Generator_UserParentTable="tbUnidadeMedida" />
-      <msdata:Relationship name="FK_tbProdutos_tbCategoriaProdutos1" msdata:parent="tbCategoriaProdutos" msdata:child="NiveisBaixo" msdata:parentkey="id_categoria" msdata:childkey="id_categoria" msprop:Generator_UserChildTable="NiveisBaixo" msprop:Generator_ChildPropName="GetNiveisBaixoRows" msprop:Generator_UserRelationName="FK_tbProdutos_tbCategoriaProdutos1" msprop:Generator_RelationVarName="relationFK_tbProdutos_tbCategoriaProdutos1" msprop:Generator_UserParentTable="tbCategoriaProdutos" msprop:Generator_ParentPropName="tbCategoriaProdutosRow" />
-      <msdata:Relationship name="FK_tbProdutos_tbUnidadeMedida1" msdata:parent="tbUnidadeMedida" msdata:child="NiveisBaixo" msdata:parentkey="id_unidade" msdata:childkey="id_unidade" msprop:Generator_UserChildTable="NiveisBaixo" msprop:Generator_ChildPropName="GetNiveisBaixoRows" msprop:Generator_UserRelationName="FK_tbProdutos_tbUnidadeMedida1" msprop:Generator_RelationVarName="relationFK_tbProdutos_tbUnidadeMedida1" msprop:Generator_UserParentTable="tbUnidadeMedida" msprop:Generator_ParentPropName="tbUnidadeMedidaRow" />
-      <msdata:Relationship name="FK_tbProdutos_tbCategoriaProdutos2" msdata:parent="tbProdutos" msdata:child="NiveisBaixo" msdata:parentkey="id_categoria" msdata:childkey="id_categoria" msprop:Generator_UserChildTable="NiveisBaixo" msprop:Generator_ChildPropName="GetNiveisBaixoRows" msprop:Generator_UserRelationName="FK_tbProdutos_tbCategoriaProdutos2" msprop:Generator_ParentPropName="tbProdutosRow" msprop:Generator_RelationVarName="relationFK_tbProdutos_tbCategoriaProdutos2" msprop:Generator_UserParentTable="tbProdutos" />
+      <msdata:Relationship name="FK_tbProdutos_tbCategoriaProdutos" msdata:parent="tbCategoriaProdutos" msdata:child="tbProdutos" msdata:parentkey="id_categoria" msdata:childkey="id_categoria" msprop:Generator_UserChildTable="tbProdutos" msprop:Generator_ChildPropName="GettbProdutosRows" msprop:Generator_UserRelationName="FK_tbProdutos_tbCategoriaProdutos" msprop:Generator_ParentPropName="tbCategoriaProdutosRow" msprop:Generator_RelationVarName="relationFK_tbProdutos_tbCategoriaProdutos" msprop:Generator_UserParentTable="tbCategoriaProdutos" />
+      <msdata:Relationship name="FK_tbProdutos_tbUnidadeMedida" msdata:parent="tbUnidadeMedida" msdata:child="tbProdutos" msdata:parentkey="id_unidade" msdata:childkey="id_unidade" msprop:Generator_UserChildTable="tbProdutos" msprop:Generator_ChildPropName="GettbProdutosRows" msprop:Generator_UserRelationName="FK_tbProdutos_tbUnidadeMedida" msprop:Generator_RelationVarName="relationFK_tbProdutos_tbUnidadeMedida" msprop:Generator_UserParentTable="tbUnidadeMedida" msprop:Generator_ParentPropName="tbUnidadeMedidaRow" />
+      <msdata:Relationship name="FK_tbProdutos_tbCategoriaProdutos1" msdata:parent="tbCategoriaProdutos" msdata:child="NiveisBaixo" msdata:parentkey="id_categoria" msdata:childkey="id_categoria" msprop:Generator_UserChildTable="NiveisBaixo" msprop:Generator_ChildPropName="GetNiveisBaixoRows" msprop:Generator_UserRelationName="FK_tbProdutos_tbCategoriaProdutos1" msprop:Generator_ParentPropName="tbCategoriaProdutosRow" msprop:Generator_RelationVarName="relationFK_tbProdutos_tbCategoriaProdutos1" msprop:Generator_UserParentTable="tbCategoriaProdutos" />
+      <msdata:Relationship name="FK_tbProdutos_tbUnidadeMedida1" msdata:parent="tbUnidadeMedida" msdata:child="NiveisBaixo" msdata:parentkey="id_unidade" msdata:childkey="id_unidade" msprop:Generator_UserChildTable="NiveisBaixo" msprop:Generator_ChildPropName="GetNiveisBaixoRows" msprop:Generator_UserRelationName="FK_tbProdutos_tbUnidadeMedida1" msprop:Generator_ParentPropName="tbUnidadeMedidaRow" msprop:Generator_RelationVarName="relationFK_tbProdutos_tbUnidadeMedida1" msprop:Generator_UserParentTable="tbUnidadeMedida" />
+      <msdata:Relationship name="FK_tbProdutos_tbCategoriaProdutos2" msdata:parent="tbProdutos" msdata:child="NiveisBaixo" msdata:parentkey="id_categoria" msdata:childkey="id_categoria" msprop:Generator_UserChildTable="NiveisBaixo" msprop:Generator_ChildPropName="GetNiveisBaixoRows" msprop:Generator_UserRelationName="FK_tbProdutos_tbCategoriaProdutos2" msprop:Generator_RelationVarName="relationFK_tbProdutos_tbCategoriaProdutos2" msprop:Generator_UserParentTable="tbProdutos" msprop:Generator_ParentPropName="tbProdutosRow" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>

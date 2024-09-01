@@ -235,7 +235,7 @@ Public Class frmPrincipal
 
     'MWNU RELATÓRIOS
     Private Sub CatálogoDeProdutosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CatálogoDeProdutosToolStripMenuItem.Click
-        Dim form = New frmRelProdutos
+        Dim form = New frmRelCatalogoProdutos
         form.ShowDialog()
     End Sub
 

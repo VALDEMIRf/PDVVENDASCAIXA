@@ -176,6 +176,16 @@
     <Compile Include="Caixa\frmSangria.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="CATALOGODataSet2.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CATALOGODataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CATALOGOPRODDataSet2.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CATALOGOPRODDataSet2.xsd</DependentUpon>
+    </Compile>
     <Compile Include="classes\clsCep.vb" />
     <Compile Include="classes\CNPJ.vb" />
     <Compile Include="conexao.vb" />
@@ -254,15 +264,29 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>PDVDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="PDVDataSet1.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PDVDataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="ProdutosDataSet.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
+      <DependentUpon>ProdutosDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ProdutosDataSet.vb">
       <DependentUpon>ProdutosDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Relatorios\frmRelCaixa.Designer.vb">
       <DependentUpon>frmRelCaixa.vb</DependentUpon>
     </Compile>
     <Compile Include="Relatorios\frmRelCaixa.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Relatorios\frmRelCatalogoProdutos.Designer.vb">
+      <DependentUpon>frmRelCatalogoProdutos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Relatorios\frmRelCatalogoProdutos.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Relatorios\frmRelComprovante.Designer.vb">
@@ -281,12 +305,6 @@
       <DependentUpon>frmRelNiveis.vb</DependentUpon>
     </Compile>
     <Compile Include="Relatorios\frmRelNiveis.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Relatorios\frmRelProdutos.Designer.vb">
-      <DependentUpon>frmRelProdutos.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Relatorios\frmRelProdutos.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Relatorios\frmRelProdutosVendidos.Designer.vb">
@@ -446,6 +464,9 @@
     <EmbeddedResource Include="Relatorios\frmRelCaixa.resx">
       <DependentUpon>frmRelCaixa.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Relatorios\frmRelCatalogoProdutos.resx">
+      <DependentUpon>frmRelCatalogoProdutos.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Relatorios\frmRelComprovante.resx">
       <DependentUpon>frmRelComprovante.vb</DependentUpon>
     </EmbeddedResource>
@@ -454,9 +475,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Relatorios\frmRelNiveis.resx">
       <DependentUpon>frmRelNiveis.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Relatorios\frmRelProdutos.resx">
-      <DependentUpon>frmRelProdutos.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Relatorios\frmRelProdutosVendidos.resx">
       <DependentUpon>frmRelProdutosVendidos.vb</DependentUpon>
@@ -471,11 +489,11 @@
       <DependentUpon>frmRelVendaData.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Relatorios\rel\RelCaixa.rdlc" />
+    <EmbeddedResource Include="Relatorios\rel\RelCatalogoProdutos.rdlc" />
     <EmbeddedResource Include="Relatorios\rel\relComprovante.rdlc" />
     <EmbeddedResource Include="Relatorios\rel\RelEntradaSaida.rdlc" />
     <EmbeddedResource Include="Relatorios\rel\RelEstoqueData.rdlc" />
     <EmbeddedResource Include="Relatorios\rel\RelNiveis.rdlc" />
-    <EmbeddedResource Include="Relatorios\rel\relProdutos1.rdlc" />
     <EmbeddedResource Include="Relatorios\rel\RelProdutosVenda.rdlc" />
     <EmbeddedResource Include="Relatorios\rel\relServicos.rdlc" />
     <EmbeddedResource Include="Relatorios\rel\relVenda.rdlc" />
@@ -522,6 +540,28 @@
     </None>
     <None Include="caixa1DataSet1.xss">
       <DependentUpon>caixa1DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="CATALOGODataSet2.xsc">
+      <DependentUpon>CATALOGODataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="CATALOGODataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CATALOGODataSet2.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CATALOGODataSet2.xss">
+      <DependentUpon>CATALOGODataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="CATALOGOPRODDataSet2.xsc">
+      <DependentUpon>CATALOGOPRODDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="CATALOGOPRODDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CATALOGOPRODDataSet2.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CATALOGOPRODDataSet2.xss">
+      <DependentUpon>CATALOGOPRODDataSet2.xsd</DependentUpon>
     </None>
     <None Include="Connected Services\WSCEP\AtendeClienteService.wsdl" />
     <None Include="Connected Services\WSCEP\PDVVENDASCAIXA.WSCEP.atualizaPagamentoNaEntregaResponse.datasource">
@@ -733,6 +773,17 @@
     <None Include="PDVDataSet.xss">
       <DependentUpon>PDVDataSet.xsd</DependentUpon>
     </None>
+    <None Include="PDVDataSet1.xsc">
+      <DependentUpon>PDVDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="PDVDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PDVDataSet1.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="PDVDataSet1.xss">
+      <DependentUpon>PDVDataSet1.xsd</DependentUpon>
+    </None>
     <None Include="ProdutosDataSet.xsc">
       <DependentUpon>ProdutosDataSet.xsd</DependentUpon>
     </None>
@@ -834,6 +885,8 @@
     <None Include="Resources\verde.png" />
     <None Include="Resources\vermelho.png" />
     <None Include="Resources\barCode.wav" />
+    <None Include="Resources\Add.png" />
+    <None Include="Resources\Create.png" />
     <Content Include="SqlServerTypes\Loader.cs" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">

@@ -33,8 +33,8 @@ Partial Class frmTipoDocumento
         Me.dgvTipo = New System.Windows.Forms.DataGridView()
         Me.txtTipoDocumento = New System.Windows.Forms.TextBox()
         Me.lblTipo = New System.Windows.Forms.Label()
-        Me.Label1 = New System.Windows.Forms.Label()
         Me.errErro = New System.Windows.Forms.ErrorProvider(Me.components)
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         CType(Me.dgvTipo, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.errErro, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -64,7 +64,7 @@ Partial Class frmTipoDocumento
         Me.btNovo.Image = CType(resources.GetObject("btNovo.Image"), System.Drawing.Image)
         Me.btNovo.Location = New System.Drawing.Point(4, 13)
         Me.btNovo.Name = "btNovo"
-        Me.btNovo.Size = New System.Drawing.Size(90, 41)
+        Me.btNovo.Size = New System.Drawing.Size(82, 41)
         Me.btNovo.TabIndex = 18
         Me.btNovo.Text = "Novo"
         Me.btNovo.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -176,21 +176,21 @@ Partial Class frmTipoDocumento
         Me.lblTipo.Text = "0"
         Me.lblTipo.Visible = False
         '
+        'errErro
+        '
+        Me.errErro.ContainerControl = Me
+        '
         'Label1
         '
         Me.Label1.AutoSize = True
         Me.Label1.BackColor = System.Drawing.Color.Transparent
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Font = New System.Drawing.Font("Arial Rounded MT Bold", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.White
         Me.Label1.Location = New System.Drawing.Point(12, 9)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(196, 20)
+        Me.Label1.Size = New System.Drawing.Size(227, 22)
         Me.Label1.TabIndex = 21
-        Me.Label1.Text = "TIPO DE DOCUMENTO"
-        '
-        'errErro
-        '
-        Me.errErro.ContainerControl = Me
+        Me.Label1.Text = "Categorias de Contas"
         '
         'frmTipoDocumento
         '
@@ -203,10 +203,11 @@ Partial Class frmTipoDocumento
         Me.Controls.Add(Me.txtTipoDocumento)
         Me.Controls.Add(Me.lblTipo)
         Me.Controls.Add(Me.Label1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "frmTipoDocumento"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Tipo de Documento"
+        Me.Text = "Categorias de Contas"
         Me.GroupBox1.ResumeLayout(False)
         CType(Me.dgvTipo, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.errErro, System.ComponentModel.ISupportInitialize).EndInit()
@@ -224,6 +225,6 @@ Partial Class frmTipoDocumento
     Friend WithEvents dgvTipo As DataGridView
     Friend WithEvents txtTipoDocumento As TextBox
     Friend WithEvents lblTipo As Label
-    Friend WithEvents Label1 As Label
     Friend WithEvents errErro As ErrorProvider
+    Friend WithEvents Label1 As Label
 End Class

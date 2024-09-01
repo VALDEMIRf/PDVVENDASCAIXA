@@ -61,6 +61,16 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property Add() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("Add", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Consulta um recurso localizado do tipo System.IO.UnmanagedMemoryStream semelhante a System.IO.MemoryStream.
         '''</summary>
         Friend ReadOnly Property barCode() As System.IO.UnmanagedMemoryStream
@@ -85,6 +95,16 @@ Namespace My.Resources
         Friend ReadOnly Property btVermelho() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("btVermelho", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property Create() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("Create", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property

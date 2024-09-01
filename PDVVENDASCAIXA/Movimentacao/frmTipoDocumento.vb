@@ -8,7 +8,6 @@ Public Class frmTipoDocumento
 
         carregaGrid()
 
-
         btAlterar.Enabled = False
         btExcluir.Enabled = False
     End Sub
@@ -19,14 +18,14 @@ Public Class frmTipoDocumento
         Dim da As SqlDataAdapter
         Try
             abrir()
-            da = New SqlDataAdapter("pa_tipoDocto_listar", con) '
+            da = New SqlDataAdapter("pa_catContas_listar", con) '
 
             da.Fill(dt)
             dgvTipo.DataSource = dt
 
             FormatarDG()
         Catch ex As Exception
-            MessageBox.Show("Erro ao Listar os Tipos de Documentos" + ex.Message.ToString)
+            MessageBox.Show("Erro ao Listar os tipos de Contas" + ex.Message.ToString)
         Finally
             fechar()
         End Try
@@ -44,7 +43,7 @@ Public Class frmTipoDocumento
 
         With dgvTipo
             .Columns(0).Visible = False
-            .Columns(1).HeaderText = "Tipo de Documento"
+            .Columns(1).HeaderText = "Contas"
             .Columns(1).Width = 150
         End With
 
@@ -65,9 +64,9 @@ Public Class frmTipoDocumento
 
             Try
                 abrir()
-                cmd = New SqlCommand("pa_tipoDocto_Salvar", con)
+                cmd = New SqlCommand("pa_catContas_Salvar", con)
                 cmd.CommandType = CommandType.StoredProcedure
-                cmd.Parameters.AddWithValue("@tipoDocto", txtTipoDocumento.Text)
+                cmd.Parameters.AddWithValue("@descricaocategoriacontas", txtTipoDocumento.Text)
 
                 cmd.Parameters.Add("@mensagem", SqlDbType.VarChar, 100).Direction = 2
                 cmd.ExecuteNonQuery()
@@ -91,18 +90,18 @@ Public Class frmTipoDocumento
         Try
 
             If txtTipoDocumento.Text.Equals(String.Empty) Then
-                errErro.SetError(txtTipoDocumento, "Digite um tipo de Documento de cobrança")
-                MsgBox("Selecione um tipo de Documento de cobrança listadas")
+                errErro.SetError(txtTipoDocumento, "Digite um tipo de Conta de cobrança")
+                MsgBox("Selecione um tipo de Conta de cobrança listadas")
                 Exit Sub
             Else
                 errErro.SetError(txtTipoDocumento, "")
             End If
 
             abrir()
-            cmd = New SqlCommand("pa_tipoDocto_Editar ", con)
+            cmd = New SqlCommand("pa_catContas_Editar", con)
             cmd.CommandType = CommandType.StoredProcedure
-            cmd.Parameters.AddWithValue("@id_tipo", lblTipo.Text)
-            cmd.Parameters.AddWithValue("@tipoDocto", txtTipoDocumento.Text)
+            cmd.Parameters.AddWithValue("@id_categoriacontas", lblTipo.Text)
+            cmd.Parameters.AddWithValue("@descricaocategoriacontas", txtTipoDocumento.Text)
 
             cmd.Parameters.Add("@mensagem", SqlDbType.VarChar, 100).Direction = 2
             cmd.ExecuteNonQuery()
@@ -125,12 +124,12 @@ Public Class frmTipoDocumento
         If txtTipoDocumento.Text <> "" Then
 
             Try
-                If (MessageBox.Show("Deseja excluir este tipo de serviço?", Me.Text, MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.No) Then Exit Sub
+                If (MessageBox.Show("Deseja excluir este tipo de conta?", Me.Text, MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.No) Then Exit Sub
 
                 abrir()
-                cmd = New SqlCommand("pa_tipoDocto_Excluir ", con)
+                cmd = New SqlCommand("pa_catContas_Excluir", con)
                 cmd.CommandType = CommandType.StoredProcedure
-                cmd.Parameters.AddWithValue("@id_tipo", lblTipo.Text)
+                cmd.Parameters.AddWithValue("@id_categoriacontas", lblTipo.Text)
                 cmd.Parameters.Add("@mensagem", SqlDbType.VarChar, 100).Direction = 2
                 cmd.ExecuteNonQuery()
 

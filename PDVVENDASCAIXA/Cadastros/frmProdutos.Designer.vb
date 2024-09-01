@@ -30,11 +30,6 @@ Partial Class frmProdutos
         Me.txtBuscar = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.btnNovo = New System.Windows.Forms.Button()
-        Me.btSair = New System.Windows.Forms.Button()
-        Me.btnSalvar = New System.Windows.Forms.Button()
-        Me.btnEditar = New System.Windows.Forms.Button()
-        Me.btnExcluir = New System.Windows.Forms.Button()
         Me.errErro = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.Label16 = New System.Windows.Forms.Label()
         Me.Label14 = New System.Windows.Forms.Label()
@@ -45,14 +40,11 @@ Partial Class frmProdutos
         Me.Label12 = New System.Windows.Forms.Label()
         Me.cbCategoria = New System.Windows.Forms.ComboBox()
         Me.Label10 = New System.Windows.Forms.Label()
-        Me.imgCodBar = New System.Windows.Forms.PictureBox()
         Me.txtNivel = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.txtCodigo = New System.Windows.Forms.TextBox()
-        Me.btImagem = New System.Windows.Forms.Button()
         Me.txtCodBarras = New System.Windows.Forms.TextBox()
-        Me.pbImagem = New System.Windows.Forms.PictureBox()
         Me.txtNome = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.txtDescricao = New System.Windows.Forms.TextBox()
@@ -67,9 +59,17 @@ Partial Class frmProdutos
         Me.lblTotal = New System.Windows.Forms.Label()
         Me.PrintDocument1 = New System.Drawing.Printing.PrintDocument()
         Me.PrintPreviewDialog1 = New System.Windows.Forms.PrintPreviewDialog()
-        Me.btCategorias = New System.Windows.Forms.Button()
-        Me.btUnidadesMedidas = New System.Windows.Forms.Button()
         Me.btFornecedores = New System.Windows.Forms.Button()
+        Me.btUnidadesMedidas = New System.Windows.Forms.Button()
+        Me.btCategorias = New System.Windows.Forms.Button()
+        Me.imgCodBar = New System.Windows.Forms.PictureBox()
+        Me.btImagem = New System.Windows.Forms.Button()
+        Me.pbImagem = New System.Windows.Forms.PictureBox()
+        Me.btnNovo = New System.Windows.Forms.Button()
+        Me.btSair = New System.Windows.Forms.Button()
+        Me.btnSalvar = New System.Windows.Forms.Button()
+        Me.btnEditar = New System.Windows.Forms.Button()
+        Me.btnExcluir = New System.Windows.Forms.Button()
         CType(Me.dg, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         CType(Me.errErro, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -138,106 +138,6 @@ Partial Class frmProdutos
         Me.GroupBox1.Size = New System.Drawing.Size(438, 58)
         Me.GroupBox1.TabIndex = 190
         Me.GroupBox1.TabStop = False
-        '
-        'btnNovo
-        '
-        Me.btnNovo.BackColor = System.Drawing.Color.Transparent
-        Me.btnNovo.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnNovo.FlatAppearance.BorderSize = 0
-        Me.btnNovo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Azure
-        Me.btnNovo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
-        Me.btnNovo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnNovo.ForeColor = System.Drawing.Color.White
-        Me.btnNovo.Image = CType(resources.GetObject("btnNovo.Image"), System.Drawing.Image)
-        Me.btnNovo.Location = New System.Drawing.Point(7, 14)
-        Me.btnNovo.Margin = New System.Windows.Forms.Padding(7, 6, 7, 6)
-        Me.btnNovo.Name = "btnNovo"
-        Me.btnNovo.Size = New System.Drawing.Size(81, 37)
-        Me.btnNovo.TabIndex = 161
-        Me.btnNovo.Text = "Novo"
-        Me.btnNovo.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.btnNovo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnNovo.UseVisualStyleBackColor = False
-        '
-        'btSair
-        '
-        Me.btSair.BackColor = System.Drawing.Color.Transparent
-        Me.btSair.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btSair.FlatAppearance.BorderSize = 0
-        Me.btSair.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Azure
-        Me.btSair.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
-        Me.btSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btSair.ForeColor = System.Drawing.Color.White
-        Me.btSair.Image = CType(resources.GetObject("btSair.Image"), System.Drawing.Image)
-        Me.btSair.Location = New System.Drawing.Point(360, 15)
-        Me.btSair.Margin = New System.Windows.Forms.Padding(7, 6, 7, 6)
-        Me.btSair.Name = "btSair"
-        Me.btSair.Size = New System.Drawing.Size(73, 33)
-        Me.btSair.TabIndex = 165
-        Me.btSair.Text = "Sair"
-        Me.btSair.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.btSair.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btSair.UseVisualStyleBackColor = False
-        '
-        'btnSalvar
-        '
-        Me.btnSalvar.BackColor = System.Drawing.Color.Transparent
-        Me.btnSalvar.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnSalvar.FlatAppearance.BorderSize = 0
-        Me.btnSalvar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Azure
-        Me.btnSalvar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
-        Me.btnSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnSalvar.ForeColor = System.Drawing.Color.White
-        Me.btnSalvar.Image = CType(resources.GetObject("btnSalvar.Image"), System.Drawing.Image)
-        Me.btnSalvar.Location = New System.Drawing.Point(86, 13)
-        Me.btnSalvar.Margin = New System.Windows.Forms.Padding(7, 6, 7, 6)
-        Me.btnSalvar.Name = "btnSalvar"
-        Me.btnSalvar.Size = New System.Drawing.Size(87, 37)
-        Me.btnSalvar.TabIndex = 162
-        Me.btnSalvar.Text = "Salvar"
-        Me.btnSalvar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.btnSalvar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnSalvar.UseVisualStyleBackColor = False
-        '
-        'btnEditar
-        '
-        Me.btnEditar.BackColor = System.Drawing.Color.Transparent
-        Me.btnEditar.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnEditar.FlatAppearance.BorderSize = 0
-        Me.btnEditar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Azure
-        Me.btnEditar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
-        Me.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnEditar.ForeColor = System.Drawing.Color.White
-        Me.btnEditar.Image = CType(resources.GetObject("btnEditar.Image"), System.Drawing.Image)
-        Me.btnEditar.Location = New System.Drawing.Point(186, 13)
-        Me.btnEditar.Margin = New System.Windows.Forms.Padding(7, 6, 7, 6)
-        Me.btnEditar.Name = "btnEditar"
-        Me.btnEditar.Size = New System.Drawing.Size(83, 36)
-        Me.btnEditar.TabIndex = 163
-        Me.btnEditar.Text = "Editar"
-        Me.btnEditar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.btnEditar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnEditar.UseVisualStyleBackColor = False
-        '
-        'btnExcluir
-        '
-        Me.btnExcluir.BackColor = System.Drawing.Color.Transparent
-        Me.btnExcluir.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnExcluir.FlatAppearance.BorderSize = 0
-        Me.btnExcluir.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Azure
-        Me.btnExcluir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
-        Me.btnExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnExcluir.ForeColor = System.Drawing.Color.White
-        Me.btnExcluir.Image = CType(resources.GetObject("btnExcluir.Image"), System.Drawing.Image)
-        Me.btnExcluir.Location = New System.Drawing.Point(275, 12)
-        Me.btnExcluir.Margin = New System.Windows.Forms.Padding(7, 6, 7, 6)
-        Me.btnExcluir.Name = "btnExcluir"
-        Me.btnExcluir.Size = New System.Drawing.Size(87, 37)
-        Me.btnExcluir.TabIndex = 164
-        Me.btnExcluir.Text = "Excluir"
-        Me.btnExcluir.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.btnExcluir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnExcluir.UseVisualStyleBackColor = False
         '
         'errErro
         '
@@ -337,14 +237,6 @@ Partial Class frmProdutos
         Me.Label10.TabIndex = 246
         Me.Label10.Text = "Categoria:"
         '
-        'imgCodBar
-        '
-        Me.imgCodBar.Location = New System.Drawing.Point(408, 128)
-        Me.imgCodBar.Name = "imgCodBar"
-        Me.imgCodBar.Size = New System.Drawing.Size(452, 50)
-        Me.imgCodBar.TabIndex = 245
-        Me.imgCodBar.TabStop = False
-        '
         'txtNivel
         '
         Me.txtNivel.Location = New System.Drawing.Point(643, 45)
@@ -387,22 +279,6 @@ Partial Class frmProdutos
         Me.txtCodigo.TabIndex = 237
         Me.txtCodigo.Visible = False
         '
-        'btImagem
-        '
-        Me.btImagem.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btImagem.FlatAppearance.BorderColor = System.Drawing.Color.Teal
-        Me.btImagem.FlatAppearance.BorderSize = 0
-        Me.btImagem.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Teal
-        Me.btImagem.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btImagem.ForeColor = System.Drawing.Color.Transparent
-        Me.btImagem.Image = CType(resources.GetObject("btImagem.Image"), System.Drawing.Image)
-        Me.btImagem.Location = New System.Drawing.Point(947, 143)
-        Me.btImagem.Margin = New System.Windows.Forms.Padding(4)
-        Me.btImagem.Name = "btImagem"
-        Me.btImagem.Size = New System.Drawing.Size(38, 27)
-        Me.btImagem.TabIndex = 240
-        Me.btImagem.UseVisualStyleBackColor = True
-        '
         'txtCodBarras
         '
         Me.txtCodBarras.Location = New System.Drawing.Point(672, 101)
@@ -410,19 +286,6 @@ Partial Class frmProdutos
         Me.txtCodBarras.Name = "txtCodBarras"
         Me.txtCodBarras.Size = New System.Drawing.Size(187, 20)
         Me.txtCodBarras.TabIndex = 244
-        '
-        'pbImagem
-        '
-        Me.pbImagem.BackColor = System.Drawing.Color.White
-        Me.pbImagem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-        Me.pbImagem.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.pbImagem.Location = New System.Drawing.Point(892, 7)
-        Me.pbImagem.Margin = New System.Windows.Forms.Padding(4)
-        Me.pbImagem.Name = "pbImagem"
-        Me.pbImagem.Size = New System.Drawing.Size(130, 130)
-        Me.pbImagem.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.pbImagem.TabIndex = 239
-        Me.pbImagem.TabStop = False
         '
         'txtNome
         '
@@ -566,24 +429,24 @@ Partial Class frmProdutos
         Me.PrintPreviewDialog1.Name = "PrintPreviewDialog1"
         Me.PrintPreviewDialog1.Visible = False
         '
-        'btCategorias
+        'btFornecedores
         '
-        Me.btCategorias.BackColor = System.Drawing.Color.Transparent
-        Me.btCategorias.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btCategorias.FlatAppearance.BorderSize = 0
-        Me.btCategorias.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSteelBlue
-        Me.btCategorias.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSkyBlue
-        Me.btCategorias.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btCategorias.ForeColor = System.Drawing.Color.White
-        Me.btCategorias.Image = CType(resources.GetObject("btCategorias.Image"), System.Drawing.Image)
-        Me.btCategorias.Location = New System.Drawing.Point(328, 125)
-        Me.btCategorias.Margin = New System.Windows.Forms.Padding(5)
-        Me.btCategorias.Name = "btCategorias"
-        Me.btCategorias.Size = New System.Drawing.Size(35, 27)
-        Me.btCategorias.TabIndex = 254
-        Me.btCategorias.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.btCategorias.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btCategorias.UseVisualStyleBackColor = False
+        Me.btFornecedores.BackColor = System.Drawing.Color.Transparent
+        Me.btFornecedores.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btFornecedores.FlatAppearance.BorderSize = 0
+        Me.btFornecedores.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSteelBlue
+        Me.btFornecedores.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSkyBlue
+        Me.btFornecedores.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btFornecedores.ForeColor = System.Drawing.Color.White
+        Me.btFornecedores.Image = Global.PDVVENDASCAIXA.My.Resources.Resources.Create
+        Me.btFornecedores.Location = New System.Drawing.Point(397, 95)
+        Me.btFornecedores.Margin = New System.Windows.Forms.Padding(5)
+        Me.btFornecedores.Name = "btFornecedores"
+        Me.btFornecedores.Size = New System.Drawing.Size(35, 27)
+        Me.btFornecedores.TabIndex = 256
+        Me.btFornecedores.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btFornecedores.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btFornecedores.UseVisualStyleBackColor = False
         '
         'btUnidadesMedidas
         '
@@ -594,7 +457,7 @@ Partial Class frmProdutos
         Me.btUnidadesMedidas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSkyBlue
         Me.btUnidadesMedidas.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btUnidadesMedidas.ForeColor = System.Drawing.Color.White
-        Me.btUnidadesMedidas.Image = CType(resources.GetObject("btUnidadesMedidas.Image"), System.Drawing.Image)
+        Me.btUnidadesMedidas.Image = Global.PDVVENDASCAIXA.My.Resources.Resources.Create
         Me.btUnidadesMedidas.Location = New System.Drawing.Point(856, 40)
         Me.btUnidadesMedidas.Margin = New System.Windows.Forms.Padding(5)
         Me.btUnidadesMedidas.Name = "btUnidadesMedidas"
@@ -604,24 +467,161 @@ Partial Class frmProdutos
         Me.btUnidadesMedidas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btUnidadesMedidas.UseVisualStyleBackColor = False
         '
-        'btFornecedores
+        'btCategorias
         '
-        Me.btFornecedores.BackColor = System.Drawing.Color.Transparent
-        Me.btFornecedores.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btFornecedores.FlatAppearance.BorderSize = 0
-        Me.btFornecedores.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSteelBlue
-        Me.btFornecedores.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSkyBlue
-        Me.btFornecedores.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btFornecedores.ForeColor = System.Drawing.Color.White
-        Me.btFornecedores.Image = CType(resources.GetObject("btFornecedores.Image"), System.Drawing.Image)
-        Me.btFornecedores.Location = New System.Drawing.Point(397, 95)
-        Me.btFornecedores.Margin = New System.Windows.Forms.Padding(5)
-        Me.btFornecedores.Name = "btFornecedores"
-        Me.btFornecedores.Size = New System.Drawing.Size(35, 27)
-        Me.btFornecedores.TabIndex = 256
-        Me.btFornecedores.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.btFornecedores.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btFornecedores.UseVisualStyleBackColor = False
+        Me.btCategorias.BackColor = System.Drawing.Color.Transparent
+        Me.btCategorias.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btCategorias.FlatAppearance.BorderSize = 0
+        Me.btCategorias.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSteelBlue
+        Me.btCategorias.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSkyBlue
+        Me.btCategorias.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btCategorias.ForeColor = System.Drawing.Color.White
+        Me.btCategorias.Image = Global.PDVVENDASCAIXA.My.Resources.Resources.Create
+        Me.btCategorias.Location = New System.Drawing.Point(328, 125)
+        Me.btCategorias.Margin = New System.Windows.Forms.Padding(5)
+        Me.btCategorias.Name = "btCategorias"
+        Me.btCategorias.Size = New System.Drawing.Size(35, 27)
+        Me.btCategorias.TabIndex = 254
+        Me.btCategorias.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btCategorias.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btCategorias.UseVisualStyleBackColor = False
+        '
+        'imgCodBar
+        '
+        Me.imgCodBar.Location = New System.Drawing.Point(408, 128)
+        Me.imgCodBar.Name = "imgCodBar"
+        Me.imgCodBar.Size = New System.Drawing.Size(452, 50)
+        Me.imgCodBar.TabIndex = 245
+        Me.imgCodBar.TabStop = False
+        '
+        'btImagem
+        '
+        Me.btImagem.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btImagem.FlatAppearance.BorderColor = System.Drawing.Color.Teal
+        Me.btImagem.FlatAppearance.BorderSize = 0
+        Me.btImagem.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Teal
+        Me.btImagem.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btImagem.ForeColor = System.Drawing.Color.Transparent
+        Me.btImagem.Image = CType(resources.GetObject("btImagem.Image"), System.Drawing.Image)
+        Me.btImagem.Location = New System.Drawing.Point(947, 143)
+        Me.btImagem.Margin = New System.Windows.Forms.Padding(4)
+        Me.btImagem.Name = "btImagem"
+        Me.btImagem.Size = New System.Drawing.Size(38, 27)
+        Me.btImagem.TabIndex = 240
+        Me.btImagem.UseVisualStyleBackColor = True
+        '
+        'pbImagem
+        '
+        Me.pbImagem.BackColor = System.Drawing.Color.White
+        Me.pbImagem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.pbImagem.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.pbImagem.Location = New System.Drawing.Point(892, 7)
+        Me.pbImagem.Margin = New System.Windows.Forms.Padding(4)
+        Me.pbImagem.Name = "pbImagem"
+        Me.pbImagem.Size = New System.Drawing.Size(130, 130)
+        Me.pbImagem.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.pbImagem.TabIndex = 239
+        Me.pbImagem.TabStop = False
+        '
+        'btnNovo
+        '
+        Me.btnNovo.BackColor = System.Drawing.Color.Transparent
+        Me.btnNovo.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnNovo.FlatAppearance.BorderSize = 0
+        Me.btnNovo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Azure
+        Me.btnNovo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
+        Me.btnNovo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnNovo.ForeColor = System.Drawing.Color.White
+        Me.btnNovo.Image = CType(resources.GetObject("btnNovo.Image"), System.Drawing.Image)
+        Me.btnNovo.Location = New System.Drawing.Point(7, 14)
+        Me.btnNovo.Margin = New System.Windows.Forms.Padding(7, 6, 7, 6)
+        Me.btnNovo.Name = "btnNovo"
+        Me.btnNovo.Size = New System.Drawing.Size(81, 37)
+        Me.btnNovo.TabIndex = 161
+        Me.btnNovo.Text = "Novo"
+        Me.btnNovo.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnNovo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnNovo.UseVisualStyleBackColor = False
+        '
+        'btSair
+        '
+        Me.btSair.BackColor = System.Drawing.Color.Transparent
+        Me.btSair.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btSair.FlatAppearance.BorderSize = 0
+        Me.btSair.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Azure
+        Me.btSair.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
+        Me.btSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btSair.ForeColor = System.Drawing.Color.White
+        Me.btSair.Image = CType(resources.GetObject("btSair.Image"), System.Drawing.Image)
+        Me.btSair.Location = New System.Drawing.Point(360, 15)
+        Me.btSair.Margin = New System.Windows.Forms.Padding(7, 6, 7, 6)
+        Me.btSair.Name = "btSair"
+        Me.btSair.Size = New System.Drawing.Size(73, 33)
+        Me.btSair.TabIndex = 165
+        Me.btSair.Text = "Sair"
+        Me.btSair.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btSair.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btSair.UseVisualStyleBackColor = False
+        '
+        'btnSalvar
+        '
+        Me.btnSalvar.BackColor = System.Drawing.Color.Transparent
+        Me.btnSalvar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnSalvar.FlatAppearance.BorderSize = 0
+        Me.btnSalvar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Azure
+        Me.btnSalvar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
+        Me.btnSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnSalvar.ForeColor = System.Drawing.Color.White
+        Me.btnSalvar.Image = CType(resources.GetObject("btnSalvar.Image"), System.Drawing.Image)
+        Me.btnSalvar.Location = New System.Drawing.Point(86, 13)
+        Me.btnSalvar.Margin = New System.Windows.Forms.Padding(7, 6, 7, 6)
+        Me.btnSalvar.Name = "btnSalvar"
+        Me.btnSalvar.Size = New System.Drawing.Size(87, 37)
+        Me.btnSalvar.TabIndex = 162
+        Me.btnSalvar.Text = "Salvar"
+        Me.btnSalvar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnSalvar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnSalvar.UseVisualStyleBackColor = False
+        '
+        'btnEditar
+        '
+        Me.btnEditar.BackColor = System.Drawing.Color.Transparent
+        Me.btnEditar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnEditar.FlatAppearance.BorderSize = 0
+        Me.btnEditar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Azure
+        Me.btnEditar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
+        Me.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnEditar.ForeColor = System.Drawing.Color.White
+        Me.btnEditar.Image = CType(resources.GetObject("btnEditar.Image"), System.Drawing.Image)
+        Me.btnEditar.Location = New System.Drawing.Point(186, 13)
+        Me.btnEditar.Margin = New System.Windows.Forms.Padding(7, 6, 7, 6)
+        Me.btnEditar.Name = "btnEditar"
+        Me.btnEditar.Size = New System.Drawing.Size(83, 36)
+        Me.btnEditar.TabIndex = 163
+        Me.btnEditar.Text = "Editar"
+        Me.btnEditar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnEditar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnEditar.UseVisualStyleBackColor = False
+        '
+        'btnExcluir
+        '
+        Me.btnExcluir.BackColor = System.Drawing.Color.Transparent
+        Me.btnExcluir.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnExcluir.FlatAppearance.BorderSize = 0
+        Me.btnExcluir.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Azure
+        Me.btnExcluir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
+        Me.btnExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnExcluir.ForeColor = System.Drawing.Color.White
+        Me.btnExcluir.Image = CType(resources.GetObject("btnExcluir.Image"), System.Drawing.Image)
+        Me.btnExcluir.Location = New System.Drawing.Point(275, 12)
+        Me.btnExcluir.Margin = New System.Windows.Forms.Padding(7, 6, 7, 6)
+        Me.btnExcluir.Name = "btnExcluir"
+        Me.btnExcluir.Size = New System.Drawing.Size(87, 37)
+        Me.btnExcluir.TabIndex = 164
+        Me.btnExcluir.Text = "Excluir"
+        Me.btnExcluir.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnExcluir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnExcluir.UseVisualStyleBackColor = False
         '
         'frmProdutos
         '

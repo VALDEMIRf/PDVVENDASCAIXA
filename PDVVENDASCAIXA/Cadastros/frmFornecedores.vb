@@ -280,6 +280,8 @@ Public Class frmFornecedores
 
             Catch ex As Exception
                 MessageBox.Show("Erro ao  excluir os dados" + ex.Message.ToString)
+            Finally
+
                 fechar()
             End Try
         End If
