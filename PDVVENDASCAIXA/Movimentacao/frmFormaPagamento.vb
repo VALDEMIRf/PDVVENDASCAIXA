@@ -2,8 +2,9 @@
 Imports System.Data.SqlClient
 Imports System.Text
 Imports System.IO
-Public Class frmTipoDocumento
-    Private Sub frmTipoDocumento_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+Public Class frmFormaPagamento
+    Private Sub frmFormaPagamento_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         btSalvar.Enabled = False
 
         carregaGrid()
@@ -21,7 +22,7 @@ Public Class frmTipoDocumento
             da = New SqlDataAdapter("pa_catContas_listar", con) '
 
             da.Fill(dt)
-            dgvTipo.DataSource = dt
+            dg.DataSource = dt
 
             FormatarDG()
         Catch ex As Exception
@@ -32,16 +33,16 @@ Public Class frmTipoDocumento
     End Sub
 
     Private Sub Limpar()
-        txtTipoDocumento.Focus()
-        txtTipoDocumento.Text = ""
+        txtNome.Focus()
+        txtNome.Text = ""
 
     End Sub
 
     Private Sub FormatarDG()
 
-        With dgvTipo
+        With dg
             .Columns(0).Visible = False
-            .Columns(1).HeaderText = "Contas"
+            .Columns(1).HeaderText = "Nome"
             .Columns(1).Width = 150
         End With
 
@@ -58,13 +59,13 @@ Public Class frmTipoDocumento
     Private Sub btSalvar_Click(sender As Object, e As EventArgs) Handles btSalvar.Click
         Dim cmd As SqlCommand
 
-        If txtTipoDocumento.Text <> "" Then
+        If txtNome.Text <> "" Then
 
             Try
                 abrir()
                 cmd = New SqlCommand("pa_catContas_Salvar", con)
                 cmd.CommandType = CommandType.StoredProcedure
-                cmd.Parameters.AddWithValue("@descricaocategoriacontas", txtTipoDocumento.Text)
+                cmd.Parameters.AddWithValue("@descricaocategoriacontas", txtNome.Text)
 
                 cmd.Parameters.Add("@mensagem", SqlDbType.VarChar, 100).Direction = 2
                 cmd.ExecuteNonQuery()
@@ -87,19 +88,19 @@ Public Class frmTipoDocumento
         Dim cmd As SqlCommand
         Try
 
-            If txtTipoDocumento.Text.Equals(String.Empty) Then
-                errErro.SetError(txtTipoDocumento, "Digite um tipo de Conta de cobrança")
-                MsgBox("Selecione um tipo de Conta de cobrança listadas")
+            If txtNome.Text.Equals(String.Empty) Then
+                errErro.SetError(txtNome, "Digite uma Forma de Pagamento")
+                MsgBox("Selecione uma Forma de Pagamento listadas")
                 Exit Sub
             Else
-                errErro.SetError(txtTipoDocumento, "")
+                errErro.SetError(txtNome, "")
             End If
 
             abrir()
             cmd = New SqlCommand("pa_catContas_Editar", con)
             cmd.CommandType = CommandType.StoredProcedure
-            cmd.Parameters.AddWithValue("@id_categoriacontas", lblTipo.Text)
-            cmd.Parameters.AddWithValue("@descricaocategoriacontas", txtTipoDocumento.Text)
+            cmd.Parameters.AddWithValue("@id_formaPag", lblCodigo.Text)
+            cmd.Parameters.AddWithValue("@nome", txtNome.Text)
 
             cmd.Parameters.Add("@mensagem", SqlDbType.VarChar, 100).Direction = 2
             cmd.ExecuteNonQuery()
@@ -119,15 +120,15 @@ Public Class frmTipoDocumento
     Private Sub btExcluir_Click(sender As Object, e As EventArgs) Handles btExcluir.Click
         Dim cmd As SqlCommand
 
-        If txtTipoDocumento.Text <> "" Then
+        If txtNome.Text <> "" Then
 
             Try
-                If (MessageBox.Show("Deseja excluir este tipo de conta?", Me.Text, MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.No) Then Exit Sub
+                If (MessageBox.Show("Deseja excluir esta Forma de Pagamento?", Me.Text, MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.No) Then Exit Sub
 
                 abrir()
                 cmd = New SqlCommand("pa_catContas_Excluir", con)
                 cmd.CommandType = CommandType.StoredProcedure
-                cmd.Parameters.AddWithValue("@id_categoriacontas", lblTipo.Text)
+                cmd.Parameters.AddWithValue("@id_formaPag", lblCodigo.Text)
                 cmd.Parameters.Add("@mensagem", SqlDbType.VarChar, 100).Direction = 2
                 cmd.ExecuteNonQuery()
 
@@ -148,16 +149,12 @@ Public Class frmTipoDocumento
         Me.Close()
     End Sub
 
-    Private Sub dgvTipo_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvTipo.CellClick
+    Private Sub dg_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dg.CellClick
         btAlterar.Enabled = True
         btExcluir.Enabled = True
         btSalvar.Enabled = False
 
-        lblTipo.Text = dgvTipo.CurrentRow.Cells(0).Value
-        txtTipoDocumento.Text = dgvTipo.CurrentRow.Cells(1).Value
-    End Sub
-
-    Private Sub txtTipoDocumento_TextChanged(sender As Object, e As EventArgs) Handles txtTipoDocumento.TextChanged
-
+        lblCodigo.Text = dg.CurrentRow.Cells(0).Value
+        txtNome.Text = dg.CurrentRow.Cells(1).Value
     End Sub
 End Class

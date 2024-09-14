@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class frmTipoDocumento
+Partial Class frmFormaPagamento
     Inherits System.Windows.Forms.Form
 
     'Descartar substituições de formulário para limpar a lista de componentes.
@@ -23,22 +23,34 @@ Partial Class frmTipoDocumento
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmTipoDocumento))
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.dgvTipo = New System.Windows.Forms.DataGridView()
-        Me.txtTipoDocumento = New System.Windows.Forms.TextBox()
-        Me.lblTipo = New System.Windows.Forms.Label()
-        Me.errErro = New System.Windows.Forms.ErrorProvider(Me.components)
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmFormaPagamento))
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.dg = New System.Windows.Forms.DataGridView()
+        Me.txtNome = New System.Windows.Forms.TextBox()
         Me.btNovo = New System.Windows.Forms.Button()
         Me.brSair = New System.Windows.Forms.Button()
         Me.btExcluir = New System.Windows.Forms.Button()
         Me.btSalvar = New System.Windows.Forms.Button()
         Me.btAlterar = New System.Windows.Forms.Button()
+        Me.errErro = New System.Windows.Forms.ErrorProvider(Me.components)
+        Me.lblCodigo = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
-        CType(Me.dgvTipo, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dg, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.errErro, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.BackColor = System.Drawing.Color.Transparent
+        Me.Label1.Font = New System.Drawing.Font("Arial Rounded MT Bold", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.White
+        Me.Label1.Location = New System.Drawing.Point(33, 5)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(244, 22)
+        Me.Label1.TabIndex = 22
+        Me.Label1.Text = "Formas de pagamentos"
         '
         'GroupBox1
         '
@@ -47,60 +59,32 @@ Partial Class frmTipoDocumento
         Me.GroupBox1.Controls.Add(Me.btExcluir)
         Me.GroupBox1.Controls.Add(Me.btSalvar)
         Me.GroupBox1.Controls.Add(Me.btAlterar)
-        Me.GroupBox1.Location = New System.Drawing.Point(214, 32)
+        Me.GroupBox1.Location = New System.Drawing.Point(215, 34)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(93, 229)
-        Me.GroupBox1.TabIndex = 25
+        Me.GroupBox1.TabIndex = 28
         Me.GroupBox1.TabStop = False
         '
-        'dgvTipo
+        'dg
         '
-        Me.dgvTipo.AllowUserToAddRows = False
-        Me.dgvTipo.AllowUserToDeleteRows = False
-        Me.dgvTipo.BackgroundColor = System.Drawing.Color.White
-        Me.dgvTipo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvTipo.GridColor = System.Drawing.SystemColors.ActiveCaption
-        Me.dgvTipo.Location = New System.Drawing.Point(3, 54)
-        Me.dgvTipo.Name = "dgvTipo"
-        Me.dgvTipo.ReadOnly = True
-        Me.dgvTipo.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvTipo.Size = New System.Drawing.Size(205, 207)
-        Me.dgvTipo.TabIndex = 24
+        Me.dg.AllowUserToAddRows = False
+        Me.dg.AllowUserToDeleteRows = False
+        Me.dg.BackgroundColor = System.Drawing.Color.White
+        Me.dg.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dg.GridColor = System.Drawing.SystemColors.ActiveCaption
+        Me.dg.Location = New System.Drawing.Point(4, 56)
+        Me.dg.Name = "dg"
+        Me.dg.ReadOnly = True
+        Me.dg.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.dg.Size = New System.Drawing.Size(205, 207)
+        Me.dg.TabIndex = 27
         '
-        'txtTipoDocumento
+        'txtNome
         '
-        Me.txtTipoDocumento.Location = New System.Drawing.Point(3, 32)
-        Me.txtTipoDocumento.Name = "txtTipoDocumento"
-        Me.txtTipoDocumento.Size = New System.Drawing.Size(205, 20)
-        Me.txtTipoDocumento.TabIndex = 23
-        '
-        'lblTipo
-        '
-        Me.lblTipo.AutoSize = True
-        Me.lblTipo.BackColor = System.Drawing.Color.Transparent
-        Me.lblTipo.ForeColor = System.Drawing.Color.White
-        Me.lblTipo.Location = New System.Drawing.Point(261, 9)
-        Me.lblTipo.Name = "lblTipo"
-        Me.lblTipo.Size = New System.Drawing.Size(13, 13)
-        Me.lblTipo.TabIndex = 22
-        Me.lblTipo.Text = "0"
-        Me.lblTipo.Visible = False
-        '
-        'errErro
-        '
-        Me.errErro.ContainerControl = Me
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.BackColor = System.Drawing.Color.Transparent
-        Me.Label1.Font = New System.Drawing.Font("Arial Rounded MT Bold", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(12, 9)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(227, 22)
-        Me.Label1.TabIndex = 21
-        Me.Label1.Text = "Categorias de Contas"
+        Me.txtNome.Location = New System.Drawing.Point(4, 34)
+        Me.txtNome.Name = "txtNome"
+        Me.txtNome.Size = New System.Drawing.Size(205, 20)
+        Me.txtNome.TabIndex = 26
         '
         'btNovo
         '
@@ -192,39 +176,54 @@ Partial Class frmTipoDocumento
         Me.btAlterar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btAlterar.UseVisualStyleBackColor = False
         '
-        'frmTipoDocumento
+        'errErro
+        '
+        Me.errErro.ContainerControl = Me
+        '
+        'lblCodigo
+        '
+        Me.lblCodigo.AutoSize = True
+        Me.lblCodigo.BackColor = System.Drawing.Color.Transparent
+        Me.lblCodigo.ForeColor = System.Drawing.Color.White
+        Me.lblCodigo.Location = New System.Drawing.Point(12, 12)
+        Me.lblCodigo.Name = "lblCodigo"
+        Me.lblCodigo.Size = New System.Drawing.Size(13, 13)
+        Me.lblCodigo.TabIndex = 29
+        Me.lblCodigo.Text = "0"
+        Me.lblCodigo.Visible = False
+        '
+        'frmFormaPagamento
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.SteelBlue
         Me.ClientSize = New System.Drawing.Size(312, 269)
+        Me.Controls.Add(Me.lblCodigo)
         Me.Controls.Add(Me.GroupBox1)
-        Me.Controls.Add(Me.dgvTipo)
-        Me.Controls.Add(Me.txtTipoDocumento)
-        Me.Controls.Add(Me.lblTipo)
+        Me.Controls.Add(Me.dg)
+        Me.Controls.Add(Me.txtNome)
         Me.Controls.Add(Me.Label1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.Name = "frmTipoDocumento"
+        Me.Name = "frmFormaPagamento"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Categorias de Contas"
+        Me.Text = "frmFormaPagamento"
         Me.GroupBox1.ResumeLayout(False)
-        CType(Me.dgvTipo, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dg, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.errErro, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
 
+    Friend WithEvents Label1 As Label
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents btNovo As Button
     Friend WithEvents brSair As Button
     Friend WithEvents btExcluir As Button
     Friend WithEvents btSalvar As Button
     Friend WithEvents btAlterar As Button
-    Friend WithEvents dgvTipo As DataGridView
-    Friend WithEvents txtTipoDocumento As TextBox
-    Friend WithEvents lblTipo As Label
+    Friend WithEvents dg As DataGridView
+    Friend WithEvents txtNome As TextBox
     Friend WithEvents errErro As ErrorProvider
-    Friend WithEvents Label1 As Label
+    Friend WithEvents lblCodigo As Label
 End Class

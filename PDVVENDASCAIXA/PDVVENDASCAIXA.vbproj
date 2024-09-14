@@ -230,6 +230,18 @@
     <Compile Include="Movimentacao\frmContasReceber.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Movimentacao\frmFormaPagamento.Designer.vb">
+      <DependentUpon>frmFormaPagamento.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Movimentacao\frmFormaPagamento.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Movimentacao\frmLancamentoContasPagar.Designer.vb">
+      <DependentUpon>frmLancamentoContasPagar.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Movimentacao\frmLancamentoContasPagar.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Movimentacao\frmServicos.Designer.vb">
       <DependentUpon>frmServicos.vb</DependentUpon>
     </Compile>
@@ -448,6 +460,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Movimentacao\frmContasReceber.resx">
       <DependentUpon>frmContasReceber.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Movimentacao\frmFormaPagamento.resx">
+      <DependentUpon>frmFormaPagamento.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Movimentacao\frmLancamentoContasPagar.resx">
+      <DependentUpon>frmLancamentoContasPagar.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Movimentacao\frmServicos.resx">
       <DependentUpon>frmServicos.vb</DependentUpon>
@@ -887,6 +905,8 @@
     <None Include="Resources\barCode.wav" />
     <None Include="Resources\Add.png" />
     <None Include="Resources\Create.png" />
+    <None Include="Resources\Edit-Document.png" />
+    <None Include="Resources\Notebook-new.32.png" />
     <Content Include="SqlServerTypes\Loader.cs" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
