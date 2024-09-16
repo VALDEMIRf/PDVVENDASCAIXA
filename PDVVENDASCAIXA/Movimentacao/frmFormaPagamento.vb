@@ -19,14 +19,15 @@ Public Class frmFormaPagamento
         Dim da As SqlDataAdapter
         Try
             abrir()
-            da = New SqlDataAdapter("pa_catContas_listar", con) '
+
+            da = New SqlDataAdapter("pa_FormaPagamento_listar", con) '
 
             da.Fill(dt)
             dg.DataSource = dt
 
             FormatarDG()
         Catch ex As Exception
-            MessageBox.Show("Erro ao Listar os tipos de Contas" + ex.Message.ToString)
+            MessageBox.Show("Erro ao Listar as Formas de Pagamento" + ex.Message.ToString)
         Finally
             fechar()
         End Try
@@ -63,9 +64,9 @@ Public Class frmFormaPagamento
 
             Try
                 abrir()
-                cmd = New SqlCommand("pa_catContas_Salvar", con)
+                cmd = New SqlCommand("pa_FormaPagamento_Salvar", con)
                 cmd.CommandType = CommandType.StoredProcedure
-                cmd.Parameters.AddWithValue("@descricaocategoriacontas", txtNome.Text)
+                cmd.Parameters.AddWithValue("@nome", txtNome.Text)
 
                 cmd.Parameters.Add("@mensagem", SqlDbType.VarChar, 100).Direction = 2
                 cmd.ExecuteNonQuery()
@@ -97,7 +98,7 @@ Public Class frmFormaPagamento
             End If
 
             abrir()
-            cmd = New SqlCommand("pa_catContas_Editar", con)
+            cmd = New SqlCommand("pa_FormaPagamento_Editar", con)
             cmd.CommandType = CommandType.StoredProcedure
             cmd.Parameters.AddWithValue("@id_formaPag", lblCodigo.Text)
             cmd.Parameters.AddWithValue("@nome", txtNome.Text)
@@ -126,7 +127,7 @@ Public Class frmFormaPagamento
                 If (MessageBox.Show("Deseja excluir esta Forma de Pagamento?", Me.Text, MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.No) Then Exit Sub
 
                 abrir()
-                cmd = New SqlCommand("pa_catContas_Excluir", con)
+                cmd = New SqlCommand("pa_FormaPagamento_Excluir", con)
                 cmd.CommandType = CommandType.StoredProcedure
                 cmd.Parameters.AddWithValue("@id_formaPag", lblCodigo.Text)
                 cmd.Parameters.Add("@mensagem", SqlDbType.VarChar, 100).Direction = 2

@@ -4,7 +4,7 @@ Imports System.Text
 Public Class frmContasPagar
     Private Sub frmContasPagar_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-        PCarregaInformacoesIniciais()
+        CarregaInformacoesIniciais()
 
         rbTodas.Checked = True
 
@@ -26,67 +26,187 @@ Public Class frmContasPagar
 
     End Sub
 
+    Private Sub rbConta_CheckedChanged(sender As Object, e As EventArgs) Handles rbConta.CheckedChanged
+
+        txtBuscarFornecedor.Text = ""
+        txtBuscarConta.Text = ""
+        txtBuscarConta.Visible = True
+        txtBuscarFornecedor.Visible = False
+        txtBuscarConta.Focus()
+    End Sub
+
+    Private Sub rbFornecedor_CheckedChanged(sender As Object, e As EventArgs) Handles rbFornecedor.CheckedChanged
+
+        txtBuscarFornecedor.Text = ""
+        txtBuscarConta.Text = ""
+        txtBuscarFornecedor.Visible = True
+        txtBuscarConta.Visible = False
+        txtBuscarFornecedor.Focus()
+    End Sub
+
+    Private Sub txtBuscarConta_TextChanged(sender As Object, e As EventArgs) Handles txtBuscarConta.TextChanged
+        If txtBuscarConta.Text = "" And dgContasPagar.Rows.Count > 0 Then
+
+            listar()
+
+        Else
+            Dim dt As New DataTable
+            Dim da As SqlDataAdapter
+
+            Try
+                abrir()
+                da = New SqlDataAdapter("pa_cliente_Nomebuscar", con)
+                da.SelectCommand.CommandType = CommandType.StoredProcedure
+                da.SelectCommand.Parameters.AddWithValue("@nome", txtBuscarConta.Text)
+
+                da.Fill(dt)
+                dgContasPagar.DataSource = dt
+
+                ContarLinhas()
+
+            Catch ex As Exception
+                MessageBox.Show("Erro ao Listar" + ex.Message.ToString)
+                fechar()
+            End Try
+        End If
+    End Sub
+
+    Private Sub txtBuscarFornecedor_TextChanged(sender As Object, e As EventArgs) Handles txtBuscarFornecedor.TextChanged
+        If txtBuscarFornecedor.Text = "" And dgContasPagar.Rows.Count > 0 Then
+
+            listar()
+
+        Else
+            Dim dt As New DataTable
+            Dim da As SqlDataAdapter
+
+            Try
+                abrir()
+                da = New SqlDataAdapter("pa_cliente_Nomebuscar", con)
+                da.SelectCommand.CommandType = CommandType.StoredProcedure
+                da.SelectCommand.Parameters.AddWithValue("@nome", txtBuscarFornecedor.Text)
+
+                da.Fill(dt)
+                dgContasPagar.DataSource = dt
+
+                ContarLinhas()
+
+            Catch ex As Exception
+                MessageBox.Show("Erro ao Listar" + ex.Message.ToString)
+                fechar()
+            End Try
+        End If
+    End Sub
 
     Private Sub frmContasPagar_Activated(sender As Object, e As EventArgs) Handles MyBase.Activated
 
-        PCarregaInformacoesIniciais()
+        CarregaInformacoesIniciais()
     End Sub
 
-    Private Sub PCarregaDados()
+    Private Sub listar()
         Dim dt As New DataTable
         Dim da As SqlDataAdapter
-
         Try
             abrir()
+            da = New SqlDataAdapter("pa_ContasPagar_listar", con) '
+            ' da = New SqlDataAdapter("select * from tbTipoServico", con)
 
-            '  da = New SqlDataAdapter("pa_ContasPagar_listar", con)
-            Dim sql As String = "SELECT * FROM tbContasPagarTeste ORDER BY codigo"
-            Dim cmd As SqlCommand = New SqlCommand(sql, con)
-            da = New SqlDataAdapter(cmd)
-            dt = New DataTable
             da.Fill(dt)
             dgContasPagar.DataSource = dt
 
-            ContarLinhas()
-            '  FormatarDG()
-
-            ' PCalculaTotalContasPagar()
-
+            '   FormatarDG()
         Catch ex As Exception
-            MessageBox.Show("Erro ao Listar as contas" + ex.Message.ToString)
+            MessageBox.Show("Erro ao Listar as Contas" + ex.Message.ToString)
         Finally
             fechar()
         End Try
 
     End Sub
 
-    Private Sub PCarregaInformacoesIniciais()
-        PCarregaDados()
-        PCalculaTotalContasPagar()
-        PFormataGridView()
+    Private Sub CarregaInformacoesIniciais()
+        listar()
+        CalculaContas()
+        FormatarDG()
     End Sub
 
-    Private Sub PFormataGridView()
+    Private Sub FormatarDG()
+
         With dgContasPagar
-            .Columns(4).DefaultCellStyle.Format = "c"
+
+            .Columns(6).DefaultCellStyle.Format = "c"
+            .Columns(9).DefaultCellStyle.Format = "c"
+            .Columns(12).DefaultCellStyle.Format = "c"
+            .Columns(13).DefaultCellStyle.Format = "c"
+            .Columns(14).DefaultCellStyle.Format = "c"
+
+            .Columns(0).Visible = False
+            .Columns(5).Visible = False
+            .Columns(7).Visible = False
+            .Columns(8).Visible = False
+            .Columns(9).Visible = False
+            .Columns(12).Visible = False
+            .Columns(13).Visible = False
+            .Columns(16).Visible = False
+            .Columns(17).Visible = False
+            .Columns(18).Visible = False
+            .Columns(19).Visible = False
+            .Columns(20).Visible = False
+
+            .Columns(0).HeaderText = "id"
+            .Columns(1).HeaderText = "numDocto"
+            .Columns(2).HeaderText = "Tipo de Conta"
+            .Columns(3).HeaderText = "Fornecedor"
+            .Columns(4).HeaderText = "Descrição"
+            .Columns(5).HeaderText = "Forma de Pagto"
+            .Columns(6).HeaderText = "Valor"
+            .Columns(7).HeaderText = "Obsservação"
+            .Columns(8).HeaderText = "Parcelas"
+            .Columns(9).HeaderText = "Valor da parcela"
+            .Columns(10).HeaderText = "Vencimento"
+            .Columns(11).HeaderText = "Dt. Pagto"
+            .Columns(12).HeaderText = "Desconto"
+            .Columns(13).HeaderText = "Juros"
+            .Columns(14).HeaderText = "Valor Pago"
+            .Columns(15).HeaderText = "Situação"
+            .Columns(16).HeaderText = "Usuário"
+            .Columns(17).HeaderText = "Dt. Cadastro"
+            .Columns(18).HeaderText = "ID CatContas"
+            .Columns(19).HeaderText = "ID_Fornecedor"
+            .Columns(20).HeaderText = "ID_FormaPagto"
+
+
+            .Columns(1).Width = 150
+            .Columns(2).Width = 200
+            .Columns(3).Width = 250
+            .Columns(4).Width = 200
+            .Columns(5).Width = 120
+            .Columns(6).Width = 120
+            .Columns(7).Width = 300
+
         End With
+
     End Sub
 
-    Private Sub PCalculaTotalContasPagar()
-        Dim dblContasPagas, dblContasNaoPagas, dblTotalContas As Double
+    Private Sub CalculaContas()
+        Dim dblContasPagas, dblContasNaoPagas, dblTotalContas, dblContasAtrasadas As Double
 
         For Each linha As DataGridViewRow In dgContasPagar.Rows
-            'Total Contas a Pagar
-            dblTotalContas = dblTotalContas + linha.Cells("valor").Value
+            'Total de todas as Contas
+            dblTotalContas = dblTotalContas + linha.Cells("Valor").Value
 
             'Total Contas Pagas
-            If linha.Cells("situacao").Value = "Sim" Then
-                dblContasPagas = dblContasPagas + linha.Cells("valor").Value
+            If linha.Cells("situacao").Value = "Pago" Then
+                dblContasPagas = dblContasPagas + linha.Cells("Valor").Value
             End If
 
             'Total Contas Não Pagas
-            If linha.Cells("situacao").Value = "Não" Then
-                dblContasNaoPagas = dblContasNaoPagas + linha.Cells("valor").Value
+            If linha.Cells("situacao").Value = "Não Pago" Then
+                dblContasNaoPagas = dblContasNaoPagas + linha.Cells("Valor").Value
+            End If
+
+            'Total Contas Atrasadas
+            If linha.Cells("situacao").Value = "Atrasado" Then
+                dblContasAtrasadas = dblContasAtrasadas + linha.Cells("Valor").Value
             End If
 
         Next
@@ -94,6 +214,7 @@ Public Class frmContasPagar
         txtTotalContasPagas.Text = FormatCurrency(dblContasPagas)
         txtTotalContasNaoPagas.Text = FormatCurrency(dblContasNaoPagas)
         txtTotalContasPagar.Text = FormatCurrency(dblTotalContas)
+        txtTotalContasAtrasadas.Text = FormatCurrency(dblContasAtrasadas)
 
     End Sub
 
@@ -106,8 +227,6 @@ Public Class frmContasPagar
 
         intCodigoLancamento = 0
         frmLancamentoContasPagar.ShowDialog()
-        'Dim form = New frmLancamentoContasPagar
-        'Form.ShowDialog()
 
     End Sub
 
@@ -116,50 +235,10 @@ Public Class frmContasPagar
     End Sub
 
     Private Sub dgContasPagar_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgContasPagar.CellClick
-        enviarDados()
-    End Sub
-
-    Private Sub btEditar_Click(sender As Object, e As EventArgs) Handles btEditar.Click
-        enviarDados()
-    End Sub
-
-    Private Sub enviarDados()
-        intCodigoLancamento = dgContasPagar.CurrentRow().Cells("codigo").Value
+        intCodigoLancamento = dgContasPagar.CurrentRow().Cells("id_conta").Value
         'frmLancamentoContasPagar.txtCodigo.Text = intCodigoLancamento
         frmLancamentoContasPagar.ShowDialog()
-        PCarregaInformacoesIniciais()
-    End Sub
-
-
-
-    Private Sub FormatarDG()
-
-        With dgContasPagar
-            .Columns(0).Visible = False
-            .Columns(9).Visible = False
-            .Columns(10).Visible = False
-
-            .Columns(1).HeaderText = "Descrição"
-            .Columns(2).HeaderText = "Empresa"
-            .Columns(3).HeaderText = "Tipo Docto"
-            .Columns(4).HeaderText = "Nr. Docto"
-            .Columns(5).HeaderText = "valor"
-            .Columns(6).HeaderText = "Vencimento"
-            .Columns(7).HeaderText = "Situação"
-            .Columns(8).HeaderText = "Dt Cadastro"
-
-            .Columns(5).DefaultCellStyle.Format = "c"
-
-            .Columns(1).Width = 200
-            .Columns(2).Width = 200
-            .Columns(3).Width = 85
-            .Columns(4).Width = 90
-            .Columns(5).Width = 90
-            .Columns(6).Width = 88
-            .Columns(7).Width = 80
-
-        End With
-
+        CarregaInformacoesIniciais()
     End Sub
 
 

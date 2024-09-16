@@ -18,7 +18,7 @@ Public Class frmTipoDocumento
         Dim da As SqlDataAdapter
         Try
             abrir()
-            da = New SqlDataAdapter("pa_catContas_listar", con) '
+            da = New SqlDataAdapter("pa_catContas_listar ", con) '
 
             da.Fill(dt)
             dgvTipo.DataSource = dt
@@ -158,6 +158,29 @@ Public Class frmTipoDocumento
     End Sub
 
     Private Sub txtTipoDocumento_TextChanged(sender As Object, e As EventArgs) Handles txtTipoDocumento.TextChanged
+
+        If txtTipoDocumento.Text = "" And dgvTipo.Rows.Count > 0 Then
+
+            carregaGrid()
+
+        Else
+            Dim dt As New DataTable
+            Dim da As SqlDataAdapter
+
+            Try
+                abrir()
+                da = New SqlDataAdapter("pa_catContas_listarNome", con)
+                da.SelectCommand.CommandType = CommandType.StoredProcedure
+                da.SelectCommand.Parameters.AddWithValue("@descricaocategoriacontas", txtTipoDocumento.Text)
+
+                da.Fill(dt)
+                dgvTipo.DataSource = dt
+
+            Catch ex As Exception
+                MessageBox.Show("Erro ao Listar" + ex.Message.ToString)
+                fechar()
+            End Try
+        End If
 
     End Sub
 End Class
