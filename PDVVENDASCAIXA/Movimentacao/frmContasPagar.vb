@@ -6,101 +6,60 @@ Public Class frmContasPagar
 
         CarregaInformacoesIniciais()
 
-        rbTodas.Checked = True
+        rbDescricao.Checked = True
 
-    End Sub
+        CarregarFornecedor()
+        carregarCatContas()
 
-    Private Sub rbTodas_CheckedChanged(sender As Object, e As EventArgs) Handles rbTodas.CheckedChanged
-
-    End Sub
-
-    Private Sub rbContasPagar_CheckedChanged(sender As Object, e As EventArgs) Handles rbContasPagar.CheckedChanged
-
-    End Sub
-
-    Private Sub rbContasPagas_CheckedChanged(sender As Object, e As EventArgs) Handles rbContasPagas.CheckedChanged
-
-    End Sub
-
-    Private Sub rbContasVencidas_CheckedChanged(sender As Object, e As EventArgs) Handles rbContasVencidas.CheckedChanged
-
-    End Sub
-
-    Private Sub rbConta_CheckedChanged(sender As Object, e As EventArgs) Handles rbConta.CheckedChanged
-
-        txtBuscarFornecedor.Text = ""
-        txtBuscarConta.Text = ""
-        txtBuscarConta.Visible = True
-        txtBuscarFornecedor.Visible = False
-        txtBuscarConta.Focus()
-    End Sub
-
-    Private Sub rbFornecedor_CheckedChanged(sender As Object, e As EventArgs) Handles rbFornecedor.CheckedChanged
-
-        txtBuscarFornecedor.Text = ""
-        txtBuscarConta.Text = ""
-        txtBuscarFornecedor.Visible = True
-        txtBuscarConta.Visible = False
-        txtBuscarFornecedor.Focus()
-    End Sub
-
-    Private Sub txtBuscarConta_TextChanged(sender As Object, e As EventArgs) Handles txtBuscarConta.TextChanged
-        If txtBuscarConta.Text = "" And dgContasPagar.Rows.Count > 0 Then
-
-            listar()
-
-        Else
-            Dim dt As New DataTable
-            Dim da As SqlDataAdapter
-
-            Try
-                abrir()
-                da = New SqlDataAdapter("pa_cliente_Nomebuscar", con)
-                da.SelectCommand.CommandType = CommandType.StoredProcedure
-                da.SelectCommand.Parameters.AddWithValue("@nome", txtBuscarConta.Text)
-
-                da.Fill(dt)
-                dgContasPagar.DataSource = dt
-
-                ContarLinhas()
-
-            Catch ex As Exception
-                MessageBox.Show("Erro ao Listar" + ex.Message.ToString)
-                fechar()
-            End Try
-        End If
-    End Sub
-
-    Private Sub txtBuscarFornecedor_TextChanged(sender As Object, e As EventArgs) Handles txtBuscarFornecedor.TextChanged
-        If txtBuscarFornecedor.Text = "" And dgContasPagar.Rows.Count > 0 Then
-
-            listar()
-
-        Else
-            Dim dt As New DataTable
-            Dim da As SqlDataAdapter
-
-            Try
-                abrir()
-                da = New SqlDataAdapter("pa_cliente_Nomebuscar", con)
-                da.SelectCommand.CommandType = CommandType.StoredProcedure
-                da.SelectCommand.Parameters.AddWithValue("@nome", txtBuscarFornecedor.Text)
-
-                da.Fill(dt)
-                dgContasPagar.DataSource = dt
-
-                ContarLinhas()
-
-            Catch ex As Exception
-                MessageBox.Show("Erro ao Listar" + ex.Message.ToString)
-                fechar()
-            End Try
-        End If
     End Sub
 
     Private Sub frmContasPagar_Activated(sender As Object, e As EventArgs) Handles MyBase.Activated
 
         CarregaInformacoesIniciais()
+    End Sub
+
+    Sub carregarCatContas()
+        Dim DT As New DataTable
+        Dim DA As SqlDataAdapter
+        Try
+            abrir()
+
+            DA = New SqlDataAdapter("pa_catContas_listar", con)
+            DA.Fill(DT)
+            txtBuscarConta.DisplayMember = "descricaocategoriacontas"
+            txtBuscarConta.ValueMember = "id_categoriacontas"
+            txtBuscarConta.DataSource = DT
+
+        Catch ex As Exception : MessageBox.Show(ex.Message.ToString)
+        Finally
+            fechar()
+        End Try
+
+    End Sub
+
+    Sub CarregarFornecedor()
+        Dim DT As New DataTable
+        Dim DA As SqlDataAdapter
+        Try
+            abrir()
+            DA = New SqlDataAdapter("pa_fornecedor_listar", con)
+            DA.Fill(DT)
+            txtBuscarFornecedor.DisplayMember = "razaoSocial"
+            txtBuscarFornecedor.ValueMember = "id_fornecedor"
+            txtBuscarFornecedor.DataSource = DT
+
+        Catch ex As Exception : MessageBox.Show(ex.Message.ToString)
+        Finally
+            fechar()
+        End Try
+
+    End Sub
+
+    Private Sub CarregaInformacoesIniciais()
+        listar()
+        CalculaContas()
+        ContarLinhas()
+        '  FormatarDG()
     End Sub
 
     Private Sub listar()
@@ -114,19 +73,13 @@ Public Class frmContasPagar
             da.Fill(dt)
             dgContasPagar.DataSource = dt
 
-            '   FormatarDG()
+            FormatarDG()
         Catch ex As Exception
             MessageBox.Show("Erro ao Listar as Contas" + ex.Message.ToString)
         Finally
             fechar()
         End Try
 
-    End Sub
-
-    Private Sub CarregaInformacoesIniciais()
-        listar()
-        CalculaContas()
-        FormatarDG()
     End Sub
 
     Private Sub FormatarDG()
@@ -151,6 +104,9 @@ Public Class frmContasPagar
             .Columns(18).Visible = False
             .Columns(19).Visible = False
             .Columns(20).Visible = False
+            .Columns(21).Visible = False
+            .Columns(22).Visible = False
+            .Columns(23).Visible = False
 
             .Columns(0).HeaderText = "id"
             .Columns(1).HeaderText = "numDocto"
@@ -173,6 +129,9 @@ Public Class frmContasPagar
             .Columns(18).HeaderText = "ID CatContas"
             .Columns(19).HeaderText = "ID_Fornecedor"
             .Columns(20).HeaderText = "ID_FormaPagto"
+            .Columns(21).HeaderText = "ID CatContas"
+            .Columns(22).HeaderText = "ID_Fornecedor"
+            .Columns(23).HeaderText = "ID_FormaPagto"
 
 
             .Columns(1).Width = 150
@@ -186,6 +145,189 @@ Public Class frmContasPagar
         End With
 
     End Sub
+
+    Private Sub rbTodas_CheckedChanged(sender As Object, e As EventArgs) Handles rbTodas.CheckedChanged
+        listar()
+    End Sub
+
+    Private Sub rbContasPagar_CheckedChanged(sender As Object, e As EventArgs) Handles rbContasPagar.CheckedChanged
+
+        Dim dt As New DataTable
+        Dim da As SqlDataAdapter
+        Try
+            abrir()
+            da = New SqlDataAdapter("pa_ContasPagar_contas_a_pagar", con) '
+            ' da = New SqlDataAdapter("select * from tbTipoServico", con)
+
+            da.Fill(dt)
+            dgContasPagar.DataSource = dt
+
+            FormatarDG()
+        Catch ex As Exception
+            MessageBox.Show("Erro ao Listar as Contas" + ex.Message.ToString)
+        Finally
+            fechar()
+        End Try
+    End Sub
+
+    Private Sub rbContasPagas_CheckedChanged(sender As Object, e As EventArgs) Handles rbContasPagas.CheckedChanged
+
+        Dim dt As New DataTable
+        Dim da As SqlDataAdapter
+        Try
+            abrir()
+            da = New SqlDataAdapter("pa_ContasPagar_contas_pagas", con) '
+            ' da = New SqlDataAdapter("select * from tbTipoServico", con)
+
+            da.Fill(dt)
+            dgContasPagar.DataSource = dt
+
+            FormatarDG()
+        Catch ex As Exception
+            MessageBox.Show("Erro ao Listar as Contas" + ex.Message.ToString)
+        Finally
+            fechar()
+        End Try
+    End Sub
+
+    Private Sub rbContasVencidas_CheckedChanged(sender As Object, e As EventArgs) Handles rbContasVencidas.CheckedChanged
+
+        Dim dt As New DataTable
+        Dim da As SqlDataAdapter
+        Try
+            abrir()
+            da = New SqlDataAdapter("pa_ContasPagar_contas_atrasadas", con) '
+            ' da = New SqlDataAdapter("select * from tbTipoServico", con)
+
+            da.Fill(dt)
+            dgContasPagar.DataSource = dt
+
+            FormatarDG()
+        Catch ex As Exception
+            MessageBox.Show("Erro ao Listar as Contas" + ex.Message.ToString)
+        Finally
+            fechar()
+        End Try
+    End Sub
+
+    Private Sub rbConta_CheckedChanged(sender As Object, e As EventArgs) Handles rbConta.CheckedChanged
+
+        ' txtBuscarFornecedor.Text = Nothing
+        txtBuscarDescricao.Text = ""
+        txtBuscarConta.Visible = True
+        'txtBuscarConta.Text = Nothing
+        txtBuscarFornecedor.Visible = False
+        txtBuscarDescricao.Visible = False
+        txtBuscarConta.Focus()
+    End Sub
+
+    Private Sub rbFornecedor_CheckedChanged(sender As Object, e As EventArgs) Handles rbFornecedor.CheckedChanged
+
+        ' txtBuscarFornecedor.Text = Nothing
+        ' txtBuscarConta.Text = Nothing
+        txtBuscarDescricao.Text = ""
+        txtBuscarFornecedor.Visible = True
+        txtBuscarConta.Visible = False
+        txtBuscarDescricao.Visible = False
+        txtBuscarFornecedor.Focus()
+    End Sub
+
+    Private Sub rbDescricao_CheckedChanged(sender As Object, e As EventArgs) Handles rbDescricao.CheckedChanged
+        ' txtBuscarFornecedor.Text = Nothing
+        '  txtBuscarConta.Text = ""
+        txtBuscarDescricao.Text = ""
+        txtBuscarConta.Visible = False
+        txtBuscarFornecedor.Visible = False
+        txtBuscarDescricao.Visible = True
+        txtBuscarDescricao.Focus()
+    End Sub
+
+    Private Sub txtBuscarDescricao_TextChanged(sender As Object, e As EventArgs) Handles txtBuscarDescricao.TextChanged
+        If txtBuscarDescricao.Text = "" And dgContasPagar.Rows.Count > 0 Then
+
+            listar()
+
+        Else
+            Dim dt As New DataTable
+            Dim da As SqlDataAdapter
+
+            Try
+                abrir()
+                da = New SqlDataAdapter("pa_ContasPagar_buscarDescricao", con)
+                da.SelectCommand.CommandType = CommandType.StoredProcedure
+                da.SelectCommand.Parameters.AddWithValue("@descricao", txtBuscarDescricao.Text)
+
+                da.Fill(dt)
+                dgContasPagar.DataSource = dt
+
+                FormatarDG()
+
+            Catch ex As Exception
+                MessageBox.Show("Erro ao Listar" + ex.Message.ToString)
+                fechar()
+            End Try
+        End If
+    End Sub
+
+    Private Sub txtBuscarConta_SelectedIndexChanged(sender As Object, e As EventArgs) Handles txtBuscarConta.SelectedIndexChanged
+        If txtBuscarConta.Text = "" And dgContasPagar.Rows.Count > 0 Then
+
+            listar()
+
+        Else
+
+            Dim dt As New DataTable
+            Dim da As SqlDataAdapter
+
+            Try
+                abrir()
+
+                da = New SqlDataAdapter("pa_ContasPagar_buscarConta", con)
+                da.SelectCommand.CommandType = CommandType.StoredProcedure
+                da.SelectCommand.Parameters.AddWithValue("@id_categoriacontas", txtBuscarConta.SelectedValue)
+
+                da.Fill(dt)
+                dgContasPagar.DataSource = dt
+
+                FormatarDG()
+
+            Catch ex As Exception
+                MessageBox.Show("Erro ao Listar as contas" + ex.Message.ToString)
+            Finally
+                fechar()
+            End Try
+        End If
+    End Sub
+
+    Private Sub txtBuscarFornecedor_SelectedIndexChanged(sender As Object, e As EventArgs) Handles txtBuscarFornecedor.SelectedIndexChanged
+        If txtBuscarFornecedor.Text = "" And dgContasPagar.Rows.Count > 0 Then
+
+            listar()
+
+        Else
+            Dim dt As New DataTable
+            Dim da As SqlDataAdapter
+
+            Try
+                abrir()
+
+                da = New SqlDataAdapter("pa_ContasPagar_buscarFonecedor", con)
+                da.SelectCommand.CommandType = CommandType.StoredProcedure
+                da.SelectCommand.Parameters.AddWithValue("@id_fornecedor", txtBuscarFornecedor.SelectedValue)
+
+                da.Fill(dt)
+                dgContasPagar.DataSource = dt
+
+                FormatarDG()
+
+            Catch ex As Exception
+                MessageBox.Show("Erro ao Listar os fornecedores" + ex.Message.ToString)
+            Finally
+                fechar()
+            End Try
+        End If
+    End Sub
+
 
     Private Sub CalculaContas()
         Dim dblContasPagas, dblContasNaoPagas, dblTotalContas, dblContasAtrasadas As Double
@@ -240,6 +382,5 @@ Public Class frmContasPagar
         frmLancamentoContasPagar.ShowDialog()
         CarregaInformacoesIniciais()
     End Sub
-
 
 End Class

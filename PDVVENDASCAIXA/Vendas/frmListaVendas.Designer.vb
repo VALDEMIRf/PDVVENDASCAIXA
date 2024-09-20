@@ -43,29 +43,29 @@ Partial Class frmListaVendas
         Me.dg.BackgroundColor = System.Drawing.Color.White
         Me.dg.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dg.GridColor = System.Drawing.SystemColors.HotTrack
-        Me.dg.Location = New System.Drawing.Point(13, 118)
+        Me.dg.Location = New System.Drawing.Point(3, 93)
         Me.dg.Margin = New System.Windows.Forms.Padding(4)
         Me.dg.Name = "dg"
         Me.dg.ReadOnly = True
         Me.dg.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dg.Size = New System.Drawing.Size(953, 332)
+        Me.dg.Size = New System.Drawing.Size(987, 368)
         Me.dg.TabIndex = 222
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Arial", 25.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Font = New System.Drawing.Font("Arial", 30.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.White
         Me.Label2.Location = New System.Drawing.Point(255, 9)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(327, 40)
+        Me.Label2.Size = New System.Drawing.Size(383, 46)
         Me.Label2.TabIndex = 230
         Me.Label2.Text = "LISTA DE VENDAS "
         '
         'dtData
         '
         Me.dtData.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtData.Location = New System.Drawing.Point(506, 81)
+        Me.dtData.Location = New System.Drawing.Point(611, 66)
         Me.dtData.Name = "dtData"
         Me.dtData.Size = New System.Drawing.Size(157, 20)
         Me.dtData.TabIndex = 229
@@ -75,7 +75,7 @@ Partial Class frmListaVendas
         Me.rbData.AutoSize = True
         Me.rbData.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.rbData.ForeColor = System.Drawing.Color.White
-        Me.rbData.Location = New System.Drawing.Point(276, 79)
+        Me.rbData.Location = New System.Drawing.Point(381, 64)
         Me.rbData.Name = "rbData"
         Me.rbData.Size = New System.Drawing.Size(57, 22)
         Me.rbData.TabIndex = 228
@@ -88,7 +88,7 @@ Partial Class frmListaVendas
         Me.rbFuncionario.AutoSize = True
         Me.rbFuncionario.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.rbFuncionario.ForeColor = System.Drawing.Color.White
-        Me.rbFuncionario.Location = New System.Drawing.Point(166, 78)
+        Me.rbFuncionario.Location = New System.Drawing.Point(271, 63)
         Me.rbFuncionario.Name = "rbFuncionario"
         Me.rbFuncionario.Size = New System.Drawing.Size(104, 22)
         Me.rbFuncionario.TabIndex = 227
@@ -101,7 +101,7 @@ Partial Class frmListaVendas
         Me.rbCliente.AutoSize = True
         Me.rbCliente.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.rbCliente.ForeColor = System.Drawing.Color.White
-        Me.rbCliente.Location = New System.Drawing.Point(88, 77)
+        Me.rbCliente.Location = New System.Drawing.Point(193, 62)
         Me.rbCliente.Name = "rbCliente"
         Me.rbCliente.Size = New System.Drawing.Size(71, 22)
         Me.rbCliente.TabIndex = 226
@@ -114,7 +114,7 @@ Partial Class frmListaVendas
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(19, 78)
+        Me.Label1.Location = New System.Drawing.Point(124, 63)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(59, 18)
         Me.Label1.TabIndex = 225
@@ -123,7 +123,7 @@ Partial Class frmListaVendas
         'cbFuncionario
         '
         Me.cbFuncionario.FormattingEnabled = True
-        Me.cbFuncionario.Location = New System.Drawing.Point(343, 80)
+        Me.cbFuncionario.Location = New System.Drawing.Point(448, 65)
         Me.cbFuncionario.Name = "cbFuncionario"
         Me.cbFuncionario.Size = New System.Drawing.Size(157, 21)
         Me.cbFuncionario.TabIndex = 224
@@ -131,7 +131,7 @@ Partial Class frmListaVendas
         'cbCliente
         '
         Me.cbCliente.FormattingEnabled = True
-        Me.cbCliente.Location = New System.Drawing.Point(343, 80)
+        Me.cbCliente.Location = New System.Drawing.Point(448, 65)
         Me.cbCliente.Name = "cbCliente"
         Me.cbCliente.Size = New System.Drawing.Size(157, 21)
         Me.cbCliente.TabIndex = 223

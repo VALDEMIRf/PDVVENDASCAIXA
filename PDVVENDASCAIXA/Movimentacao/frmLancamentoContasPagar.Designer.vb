@@ -24,7 +24,9 @@ Partial Class frmLancamentoContasPagar
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmLancamentoContasPagar))
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.btSalvar = New System.Windows.Forms.Button()
         Me.txtDataPagto = New System.Windows.Forms.MaskedTextBox()
+        Me.btnExcluir = New System.Windows.Forms.Button()
         Me.btSair = New System.Windows.Forms.Button()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Label16 = New System.Windows.Forms.Label()
@@ -43,7 +45,6 @@ Partial Class frmLancamentoContasPagar
         Me.txtFormaPagto = New System.Windows.Forms.ComboBox()
         Me.btFormaPagto = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.btSalvar = New System.Windows.Forms.Button()
         Me.txtCodigo = New System.Windows.Forms.Label()
         Me.txtFornecedor = New System.Windows.Forms.ComboBox()
         Me.btFornecedor = New System.Windows.Forms.Button()
@@ -62,7 +63,6 @@ Partial Class frmLancamentoContasPagar
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
-        Me.btnExcluir = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.SuspendLayout()
@@ -113,6 +113,27 @@ Partial Class frmLancamentoContasPagar
         Me.Panel1.Size = New System.Drawing.Size(745, 326)
         Me.Panel1.TabIndex = 0
         '
+        'btSalvar
+        '
+        Me.btSalvar.BackColor = System.Drawing.Color.Transparent
+        Me.btSalvar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btSalvar.FlatAppearance.BorderSize = 0
+        Me.btSalvar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSteelBlue
+        Me.btSalvar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSkyBlue
+        Me.btSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btSalvar.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btSalvar.ForeColor = System.Drawing.Color.White
+        Me.btSalvar.Image = CType(resources.GetObject("btSalvar.Image"), System.Drawing.Image)
+        Me.btSalvar.Location = New System.Drawing.Point(15, 275)
+        Me.btSalvar.Margin = New System.Windows.Forms.Padding(5)
+        Me.btSalvar.Name = "btSalvar"
+        Me.btSalvar.Size = New System.Drawing.Size(90, 45)
+        Me.btSalvar.TabIndex = 10
+        Me.btSalvar.Text = "Salvar"
+        Me.btSalvar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btSalvar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btSalvar.UseVisualStyleBackColor = False
+        '
         'txtDataPagto
         '
         Me.txtDataPagto.Location = New System.Drawing.Point(120, 238)
@@ -121,6 +142,27 @@ Partial Class frmLancamentoContasPagar
         Me.txtDataPagto.Size = New System.Drawing.Size(87, 20)
         Me.txtDataPagto.TabIndex = 329
         Me.txtDataPagto.ValidatingType = GetType(Date)
+        '
+        'btnExcluir
+        '
+        Me.btnExcluir.BackColor = System.Drawing.Color.Transparent
+        Me.btnExcluir.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnExcluir.FlatAppearance.BorderSize = 0
+        Me.btnExcluir.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSteelBlue
+        Me.btnExcluir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSkyBlue
+        Me.btnExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnExcluir.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnExcluir.ForeColor = System.Drawing.Color.White
+        Me.btnExcluir.Image = CType(resources.GetObject("btnExcluir.Image"), System.Drawing.Image)
+        Me.btnExcluir.Location = New System.Drawing.Point(131, 275)
+        Me.btnExcluir.Margin = New System.Windows.Forms.Padding(5)
+        Me.btnExcluir.Name = "btnExcluir"
+        Me.btnExcluir.Size = New System.Drawing.Size(90, 45)
+        Me.btnExcluir.TabIndex = 12
+        Me.btnExcluir.Text = "Excluir"
+        Me.btnExcluir.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnExcluir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnExcluir.UseVisualStyleBackColor = False
         '
         'btSair
         '
@@ -311,27 +353,6 @@ Partial Class frmLancamentoContasPagar
         Me.Label1.Size = New System.Drawing.Size(127, 20)
         Me.Label1.TabIndex = 315
         Me.Label1.Text = "Forma de Pagto:"
-        '
-        'btSalvar
-        '
-        Me.btSalvar.BackColor = System.Drawing.Color.Transparent
-        Me.btSalvar.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btSalvar.FlatAppearance.BorderSize = 0
-        Me.btSalvar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSteelBlue
-        Me.btSalvar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSkyBlue
-        Me.btSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btSalvar.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btSalvar.ForeColor = System.Drawing.Color.White
-        Me.btSalvar.Image = CType(resources.GetObject("btSalvar.Image"), System.Drawing.Image)
-        Me.btSalvar.Location = New System.Drawing.Point(15, 275)
-        Me.btSalvar.Margin = New System.Windows.Forms.Padding(5)
-        Me.btSalvar.Name = "btSalvar"
-        Me.btSalvar.Size = New System.Drawing.Size(90, 45)
-        Me.btSalvar.TabIndex = 10
-        Me.btSalvar.Text = "Salvar"
-        Me.btSalvar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.btSalvar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btSalvar.UseVisualStyleBackColor = False
         '
         'txtCodigo
         '
@@ -528,27 +549,6 @@ Partial Class frmLancamentoContasPagar
         Me.Label8.Size = New System.Drawing.Size(84, 20)
         Me.Label8.TabIndex = 300
         Me.Label8.Text = "Descrição:"
-        '
-        'btnExcluir
-        '
-        Me.btnExcluir.BackColor = System.Drawing.Color.Transparent
-        Me.btnExcluir.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnExcluir.FlatAppearance.BorderSize = 0
-        Me.btnExcluir.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSteelBlue
-        Me.btnExcluir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSkyBlue
-        Me.btnExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnExcluir.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnExcluir.ForeColor = System.Drawing.Color.White
-        Me.btnExcluir.Image = CType(resources.GetObject("btnExcluir.Image"), System.Drawing.Image)
-        Me.btnExcluir.Location = New System.Drawing.Point(131, 275)
-        Me.btnExcluir.Margin = New System.Windows.Forms.Padding(5)
-        Me.btnExcluir.Name = "btnExcluir"
-        Me.btnExcluir.Size = New System.Drawing.Size(90, 45)
-        Me.btnExcluir.TabIndex = 12
-        Me.btnExcluir.Text = "Excluir"
-        Me.btnExcluir.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.btnExcluir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnExcluir.UseVisualStyleBackColor = False
         '
         'frmLancamentoContasPagar
         '

@@ -393,4 +393,6 @@ Public Class frmLancamentoContasPagar
         txtValorPago.Enabled = ""
         txtSituacao.Enabled = Nothing
     End Sub
+
+
 End Class

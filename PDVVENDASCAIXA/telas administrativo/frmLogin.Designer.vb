@@ -71,7 +71,7 @@ Partial Class frmLogin
         Me.Controls.Add(Me.txtSenha)
         Me.Controls.Add(Me.btnLogin)
         Me.Controls.Add(Me.txtUsuario)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.MinimizeBox = False

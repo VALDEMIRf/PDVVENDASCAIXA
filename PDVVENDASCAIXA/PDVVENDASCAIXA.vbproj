@@ -266,6 +266,11 @@
     <Compile Include="Movimentacao\frmUnidadeMedidas.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="ORDEMSERVICODataSet1.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -359,11 +364,6 @@
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
       <DependentUpon>Application.myapp</DependentUpon>
-    </Compile>
-    <Compile Include="My Project\Resources.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="My Project\Settings.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -524,9 +524,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="telas administrativo\frmLoginAdm.resx">
       <DependentUpon>frmLoginAdm.vb</DependentUpon>
@@ -851,9 +851,11 @@
     <Content Include="imagens\Aha-Soft-Business-Toolbar-Payment.32.png" />
     <Content Include="imagens\back.32.png" />
     <Content Include="imagens\Bagg-box.32.png" />
+    <Content Include="imagens\contapagar.jpg" />
     <Content Include="imagens\controle de estoque.png" />
     <Content Include="imagens\Fatcow-Farm-Fresh-Company-generosity.32.png" />
     <Content Include="imagens\Fatcow-Farm-Fresh-Mixer.32.png" />
+    <Content Include="imagens\file-new.png" />
     <Content Include="imagens\Filter.gif" />
     <Content Include="imagens\Folder.png" />
     <Content Include="imagens\icons8_money_100px.png" />
@@ -908,6 +910,11 @@
     <None Include="Resources\Create.png" />
     <None Include="Resources\Edit-Document.png" />
     <None Include="Resources\Notebook-new.32.png" />
+    <None Include="Resources\contapagar.jpg" />
+    <None Include="Resources\Sem Título-1.jpg" />
+    <None Include="Resources\ítulo-1.jpg" />
+    <None Include="Resources\ulo-1.png" />
+    <Content Include="Resources\header-pagarreceber.png" />
     <Content Include="SqlServerTypes\Loader.cs" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">

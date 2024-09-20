@@ -112,7 +112,7 @@ Partial Class frmConsultaEstoque
         '
         Me.cbEntrada.FormattingEnabled = True
         Me.cbEntrada.Items.AddRange(New Object() {"Entrada", "Saída"})
-        Me.cbEntrada.Location = New System.Drawing.Point(470, 52)
+        Me.cbEntrada.Location = New System.Drawing.Point(470, 51)
         Me.cbEntrada.Name = "cbEntrada"
         Me.cbEntrada.Size = New System.Drawing.Size(157, 21)
         Me.cbEntrada.TabIndex = 240
