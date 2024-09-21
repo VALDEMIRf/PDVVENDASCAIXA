@@ -242,6 +242,12 @@
     <Compile Include="Movimentacao\frmLancamentoContasPagar.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Movimentacao\frmLancamentoContasReceber.Designer.vb">
+      <DependentUpon>frmLancamentoContasReceber.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Movimentacao\frmLancamentoContasReceber.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Movimentacao\frmServicos.Designer.vb">
       <DependentUpon>frmServicos.vb</DependentUpon>
     </Compile>
@@ -466,6 +472,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Movimentacao\frmLancamentoContasPagar.resx">
       <DependentUpon>frmLancamentoContasPagar.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Movimentacao\frmLancamentoContasReceber.resx">
+      <DependentUpon>frmLancamentoContasReceber.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Movimentacao\frmServicos.resx">
       <DependentUpon>frmServicos.vb</DependentUpon>
@@ -852,6 +861,7 @@
     <Content Include="imagens\back.32.png" />
     <Content Include="imagens\Bagg-box.32.png" />
     <Content Include="imagens\contapagar.jpg" />
+    <Content Include="imagens\contas-a-recebernovo.png" />
     <Content Include="imagens\controle de estoque.png" />
     <Content Include="imagens\Fatcow-Farm-Fresh-Company-generosity.32.png" />
     <Content Include="imagens\Fatcow-Farm-Fresh-Mixer.32.png" />

@@ -3,30 +3,18 @@ Imports System.Text
 
 Public Class frmContasReceber
     Private Sub frmContasReceber_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        DesabilitarCampos()
-        btnSalvar.Enabled = False
+
+
         Listar()
 
         CarregarClientes()
 
         rbCliente.Checked = True
 
-        btnEditar.Enabled = False
-        btnExcluir.Enabled = False
-    End Sub
-
-    Private Sub DesabilitarCampos()
-        txtNVenda.Enabled = False
 
     End Sub
 
-    Private Sub HabilitarCampos()
 
-    End Sub
-
-    Private Sub Limpar()
-
-    End Sub
 
     Private Sub FormatarDG()
 
@@ -112,9 +100,9 @@ Public Class frmContasReceber
             'DA = New SqlDataAdapter("SELECT * FROM tbClientes", con) 
             DA = New SqlDataAdapter("pa_cliente_listar", con)
             DA.Fill(DT)
-            txtCliente.DisplayMember = "nome"
-            txtCliente.ValueMember = "id_cliente"
-            txtCliente.DataSource = DT
+            txtBuscarCliente.DisplayMember = "nome"
+            txtBuscarCliente.ValueMember = "id_cliente"
+            txtBuscarCliente.DataSource = DT
 
         Catch ex As Exception : MessageBox.Show(ex.Message.ToString)
         Finally
