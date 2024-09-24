@@ -66,6 +66,50 @@ Public Class frmContasReceber
             .Columns(17).Width = 100
             .Columns(18).Width = 180
             .Columns(19).Width = 250
+
+
+
+
+
+
+
+            '.Columns("Sexo").HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
+            '.Columns("Sexo").DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+
+            '.Columns.Add("Meta", "Meta")
+            '.Columns("Meta").Width = 100
+            '.Columns("Meta").HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight
+            '.Columns("Meta").DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
+
+            '.Columns.Add("Realizado", "Realizado")
+            '.Columns("Realizado").Width = 100
+            '.Columns("Realizado").HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight
+            '.Columns("Realizado").DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
+
+            '.Columns.Add("Resultado", "Resultado %")
+            '.Columns("Resultado").Width = 100
+            '.Columns("Resultado").HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
+            '.Columns("Resultado").DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+
+            '.Columns.Add("Participacao", "Participação %")
+            '.Columns("Participacao").Width = 100
+            '.Columns("Participacao").HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
+            '.Columns("Participacao").DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+
+            '.Columns.Add("MetaAtingida", "Atingiu meta")
+            '.Columns("MetaAtingida").Width = 100
+            '.Columns("MetaAtingida").HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
+            '.Columns("MetaAtingida").DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+
+            '.Columns.Add("Nota", "Nota")
+            '.Columns("Nota").Width = 100
+            '.Columns("Nota").HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
+            '.Columns("Nota").DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+
+
+
+
+
         End With
 
     End Sub
@@ -115,4 +159,8 @@ Public Class frmContasReceber
         Dim total As Integer = dgContasReceber.Rows.Count
         lblNumTotalContasReceber.Text = CInt(total)
     End Sub
+
+
+
+
 End Class

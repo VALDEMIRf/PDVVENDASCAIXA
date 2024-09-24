@@ -1,4 +1,7 @@
 ﻿Imports System.Data.SqlClient
+Imports System.IO
+Imports System.Text
+
 
 Public Class frmLancamentoContasPagar
     Private Sub frmLancamentoContasPagar_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -284,6 +287,11 @@ Public Class frmLancamentoContasPagar
     End Sub
 
     Private Sub btSalvar_Click(sender As Object, e As EventArgs) Handles btSalvar.Click
+        If txtSituacao.Text = "Paga" Then
+            MsgBox("Insira a data de pagamento e o valor pago")
+            Exit Sub
+        End If
+
         If FValidaCampos() = False Then Exit Sub
 
         If txtCodigo.Text = "Novo" Then
@@ -394,5 +402,68 @@ Public Class frmLancamentoContasPagar
         txtSituacao.Enabled = Nothing
     End Sub
 
+    Private Sub txtSituacao_SelectedIndexChanged(sender As Object, e As EventArgs) Handles txtSituacao.SelectedIndexChanged
+        If txtSituacao.Text = "Paga" Then
+            txtDataPagto.Enabled = True
+            'txtValorPago.Enabled = True
+            txtJuros.Enabled = True
+            txtDesconto.Enabled = True
+            Dim subTotal As Decimal
+            subTotal = txtValor.Text
+            txtValorPago.Text = subTotal
 
+        End If
+    End Sub
+
+
+
+
+
+    Private Sub txtDesconto_TextChanged(sender As Object, e As EventArgs) Handles txtDesconto.TextChanged
+        If txtValor.Text <> "0" And txtDesconto.Text <> "" Then
+
+            Dim desc As Decimal
+            ' Dim jur As Decimal
+            Dim valor1 As Decimal
+            Dim valorTotal As Decimal
+            Try
+                lblDesconto.Text = txtDesconto.Text
+                lblValor.Text = txtValor.Text
+
+                desc = lblDesconto.Text
+                valor1 = lblValor.Text
+                valorTotal = valor1 - desc
+
+                txtValorPago.Text = valorTotal
+
+            Catch ex As Exception
+            End Try
+        Else
+            txtDesconto.Text = 0
+        End If
+
+    End Sub
+
+    Private Sub txtJuros_TextChanged(sender As Object, e As EventArgs) Handles txtJuros.TextChanged
+        If txtValor.Text <> "0" And txtJuros.Text <> "" Then
+
+            Dim jur As Decimal
+            Dim valor1 As Decimal
+            Dim valorTotal As Decimal
+            Try
+                lblJuros.Text = txtJuros.Text
+                lblValor.Text = txtValor.Text
+
+                jur = lblJuros.Text
+                valor1 = lblValor.Text
+                valorTotal = valor1 + jur
+
+                txtValorPago.Text = valorTotal
+
+            Catch ex As Exception
+            End Try
+        Else
+            txtJuros.Text = 0
+        End If
+    End Sub
 End Class

@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class frmLancamentoContasPagar
     Inherits System.Windows.Forms.Form
 
     'Descartar substituições de formulário para limpar a lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,10 +20,13 @@ Partial Class frmLancamentoContasPagar
     'OBSERVAÇÃO: o procedimento a seguir é exigido pelo Windows Form Designer
     'Pode ser modificado usando o Windows Form Designer.  
     'Não o modifique usando o editor de códigos.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmLancamentoContasPagar))
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.lblJuros = New System.Windows.Forms.Label()
+        Me.lblValor = New System.Windows.Forms.Label()
+        Me.lblDesconto = New System.Windows.Forms.Label()
         Me.btSalvar = New System.Windows.Forms.Button()
         Me.txtDataPagto = New System.Windows.Forms.MaskedTextBox()
         Me.btnExcluir = New System.Windows.Forms.Button()
@@ -70,6 +73,9 @@ Partial Class frmLancamentoContasPagar
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.SteelBlue
+        Me.Panel1.Controls.Add(Me.lblJuros)
+        Me.Panel1.Controls.Add(Me.lblValor)
+        Me.Panel1.Controls.Add(Me.lblDesconto)
         Me.Panel1.Controls.Add(Me.btSalvar)
         Me.Panel1.Controls.Add(Me.txtDataPagto)
         Me.Panel1.Controls.Add(Me.btnExcluir)
@@ -110,8 +116,44 @@ Partial Class frmLancamentoContasPagar
         Me.Panel1.Controls.Add(Me.Label8)
         Me.Panel1.Location = New System.Drawing.Point(12, 12)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(745, 326)
+        Me.Panel1.Size = New System.Drawing.Size(745, 325)
         Me.Panel1.TabIndex = 0
+        '
+        'lblJuros
+        '
+        Me.lblJuros.AutoSize = True
+        Me.lblJuros.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblJuros.ForeColor = System.Drawing.Color.White
+        Me.lblJuros.Location = New System.Drawing.Point(357, 282)
+        Me.lblJuros.Name = "lblJuros"
+        Me.lblJuros.Size = New System.Drawing.Size(18, 20)
+        Me.lblJuros.TabIndex = 332
+        Me.lblJuros.Text = "0"
+        Me.lblJuros.Visible = False
+        '
+        'lblValor
+        '
+        Me.lblValor.AutoSize = True
+        Me.lblValor.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblValor.ForeColor = System.Drawing.Color.White
+        Me.lblValor.Location = New System.Drawing.Point(319, 282)
+        Me.lblValor.Name = "lblValor"
+        Me.lblValor.Size = New System.Drawing.Size(18, 20)
+        Me.lblValor.TabIndex = 331
+        Me.lblValor.Text = "0"
+        Me.lblValor.Visible = False
+        '
+        'lblDesconto
+        '
+        Me.lblDesconto.AutoSize = True
+        Me.lblDesconto.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblDesconto.ForeColor = System.Drawing.Color.White
+        Me.lblDesconto.Location = New System.Drawing.Point(280, 282)
+        Me.lblDesconto.Name = "lblDesconto"
+        Me.lblDesconto.Size = New System.Drawing.Size(18, 20)
+        Me.lblDesconto.TabIndex = 330
+        Me.lblDesconto.Text = "0"
+        Me.lblDesconto.Visible = False
         '
         'btSalvar
         '
@@ -136,7 +178,8 @@ Partial Class frmLancamentoContasPagar
         '
         'txtDataPagto
         '
-        Me.txtDataPagto.Location = New System.Drawing.Point(120, 238)
+        Me.txtDataPagto.Enabled = False
+        Me.txtDataPagto.Location = New System.Drawing.Point(250, 236)
         Me.txtDataPagto.Mask = "00/00/0000"
         Me.txtDataPagto.Name = "txtDataPagto"
         Me.txtDataPagto.Size = New System.Drawing.Size(87, 20)
@@ -209,17 +252,19 @@ Partial Class frmLancamentoContasPagar
         '
         'txtValorPago
         '
-        Me.txtValorPago.Location = New System.Drawing.Point(477, 237)
+        Me.txtValorPago.Enabled = False
+        Me.txtValorPago.Location = New System.Drawing.Point(577, 238)
         Me.txtValorPago.Name = "txtValorPago"
         Me.txtValorPago.Size = New System.Drawing.Size(100, 20)
         Me.txtValorPago.TabIndex = 326
+        Me.txtValorPago.Text = "0"
         '
         'Label15
         '
         Me.Label15.AutoSize = True
         Me.Label15.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label15.ForeColor = System.Drawing.Color.White
-        Me.Label15.Location = New System.Drawing.Point(475, 214)
+        Me.Label15.Location = New System.Drawing.Point(575, 215)
         Me.Label15.Name = "Label15"
         Me.Label15.Size = New System.Drawing.Size(91, 20)
         Me.Label15.TabIndex = 327
@@ -227,10 +272,12 @@ Partial Class frmLancamentoContasPagar
         '
         'txtJuros
         '
+        Me.txtJuros.Enabled = False
         Me.txtJuros.Location = New System.Drawing.Point(361, 237)
         Me.txtJuros.Name = "txtJuros"
         Me.txtJuros.Size = New System.Drawing.Size(100, 20)
         Me.txtJuros.TabIndex = 324
+        Me.txtJuros.Text = "0"
         '
         'Label14
         '
@@ -245,17 +292,19 @@ Partial Class frmLancamentoContasPagar
         '
         'txtDesconto
         '
-        Me.txtDesconto.Location = New System.Drawing.Point(245, 237)
+        Me.txtDesconto.Enabled = False
+        Me.txtDesconto.Location = New System.Drawing.Point(467, 238)
         Me.txtDesconto.Name = "txtDesconto"
         Me.txtDesconto.Size = New System.Drawing.Size(100, 20)
         Me.txtDesconto.TabIndex = 322
+        Me.txtDesconto.Text = "0"
         '
         'Label12
         '
         Me.Label12.AutoSize = True
         Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label12.ForeColor = System.Drawing.Color.White
-        Me.Label12.Location = New System.Drawing.Point(248, 214)
+        Me.Label12.Location = New System.Drawing.Point(467, 215)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(82, 20)
         Me.Label12.TabIndex = 323
@@ -281,7 +330,7 @@ Partial Class frmLancamentoContasPagar
         '
         'txtParcelas
         '
-        Me.txtParcelas.Location = New System.Drawing.Point(440, 187)
+        Me.txtParcelas.Location = New System.Drawing.Point(438, 187)
         Me.txtParcelas.Name = "txtParcelas"
         Me.txtParcelas.Size = New System.Drawing.Size(100, 20)
         Me.txtParcelas.TabIndex = 318
@@ -426,7 +475,7 @@ Partial Class frmLancamentoContasPagar
         Me.Label13.AutoSize = True
         Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label13.ForeColor = System.Drawing.Color.White
-        Me.Label13.Location = New System.Drawing.Point(588, 214)
+        Me.Label13.Location = New System.Drawing.Point(109, 214)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(76, 20)
         Me.Label13.TabIndex = 307
@@ -437,7 +486,7 @@ Partial Class frmLancamentoContasPagar
         Me.Label11.AutoSize = True
         Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label11.ForeColor = System.Drawing.Color.White
-        Me.Label11.Location = New System.Drawing.Point(116, 212)
+        Me.Label11.Location = New System.Drawing.Point(238, 212)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(116, 20)
         Me.Label11.TabIndex = 306
@@ -459,8 +508,8 @@ Partial Class frmLancamentoContasPagar
         Me.txtSituacao.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.txtSituacao.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.txtSituacao.FormattingEnabled = True
-        Me.txtSituacao.Items.AddRange(New Object() {"Pago", "Não Pago", "Atrasado"})
-        Me.txtSituacao.Location = New System.Drawing.Point(584, 236)
+        Me.txtSituacao.Items.AddRange(New Object() {"Paga", "Não Paga", "Vencida"})
+        Me.txtSituacao.Location = New System.Drawing.Point(105, 236)
         Me.txtSituacao.Name = "txtSituacao"
         Me.txtSituacao.Size = New System.Drawing.Size(131, 21)
         Me.txtSituacao.TabIndex = 298
@@ -555,7 +604,7 @@ Partial Class frmLancamentoContasPagar
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.LightBlue
-        Me.ClientSize = New System.Drawing.Size(769, 352)
+        Me.ClientSize = New System.Drawing.Size(769, 343)
         Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "frmLancamentoContasPagar"
@@ -609,4 +658,7 @@ Partial Class frmLancamentoContasPagar
     Friend WithEvents Label16 As Label
     Friend WithEvents txtDataPagto As MaskedTextBox
     Friend WithEvents btnExcluir As Button
+    Friend WithEvents lblDesconto As Label
+    Friend WithEvents lblValor As Label
+    Friend WithEvents lblJuros As Label
 End Class

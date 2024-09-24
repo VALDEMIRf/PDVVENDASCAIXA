@@ -142,9 +142,41 @@ Public Class frmContasPagar
             .Columns(6).Width = 120
             .Columns(7).Width = 300
 
+
+
+            For Each row As DataGridViewRow In .Rows
+                '  row.Cells("situacao").Style.ForeColor = ColorirSituacao(row.Cells("situacao").Value)
+
+                If row.Cells("situacao").Value = "Não Paga" Then
+                    row.DefaultCellStyle.BackColor = Color.Red
+                    row.DefaultCellStyle.ForeColor = Color.White
+                ElseIf row.Cells("situacao").Value = "Paga" Then
+                    row.DefaultCellStyle.BackColor = Color.Green
+                    row.DefaultCellStyle.ForeColor = Color.White
+                ElseIf row.Cells("situacao").Value = "Vencida" Then
+                    row.DefaultCellStyle.BackColor = Color.DarkRed
+                    row.DefaultCellStyle.ForeColor = Color.White
+                End If
+            Next
         End With
 
     End Sub
+
+    Private Function ColorirSituacao(situacaoCor As String) As Color
+        Select Case situacaoCor  'Pago, Não Pago, Atrasado
+            Case "Paga"
+                Return Color.Blue
+            Case "Não Paga"
+                Return Color.Red
+            Case "Vencida"
+                Return Color.DarkRed
+            Case Else
+                Return Color.Green
+        End Select
+    End Function
+
+
+
 
     Private Sub rbTodas_CheckedChanged(sender As Object, e As EventArgs) Handles rbTodas.CheckedChanged
         listar()
@@ -337,17 +369,17 @@ Public Class frmContasPagar
             dblTotalContas = dblTotalContas + linha.Cells("Valor").Value
 
             'Total Contas Pagas
-            If linha.Cells("situacao").Value = "Pago" Then
+            If linha.Cells("situacao").Value = "Paga" Then
                 dblContasPagas = dblContasPagas + linha.Cells("Valor").Value
             End If
 
             'Total Contas Não Pagas
-            If linha.Cells("situacao").Value = "Não Pago" Then
+            If linha.Cells("situacao").Value = "NãoPaga" Then
                 dblContasNaoPagas = dblContasNaoPagas + linha.Cells("Valor").Value
             End If
 
             'Total Contas Atrasadas
-            If linha.Cells("situacao").Value = "Atrasado" Then
+            If linha.Cells("situacao").Value = "Vencida" Then
                 dblContasAtrasadas = dblContasAtrasadas + linha.Cells("Valor").Value
             End If
 
@@ -376,11 +408,37 @@ Public Class frmContasPagar
         Me.Close()
     End Sub
 
-    Private Sub dgContasPagar_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgContasPagar.CellClick
+    Private Sub dgContasPagar_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgContasPagar.CellDoubleClick
         intCodigoLancamento = dgContasPagar.CurrentRow().Cells("id_conta").Value
         'frmLancamentoContasPagar.txtCodigo.Text = intCodigoLancamento
         frmLancamentoContasPagar.ShowDialog()
         CarregaInformacoesIniciais()
     End Sub
 
+    'Private Sub dgContasPagar_CellFormatting(sender As Object, e As DataGridViewCellFormattingEventArgs) Handles dgContasPagar.CellFormatting
+    '    If (dgContasPagar.Columns(e.ColumnIndex).Name = "Situação") Then
+    '        Try
+    '            If Not e.Value.GetType() Is GetType(System.DBNull) Then
+    '                If (Convert.ToInt32(e.Value) = "Paga") Then
+    '                    e.CellStyle.ForeColor = Color.Red
+    '                    e.CellStyle.BackColor = Color.Orange
+
+    '                    If (Convert.ToInt32(e.Value) = "Não Paga") Then
+    '                        e.CellStyle.ForeColor = Color.BlueViolet
+    '                        e.CellStyle.BackColor = Color.Gray
+    '                    End If
+
+    '                    If (Convert.ToInt32(e.Value) = "Vencida") Then
+    '                        e.CellStyle.ForeColor = Color.Green
+    '                        e.CellStyle.BackColor = Color.LavenderBlush
+    '                    End If
+    '                End If
+    '            End If
+
+
+    '        Catch ex As Exception
+
+    '        End Try
+    '    End If
+    'End Sub
 End Class

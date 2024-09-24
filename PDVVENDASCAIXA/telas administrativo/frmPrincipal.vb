@@ -141,7 +141,7 @@ Public Class frmPrincipal
     End Sub
 
     Private Sub ContasAReceberToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ContasAReceberToolStripMenuItem.Click
-        Dim form = New frmTipoDocumento
+        Dim form = New frmContasReceber
         form.ShowDialog()
     End Sub
 

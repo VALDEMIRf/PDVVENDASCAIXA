@@ -23,6 +23,7 @@ Partial Class frmContasPagar
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmContasPagar))
         Me.dgContasPagar = New System.Windows.Forms.DataGridView()
         Me.Label10 = New System.Windows.Forms.Label()
@@ -51,16 +52,16 @@ Partial Class frmContasPagar
         Me.txtBuscarFornecedor = New System.Windows.Forms.ComboBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.btNovo = New System.Windows.Forms.Button()
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.btSair = New System.Windows.Forms.Button()
         CType(Me.dgContasPagar, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.Panel1.SuspendLayout()
-        Me.GroupBox3.SuspendLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox3.SuspendLayout()
         Me.SuspendLayout()
         '
         'dgContasPagar
@@ -69,15 +70,23 @@ Partial Class frmContasPagar
         Me.dgContasPagar.AllowUserToDeleteRows = False
         Me.dgContasPagar.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
         Me.dgContasPagar.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.dgContasPagar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
         DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DarkSlateGray
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgContasPagar.DefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgContasPagar.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        Me.dgContasPagar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgContasPagar.DefaultCellStyle = DataGridViewCellStyle2
         Me.dgContasPagar.Dock = System.Windows.Forms.DockStyle.Fill
         Me.dgContasPagar.GridColor = System.Drawing.Color.DarkBlue
         Me.dgContasPagar.Location = New System.Drawing.Point(3, 20)
@@ -127,7 +136,7 @@ Partial Class frmContasPagar
         '
         Me.txtTotalContasPagar.BackColor = System.Drawing.Color.White
         Me.txtTotalContasPagar.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtTotalContasPagar.ForeColor = System.Drawing.Color.DarkGreen
+        Me.txtTotalContasPagar.ForeColor = System.Drawing.Color.Blue
         Me.txtTotalContasPagar.Location = New System.Drawing.Point(535, 539)
         Me.txtTotalContasPagar.Multiline = True
         Me.txtTotalContasPagar.Name = "txtTotalContasPagar"
@@ -194,7 +203,7 @@ Partial Class frmContasPagar
         '
         Me.txtTotalContasPagas.BackColor = System.Drawing.Color.White
         Me.txtTotalContasPagas.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtTotalContasPagas.ForeColor = System.Drawing.Color.Blue
+        Me.txtTotalContasPagas.ForeColor = System.Drawing.Color.Green
         Me.txtTotalContasPagas.Location = New System.Drawing.Point(14, 539)
         Me.txtTotalContasPagas.Multiline = True
         Me.txtTotalContasPagas.Name = "txtTotalContasPagas"
@@ -318,9 +327,9 @@ Partial Class frmContasPagar
         Me.Label4.Location = New System.Drawing.Point(369, 515)
         Me.Label4.Margin = New System.Windows.Forms.Padding(8, 0, 8, 0)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(137, 20)
+        Me.Label4.Size = New System.Drawing.Size(130, 20)
         Me.Label4.TabIndex = 214
-        Me.Label4.Text = "Contas Atrasadas"
+        Me.Label4.Text = "Contas Vencidas"
         '
         'txtTotalContasAtrasadas
         '
@@ -397,6 +406,16 @@ Partial Class frmContasPagar
         Me.Panel1.Size = New System.Drawing.Size(1200, 72)
         Me.Panel1.TabIndex = 313
         '
+        'PictureBox2
+        '
+        Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
+        Me.PictureBox2.Location = New System.Drawing.Point(3, 3)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(81, 63)
+        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox2.TabIndex = 312
+        Me.PictureBox2.TabStop = False
+        '
         'GroupBox3
         '
         Me.GroupBox3.Controls.Add(Me.txtBuscarConta)
@@ -432,16 +451,6 @@ Partial Class frmContasPagar
         Me.btNovo.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btNovo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btNovo.UseVisualStyleBackColor = False
-        '
-        'PictureBox2
-        '
-        Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
-        Me.PictureBox2.Location = New System.Drawing.Point(3, 3)
-        Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(81, 63)
-        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox2.TabIndex = 312
-        Me.PictureBox2.TabStop = False
         '
         'btSair
         '
@@ -502,9 +511,9 @@ Partial Class frmContasPagar
         Me.GroupBox2.ResumeLayout(False)
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox3.PerformLayout()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

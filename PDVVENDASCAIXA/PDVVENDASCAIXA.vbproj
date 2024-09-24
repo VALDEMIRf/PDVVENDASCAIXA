@@ -187,6 +187,7 @@
       <DependentUpon>CATALOGOPRODDataSet2.xsd</DependentUpon>
     </Compile>
     <Compile Include="classes\clsCep.vb" />
+    <Compile Include="classes\clsColorirDG.vb" />
     <Compile Include="classes\CNPJ.vb" />
     <Compile Include="conexao.vb" />
     <Compile Include="Connected Services\WSCEP\Reference.vb">
