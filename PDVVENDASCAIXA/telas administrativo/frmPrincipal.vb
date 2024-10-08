@@ -619,6 +619,12 @@ Public Class frmPrincipal
         form.ShowDialog()
     End Sub
 
+    Private Sub TesteparcelasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles TesteparcelasToolStripMenuItem.Click
+        Dim form = New form1
+
+        form.ShowDialog()
+    End Sub
+
 
     'Private Sub carregarSangria()
     '    Dim cmd As SqlCommand

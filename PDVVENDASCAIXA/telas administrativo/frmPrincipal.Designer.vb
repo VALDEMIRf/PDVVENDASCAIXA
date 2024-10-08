@@ -81,6 +81,7 @@ Partial Class frmPrincipal
         Me.imagemNivel = New System.Windows.Forms.PictureBox()
         Me.lblNivel = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.TesteparcelasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.dg, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.imagem, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -181,7 +182,7 @@ Partial Class frmPrincipal
         '
         'MovimentaçãoToolStripMenuItem
         '
-        Me.MovimentaçãoToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.OrdemDeServiçoToolStripMenuItem, Me.ContasAPagarToolStripMenuItem, Me.ContasAReceberToolStripMenuItem})
+        Me.MovimentaçãoToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.OrdemDeServiçoToolStripMenuItem, Me.ContasAPagarToolStripMenuItem, Me.ContasAReceberToolStripMenuItem, Me.TesteparcelasToolStripMenuItem})
         Me.MovimentaçãoToolStripMenuItem.ForeColor = System.Drawing.Color.Black
         Me.MovimentaçãoToolStripMenuItem.Image = CType(resources.GetObject("MovimentaçãoToolStripMenuItem.Image"), System.Drawing.Image)
         Me.MovimentaçãoToolStripMenuItem.Name = "MovimentaçãoToolStripMenuItem"
@@ -192,21 +193,21 @@ Partial Class frmPrincipal
         '
         Me.OrdemDeServiçoToolStripMenuItem.Image = CType(resources.GetObject("OrdemDeServiçoToolStripMenuItem.Image"), System.Drawing.Image)
         Me.OrdemDeServiçoToolStripMenuItem.Name = "OrdemDeServiçoToolStripMenuItem"
-        Me.OrdemDeServiçoToolStripMenuItem.Size = New System.Drawing.Size(178, 24)
+        Me.OrdemDeServiçoToolStripMenuItem.Size = New System.Drawing.Size(180, 24)
         Me.OrdemDeServiçoToolStripMenuItem.Text = "Ordem de Serviço"
         '
         'ContasAPagarToolStripMenuItem
         '
         Me.ContasAPagarToolStripMenuItem.Image = CType(resources.GetObject("ContasAPagarToolStripMenuItem.Image"), System.Drawing.Image)
         Me.ContasAPagarToolStripMenuItem.Name = "ContasAPagarToolStripMenuItem"
-        Me.ContasAPagarToolStripMenuItem.Size = New System.Drawing.Size(178, 24)
+        Me.ContasAPagarToolStripMenuItem.Size = New System.Drawing.Size(180, 24)
         Me.ContasAPagarToolStripMenuItem.Text = "Contas a Pagar"
         '
         'ContasAReceberToolStripMenuItem
         '
         Me.ContasAReceberToolStripMenuItem.Image = CType(resources.GetObject("ContasAReceberToolStripMenuItem.Image"), System.Drawing.Image)
         Me.ContasAReceberToolStripMenuItem.Name = "ContasAReceberToolStripMenuItem"
-        Me.ContasAReceberToolStripMenuItem.Size = New System.Drawing.Size(178, 24)
+        Me.ContasAReceberToolStripMenuItem.Size = New System.Drawing.Size(180, 24)
         Me.ContasAReceberToolStripMenuItem.Text = "Contas a Receber"
         '
         'VendasToolStripMenuItem
@@ -590,6 +591,12 @@ Partial Class frmPrincipal
         Me.Label1.TabIndex = 254
         Me.Label1.Text = "Nº CAIXA"
         '
+        'TesteparcelasToolStripMenuItem
+        '
+        Me.TesteparcelasToolStripMenuItem.Name = "TesteparcelasToolStripMenuItem"
+        Me.TesteparcelasToolStripMenuItem.Size = New System.Drawing.Size(180, 24)
+        Me.TesteparcelasToolStripMenuItem.Text = "testeparcelas"
+        '
         'frmPrincipal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -692,4 +699,5 @@ Partial Class frmPrincipal
     Friend WithEvents ContasAReceberToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents Modelo1ToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents Modelo2ToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents TesteparcelasToolStripMenuItem As ToolStripMenuItem
 End Class

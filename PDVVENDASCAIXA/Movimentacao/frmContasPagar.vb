@@ -141,6 +141,7 @@ Public Class frmContasPagar
             .Columns(5).Width = 120
             .Columns(6).Width = 120
             .Columns(7).Width = 300
+            .Columns(15).Width = 120
 
 
 
@@ -174,9 +175,6 @@ Public Class frmContasPagar
                 Return Color.Green
         End Select
     End Function
-
-
-
 
     Private Sub rbTodas_CheckedChanged(sender As Object, e As EventArgs) Handles rbTodas.CheckedChanged
         listar()
@@ -243,7 +241,7 @@ Public Class frmContasPagar
     End Sub
 
     Private Sub rbConta_CheckedChanged(sender As Object, e As EventArgs) Handles rbConta.CheckedChanged
-
+        listar()
         ' txtBuscarFornecedor.Text = Nothing
         txtBuscarDescricao.Text = ""
         txtBuscarConta.Visible = True
@@ -254,7 +252,7 @@ Public Class frmContasPagar
     End Sub
 
     Private Sub rbFornecedor_CheckedChanged(sender As Object, e As EventArgs) Handles rbFornecedor.CheckedChanged
-
+        listar()
         ' txtBuscarFornecedor.Text = Nothing
         ' txtBuscarConta.Text = Nothing
         txtBuscarDescricao.Text = ""
@@ -265,6 +263,7 @@ Public Class frmContasPagar
     End Sub
 
     Private Sub rbDescricao_CheckedChanged(sender As Object, e As EventArgs) Handles rbDescricao.CheckedChanged
+        listar()
         ' txtBuscarFornecedor.Text = Nothing
         '  txtBuscarConta.Text = ""
         txtBuscarDescricao.Text = ""
@@ -408,10 +407,10 @@ Public Class frmContasPagar
         Me.Close()
     End Sub
 
-    Private Sub dgContasPagar_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgContasPagar.CellDoubleClick
+    Private Sub dgContasPagar_DoubleClick(sender As Object, e As EventArgs) Handles dgContasPagar.DoubleClick
         intCodigoLancamento = dgContasPagar.CurrentRow().Cells("id_conta").Value
-        'frmLancamentoContasPagar.txtCodigo.Text = intCodigoLancamento
         frmLancamentoContasPagar.ShowDialog()
+
         CarregaInformacoesIniciais()
     End Sub
 

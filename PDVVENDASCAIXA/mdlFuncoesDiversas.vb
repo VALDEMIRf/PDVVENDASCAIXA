@@ -19,4 +19,13 @@ Module mdlFuncoesDiversas
             e.Handled = True
         End If
     End Sub
+
+    Public Sub DecNumber(Sender As Object, e As KeyPressEventArgs)
+        If Not Char.IsDigit(e.KeyChar) And Asc(e.KeyChar) <> 8 And
+                e.KeyChar <> "," Then
+            e.Handled = True
+        ElseIf e.KeyChar = "," And Sender.Text.Contains(",") Then
+            e.Handled = True
+        End If
+    End Sub
 End Module

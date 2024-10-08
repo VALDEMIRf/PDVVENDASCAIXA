@@ -219,6 +219,12 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="mdlFuncoesDiversas.vb" />
+    <Compile Include="Movimentacao\frmBaixarContaPagar.Designer.vb">
+      <DependentUpon>frmBaixarContaPagar.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Movimentacao\frmBaixarContaPagar.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Movimentacao\frmContasPagar.Designer.vb">
       <DependentUpon>frmContasPagar.vb</DependentUpon>
     </Compile>
@@ -395,6 +401,16 @@
     <Compile Include="telas administrativo\frmProdutoConsultaSimples.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="classes\Util.vb" />
+    <Compile Include="teste gerar parcelas\ConexaoTeste.vb" />
+    <Compile Include="teste gerar parcelas\form1.Designer.vb">
+      <DependentUpon>form1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="teste gerar parcelas\form1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="teste gerar parcelas\Parcelas.vb" />
+    <Compile Include="teste gerar parcelas\Produto.vb" />
     <Compile Include="VendasDataSet1.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -461,6 +477,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Estoque\frmNivelBaixo.resx">
       <DependentUpon>frmNivelBaixo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Movimentacao\frmBaixarContaPagar.resx">
+      <DependentUpon>frmBaixarContaPagar.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Movimentacao\frmContasPagar.resx">
       <DependentUpon>frmContasPagar.vb</DependentUpon>
@@ -546,6 +565,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="telas administrativo\frmProdutoConsultaSimples.resx">
       <DependentUpon>frmProdutoConsultaSimples.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="teste gerar parcelas\form1.resx">
+      <DependentUpon>form1.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vendas\frmListaVendas.resx">
       <DependentUpon>frmListaVendas.vb</DependentUpon>
@@ -892,6 +914,7 @@
     <Content Include="imgPequenas\Modify.png" />
     <Content Include="imgPequenas\New document.png" />
     <Content Include="imgPequenas\OK.png" />
+    <Content Include="imgPequenas\Open-folder-search.24.png" />
     <Content Include="imgPequenas\Report.png" />
     <Content Include="imgPequenas\Sales-report.24.png" />
     <Content Include="imgPequenas\Table.png" />
@@ -925,6 +948,8 @@
     <None Include="Resources\Sem Título-1.jpg" />
     <None Include="Resources\ítulo-1.jpg" />
     <None Include="Resources\ulo-1.png" />
+    <None Include="Resources\clear.png" />
+    <None Include="Resources\Fall.png" />
     <Content Include="Resources\header-pagarreceber.png" />
     <Content Include="SqlServerTypes\Loader.cs" />
     <Content Include="SqlServerTypes\readme.htm" />
