@@ -30,6 +30,11 @@ Partial Class frmProdutos
         Me.txtBuscar = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.btnNovo = New System.Windows.Forms.Button()
+        Me.btSair = New System.Windows.Forms.Button()
+        Me.btnSalvar = New System.Windows.Forms.Button()
+        Me.btnEditar = New System.Windows.Forms.Button()
+        Me.btnExcluir = New System.Windows.Forms.Button()
         Me.errErro = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.Label16 = New System.Windows.Forms.Label()
         Me.Label14 = New System.Windows.Forms.Label()
@@ -65,11 +70,6 @@ Partial Class frmProdutos
         Me.imgCodBar = New System.Windows.Forms.PictureBox()
         Me.btImagem = New System.Windows.Forms.Button()
         Me.pbImagem = New System.Windows.Forms.PictureBox()
-        Me.btnNovo = New System.Windows.Forms.Button()
-        Me.btSair = New System.Windows.Forms.Button()
-        Me.btnSalvar = New System.Windows.Forms.Button()
-        Me.btnEditar = New System.Windows.Forms.Button()
-        Me.btnExcluir = New System.Windows.Forms.Button()
         CType(Me.dg, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         CType(Me.errErro, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -101,7 +101,7 @@ Partial Class frmProdutos
         Me.dg.Name = "dg"
         Me.dg.ReadOnly = True
         Me.dg.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dg.Size = New System.Drawing.Size(1009, 306)
+        Me.dg.Size = New System.Drawing.Size(1016, 306)
         Me.dg.TabIndex = 0
         '
         'txtBuscar
@@ -138,6 +138,106 @@ Partial Class frmProdutos
         Me.GroupBox1.Size = New System.Drawing.Size(438, 58)
         Me.GroupBox1.TabIndex = 190
         Me.GroupBox1.TabStop = False
+        '
+        'btnNovo
+        '
+        Me.btnNovo.BackColor = System.Drawing.Color.Transparent
+        Me.btnNovo.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnNovo.FlatAppearance.BorderSize = 0
+        Me.btnNovo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Azure
+        Me.btnNovo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
+        Me.btnNovo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnNovo.ForeColor = System.Drawing.Color.White
+        Me.btnNovo.Image = CType(resources.GetObject("btnNovo.Image"), System.Drawing.Image)
+        Me.btnNovo.Location = New System.Drawing.Point(7, 14)
+        Me.btnNovo.Margin = New System.Windows.Forms.Padding(7, 6, 7, 6)
+        Me.btnNovo.Name = "btnNovo"
+        Me.btnNovo.Size = New System.Drawing.Size(81, 37)
+        Me.btnNovo.TabIndex = 161
+        Me.btnNovo.Text = "Novo"
+        Me.btnNovo.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnNovo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnNovo.UseVisualStyleBackColor = False
+        '
+        'btSair
+        '
+        Me.btSair.BackColor = System.Drawing.Color.Transparent
+        Me.btSair.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btSair.FlatAppearance.BorderSize = 0
+        Me.btSair.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Azure
+        Me.btSair.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
+        Me.btSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btSair.ForeColor = System.Drawing.Color.White
+        Me.btSair.Image = CType(resources.GetObject("btSair.Image"), System.Drawing.Image)
+        Me.btSair.Location = New System.Drawing.Point(360, 15)
+        Me.btSair.Margin = New System.Windows.Forms.Padding(7, 6, 7, 6)
+        Me.btSair.Name = "btSair"
+        Me.btSair.Size = New System.Drawing.Size(73, 33)
+        Me.btSair.TabIndex = 165
+        Me.btSair.Text = "Sair"
+        Me.btSair.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btSair.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btSair.UseVisualStyleBackColor = False
+        '
+        'btnSalvar
+        '
+        Me.btnSalvar.BackColor = System.Drawing.Color.Transparent
+        Me.btnSalvar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnSalvar.FlatAppearance.BorderSize = 0
+        Me.btnSalvar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Azure
+        Me.btnSalvar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
+        Me.btnSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnSalvar.ForeColor = System.Drawing.Color.White
+        Me.btnSalvar.Image = CType(resources.GetObject("btnSalvar.Image"), System.Drawing.Image)
+        Me.btnSalvar.Location = New System.Drawing.Point(86, 13)
+        Me.btnSalvar.Margin = New System.Windows.Forms.Padding(7, 6, 7, 6)
+        Me.btnSalvar.Name = "btnSalvar"
+        Me.btnSalvar.Size = New System.Drawing.Size(87, 37)
+        Me.btnSalvar.TabIndex = 162
+        Me.btnSalvar.Text = "Salvar"
+        Me.btnSalvar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnSalvar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnSalvar.UseVisualStyleBackColor = False
+        '
+        'btnEditar
+        '
+        Me.btnEditar.BackColor = System.Drawing.Color.Transparent
+        Me.btnEditar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnEditar.FlatAppearance.BorderSize = 0
+        Me.btnEditar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Azure
+        Me.btnEditar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
+        Me.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnEditar.ForeColor = System.Drawing.Color.White
+        Me.btnEditar.Image = CType(resources.GetObject("btnEditar.Image"), System.Drawing.Image)
+        Me.btnEditar.Location = New System.Drawing.Point(186, 13)
+        Me.btnEditar.Margin = New System.Windows.Forms.Padding(7, 6, 7, 6)
+        Me.btnEditar.Name = "btnEditar"
+        Me.btnEditar.Size = New System.Drawing.Size(83, 36)
+        Me.btnEditar.TabIndex = 163
+        Me.btnEditar.Text = "Editar"
+        Me.btnEditar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnEditar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnEditar.UseVisualStyleBackColor = False
+        '
+        'btnExcluir
+        '
+        Me.btnExcluir.BackColor = System.Drawing.Color.Transparent
+        Me.btnExcluir.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnExcluir.FlatAppearance.BorderSize = 0
+        Me.btnExcluir.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Azure
+        Me.btnExcluir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
+        Me.btnExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnExcluir.ForeColor = System.Drawing.Color.White
+        Me.btnExcluir.Image = CType(resources.GetObject("btnExcluir.Image"), System.Drawing.Image)
+        Me.btnExcluir.Location = New System.Drawing.Point(275, 12)
+        Me.btnExcluir.Margin = New System.Windows.Forms.Padding(7, 6, 7, 6)
+        Me.btnExcluir.Name = "btnExcluir"
+        Me.btnExcluir.Size = New System.Drawing.Size(87, 37)
+        Me.btnExcluir.TabIndex = 164
+        Me.btnExcluir.Text = "Excluir"
+        Me.btnExcluir.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnExcluir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnExcluir.UseVisualStyleBackColor = False
         '
         'errErro
         '
@@ -522,106 +622,6 @@ Partial Class frmProdutos
         Me.pbImagem.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.pbImagem.TabIndex = 239
         Me.pbImagem.TabStop = False
-        '
-        'btnNovo
-        '
-        Me.btnNovo.BackColor = System.Drawing.Color.Transparent
-        Me.btnNovo.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnNovo.FlatAppearance.BorderSize = 0
-        Me.btnNovo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Azure
-        Me.btnNovo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
-        Me.btnNovo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnNovo.ForeColor = System.Drawing.Color.White
-        Me.btnNovo.Image = CType(resources.GetObject("btnNovo.Image"), System.Drawing.Image)
-        Me.btnNovo.Location = New System.Drawing.Point(7, 14)
-        Me.btnNovo.Margin = New System.Windows.Forms.Padding(7, 6, 7, 6)
-        Me.btnNovo.Name = "btnNovo"
-        Me.btnNovo.Size = New System.Drawing.Size(81, 37)
-        Me.btnNovo.TabIndex = 161
-        Me.btnNovo.Text = "Novo"
-        Me.btnNovo.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.btnNovo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnNovo.UseVisualStyleBackColor = False
-        '
-        'btSair
-        '
-        Me.btSair.BackColor = System.Drawing.Color.Transparent
-        Me.btSair.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btSair.FlatAppearance.BorderSize = 0
-        Me.btSair.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Azure
-        Me.btSair.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
-        Me.btSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btSair.ForeColor = System.Drawing.Color.White
-        Me.btSair.Image = CType(resources.GetObject("btSair.Image"), System.Drawing.Image)
-        Me.btSair.Location = New System.Drawing.Point(360, 15)
-        Me.btSair.Margin = New System.Windows.Forms.Padding(7, 6, 7, 6)
-        Me.btSair.Name = "btSair"
-        Me.btSair.Size = New System.Drawing.Size(73, 33)
-        Me.btSair.TabIndex = 165
-        Me.btSair.Text = "Sair"
-        Me.btSair.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.btSair.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btSair.UseVisualStyleBackColor = False
-        '
-        'btnSalvar
-        '
-        Me.btnSalvar.BackColor = System.Drawing.Color.Transparent
-        Me.btnSalvar.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnSalvar.FlatAppearance.BorderSize = 0
-        Me.btnSalvar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Azure
-        Me.btnSalvar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
-        Me.btnSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnSalvar.ForeColor = System.Drawing.Color.White
-        Me.btnSalvar.Image = CType(resources.GetObject("btnSalvar.Image"), System.Drawing.Image)
-        Me.btnSalvar.Location = New System.Drawing.Point(86, 13)
-        Me.btnSalvar.Margin = New System.Windows.Forms.Padding(7, 6, 7, 6)
-        Me.btnSalvar.Name = "btnSalvar"
-        Me.btnSalvar.Size = New System.Drawing.Size(87, 37)
-        Me.btnSalvar.TabIndex = 162
-        Me.btnSalvar.Text = "Salvar"
-        Me.btnSalvar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.btnSalvar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnSalvar.UseVisualStyleBackColor = False
-        '
-        'btnEditar
-        '
-        Me.btnEditar.BackColor = System.Drawing.Color.Transparent
-        Me.btnEditar.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnEditar.FlatAppearance.BorderSize = 0
-        Me.btnEditar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Azure
-        Me.btnEditar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
-        Me.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnEditar.ForeColor = System.Drawing.Color.White
-        Me.btnEditar.Image = CType(resources.GetObject("btnEditar.Image"), System.Drawing.Image)
-        Me.btnEditar.Location = New System.Drawing.Point(186, 13)
-        Me.btnEditar.Margin = New System.Windows.Forms.Padding(7, 6, 7, 6)
-        Me.btnEditar.Name = "btnEditar"
-        Me.btnEditar.Size = New System.Drawing.Size(83, 36)
-        Me.btnEditar.TabIndex = 163
-        Me.btnEditar.Text = "Editar"
-        Me.btnEditar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.btnEditar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnEditar.UseVisualStyleBackColor = False
-        '
-        'btnExcluir
-        '
-        Me.btnExcluir.BackColor = System.Drawing.Color.Transparent
-        Me.btnExcluir.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnExcluir.FlatAppearance.BorderSize = 0
-        Me.btnExcluir.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Azure
-        Me.btnExcluir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
-        Me.btnExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnExcluir.ForeColor = System.Drawing.Color.White
-        Me.btnExcluir.Image = CType(resources.GetObject("btnExcluir.Image"), System.Drawing.Image)
-        Me.btnExcluir.Location = New System.Drawing.Point(275, 12)
-        Me.btnExcluir.Margin = New System.Windows.Forms.Padding(7, 6, 7, 6)
-        Me.btnExcluir.Name = "btnExcluir"
-        Me.btnExcluir.Size = New System.Drawing.Size(87, 37)
-        Me.btnExcluir.TabIndex = 164
-        Me.btnExcluir.Text = "Excluir"
-        Me.btnExcluir.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.btnExcluir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnExcluir.UseVisualStyleBackColor = False
         '
         'frmProdutos
         '

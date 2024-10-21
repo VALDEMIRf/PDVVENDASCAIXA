@@ -566,7 +566,7 @@ Public Class frmVendas
 
 
             Catch ex As Exception
-                MessageBox.Show("Erro ao excluir o Produto" + ex.Message)
+                MessageBox.Show("Erro ao excluir o Produto" + ex.Message.ToString)
                 fechar()
             End Try
         End If

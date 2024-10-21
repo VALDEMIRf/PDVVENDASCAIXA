@@ -102,6 +102,16 @@ Namespace My.Resources
         '''<summary>
         '''  Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         '''</summary>
+        Friend ReadOnly Property Calculator() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("Calculator", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        '''</summary>
         Friend ReadOnly Property clear() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("clear", resourceCulture)
@@ -135,6 +145,16 @@ Namespace My.Resources
         Friend ReadOnly Property Fall() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("Fall", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property Undo_32x32() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("Undo_32x32", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property

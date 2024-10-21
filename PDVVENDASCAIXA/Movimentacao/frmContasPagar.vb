@@ -105,8 +105,7 @@ Public Class frmContasPagar
             .Columns(19).Visible = False
             .Columns(20).Visible = False
             .Columns(21).Visible = False
-            .Columns(22).Visible = False
-            .Columns(23).Visible = False
+
 
             .Columns(0).HeaderText = "id"
             .Columns(1).HeaderText = "numDocto"
@@ -116,23 +115,20 @@ Public Class frmContasPagar
             .Columns(5).HeaderText = "Forma de Pagto"
             .Columns(6).HeaderText = "Valor"
             .Columns(7).HeaderText = "Obsservação"
-            .Columns(8).HeaderText = "Parcelas"
-            .Columns(9).HeaderText = "Valor da parcela"
-            .Columns(10).HeaderText = "Vencimento"
-            .Columns(11).HeaderText = "Dt. Pagto"
-            .Columns(12).HeaderText = "Desconto"
-            .Columns(13).HeaderText = "Juros"
-            .Columns(14).HeaderText = "Valor Pago"
-            .Columns(15).HeaderText = "Situação"
-            .Columns(16).HeaderText = "Usuário"
-            .Columns(17).HeaderText = "Dt. Cadastro"
-            .Columns(18).HeaderText = "ID CatContas"
-            .Columns(19).HeaderText = "ID_Fornecedor"
-            .Columns(20).HeaderText = "ID_FormaPagto"
-            .Columns(21).HeaderText = "ID CatContas"
-            .Columns(22).HeaderText = "ID_Fornecedor"
-            .Columns(23).HeaderText = "ID_FormaPagto"
-
+            .Columns(8).HeaderText = "Vencimento"
+            .Columns(9).HeaderText = "Dt. Pagto"
+            .Columns(10).HeaderText = "Desconto"
+            .Columns(11).HeaderText = "Juros"
+            .Columns(12).HeaderText = "Valor Pago"
+            .Columns(13).HeaderText = "Situação"
+            .Columns(14).HeaderText = "Usuário"
+            .Columns(15).HeaderText = "Dt. Cadastro"
+            .Columns(16).HeaderText = "ID CatContas"
+            .Columns(17).HeaderText = "ID_Fornecedor"
+            .Columns(18).HeaderText = "ID_FormaPagto"
+            .Columns(19).HeaderText = "ID CatContas"
+            .Columns(20).HeaderText = "ID_Fornecedor"
+            .Columns(21).HeaderText = "ID_FormaPagto"
 
             .Columns(1).Width = 150
             .Columns(2).Width = 200
@@ -142,8 +138,6 @@ Public Class frmContasPagar
             .Columns(6).Width = 120
             .Columns(7).Width = 300
             .Columns(15).Width = 120
-
-
 
             For Each row As DataGridViewRow In .Rows
                 '  row.Cells("situacao").Style.ForeColor = ColorirSituacao(row.Cells("situacao").Value)

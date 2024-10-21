@@ -950,7 +950,9 @@
     <None Include="Resources\ulo-1.png" />
     <None Include="Resources\clear.png" />
     <None Include="Resources\Fall.png" />
+    <None Include="Resources\Calculator.png" />
     <Content Include="Resources\header-pagarreceber.png" />
+    <None Include="Resources\Undo_32x32.png" />
     <Content Include="SqlServerTypes\Loader.cs" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
