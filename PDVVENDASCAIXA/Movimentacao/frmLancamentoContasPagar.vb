@@ -8,6 +8,8 @@ Public Class frmLancamentoContasPagar
 
     Private Sub frmLancamentoContasPagar_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
+        rbParcelamento.Checked = False
+
         carregarContas()
         CarregarFornecedor()
         caregarFormaPagamento()
@@ -21,9 +23,16 @@ Public Class frmLancamentoContasPagar
         End If
 
 
+        listarParcelas()
 
-        '  listarParcelas()
+    End Sub
 
+    Private Sub frmLancamentoContasPagar_Activated(sender As Object, e As EventArgs) Handles MyBase.Activated
+        listarParcelas()
+        carregarContas()
+        CarregarFornecedor()
+        caregarFormaPagamento()
+        CarregarDados()
     End Sub
 
     Dim _Codigo As Integer
@@ -124,7 +133,7 @@ Public Class frmLancamentoContasPagar
                 'mskData.Text = dr.Item("datapagamento")
                 txtDesconto.Text = dr.Item("desconto")
                 txtJuros.Text = dr.Item("juros")
-                txtValoraPago.Text = dr.Item("valorpago")
+                txtValoraPagar.Text = dr.Item("valorpago")
                 txtSituacao.Text = dr.Item("situacao")
 
             Else
@@ -173,7 +182,7 @@ Public Class frmLancamentoContasPagar
                 Dim valorParela = Replace(txtValorParcelas.Text, ",", ".")
                 Dim valorDesconto = Replace(txtDesconto.Text, ",", ".")
                 Dim valorJuros = Replace(txtJuros.Text, ",", ".")
-                Dim valorPago = Replace(txtValoraPago.Text, ",", ".")
+                Dim valorPago = Replace(txtValoraPagar.Text, ",", ".")
 
                 abrir()
                 cmd = New SqlCommand("pa_ContasPagar_Salvar", con)
@@ -224,7 +233,7 @@ Public Class frmLancamentoContasPagar
                 Dim valorParela = Replace(txtValorParcelas.Text, ",", ".")
                 Dim valorDesconto = Replace(txtDesconto.Text, ",", ".")
                 Dim valorJuros = Replace(txtJuros.Text, ",", ".")
-                Dim valorPago = Replace(txtValoraPago.Text, ",", ".")
+                Dim valorPago = Replace(txtValoraPagar.Text, ",", ".")
 
                 abrir()
                 cmd = New SqlCommand("pa_ContasPagar_Editar", con)
@@ -353,7 +362,7 @@ Public Class frmLancamentoContasPagar
         mskData.Enabled = False
         txtDesconto.Enabled = False
         txtJuros.Enabled = False
-        txtValoraPago.Enabled = False
+        txtValoraPagar.Enabled = False
         txtSituacao.Enabled = False
 
     End Sub
@@ -374,29 +383,31 @@ Public Class frmLancamentoContasPagar
         mskData.Enabled = True
         txtDesconto.Enabled = True
         txtJuros.Enabled = True
-        txtValoraPago.Enabled = True
+        txtValoraPagar.Enabled = True
         txtSituacao.Enabled = True
     End Sub
 
     Private Sub Limpar()
         'txtNDoc.Focus()
-        txtCodigo.Text = ""
-        txtNDoc.Text = ""
-        txtConta.Text = Nothing
-        txtFornecedor.Text = Nothing
-        txtDescricao.Text = ""
-        txtFormaPagto.Text = Nothing
-        txtValor.Text = ""
-        txtObs.Text = ""
-        'txtParcela.Text = ""
-        txtDataEntrada.Text = ""
-        txtVencimento.Text = ""
-        ' mskData.Text = ""
-        txtDesconto.Text = ""
-        txtJuros.Text = ""
-        ' txtValoraPago.Text = ""
-        txtValorPago.Text = ""
-        txtSituacao.Text = Nothing
+
+
+        'txtCodigo.Text = ""
+        'txtNDoc.Text = ""
+        'txtConta.Text = Nothing
+        'txtFornecedor.Text = Nothing
+        'txtDescricao.Text = ""
+        'txtFormaPagto.Text = Nothing
+        'txtValor.Text = ""
+        'txtObs.Text = ""
+        ''txtParcela.Text = ""
+        'txtDataEntrada.Text = ""
+        'txtVencimento.Text = ""
+        '' mskData.Text = ""
+        'txtDesconto.Text = ""
+        'txtJuros.Text = ""
+        '' txtValoraPago.Text = ""
+        'txtValorPago.Text = ""
+        'txtSituacao.Text = Nothing
     End Sub
 
     Private Sub txtDesconto_TextChanged(sender As Object, e As EventArgs) Handles txtDesconto.TextChanged
@@ -468,41 +479,41 @@ Public Class frmLancamentoContasPagar
 
 
         Dim venc As DateTime = mskData.Text
-            Dim ValorTotal, valorParcela, valorDesconto, valorJuros As Double
-            Dim situacao = txtSituacao.Text
+        Dim ValorTotal, valorParcela, valorDesconto, valorJuros As Double
+        Dim situacao = txtSituacao.Text
 
-            'Calcular valor de cada Parcela
+        'Calcular valor de cada Parcela
 
-            ValorTotal = txtValorParcelas.Text
-            valorDesconto = txtDesconto.Text
-            valorJuros = txtJuros.Text
+        ValorTotal = txtValorParcelas.Text
+        valorDesconto = txtDesconto.Text
+        valorJuros = txtJuros.Text
 
-            valorParcela = FormatCurrency(ValorTotal / txtNumeroPacelas.Text)
+        valorParcela = FormatCurrency(ValorTotal / txtNumeroPacelas.Text)
 
-            Try
+        Try
 
-                For i = 0 To Val(txtNumeroPacelas.Text) - 1
+            For i = 0 To Val(txtNumeroPacelas.Text) - 1
 
-                    Dim novaParcela As DateTime
+                Dim novaParcela As DateTime
 
-                    novaParcela = venc.AddDays(i * 30)
+                novaParcela = venc.AddDays(i * 30)
 
-                    If novaParcela.DayOfWeek = DayOfWeek.Sunday Then
-                        novaParcela = novaParcela.AddDays(1)
-                    ElseIf novaParcela.DayOfWeek = DayOfWeek.Saturday Then
-                        novaParcela = novaParcela.AddDays(2)
-                    End If
+                If novaParcela.DayOfWeek = DayOfWeek.Sunday Then
+                    novaParcela = novaParcela.AddDays(1)
+                ElseIf novaParcela.DayOfWeek = DayOfWeek.Saturday Then
+                    novaParcela = novaParcela.AddDays(2)
+                End If
 
                 ' dgvParcelas.Rows.Add(i + 1, Mid(novaParcela.ToString, 1, 10), FormatCurrency(valorParcela), txtNDoc.Text, txtDescricao.Text, txtValor.Text, situacao, txtCodigo.Text)
                 dgvParcelas.Rows.Add(txtCodigo.Text, i + 1, Mid(novaParcela.ToString, 1, 10), FormatCurrency(valorParcela), txtNDoc.Text, txtDescricao.Text, FormatCurrency(ValorTotal), txtSituacao.Text)
 
             Next
 
-                btGravarParcelas.Enabled = True
+            btGravarParcelas.Enabled = True
 
-            Catch ex As Exception
-                MsgBox("Erro ao calcular pagamento  " + ex.Message.ToString, MsgBoxStyle.Critical, "Atenção")
-            End Try
+        Catch ex As Exception
+            MsgBox("Erro ao calcular pagamento  " + ex.Message.ToString, MsgBoxStyle.Critical, "Atenção")
+        End Try
 
 
     End Sub
@@ -517,7 +528,7 @@ Public Class frmLancamentoContasPagar
             da.SelectCommand.Parameters.AddWithValue("@numDocto", txtNDoc.Text)
 
             da.Fill(dt)
-            dgvParcelas.DataSource = dt
+            dgvListaparcelas.DataSource = dt
 
             'FormatarDG()
         Catch ex As Exception
@@ -556,7 +567,7 @@ Public Class frmLancamentoContasPagar
                 parc.numDocto = txtNDoc.Text
                 parc.descricao = txtDescricao.Text
                 parc.valorTotal = txtValor.Text
-                parc.situacao = txtSituacao.Text
+                parc.situacao = "Em Parcelamento"
 
                 parc.CadastrarParcela()
 
@@ -592,35 +603,7 @@ Public Class frmLancamentoContasPagar
         'txtValorParcelas.Text = txtValor.Text
     End Sub
 
-    Private Sub txtSituacao_SelectedIndexChanged(sender As Object, e As EventArgs) Handles txtSituacao.SelectedIndexChanged
-        If txtSituacao.Text = "Em Parcelamento" Then
 
-            txtValorParcelas.Text = txtValor.Text
-
-            txtNumeroPacelas.Enabled = True
-            mskData.Enabled = True
-            btGerarParcelas.Enabled = True
-        Else
-
-            txtNumeroPacelas.Enabled = False
-            mskData.Enabled = False
-            btGerarParcelas.Enabled = False
-
-        End If
-
-        '  dgvParcelas.Rows.Clear()
-    End Sub
-
-    Private Sub dgvParcelas_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvParcelas.CellClick
-        lblNumParcela.Text = dgvParcelas.CurrentRow.Cells(0).Value
-        ' txtVencimento.Text = dgvParcelas.CurrentRow.Cells(1).Value
-        lblValorParcela.Text = dgvParcelas.CurrentRow.Cells(2).Value
-        'txtNDoc.Text = dgvParcelas.CurrentRow.Cells(3).Value
-        ' txtDescricao.Text = dgvParcelas.CurrentRow.Cells(4).Value
-        ' txtValorParcelas.Text = dgvParcelas.CurrentRow.Cells(5).Value
-        '   txtSituacao.Text = dgvParcelas.CurrentRow.Cells(6).Value
-        lblCodigoParcela.Text = dgvParcelas.CurrentRow.Cells(7).Value
-    End Sub
 
     Private Sub btCalcular_Click(sender As Object, e As EventArgs) Handles btCalcular.Click
         'Então, se o boleto tiver registrado o total da compra em R$ 100, 
@@ -638,26 +621,20 @@ Public Class frmLancamentoContasPagar
         Dim j As Decimal
         Dim j2 As Decimal
 
-        '  Dim resulDiasAtraso = DateDiff("d", mskDataPagto.Text, Today())
+
         Dim diferencaDiasPagamento = DateDiff("d", txtVencimento.Text, mskDataPagto.Text).ToString + vbCrLf
 
-        'MsgBox("Número de dias: " + diferencaDiasPagamento)
-
         j = (valorTotal * 1) / 100
-        '  MsgBox(j)
-        j2 = j / 30
-        ' MsgBox(j2)
 
+        j2 = j / 30
 
         valorTotal = txtValorParcelas.Text
-        valorParcela = lblValorParcela.Text
-        valorPago = txtValoraPago.Text
+        valorParcela = lblRecebeValorParcela.Text
+        valorPago = txtValoraPagar.Text
 
         If diferencaDiasPagamento > 0 Then
-            lblJuros.Text = diferencaDiasPagamento * 0.033
+            lblRecebeJuros.Text = diferencaDiasPagamento * 0.033
             txtJuros.Text = diferencaDiasPagamento * 0.033
-            'custo de antecipação de parcelas = 
-            'valor da parcela líquida (descontado o MDR) x (taxa da antecipação x quantidade de dias a antecipar / 30).
 
 
         End If
@@ -665,11 +642,7 @@ Public Class frmLancamentoContasPagar
 
         j = valorParcela + juros
 
-        ' j2 = j / 30
-        ' MsgBox(j2)
-        'MsgBox(j)
-
-        txtValoraPago.Text = j
+        txtValoraPagar.Text = j
 
         saldoRestante = valorTotal - valorParcela
         lblSaldoRestante.Text = saldoRestante
@@ -680,28 +653,86 @@ Public Class frmLancamentoContasPagar
 
     Private Sub btBaixarConta_Click(sender As Object, e As EventArgs) Handles btBaixarConta.Click
         Dim cmd As SqlCommand
+        Dim cmd2 As SqlCommand
+
 
         Try
             abrir()
 
-            'INSERIR PARCELAS PAGAS tbContaspagas
-            'codigo	id_fornecedor	vencimento	dataEntrada	numDocto	descricao	dataPagamento	valorTotal	parcela	valorParcela	
-            'valorPago   saldoRestante	juros	desconto	obs	situacao
+            Dim vlTotal = Replace(txtValorParcelas.Text, ",", ".")
+            Dim vlValorParcela = Replace(lblRecebeValorParcela.Text, ",", ".")
+            Dim vlvaloraPagar = Replace(txtValoraPagar.Text, ",", ".")
+            Dim vlSaldoRestante = Replace(lblRecebeValorParcela.Text, ",", ".")
+            Dim Totjuros As Decimal
 
+            Totjuros = lblRecebeJuros.Text
+            'INSERIR PARCELAS PAGAS tbContaspagas
+
+            cmd = New SqlCommand("pa_ContasPagas_Salvar", con)
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.Parameters.AddWithValue("@numDocto", txtNDoc.Text)
+            cmd.Parameters.AddWithValue("@dataEntrada", txtDataEntrada.Text)
+            cmd.Parameters.AddWithValue("@id_fornecedor", txtFornecedor.SelectedValue)
+            cmd.Parameters.AddWithValue("@vencimento", lblRecebeVencimento.Text)
+            cmd.Parameters.AddWithValue("@descricao", txtDescricao.Text)
+            cmd.Parameters.AddWithValue("@dataPagamento", mskDataPagto.Text)
+            cmd.Parameters.AddWithValue("@valorTotal", vlTotal)
+            cmd.Parameters.AddWithValue("@parcela", lblRecebeNumParcela.Text)
+            cmd.Parameters.AddWithValue("@valorParcela", vlValorParcela)
+            cmd.Parameters.AddWithValue("@valorPago", vlvaloraPagar)
+            cmd.Parameters.AddWithValue("@saldoRestante", vlSaldoRestante)
+            cmd.Parameters.AddWithValue("@juros", Totjuros)
+            cmd.Parameters.Add("@mensagem", SqlDbType.VarChar, 100).Direction = 2
+            cmd.ExecuteNonQuery()
 
             ' =========================================================================================================================
+            '==========================================================================================================================
 
             ' ATUALIZAR PARCELA PAGA  tbParcelasPagar
 
+            cmd2 = New SqlCommand("pa_Parcelas_EditarSituacao", con)
+            cmd2.CommandType = CommandType.StoredProcedure
+            cmd2.Parameters.AddWithValue("@id_parcela", lblCodigoParcela.Text)
+            cmd2.Parameters.AddWithValue("@situacao", "Paga")
+            cmd2.Parameters.Add("@mensagem", SqlDbType.VarChar, 100).Direction = 2
+            cmd2.ExecuteNonQuery()
 
+            Dim msg As String = cmd.Parameters("@mensagem").Value.ToString
+            MessageBox.Show(msg, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
 
-
+            Limpar()
 
         Catch ex As Exception
             MessageBox.Show("Erro ao baixar a parcela" + ex.Message.ToString)
         Finally
             fechar()
         End Try
+    End Sub
+
+    Private Sub dgvListaparcelas_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvListaparcelas.CellClick
+        lblCodigoParcela.Text = dgvListaparcelas.CurrentRow.Cells(0).Value
+        lblRecebeNumParcela.Text = dgvListaparcelas.CurrentRow.Cells(1).Value
+        lblRecebeVencimento.Text = dgvListaparcelas.CurrentRow.Cells(2).Value
+        lblRecebeValorParcela.Text = dgvListaparcelas.CurrentRow.Cells(3).Value
+
+    End Sub
+
+    Private Sub rbParcelamento_CheckedChanged(sender As Object, e As EventArgs) Handles rbParcelamento.CheckedChanged
+        ' If txtSituacao.Text = "Em Parcelamento" Then
+        If rbParcelamento.Checked = True Then
+
+            txtValorParcelas.Text = txtValor.Text
+
+            txtNumeroPacelas.Enabled = True
+            mskData.Enabled = True
+            btGerarParcelas.Enabled = True
+        Else
+
+            txtNumeroPacelas.Enabled = False
+            mskData.Enabled = False
+            btGerarParcelas.Enabled = False
+
+        End If
     End Sub
 
 

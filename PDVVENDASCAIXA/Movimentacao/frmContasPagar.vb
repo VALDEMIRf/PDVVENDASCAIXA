@@ -98,7 +98,7 @@ Public Class frmContasPagar
             .Columns(8).Visible = False
             .Columns(9).Visible = False
             .Columns(12).Visible = False
-            .Columns(13).Visible = False
+            '.Columns(13).Visible = False
             .Columns(16).Visible = False
             .Columns(17).Visible = False
             .Columns(18).Visible = False
@@ -367,7 +367,7 @@ Public Class frmContasPagar
             End If
 
             'Total Contas Não Pagas
-            If linha.Cells("situacao").Value = "NãoPaga" Then
+            If linha.Cells("situacao").Value = "Não Paga" Then
                 dblContasNaoPagas = dblContasNaoPagas + linha.Cells("Valor").Value
             End If
 

@@ -94,7 +94,7 @@ Partial Class frmContasPagar
         Me.dgContasPagar.Name = "dgContasPagar"
         Me.dgContasPagar.ReadOnly = True
         Me.dgContasPagar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgContasPagar.Size = New System.Drawing.Size(1172, 328)
+        Me.dgContasPagar.Size = New System.Drawing.Size(1172, 288)
         Me.dgContasPagar.TabIndex = 190
         '
         'Label10
@@ -103,7 +103,7 @@ Partial Class frmContasPagar
         Me.Label10.BackColor = System.Drawing.Color.Transparent
         Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label10.ForeColor = System.Drawing.Color.White
-        Me.Label10.Location = New System.Drawing.Point(1041, 515)
+        Me.Label10.Location = New System.Drawing.Point(1025, 487)
         Me.Label10.Margin = New System.Windows.Forms.Padding(8, 0, 8, 0)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(97, 20)
@@ -116,7 +116,7 @@ Partial Class frmContasPagar
         Me.lblTotal.BackColor = System.Drawing.Color.Transparent
         Me.lblTotal.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblTotal.ForeColor = System.Drawing.Color.White
-        Me.lblTotal.Location = New System.Drawing.Point(1154, 517)
+        Me.lblTotal.Location = New System.Drawing.Point(1138, 487)
         Me.lblTotal.Margin = New System.Windows.Forms.Padding(8, 0, 8, 0)
         Me.lblTotal.Name = "lblTotal"
         Me.lblTotal.Size = New System.Drawing.Size(14, 20)
@@ -137,7 +137,7 @@ Partial Class frmContasPagar
         Me.txtTotalContasPagar.BackColor = System.Drawing.Color.White
         Me.txtTotalContasPagar.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtTotalContasPagar.ForeColor = System.Drawing.Color.Blue
-        Me.txtTotalContasPagar.Location = New System.Drawing.Point(535, 539)
+        Me.txtTotalContasPagar.Location = New System.Drawing.Point(569, 505)
         Me.txtTotalContasPagar.Multiline = True
         Me.txtTotalContasPagar.Name = "txtTotalContasPagar"
         Me.txtTotalContasPagar.ReadOnly = True
@@ -152,7 +152,7 @@ Partial Class frmContasPagar
         Me.Label7.BackColor = System.Drawing.Color.Transparent
         Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.ForeColor = System.Drawing.Color.White
-        Me.Label7.Location = New System.Drawing.Point(544, 514)
+        Me.Label7.Location = New System.Drawing.Point(590, 480)
         Me.Label7.Margin = New System.Windows.Forms.Padding(8, 0, 8, 0)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(48, 20)
@@ -165,7 +165,7 @@ Partial Class frmContasPagar
         Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(192, 515)
+        Me.Label1.Location = New System.Drawing.Point(192, 480)
         Me.Label1.Margin = New System.Windows.Forms.Padding(8, 0, 8, 0)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(142, 20)
@@ -177,7 +177,7 @@ Partial Class frmContasPagar
         Me.txtTotalContasNaoPagas.BackColor = System.Drawing.Color.White
         Me.txtTotalContasNaoPagas.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtTotalContasNaoPagas.ForeColor = System.Drawing.Color.Red
-        Me.txtTotalContasNaoPagas.Location = New System.Drawing.Point(190, 540)
+        Me.txtTotalContasNaoPagas.Location = New System.Drawing.Point(190, 505)
         Me.txtTotalContasNaoPagas.Multiline = True
         Me.txtTotalContasNaoPagas.Name = "txtTotalContasNaoPagas"
         Me.txtTotalContasNaoPagas.ReadOnly = True
@@ -192,7 +192,7 @@ Partial Class frmContasPagar
         Me.Label2.BackColor = System.Drawing.Color.Transparent
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.White
-        Me.Label2.Location = New System.Drawing.Point(17, 515)
+        Me.Label2.Location = New System.Drawing.Point(10, 480)
         Me.Label2.Margin = New System.Windows.Forms.Padding(8, 0, 8, 0)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(109, 20)
@@ -204,7 +204,7 @@ Partial Class frmContasPagar
         Me.txtTotalContasPagas.BackColor = System.Drawing.Color.White
         Me.txtTotalContasPagas.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtTotalContasPagas.ForeColor = System.Drawing.Color.Green
-        Me.txtTotalContasPagas.Location = New System.Drawing.Point(14, 539)
+        Me.txtTotalContasPagas.Location = New System.Drawing.Point(10, 505)
         Me.txtTotalContasPagas.Multiline = True
         Me.txtTotalContasPagas.Name = "txtTotalContasPagas"
         Me.txtTotalContasPagas.ReadOnly = True
@@ -312,9 +312,9 @@ Partial Class frmContasPagar
         'GroupBox2
         '
         Me.GroupBox2.Controls.Add(Me.dgContasPagar)
-        Me.GroupBox2.Location = New System.Drawing.Point(10, 152)
+        Me.GroupBox2.Location = New System.Drawing.Point(10, 165)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(1178, 351)
+        Me.GroupBox2.Size = New System.Drawing.Size(1178, 311)
         Me.GroupBox2.TabIndex = 212
         Me.GroupBox2.TabStop = False
         '
@@ -324,7 +324,7 @@ Partial Class frmContasPagar
         Me.Label4.BackColor = System.Drawing.Color.Transparent
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.White
-        Me.Label4.Location = New System.Drawing.Point(369, 515)
+        Me.Label4.Location = New System.Drawing.Point(398, 480)
         Me.Label4.Margin = New System.Windows.Forms.Padding(8, 0, 8, 0)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(130, 20)
@@ -336,7 +336,7 @@ Partial Class frmContasPagar
         Me.txtTotalContasAtrasadas.BackColor = System.Drawing.Color.White
         Me.txtTotalContasAtrasadas.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtTotalContasAtrasadas.ForeColor = System.Drawing.Color.DarkRed
-        Me.txtTotalContasAtrasadas.Location = New System.Drawing.Point(363, 540)
+        Me.txtTotalContasAtrasadas.Location = New System.Drawing.Point(383, 505)
         Me.txtTotalContasAtrasadas.Multiline = True
         Me.txtTotalContasAtrasadas.Name = "txtTotalContasAtrasadas"
         Me.txtTotalContasAtrasadas.ReadOnly = True
@@ -400,10 +400,11 @@ Partial Class frmContasPagar
         Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(81, Byte), Integer), CType(CType(129, Byte), Integer), CType(CType(169, Byte), Integer))
         Me.Panel1.Controls.Add(Me.PictureBox2)
         Me.Panel1.Controls.Add(Me.Label5)
+        Me.Panel1.Controls.Add(Me.btSair)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1200, 72)
+        Me.Panel1.Size = New System.Drawing.Size(1200, 65)
         Me.Panel1.TabIndex = 313
         '
         'PictureBox2
@@ -411,7 +412,7 @@ Partial Class frmContasPagar
         Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
         Me.PictureBox2.Location = New System.Drawing.Point(3, 3)
         Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(81, 63)
+        Me.PictureBox2.Size = New System.Drawing.Size(68, 62)
         Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox2.TabIndex = 312
         Me.PictureBox2.TabStop = False
@@ -442,7 +443,7 @@ Partial Class frmContasPagar
         Me.btNovo.Font = New System.Drawing.Font("Arial Rounded MT Bold", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btNovo.ForeColor = System.Drawing.Color.White
         Me.btNovo.Image = CType(resources.GetObject("btNovo.Image"), System.Drawing.Image)
-        Me.btNovo.Location = New System.Drawing.Point(720, 529)
+        Me.btNovo.Location = New System.Drawing.Point(1014, 124)
         Me.btNovo.Margin = New System.Windows.Forms.Padding(5)
         Me.btNovo.Name = "btNovo"
         Me.btNovo.Size = New System.Drawing.Size(168, 43)
@@ -462,7 +463,7 @@ Partial Class frmContasPagar
         Me.btSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btSair.ForeColor = System.Drawing.Color.White
         Me.btSair.Image = CType(resources.GetObject("btSair.Image"), System.Drawing.Image)
-        Me.btSair.Location = New System.Drawing.Point(925, 533)
+        Me.btSair.Location = New System.Drawing.Point(1097, 14)
         Me.btSair.Margin = New System.Windows.Forms.Padding(5)
         Me.btSair.Name = "btSair"
         Me.btSair.Size = New System.Drawing.Size(85, 35)
@@ -477,14 +478,13 @@ Partial Class frmContasPagar
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 18.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.SteelBlue
-        Me.ClientSize = New System.Drawing.Size(1200, 585)
+        Me.ClientSize = New System.Drawing.Size(1200, 550)
         Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.btNovo)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.txtTotalContasAtrasadas)
-        Me.Controls.Add(Me.btSair)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.txtTotalContasPagas)
