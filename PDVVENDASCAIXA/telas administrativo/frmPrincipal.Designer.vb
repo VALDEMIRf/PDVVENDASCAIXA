@@ -41,6 +41,7 @@ Partial Class frmPrincipal
         Me.OrdemDeServiçoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ContasAPagarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ContasAReceberToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.TesteparcelasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.VendasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PDVRegistrarVendaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Modelo1ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -81,7 +82,6 @@ Partial Class frmPrincipal
         Me.imagemNivel = New System.Windows.Forms.PictureBox()
         Me.lblNivel = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.TesteparcelasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.dg, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.imagem, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -95,7 +95,7 @@ Partial Class frmPrincipal
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CadastrosToolStripMenuItem, Me.EstoqueToolStripMenuItem, Me.MovimentaçãoToolStripMenuItem, Me.VendasToolStripMenuItem, Me.RelatóriosToolStripMenuItem, Me.SairToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(962, 28)
+        Me.MenuStrip1.Size = New System.Drawing.Size(908, 28)
         Me.MenuStrip1.TabIndex = 0
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -193,22 +193,28 @@ Partial Class frmPrincipal
         '
         Me.OrdemDeServiçoToolStripMenuItem.Image = CType(resources.GetObject("OrdemDeServiçoToolStripMenuItem.Image"), System.Drawing.Image)
         Me.OrdemDeServiçoToolStripMenuItem.Name = "OrdemDeServiçoToolStripMenuItem"
-        Me.OrdemDeServiçoToolStripMenuItem.Size = New System.Drawing.Size(180, 24)
+        Me.OrdemDeServiçoToolStripMenuItem.Size = New System.Drawing.Size(178, 24)
         Me.OrdemDeServiçoToolStripMenuItem.Text = "Ordem de Serviço"
         '
         'ContasAPagarToolStripMenuItem
         '
         Me.ContasAPagarToolStripMenuItem.Image = CType(resources.GetObject("ContasAPagarToolStripMenuItem.Image"), System.Drawing.Image)
         Me.ContasAPagarToolStripMenuItem.Name = "ContasAPagarToolStripMenuItem"
-        Me.ContasAPagarToolStripMenuItem.Size = New System.Drawing.Size(180, 24)
+        Me.ContasAPagarToolStripMenuItem.Size = New System.Drawing.Size(178, 24)
         Me.ContasAPagarToolStripMenuItem.Text = "Contas a Pagar"
         '
         'ContasAReceberToolStripMenuItem
         '
         Me.ContasAReceberToolStripMenuItem.Image = CType(resources.GetObject("ContasAReceberToolStripMenuItem.Image"), System.Drawing.Image)
         Me.ContasAReceberToolStripMenuItem.Name = "ContasAReceberToolStripMenuItem"
-        Me.ContasAReceberToolStripMenuItem.Size = New System.Drawing.Size(180, 24)
+        Me.ContasAReceberToolStripMenuItem.Size = New System.Drawing.Size(178, 24)
         Me.ContasAReceberToolStripMenuItem.Text = "Contas a Receber"
+        '
+        'TesteparcelasToolStripMenuItem
+        '
+        Me.TesteparcelasToolStripMenuItem.Name = "TesteparcelasToolStripMenuItem"
+        Me.TesteparcelasToolStripMenuItem.Size = New System.Drawing.Size(178, 24)
+        Me.TesteparcelasToolStripMenuItem.Text = "testeparcelas"
         '
         'VendasToolStripMenuItem
         '
@@ -354,7 +360,7 @@ Partial Class frmPrincipal
         Me.lblUsuario.AutoSize = True
         Me.lblUsuario.BackColor = System.Drawing.Color.Transparent
         Me.lblUsuario.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblUsuario.Location = New System.Drawing.Point(236, 220)
+        Me.lblUsuario.Location = New System.Drawing.Point(236, 213)
         Me.lblUsuario.Name = "lblUsuario"
         Me.lblUsuario.Size = New System.Drawing.Size(19, 26)
         Me.lblUsuario.TabIndex = 1
@@ -376,7 +382,7 @@ Partial Class frmPrincipal
         Me.lblData.AutoSize = True
         Me.lblData.BackColor = System.Drawing.Color.Transparent
         Me.lblData.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblData.Location = New System.Drawing.Point(236, 164)
+        Me.lblData.Location = New System.Drawing.Point(236, 157)
         Me.lblData.Name = "lblData"
         Me.lblData.Size = New System.Drawing.Size(19, 26)
         Me.lblData.TabIndex = 4
@@ -396,12 +402,12 @@ Partial Class frmPrincipal
         Me.dg.BackgroundColor = System.Drawing.Color.White
         Me.dg.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dg.GridColor = System.Drawing.SystemColors.HotTrack
-        Me.dg.Location = New System.Drawing.Point(522, 195)
+        Me.dg.Location = New System.Drawing.Point(518, 189)
         Me.dg.Margin = New System.Windows.Forms.Padding(4)
         Me.dg.Name = "dg"
         Me.dg.ReadOnly = True
         Me.dg.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dg.Size = New System.Drawing.Size(408, 334)
+        Me.dg.Size = New System.Drawing.Size(274, 245)
         Me.dg.TabIndex = 222
         '
         'lblTotalDoDia
@@ -410,7 +416,7 @@ Partial Class frmPrincipal
         Me.lblTotalDoDia.BackColor = System.Drawing.Color.Transparent
         Me.lblTotalDoDia.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblTotalDoDia.ForeColor = System.Drawing.Color.Black
-        Me.lblTotalDoDia.Location = New System.Drawing.Point(236, 486)
+        Me.lblTotalDoDia.Location = New System.Drawing.Point(236, 465)
         Me.lblTotalDoDia.Name = "lblTotalDoDia"
         Me.lblTotalDoDia.Size = New System.Drawing.Size(20, 26)
         Me.lblTotalDoDia.TabIndex = 224
@@ -481,7 +487,7 @@ Partial Class frmPrincipal
         Me.lblHoraSangria.AutoSize = True
         Me.lblHoraSangria.BackColor = System.Drawing.Color.Transparent
         Me.lblHoraSangria.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblHoraSangria.Location = New System.Drawing.Point(236, 276)
+        Me.lblHoraSangria.Location = New System.Drawing.Point(236, 267)
         Me.lblHoraSangria.Name = "lblHoraSangria"
         Me.lblHoraSangria.Size = New System.Drawing.Size(20, 26)
         Me.lblHoraSangria.TabIndex = 239
@@ -492,7 +498,7 @@ Partial Class frmPrincipal
         Me.lblVendasDia.AutoSize = True
         Me.lblVendasDia.BackColor = System.Drawing.Color.Transparent
         Me.lblVendasDia.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblVendasDia.Location = New System.Drawing.Point(236, 333)
+        Me.lblVendasDia.Location = New System.Drawing.Point(236, 320)
         Me.lblVendasDia.Name = "lblVendasDia"
         Me.lblVendasDia.Size = New System.Drawing.Size(20, 26)
         Me.lblVendasDia.TabIndex = 240
@@ -515,7 +521,7 @@ Partial Class frmPrincipal
         Me.lblProdutosVendidos.AutoSize = True
         Me.lblProdutosVendidos.BackColor = System.Drawing.Color.Transparent
         Me.lblProdutosVendidos.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblProdutosVendidos.Location = New System.Drawing.Point(236, 390)
+        Me.lblProdutosVendidos.Location = New System.Drawing.Point(236, 372)
         Me.lblProdutosVendidos.Name = "lblProdutosVendidos"
         Me.lblProdutosVendidos.Size = New System.Drawing.Size(20, 26)
         Me.lblProdutosVendidos.TabIndex = 250
@@ -591,12 +597,6 @@ Partial Class frmPrincipal
         Me.Label1.TabIndex = 254
         Me.Label1.Text = "Nº CAIXA"
         '
-        'TesteparcelasToolStripMenuItem
-        '
-        Me.TesteparcelasToolStripMenuItem.Name = "TesteparcelasToolStripMenuItem"
-        Me.TesteparcelasToolStripMenuItem.Size = New System.Drawing.Size(180, 24)
-        Me.TesteparcelasToolStripMenuItem.Text = "testeparcelas"
-        '
         'frmPrincipal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -604,7 +604,7 @@ Partial Class frmPrincipal
         Me.BackColor = System.Drawing.Color.LightSteelBlue
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(962, 557)
+        Me.ClientSize = New System.Drawing.Size(908, 549)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.imagemNivel)
         Me.Controls.Add(Me.lblNivel)

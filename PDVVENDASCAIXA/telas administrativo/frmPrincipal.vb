@@ -141,7 +141,7 @@ Public Class frmPrincipal
     End Sub
 
     Private Sub ContasAReceberToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ContasAReceberToolStripMenuItem.Click
-        Dim form = New frmContasReceber
+        Dim form = New frmReceberContas
         form.ShowDialog()
     End Sub
 
@@ -620,10 +620,15 @@ Public Class frmPrincipal
     End Sub
 
     Private Sub TesteparcelasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles TesteparcelasToolStripMenuItem.Click
-        Dim form = New form1
-
+        Dim form = New frmBaixarContaPagar
         form.ShowDialog()
     End Sub
+
+    'Private Sub TesteparcelasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles TesteparcelasToolStripMenuItem.Click
+    '    Dim form = New frmBaixarContaPagar
+
+    '    form.ShowDialog()
+    'End Sub
 
 
     'Private Sub carregarSangria()

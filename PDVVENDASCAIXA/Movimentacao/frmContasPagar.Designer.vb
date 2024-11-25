@@ -53,9 +53,9 @@ Partial Class frmContasPagar
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.btSair = New System.Windows.Forms.Button()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.btNovo = New System.Windows.Forms.Button()
-        Me.btSair = New System.Windows.Forms.Button()
         CType(Me.dgContasPagar, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -94,7 +94,7 @@ Partial Class frmContasPagar
         Me.dgContasPagar.Name = "dgContasPagar"
         Me.dgContasPagar.ReadOnly = True
         Me.dgContasPagar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgContasPagar.Size = New System.Drawing.Size(1172, 288)
+        Me.dgContasPagar.Size = New System.Drawing.Size(1172, 307)
         Me.dgContasPagar.TabIndex = 190
         '
         'Label10
@@ -103,7 +103,7 @@ Partial Class frmContasPagar
         Me.Label10.BackColor = System.Drawing.Color.Transparent
         Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label10.ForeColor = System.Drawing.Color.White
-        Me.Label10.Location = New System.Drawing.Point(1025, 487)
+        Me.Label10.Location = New System.Drawing.Point(1004, 487)
         Me.Label10.Margin = New System.Windows.Forms.Padding(8, 0, 8, 0)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(97, 20)
@@ -289,7 +289,7 @@ Partial Class frmContasPagar
         '
         Me.rbConta.AutoSize = True
         Me.rbConta.ForeColor = System.Drawing.Color.White
-        Me.rbConta.Location = New System.Drawing.Point(75, 17)
+        Me.rbConta.Location = New System.Drawing.Point(70, 17)
         Me.rbConta.Name = "rbConta"
         Me.rbConta.Size = New System.Drawing.Size(119, 22)
         Me.rbConta.TabIndex = 210
@@ -301,7 +301,7 @@ Partial Class frmContasPagar
         '
         Me.rbFornecedor.AutoSize = True
         Me.rbFornecedor.ForeColor = System.Drawing.Color.White
-        Me.rbFornecedor.Location = New System.Drawing.Point(206, 17)
+        Me.rbFornecedor.Location = New System.Drawing.Point(195, 17)
         Me.rbFornecedor.Name = "rbFornecedor"
         Me.rbFornecedor.Size = New System.Drawing.Size(103, 22)
         Me.rbFornecedor.TabIndex = 211
@@ -312,9 +312,9 @@ Partial Class frmContasPagar
         'GroupBox2
         '
         Me.GroupBox2.Controls.Add(Me.dgContasPagar)
-        Me.GroupBox2.Location = New System.Drawing.Point(10, 165)
+        Me.GroupBox2.Location = New System.Drawing.Point(10, 147)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(1178, 311)
+        Me.GroupBox2.Size = New System.Drawing.Size(1178, 330)
         Me.GroupBox2.TabIndex = 212
         Me.GroupBox2.TabStop = False
         '
@@ -349,7 +349,7 @@ Partial Class frmContasPagar
         '
         Me.rbDescricao.AutoSize = True
         Me.rbDescricao.ForeColor = System.Drawing.Color.White
-        Me.rbDescricao.Location = New System.Drawing.Point(316, 17)
+        Me.rbDescricao.Location = New System.Drawing.Point(302, 17)
         Me.rbDescricao.Name = "rbDescricao"
         Me.rbDescricao.Size = New System.Drawing.Size(94, 22)
         Me.rbDescricao.TabIndex = 216
@@ -359,27 +359,27 @@ Partial Class frmContasPagar
         '
         'txtBuscarDescricao
         '
-        Me.txtBuscarDescricao.Location = New System.Drawing.Point(412, 14)
+        Me.txtBuscarDescricao.Location = New System.Drawing.Point(397, 15)
         Me.txtBuscarDescricao.Name = "txtBuscarDescricao"
-        Me.txtBuscarDescricao.Size = New System.Drawing.Size(396, 24)
+        Me.txtBuscarDescricao.Size = New System.Drawing.Size(330, 24)
         Me.txtBuscarDescricao.TabIndex = 217
         '
         'txtBuscarConta
         '
         Me.txtBuscarConta.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.txtBuscarConta.FormattingEnabled = True
-        Me.txtBuscarConta.Location = New System.Drawing.Point(412, 14)
+        Me.txtBuscarConta.Location = New System.Drawing.Point(397, 15)
         Me.txtBuscarConta.Name = "txtBuscarConta"
-        Me.txtBuscarConta.Size = New System.Drawing.Size(396, 26)
+        Me.txtBuscarConta.Size = New System.Drawing.Size(330, 26)
         Me.txtBuscarConta.TabIndex = 295
         '
         'txtBuscarFornecedor
         '
         Me.txtBuscarFornecedor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.txtBuscarFornecedor.FormattingEnabled = True
-        Me.txtBuscarFornecedor.Location = New System.Drawing.Point(413, 14)
+        Me.txtBuscarFornecedor.Location = New System.Drawing.Point(397, 18)
         Me.txtBuscarFornecedor.Name = "txtBuscarFornecedor"
-        Me.txtBuscarFornecedor.Size = New System.Drawing.Size(396, 26)
+        Me.txtBuscarFornecedor.Size = New System.Drawing.Size(330, 26)
         Me.txtBuscarFornecedor.TabIndex = 310
         '
         'Label5
@@ -417,42 +417,6 @@ Partial Class frmContasPagar
         Me.PictureBox2.TabIndex = 312
         Me.PictureBox2.TabStop = False
         '
-        'GroupBox3
-        '
-        Me.GroupBox3.Controls.Add(Me.txtBuscarConta)
-        Me.GroupBox3.Controls.Add(Me.Label3)
-        Me.GroupBox3.Controls.Add(Me.rbConta)
-        Me.GroupBox3.Controls.Add(Me.rbDescricao)
-        Me.GroupBox3.Controls.Add(Me.rbFornecedor)
-        Me.GroupBox3.Controls.Add(Me.txtBuscarFornecedor)
-        Me.GroupBox3.Controls.Add(Me.txtBuscarDescricao)
-        Me.GroupBox3.Location = New System.Drawing.Point(286, 72)
-        Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(815, 49)
-        Me.GroupBox3.TabIndex = 314
-        Me.GroupBox3.TabStop = False
-        '
-        'btNovo
-        '
-        Me.btNovo.BackColor = System.Drawing.Color.Transparent
-        Me.btNovo.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btNovo.FlatAppearance.BorderSize = 0
-        Me.btNovo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSteelBlue
-        Me.btNovo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSkyBlue
-        Me.btNovo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btNovo.Font = New System.Drawing.Font("Arial Rounded MT Bold", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btNovo.ForeColor = System.Drawing.Color.White
-        Me.btNovo.Image = CType(resources.GetObject("btNovo.Image"), System.Drawing.Image)
-        Me.btNovo.Location = New System.Drawing.Point(1014, 124)
-        Me.btNovo.Margin = New System.Windows.Forms.Padding(5)
-        Me.btNovo.Name = "btNovo"
-        Me.btNovo.Size = New System.Drawing.Size(168, 43)
-        Me.btNovo.TabIndex = 0
-        Me.btNovo.Text = "Novo Cadastro"
-        Me.btNovo.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.btNovo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btNovo.UseVisualStyleBackColor = False
-        '
         'btSair
         '
         Me.btSair.BackColor = System.Drawing.Color.Transparent
@@ -472,6 +436,42 @@ Partial Class frmContasPagar
         Me.btSair.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btSair.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btSair.UseVisualStyleBackColor = False
+        '
+        'GroupBox3
+        '
+        Me.GroupBox3.Controls.Add(Me.txtBuscarConta)
+        Me.GroupBox3.Controls.Add(Me.Label3)
+        Me.GroupBox3.Controls.Add(Me.txtBuscarFornecedor)
+        Me.GroupBox3.Controls.Add(Me.rbConta)
+        Me.GroupBox3.Controls.Add(Me.rbDescricao)
+        Me.GroupBox3.Controls.Add(Me.rbFornecedor)
+        Me.GroupBox3.Controls.Add(Me.txtBuscarDescricao)
+        Me.GroupBox3.Location = New System.Drawing.Point(283, 72)
+        Me.GroupBox3.Name = "GroupBox3"
+        Me.GroupBox3.Size = New System.Drawing.Size(736, 49)
+        Me.GroupBox3.TabIndex = 314
+        Me.GroupBox3.TabStop = False
+        '
+        'btNovo
+        '
+        Me.btNovo.BackColor = System.Drawing.Color.Transparent
+        Me.btNovo.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btNovo.FlatAppearance.BorderSize = 0
+        Me.btNovo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSteelBlue
+        Me.btNovo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSkyBlue
+        Me.btNovo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btNovo.Font = New System.Drawing.Font("Arial Rounded MT Bold", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btNovo.ForeColor = System.Drawing.Color.White
+        Me.btNovo.Image = CType(resources.GetObject("btNovo.Image"), System.Drawing.Image)
+        Me.btNovo.Location = New System.Drawing.Point(1025, 78)
+        Me.btNovo.Margin = New System.Windows.Forms.Padding(5)
+        Me.btNovo.Name = "btNovo"
+        Me.btNovo.Size = New System.Drawing.Size(168, 43)
+        Me.btNovo.TabIndex = 0
+        Me.btNovo.Text = "Novo Cadastro"
+        Me.btNovo.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btNovo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btNovo.UseVisualStyleBackColor = False
         '
         'frmContasPagar
         '

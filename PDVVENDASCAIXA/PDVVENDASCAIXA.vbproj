@@ -255,6 +255,12 @@
     <Compile Include="Movimentacao\frmLancamentoContasReceber.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Movimentacao\frmReceberContas.Designer.vb">
+      <DependentUpon>frmReceberContas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Movimentacao\frmReceberContas.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Movimentacao\frmServicos.Designer.vb">
       <DependentUpon>frmServicos.vb</DependentUpon>
     </Compile>
@@ -495,6 +501,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Movimentacao\frmLancamentoContasReceber.resx">
       <DependentUpon>frmLancamentoContasReceber.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Movimentacao\frmReceberContas.resx">
+      <DependentUpon>frmReceberContas.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Movimentacao\frmServicos.resx">
       <DependentUpon>frmServicos.vb</DependentUpon>
@@ -953,6 +962,7 @@
     <None Include="Resources\Calculator.png" />
     <Content Include="Resources\header-pagarreceber.png" />
     <None Include="Resources\Undo_32x32.png" />
+    <None Include="Resources\Save.png" />
     <Content Include="SqlServerTypes\Loader.cs" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">

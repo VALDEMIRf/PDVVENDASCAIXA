@@ -138,7 +138,7 @@ Public Class frmLancamentoContasPagar
 
             Else
 
-                MsgBox("Não foi posssível carregar os Dados.!", MsgBoxStyle.Critical, "Contas a Pagar")
+                '  MsgBox("Não foi posssível carregar os Dados.!", MsgBoxStyle.Critical, "Contas a Pagar")
 
             End If
 

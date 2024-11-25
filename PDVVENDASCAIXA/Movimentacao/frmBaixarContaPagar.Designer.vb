@@ -23,14 +23,22 @@ Partial Class frmBaixarContaPagar
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmBaixarContaPagar))
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.btSair = New System.Windows.Forms.Button()
         Me.lblCodigo = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.dg1 = New System.Windows.Forms.DataGridView()
+        Me.dg = New System.Windows.Forms.DataGridView()
+        Me.txtValorTotal = New System.Windows.Forms.TextBox()
+        Me.txtNumParcela = New System.Windows.Forms.TextBox()
         Me.btCalcular = New System.Windows.Forms.Button()
+        Me.txtValorParcela = New System.Windows.Forms.TextBox()
         Me.lbtxtSaldoRestante = New System.Windows.Forms.Label()
+        Me.txtSaldoRestante = New System.Windows.Forms.TextBox()
         Me.lbtxtValorParcela = New System.Windows.Forms.Label()
         Me.lbtxtNumParcela = New System.Windows.Forms.Label()
         Me.lbtxtValorTotal = New System.Windows.Forms.Label()
@@ -61,13 +69,11 @@ Partial Class frmBaixarContaPagar
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txtDocumento = New System.Windows.Forms.TextBox()
-        Me.txtValorParcela = New System.Windows.Forms.TextBox()
-        Me.txtSaldoRestante = New System.Windows.Forms.TextBox()
-        Me.txtValorTotal = New System.Windows.Forms.TextBox()
-        Me.txtNumParcela = New System.Windows.Forms.TextBox()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
+        CType(Me.dg1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dg, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel1
@@ -140,8 +146,14 @@ Partial Class frmBaixarContaPagar
         'Panel2
         '
         Me.Panel2.BackColor = System.Drawing.Color.ForestGreen
+        Me.Panel2.Controls.Add(Me.dg1)
+        Me.Panel2.Controls.Add(Me.dg)
+        Me.Panel2.Controls.Add(Me.txtValorTotal)
+        Me.Panel2.Controls.Add(Me.txtNumParcela)
         Me.Panel2.Controls.Add(Me.btCalcular)
+        Me.Panel2.Controls.Add(Me.txtValorParcela)
         Me.Panel2.Controls.Add(Me.lbtxtSaldoRestante)
+        Me.Panel2.Controls.Add(Me.txtSaldoRestante)
         Me.Panel2.Controls.Add(Me.lbtxtValorParcela)
         Me.Panel2.Controls.Add(Me.lbtxtNumParcela)
         Me.Panel2.Controls.Add(Me.lbtxtValorTotal)
@@ -175,8 +187,66 @@ Partial Class frmBaixarContaPagar
         Me.Panel2.Controls.Add(Me.txtDocumento)
         Me.Panel2.Location = New System.Drawing.Point(6, 67)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(960, 300)
+        Me.Panel2.Size = New System.Drawing.Size(1126, 549)
         Me.Panel2.TabIndex = 315
+        '
+        'dg1
+        '
+        Me.dg1.AllowUserToAddRows = False
+        Me.dg1.AllowUserToDeleteRows = False
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.DarkGray
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.DarkBlue
+        Me.dg1.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        Me.dg1.BackgroundColor = System.Drawing.Color.White
+        Me.dg1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.dg1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dg1.DefaultCellStyle = DataGridViewCellStyle2
+        Me.dg1.GridColor = System.Drawing.Color.CadetBlue
+        Me.dg1.Location = New System.Drawing.Point(6, 411)
+        Me.dg1.Margin = New System.Windows.Forms.Padding(4)
+        Me.dg1.Name = "dg1"
+        Me.dg1.ReadOnly = True
+        Me.dg1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.dg1.Size = New System.Drawing.Size(1108, 102)
+        Me.dg1.TabIndex = 369
+        '
+        'dg
+        '
+        Me.dg.AllowUserToAddRows = False
+        Me.dg.AllowUserToDeleteRows = False
+        Me.dg.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.dg.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dg.GridColor = System.Drawing.SystemColors.HotTrack
+        Me.dg.Location = New System.Drawing.Point(6, 288)
+        Me.dg.Margin = New System.Windows.Forms.Padding(12, 10, 12, 10)
+        Me.dg.Name = "dg"
+        Me.dg.ReadOnly = True
+        Me.dg.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.dg.Size = New System.Drawing.Size(1108, 109)
+        Me.dg.TabIndex = 368
+        '
+        'txtValorTotal
+        '
+        Me.txtValorTotal.Enabled = False
+        Me.txtValorTotal.Location = New System.Drawing.Point(765, 26)
+        Me.txtValorTotal.Name = "txtValorTotal"
+        Me.txtValorTotal.Size = New System.Drawing.Size(100, 20)
+        Me.txtValorTotal.TabIndex = 5
+        '
+        'txtNumParcela
+        '
+        Me.txtNumParcela.Enabled = False
+        Me.txtNumParcela.Location = New System.Drawing.Point(791, 64)
+        Me.txtNumParcela.Name = "txtNumParcela"
+        Me.txtNumParcela.Size = New System.Drawing.Size(61, 20)
+        Me.txtNumParcela.TabIndex = 0
         '
         'btCalcular
         '
@@ -198,6 +268,14 @@ Partial Class frmBaixarContaPagar
         Me.btCalcular.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btCalcular.UseVisualStyleBackColor = False
         '
+        'txtValorParcela
+        '
+        Me.txtValorParcela.Enabled = False
+        Me.txtValorParcela.Location = New System.Drawing.Point(776, 90)
+        Me.txtValorParcela.Name = "txtValorParcela"
+        Me.txtValorParcela.Size = New System.Drawing.Size(95, 20)
+        Me.txtValorParcela.TabIndex = 358
+        '
         'lbtxtSaldoRestante
         '
         Me.lbtxtSaldoRestante.AutoSize = True
@@ -208,6 +286,16 @@ Partial Class frmBaixarContaPagar
         Me.lbtxtSaldoRestante.Size = New System.Drawing.Size(75, 20)
         Me.lbtxtSaldoRestante.TabIndex = 366
         Me.lbtxtSaldoRestante.Text = "Restante"
+        '
+        'txtSaldoRestante
+        '
+        Me.txtSaldoRestante.AcceptsReturn = True
+        Me.txtSaldoRestante.Enabled = False
+        Me.txtSaldoRestante.Location = New System.Drawing.Point(782, 148)
+        Me.txtSaldoRestante.Name = "txtSaldoRestante"
+        Me.txtSaldoRestante.Size = New System.Drawing.Size(89, 20)
+        Me.txtSaldoRestante.TabIndex = 356
+        Me.txtSaldoRestante.Text = "0"
         '
         'lbtxtValorParcela
         '
@@ -343,7 +431,7 @@ Partial Class frmBaixarContaPagar
         Me.btBaixarConta.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.World, CType(0, Byte))
         Me.btBaixarConta.ForeColor = System.Drawing.Color.White
         Me.btBaixarConta.Image = Global.PDVVENDASCAIXA.My.Resources.Resources.Fall
-        Me.btBaixarConta.Location = New System.Drawing.Point(531, 201)
+        Me.btBaixarConta.Location = New System.Drawing.Point(723, -111)
         Me.btBaixarConta.Margin = New System.Windows.Forms.Padding(5)
         Me.btBaixarConta.Name = "btBaixarConta"
         Me.btBaixarConta.Size = New System.Drawing.Size(62, 72)
@@ -526,52 +614,14 @@ Partial Class frmBaixarContaPagar
         Me.txtDocumento.Size = New System.Drawing.Size(117, 20)
         Me.txtDocumento.TabIndex = 3
         '
-        'txtValorParcela
-        '
-        Me.txtValorParcela.Enabled = False
-        Me.txtValorParcela.Location = New System.Drawing.Point(1029, 136)
-        Me.txtValorParcela.Name = "txtValorParcela"
-        Me.txtValorParcela.Size = New System.Drawing.Size(95, 20)
-        Me.txtValorParcela.TabIndex = 358
-        '
-        'txtSaldoRestante
-        '
-        Me.txtSaldoRestante.AcceptsReturn = True
-        Me.txtSaldoRestante.Enabled = False
-        Me.txtSaldoRestante.Location = New System.Drawing.Point(1035, 194)
-        Me.txtSaldoRestante.Name = "txtSaldoRestante"
-        Me.txtSaldoRestante.Size = New System.Drawing.Size(89, 20)
-        Me.txtSaldoRestante.TabIndex = 356
-        Me.txtSaldoRestante.Text = "0"
-        '
-        'txtValorTotal
-        '
-        Me.txtValorTotal.Enabled = False
-        Me.txtValorTotal.Location = New System.Drawing.Point(1018, 72)
-        Me.txtValorTotal.Name = "txtValorTotal"
-        Me.txtValorTotal.Size = New System.Drawing.Size(100, 20)
-        Me.txtValorTotal.TabIndex = 5
-        '
-        'txtNumParcela
-        '
-        Me.txtNumParcela.Enabled = False
-        Me.txtNumParcela.Location = New System.Drawing.Point(1044, 110)
-        Me.txtNumParcela.Name = "txtNumParcela"
-        Me.txtNumParcela.Size = New System.Drawing.Size(61, 20)
-        Me.txtNumParcela.TabIndex = 0
-        '
         'frmBaixarContaPagar
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.LightBlue
-        Me.ClientSize = New System.Drawing.Size(1144, 377)
+        Me.ClientSize = New System.Drawing.Size(1144, 628)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
-        Me.Controls.Add(Me.txtValorTotal)
-        Me.Controls.Add(Me.txtNumParcela)
-        Me.Controls.Add(Me.txtValorParcela)
-        Me.Controls.Add(Me.txtSaldoRestante)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "frmBaixarContaPagar"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
@@ -581,8 +631,9 @@ Partial Class frmBaixarContaPagar
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
+        CType(Me.dg1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dg, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
 
@@ -628,4 +679,6 @@ Partial Class frmBaixarContaPagar
     Friend WithEvents lbtxtValorTotal As Label
     Friend WithEvents lbtxtNumParcela As Label
     Friend WithEvents btCalcular As Button
+    Friend WithEvents dg As DataGridView
+    Friend WithEvents dg1 As DataGridView
 End Class
