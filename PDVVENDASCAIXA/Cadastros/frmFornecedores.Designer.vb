@@ -22,6 +22,7 @@ Partial Class frmFornecedores
     'Não o modifique usando o editor de códigos.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmFornecedores))
         Me.Label3 = New System.Windows.Forms.Label()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
@@ -81,11 +82,13 @@ Partial Class frmFornecedores
         Me.Label24 = New System.Windows.Forms.Label()
         Me.Label25 = New System.Windows.Forms.Label()
         Me.Label26 = New System.Windows.Forms.Label()
+        Me.errErro = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.TabControl1.SuspendLayout()
         Me.Cadastro.SuspendLayout()
         Me.Consulta.SuspendLayout()
         CType(Me.dg, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox4.SuspendLayout()
+        CType(Me.errErro, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label3
@@ -93,7 +96,7 @@ Partial Class frmFornecedores
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Arial", 20.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.White
-        Me.Label3.Location = New System.Drawing.Point(101, 20)
+        Me.Label3.Location = New System.Drawing.Point(171, 9)
         Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(246, 32)
@@ -828,6 +831,10 @@ Partial Class frmFornecedores
         Me.Label26.TabIndex = 184
         Me.Label26.Text = "Valor:"
         '
+        'errErro
+        '
+        Me.errErro.ContainerControl = Me
+        '
         'frmFornecedores
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -851,6 +858,7 @@ Partial Class frmFornecedores
         CType(Me.dg, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox4.ResumeLayout(False)
         Me.GroupBox4.PerformLayout()
+        CType(Me.errErro, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -914,4 +922,5 @@ Partial Class frmFornecedores
     Friend WithEvents Label24 As Label
     Friend WithEvents Label25 As Label
     Friend WithEvents Label26 As Label
+    Friend WithEvents errErro As ErrorProvider
 End Class

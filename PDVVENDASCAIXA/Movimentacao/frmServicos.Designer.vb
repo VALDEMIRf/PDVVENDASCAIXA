@@ -219,7 +219,7 @@ Partial Class frmServicos
         Me.btBuscarCEP.FlatAppearance.BorderSize = 0
         Me.btBuscarCEP.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btBuscarCEP.Image = CType(resources.GetObject("btBuscarCEP.Image"), System.Drawing.Image)
-        Me.btBuscarCEP.Location = New System.Drawing.Point(182, 14)
+        Me.btBuscarCEP.Location = New System.Drawing.Point(180, 19)
         Me.btBuscarCEP.Name = "btBuscarCEP"
         Me.btBuscarCEP.Size = New System.Drawing.Size(35, 23)
         Me.btBuscarCEP.TabIndex = 4

@@ -1,5 +1,6 @@
 ﻿Imports System.Data.SqlClient
 Imports System.Text
+Imports System.Text.RegularExpressions
 
 Public Class frmServicos
 
@@ -233,18 +234,49 @@ Public Class frmServicos
     End Sub
 
     Private Sub btBuscarCEP_Click(sender As Object, e As EventArgs) Handles btBuscarCEP.Click
-        Try
-            Dim ws = New WSCEP.AtendeClienteClient()
-            Dim resposta = ws.consultaCEP(txtCEP.Text)
-            txtEndereco.Text = resposta.end
-            txtComplemento.Text = resposta.complemento2  'complemento
-            txtBairro.Text = resposta.bairro
-            txtCidade.Text = resposta.cidade
-            txtUF.Text = resposta.uf
+        If validaCEP() Then
 
+            ObterCep(txtCEP.Text)
+            ' MessageBox.Show("Digite um cep válido!!!!")
+        End If
+
+        'Try
+        '    Dim ws = New WSCEP.AtendeClienteClient()
+        '    Dim resposta = ws.consultaCEP(txtCEP.Text)
+        '    txtEndereco.Text = resposta.end
+        '    txtComplemento.Text = resposta.complemento2  'complemento
+        '    txtBairro.Text = resposta.bairro
+        '    txtCidade.Text = resposta.cidade
+        '    txtUF.Text = resposta.uf
+
+        'Catch ex As Exception
+        '    MsgBox("Erro ao buscar CEP.!" & ex.Message.ToString, vbCritical)
+        'End Try
+    End Sub
+
+    Private Function validaCEP()
+        Dim rgxCep = New Regex("^\d{5}-\d{3}$")
+        If Not rgxCep.IsMatch(txtCEP.Text) Then
+            MessageBox.Show("Digite um cep válido!!!!")
+            txtCEP.Focus()
+            Return False
+        End If
+        Return True
+    End Function
+
+    Private Sub ObterCep(cep As String)
+
+        Dim dsCep = clsCep.ObterCep(cep)
+        Try
+            txtEndereco.Text = UTF8_to_ISO(dsCep.logradouro)
+            txtComplemento.Text = UTF8_to_ISO(dsCep.complemento)
+            txtBairro.Text = UTF8_to_ISO(dsCep.bairro)
+            txtCidade.Text = UTF8_to_ISO(dsCep.localidade)
+            txtUF.Text = dsCep.uf
         Catch ex As Exception
-            MsgBox("Erro ao buscar CEP.!" & ex.Message.ToString, vbCritical)
+            MessageBox.Show("CEP Incorreto, digite um CEP válido!!!", "ERRO")
         End Try
+
     End Sub
 
     Private Sub btNovo_Click(sender As Object, e As EventArgs) Handles btNovo.Click
@@ -455,23 +487,23 @@ Public Class frmServicos
 
         '  Else
         Dim dt As New DataTable
-            Dim da As SqlDataAdapter
+        Dim da As SqlDataAdapter
 
-            Try
-                abrir()
+        Try
+            abrir()
             da = New SqlDataAdapter("pa_Servico_ConsultaData", con)
             da.SelectCommand.CommandType = CommandType.StoredProcedure
-                da.SelectCommand.Parameters.AddWithValue("@data", dtData.Text)
+            da.SelectCommand.Parameters.AddWithValue("@data", dtData.Text)
 
-                da.Fill(dt)
-                dgvServico.DataSource = dt
+            da.Fill(dt)
+            dgvServico.DataSource = dt
 
-                ContarLinhas()
+            ContarLinhas()
 
-            Catch ex As Exception
-                MessageBox.Show("Erro ao Listar" + ex.Message.ToString)
-                fechar()
-            End Try
+        Catch ex As Exception
+            MessageBox.Show("Erro ao Listar" + ex.Message.ToString)
+            fechar()
+        End Try
         '  End If
     End Sub
 

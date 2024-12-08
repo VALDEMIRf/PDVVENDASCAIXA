@@ -137,4 +137,50 @@ Public Class Parcelas
         End Try
 
     End Function
+
+
+    Public Sub CadastrarParcelaReceber()
+
+        sql = "Insert Into tbParcelasReceber(parcela,data_parcela,valor_parcela,numDocto,descricao,valorTotal,situacao)values(" & parcela & ",'" & data_parcela & "','" & valor_parcela & "','" & numDocto & "','" & descricao & "','" & valorTotal & "','" & situacao & "' )"
+        conex.Operar(sql)
+
+    End Sub
+
+    Public Shared Function SalvarParcelasReceber(dgv As DataGridView) As Boolean
+        Dim sql = ""
+        Try
+            abrir()
+
+            For Each r As DataGridViewRow In dgv.Rows
+                If Convert.ToInt32("0" + r.Cells("id_parcela").Value) = 0 Then
+                    sql = "INSERT INTO tbParcelasReceber(parcela,data_parcela,valor_parcela,numDocto,descricao,valorTotal,situacao)values(@parcela,@data_parcela,@valor_parcela,@numDocto,@descricao,@valorTotal,@situacao)"
+                Else
+                    sql = "UPDATE tbParcelasReceber SET parcela=@parcela,data_parcela=@data_parcela,valor_parcela=@valor_parcela,numDocto=@numDocto,descricao=@descricao,valorTotal=@valorTotal,situacao=@situacao WHERE id_parcela=@id_parcela"
+                End If
+
+                Using cmd = New SqlCommand(sql, con) ',,,,,
+                    cmd.Parameters.AddWithValue("@parcela", r.Cells("parcela").Value)
+                    cmd.Parameters.AddWithValue("@data_parcela", r.Cells("data_parcela").Value)
+                    cmd.Parameters.AddWithValue("@valor_parcela", r.Cells("valor_parcela").Value)
+                    cmd.Parameters.AddWithValue("@numDocto", r.Cells("numDocto").Value)
+                    cmd.Parameters.AddWithValue("@descricao", r.Cells("descricao").Value)
+                    cmd.Parameters.AddWithValue("@valorTotal", r.Cells("valorTotal").Value)
+                    cmd.Parameters.AddWithValue("@situacao", r.Cells("situacao").Value)
+
+                    If Convert.ToInt32("0" + r.Cells("id_parcela").Value) > 0 Then
+                        cmd.Parameters.AddWithValue("@id_parcela", Convert.ToInt32("0" + r.Cells("id_parcela").Value))
+                    End If
+
+                    cmd.ExecuteNonQuery()
+                End Using
+            Next
+            Return True
+        Catch ex As Exception
+            MsgBox("Erro ao gravar as Parcelas no banco!" + ex.Message.ToString, MsgBoxStyle.Critical, "Erro")
+            Return False
+        Finally
+            fechar()
+        End Try
+
+    End Function
 End Class

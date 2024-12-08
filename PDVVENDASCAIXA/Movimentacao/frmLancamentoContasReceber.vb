@@ -3,9 +3,11 @@ Imports System.IO
 Imports System.Text
 
 Public Class frmLancamentoContasReceber
+
     Dim parc As New Parcelas
 
     Private Sub frmLancamentoContasReceber_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
         rbParcelamento.Checked = False
 
         carregarContas()
@@ -22,6 +24,7 @@ Public Class frmLancamentoContasReceber
 
 
         listarParcelas()
+
     End Sub
 
     Private Sub frmLancamentoContasReceber_Activated(sender As Object, e As EventArgs) Handles MyBase.Activated
@@ -509,7 +512,6 @@ Public Class frmLancamentoContasReceber
             MsgBox("Erro ao calcular pagamento  " + ex.Message.ToString, MsgBoxStyle.Critical, "Atenção")
         End Try
 
-
     End Sub
 
     Private Sub listarParcelas()
@@ -517,7 +519,7 @@ Public Class frmLancamentoContasReceber
         Dim da As SqlDataAdapter
         Try
             abrir()
-            da = New SqlDataAdapter("pa_Parcelas_listar", con) '
+            da = New SqlDataAdapter("pa_ParcelasReceber_listar", con) '
             da.SelectCommand.CommandType = CommandType.StoredProcedure
             da.SelectCommand.Parameters.AddWithValue("@numDocto", txtNDoc.Text)
 
@@ -562,7 +564,7 @@ Public Class frmLancamentoContasReceber
                 parc.valorTotal = txtValor.Text
                 parc.situacao = "Em Parcelamento"
 
-                parc.CadastrarParcela()
+                parc.CadastrarParcelaReceber()
 
                 cont = cont + 1
 

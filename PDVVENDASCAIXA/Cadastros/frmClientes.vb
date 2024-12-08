@@ -1,4 +1,5 @@
 ﻿Imports System.Data.SqlClient
+Imports System.Text.RegularExpressions
 
 Public Class frmClientes
     Private Sub frmClientes_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -371,8 +372,12 @@ Public Class frmClientes
     End Sub
 
     Private Sub btBuscarCEP_Click_1(sender As Object, e As EventArgs) Handles btBuscarCEP.Click
-        ObterCep(txtCEP.Text)
 
+        If validaCEP() Then
+
+            ObterCep(txtCEP.Text)
+            ' MessageBox.Show("Digite um cep válido!!!!")
+        End If
         'Try
         '    Dim ws = New WSCEP.AtendeClienteClient()
         '    Dim resposta = ws.consultaCEP(txtCEP.Text)
@@ -386,6 +391,16 @@ Public Class frmClientes
         '    MsgBox("Erro ao buscar CEP.!" & ex.Message.ToString, vbCritical)
         'End Try
     End Sub
+
+    Private Function validaCEP()
+        Dim rgxCep = New Regex("^\d{5}-\d{3}$")
+        If Not rgxCep.IsMatch(txtCEP.Text) Then
+            MessageBox.Show("Digite um cep válido!!!!")
+            txtCEP.Focus()
+            Return False
+        End If
+        Return True
+    End Function
 
     Private Sub txtBuscarNome_TextChanged_1(sender As Object, e As EventArgs) Handles txtBuscarNome.TextChanged
         If txtBuscarNome.Text = "" And dg.Rows.Count > 0 Then

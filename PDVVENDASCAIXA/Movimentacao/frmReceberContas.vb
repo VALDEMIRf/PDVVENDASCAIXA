@@ -138,20 +138,20 @@ Public Class frmReceberContas
             .Columns(7).Width = 300
             .Columns(15).Width = 120
 
-            For Each row As DataGridViewRow In .Rows
-                '  row.Cells("situacao").Style.ForeColor = ColorirSituacao(row.Cells("situacao").Value)
+            'For Each row As DataGridViewRow In .Rows
+            '    '  row.Cells("situacao").Style.ForeColor = ColorirSituacao(row.Cells("situacao").Value)
 
-                If row.Cells("situacao").Value = "Não Paga" Then
-                    row.DefaultCellStyle.BackColor = Color.Red
-                    row.DefaultCellStyle.ForeColor = Color.White
-                ElseIf row.Cells("situacao").Value = "Paga" Then
-                    row.DefaultCellStyle.BackColor = Color.Green
-                    row.DefaultCellStyle.ForeColor = Color.White
-                ElseIf row.Cells("situacao").Value = "Vencida" Then
-                    row.DefaultCellStyle.BackColor = Color.DarkRed
-                    row.DefaultCellStyle.ForeColor = Color.White
-                End If
-            Next
+            '    If row.Cells("situacao").Value = "Não Paga" Then
+            '        row.DefaultCellStyle.BackColor = Color.Red
+            '        row.DefaultCellStyle.ForeColor = Color.White
+            '    ElseIf row.Cells("situacao").Value = "Paga" Then
+            '        row.DefaultCellStyle.BackColor = Color.Green
+            '        row.DefaultCellStyle.ForeColor = Color.White
+            '    ElseIf row.Cells("situacao").Value = "Vencida" Then
+            '        row.DefaultCellStyle.BackColor = Color.DarkRed
+            '        row.DefaultCellStyle.ForeColor = Color.White
+            '    End If
+            'Next
         End With
 
     End Sub
@@ -325,18 +325,81 @@ Public Class frmReceberContas
     End Sub
 
     Private Sub rbTodas_CheckedChanged(sender As Object, e As EventArgs) Handles rbTodas.CheckedChanged
-
+        listar()
     End Sub
 
     Private Sub rbContasRecaber_CheckedChanged(sender As Object, e As EventArgs) Handles rbContasRecaber.CheckedChanged
+        Dim dt As New DataTable
+        Dim da As SqlDataAdapter
+        Try
+            abrir()
+            da = New SqlDataAdapter("pa_ContasReceber_contas_a_receber", con) '
+            ' da = New SqlDataAdapter("select * from tbTipoServico", con)
 
+            da.Fill(dt)
+            dg1.DataSource = dt
+
+            FormatarDG()
+        Catch ex As Exception
+            MessageBox.Show("Erro ao Listar as Contas" + ex.Message.ToString)
+        Finally
+            fechar()
+        End Try
     End Sub
 
     Private Sub rbContasRecebidas_CheckedChanged(sender As Object, e As EventArgs) Handles rbContasRecebidas.CheckedChanged
 
+        Dim dt As New DataTable
+        Dim da As SqlDataAdapter
+        Try
+            abrir()
+            da = New SqlDataAdapter("pa_ContasReceber_contas_recebidas", con) '
+            ' da = New SqlDataAdapter("select * from tbTipoServico", con)
+
+            da.Fill(dt)
+            dg1.DataSource = dt
+
+            FormatarDG()
+        Catch ex As Exception
+            MessageBox.Show("Erro ao Listar as Contas" + ex.Message.ToString)
+        Finally
+            fechar()
+        End Try
     End Sub
 
     Private Sub rbContasVencidas_CheckedChanged(sender As Object, e As EventArgs) Handles rbContasVencidas.CheckedChanged
+        Dim dt As New DataTable
+        Dim da As SqlDataAdapter
+        Try
+            abrir()
+            da = New SqlDataAdapter("pa_ContasReceber_contas_vencidas", con) '
+            ' da = New SqlDataAdapter("select * from tbTipoServico", con)
 
+            da.Fill(dt)
+            dg1.DataSource = dt
+
+            FormatarDG()
+        Catch ex As Exception
+            MessageBox.Show("Erro ao Listar as Contas" + ex.Message.ToString)
+        Finally
+            fechar()
+        End Try
+    End Sub
+
+    Private Sub pbSair_Click(sender As Object, e As EventArgs) Handles pbSair.Click
+        Me.Close()
+    End Sub
+
+    Private Sub btNovo_Click(sender As Object, e As EventArgs) Handles btNovo.Click
+
+        intCodigoLancamento = 0
+        frmLancamentoContasReceber.ShowDialog()
+    End Sub
+
+    Private Sub dg1_DoubleClick(sender As Object, e As EventArgs) Handles dg1.DoubleClick
+        intCodigoLancamento = dg1.CurrentRow().Cells("id_contaReceber").Value
+        frmLancamentoContasReceber.ShowDialog()
+
+        CarregaInformacoesIniciais()
     End Sub
 End Class

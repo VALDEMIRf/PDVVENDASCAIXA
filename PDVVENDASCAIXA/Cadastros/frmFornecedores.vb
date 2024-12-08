@@ -1,5 +1,6 @@
 ﻿Imports System.Data.SqlClient
 Imports System.Data.IO
+Imports System.Text.RegularExpressions
 
 Public Class frmFornecedores
     Private Sub frmFornecedores_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -296,14 +297,37 @@ Public Class frmFornecedores
     End Sub
 
     Private Sub btBuscarEmpresa_Click(sender As Object, e As EventArgs) Handles btBuscarEmpresa.Click
-        btnSalvar.Enabled = True
 
+        If txtCNPJ.Text.Equals(String.Empty) Then
+            errErro.SetError(txtCNPJ, "Digite um CNPJ válido")
+            Exit Sub
+        Else
+            errErro.SetError(txtCNPJ, "")
+        End If
+
+        '  If validaCNPJ() Then
         ObterCnpj(txtCNPJ.Text)
+        ' MessageBox.Show("Digite um cep válido!!!!")
+        '   End If
     End Sub
+
+    Private Function validaCNPJ()
+        Dim rgxCnpj = New Regex("^\d{2}.\d{3}.\d{3}/\d{4}-\d{2}$") '05.305.236/0001-50
+        If Not rgxCnpj.IsMatch(txtCNPJ.Text) Then
+            MessageBox.Show("Digite um cnpj válido!!!!")
+            txtCEP.Focus()
+            Return False
+        End If
+        Return True
+    End Function
+
 
     Private Sub ObterCnpj(cnpj As String)
 
         Dim cliente = Empresa.ObterCnpj(cnpj)
+
+        '   MessageBox.Show("CNPJ Incorreto, digite um CNPJ válido!!!", "ERRO")
+
         Try
             txtRazaoSocial.Text = cliente.nome
             txtSituacao.Text = cliente.situacao
@@ -319,6 +343,8 @@ Public Class frmFornecedores
             txtFantasia.Text = cliente.fantasia
             txtTel.Text = cliente.telefone
             txtEmail.Text = cliente.email
+
+
         Catch ex As Exception
 
             '  MessageBox.Show("CNPJ Incorreto, digite um CNPJ válido!!!" + ex.Message.ToString)
@@ -326,4 +352,6 @@ Public Class frmFornecedores
         End Try
 
     End Sub
+
+
 End Class

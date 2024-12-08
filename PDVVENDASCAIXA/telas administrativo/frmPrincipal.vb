@@ -620,8 +620,7 @@ Public Class frmPrincipal
     End Sub
 
     Private Sub TesteparcelasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles TesteparcelasToolStripMenuItem.Click
-        Dim form = New frmBaixarContaPagar
-        form.ShowDialog()
+
     End Sub
 
     'Private Sub TesteparcelasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles TesteparcelasToolStripMenuItem.Click

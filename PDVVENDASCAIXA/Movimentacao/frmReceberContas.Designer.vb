@@ -22,12 +22,10 @@ Partial Class frmReceberContas
     'Não o modifique usando o editor de códigos.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmReceberContas))
-        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
-        Me.btSair = New System.Windows.Forms.Button()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.rbContasVencidas = New System.Windows.Forms.RadioButton()
@@ -37,12 +35,11 @@ Partial Class frmReceberContas
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.txtBuscarConta = New System.Windows.Forms.ComboBox()
         Me.Label3 = New System.Windows.Forms.Label()
+        Me.txtBuscarDescricao = New System.Windows.Forms.TextBox()
         Me.rbConta = New System.Windows.Forms.RadioButton()
         Me.rbDescricao = New System.Windows.Forms.RadioButton()
         Me.txtBuscarCliente = New System.Windows.Forms.ComboBox()
         Me.rbCliente = New System.Windows.Forms.RadioButton()
-        Me.txtBuscarDescricao = New System.Windows.Forms.TextBox()
-        Me.btNovo = New System.Windows.Forms.Button()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.lblTotal = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
@@ -54,54 +51,28 @@ Partial Class frmReceberContas
         Me.Label7 = New System.Windows.Forms.Label()
         Me.txtTotalContasPagar = New System.Windows.Forms.TextBox()
         Me.dg1 = New System.Windows.Forms.DataGridView()
+        Me.btNovo = New System.Windows.Forms.Button()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.pbSair = New System.Windows.Forms.PictureBox()
         Me.Panel1.SuspendLayout()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         CType(Me.dg1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pbSair, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.DarkGreen
+        Me.Panel1.Controls.Add(Me.pbSair)
         Me.Panel1.Controls.Add(Me.PictureBox2)
-        Me.Panel1.Controls.Add(Me.btSair)
         Me.Panel1.Controls.Add(Me.Label5)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(1200, 60)
         Me.Panel1.TabIndex = 335
-        '
-        'PictureBox2
-        '
-        Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
-        Me.PictureBox2.Location = New System.Drawing.Point(3, 3)
-        Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(72, 54)
-        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox2.TabIndex = 312
-        Me.PictureBox2.TabStop = False
-        '
-        'btSair
-        '
-        Me.btSair.BackColor = System.Drawing.Color.Transparent
-        Me.btSair.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btSair.FlatAppearance.BorderSize = 0
-        Me.btSair.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Azure
-        Me.btSair.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
-        Me.btSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btSair.ForeColor = System.Drawing.Color.White
-        Me.btSair.Image = CType(resources.GetObject("btSair.Image"), System.Drawing.Image)
-        Me.btSair.Location = New System.Drawing.Point(1083, 15)
-        Me.btSair.Margin = New System.Windows.Forms.Padding(7, 6, 7, 6)
-        Me.btSair.Name = "btSair"
-        Me.btSair.Size = New System.Drawing.Size(89, 33)
-        Me.btSair.TabIndex = 19
-        Me.btSair.Text = "Sair"
-        Me.btSair.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.btSair.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btSair.UseVisualStyleBackColor = False
         '
         'Label5
         '
@@ -212,6 +183,13 @@ Partial Class frmReceberContas
         Me.Label3.TabIndex = 206
         Me.Label3.Text = "Buscar:"
         '
+        'txtBuscarDescricao
+        '
+        Me.txtBuscarDescricao.Location = New System.Drawing.Point(310, 16)
+        Me.txtBuscarDescricao.Name = "txtBuscarDescricao"
+        Me.txtBuscarDescricao.Size = New System.Drawing.Size(330, 20)
+        Me.txtBuscarDescricao.TabIndex = 217
+        '
         'rbConta
         '
         Me.rbConta.AutoSize = True
@@ -256,34 +234,6 @@ Partial Class frmReceberContas
         Me.rbCliente.TabStop = True
         Me.rbCliente.Text = "Cliente"
         Me.rbCliente.UseVisualStyleBackColor = True
-        '
-        'txtBuscarDescricao
-        '
-        Me.txtBuscarDescricao.Location = New System.Drawing.Point(310, 16)
-        Me.txtBuscarDescricao.Name = "txtBuscarDescricao"
-        Me.txtBuscarDescricao.Size = New System.Drawing.Size(330, 20)
-        Me.txtBuscarDescricao.TabIndex = 217
-        '
-        'btNovo
-        '
-        Me.btNovo.BackColor = System.Drawing.Color.Transparent
-        Me.btNovo.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btNovo.FlatAppearance.BorderSize = 0
-        Me.btNovo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSteelBlue
-        Me.btNovo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSkyBlue
-        Me.btNovo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btNovo.Font = New System.Drawing.Font("Arial Rounded MT Bold", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btNovo.ForeColor = System.Drawing.Color.White
-        Me.btNovo.Image = CType(resources.GetObject("btNovo.Image"), System.Drawing.Image)
-        Me.btNovo.Location = New System.Drawing.Point(982, 69)
-        Me.btNovo.Margin = New System.Windows.Forms.Padding(5)
-        Me.btNovo.Name = "btNovo"
-        Me.btNovo.Size = New System.Drawing.Size(168, 43)
-        Me.btNovo.TabIndex = 338
-        Me.btNovo.Text = "Novo Cadastro"
-        Me.btNovo.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.btNovo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btNovo.UseVisualStyleBackColor = False
         '
         'Label10
         '
@@ -423,28 +373,70 @@ Partial Class frmReceberContas
         '
         Me.dg1.AllowUserToAddRows = False
         Me.dg1.AllowUserToDeleteRows = False
-        DataGridViewCellStyle9.BackColor = System.Drawing.Color.DarkGray
-        DataGridViewCellStyle9.ForeColor = System.Drawing.Color.DarkBlue
-        Me.dg1.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle9
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.DarkGray
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.DarkBlue
+        Me.dg1.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle3
         Me.dg1.BackgroundColor = System.Drawing.Color.White
         Me.dg1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.dg1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle10.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle10.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dg1.DefaultCellStyle = DataGridViewCellStyle10
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dg1.DefaultCellStyle = DataGridViewCellStyle4
         Me.dg1.GridColor = System.Drawing.Color.CadetBlue
-        Me.dg1.Location = New System.Drawing.Point(8, 144)
+        Me.dg1.Location = New System.Drawing.Point(6, 140)
         Me.dg1.Margin = New System.Windows.Forms.Padding(4)
         Me.dg1.Name = "dg1"
         Me.dg1.ReadOnly = True
         Me.dg1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dg1.Size = New System.Drawing.Size(1179, 337)
         Me.dg1.TabIndex = 371
+        '
+        'btNovo
+        '
+        Me.btNovo.BackColor = System.Drawing.Color.Transparent
+        Me.btNovo.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btNovo.FlatAppearance.BorderSize = 0
+        Me.btNovo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSeaGreen
+        Me.btNovo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGreen
+        Me.btNovo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btNovo.Font = New System.Drawing.Font("Arial Rounded MT Bold", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btNovo.ForeColor = System.Drawing.Color.White
+        Me.btNovo.Image = CType(resources.GetObject("btNovo.Image"), System.Drawing.Image)
+        Me.btNovo.Location = New System.Drawing.Point(1010, 69)
+        Me.btNovo.Margin = New System.Windows.Forms.Padding(5)
+        Me.btNovo.Name = "btNovo"
+        Me.btNovo.Size = New System.Drawing.Size(168, 43)
+        Me.btNovo.TabIndex = 338
+        Me.btNovo.Text = "Novo Cadastro"
+        Me.btNovo.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btNovo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btNovo.UseVisualStyleBackColor = False
+        '
+        'PictureBox2
+        '
+        Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
+        Me.PictureBox2.Location = New System.Drawing.Point(3, 3)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(72, 54)
+        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox2.TabIndex = 312
+        Me.PictureBox2.TabStop = False
+        '
+        'pbSair
+        '
+        Me.pbSair.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.pbSair.Image = Global.PDVVENDASCAIXA.My.Resources.Resources.fechar
+        Me.pbSair.Location = New System.Drawing.Point(1167, 2)
+        Me.pbSair.Name = "pbSair"
+        Me.pbSair.Size = New System.Drawing.Size(30, 30)
+        Me.pbSair.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.pbSair.TabIndex = 313
+        Me.pbSair.TabStop = False
         '
         'frmReceberContas
         '
@@ -473,12 +465,13 @@ Partial Class frmReceberContas
         Me.Text = "frmReceberContas"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox3.PerformLayout()
         CType(Me.dg1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pbSair, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -486,7 +479,6 @@ Partial Class frmReceberContas
 
     Friend WithEvents Panel1 As Panel
     Friend WithEvents PictureBox2 As PictureBox
-    Friend WithEvents btSair As Button
     Friend WithEvents Label5 As Label
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents rbContasVencidas As RadioButton
@@ -513,4 +505,5 @@ Partial Class frmReceberContas
     Friend WithEvents Label7 As Label
     Friend WithEvents txtTotalContasPagar As TextBox
     Friend WithEvents dg1 As DataGridView
+    Friend WithEvents pbSair As PictureBox
 End Class

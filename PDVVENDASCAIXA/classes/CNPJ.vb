@@ -1,6 +1,4 @@
-﻿
-
-Imports System.Net
+﻿Imports System.Net
 Imports Newtonsoft.Json
 
 Public Class AtividadePrincipal
@@ -25,17 +23,6 @@ End Class
 Public Class Qsa
     Property nome As String
     Property qual As String
-
-    'Public Shared Function ObterCnpj1(cnpj As String) As Qsa
-
-    '    Dim url = "https://www.receitaws.com.br/v1/cnpj/" + cnpj
-    '    Dim json = New WebClient().DownloadString(url)
-
-    '    Dim qsa = JsonConvert.DeserializeObject(Of Qsa)(json)
-
-    '    Return qsa
-
-    'End Function
 
 End Class
 
@@ -68,31 +55,6 @@ Public Class Empresa
     Property billing As Billing
 
 
-    'Public Sub New()
-
-    'End Sub
-
-    'Public Sub New(nome As String, qual As String)
-    '    Me.nome = nome
-    '    ' Me.qual = qual
-    'End Sub
-
-    'Public Sub ListaQsa(lista As List(Of Qsa))
-    '    lista.Add(New Qsa(""))
-    'End Sub
-
-    'Public Shared Function ObterCnpj1(cnpj As String) As Qsa
-
-    '    Dim url = "https://www.receitaws.com.br/v1/cnpj/" + cnpj
-    '    Dim json = New WebClient().DownloadString(url)
-
-    '    Dim qsa = JsonConvert.DeserializeObject(Of Qsa)(json)
-
-    '    Return qsa
-
-    'End Function
-
-
     Public Shared Function ObterCnpj(cnpj As String) As Empresa
 
         Dim url = "https://www.receitaws.com.br/v1/cnpj/" + cnpj
@@ -116,4 +78,4 @@ End Class
 
 
 
-'https://www.receitaws.com.br/v1/cnpj/05305236000150
+

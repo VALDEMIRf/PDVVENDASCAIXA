@@ -133,7 +133,7 @@ Public Class frmLancamentoContasPagar
                 'mskData.Text = dr.Item("datapagamento")
                 txtDesconto.Text = dr.Item("desconto")
                 txtJuros.Text = dr.Item("juros")
-                txtValoraPagar.Text = dr.Item("valorpago")
+                ' txtValoraPagar.Text = dr.Item("valorpago")
                 txtSituacao.Text = dr.Item("situacao")
 
             Else
@@ -182,7 +182,7 @@ Public Class frmLancamentoContasPagar
                 Dim valorParela = Replace(txtValorParcelas.Text, ",", ".")
                 Dim valorDesconto = Replace(txtDesconto.Text, ",", ".")
                 Dim valorJuros = Replace(txtJuros.Text, ",", ".")
-                Dim valorPago = Replace(txtValoraPagar.Text, ",", ".")
+                '    Dim valorPago = Replace(txtValoraPagar.Text, ",", ".")
 
                 abrir()
                 cmd = New SqlCommand("pa_ContasPagar_Salvar", con)
@@ -198,7 +198,7 @@ Public Class frmLancamentoContasPagar
                 cmd.Parameters.AddWithValue("@datapagamento", mskData.Text)
                 cmd.Parameters.AddWithValue("@desconto", valorDesconto)
                 cmd.Parameters.AddWithValue("@juros", valorJuros)
-                cmd.Parameters.AddWithValue("@valorpago", valorPago)
+                '' cmd.Parameters.AddWithValue("@valorpago", valorPago)
                 cmd.Parameters.AddWithValue("@situacao", txtSituacao.Text)
                 cmd.Parameters.AddWithValue("@usuario", usuarioNome)
                 cmd.Parameters.AddWithValue("@data_cadastro", txtDataEntrada.Text)
@@ -233,7 +233,7 @@ Public Class frmLancamentoContasPagar
                 Dim valorParela = Replace(txtValorParcelas.Text, ",", ".")
                 Dim valorDesconto = Replace(txtDesconto.Text, ",", ".")
                 Dim valorJuros = Replace(txtJuros.Text, ",", ".")
-                Dim valorPago = Replace(txtValoraPagar.Text, ",", ".")
+                ' Dim valorPago = Replace(txtValoraPagar.Text, ",", ".")
 
                 abrir()
                 cmd = New SqlCommand("pa_ContasPagar_Editar", con)
@@ -250,7 +250,7 @@ Public Class frmLancamentoContasPagar
                 cmd.Parameters.AddWithValue("@datapagamento", mskData.Text)
                 cmd.Parameters.AddWithValue("@desconto", valorDesconto)
                 cmd.Parameters.AddWithValue("@juros", valorJuros)
-                cmd.Parameters.AddWithValue("@valorpago", valorPago)
+                ' cmd.Parameters.AddWithValue("@valorpago", valorPago)
                 cmd.Parameters.AddWithValue("@situacao", txtSituacao.Text)
 
                 cmd.Parameters.Add("@mensagem", SqlDbType.VarChar, 100).Direction = 2
@@ -362,7 +362,7 @@ Public Class frmLancamentoContasPagar
         mskData.Enabled = False
         txtDesconto.Enabled = False
         txtJuros.Enabled = False
-        txtValoraPagar.Enabled = False
+        '  txtValoraPagar.Enabled = False
         txtSituacao.Enabled = False
 
     End Sub
@@ -383,7 +383,7 @@ Public Class frmLancamentoContasPagar
         mskData.Enabled = True
         txtDesconto.Enabled = True
         txtJuros.Enabled = True
-        txtValoraPagar.Enabled = True
+        ' txtValoraPagar.Enabled = True
         txtSituacao.Enabled = True
     End Sub
 
@@ -528,7 +528,7 @@ Public Class frmLancamentoContasPagar
             da.SelectCommand.Parameters.AddWithValue("@numDocto", txtNDoc.Text)
 
             da.Fill(dt)
-            dgvListaparcelas.DataSource = dt
+            '  dgvListaparcelas.DataSource = dt
 
             'FormatarDG()
         Catch ex As Exception
@@ -605,7 +605,7 @@ Public Class frmLancamentoContasPagar
 
 
 
-    Private Sub btCalcular_Click(sender As Object, e As EventArgs) Handles btCalcular.Click
+    Private Sub btCalcular_Click(sender As Object, e As EventArgs)
         'Então, se o boleto tiver registrado o total da compra em R$ 100, 
         'os juros cobrados por dia terão valor de R$ 1 ÷ 30 = R$ 0, 33.
         'Caso o cliente atrase o pagamento em 15 dias, por exemplo, 
@@ -622,36 +622,33 @@ Public Class frmLancamentoContasPagar
         Dim j2 As Decimal
 
 
-        Dim diferencaDiasPagamento = DateDiff("d", txtVencimento.Text, mskDataPagto.Text).ToString + vbCrLf
+        '  Dim diferencaDiasPagamento = DateDiff("d", txtVencimento.Text, mskDataPagto.Text).ToString + vbCrLf
 
         j = (valorTotal * 1) / 100
 
         j2 = j / 30
 
         valorTotal = txtValorParcelas.Text
-        valorParcela = lblRecebeValorParcela.Text
-        valorPago = txtValoraPagar.Text
+        ' valorParcela = lblRecebeValorParcela.Text
+        ' valorPago = txtValoraPagar.Text
 
-        If diferencaDiasPagamento > 0 Then
-            lblRecebeJuros.Text = diferencaDiasPagamento * 0.033
-            txtJuros.Text = diferencaDiasPagamento * 0.033
+        ' If diferencaDiasPagamento > 0 Then
+        '   lblRecebeJuros.Text = diferencaDiasPagamento * 0.033
+        'xtJuros.Text = diferencaDiasPagamento * 0.033
 
-
-        End If
+        ' End If
         juros = txtJuros.Text
 
         j = valorParcela + juros
 
-        txtValoraPagar.Text = j
+        '     txtValoraPagar.Text = j
 
         saldoRestante = valorTotal - valorParcela
-        lblSaldoRestante.Text = saldoRestante
-
-
+        '  lblSaldoRestante.Text = saldoRestante
 
     End Sub
 
-    Private Sub btBaixarConta_Click(sender As Object, e As EventArgs) Handles btBaixarConta.Click
+    Private Sub btBaixarConta_Click(sender As Object, e As EventArgs)
         Dim cmd As SqlCommand
         Dim cmd2 As SqlCommand
 
@@ -660,12 +657,12 @@ Public Class frmLancamentoContasPagar
             abrir()
 
             Dim vlTotal = Replace(txtValorParcelas.Text, ",", ".")
-            Dim vlValorParcela = Replace(lblRecebeValorParcela.Text, ",", ".")
-            Dim vlvaloraPagar = Replace(txtValoraPagar.Text, ",", ".")
-            Dim vlSaldoRestante = Replace(lblRecebeValorParcela.Text, ",", ".")
+            '   Dim vlValorParcela = Replace(lblRecebeValorParcela.Text, ",", ".")
+            '  Dim vlvaloraPagar = Replace(txtValoraPagar.Text, ",", ".")
+            '  Dim vlSaldoRestante = Replace(lblRecebeValorParcela.Text, ",", ".")
             Dim Totjuros As Decimal
 
-            Totjuros = lblRecebeJuros.Text
+            '   Totjuros = lblRecebeJuros.Text
             'INSERIR PARCELAS PAGAS tbContaspagas
 
             cmd = New SqlCommand("pa_ContasPagas_Salvar", con)
@@ -673,14 +670,14 @@ Public Class frmLancamentoContasPagar
             cmd.Parameters.AddWithValue("@numDocto", txtNDoc.Text)
             cmd.Parameters.AddWithValue("@dataEntrada", txtDataEntrada.Text)
             cmd.Parameters.AddWithValue("@id_fornecedor", txtFornecedor.SelectedValue)
-            cmd.Parameters.AddWithValue("@vencimento", lblRecebeVencimento.Text)
+            '   cmd.Parameters.AddWithValue("@vencimento", lblRecebeVencimento.Text)
             cmd.Parameters.AddWithValue("@descricao", txtDescricao.Text)
-            cmd.Parameters.AddWithValue("@dataPagamento", mskDataPagto.Text)
+            '  cmd.Parameters.AddWithValue("@dataPagamento", mskDataPagto.Text)
             cmd.Parameters.AddWithValue("@valorTotal", vlTotal)
-            cmd.Parameters.AddWithValue("@parcela", lblRecebeNumParcela.Text)
-            cmd.Parameters.AddWithValue("@valorParcela", vlValorParcela)
-            cmd.Parameters.AddWithValue("@valorPago", vlvaloraPagar)
-            cmd.Parameters.AddWithValue("@saldoRestante", vlSaldoRestante)
+            ' cmd.Parameters.AddWithValue("@parcela", lblRecebeNumParcela.Text)
+            ' cmd.Parameters.AddWithValue("@valorParcela", vlValorParcela)
+            '  cmd.Parameters.AddWithValue("@valorPago", vlvaloraPagar)
+            '  cmd.Parameters.AddWithValue("@saldoRestante", vlSaldoRestante)
             cmd.Parameters.AddWithValue("@juros", Totjuros)
             cmd.Parameters.Add("@mensagem", SqlDbType.VarChar, 100).Direction = 2
             cmd.ExecuteNonQuery()
@@ -692,7 +689,7 @@ Public Class frmLancamentoContasPagar
 
             cmd2 = New SqlCommand("pa_Parcelas_EditarSituacao", con)
             cmd2.CommandType = CommandType.StoredProcedure
-            cmd2.Parameters.AddWithValue("@id_parcela", lblCodigoParcela.Text)
+            ' cmd2.Parameters.AddWithValue("@id_parcela", lblCodigoParcela.Text)
             cmd2.Parameters.AddWithValue("@situacao", "Paga")
             cmd2.Parameters.Add("@mensagem", SqlDbType.VarChar, 100).Direction = 2
             cmd2.ExecuteNonQuery()
@@ -709,13 +706,13 @@ Public Class frmLancamentoContasPagar
         End Try
     End Sub
 
-    Private Sub dgvListaparcelas_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvListaparcelas.CellClick
-        lblCodigoParcela.Text = dgvListaparcelas.CurrentRow.Cells(0).Value
-        lblRecebeNumParcela.Text = dgvListaparcelas.CurrentRow.Cells(1).Value
-        lblRecebeVencimento.Text = dgvListaparcelas.CurrentRow.Cells(2).Value
-        lblRecebeValorParcela.Text = dgvListaparcelas.CurrentRow.Cells(3).Value
+    'Private Sub dgvListaparcelas_CellClick(sender As Object, e As DataGridViewCellEventArgs)
+    '    lblCodigoParcela.Text = dgvListaparcelas.CurrentRow.Cells(0).Value
+    '    lblRecebeNumParcela.Text = dgvListaparcelas.CurrentRow.Cells(1).Value
+    '    lblRecebeVencimento.Text = dgvListaparcelas.CurrentRow.Cells(2).Value
+    '    lblRecebeValorParcela.Text = dgvListaparcelas.CurrentRow.Cells(3).Value
 
-    End Sub
+    'End Sub
 
     Private Sub rbParcelamento_CheckedChanged(sender As Object, e As EventArgs) Handles rbParcelamento.CheckedChanged
         ' If txtSituacao.Text = "Em Parcelamento" Then
@@ -734,7 +731,6 @@ Public Class frmLancamentoContasPagar
 
         End If
     End Sub
-
 
 End Class
 

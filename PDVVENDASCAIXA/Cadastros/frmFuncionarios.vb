@@ -1,5 +1,6 @@
 ﻿Imports System.Data.SqlClient
 Imports System.IO
+Imports System.Text.RegularExpressions
 Imports iTextSharp.text.pdf
 Public Class frmFuncionarios
     Private ImagemCarregada As Image
@@ -218,7 +219,10 @@ Public Class frmFuncionarios
     End Sub
 
     Private Sub btBuscarCEP_Click(sender As Object, e As EventArgs) Handles btBuscarCEP.Click
-        ObterCep(txtCEP.Text)
+        If validaCEP() Then
+            ObterCep(txtCEP.Text)
+            ' MessageBox.Show("Digite um cep válido!!!!")
+        End If
 
         'Try
         '    Dim ws = New WSCEP.AtendeClienteClient()
@@ -233,6 +237,16 @@ Public Class frmFuncionarios
         '    MsgBox("Erro ao buscar o CEP.!" & ex.Message.ToString, vbCritical)
         'End Try
     End Sub
+
+    Private Function validaCEP()
+        Dim rgxCep = New Regex("^\d{5}-\d{3}$")
+        If Not rgxCep.IsMatch(txtCEP.Text) Then
+            MessageBox.Show("Digite um cep válido!!!!")
+            txtCEP.Focus()
+            Return False
+        End If
+        Return True
+    End Function
 
     Private Sub btNovo_Click(sender As Object, e As EventArgs) Handles btNovo.Click
         HabilitarCampos()

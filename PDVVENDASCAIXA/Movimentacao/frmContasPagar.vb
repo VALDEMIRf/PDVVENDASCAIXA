@@ -139,20 +139,20 @@ Public Class frmContasPagar
             .Columns(7).Width = 300
             .Columns(15).Width = 120
 
-            For Each row As DataGridViewRow In .Rows
-                '  row.Cells("situacao").Style.ForeColor = ColorirSituacao(row.Cells("situacao").Value)
+            '    For Each row As DataGridViewRow In .Rows
+            '        '  row.Cells("situacao").Style.ForeColor = ColorirSituacao(row.Cells("situacao").Value)
 
-                If row.Cells("situacao").Value = "Não Paga" Then
-                    row.DefaultCellStyle.BackColor = Color.Red
-                    row.DefaultCellStyle.ForeColor = Color.White
-                ElseIf row.Cells("situacao").Value = "Paga" Then
-                    row.DefaultCellStyle.BackColor = Color.Green
-                    row.DefaultCellStyle.ForeColor = Color.White
-                ElseIf row.Cells("situacao").Value = "Vencida" Then
-                    row.DefaultCellStyle.BackColor = Color.DarkRed
-                    row.DefaultCellStyle.ForeColor = Color.White
-                End If
-            Next
+            '        If row.Cells("situacao").Value = "Não Paga" Then
+            '            row.DefaultCellStyle.BackColor = Color.Red
+            '            row.DefaultCellStyle.ForeColor = Color.White
+            '        ElseIf row.Cells("situacao").Value = "Paga" Then
+            '            row.DefaultCellStyle.BackColor = Color.Green
+            '            row.DefaultCellStyle.ForeColor = Color.White
+            '        ElseIf row.Cells("situacao").Value = "Vencida" Then
+            '            row.DefaultCellStyle.BackColor = Color.DarkRed
+            '            row.DefaultCellStyle.ForeColor = Color.White
+            '        End If
+            '    Next
         End With
 
     End Sub

@@ -82,7 +82,7 @@ Partial Class frmEmpresa
         Me.dg.Name = "dg"
         Me.dg.ReadOnly = True
         Me.dg.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dg.Size = New System.Drawing.Size(762, 139)
+        Me.dg.Size = New System.Drawing.Size(762, 97)
         Me.dg.TabIndex = 276
         '
         'txtCEP
@@ -360,7 +360,7 @@ Partial Class frmEmpresa
         Me.btSair.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btSair.ForeColor = System.Drawing.Color.White
         Me.btSair.Image = CType(resources.GetObject("btSair.Image"), System.Drawing.Image)
-        Me.btSair.Location = New System.Drawing.Point(327, 370)
+        Me.btSair.Location = New System.Drawing.Point(323, 330)
         Me.btSair.Margin = New System.Windows.Forms.Padding(4)
         Me.btSair.Name = "btSair"
         Me.btSair.Size = New System.Drawing.Size(75, 44)
@@ -381,7 +381,7 @@ Partial Class frmEmpresa
         Me.btnSalvar.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSalvar.ForeColor = System.Drawing.Color.White
         Me.btnSalvar.Image = CType(resources.GetObject("btnSalvar.Image"), System.Drawing.Image)
-        Me.btnSalvar.Location = New System.Drawing.Point(9, 368)
+        Me.btnSalvar.Location = New System.Drawing.Point(5, 328)
         Me.btnSalvar.Margin = New System.Windows.Forms.Padding(4)
         Me.btnSalvar.Name = "btnSalvar"
         Me.btnSalvar.Size = New System.Drawing.Size(100, 45)
@@ -402,7 +402,7 @@ Partial Class frmEmpresa
         Me.btnEditar.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnEditar.ForeColor = System.Drawing.Color.White
         Me.btnEditar.Image = CType(resources.GetObject("btnEditar.Image"), System.Drawing.Image)
-        Me.btnEditar.Location = New System.Drawing.Point(114, 370)
+        Me.btnEditar.Location = New System.Drawing.Point(110, 330)
         Me.btnEditar.Margin = New System.Windows.Forms.Padding(4)
         Me.btnEditar.Name = "btnEditar"
         Me.btnEditar.Size = New System.Drawing.Size(93, 44)
@@ -423,7 +423,7 @@ Partial Class frmEmpresa
         Me.btnExcluir.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnExcluir.ForeColor = System.Drawing.Color.White
         Me.btnExcluir.Image = CType(resources.GetObject("btnExcluir.Image"), System.Drawing.Image)
-        Me.btnExcluir.Location = New System.Drawing.Point(215, 370)
+        Me.btnExcluir.Location = New System.Drawing.Point(211, 330)
         Me.btnExcluir.Margin = New System.Windows.Forms.Padding(4)
         Me.btnExcluir.Name = "btnExcluir"
         Me.btnExcluir.Size = New System.Drawing.Size(90, 43)
@@ -438,7 +438,7 @@ Partial Class frmEmpresa
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.SteelBlue
-        Me.ClientSize = New System.Drawing.Size(778, 417)
+        Me.ClientSize = New System.Drawing.Size(778, 379)
         Me.Controls.Add(Me.btSair)
         Me.Controls.Add(Me.btnSalvar)
         Me.Controls.Add(Me.btnEditar)

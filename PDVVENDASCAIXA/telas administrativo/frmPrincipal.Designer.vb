@@ -95,7 +95,7 @@ Partial Class frmPrincipal
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CadastrosToolStripMenuItem, Me.EstoqueToolStripMenuItem, Me.MovimentaçãoToolStripMenuItem, Me.VendasToolStripMenuItem, Me.RelatóriosToolStripMenuItem, Me.SairToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(908, 28)
+        Me.MenuStrip1.Size = New System.Drawing.Size(990, 28)
         Me.MenuStrip1.TabIndex = 0
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -112,42 +112,42 @@ Partial Class frmPrincipal
         '
         Me.ClientesToolStripMenuItem.Image = CType(resources.GetObject("ClientesToolStripMenuItem.Image"), System.Drawing.Image)
         Me.ClientesToolStripMenuItem.Name = "ClientesToolStripMenuItem"
-        Me.ClientesToolStripMenuItem.Size = New System.Drawing.Size(156, 24)
+        Me.ClientesToolStripMenuItem.Size = New System.Drawing.Size(180, 24)
         Me.ClientesToolStripMenuItem.Text = "Clientes"
         '
         'CargosToolStripMenuItem
         '
         Me.CargosToolStripMenuItem.Image = CType(resources.GetObject("CargosToolStripMenuItem.Image"), System.Drawing.Image)
         Me.CargosToolStripMenuItem.Name = "CargosToolStripMenuItem"
-        Me.CargosToolStripMenuItem.Size = New System.Drawing.Size(156, 24)
+        Me.CargosToolStripMenuItem.Size = New System.Drawing.Size(180, 24)
         Me.CargosToolStripMenuItem.Text = "Cargos"
         '
         'FuncionáriosToolStripMenuItem
         '
         Me.FuncionáriosToolStripMenuItem.Image = CType(resources.GetObject("FuncionáriosToolStripMenuItem.Image"), System.Drawing.Image)
         Me.FuncionáriosToolStripMenuItem.Name = "FuncionáriosToolStripMenuItem"
-        Me.FuncionáriosToolStripMenuItem.Size = New System.Drawing.Size(156, 24)
+        Me.FuncionáriosToolStripMenuItem.Size = New System.Drawing.Size(180, 24)
         Me.FuncionáriosToolStripMenuItem.Text = "Funcionários"
         '
         'FornecedoresToolStripMenuItem
         '
         Me.FornecedoresToolStripMenuItem.Image = CType(resources.GetObject("FornecedoresToolStripMenuItem.Image"), System.Drawing.Image)
         Me.FornecedoresToolStripMenuItem.Name = "FornecedoresToolStripMenuItem"
-        Me.FornecedoresToolStripMenuItem.Size = New System.Drawing.Size(156, 24)
+        Me.FornecedoresToolStripMenuItem.Size = New System.Drawing.Size(180, 24)
         Me.FornecedoresToolStripMenuItem.Text = "Fornecedores"
         '
         'EmpresaToolStripMenuItem
         '
         Me.EmpresaToolStripMenuItem.Image = CType(resources.GetObject("EmpresaToolStripMenuItem.Image"), System.Drawing.Image)
         Me.EmpresaToolStripMenuItem.Name = "EmpresaToolStripMenuItem"
-        Me.EmpresaToolStripMenuItem.Size = New System.Drawing.Size(156, 24)
+        Me.EmpresaToolStripMenuItem.Size = New System.Drawing.Size(180, 24)
         Me.EmpresaToolStripMenuItem.Text = "Empresa"
         '
         'ProdutosToolStripMenuItem
         '
         Me.ProdutosToolStripMenuItem.Image = CType(resources.GetObject("ProdutosToolStripMenuItem.Image"), System.Drawing.Image)
         Me.ProdutosToolStripMenuItem.Name = "ProdutosToolStripMenuItem"
-        Me.ProdutosToolStripMenuItem.Size = New System.Drawing.Size(156, 24)
+        Me.ProdutosToolStripMenuItem.Size = New System.Drawing.Size(180, 24)
         Me.ProdutosToolStripMenuItem.Text = "Produtos"
         '
         'EstoqueToolStripMenuItem
@@ -163,21 +163,21 @@ Partial Class frmPrincipal
         '
         Me.EntradaSaídaToolStripMenuItem.Image = CType(resources.GetObject("EntradaSaídaToolStripMenuItem.Image"), System.Drawing.Image)
         Me.EntradaSaídaToolStripMenuItem.Name = "EntradaSaídaToolStripMenuItem"
-        Me.EntradaSaídaToolStripMenuItem.Size = New System.Drawing.Size(162, 24)
+        Me.EntradaSaídaToolStripMenuItem.Size = New System.Drawing.Size(180, 24)
         Me.EntradaSaídaToolStripMenuItem.Text = "Entrada / Saída"
         '
         'ConsultasToolStripMenuItem
         '
         Me.ConsultasToolStripMenuItem.Image = CType(resources.GetObject("ConsultasToolStripMenuItem.Image"), System.Drawing.Image)
         Me.ConsultasToolStripMenuItem.Name = "ConsultasToolStripMenuItem"
-        Me.ConsultasToolStripMenuItem.Size = New System.Drawing.Size(162, 24)
+        Me.ConsultasToolStripMenuItem.Size = New System.Drawing.Size(180, 24)
         Me.ConsultasToolStripMenuItem.Text = "Consultas"
         '
         'NíveisBaixoToolStripMenuItem
         '
         Me.NíveisBaixoToolStripMenuItem.Image = CType(resources.GetObject("NíveisBaixoToolStripMenuItem.Image"), System.Drawing.Image)
         Me.NíveisBaixoToolStripMenuItem.Name = "NíveisBaixoToolStripMenuItem"
-        Me.NíveisBaixoToolStripMenuItem.Size = New System.Drawing.Size(162, 24)
+        Me.NíveisBaixoToolStripMenuItem.Size = New System.Drawing.Size(180, 24)
         Me.NíveisBaixoToolStripMenuItem.Text = "Níveis Baixo"
         '
         'MovimentaçãoToolStripMenuItem
@@ -237,14 +237,14 @@ Partial Class frmPrincipal
         '
         Me.Modelo1ToolStripMenuItem.Image = CType(resources.GetObject("Modelo1ToolStripMenuItem.Image"), System.Drawing.Image)
         Me.Modelo1ToolStripMenuItem.Name = "Modelo1ToolStripMenuItem"
-        Me.Modelo1ToolStripMenuItem.Size = New System.Drawing.Size(159, 24)
+        Me.Modelo1ToolStripMenuItem.Size = New System.Drawing.Size(180, 24)
         Me.Modelo1ToolStripMenuItem.Text = "Tela Modelo 1"
         '
         'Modelo2ToolStripMenuItem
         '
         Me.Modelo2ToolStripMenuItem.Image = CType(resources.GetObject("Modelo2ToolStripMenuItem.Image"), System.Drawing.Image)
         Me.Modelo2ToolStripMenuItem.Name = "Modelo2ToolStripMenuItem"
-        Me.Modelo2ToolStripMenuItem.Size = New System.Drawing.Size(159, 24)
+        Me.Modelo2ToolStripMenuItem.Size = New System.Drawing.Size(180, 24)
         Me.Modelo2ToolStripMenuItem.Text = "Tela Modelo 2"
         '
         'ListarVendasToolStripMenuItem
@@ -402,7 +402,7 @@ Partial Class frmPrincipal
         Me.dg.BackgroundColor = System.Drawing.Color.White
         Me.dg.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dg.GridColor = System.Drawing.SystemColors.HotTrack
-        Me.dg.Location = New System.Drawing.Point(518, 189)
+        Me.dg.Location = New System.Drawing.Point(606, 188)
         Me.dg.Margin = New System.Windows.Forms.Padding(4)
         Me.dg.Name = "dg"
         Me.dg.ReadOnly = True
@@ -604,7 +604,7 @@ Partial Class frmPrincipal
         Me.BackColor = System.Drawing.Color.LightSteelBlue
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(908, 549)
+        Me.ClientSize = New System.Drawing.Size(990, 549)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.imagemNivel)
         Me.Controls.Add(Me.lblNivel)
