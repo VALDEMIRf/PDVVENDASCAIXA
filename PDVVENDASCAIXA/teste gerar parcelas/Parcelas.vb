@@ -7,6 +7,7 @@ Public Class Parcelas
     Dim sql As String
     Dim ds As New DataSet
     Dim conex As New ConexaoTeste
+    Dim param As SqlParameter
 
 
     Private id_parcela_ As Integer
@@ -93,10 +94,73 @@ Public Class Parcelas
         End Set
     End Property
 
+    Private saldoRestante_ As String
+    Public Property saldoRestante() As String
+        Get
+            Return saldoRestante_
+        End Get
+        Set(ByVal value As String)
+            saldoRestante_ = value
+        End Set
+    End Property
+
     Public Sub CadastrarParcela()
 
-        sql = "Insert Into tbParcelasPagar(parcela,data_parcela,valor_parcela,numDocto,descricao,valorTotal,situacao)values(" & parcela & ",'" & data_parcela & "','" & valor_parcela & "','" & numDocto & "','" & descricao & "','" & valorTotal & "','" & situacao & "' )"
+        sql = "Insert Into tbParcelasPagar(parcela,data_parcela,valor_parcela,numDocto,descricao,valorTotal,situacao,saldoRestante)values(" & parcela & ",'" & data_parcela & "','" & valor_parcela & "','" & numDocto & "','" & descricao & "','" & valorTotal & "','" & situacao & "','" & saldoRestante & "' )"
         conex.Operar(sql)
+
+        'Try
+        '    abrir()
+        '    Dim SqlQuery As String = "pa_Parcelas_Salvar"
+        '    Dim cmd As New SqlClient.SqlCommand(SqlQuery, con)
+        '    cmd.CommandType = CommandType.StoredProcedure
+
+        '    param = Paramete.parcela
+        '    param.Value = parcela
+        '    cmd.Parameters.Add(param)
+
+        '    param = Paramete.data_parcela
+        '    param.Value = data_parcela
+        '    cmd.Parameters.Add(param)
+
+        '    param = Paramete.valor_parcela
+        '    param.Value = valor_parcela
+        '    cmd.Parameters.Add(param)
+
+        '    param = Paramete.numDocto
+        '    param.Value = numDocto
+        '    cmd.Parameters.Add(param)
+
+        '    param = Paramete.descricao
+        '    param.Value = descricao
+        '    cmd.Parameters.Add(param)
+
+        '    param = Paramete.valorTotal
+        '    param.Value = valorTotal
+        '    cmd.Parameters.Add(param)
+
+        '    param = Paramete.situacao
+        '    param.Value = situacao
+        '    cmd.Parameters.Add(param)
+        '    cmd.Parameters.Add("@mensagem", SqlDbType.VarChar, 100).Direction = 2
+        '    cmd.ExecuteNonQuery()
+
+        '    Dim msg As String = cmd.Parameters("@mensagem").Value.ToString
+        '    MessageBox.Show(msg, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button3)
+
+        '        id_parcela Int PRIMARY KEY IDENTITY(1, 1) Not NULL,
+        'parcela Int,
+        'data_parcela Date,
+        'valor_parcela varchar(20),
+        'numDocto varchar(50),
+        'descricao varchar(200) NULL,
+        'valorTotal varchar(30),
+        'situacao varchar(20) 
+        'Catch ex As Exception
+        '    MessageBox.Show("Erro ao salvar os dados" + ex.Message.ToString)
+        'Finally
+        '    fechar()
+        'End Try
 
     End Sub
 
@@ -183,4 +247,39 @@ Public Class Parcelas
         End Try
 
     End Function
+
+
+    Public Class Paramete
+        Shared Function id_parcela() As SqlParameter
+            Return New SqlParameter("@id_parcela", SqlDbType.Int)  'parcela
+        End Function
+
+        Shared Function parcela() As SqlParameter
+            Return New SqlParameter("@parcela", SqlDbType.Int)  'parcela
+        End Function
+
+        Shared Function data_parcela() As SqlParameter
+            Return New SqlParameter("@data_parcela", SqlDbType.Date)
+        End Function
+
+        Shared Function valor_parcela() As SqlParameter
+            Return New SqlParameter("@valor_parcela", SqlDbType.VarChar)
+        End Function
+
+        Shared Function numDocto() As SqlParameter
+            Return New SqlParameter("@numDocto", SqlDbType.VarChar)
+        End Function
+        Shared Function descricao() As SqlParameter
+            Return New SqlParameter("@descricao", SqlDbType.VarChar)
+        End Function
+
+        Shared Function valorTotal() As SqlParameter
+            Return New SqlParameter("@valorTotal", SqlDbType.VarChar)
+        End Function
+
+        Shared Function situacao() As SqlParameter
+            Return New SqlParameter("@situacao", SqlDbType.VarChar)
+        End Function
+
+    End Class
 End Class

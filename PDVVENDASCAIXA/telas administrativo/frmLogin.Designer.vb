@@ -57,7 +57,7 @@ Partial Class frmLogin
         '
         Me.txtUsuario.BackColor = System.Drawing.Color.White
         Me.txtUsuario.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.txtUsuario.Location = New System.Drawing.Point(98, 130)
+        Me.txtUsuario.Location = New System.Drawing.Point(99, 130)
         Me.txtUsuario.Name = "txtUsuario"
         Me.txtUsuario.Size = New System.Drawing.Size(125, 13)
         Me.txtUsuario.TabIndex = 3

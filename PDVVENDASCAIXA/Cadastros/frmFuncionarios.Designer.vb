@@ -781,7 +781,7 @@ Partial Class frmFuncionarios
         Me.btImagem.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Teal
         Me.btImagem.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btImagem.Image = CType(resources.GetObject("btImagem.Image"), System.Drawing.Image)
-        Me.btImagem.Location = New System.Drawing.Point(815, 314)
+        Me.btImagem.Location = New System.Drawing.Point(802, 311)
         Me.btImagem.Name = "btImagem"
         Me.btImagem.Size = New System.Drawing.Size(37, 26)
         Me.btImagem.TabIndex = 24

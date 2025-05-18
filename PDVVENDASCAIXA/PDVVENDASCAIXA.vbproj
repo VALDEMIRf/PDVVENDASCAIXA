@@ -220,16 +220,28 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="mdlFuncoesDiversas.vb" />
-    <Compile Include="Movimentacao\frmBaixarContaPagar.Designer.vb">
+    <Compile Include="Movimentacao\contaspagar\frmBaixarContaPagar.Designer.vb">
       <DependentUpon>frmBaixarContaPagar.vb</DependentUpon>
     </Compile>
-    <Compile Include="Movimentacao\frmBaixarContaPagar.vb">
+    <Compile Include="Movimentacao\contaspagar\frmBaixarContaPagar.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Movimentacao\frmContasPagar.Designer.vb">
+    <Compile Include="Movimentacao\contaspagar\frmContasPagar.Designer.vb">
       <DependentUpon>frmContasPagar.vb</DependentUpon>
     </Compile>
-    <Compile Include="Movimentacao\frmContasPagar.vb">
+    <Compile Include="Movimentacao\contaspagar\frmContasPagar.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Movimentacao\contaspagar\frmGravarContaPagar.Designer.vb">
+      <DependentUpon>frmGravarContaPagar.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Movimentacao\contaspagar\frmGravarContaPagar.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Movimentacao\contasreceber\frmGravarContasReceber.Designer.vb">
+      <DependentUpon>frmGravarContasReceber.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Movimentacao\contasreceber\frmGravarContasReceber.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Movimentacao\frmFormaPagamento.Designer.vb">
@@ -238,22 +250,22 @@
     <Compile Include="Movimentacao\frmFormaPagamento.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Movimentacao\frmLancamentoContasPagar.Designer.vb">
+    <Compile Include="Movimentacao\contaspagar\frmLancamentoContasPagar.Designer.vb">
       <DependentUpon>frmLancamentoContasPagar.vb</DependentUpon>
     </Compile>
-    <Compile Include="Movimentacao\frmLancamentoContasPagar.vb">
+    <Compile Include="Movimentacao\contaspagar\frmLancamentoContasPagar.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Movimentacao\frmLancamentoContasReceber.Designer.vb">
+    <Compile Include="Movimentacao\contasreceber\frmLancamentoContasReceber.Designer.vb">
       <DependentUpon>frmLancamentoContasReceber.vb</DependentUpon>
     </Compile>
-    <Compile Include="Movimentacao\frmLancamentoContasReceber.vb">
+    <Compile Include="Movimentacao\contasreceber\frmLancamentoContasReceber.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Movimentacao\frmReceberContas.Designer.vb">
+    <Compile Include="Movimentacao\contasreceber\frmReceberContas.Designer.vb">
       <DependentUpon>frmReceberContas.vb</DependentUpon>
     </Compile>
-    <Compile Include="Movimentacao\frmReceberContas.vb">
+    <Compile Include="Movimentacao\contasreceber\frmReceberContas.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Movimentacao\frmServicos.Designer.vb">
@@ -479,22 +491,25 @@
     <EmbeddedResource Include="Estoque\frmNivelBaixo.resx">
       <DependentUpon>frmNivelBaixo.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Movimentacao\frmBaixarContaPagar.resx">
+    <EmbeddedResource Include="Movimentacao\contaspagar\frmBaixarContaPagar.resx">
       <DependentUpon>frmBaixarContaPagar.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Movimentacao\frmContasPagar.resx">
+    <EmbeddedResource Include="Movimentacao\contaspagar\frmContasPagar.resx">
       <DependentUpon>frmContasPagar.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Movimentacao\contaspagar\frmGravarContaPagar.resx">
+      <DependentUpon>frmGravarContaPagar.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Movimentacao\frmFormaPagamento.resx">
       <DependentUpon>frmFormaPagamento.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Movimentacao\frmLancamentoContasPagar.resx">
+    <EmbeddedResource Include="Movimentacao\contaspagar\frmLancamentoContasPagar.resx">
       <DependentUpon>frmLancamentoContasPagar.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Movimentacao\frmLancamentoContasReceber.resx">
+    <EmbeddedResource Include="Movimentacao\contasreceber\frmLancamentoContasReceber.resx">
       <DependentUpon>frmLancamentoContasReceber.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Movimentacao\frmReceberContas.resx">
+    <EmbeddedResource Include="Movimentacao\contasreceber\frmReceberContas.resx">
       <DependentUpon>frmReceberContas.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Movimentacao\frmServicos.resx">
@@ -956,9 +971,11 @@
     <None Include="Resources\cancel.png" />
     <None Include="Resources\cancel1.png" />
     <None Include="Resources\fechar.png" />
+    <None Include="Resources\gerarmensalidade.png" />
     <Content Include="Resources\header-pagarreceber.png" />
     <None Include="Resources\Undo_32x32.png" />
     <None Include="Resources\Save.png" />
+    <None Include="Resources\numbered.24.png" />
     <Content Include="SqlServerTypes\Loader.cs" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">

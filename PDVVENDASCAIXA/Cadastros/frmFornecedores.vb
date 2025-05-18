@@ -326,8 +326,6 @@ Public Class frmFornecedores
 
         Dim cliente = Empresa.ObterCnpj(cnpj)
 
-        '   MessageBox.Show("CNPJ Incorreto, digite um CNPJ válido!!!", "ERRO")
-
         Try
             txtRazaoSocial.Text = cliente.nome
             txtSituacao.Text = cliente.situacao
@@ -344,14 +342,11 @@ Public Class frmFornecedores
             txtTel.Text = cliente.telefone
             txtEmail.Text = cliente.email
 
-
         Catch ex As Exception
 
             '  MessageBox.Show("CNPJ Incorreto, digite um CNPJ válido!!!" + ex.Message.ToString)
             MessageBox.Show("CNPJ Incorreto, digite um CNPJ válido!!!", "ERRO")
         End Try
-
     End Sub
-
 
 End Class

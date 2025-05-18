@@ -20,7 +20,8 @@ Module conexao
     Public empresaNome As String
     Public intPergunta As Integer
     Public intCodigoLancamento As Integer = 0
-
+    Public situacaoPagamento As String
+    Public intCodigoBaixa As Integer = 0
 End Module
 
 
