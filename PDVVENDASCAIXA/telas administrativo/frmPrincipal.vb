@@ -135,12 +135,7 @@ Public Class frmPrincipal
         form.ShowDialog()
     End Sub
 
-    Private Sub ContasAPagarToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ContasAPagarToolStripMenuItem.Click
-        Dim form = New frmContasPagar
-        form.ShowDialog()
-    End Sub
-
-    Private Sub ContasAReceberToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ContasAReceberToolStripMenuItem.Click
+    Private Sub ContasAReceberToolStripMenuItem_Click(sender As Object, e As EventArgs)
         Dim form = New frmReceberContas
         form.ShowDialog()
     End Sub
@@ -371,10 +366,10 @@ Public Class frmPrincipal
 
             '  If (msg = "Abra primeiro o Caixa" Or lblTextoCaixa.Text = "CAIXA FECHADO") Then
             If (msg = "Abra primeiro o Caixa") Then
-                    abertura = False
-                    carregarImagem()
-                Else
-                    abertura = True
+                abertura = False
+                carregarImagem()
+            Else
+                abertura = True
                 carregarImagem()
             End If
 
@@ -619,9 +614,12 @@ Public Class frmPrincipal
         form.ShowDialog()
     End Sub
 
-    Private Sub TesteparcelasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles TesteparcelasToolStripMenuItem.Click
-
+    Private Sub ContasAPagarToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ContasAPagarToolStripMenuItem.Click
+        Dim form = New frmContasApagar
+        form.ShowDialog()
     End Sub
+
+
 
     'Private Sub TesteparcelasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles TesteparcelasToolStripMenuItem.Click
     '    Dim form = New frmBaixarContaPagar

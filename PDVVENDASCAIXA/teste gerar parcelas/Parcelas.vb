@@ -20,6 +20,27 @@ Public Class Parcelas
         End Set
     End Property
 
+    Private id_categoriacontas_ As Integer
+    Public Property id_categoriacontas() As Integer
+        Get
+            Return id_categoriacontas_
+        End Get
+        Set(ByVal value As Integer)
+            id_categoriacontas_ = value
+        End Set
+    End Property
+
+
+    Private Pago_ As Boolean
+    Public Property Pago() As Boolean
+        Get
+            Return Pago_
+        End Get
+        Set(ByVal value As Boolean)
+            Pago_ = value
+        End Set
+    End Property
+
     Private parcela_ As Integer
     Public Property parcela() As Integer
         Get
@@ -106,7 +127,7 @@ Public Class Parcelas
 
     Public Sub CadastrarParcela()
 
-        sql = "Insert Into tbParcelasPagar(parcela,data_parcela,valor_parcela,numDocto,descricao,valorTotal,situacao,saldoRestante)values(" & parcela & ",'" & data_parcela & "','" & valor_parcela & "','" & numDocto & "','" & descricao & "','" & valorTotal & "','" & situacao & "','" & saldoRestante & "' )"
+        sql = "Insert Into tbParcelasAPagar(id_categoriacontas,parcela,data_parcela,valor_parcela,numDocto,Pago,valorTotal,situacao,saldoRestante)values(" & id_categoriacontas & "," & parcela & ",'" & data_parcela & "','" & valor_parcela & "','" & numDocto & "','" & Pago & "','" & valorTotal & "','" & situacao & "','" & saldoRestante & "' )"
         conex.Operar(sql)
 
         'Try

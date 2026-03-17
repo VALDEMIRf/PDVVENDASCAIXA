@@ -120,20 +120,21 @@ Public Class frmLancamentoContasPagar
 
             If dr.HasRows Then
                 dr.Read()
+                lblCodigoConta.Text = dr.Item("id")
                 txtNDoc.Text = dr.Item("numDocto")
                 txtConta.Text = dr.Item("id_categoriacontas")
                 txtFornecedor.Text = dr.Item("id_fornecedor")
-                txtDescricao.Text = dr.Item("descricao")
+                ' txtDescricao.Text = dr.Item("descricao")
                 txtFormaPagto.Text = dr.Item("id_formaPag")
                 txtValor.Text = dr.Item("valor")
-
-                txtVencimento.Text = dr.Item("vencimento")
+                lblPago.Text = dr.Item("Pago")
+                txtVencimento.Text = dr.Item("DataVencimento")
                 txtDataEntrada.Text = dr.Item("data_cadastro")
                 'mskData.Text = dr.Item("datapagamento")
-                txtDesconto.Text = dr.Item("desconto")
-                txtJuros.Text = dr.Item("juros")
+                ' txtDesconto.Text = dr.Item("desconto")
+                ' txtJuros.Text = dr.Item("juros")
                 ' txtValoraPagar.Text = dr.Item("valorpago")
-                txtSituacao.Text = dr.Item("situacao")
+                ' txtSituacao.Text = dr.Item("situacao")
 
             End If
 
@@ -148,17 +149,17 @@ Public Class frmLancamentoContasPagar
         txtValor.Text = FormatCurrency(txtValor.Text)
     End Sub
 
-    Private Sub btConta_Click(sender As Object, e As EventArgs) Handles btConta.Click
+    Private Sub btConta_Click(sender As Object, e As EventArgs)
         Dim form = New frmTipoDocumento
         form.ShowDialog()
     End Sub
 
-    Private Sub btFornecedor_Click(sender As Object, e As EventArgs) Handles btFornecedor.Click
+    Private Sub btFornecedor_Click(sender As Object, e As EventArgs)
         Dim form = New frmFornecedores
         form.ShowDialog()
     End Sub
 
-    Private Sub btFormaPagto_Click(sender As Object, e As EventArgs) Handles btFormaPagto.Click
+    Private Sub btFormaPagto_Click(sender As Object, e As EventArgs)
         Dim form = New frmFormaPagamento
         form.ShowDialog()
     End Sub
@@ -173,7 +174,7 @@ Public Class frmLancamentoContasPagar
         txtNDoc.Enabled = False
         txtConta.Enabled = False
         txtFornecedor.Enabled = False
-        txtDescricao.Enabled = False
+        ' txtDescricao.Enabled = False
         txtFormaPagto.Enabled = False
         txtValor.Enabled = False
 
@@ -194,7 +195,7 @@ Public Class frmLancamentoContasPagar
         txtNDoc.Enabled = True
         txtConta.Enabled = True
         txtFornecedor.Enabled = True
-        txtDescricao.Enabled = True
+        '  txtDescricao.Enabled = True
         txtFormaPagto.Enabled = True
         txtValor.Enabled = True
 
@@ -239,11 +240,11 @@ Public Class frmLancamentoContasPagar
             Dim valor1 As Decimal
             Dim valorTotal As Decimal
             Try
-                lblDesconto.Text = txtDesconto.Text
-                lblValor.Text = txtValor.Text
+                lblCodigoConta.Text = txtDesconto.Text
+                lblPago.Text = txtValor.Text
 
-                desc = lblDesconto.Text
-                valor1 = lblValor.Text
+                desc = lblCodigoConta.Text
+                valor1 = lblPago.Text
                 valorTotal = valor1 - desc
 
                 ' txtValorPago.Text = valorTotal
@@ -264,10 +265,10 @@ Public Class frmLancamentoContasPagar
             Dim valorTotal As Decimal
             Try
                 ' lblJuros.Text = txtJuros.Text
-                lblValor.Text = txtValor.Text
+                lblPago.Text = txtValor.Text
 
                 jur = txtJuros.Text
-                valor1 = lblValor.Text
+                valor1 = lblPago.Text
                 valorTotal = valor1 + jur
 
                 'txtValorPago.Text = valorTotal
@@ -294,6 +295,14 @@ Public Class frmLancamentoContasPagar
         Dim ValorTotal, valorParcela, valorDesconto, valorJuros As Double
         Dim situacao = txtSituacao.Text
 
+        Dim situacaoPagto As String
+        If lblPago.Text = False Then
+            situacaoPagto = "Não"
+        Else
+            situacaoPagto = "Sim"
+        End If
+
+
         'Calcular valor de cada Parcela
 
         ValorTotal = txtValorParcelas.Text
@@ -317,7 +326,7 @@ Public Class frmLancamentoContasPagar
                 End If
 
                 ' dgvParcelas.Rows.Add(i + 1, Mid(novaParcela.ToString, 1, 10), FormatCurrency(valorParcela), txtNDoc.Text, txtDescricao.Text, txtValor.Text, situacao, txtCodigo.Text)
-                dgvParcelas.Rows.Add(txtCodigo.Text, i + 1, Mid(novaParcela.ToString, 1, 10), FormatCurrency(valorParcela), txtNDoc.Text, txtDescricao.Text, FormatCurrency(ValorTotal), txtSituacao.Text, txtSaldoRestante.Text)
+                dgvParcelas.Rows.Add(txtCodigo.Text, i + 1, Mid(novaParcela.ToString, 1, 10), FormatCurrency(valorParcela), txtNDoc.Text, situacaoPagto, FormatCurrency(ValorTotal), txtSituacao.Text, txtSaldoRestante.Text, txtFornecedor.SelectedValue, lblCodigoConta.Text)
 
             Next
 
@@ -340,7 +349,7 @@ Public Class frmLancamentoContasPagar
             da.SelectCommand.Parameters.AddWithValue("@numDocto", txtNDoc.Text)
 
             da.Fill(dt)
-            dgvBaixarConta.DataSource = dt
+            ' dgvBaixarConta.DataSource = dt
 
             'FormatarParcelasDG()
 
@@ -351,45 +360,45 @@ Public Class frmLancamentoContasPagar
         End Try
     End Sub
 
-    Private Sub FormatarParcelasDG()
-        With dgvBaixarConta
+    ' Private Sub FormatarParcelasDG()
+    'With dgvBaixarConta
 
-            .Columns(0).Visible = False
-            .Columns(4).Visible = False
-            .Columns(5).Visible = False
-            .Columns(6).Visible = False
+    '    .Columns(0).Visible = False
+    '    .Columns(4).Visible = False
+    '    .Columns(5).Visible = False
+    '    .Columns(6).Visible = False
 
-            .Columns(3).DefaultCellStyle.Format = "c"
-            .Columns(6).DefaultCellStyle.Format = "c"
-            .Columns(8).DefaultCellStyle.Format = "c"
+    '    .Columns(3).DefaultCellStyle.Format = "c"
+    '    .Columns(6).DefaultCellStyle.Format = "c"
+    '    .Columns(8).DefaultCellStyle.Format = "c"
 
-            .Columns(0).HeaderText = "Código"
-            .Columns(1).HeaderText = "Nr. Parcela"
-            .Columns(2).HeaderText = "Data"
-            .Columns(3).HeaderText = "Valor Parcela"
-            .Columns(4).HeaderText = "Documento"
-            .Columns(5).HeaderText = "Descrição"
-            .Columns(6).HeaderText = "Valor Total"
-            .Columns(7).HeaderText = "Situação"
-            .Columns(8).HeaderText = "Saldo Restante"
+    '    .Columns(0).HeaderText = "Código"
+    '    .Columns(1).HeaderText = "Nr. Parcela"
+    '    .Columns(2).HeaderText = "Data"
+    '    .Columns(3).HeaderText = "Valor Parcela"
+    '    .Columns(4).HeaderText = "Documento"
+    '    .Columns(5).HeaderText = "Descrição"
+    '    .Columns(6).HeaderText = "Valor Total"
+    '    .Columns(7).HeaderText = "Situação"
+    '    .Columns(8).HeaderText = "Saldo Restante"
 
-            .Columns(1).Width = 100
-            .Columns(2).Width = 120
-            .Columns(3).Width = 150
-            .Columns(4).Width = 180
-            .Columns(5).Width = 180
-            .Columns(6).Width = 150
-            .Columns(7).Width = 160
-            .Columns(8).Width = 150
+    '    .Columns(1).Width = 100
+    '    .Columns(2).Width = 120
+    '    .Columns(3).Width = 150
+    '    .Columns(4).Width = 180
+    '    .Columns(5).Width = 180
+    '    .Columns(6).Width = 150
+    '    .Columns(7).Width = 160
+    '    .Columns(8).Width = 150
 
 
-        End With
-    End Sub
+    'End With
+    ' End Sub
 
-    Private Sub dgvBaixarConta_DoubleClick(sender As Object, e As EventArgs) Handles dgvBaixarConta.DoubleClick
-        'intCodigoBaixa = dgvBaixarConta.CurrentRow().Cells("id_parcela").Value
-        'frmBaixarContaPagar.ShowDialog()
-    End Sub
+    '  Private Sub dgvBaixarConta_DoubleClick(sender As Object, e As EventArgs)
+    'intCodigoBaixa = dgvBaixarConta.CurrentRow().Cells("id_parcela").Value
+    'frmBaixarContaPagar.ShowDialog()
+    '  End Sub
 
     Private Sub btGravarParcelas_Click(sender As Object, e As EventArgs) Handles btGravarParcelas.Click
 
@@ -401,7 +410,6 @@ Public Class frmLancamentoContasPagar
         Dim cmd2 As SqlCommand
 
         Try
-
             abrir()
 
             Dim numlinhas As Integer = dgvParcelas.RowCount - 1
@@ -415,17 +423,27 @@ Public Class frmLancamentoContasPagar
                 ano = dr.Year
                 d = ano & "-" & mes & "-" & dia
 
-                parc.parcela = Me.dgvParcelas.Item(1, cont).Value
-                parc.data_parcela = d
-                parc.valor_parcela = (Me.dgvParcelas.Item(3, cont).Value).Replace("R$", "")
-                parc.numDocto = txtNDoc.Text
-                parc.descricao = txtDescricao.Text
-                parc.valorTotal = txtValor.Text
-                parc.situacao = "Em Parcelamento"
+                If txtNDoc.Text <> "" Then
 
-                parc.CadastrarParcela()
+                    cmd = New SqlCommand("pa_Parcelas_Salvar", con)
+                    cmd.CommandType = CommandType.StoredProcedure
+                    cmd.Parameters.AddWithValue("@id_categoriacontas", txtConta.SelectedValue)
+                    cmd.Parameters.AddWithValue("@parcela", Me.dgvParcelas.Item(1, cont).Value)
+                    cmd.Parameters.AddWithValue("@data_parcela", d)
+                    cmd.Parameters.AddWithValue("@valor_parcela", Me.dgvParcelas.Item(3, cont).Value)
+                    cmd.Parameters.AddWithValue("@numDocto", txtNDoc.Text)
+                    cmd.Parameters.AddWithValue("@Pago", lblPago.Text)
+                    cmd.Parameters.AddWithValue("@valorTotal", txtValor.Text)
+                    cmd.Parameters.AddWithValue("@situacao", "Pendente")
+                    cmd.Parameters.AddWithValue("@saldoRestante", txtValor.Text)
+                    cmd.Parameters.AddWithValue("@id_fornecedor", txtFornecedor.SelectedValue)
+                    cmd.Parameters.AddWithValue("@idConta", lblCodigoConta.Text)
+                    cmd.ExecuteNonQuery()
+
+                End If
 
                 cont = cont + 1
+
             End While
 
             MsgBox("Parcelas gravadas com sucesso!", MsgBoxStyle.Information, "Sucesso")
@@ -442,32 +460,19 @@ Public Class frmLancamentoContasPagar
     Public Sub atualizarSituacao()
         Dim cmd As SqlCommand
 
-        If txtNDoc.Text <> "" Then
+        Try
+            abrir()
+            cmd = New SqlCommand("pa_ContasPagar_EditarSituacao", con)
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.Parameters.AddWithValue("@id", txtCodigo.Text)
+            cmd.Parameters.AddWithValue("@situacao", "Em Parcelamento")
+            cmd.ExecuteNonQuery()
 
-            Try
-
-                abrir()
-                cmd = New SqlCommand("pa_ContasPagar_EditarSituacao", con)
-                cmd.CommandType = CommandType.StoredProcedure
-                cmd.Parameters.AddWithValue("@id_conta", txtCodigo.Text)
-
-                cmd.Parameters.AddWithValue("@situacao", "Em Parcelamento")
-
-                cmd.Parameters.Add("@mensagem", SqlDbType.VarChar, 100).Direction = 2
-                cmd.ExecuteNonQuery()
-
-                Dim msg As String = cmd.Parameters("@mensagem").Value.ToString
-                MessageBox.Show(msg, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button3)
-
-                Me.Close()
-
-            Catch ex As Exception
-                MessageBox.Show("Erro ao salvar os dados" + ex.Message.ToString)
-            Finally
-                fechar()
-
-            End Try
-        End If
+        Catch ex As Exception
+            MessageBox.Show("Erro ao sal'var os dados" + ex.Message.ToString)
+        Finally
+            fechar()
+        End Try
     End Sub
 
     Private Sub txtJuros_Leave(sender As Object, e As EventArgs)
@@ -514,12 +519,16 @@ Public Class frmLancamentoContasPagar
         End If
     End Sub
 
-    Private Sub btEnviarDadosBaixar_Click(sender As Object, e As EventArgs) Handles btEnviarDadosBaixar.Click
-        intCodigoBaixa = dgvBaixarConta.CurrentRow().Cells("id_parcela").Value
-        frmBaixarContaPagar.ShowDialog()
-    End Sub
+    'Private Sub btEnviarDadosBaixar_Click(sender As Object, e As EventArgs)
+    '    intCodigoBaixa = dgvBaixarConta.CurrentRow().Cells("id_parcela").Value
+    '    frmBaixarContaPagar.ShowDialog()
+    'End Sub
 
     Private Sub txtVencimento_MaskInputRejected(sender As Object, e As MaskInputRejectedEventArgs) Handles txtVencimento.MaskInputRejected
+
+    End Sub
+
+    Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
 
     End Sub
 End Class

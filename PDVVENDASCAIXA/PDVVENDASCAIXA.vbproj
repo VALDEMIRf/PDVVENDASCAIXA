@@ -14,6 +14,21 @@
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -85,6 +100,7 @@
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -189,6 +205,9 @@
     <Compile Include="classes\clsCep.vb" />
     <Compile Include="classes\clsColorirDG.vb" />
     <Compile Include="classes\CNPJ.vb" />
+    <Compile Include="classes\contasapagar\clsConexao.vb" />
+    <Compile Include="classes\contasapagar\ContaPagarDAL.vb" />
+    <Compile Include="classes\contasapagar\clsContaPagar.vb" />
     <Compile Include="classes\Valida_CPF_CNPJ.vb" />
     <Compile Include="conexao.vb" />
     <Compile Include="Connected Services\WSCEP\Reference.vb">
@@ -226,16 +245,28 @@
     <Compile Include="Movimentacao\contaspagar\frmBaixarContaPagar.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Movimentacao\contaspagar\frmContasPagar.Designer.vb">
-      <DependentUpon>frmContasPagar.vb</DependentUpon>
+    <Compile Include="Movimentacao\contaspagar\frmContasApagar.Designer.vb">
+      <DependentUpon>frmContasApagar.vb</DependentUpon>
     </Compile>
-    <Compile Include="Movimentacao\contaspagar\frmContasPagar.vb">
+    <Compile Include="Movimentacao\contaspagar\frmContasApagar.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Movimentacao\contaspagar\frmDashboard.Designer.vb">
+      <DependentUpon>frmDashboard.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Movimentacao\contaspagar\frmDashboard.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Movimentacao\contaspagar\frmGravarContaPagar.Designer.vb">
       <DependentUpon>frmGravarContaPagar.vb</DependentUpon>
     </Compile>
     <Compile Include="Movimentacao\contaspagar\frmGravarContaPagar.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Movimentacao\contasreceber\Form2.Designer.vb">
+      <DependentUpon>Form2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Movimentacao\contasreceber\Form2.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Movimentacao\contasreceber\frmGravarContasReceber.Designer.vb">
@@ -494,11 +525,17 @@
     <EmbeddedResource Include="Movimentacao\contaspagar\frmBaixarContaPagar.resx">
       <DependentUpon>frmBaixarContaPagar.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Movimentacao\contaspagar\frmContasPagar.resx">
-      <DependentUpon>frmContasPagar.vb</DependentUpon>
+    <EmbeddedResource Include="Movimentacao\contaspagar\frmContasApagar.resx">
+      <DependentUpon>frmContasApagar.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Movimentacao\contaspagar\frmDashboard.resx">
+      <DependentUpon>frmDashboard.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Movimentacao\contaspagar\frmGravarContaPagar.resx">
       <DependentUpon>frmGravarContaPagar.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Movimentacao\contasreceber\Form2.resx">
+      <DependentUpon>Form2.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Movimentacao\frmFormaPagamento.resx">
       <DependentUpon>frmFormaPagamento.vb</DependentUpon>
@@ -972,10 +1009,16 @@
     <None Include="Resources\cancel1.png" />
     <None Include="Resources\fechar.png" />
     <None Include="Resources\gerarmensalidade.png" />
+    <None Include="Resources\Dollar.png" />
+    <None Include="Resources\3d bar chart.png" />
+    <None Include="Resources\Filter.png" />
+    <None Include="Resources\Edit.png" />
     <Content Include="Resources\header-pagarreceber.png" />
     <None Include="Resources\Undo_32x32.png" />
     <None Include="Resources\Save.png" />
     <None Include="Resources\numbered.24.png" />
+    <None Include="Resources\Report.png" />
+    <None Include="Resources\Pie chart.png" />
     <Content Include="SqlServerTypes\Loader.cs" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
@@ -1039,6 +1082,17 @@
   <ItemGroup>
     <WCFMetadataStorage Include="Connected Services\WSCEP\" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 e x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

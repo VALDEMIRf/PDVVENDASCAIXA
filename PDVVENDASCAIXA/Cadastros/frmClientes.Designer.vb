@@ -899,7 +899,7 @@ Partial Class frmClientes
         '
         Me.Label27.AutoSize = True
         Me.Label27.ForeColor = System.Drawing.Color.White
-        Me.Label27.Location = New System.Drawing.Point(412, 105)
+        Me.Label27.Location = New System.Drawing.Point(524, 100)
         Me.Label27.Margin = New System.Windows.Forms.Padding(9, 0, 9, 0)
         Me.Label27.Name = "Label27"
         Me.Label27.Size = New System.Drawing.Size(42, 17)
@@ -908,11 +908,11 @@ Partial Class frmClientes
         '
         'txtObsPj
         '
-        Me.txtObsPj.Location = New System.Drawing.Point(459, 91)
+        Me.txtObsPj.Location = New System.Drawing.Point(571, 91)
         Me.txtObsPj.Margin = New System.Windows.Forms.Padding(9, 7, 9, 7)
         Me.txtObsPj.Multiline = True
         Me.txtObsPj.Name = "txtObsPj"
-        Me.txtObsPj.Size = New System.Drawing.Size(425, 72)
+        Me.txtObsPj.Size = New System.Drawing.Size(313, 72)
         Me.txtObsPj.TabIndex = 326
         '
         'GroupBox2
@@ -1030,7 +1030,7 @@ Partial Class frmClientes
         Me.txtRazaoSocial.Margin = New System.Windows.Forms.Padding(7, 6, 7, 6)
         Me.txtRazaoSocial.Name = "txtRazaoSocial"
         Me.txtRazaoSocial.ReadOnly = True
-        Me.txtRazaoSocial.Size = New System.Drawing.Size(293, 21)
+        Me.txtRazaoSocial.Size = New System.Drawing.Size(373, 21)
         Me.txtRazaoSocial.TabIndex = 302
         '
         'btEscluirPJ
@@ -1063,7 +1063,7 @@ Partial Class frmClientes
         Me.txtFantasia.Margin = New System.Windows.Forms.Padding(7, 6, 7, 6)
         Me.txtFantasia.Name = "txtFantasia"
         Me.txtFantasia.ReadOnly = True
-        Me.txtFantasia.Size = New System.Drawing.Size(293, 21)
+        Me.txtFantasia.Size = New System.Drawing.Size(373, 21)
         Me.txtFantasia.TabIndex = 311
         '
         'Label8
@@ -1107,7 +1107,7 @@ Partial Class frmClientes
         Me.txtEnd.Margin = New System.Windows.Forms.Padding(7, 6, 7, 6)
         Me.txtEnd.Name = "txtEnd"
         Me.txtEnd.ReadOnly = True
-        Me.txtEnd.Size = New System.Drawing.Size(293, 21)
+        Me.txtEnd.Size = New System.Drawing.Size(373, 21)
         Me.txtEnd.TabIndex = 304
         '
         'Label19
@@ -1161,7 +1161,7 @@ Partial Class frmClientes
         Me.txtTelPJ.Location = New System.Drawing.Point(95, 188)
         Me.txtTelPJ.Margin = New System.Windows.Forms.Padding(7, 6, 7, 6)
         Me.txtTelPJ.Name = "txtTelPJ"
-        Me.txtTelPJ.Size = New System.Drawing.Size(294, 21)
+        Me.txtTelPJ.Size = New System.Drawing.Size(334, 21)
         Me.txtTelPJ.TabIndex = 323
         '
         'Label24
@@ -1183,7 +1183,7 @@ Partial Class frmClientes
         Me.txtComplPJ.Margin = New System.Windows.Forms.Padding(7, 6, 7, 6)
         Me.txtComplPJ.Name = "txtComplPJ"
         Me.txtComplPJ.ReadOnly = True
-        Me.txtComplPJ.Size = New System.Drawing.Size(144, 21)
+        Me.txtComplPJ.Size = New System.Drawing.Size(224, 21)
         Me.txtComplPJ.TabIndex = 306
         '
         'txtBairroPJ
@@ -1193,7 +1193,7 @@ Partial Class frmClientes
         Me.txtBairroPJ.Location = New System.Drawing.Point(95, 120)
         Me.txtBairroPJ.Margin = New System.Windows.Forms.Padding(7, 6, 7, 6)
         Me.txtBairroPJ.Name = "txtBairroPJ"
-        Me.txtBairroPJ.Size = New System.Drawing.Size(293, 21)
+        Me.txtBairroPJ.Size = New System.Drawing.Size(373, 21)
         Me.txtBairroPJ.TabIndex = 307
         '
         'Label25
@@ -1281,7 +1281,7 @@ Partial Class frmClientes
         Me.txtEmailPJ.Location = New System.Drawing.Point(95, 210)
         Me.txtEmailPJ.Margin = New System.Windows.Forms.Padding(7, 6, 7, 6)
         Me.txtEmailPJ.Name = "txtEmailPJ"
-        Me.txtEmailPJ.Size = New System.Drawing.Size(294, 21)
+        Me.txtEmailPJ.Size = New System.Drawing.Size(334, 21)
         Me.txtEmailPJ.TabIndex = 303
         '
         'txtCidadePJ
@@ -1291,7 +1291,7 @@ Partial Class frmClientes
         Me.txtCidadePJ.Location = New System.Drawing.Point(95, 142)
         Me.txtCidadePJ.Margin = New System.Windows.Forms.Padding(7, 6, 7, 6)
         Me.txtCidadePJ.Name = "txtCidadePJ"
-        Me.txtCidadePJ.Size = New System.Drawing.Size(293, 21)
+        Me.txtCidadePJ.Size = New System.Drawing.Size(373, 21)
         Me.txtCidadePJ.TabIndex = 308
         '
         'Label31
@@ -1309,7 +1309,7 @@ Partial Class frmClientes
         '
         Me.lblSituacao.AutoSize = True
         Me.lblSituacao.ForeColor = System.Drawing.Color.White
-        Me.lblSituacao.Location = New System.Drawing.Point(390, 35)
+        Me.lblSituacao.Location = New System.Drawing.Point(500, 38)
         Me.lblSituacao.Margin = New System.Windows.Forms.Padding(9, 0, 9, 0)
         Me.lblSituacao.Name = "lblSituacao"
         Me.lblSituacao.Size = New System.Drawing.Size(67, 17)
@@ -1319,17 +1319,17 @@ Partial Class frmClientes
         'txtSituacao
         '
         Me.txtSituacao.Enabled = False
-        Me.txtSituacao.Location = New System.Drawing.Point(459, 32)
+        Me.txtSituacao.Location = New System.Drawing.Point(571, 32)
         Me.txtSituacao.Margin = New System.Windows.Forms.Padding(9, 7, 9, 7)
         Me.txtSituacao.Name = "txtSituacao"
-        Me.txtSituacao.Size = New System.Drawing.Size(425, 23)
+        Me.txtSituacao.Size = New System.Drawing.Size(313, 23)
         Me.txtSituacao.TabIndex = 298
         '
         'lblMotivo
         '
         Me.lblMotivo.AutoSize = True
         Me.lblMotivo.ForeColor = System.Drawing.Color.White
-        Me.lblMotivo.Location = New System.Drawing.Point(397, 62)
+        Me.lblMotivo.Location = New System.Drawing.Point(513, 62)
         Me.lblMotivo.Margin = New System.Windows.Forms.Padding(9, 0, 9, 0)
         Me.lblMotivo.Name = "lblMotivo"
         Me.lblMotivo.Size = New System.Drawing.Size(53, 17)
@@ -1339,17 +1339,17 @@ Partial Class frmClientes
         'txtMotivo
         '
         Me.txtMotivo.Enabled = False
-        Me.txtMotivo.Location = New System.Drawing.Point(459, 59)
+        Me.txtMotivo.Location = New System.Drawing.Point(571, 59)
         Me.txtMotivo.Margin = New System.Windows.Forms.Padding(9, 7, 9, 7)
         Me.txtMotivo.Name = "txtMotivo"
-        Me.txtMotivo.Size = New System.Drawing.Size(425, 23)
+        Me.txtMotivo.Size = New System.Drawing.Size(313, 23)
         Me.txtMotivo.TabIndex = 296
         '
         'Label3
         '
         Me.Label3.AutoSize = True
         Me.Label3.ForeColor = System.Drawing.Color.White
-        Me.Label3.Location = New System.Drawing.Point(532, 8)
+        Me.Label3.Location = New System.Drawing.Point(462, 7)
         Me.Label3.Margin = New System.Windows.Forms.Padding(9, 0, 9, 0)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(105, 17)
@@ -1383,7 +1383,7 @@ Partial Class frmClientes
         '
         'txtIE
         '
-        Me.txtIE.Location = New System.Drawing.Point(639, 5)
+        Me.txtIE.Location = New System.Drawing.Point(571, 4)
         Me.txtIE.Margin = New System.Windows.Forms.Padding(11, 7, 11, 7)
         Me.txtIE.Mask = "###.###.###.###"
         Me.txtIE.Name = "txtIE"
