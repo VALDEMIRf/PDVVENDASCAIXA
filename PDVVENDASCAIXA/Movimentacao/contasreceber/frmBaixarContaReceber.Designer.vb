@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class frmBaixarContaPagar
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+Partial Class frmBaixarContaReceber
     Inherits System.Windows.Forms.Form
 
     'Descartar substituições de formulário para limpar a lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()>
+    <System.Diagnostics.DebuggerNonUserCode()> _
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,9 +20,9 @@ Partial Class frmBaixarContaPagar
     'OBSERVAÇÃO: o procedimento a seguir é exigido pelo Windows Form Designer
     'Pode ser modificado usando o Windows Form Designer.  
     'Não o modifique usando o editor de códigos.
-    <System.Diagnostics.DebuggerStepThrough()>
+    <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmBaixarContaPagar))
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmBaixarContaReceber))
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.lblCodigoConta = New System.Windows.Forms.Label()
@@ -39,7 +39,7 @@ Partial Class frmBaixarContaPagar
         Me.Label27 = New System.Windows.Forms.Label()
         Me.txtNDoc = New System.Windows.Forms.TextBox()
         Me.Label28 = New System.Windows.Forms.Label()
-        Me.txtFornecedor = New System.Windows.Forms.ComboBox()
+        Me.txtCliente = New System.Windows.Forms.ComboBox()
         Me.Label29 = New System.Windows.Forms.Label()
         Me.txtFormaPagto = New System.Windows.Forms.ComboBox()
         Me.Label11 = New System.Windows.Forms.Label()
@@ -71,6 +71,9 @@ Partial Class frmBaixarContaPagar
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.Label16 = New System.Windows.Forms.Label()
         Me.btSair = New System.Windows.Forms.Button()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.txtValorAtual = New System.Windows.Forms.TextBox()
+        Me.llteste = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -85,13 +88,15 @@ Partial Class frmBaixarContaPagar
         Me.Panel1.Controls.Add(Me.Label11)
         Me.Panel1.Controls.Add(Me.GroupBox1)
         Me.Panel1.Controls.Add(Me.Panel2)
-        Me.Panel1.Location = New System.Drawing.Point(2, 4)
+        Me.Panel1.Location = New System.Drawing.Point(1, 3)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(789, 341)
-        Me.Panel1.TabIndex = 380
+        Me.Panel1.Size = New System.Drawing.Size(774, 335)
+        Me.Panel1.TabIndex = 381
         '
         'GroupBox2
         '
+        Me.GroupBox2.Controls.Add(Me.Label1)
+        Me.GroupBox2.Controls.Add(Me.txtValorAtual)
         Me.GroupBox2.Controls.Add(Me.lblCodigoConta)
         Me.GroupBox2.Controls.Add(Me.lblCodigo)
         Me.GroupBox2.Controls.Add(Me.lblIdparcela)
@@ -106,7 +111,7 @@ Partial Class frmBaixarContaPagar
         Me.GroupBox2.Controls.Add(Me.Label27)
         Me.GroupBox2.Controls.Add(Me.txtNDoc)
         Me.GroupBox2.Controls.Add(Me.Label28)
-        Me.GroupBox2.Controls.Add(Me.txtFornecedor)
+        Me.GroupBox2.Controls.Add(Me.txtCliente)
         Me.GroupBox2.Controls.Add(Me.Label29)
         Me.GroupBox2.Controls.Add(Me.txtFormaPagto)
         Me.GroupBox2.Location = New System.Drawing.Point(9, 53)
@@ -172,7 +177,7 @@ Partial Class frmBaixarContaPagar
         '
         'txtVencimento
         '
-        Me.txtVencimento.Location = New System.Drawing.Point(229, 73)
+        Me.txtVencimento.Location = New System.Drawing.Point(492, 74)
         Me.txtVencimento.Mask = "00/00/0000"
         Me.txtVencimento.Name = "txtVencimento"
         Me.txtVencimento.Size = New System.Drawing.Size(87, 20)
@@ -186,16 +191,16 @@ Partial Class frmBaixarContaPagar
         Me.Label23.ForeColor = System.Drawing.Color.White
         Me.Label23.Location = New System.Drawing.Point(104, 53)
         Me.Label23.Name = "Label23"
-        Me.Label23.Size = New System.Drawing.Size(46, 20)
+        Me.Label23.Size = New System.Drawing.Size(85, 20)
         Me.Label23.TabIndex = 301
-        Me.Label23.Text = "Valor"
+        Me.Label23.Text = "Valor Total"
         '
         'Label24
         '
         Me.Label24.AutoSize = True
         Me.Label24.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label24.ForeColor = System.Drawing.Color.White
-        Me.Label24.Location = New System.Drawing.Point(227, 56)
+        Me.Label24.Location = New System.Drawing.Point(490, 57)
         Me.Label24.Name = "Label24"
         Me.Label24.Size = New System.Drawing.Size(94, 20)
         Me.Label24.TabIndex = 303
@@ -203,9 +208,10 @@ Partial Class frmBaixarContaPagar
         '
         'txtValor
         '
+        Me.txtValor.Enabled = False
         Me.txtValor.Location = New System.Drawing.Point(100, 73)
         Me.txtValor.Name = "txtValor"
-        Me.txtValor.Size = New System.Drawing.Size(86, 20)
+        Me.txtValor.Size = New System.Drawing.Size(139, 20)
         Me.txtValor.TabIndex = 299
         '
         'txtConta
@@ -224,9 +230,9 @@ Partial Class frmBaixarContaPagar
         Me.Label26.ForeColor = System.Drawing.Color.White
         Me.Label26.Location = New System.Drawing.Point(430, 7)
         Me.Label26.Name = "Label26"
-        Me.Label26.Size = New System.Drawing.Size(91, 20)
+        Me.Label26.Size = New System.Drawing.Size(58, 20)
         Me.Label26.TabIndex = 302
-        Me.Label26.Text = "Fornecedor"
+        Me.Label26.Text = "Cliente"
         '
         'Label27
         '
@@ -257,21 +263,21 @@ Partial Class frmBaixarContaPagar
         Me.Label28.TabIndex = 305
         Me.Label28.Text = "N° Docto"
         '
-        'txtFornecedor
+        'txtCliente
         '
-        Me.txtFornecedor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.txtFornecedor.FormattingEnabled = True
-        Me.txtFornecedor.Location = New System.Drawing.Point(416, 29)
-        Me.txtFornecedor.Name = "txtFornecedor"
-        Me.txtFornecedor.Size = New System.Drawing.Size(332, 21)
-        Me.txtFornecedor.TabIndex = 309
+        Me.txtCliente.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.txtCliente.FormattingEnabled = True
+        Me.txtCliente.Location = New System.Drawing.Point(416, 29)
+        Me.txtCliente.Name = "txtCliente"
+        Me.txtCliente.Size = New System.Drawing.Size(332, 21)
+        Me.txtCliente.TabIndex = 309
         '
         'Label29
         '
         Me.Label29.AutoSize = True
         Me.Label29.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label29.ForeColor = System.Drawing.Color.White
-        Me.Label29.Location = New System.Drawing.Point(453, 53)
+        Me.Label29.Location = New System.Drawing.Point(584, 53)
         Me.Label29.Name = "Label29"
         Me.Label29.Size = New System.Drawing.Size(123, 20)
         Me.Label29.TabIndex = 315
@@ -281,7 +287,7 @@ Partial Class frmBaixarContaPagar
         '
         Me.txtFormaPagto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.txtFormaPagto.FormattingEnabled = True
-        Me.txtFormaPagto.Location = New System.Drawing.Point(455, 73)
+        Me.txtFormaPagto.Location = New System.Drawing.Point(586, 73)
         Me.txtFormaPagto.Name = "txtFormaPagto"
         Me.txtFormaPagto.Size = New System.Drawing.Size(157, 21)
         Me.txtFormaPagto.TabIndex = 313
@@ -300,6 +306,7 @@ Partial Class frmBaixarContaPagar
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.llteste)
         Me.GroupBox1.Controls.Add(Me.Label4)
         Me.GroupBox1.Controls.Add(Me.lblNrParcela)
         Me.GroupBox1.Controls.Add(Me.cboParcela)
@@ -614,7 +621,7 @@ Partial Class frmBaixarContaPagar
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel2.Location = New System.Drawing.Point(0, 0)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(789, 47)
+        Me.Panel2.Size = New System.Drawing.Size(774, 47)
         Me.Panel2.TabIndex = 380
         '
         'PictureBox2
@@ -649,7 +656,7 @@ Partial Class frmBaixarContaPagar
         Me.btSair.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btSair.ForeColor = System.Drawing.Color.White
         Me.btSair.Image = CType(resources.GetObject("btSair.Image"), System.Drawing.Image)
-        Me.btSair.Location = New System.Drawing.Point(629, 1)
+        Me.btSair.Location = New System.Drawing.Point(662, 3)
         Me.btSair.Margin = New System.Windows.Forms.Padding(5)
         Me.btSair.Name = "btSair"
         Me.btSair.Size = New System.Drawing.Size(93, 36)
@@ -659,17 +666,45 @@ Partial Class frmBaixarContaPagar
         Me.btSair.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btSair.UseVisualStyleBackColor = False
         '
-        'frmBaixarContaPagar
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.White
+        Me.Label1.Location = New System.Drawing.Point(279, 54)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(87, 20)
+        Me.Label1.TabIndex = 401
+        Me.Label1.Text = "Valor Atual"
+        '
+        'txtValorAtual
+        '
+        Me.txtValorAtual.Enabled = False
+        Me.txtValorAtual.Location = New System.Drawing.Point(279, 74)
+        Me.txtValorAtual.Name = "txtValorAtual"
+        Me.txtValorAtual.Size = New System.Drawing.Size(123, 20)
+        Me.txtValorAtual.TabIndex = 400
+        '
+        'llteste
+        '
+        Me.llteste.AutoSize = True
+        Me.llteste.Location = New System.Drawing.Point(426, 98)
+        Me.llteste.Name = "llteste"
+        Me.llteste.Size = New System.Drawing.Size(66, 20)
+        Me.llteste.TabIndex = 403
+        Me.llteste.Text = "Label10"
+        '
+        'frmBaixarContaReceber
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.LightBlue
-        Me.ClientSize = New System.Drawing.Size(797, 348)
+        Me.ClientSize = New System.Drawing.Size(780, 341)
         Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Name = "frmBaixarContaPagar"
+        Me.Name = "frmBaixarContaReceber"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "frmBaixarContaPagar"
+        Me.Text = "frmBaixarContaReceber"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
@@ -682,40 +717,15 @@ Partial Class frmBaixarContaPagar
         Me.ResumeLayout(False)
 
     End Sub
+
     Friend WithEvents Panel1 As Panel
-    Friend WithEvents Panel2 As Panel
-    Friend WithEvents PictureBox2 As PictureBox
-    Friend WithEvents Label16 As Label
-    Friend WithEvents btSair As Button
-    Friend WithEvents btBaixarConta As Button
-    Friend WithEvents lblIdparcela As Label
-    Friend WithEvents Label19 As Label
-    Friend WithEvents btCalcular As Button
-    Friend WithEvents GroupBox1 As GroupBox
-    Friend WithEvents txtValorParcela As TextBox
-    Friend WithEvents Label3 As Label
-    Friend WithEvents Label2 As Label
-    Friend WithEvents txtValorPago As TextBox
-    Friend WithEvents Label9 As Label
-    Friend WithEvents Label8 As Label
-    Friend WithEvents txtJuros As TextBox
-    Friend WithEvents Label7 As Label
-    Friend WithEvents txtDesconto As TextBox
-    Friend WithEvents Label6 As Label
-    Friend WithEvents Label5 As Label
-    Friend WithEvents btEmDia As Button
-    Friend WithEvents lblCodigo As Label
-    Friend WithEvents txtSaldoRestante As TextBox
-    Friend WithEvents Label14 As Label
-    Friend WithEvents txtPagamento As DateTimePicker
-    Friend WithEvents dtpVencimentoParcela As DateTimePicker
-    Friend WithEvents lblRecebeValorTotal As Label
-    Friend WithEvents lblNrParcela As Label
-    Friend WithEvents lblCodigoConta As Label
-    Friend WithEvents Label11 As Label
     Friend WithEvents GroupBox2 As GroupBox
+    Friend WithEvents lblCodigoConta As Label
+    Friend WithEvents lblCodigo As Label
+    Friend WithEvents lblIdparcela As Label
     Public WithEvents txtDataEntrada As MaskedTextBox
     Friend WithEvents Label20 As Label
+    Public WithEvents txtVencimento As MaskedTextBox
     Friend WithEvents Label23 As Label
     Friend WithEvents Label24 As Label
     Friend WithEvents txtValor As TextBox
@@ -724,10 +734,39 @@ Partial Class frmBaixarContaPagar
     Friend WithEvents Label27 As Label
     Friend WithEvents txtNDoc As TextBox
     Friend WithEvents Label28 As Label
-    Friend WithEvents txtFornecedor As ComboBox
+    Friend WithEvents txtCliente As ComboBox
     Friend WithEvents Label29 As Label
     Friend WithEvents txtFormaPagto As ComboBox
-    Friend WithEvents cboParcela As ComboBox
+    Friend WithEvents Label11 As Label
+    Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents Label4 As Label
-    Public WithEvents txtVencimento As MaskedTextBox
+    Friend WithEvents lblNrParcela As Label
+    Friend WithEvents cboParcela As ComboBox
+    Friend WithEvents lblRecebeValorTotal As Label
+    Friend WithEvents txtPagamento As DateTimePicker
+    Friend WithEvents dtpVencimentoParcela As DateTimePicker
+    Friend WithEvents txtSaldoRestante As TextBox
+    Friend WithEvents Label14 As Label
+    Friend WithEvents btEmDia As Button
+    Friend WithEvents txtValorPago As TextBox
+    Friend WithEvents Label9 As Label
+    Friend WithEvents Label8 As Label
+    Friend WithEvents txtJuros As TextBox
+    Friend WithEvents Label7 As Label
+    Friend WithEvents txtDesconto As TextBox
+    Friend WithEvents Label6 As Label
+    Friend WithEvents Label5 As Label
+    Friend WithEvents txtValorParcela As TextBox
+    Friend WithEvents btCalcular As Button
+    Friend WithEvents Label3 As Label
+    Friend WithEvents btBaixarConta As Button
+    Friend WithEvents Label2 As Label
+    Friend WithEvents Label19 As Label
+    Friend WithEvents Panel2 As Panel
+    Friend WithEvents PictureBox2 As PictureBox
+    Friend WithEvents Label16 As Label
+    Friend WithEvents btSair As Button
+    Friend WithEvents Label1 As Label
+    Friend WithEvents txtValorAtual As TextBox
+    Friend WithEvents llteste As Label
 End Class

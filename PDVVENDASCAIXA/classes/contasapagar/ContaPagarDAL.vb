@@ -7,12 +7,23 @@ Public Class ContaPagarDAL
     'Private PDVConnectionString As String = ConfigurationManager.ConnectionStrings("PDVConnectionString").ConnectionString
     Dim connectionString As String = My.Settings.PDVConnectionString.ToString
 
-
-
-
     Public Function TotalPendente() As Decimal
         Using con As New SqlConnection(connectionString)
             Dim sql As String = "SELECT SUM(Valor) FROM tbContas_a_Pagar WHERE Pago = 0"
+            Using cmd As New SqlCommand(sql, con)
+                con.Open()
+                Dim result = cmd.ExecuteScalar()
+                If IsDBNull(result) Then
+                    Return 0
+                End If
+                Return Convert.ToDecimal(result)
+            End Using
+        End Using
+    End Function
+
+    Public Function TotalPendenteRec() As Decimal
+        Using con As New SqlConnection(connectionString)
+            Dim sql As String = "SELECT SUM(Valor) FROM tbContasReceber WHERE Pago = 0"
             Using cmd As New SqlCommand(sql, con)
                 con.Open()
                 Dim result = cmd.ExecuteScalar()
@@ -28,6 +39,17 @@ Public Class ContaPagarDAL
         Dim dt As New DataTable
         Using con As New SqlConnection(connectionString)
             Dim sql As String = "SELECT * FROM tbContas_a_Pagar WHERE Pago = 0"
+            Using da As New SqlDataAdapter(sql, con)
+                da.Fill(dt)
+            End Using
+        End Using
+        Return dt
+    End Function
+
+    Public Function ListarPendenteRec() As DataTable
+        Dim dt As New DataTable
+        Using con As New SqlConnection(connectionString)
+            Dim sql As String = "SELECT * FROM tbContasReceber WHERE Pago = 0"
             Using da As New SqlDataAdapter(sql, con)
                 da.Fill(dt)
             End Using

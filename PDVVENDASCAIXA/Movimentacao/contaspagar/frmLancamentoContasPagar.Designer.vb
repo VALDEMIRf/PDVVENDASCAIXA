@@ -30,6 +30,8 @@ Partial Class frmLancamentoContasPagar
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.rbParcelamento = New System.Windows.Forms.RadioButton()
         Me.txtNumeroPacelas = New System.Windows.Forms.NumericUpDown()
+        Me.btGravarParcelas = New System.Windows.Forms.Button()
+        Me.btGerarParcelas = New System.Windows.Forms.Button()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.mskData = New System.Windows.Forms.MaskedTextBox()
         Me.Label11 = New System.Windows.Forms.Label()
@@ -62,10 +64,8 @@ Partial Class frmLancamentoContasPagar
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txtFormaPagto = New System.Windows.Forms.ComboBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.Label16 = New System.Windows.Forms.Label()
-        Me.btGravarParcelas = New System.Windows.Forms.Button()
-        Me.btGerarParcelas = New System.Windows.Forms.Button()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.Label16 = New System.Windows.Forms.Label()
         Me.btSair = New System.Windows.Forms.Button()
         Me.id_parcela = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.parcela = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -96,7 +96,7 @@ Partial Class frmLancamentoContasPagar
         Me.Panel1.Controls.Add(Me.Panel2)
         Me.Panel1.Location = New System.Drawing.Point(5, 5)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(938, 673)
+        Me.Panel1.Size = New System.Drawing.Size(1029, 673)
         Me.Panel1.TabIndex = 0
         '
         'dgvParcelas
@@ -111,7 +111,7 @@ Partial Class frmLancamentoContasPagar
         Me.dgvParcelas.Name = "dgvParcelas"
         Me.dgvParcelas.ReadOnly = True
         Me.dgvParcelas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvParcelas.Size = New System.Drawing.Size(926, 456)
+        Me.dgvParcelas.Size = New System.Drawing.Size(1003, 456)
         Me.dgvParcelas.TabIndex = 334
         '
         'GroupBox2
@@ -136,7 +136,7 @@ Partial Class frmLancamentoContasPagar
         Me.rbParcelamento.AutoSize = True
         Me.rbParcelamento.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.rbParcelamento.ForeColor = System.Drawing.Color.White
-        Me.rbParcelamento.Location = New System.Drawing.Point(9, 21)
+        Me.rbParcelamento.Location = New System.Drawing.Point(9, 17)
         Me.rbParcelamento.Name = "rbParcelamento"
         Me.rbParcelamento.Size = New System.Drawing.Size(81, 22)
         Me.rbParcelamento.TabIndex = 343
@@ -146,17 +146,59 @@ Partial Class frmLancamentoContasPagar
         '
         'txtNumeroPacelas
         '
-        Me.txtNumeroPacelas.Location = New System.Drawing.Point(172, 16)
+        Me.txtNumeroPacelas.Location = New System.Drawing.Point(147, 19)
         Me.txtNumeroPacelas.Name = "txtNumeroPacelas"
         Me.txtNumeroPacelas.Size = New System.Drawing.Size(57, 20)
         Me.txtNumeroPacelas.TabIndex = 342
+        '
+        'btGravarParcelas
+        '
+        Me.btGravarParcelas.BackColor = System.Drawing.Color.Transparent
+        Me.btGravarParcelas.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btGravarParcelas.Enabled = False
+        Me.btGravarParcelas.FlatAppearance.BorderSize = 0
+        Me.btGravarParcelas.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSteelBlue
+        Me.btGravarParcelas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSkyBlue
+        Me.btGravarParcelas.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btGravarParcelas.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btGravarParcelas.ForeColor = System.Drawing.Color.White
+        Me.btGravarParcelas.Image = CType(resources.GetObject("btGravarParcelas.Image"), System.Drawing.Image)
+        Me.btGravarParcelas.Location = New System.Drawing.Point(748, 12)
+        Me.btGravarParcelas.Margin = New System.Windows.Forms.Padding(5)
+        Me.btGravarParcelas.Name = "btGravarParcelas"
+        Me.btGravarParcelas.Size = New System.Drawing.Size(150, 33)
+        Me.btGravarParcelas.TabIndex = 336
+        Me.btGravarParcelas.Text = "Gravar Parcelas"
+        Me.btGravarParcelas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btGravarParcelas.UseVisualStyleBackColor = False
+        '
+        'btGerarParcelas
+        '
+        Me.btGerarParcelas.BackColor = System.Drawing.Color.Transparent
+        Me.btGerarParcelas.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btGerarParcelas.Enabled = False
+        Me.btGerarParcelas.FlatAppearance.BorderSize = 0
+        Me.btGerarParcelas.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSteelBlue
+        Me.btGerarParcelas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSkyBlue
+        Me.btGerarParcelas.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btGerarParcelas.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btGerarParcelas.ForeColor = System.Drawing.Color.White
+        Me.btGerarParcelas.Image = CType(resources.GetObject("btGerarParcelas.Image"), System.Drawing.Image)
+        Me.btGerarParcelas.Location = New System.Drawing.Point(634, 11)
+        Me.btGerarParcelas.Margin = New System.Windows.Forms.Padding(5)
+        Me.btGerarParcelas.Name = "btGerarParcelas"
+        Me.btGerarParcelas.Size = New System.Drawing.Size(97, 35)
+        Me.btGerarParcelas.TabIndex = 335
+        Me.btGerarParcelas.Text = "Parcelar"
+        Me.btGerarParcelas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btGerarParcelas.UseVisualStyleBackColor = False
         '
         'Label7
         '
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.ForeColor = System.Drawing.Color.White
-        Me.Label7.Location = New System.Drawing.Point(125, 20)
+        Me.Label7.Location = New System.Drawing.Point(99, 19)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(43, 20)
         Me.Label7.TabIndex = 319
@@ -165,7 +207,7 @@ Partial Class frmLancamentoContasPagar
         'mskData
         '
         Me.mskData.Enabled = False
-        Me.mskData.Location = New System.Drawing.Point(538, 16)
+        Me.mskData.Location = New System.Drawing.Point(523, 20)
         Me.mskData.Mask = "00/00/0000"
         Me.mskData.Name = "mskData"
         Me.mskData.Size = New System.Drawing.Size(98, 20)
@@ -177,7 +219,7 @@ Partial Class frmLancamentoContasPagar
         Me.Label11.AutoSize = True
         Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label11.ForeColor = System.Drawing.Color.White
-        Me.Label11.Location = New System.Drawing.Point(488, 19)
+        Me.Label11.Location = New System.Drawing.Point(471, 20)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(52, 20)
         Me.Label11.TabIndex = 306
@@ -188,7 +230,7 @@ Partial Class frmLancamentoContasPagar
         Me.Label10.AutoSize = True
         Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label10.ForeColor = System.Drawing.Color.White
-        Me.Label10.Location = New System.Drawing.Point(235, 19)
+        Me.Label10.Location = New System.Drawing.Point(215, 19)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(129, 20)
         Me.Label10.TabIndex = 321
@@ -197,7 +239,7 @@ Partial Class frmLancamentoContasPagar
         'txtValorParcelas
         '
         Me.txtValorParcelas.Enabled = False
-        Me.txtValorParcelas.Location = New System.Drawing.Point(363, 16)
+        Me.txtValorParcelas.Location = New System.Drawing.Point(344, 19)
         Me.txtValorParcelas.Name = "txtValorParcelas"
         Me.txtValorParcelas.Size = New System.Drawing.Size(117, 20)
         Me.txtValorParcelas.TabIndex = 320
@@ -417,7 +459,7 @@ Partial Class frmLancamentoContasPagar
         Me.txtConta.FormattingEnabled = True
         Me.txtConta.Location = New System.Drawing.Point(188, 29)
         Me.txtConta.Name = "txtConta"
-        Me.txtConta.Size = New System.Drawing.Size(214, 21)
+        Me.txtConta.Size = New System.Drawing.Size(150, 21)
         Me.txtConta.TabIndex = 294
         '
         'Label4
@@ -425,7 +467,7 @@ Partial Class frmLancamentoContasPagar
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.White
-        Me.Label4.Location = New System.Drawing.Point(430, 7)
+        Me.Label4.Location = New System.Drawing.Point(391, 7)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(91, 20)
         Me.Label4.TabIndex = 302
@@ -464,9 +506,9 @@ Partial Class frmLancamentoContasPagar
         '
         Me.txtFornecedor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.txtFornecedor.FormattingEnabled = True
-        Me.txtFornecedor.Location = New System.Drawing.Point(416, 29)
+        Me.txtFornecedor.Location = New System.Drawing.Point(372, 29)
         Me.txtFornecedor.Name = "txtFornecedor"
-        Me.txtFornecedor.Size = New System.Drawing.Size(332, 21)
+        Me.txtFornecedor.Size = New System.Drawing.Size(405, 21)
         Me.txtFornecedor.TabIndex = 309
         '
         'Label1
@@ -474,7 +516,7 @@ Partial Class frmLancamentoContasPagar
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(752, 9)
+        Me.Label1.Location = New System.Drawing.Point(794, 10)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(123, 20)
         Me.Label1.TabIndex = 315
@@ -484,9 +526,9 @@ Partial Class frmLancamentoContasPagar
         '
         Me.txtFormaPagto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.txtFormaPagto.FormattingEnabled = True
-        Me.txtFormaPagto.Location = New System.Drawing.Point(754, 29)
+        Me.txtFormaPagto.Location = New System.Drawing.Point(798, 30)
         Me.txtFormaPagto.Name = "txtFormaPagto"
-        Me.txtFormaPagto.Size = New System.Drawing.Size(157, 21)
+        Me.txtFormaPagto.Size = New System.Drawing.Size(102, 21)
         Me.txtFormaPagto.TabIndex = 313
         '
         'Panel2
@@ -499,8 +541,18 @@ Partial Class frmLancamentoContasPagar
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel2.Location = New System.Drawing.Point(0, 0)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(938, 47)
+        Me.Panel2.Size = New System.Drawing.Size(1029, 47)
         Me.Panel2.TabIndex = 328
+        '
+        'PictureBox2
+        '
+        Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
+        Me.PictureBox2.Location = New System.Drawing.Point(3, 1)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(40, 40)
+        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox2.TabIndex = 313
+        Me.PictureBox2.TabStop = False
         '
         'Label16
         '
@@ -513,58 +565,6 @@ Partial Class frmLancamentoContasPagar
         Me.Label16.TabIndex = 258
         Me.Label16.Text = "PARCELAMENTO DE CONTAS A PAGAR"
         '
-        'btGravarParcelas
-        '
-        Me.btGravarParcelas.BackColor = System.Drawing.Color.Transparent
-        Me.btGravarParcelas.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btGravarParcelas.Enabled = False
-        Me.btGravarParcelas.FlatAppearance.BorderSize = 0
-        Me.btGravarParcelas.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSteelBlue
-        Me.btGravarParcelas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSkyBlue
-        Me.btGravarParcelas.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btGravarParcelas.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btGravarParcelas.ForeColor = System.Drawing.Color.White
-        Me.btGravarParcelas.Image = CType(resources.GetObject("btGravarParcelas.Image"), System.Drawing.Image)
-        Me.btGravarParcelas.Location = New System.Drawing.Point(748, 13)
-        Me.btGravarParcelas.Margin = New System.Windows.Forms.Padding(5)
-        Me.btGravarParcelas.Name = "btGravarParcelas"
-        Me.btGravarParcelas.Size = New System.Drawing.Size(150, 33)
-        Me.btGravarParcelas.TabIndex = 336
-        Me.btGravarParcelas.Text = "Gravar Parcelas"
-        Me.btGravarParcelas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btGravarParcelas.UseVisualStyleBackColor = False
-        '
-        'btGerarParcelas
-        '
-        Me.btGerarParcelas.BackColor = System.Drawing.Color.Transparent
-        Me.btGerarParcelas.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btGerarParcelas.Enabled = False
-        Me.btGerarParcelas.FlatAppearance.BorderSize = 0
-        Me.btGerarParcelas.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSteelBlue
-        Me.btGerarParcelas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSkyBlue
-        Me.btGerarParcelas.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btGerarParcelas.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btGerarParcelas.ForeColor = System.Drawing.Color.White
-        Me.btGerarParcelas.Image = CType(resources.GetObject("btGerarParcelas.Image"), System.Drawing.Image)
-        Me.btGerarParcelas.Location = New System.Drawing.Point(644, 13)
-        Me.btGerarParcelas.Margin = New System.Windows.Forms.Padding(5)
-        Me.btGerarParcelas.Name = "btGerarParcelas"
-        Me.btGerarParcelas.Size = New System.Drawing.Size(97, 35)
-        Me.btGerarParcelas.TabIndex = 335
-        Me.btGerarParcelas.Text = "Parcelar"
-        Me.btGerarParcelas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btGerarParcelas.UseVisualStyleBackColor = False
-        '
-        'PictureBox2
-        '
-        Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
-        Me.PictureBox2.Location = New System.Drawing.Point(3, 1)
-        Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(40, 40)
-        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox2.TabIndex = 313
-        Me.PictureBox2.TabStop = False
-        '
         'btSair
         '
         Me.btSair.BackColor = System.Drawing.Color.Transparent
@@ -576,7 +576,7 @@ Partial Class frmLancamentoContasPagar
         Me.btSair.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btSair.ForeColor = System.Drawing.Color.White
         Me.btSair.Image = CType(resources.GetObject("btSair.Image"), System.Drawing.Image)
-        Me.btSair.Location = New System.Drawing.Point(655, 3)
+        Me.btSair.Location = New System.Drawing.Point(827, 1)
         Me.btSair.Margin = New System.Windows.Forms.Padding(5)
         Me.btSair.Name = "btSair"
         Me.btSair.Size = New System.Drawing.Size(93, 36)
@@ -593,7 +593,7 @@ Partial Class frmLancamentoContasPagar
         Me.id_parcela.Name = "id_parcela"
         Me.id_parcela.ReadOnly = True
         Me.id_parcela.Visible = False
-        Me.id_parcela.Width = 130
+        Me.id_parcela.Width = 80
         '
         'parcela
         '
@@ -604,6 +604,7 @@ Partial Class frmLancamentoContasPagar
         Me.parcela.HeaderText = "parcela"
         Me.parcela.Name = "parcela"
         Me.parcela.ReadOnly = True
+        Me.parcela.Width = 60
         '
         'data_parcela
         '
@@ -611,7 +612,7 @@ Partial Class frmLancamentoContasPagar
         Me.data_parcela.HeaderText = "data_parcela"
         Me.data_parcela.Name = "data_parcela"
         Me.data_parcela.ReadOnly = True
-        Me.data_parcela.Width = 150
+        Me.data_parcela.Width = 80
         '
         'valor_parcela
         '
@@ -622,7 +623,7 @@ Partial Class frmLancamentoContasPagar
         Me.valor_parcela.HeaderText = "valor_parcela"
         Me.valor_parcela.Name = "valor_parcela"
         Me.valor_parcela.ReadOnly = True
-        Me.valor_parcela.Width = 150
+        Me.valor_parcela.Width = 130
         '
         'numDocto
         '
@@ -630,7 +631,7 @@ Partial Class frmLancamentoContasPagar
         Me.numDocto.HeaderText = "numDocto"
         Me.numDocto.Name = "numDocto"
         Me.numDocto.ReadOnly = True
-        Me.numDocto.Width = 180
+        Me.numDocto.Width = 150
         '
         'pago
         '
@@ -638,7 +639,7 @@ Partial Class frmLancamentoContasPagar
         Me.pago.HeaderText = "Pago"
         Me.pago.Name = "pago"
         Me.pago.ReadOnly = True
-        Me.pago.Width = 80
+        Me.pago.Width = 40
         '
         'valorTotal
         '
@@ -646,7 +647,7 @@ Partial Class frmLancamentoContasPagar
         Me.valorTotal.HeaderText = "valorTotal"
         Me.valorTotal.Name = "valorTotal"
         Me.valorTotal.ReadOnly = True
-        Me.valorTotal.Width = 150
+        Me.valorTotal.Width = 130
         '
         'situacao
         '
@@ -654,7 +655,7 @@ Partial Class frmLancamentoContasPagar
         Me.situacao.HeaderText = "situacao"
         Me.situacao.Name = "situacao"
         Me.situacao.ReadOnly = True
-        Me.situacao.Width = 160
+        Me.situacao.Width = 80
         '
         'SaldoRestante
         '
@@ -662,7 +663,7 @@ Partial Class frmLancamentoContasPagar
         Me.SaldoRestante.HeaderText = "Saldo Restante"
         Me.SaldoRestante.Name = "SaldoRestante"
         Me.SaldoRestante.ReadOnly = True
-        Me.SaldoRestante.Width = 150
+        Me.SaldoRestante.Width = 130
         '
         'Fornecedor
         '
@@ -670,6 +671,7 @@ Partial Class frmLancamentoContasPagar
         Me.Fornecedor.HeaderText = "Fornecedor"
         Me.Fornecedor.Name = "Fornecedor"
         Me.Fornecedor.ReadOnly = True
+        Me.Fornecedor.Width = 70
         '
         'Conta
         '
@@ -677,13 +679,14 @@ Partial Class frmLancamentoContasPagar
         Me.Conta.HeaderText = "Conta"
         Me.Conta.Name = "Conta"
         Me.Conta.ReadOnly = True
+        Me.Conta.Width = 60
         '
         'frmLancamentoContasPagar
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.LightBlue
-        Me.ClientSize = New System.Drawing.Size(948, 680)
+        Me.ClientSize = New System.Drawing.Size(1039, 680)
         Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "frmLancamentoContasPagar"

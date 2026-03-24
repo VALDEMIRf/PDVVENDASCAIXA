@@ -601,6 +601,7 @@ Public Class frmPrincipal
         Catch ex As Exception
             MessageBox.Show("Erro ao Listar" + ex.Message)
             fechar()
+
         End Try
     End Sub
 
@@ -616,6 +617,16 @@ Public Class frmPrincipal
 
     Private Sub ContasAPagarToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ContasAPagarToolStripMenuItem.Click
         Dim form = New frmContasApagar
+        form.ShowDialog()
+    End Sub
+
+    Private Sub ContasAReceberToolStripMenuItem_Click_1(sender As Object, e As EventArgs)
+        Dim form = New frmReceberContas
+        form.ShowDialog()
+    End Sub
+
+    Private Sub CcontasAReceberToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CcontasAReceberToolStripMenuItem.Click
+        Dim form = New frmReceberContas
         form.ShowDialog()
     End Sub
 

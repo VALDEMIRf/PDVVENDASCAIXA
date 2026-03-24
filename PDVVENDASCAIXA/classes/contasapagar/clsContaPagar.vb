@@ -72,4 +72,40 @@ Public Class clsContaPagar
         Return ds
     End Function
 
+    Public Function ConsularIDParcelaReceber()
+        sql = "Select * from tbParcelasReceber_Gravar Where parcela='" & parcela & "'"
+        ds = con.listar(sql)
+
+        'Using conn = clsConexao.ObterConexao()
+        '    conn.Open()
+
+        '    Dim cmd As New SqlCommand("Select * from tbParcelasPagar_Gravar Where parcela='" & parcela & "'", conn)
+
+        '    Dim qtd As Integer = CInt(cmd.ExecuteScalar())
+
+        '    If qtd > 0 Then
+        '        MessageBox.Show("Atenção! Existem " & qtd & " parcelas próximas do vencimento.")
+        '    End If
+        'End Using
+        Return ds
+    End Function
+
+    Public Function ConsularValorParcelaReceber()
+        sql = "Select * from tbParcelasReceber_Gravar Where id_parcela='" & id_parcela & "'"
+        ds = con.listar(sql)
+
+        'Using conn = clsConexao.ObterConexao()
+        '    conn.Open()
+
+        '    Dim cmd As New SqlCommand("Select * from tbParcelasPagar_Gravar Where parcela='" & parcela & "'", conn)
+
+        '    Dim qtd As Integer = CInt(cmd.ExecuteScalar())
+
+        '    If qtd > 0 Then
+        '        MessageBox.Show("Atenção! Existem " & qtd & " parcelas próximas do vencimento.")
+        '    End If
+        'End Using
+        Return ds
+    End Function
+
 End Class

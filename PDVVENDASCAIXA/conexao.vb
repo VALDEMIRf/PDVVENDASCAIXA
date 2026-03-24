@@ -21,6 +21,7 @@ Module conexao
     Public intPergunta As Integer
     Public intCodigoLancamento As Integer = 0
     Public situacaoPagamento As String
+    Public situacaoPagamentoReceber As String
     Public intCodigoBaixa As Integer = 0
 End Module
 

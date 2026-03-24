@@ -208,6 +208,7 @@
     <Compile Include="classes\contasapagar\clsConexao.vb" />
     <Compile Include="classes\contasapagar\ContaPagarDAL.vb" />
     <Compile Include="classes\contasapagar\clsContaPagar.vb" />
+    <Compile Include="classes\contasReceber\ContaReceberDAL.vb" />
     <Compile Include="classes\Valida_CPF_CNPJ.vb" />
     <Compile Include="conexao.vb" />
     <Compile Include="Connected Services\WSCEP\Reference.vb">
@@ -257,22 +258,16 @@
     <Compile Include="Movimentacao\contaspagar\frmDashboard.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Movimentacao\contaspagar\frmGravarContaPagar.Designer.vb">
-      <DependentUpon>frmGravarContaPagar.vb</DependentUpon>
+    <Compile Include="Movimentacao\contasreceber\frmBaixarContaReceber.Designer.vb">
+      <DependentUpon>frmBaixarContaReceber.vb</DependentUpon>
     </Compile>
-    <Compile Include="Movimentacao\contaspagar\frmGravarContaPagar.vb">
+    <Compile Include="Movimentacao\contasreceber\frmBaixarContaReceber.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Movimentacao\contasreceber\Form2.Designer.vb">
-      <DependentUpon>Form2.vb</DependentUpon>
+    <Compile Include="Movimentacao\contasreceber\frmDashboardReceber.Designer.vb">
+      <DependentUpon>frmDashboardReceber.vb</DependentUpon>
     </Compile>
-    <Compile Include="Movimentacao\contasreceber\Form2.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Movimentacao\contasreceber\frmGravarContasReceber.Designer.vb">
-      <DependentUpon>frmGravarContasReceber.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Movimentacao\contasreceber\frmGravarContasReceber.vb">
+    <Compile Include="Movimentacao\contasreceber\frmDashboardReceber.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Movimentacao\frmFormaPagamento.Designer.vb">
@@ -453,7 +448,7 @@
     <Compile Include="teste gerar parcelas\form1.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="teste gerar parcelas\Parcelas.vb" />
+    <Compile Include="classes\Parcelas.vb" />
     <Compile Include="teste gerar parcelas\Produto.vb" />
     <Compile Include="VendasDataSet1.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -531,11 +526,11 @@
     <EmbeddedResource Include="Movimentacao\contaspagar\frmDashboard.resx">
       <DependentUpon>frmDashboard.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Movimentacao\contaspagar\frmGravarContaPagar.resx">
-      <DependentUpon>frmGravarContaPagar.vb</DependentUpon>
+    <EmbeddedResource Include="Movimentacao\contasreceber\frmBaixarContaReceber.resx">
+      <DependentUpon>frmBaixarContaReceber.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Movimentacao\contasreceber\Form2.resx">
-      <DependentUpon>Form2.vb</DependentUpon>
+    <EmbeddedResource Include="Movimentacao\contasreceber\frmDashboardReceber.resx">
+      <DependentUpon>frmDashboardReceber.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Movimentacao\frmFormaPagamento.resx">
       <DependentUpon>frmFormaPagamento.vb</DependentUpon>

@@ -39,6 +39,7 @@ Partial Class frmPrincipal
         Me.NíveisBaixoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MovimentaçãoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.OrdemDeServiçoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ContasAPagarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.VendasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PDVRegistrarVendaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Modelo1ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -79,7 +80,7 @@ Partial Class frmPrincipal
         Me.imagemNivel = New System.Windows.Forms.PictureBox()
         Me.lblNivel = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.ContasAPagarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CcontasAReceberToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.dg, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.imagem, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -180,7 +181,7 @@ Partial Class frmPrincipal
         '
         'MovimentaçãoToolStripMenuItem
         '
-        Me.MovimentaçãoToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.OrdemDeServiçoToolStripMenuItem, Me.ContasAPagarToolStripMenuItem})
+        Me.MovimentaçãoToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.OrdemDeServiçoToolStripMenuItem, Me.ContasAPagarToolStripMenuItem, Me.CcontasAReceberToolStripMenuItem})
         Me.MovimentaçãoToolStripMenuItem.ForeColor = System.Drawing.Color.Black
         Me.MovimentaçãoToolStripMenuItem.Image = CType(resources.GetObject("MovimentaçãoToolStripMenuItem.Image"), System.Drawing.Image)
         Me.MovimentaçãoToolStripMenuItem.Name = "MovimentaçãoToolStripMenuItem"
@@ -191,8 +192,15 @@ Partial Class frmPrincipal
         '
         Me.OrdemDeServiçoToolStripMenuItem.Image = CType(resources.GetObject("OrdemDeServiçoToolStripMenuItem.Image"), System.Drawing.Image)
         Me.OrdemDeServiçoToolStripMenuItem.Name = "OrdemDeServiçoToolStripMenuItem"
-        Me.OrdemDeServiçoToolStripMenuItem.Size = New System.Drawing.Size(180, 24)
+        Me.OrdemDeServiçoToolStripMenuItem.Size = New System.Drawing.Size(185, 24)
         Me.OrdemDeServiçoToolStripMenuItem.Text = "Ordem de Serviço"
+        '
+        'ContasAPagarToolStripMenuItem
+        '
+        Me.ContasAPagarToolStripMenuItem.Image = CType(resources.GetObject("ContasAPagarToolStripMenuItem.Image"), System.Drawing.Image)
+        Me.ContasAPagarToolStripMenuItem.Name = "ContasAPagarToolStripMenuItem"
+        Me.ContasAPagarToolStripMenuItem.Size = New System.Drawing.Size(185, 24)
+        Me.ContasAPagarToolStripMenuItem.Text = "Contas a Pagar"
         '
         'VendasToolStripMenuItem
         '
@@ -575,11 +583,12 @@ Partial Class frmPrincipal
         Me.Label1.TabIndex = 254
         Me.Label1.Text = "Nº CAIXA"
         '
-        'ContasAPagarToolStripMenuItem
+        'CcontasAReceberToolStripMenuItem
         '
-        Me.ContasAPagarToolStripMenuItem.Name = "ContasAPagarToolStripMenuItem"
-        Me.ContasAPagarToolStripMenuItem.Size = New System.Drawing.Size(180, 24)
-        Me.ContasAPagarToolStripMenuItem.Text = "Contas a Pagar"
+        Me.CcontasAReceberToolStripMenuItem.Image = CType(resources.GetObject("CcontasAReceberToolStripMenuItem.Image"), System.Drawing.Image)
+        Me.CcontasAReceberToolStripMenuItem.Name = "CcontasAReceberToolStripMenuItem"
+        Me.CcontasAReceberToolStripMenuItem.Size = New System.Drawing.Size(185, 24)
+        Me.CcontasAReceberToolStripMenuItem.Text = "Ccontas a Receber"
         '
         'frmPrincipal
         '
@@ -682,4 +691,5 @@ Partial Class frmPrincipal
     Friend WithEvents Modelo1ToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents Modelo2ToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ContasAPagarToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents CcontasAReceberToolStripMenuItem As ToolStripMenuItem
 End Class

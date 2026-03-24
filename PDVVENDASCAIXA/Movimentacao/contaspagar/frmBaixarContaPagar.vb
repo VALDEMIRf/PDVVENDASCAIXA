@@ -300,7 +300,7 @@ Public Class frmBaixarContaPagar
         Dim DT As New DataTable
         Dim DA As SqlDataAdapter
         Try
-            '    abrir()
+            abrir()
             Obj_parcela.parcela = cboParcela.Text
             ds = Obj_parcela.ConsularIDParcela()
 
@@ -348,31 +348,6 @@ Public Class frmBaixarContaPagar
         Finally
             fechar()
         End Try
-
-        'Using con As New SqlConnection("SUA_STRING_CONEXAO")
-
-        '    Dim sql As String = "
-        '        SELECT TOP 1 (parcela)
-        '        FROM tbParcelasPagar_Gravar
-        '        WHERE IdConta = 5
-        '        AND situacao = 'PENDENTE'
-        '        ORDER BY parcela"
-
-        '    Using cmd As New SqlCommand(sql, con)
-
-        '        cmd.Parameters.AddWithValue("@IdConta", idConta)
-
-        '        con.Open()
-
-        '        Dim result = cmd.ExecuteScalar()
-
-        '        If result IsNot Nothing Then
-        '            proximaParcela = Convert.ToInt32(result)
-        '        End If
-
-        '    End Using
-
-        'End Using
 
         Return proximaParcela
 

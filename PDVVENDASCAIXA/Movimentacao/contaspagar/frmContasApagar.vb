@@ -244,23 +244,15 @@ Public Class frmContasApagar
 
     Private Sub rbTipoConta_CheckedChanged(sender As Object, e As EventArgs) Handles rbTipoConta.CheckedChanged
         Carregar()
-
-
         txtBuscarTipoConta.Visible = True
-
         txtBuscarFornecedor.Visible = False
-
         txtBuscarTipoConta.Focus()
     End Sub
 
     Private Sub rbFornecedor_CheckedChanged(sender As Object, e As EventArgs) Handles rbFornecedor.CheckedChanged
         Carregar()
-        ' txtBuscarFornecedor.Text = Nothing
-        ' txtBuscarConta.Text = Nothing
-
         txtBuscarFornecedor.Visible = True
         txtBuscarTipoConta.Visible = False
-
         txtBuscarFornecedor.Focus()
     End Sub
 
@@ -296,6 +288,7 @@ Public Class frmContasApagar
                 cmd.Parameters.AddWithValue("@Pago", False)
                 cmd.Parameters.AddWithValue("@usuario", usuarioNome)
                 cmd.Parameters.AddWithValue("@data_cadastro", Now.ToShortDateString)
+                cmd.Parameters.AddWithValue("@situacao", "Pendente")
                 cmd.Parameters.Add("@mensagem", SqlDbType.VarChar, 100).Direction = 2
                 cmd.ExecuteNonQuery()
 
@@ -445,7 +438,7 @@ Public Class frmContasApagar
 
             Exit Sub
 
-        ElseIf situacaoPagamento = False Then
+        ElseIf situacaoPagamento = "Pendente" Then
 
             intCodigoLancamento = dgvContas.CurrentRow().Cells("id").Value
             frmLancamentoContasPagar.ShowDialog()
@@ -520,7 +513,7 @@ Public Class frmContasApagar
             .Columns(8).HeaderText = "Pago"
             .Columns(9).HeaderText = "Usuario"
             .Columns(10).HeaderText = "Dt. Cadastro"
-            .Columns(11).HeaderText = "situação"
+            .Columns(11).HeaderText = "situacao"
             .Columns(12).HeaderText = "id_categoriacontas"
             .Columns(13).HeaderText = "id_categoriacontas"
             .Columns(14).HeaderText = "id_fornecedor"
