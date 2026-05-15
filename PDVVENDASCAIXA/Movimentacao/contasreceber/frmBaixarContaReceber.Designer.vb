@@ -25,6 +25,8 @@ Partial Class frmBaixarContaReceber
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmBaixarContaReceber))
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.txtValorAtual = New System.Windows.Forms.TextBox()
         Me.lblCodigoConta = New System.Windows.Forms.Label()
         Me.lblCodigo = New System.Windows.Forms.Label()
         Me.lblIdparcela = New System.Windows.Forms.Label()
@@ -44,6 +46,7 @@ Partial Class frmBaixarContaReceber
         Me.txtFormaPagto = New System.Windows.Forms.ComboBox()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.llteste = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.lblNrParcela = New System.Windows.Forms.Label()
         Me.cboParcela = New System.Windows.Forms.ComboBox()
@@ -71,9 +74,6 @@ Partial Class frmBaixarContaReceber
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.Label16 = New System.Windows.Forms.Label()
         Me.btSair = New System.Windows.Forms.Button()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.txtValorAtual = New System.Windows.Forms.TextBox()
-        Me.llteste = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -119,6 +119,25 @@ Partial Class frmBaixarContaReceber
         Me.GroupBox2.Size = New System.Drawing.Size(757, 106)
         Me.GroupBox2.TabIndex = 400
         Me.GroupBox2.TabStop = False
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.White
+        Me.Label1.Location = New System.Drawing.Point(279, 54)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(87, 20)
+        Me.Label1.TabIndex = 401
+        Me.Label1.Text = "Valor Atual"
+        '
+        'txtValorAtual
+        '
+        Me.txtValorAtual.Enabled = False
+        Me.txtValorAtual.Location = New System.Drawing.Point(279, 74)
+        Me.txtValorAtual.Name = "txtValorAtual"
+        Me.txtValorAtual.Size = New System.Drawing.Size(123, 20)
+        Me.txtValorAtual.TabIndex = 400
         '
         'lblCodigoConta
         '
@@ -339,6 +358,15 @@ Partial Class frmBaixarContaReceber
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Pagamento"
         '
+        'llteste
+        '
+        Me.llteste.AutoSize = True
+        Me.llteste.Location = New System.Drawing.Point(426, 98)
+        Me.llteste.Name = "llteste"
+        Me.llteste.Size = New System.Drawing.Size(66, 20)
+        Me.llteste.TabIndex = 403
+        Me.llteste.Text = "Label10"
+        '
         'Label4
         '
         Me.Label4.AutoSize = True
@@ -394,7 +422,7 @@ Partial Class frmBaixarContaReceber
         Me.dtpVencimentoParcela.CalendarForeColor = System.Drawing.Color.Red
         Me.dtpVencimentoParcela.CalendarTitleForeColor = System.Drawing.Color.Red
         Me.dtpVencimentoParcela.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtpVencimentoParcela.Location = New System.Drawing.Point(603, 25)
+        Me.dtpVencimentoParcela.Location = New System.Drawing.Point(603, 19)
         Me.dtpVencimentoParcela.Name = "dtpVencimentoParcela"
         Me.dtpVencimentoParcela.Size = New System.Drawing.Size(112, 26)
         Me.dtpVencimentoParcela.TabIndex = 399
@@ -563,7 +591,7 @@ Partial Class frmBaixarContaReceber
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.Red
-        Me.Label3.Location = New System.Drawing.Point(495, 28)
+        Me.Label3.Location = New System.Drawing.Point(495, 22)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(106, 18)
         Me.Label3.TabIndex = 371
@@ -665,34 +693,6 @@ Partial Class frmBaixarContaReceber
         Me.btSair.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btSair.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btSair.UseVisualStyleBackColor = False
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(279, 54)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(87, 20)
-        Me.Label1.TabIndex = 401
-        Me.Label1.Text = "Valor Atual"
-        '
-        'txtValorAtual
-        '
-        Me.txtValorAtual.Enabled = False
-        Me.txtValorAtual.Location = New System.Drawing.Point(279, 74)
-        Me.txtValorAtual.Name = "txtValorAtual"
-        Me.txtValorAtual.Size = New System.Drawing.Size(123, 20)
-        Me.txtValorAtual.TabIndex = 400
-        '
-        'llteste
-        '
-        Me.llteste.AutoSize = True
-        Me.llteste.Location = New System.Drawing.Point(426, 98)
-        Me.llteste.Name = "llteste"
-        Me.llteste.Size = New System.Drawing.Size(66, 20)
-        Me.llteste.TabIndex = 403
-        Me.llteste.Text = "Label10"
         '
         'frmBaixarContaReceber
         '

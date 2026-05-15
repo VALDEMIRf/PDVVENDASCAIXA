@@ -111,29 +111,26 @@ Public Class frmLancamentoContasPagar
             abrir()
 
             Dim sql As String = "pa_ContasPagar_listarID " & CInt(intCodigoLancamento)
-            ' Dim sql As String = "SELECT * FROM tbContasPagar WHERE id_conta=" & CInt(txtCodigo.Text)
             Dim cmd As SqlCommand = New SqlCommand(sql, con)
-            ' cmd.CommandText = CommandType.StoredProcedure
-            ' cmd.Parameters.AddWithValue("@id_conta", txtCodigo.Text)
             dr = cmd.ExecuteReader(CommandBehavior.SingleRow)
-
 
             If dr.HasRows Then
                 dr.Read()
                 lblCodigoConta.Text = dr.Item("id")
                 txtNDoc.Text = dr.Item("numDocto")
-                txtConta.Text = dr.Item("id_categoriacontas")
-                txtFornecedor.Text = dr.Item("id_fornecedor")
-                txtFormaPagto.Text = dr.Item("id_formaPag")
-                txtValor.Text = dr.Item("valor")
+                txtConta.Text = dr.Item("descricaocategoriacontas")
+                txtFornecedor.Text = dr.Item("razaoSocial")
+                txtFormaPagto.Text = dr.Item("nome")
+                txtValor.Text = FormatCurrency(dr.Item("valor"))
                 lblPago.Text = dr.Item("Pago")
                 txtVencimento.Text = dr.Item("DataVencimento")
                 txtDataEntrada.Text = dr.Item("data_cadastro")
+                txtSituacao.Text = dr.Item("situacao")
 
             End If
 
         Catch ex As Exception
-            MessageBox.Show("Erro ao Listar as contas" + ex.Message.ToString)
+            MessageBox.Show("Erro ao Listagem desta conta as contas" + ex.Message.ToString)
         Finally
             fechar()
         End Try
@@ -352,7 +349,7 @@ Public Class frmLancamentoContasPagar
 
             Dim numlinhas As Integer = dgvParcelas.RowCount - 1
             Dim cont As Integer = 0
-
+            Dim Pvalor As String = txtValor.Text
             'Insere no banco de dados as parcelas geradas no DataGrid
             While (cont <= numlinhas)
                 dr = Me.dgvParcelas.Item(2, cont).Value

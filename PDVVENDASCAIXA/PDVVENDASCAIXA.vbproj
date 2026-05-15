@@ -1008,6 +1008,7 @@
     <None Include="Resources\3d bar chart.png" />
     <None Include="Resources\Filter.png" />
     <None Include="Resources\Edit.png" />
+    <None Include="Resources\Dollar1.png" />
     <Content Include="Resources\header-pagarreceber.png" />
     <None Include="Resources\Undo_32x32.png" />
     <None Include="Resources\Save.png" />

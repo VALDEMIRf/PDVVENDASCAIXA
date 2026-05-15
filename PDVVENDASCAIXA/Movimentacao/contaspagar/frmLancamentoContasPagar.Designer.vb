@@ -22,11 +22,22 @@ Partial Class frmLancamentoContasPagar
     'Não o modifique usando o editor de códigos.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmLancamentoContasPagar))
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.dgvParcelas = New System.Windows.Forms.DataGridView()
+        Me.id_parcela = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.parcela = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.data_parcela = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.valor_parcela = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.numDocto = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.pago = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.valorTotal = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.situacao = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.SaldoRestante = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Fornecedor = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Conta = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.rbParcelamento = New System.Windows.Forms.RadioButton()
         Me.txtNumeroPacelas = New System.Windows.Forms.NumericUpDown()
@@ -67,17 +78,6 @@ Partial Class frmLancamentoContasPagar
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.Label16 = New System.Windows.Forms.Label()
         Me.btSair = New System.Windows.Forms.Button()
-        Me.id_parcela = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.parcela = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.data_parcela = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.valor_parcela = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.numDocto = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.pago = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.valorTotal = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.situacao = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.SaldoRestante = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Fornecedor = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Conta = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel1.SuspendLayout()
         CType(Me.dgvParcelas, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
@@ -89,7 +89,7 @@ Partial Class frmLancamentoContasPagar
         '
         'Panel1
         '
-        Me.Panel1.BackColor = System.Drawing.Color.SteelBlue
+        Me.Panel1.BackColor = System.Drawing.Color.RoyalBlue
         Me.Panel1.Controls.Add(Me.dgvParcelas)
         Me.Panel1.Controls.Add(Me.GroupBox2)
         Me.Panel1.Controls.Add(Me.GroupBox1)
@@ -113,6 +113,101 @@ Partial Class frmLancamentoContasPagar
         Me.dgvParcelas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvParcelas.Size = New System.Drawing.Size(1003, 456)
         Me.dgvParcelas.TabIndex = 334
+        '
+        'id_parcela
+        '
+        Me.id_parcela.DataPropertyName = "id_parcela"
+        Me.id_parcela.HeaderText = "id_parcela"
+        Me.id_parcela.Name = "id_parcela"
+        Me.id_parcela.ReadOnly = True
+        Me.id_parcela.Visible = False
+        Me.id_parcela.Width = 80
+        '
+        'parcela
+        '
+        Me.parcela.DataPropertyName = "parcela"
+        DataGridViewCellStyle7.Format = "N2"
+        DataGridViewCellStyle7.NullValue = Nothing
+        Me.parcela.DefaultCellStyle = DataGridViewCellStyle7
+        Me.parcela.HeaderText = "parcela"
+        Me.parcela.Name = "parcela"
+        Me.parcela.ReadOnly = True
+        Me.parcela.Width = 60
+        '
+        'data_parcela
+        '
+        Me.data_parcela.DataPropertyName = "data_parcela"
+        Me.data_parcela.HeaderText = "data_parcela"
+        Me.data_parcela.Name = "data_parcela"
+        Me.data_parcela.ReadOnly = True
+        Me.data_parcela.Width = 80
+        '
+        'valor_parcela
+        '
+        Me.valor_parcela.DataPropertyName = "valor_parcela"
+        DataGridViewCellStyle8.Format = "C2"
+        DataGridViewCellStyle8.NullValue = Nothing
+        Me.valor_parcela.DefaultCellStyle = DataGridViewCellStyle8
+        Me.valor_parcela.HeaderText = "valor_parcela"
+        Me.valor_parcela.Name = "valor_parcela"
+        Me.valor_parcela.ReadOnly = True
+        Me.valor_parcela.Width = 130
+        '
+        'numDocto
+        '
+        Me.numDocto.DataPropertyName = "numDocto"
+        Me.numDocto.HeaderText = "numDocto"
+        Me.numDocto.Name = "numDocto"
+        Me.numDocto.ReadOnly = True
+        Me.numDocto.Width = 150
+        '
+        'pago
+        '
+        Me.pago.DataPropertyName = "Pago"
+        Me.pago.HeaderText = "Pago"
+        Me.pago.Name = "pago"
+        Me.pago.ReadOnly = True
+        Me.pago.Width = 40
+        '
+        'valorTotal
+        '
+        Me.valorTotal.DataPropertyName = "valorTotal"
+        Me.valorTotal.HeaderText = "valorTotal"
+        Me.valorTotal.Name = "valorTotal"
+        Me.valorTotal.ReadOnly = True
+        Me.valorTotal.Width = 130
+        '
+        'situacao
+        '
+        Me.situacao.DataPropertyName = "situacao"
+        Me.situacao.HeaderText = "situacao"
+        Me.situacao.Name = "situacao"
+        Me.situacao.ReadOnly = True
+        Me.situacao.Width = 80
+        '
+        'SaldoRestante
+        '
+        Me.SaldoRestante.DataPropertyName = "SaldoRestante"
+        Me.SaldoRestante.HeaderText = "Saldo Restante"
+        Me.SaldoRestante.Name = "SaldoRestante"
+        Me.SaldoRestante.ReadOnly = True
+        Me.SaldoRestante.Width = 130
+        '
+        'Fornecedor
+        '
+        Me.Fornecedor.DataPropertyName = "id_fornecedor"
+        Me.Fornecedor.HeaderText = "Fornecedor"
+        Me.Fornecedor.Name = "Fornecedor"
+        Me.Fornecedor.ReadOnly = True
+        Me.Fornecedor.Width = 70
+        '
+        'Conta
+        '
+        Me.Conta.DataPropertyName = "conta"
+        Me.Conta.HeaderText = "Conta"
+        Me.Conta.Name = "Conta"
+        Me.Conta.ReadOnly = True
+        Me.Conta.Width = 60
         '
         'GroupBox2
         '
@@ -184,7 +279,7 @@ Partial Class frmLancamentoContasPagar
         Me.btGerarParcelas.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btGerarParcelas.ForeColor = System.Drawing.Color.White
         Me.btGerarParcelas.Image = CType(resources.GetObject("btGerarParcelas.Image"), System.Drawing.Image)
-        Me.btGerarParcelas.Location = New System.Drawing.Point(634, 11)
+        Me.btGerarParcelas.Location = New System.Drawing.Point(649, 11)
         Me.btGerarParcelas.Margin = New System.Windows.Forms.Padding(5)
         Me.btGerarParcelas.Name = "btGerarParcelas"
         Me.btGerarParcelas.Size = New System.Drawing.Size(97, 35)
@@ -207,10 +302,10 @@ Partial Class frmLancamentoContasPagar
         'mskData
         '
         Me.mskData.Enabled = False
-        Me.mskData.Location = New System.Drawing.Point(523, 20)
+        Me.mskData.Location = New System.Drawing.Point(554, 20)
         Me.mskData.Mask = "00/00/0000"
         Me.mskData.Name = "mskData"
-        Me.mskData.Size = New System.Drawing.Size(98, 20)
+        Me.mskData.Size = New System.Drawing.Size(76, 20)
         Me.mskData.TabIndex = 329
         Me.mskData.ValidatingType = GetType(Date)
         '
@@ -219,7 +314,7 @@ Partial Class frmLancamentoContasPagar
         Me.Label11.AutoSize = True
         Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label11.ForeColor = System.Drawing.Color.White
-        Me.Label11.Location = New System.Drawing.Point(471, 20)
+        Me.Label11.Location = New System.Drawing.Point(502, 20)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(52, 20)
         Me.Label11.TabIndex = 306
@@ -241,7 +336,7 @@ Partial Class frmLancamentoContasPagar
         Me.txtValorParcelas.Enabled = False
         Me.txtValorParcelas.Location = New System.Drawing.Point(344, 19)
         Me.txtValorParcelas.Name = "txtValorParcelas"
-        Me.txtValorParcelas.Size = New System.Drawing.Size(117, 20)
+        Me.txtValorParcelas.Size = New System.Drawing.Size(136, 20)
         Me.txtValorParcelas.TabIndex = 320
         '
         'GroupBox1
@@ -279,7 +374,7 @@ Partial Class frmLancamentoContasPagar
         '
         'txtSaldoRestante
         '
-        Me.txtSaldoRestante.Location = New System.Drawing.Point(624, 73)
+        Me.txtSaldoRestante.Location = New System.Drawing.Point(680, 73)
         Me.txtSaldoRestante.Name = "txtSaldoRestante"
         Me.txtSaldoRestante.Size = New System.Drawing.Size(121, 20)
         Me.txtSaldoRestante.TabIndex = 379
@@ -291,7 +386,7 @@ Partial Class frmLancamentoContasPagar
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.White
-        Me.Label2.Location = New System.Drawing.Point(625, 54)
+        Me.Label2.Location = New System.Drawing.Point(681, 54)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(120, 20)
         Me.Label2.TabIndex = 378
@@ -300,7 +395,7 @@ Partial Class frmLancamentoContasPagar
         '
         'txtJuros
         '
-        Me.txtJuros.Location = New System.Drawing.Point(547, 74)
+        Me.txtJuros.Location = New System.Drawing.Point(603, 74)
         Me.txtJuros.Name = "txtJuros"
         Me.txtJuros.Size = New System.Drawing.Size(60, 20)
         Me.txtJuros.TabIndex = 377
@@ -309,7 +404,7 @@ Partial Class frmLancamentoContasPagar
         '
         'txtDesconto
         '
-        Me.txtDesconto.Location = New System.Drawing.Point(460, 74)
+        Me.txtDesconto.Location = New System.Drawing.Point(516, 74)
         Me.txtDesconto.Name = "txtDesconto"
         Me.txtDesconto.Size = New System.Drawing.Size(71, 20)
         Me.txtDesconto.TabIndex = 322
@@ -363,7 +458,7 @@ Partial Class frmLancamentoContasPagar
         Me.Label12.AutoSize = True
         Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label12.ForeColor = System.Drawing.Color.White
-        Me.Label12.Location = New System.Drawing.Point(460, 55)
+        Me.Label12.Location = New System.Drawing.Point(516, 55)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(78, 20)
         Me.Label12.TabIndex = 323
@@ -386,7 +481,7 @@ Partial Class frmLancamentoContasPagar
         Me.Label14.AutoSize = True
         Me.Label14.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label14.ForeColor = System.Drawing.Color.White
-        Me.Label14.Location = New System.Drawing.Point(548, 55)
+        Me.Label14.Location = New System.Drawing.Point(604, 55)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(48, 20)
         Me.Label14.TabIndex = 325
@@ -395,7 +490,7 @@ Partial Class frmLancamentoContasPagar
         '
         'txtVencimento
         '
-        Me.txtVencimento.Location = New System.Drawing.Point(194, 73)
+        Me.txtVencimento.Location = New System.Drawing.Point(250, 73)
         Me.txtVencimento.Mask = "00/00/0000"
         Me.txtVencimento.Name = "txtVencimento"
         Me.txtVencimento.Size = New System.Drawing.Size(87, 20)
@@ -409,16 +504,16 @@ Partial Class frmLancamentoContasPagar
         Me.Label5.ForeColor = System.Drawing.Color.White
         Me.Label5.Location = New System.Drawing.Point(104, 53)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(46, 20)
+        Me.Label5.Size = New System.Drawing.Size(85, 20)
         Me.Label5.TabIndex = 301
-        Me.Label5.Text = "Valor"
+        Me.Label5.Text = "Valor Total"
         '
         'Label6
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.ForeColor = System.Drawing.Color.White
-        Me.Label6.Location = New System.Drawing.Point(192, 56)
+        Me.Label6.Location = New System.Drawing.Point(248, 56)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(94, 20)
         Me.Label6.TabIndex = 303
@@ -428,7 +523,7 @@ Partial Class frmLancamentoContasPagar
         '
         Me.txtValor.Location = New System.Drawing.Point(100, 73)
         Me.txtValor.Name = "txtValor"
-        Me.txtValor.Size = New System.Drawing.Size(74, 20)
+        Me.txtValor.Size = New System.Drawing.Size(130, 20)
         Me.txtValor.TabIndex = 299
         '
         'txtSituacao
@@ -437,7 +532,7 @@ Partial Class frmLancamentoContasPagar
         Me.txtSituacao.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.txtSituacao.FormattingEnabled = True
         Me.txtSituacao.Items.AddRange(New Object() {"Paga", "Não Paga", "Vencida", "Pendente"})
-        Me.txtSituacao.Location = New System.Drawing.Point(301, 72)
+        Me.txtSituacao.Location = New System.Drawing.Point(357, 72)
         Me.txtSituacao.Name = "txtSituacao"
         Me.txtSituacao.Size = New System.Drawing.Size(148, 21)
         Me.txtSituacao.TabIndex = 298
@@ -447,7 +542,7 @@ Partial Class frmLancamentoContasPagar
         Me.Label13.AutoSize = True
         Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label13.ForeColor = System.Drawing.Color.White
-        Me.Label13.Location = New System.Drawing.Point(305, 54)
+        Me.Label13.Location = New System.Drawing.Point(361, 54)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(72, 20)
         Me.Label13.TabIndex = 307
@@ -457,9 +552,9 @@ Partial Class frmLancamentoContasPagar
         '
         Me.txtConta.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.txtConta.FormattingEnabled = True
-        Me.txtConta.Location = New System.Drawing.Point(188, 29)
+        Me.txtConta.Location = New System.Drawing.Point(174, 29)
         Me.txtConta.Name = "txtConta"
-        Me.txtConta.Size = New System.Drawing.Size(150, 21)
+        Me.txtConta.Size = New System.Drawing.Size(192, 21)
         Me.txtConta.TabIndex = 294
         '
         'Label4
@@ -478,7 +573,7 @@ Partial Class frmLancamentoContasPagar
         Me.Label9.AutoSize = True
         Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label9.ForeColor = System.Drawing.Color.White
-        Me.Label9.Location = New System.Drawing.Point(195, 7)
+        Me.Label9.Location = New System.Drawing.Point(174, 7)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(86, 20)
         Me.Label9.TabIndex = 304
@@ -488,7 +583,7 @@ Partial Class frmLancamentoContasPagar
         '
         Me.txtNDoc.Location = New System.Drawing.Point(4, 30)
         Me.txtNDoc.Name = "txtNDoc"
-        Me.txtNDoc.Size = New System.Drawing.Size(171, 20)
+        Me.txtNDoc.Size = New System.Drawing.Size(164, 20)
         Me.txtNDoc.TabIndex = 296
         '
         'Label3
@@ -533,7 +628,7 @@ Partial Class frmLancamentoContasPagar
         '
         'Panel2
         '
-        Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(81, Byte), Integer), CType(CType(129, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.Panel2.BackColor = System.Drawing.Color.RoyalBlue
         Me.Panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.Panel2.Controls.Add(Me.PictureBox2)
         Me.Panel2.Controls.Add(Me.Label16)
@@ -585,101 +680,6 @@ Partial Class frmLancamentoContasPagar
         Me.btSair.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btSair.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btSair.UseVisualStyleBackColor = False
-        '
-        'id_parcela
-        '
-        Me.id_parcela.DataPropertyName = "id_parcela"
-        Me.id_parcela.HeaderText = "id_parcela"
-        Me.id_parcela.Name = "id_parcela"
-        Me.id_parcela.ReadOnly = True
-        Me.id_parcela.Visible = False
-        Me.id_parcela.Width = 80
-        '
-        'parcela
-        '
-        Me.parcela.DataPropertyName = "parcela"
-        DataGridViewCellStyle1.Format = "N2"
-        DataGridViewCellStyle1.NullValue = Nothing
-        Me.parcela.DefaultCellStyle = DataGridViewCellStyle1
-        Me.parcela.HeaderText = "parcela"
-        Me.parcela.Name = "parcela"
-        Me.parcela.ReadOnly = True
-        Me.parcela.Width = 60
-        '
-        'data_parcela
-        '
-        Me.data_parcela.DataPropertyName = "data_parcela"
-        Me.data_parcela.HeaderText = "data_parcela"
-        Me.data_parcela.Name = "data_parcela"
-        Me.data_parcela.ReadOnly = True
-        Me.data_parcela.Width = 80
-        '
-        'valor_parcela
-        '
-        Me.valor_parcela.DataPropertyName = "valor_parcela"
-        DataGridViewCellStyle2.Format = "C2"
-        DataGridViewCellStyle2.NullValue = Nothing
-        Me.valor_parcela.DefaultCellStyle = DataGridViewCellStyle2
-        Me.valor_parcela.HeaderText = "valor_parcela"
-        Me.valor_parcela.Name = "valor_parcela"
-        Me.valor_parcela.ReadOnly = True
-        Me.valor_parcela.Width = 130
-        '
-        'numDocto
-        '
-        Me.numDocto.DataPropertyName = "numDocto"
-        Me.numDocto.HeaderText = "numDocto"
-        Me.numDocto.Name = "numDocto"
-        Me.numDocto.ReadOnly = True
-        Me.numDocto.Width = 150
-        '
-        'pago
-        '
-        Me.pago.DataPropertyName = "Pago"
-        Me.pago.HeaderText = "Pago"
-        Me.pago.Name = "pago"
-        Me.pago.ReadOnly = True
-        Me.pago.Width = 40
-        '
-        'valorTotal
-        '
-        Me.valorTotal.DataPropertyName = "valorTotal"
-        Me.valorTotal.HeaderText = "valorTotal"
-        Me.valorTotal.Name = "valorTotal"
-        Me.valorTotal.ReadOnly = True
-        Me.valorTotal.Width = 130
-        '
-        'situacao
-        '
-        Me.situacao.DataPropertyName = "situacao"
-        Me.situacao.HeaderText = "situacao"
-        Me.situacao.Name = "situacao"
-        Me.situacao.ReadOnly = True
-        Me.situacao.Width = 80
-        '
-        'SaldoRestante
-        '
-        Me.SaldoRestante.DataPropertyName = "SaldoRestante"
-        Me.SaldoRestante.HeaderText = "Saldo Restante"
-        Me.SaldoRestante.Name = "SaldoRestante"
-        Me.SaldoRestante.ReadOnly = True
-        Me.SaldoRestante.Width = 130
-        '
-        'Fornecedor
-        '
-        Me.Fornecedor.DataPropertyName = "id_fornecedor"
-        Me.Fornecedor.HeaderText = "Fornecedor"
-        Me.Fornecedor.Name = "Fornecedor"
-        Me.Fornecedor.ReadOnly = True
-        Me.Fornecedor.Width = 70
-        '
-        'Conta
-        '
-        Me.Conta.DataPropertyName = "conta"
-        Me.Conta.HeaderText = "Conta"
-        Me.Conta.Name = "Conta"
-        Me.Conta.ReadOnly = True
-        Me.Conta.Width = 60
         '
         'frmLancamentoContasPagar
         '

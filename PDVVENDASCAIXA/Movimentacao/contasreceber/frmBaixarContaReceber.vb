@@ -23,8 +23,6 @@ Public Class frmBaixarContaReceber
         caregarFormaPagamento()
         carregarQtdParcela()
 
-
-
         If intCodigoLancamento <> 0 Then
             lblCodigo.Text = intCodigoLancamento
 

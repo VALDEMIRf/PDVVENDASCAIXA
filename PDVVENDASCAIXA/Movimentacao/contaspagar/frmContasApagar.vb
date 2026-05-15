@@ -36,6 +36,10 @@ Public Class frmContasApagar
 
     End Sub
 
+    Private Sub CarregaFormataDG()
+
+        FormatarDG()
+    End Sub
     Sub carregarBuscarCatContas()
         Dim DT As New DataTable
         Dim DA As SqlDataAdapter
@@ -151,11 +155,6 @@ Public Class frmContasApagar
                 dblContasNaoPagas = dblContasNaoPagas + linha.Cells(5).Value
             End If
 
-            '    'Total Contas Atrasadas
-            '    If linha.Cells("situacao").Value = "Vencida" Then
-            '        dblContasAtrasadas = dblContasAtrasadas + linha.Cells(6).Value
-            '    End If
-
         Next
 
         txtTotalContasPagas.Text = FormatCurrency(dblContasPagas)
@@ -166,8 +165,6 @@ Public Class frmContasApagar
     End Sub
 
     Private Sub Carregar()
-        ' dgvContas.DataSource = dal.Listar()
-
 
         Dim dt As New DataTable
         Dim da As SqlDataAdapter
@@ -175,15 +172,14 @@ Public Class frmContasApagar
         Try
             abrir()
 
-            '  da = New SqlDataAdapter("SELECT * FROM tbProdutos", con)
             da = New SqlDataAdapter("pa_ContasPagar_listar", con)
             da.SelectCommand.CommandType = CommandType.StoredProcedure
             da.Fill(dt)
             dgvContas.DataSource = dt
 
             ContarLinhas()
+            ' CarregaFormataDG()
             FormatarDG()
-
         Catch ex As Exception
             MessageBox.Show("Erro ao Listar as contas" + ex.Message.ToString)
         Finally
@@ -210,6 +206,7 @@ Public Class frmContasApagar
             da.Fill(dt)
             dgvContas.DataSource = dt
 
+            ' CarregaFormataDG()
             FormatarDG()
             txtBuscarFornecedor.Text = Nothing
             txtBuscarTipoConta.Text = Nothing
@@ -232,6 +229,7 @@ Public Class frmContasApagar
             da.Fill(dt)
             dgvContas.DataSource = dt
 
+            ' CarregaFormataDG()
             FormatarDG()
             txtBuscarFornecedor.Text = Nothing
             txtBuscarTipoConta.Text = Nothing
@@ -402,9 +400,6 @@ Public Class frmContasApagar
                 Carregar()
                 Limpar()
 
-                ' btnExcluir.Enabled = False
-                '   btnEditar.Enabled = False
-
             Catch ex As Exception
                 MessageBox.Show("Erro ao salvar os dados" + ex.Message.ToString)
                 fechar()
@@ -447,8 +442,19 @@ Public Class frmContasApagar
     End Sub
 
     Private Sub btPagarParcela_Click(sender As Object, e As EventArgs) Handles btPagarParcela.Click
-        intCodigoLancamento = dgvContas.CurrentRow().Cells("id").Value
-        frmBaixarContaPagar.ShowDialog()
+        situacaoPagamento = dgvContas.CurrentRow().Cells("situacao").Value
+
+        If situacaoPagamento = "Pago" Then
+            MessageBox.Show("Esta conta já foi paga")
+            Exit Sub
+        ElseIf situacaoPagamento = "Pendente" Or situacaoPagamento = "Em Parcelamento" Then
+
+            intCodigoLancamento = dgvContas.CurrentRow().Cells("id").Value
+            frmBaixarContaPagar.ShowDialog()
+
+        End If
+
+
     End Sub
 
     Private Sub DesabilitarCampos()
@@ -493,7 +499,7 @@ Public Class frmContasApagar
             .Columns(5).DefaultCellStyle.Format = "c"
 
             .Columns(0).Visible = False
-            ' .Columns(11).Visible = False
+
             .Columns(12).Visible = False
             .Columns(13).Visible = False
             .Columns(14).Visible = False
@@ -501,26 +507,24 @@ Public Class frmContasApagar
             .Columns(16).Visible = False
             .Columns(17).Visible = False
 
-
             .Columns(0).HeaderText = "id"
             .Columns(1).HeaderText = "numDocto"
             .Columns(2).HeaderText = "Cat. Conta"
             .Columns(3).HeaderText = "Fornecedor"
             .Columns(4).HeaderText = "Forma de Pagto"
-            .Columns(5).HeaderText = "Valor"
-            .Columns(6).HeaderText = "Dt. Vencimento"
-            .Columns(7).HeaderText = "Dt. Pagto"
-            .Columns(8).HeaderText = "Pago"
-            .Columns(9).HeaderText = "Usuario"
-            .Columns(10).HeaderText = "Dt. Cadastro"
-            .Columns(11).HeaderText = "situacao"
+            .Columns(5).HeaderText = "Valor Total"
+            .Columns(6).HeaderText = "Dt. Cadastro"
+            .Columns(7).HeaderText = "Dt. Vencimento"
+            .Columns(8).HeaderText = "Data Pagamento"
+            .Columns(9).HeaderText = "Pago"
+            .Columns(10).HeaderText = "Usuário"
+            .Columns(11).HeaderText = "Situação"
             .Columns(12).HeaderText = "id_categoriacontas"
             .Columns(13).HeaderText = "id_categoriacontas"
             .Columns(14).HeaderText = "id_fornecedor"
             .Columns(15).HeaderText = "id_fornecedor"
             .Columns(16).HeaderText = "id_formaPag"
             .Columns(17).HeaderText = "id_formaPag"
-
 
             .Columns(1).Width = 150
             .Columns(2).Width = 150
@@ -529,9 +533,10 @@ Public Class frmContasApagar
             .Columns(5).Width = 120
             .Columns(6).Width = 100
             .Columns(7).Width = 100
-            .Columns(8).Width = 70
-            .Columns(9).Width = 80
-            .Columns(10).Width = 100
+            .Columns(8).Width = 100
+            .Columns(9).Width = 70
+            .Columns(10).Width = 130
+            .Columns(11).Width = 130
         End With
     End Sub
 
@@ -574,10 +579,10 @@ Public Class frmContasApagar
                 da.Fill(dt)
                 dgvContas.DataSource = dt
 
+                'CarregaFormataDG()
                 FormatarDG()
-
             Catch ex As Exception
-                MessageBox.Show("Erro ao Listar os fornecedores" + ex.Message.ToString)
+                MessageBox.Show("Erro ao Listar a pesquisa dos fornecedores" + ex.Message.ToString)
             Finally
                 fechar()
             End Try
@@ -604,6 +609,7 @@ Public Class frmContasApagar
                 da.Fill(dt)
                 dgvContas.DataSource = dt
 
+                '  CarregaFormataDG()
                 FormatarDG()
 
             Catch ex As Exception
