@@ -281,10 +281,6 @@ Public Class frmReceberContas
 
     End Sub
 
-
-
-
-
     Private Sub ContarLinhas()
         Dim total As Integer = dgvContasReceber.Rows.Count
         lblTotalLinhas.Text = CInt(total)

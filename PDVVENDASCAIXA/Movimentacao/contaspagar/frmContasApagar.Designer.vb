@@ -23,8 +23,8 @@ Partial Class frmContasApagar
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmContasApagar))
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.Label5 = New System.Windows.Forms.Label()
@@ -86,7 +86,7 @@ Partial Class frmContasApagar
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(953, 47)
+        Me.Panel1.Size = New System.Drawing.Size(958, 47)
         Me.Panel1.TabIndex = 314
         '
         'PictureBox2
@@ -123,7 +123,7 @@ Partial Class frmContasApagar
         Me.btSair.Font = New System.Drawing.Font("Arial Rounded MT Bold", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btSair.ForeColor = System.Drawing.Color.White
         Me.btSair.Image = CType(resources.GetObject("btSair.Image"), System.Drawing.Image)
-        Me.btSair.Location = New System.Drawing.Point(777, 3)
+        Me.btSair.Location = New System.Drawing.Point(859, 7)
         Me.btSair.Margin = New System.Windows.Forms.Padding(5)
         Me.btSair.Name = "btSair"
         Me.btSair.Size = New System.Drawing.Size(85, 35)
@@ -139,30 +139,30 @@ Partial Class frmContasApagar
         Me.dgvContas.AllowUserToDeleteRows = False
         Me.dgvContas.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
         Me.dgvContas.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvContas.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvContas.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.dgvContas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle4.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.White
-        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgvContas.DefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgvContas.DefaultCellStyle = DataGridViewCellStyle2
         Me.dgvContas.GridColor = System.Drawing.Color.DarkBlue
         Me.dgvContas.Location = New System.Drawing.Point(12, 233)
         Me.dgvContas.Margin = New System.Windows.Forms.Padding(12, 10, 12, 10)
         Me.dgvContas.Name = "dgvContas"
         Me.dgvContas.ReadOnly = True
         Me.dgvContas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvContas.Size = New System.Drawing.Size(765, 289)
+        Me.dgvContas.Size = New System.Drawing.Size(817, 328)
         Me.dgvContas.TabIndex = 315
         '
         'lblCodigo
@@ -425,7 +425,7 @@ Partial Class frmContasApagar
         Me.Label10.BackColor = System.Drawing.Color.Transparent
         Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label10.ForeColor = System.Drawing.Color.White
-        Me.Label10.Location = New System.Drawing.Point(12, 528)
+        Me.Label10.Location = New System.Drawing.Point(12, 567)
         Me.Label10.Margin = New System.Windows.Forms.Padding(8, 0, 8, 0)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(109, 20)
@@ -437,7 +437,7 @@ Partial Class frmContasApagar
         Me.txtTotalContasPagas.BackColor = System.Drawing.Color.White
         Me.txtTotalContasPagas.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtTotalContasPagas.ForeColor = System.Drawing.Color.Green
-        Me.txtTotalContasPagas.Location = New System.Drawing.Point(12, 555)
+        Me.txtTotalContasPagas.Location = New System.Drawing.Point(12, 597)
         Me.txtTotalContasPagas.Multiline = True
         Me.txtTotalContasPagas.Name = "txtTotalContasPagas"
         Me.txtTotalContasPagas.ReadOnly = True
@@ -452,7 +452,7 @@ Partial Class frmContasApagar
         Me.Label11.BackColor = System.Drawing.Color.Transparent
         Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label11.ForeColor = System.Drawing.Color.White
-        Me.Label11.Location = New System.Drawing.Point(246, 532)
+        Me.Label11.Location = New System.Drawing.Point(246, 571)
         Me.Label11.Margin = New System.Windows.Forms.Padding(8, 0, 8, 0)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(142, 20)
@@ -464,7 +464,7 @@ Partial Class frmContasApagar
         Me.txtTotalContasNaoPagas.BackColor = System.Drawing.Color.White
         Me.txtTotalContasNaoPagas.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtTotalContasNaoPagas.ForeColor = System.Drawing.Color.Red
-        Me.txtTotalContasNaoPagas.Location = New System.Drawing.Point(238, 555)
+        Me.txtTotalContasNaoPagas.Location = New System.Drawing.Point(238, 597)
         Me.txtTotalContasNaoPagas.Multiline = True
         Me.txtTotalContasNaoPagas.Name = "txtTotalContasNaoPagas"
         Me.txtTotalContasNaoPagas.ReadOnly = True
@@ -479,7 +479,7 @@ Partial Class frmContasApagar
         Me.Label12.BackColor = System.Drawing.Color.Transparent
         Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label12.ForeColor = System.Drawing.Color.White
-        Me.Label12.Location = New System.Drawing.Point(474, 534)
+        Me.Label12.Location = New System.Drawing.Point(474, 573)
         Me.Label12.Margin = New System.Windows.Forms.Padding(8, 0, 8, 0)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(48, 20)
@@ -491,7 +491,7 @@ Partial Class frmContasApagar
         Me.txtTotalContasPagar.BackColor = System.Drawing.Color.White
         Me.txtTotalContasPagar.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtTotalContasPagar.ForeColor = System.Drawing.Color.Blue
-        Me.txtTotalContasPagar.Location = New System.Drawing.Point(461, 555)
+        Me.txtTotalContasPagar.Location = New System.Drawing.Point(461, 597)
         Me.txtTotalContasPagar.Multiline = True
         Me.txtTotalContasPagar.Name = "txtTotalContasPagar"
         Me.txtTotalContasPagar.ReadOnly = True
@@ -506,7 +506,7 @@ Partial Class frmContasApagar
         Me.Label13.BackColor = System.Drawing.Color.Transparent
         Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label13.ForeColor = System.Drawing.Color.White
-        Me.Label13.Location = New System.Drawing.Point(653, 534)
+        Me.Label13.Location = New System.Drawing.Point(717, 569)
         Me.Label13.Margin = New System.Windows.Forms.Padding(8, 0, 8, 0)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(97, 20)
@@ -519,7 +519,7 @@ Partial Class frmContasApagar
         Me.lblTotalLinhas.BackColor = System.Drawing.Color.Transparent
         Me.lblTotalLinhas.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblTotalLinhas.ForeColor = System.Drawing.Color.White
-        Me.lblTotalLinhas.Location = New System.Drawing.Point(762, 534)
+        Me.lblTotalLinhas.Location = New System.Drawing.Point(812, 570)
         Me.lblTotalLinhas.Margin = New System.Windows.Forms.Padding(8, 0, 8, 0)
         Me.lblTotalLinhas.Name = "lblTotalLinhas"
         Me.lblTotalLinhas.Size = New System.Drawing.Size(14, 20)
@@ -534,10 +534,10 @@ Partial Class frmContasApagar
         Me.btPagarParcela.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSteelBlue
         Me.btPagarParcela.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSkyBlue
         Me.btPagarParcela.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btPagarParcela.Font = New System.Drawing.Font("Arial Rounded MT Bold", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btPagarParcela.Font = New System.Drawing.Font("Arial Rounded MT Bold", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btPagarParcela.ForeColor = System.Drawing.Color.White
         Me.btPagarParcela.Image = CType(resources.GetObject("btPagarParcela.Image"), System.Drawing.Image)
-        Me.btPagarParcela.Location = New System.Drawing.Point(783, 476)
+        Me.btPagarParcela.Location = New System.Drawing.Point(838, 488)
         Me.btPagarParcela.Margin = New System.Windows.Forms.Padding(5)
         Me.btPagarParcela.Name = "btPagarParcela"
         Me.btPagarParcela.Size = New System.Drawing.Size(114, 58)
@@ -556,15 +556,15 @@ Partial Class frmContasApagar
         Me.btGerarParcelamento.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSteelBlue
         Me.btGerarParcelamento.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSkyBlue
         Me.btGerarParcelamento.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btGerarParcelamento.Font = New System.Drawing.Font("Arial Rounded MT Bold", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btGerarParcelamento.Font = New System.Drawing.Font("Arial Rounded MT Bold", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btGerarParcelamento.ForeColor = System.Drawing.Color.White
         Me.btGerarParcelamento.Image = Global.PDVVENDASCAIXA.My.Resources.Resources.numbered_24
-        Me.btGerarParcelamento.Location = New System.Drawing.Point(783, 411)
+        Me.btGerarParcelamento.Location = New System.Drawing.Point(846, 407)
         Me.btGerarParcelamento.Margin = New System.Windows.Forms.Padding(5)
         Me.btGerarParcelamento.Name = "btGerarParcelamento"
-        Me.btGerarParcelamento.Size = New System.Drawing.Size(154, 44)
+        Me.btGerarParcelamento.Size = New System.Drawing.Size(106, 50)
         Me.btGerarParcelamento.TabIndex = 367
-        Me.btGerarParcelamento.Text = "Gerar Parcelamento"
+        Me.btGerarParcelamento.Text = "Gerar      Parcelas"
         Me.btGerarParcelamento.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btGerarParcelamento.UseVisualStyleBackColor = False
         '
@@ -577,13 +577,13 @@ Partial Class frmContasApagar
         Me.btPendente.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSteelBlue
         Me.btPendente.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSkyBlue
         Me.btPendente.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btPendente.Font = New System.Drawing.Font("Arial Rounded MT Bold", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btPendente.Font = New System.Drawing.Font("Arial Rounded MT Bold", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btPendente.ForeColor = System.Drawing.Color.White
         Me.btPendente.Image = Global.PDVVENDASCAIXA.My.Resources.Resources.Filter
-        Me.btPendente.Location = New System.Drawing.Point(783, 316)
+        Me.btPendente.Location = New System.Drawing.Point(836, 251)
         Me.btPendente.Margin = New System.Windows.Forms.Padding(5)
         Me.btPendente.Name = "btPendente"
-        Me.btPendente.Size = New System.Drawing.Size(124, 47)
+        Me.btPendente.Size = New System.Drawing.Size(115, 47)
         Me.btPendente.TabIndex = 366
         Me.btPendente.Text = "Contas Pendentes"
         Me.btPendente.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -597,13 +597,13 @@ Partial Class frmContasApagar
         Me.btGrafico.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Azure
         Me.btGrafico.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.btGrafico.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btGrafico.Font = New System.Drawing.Font("Arial Rounded MT Bold", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btGrafico.Font = New System.Drawing.Font("Arial Rounded MT Bold", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btGrafico.ForeColor = System.Drawing.Color.White
         Me.btGrafico.Image = Global.PDVVENDASCAIXA.My.Resources.Resources.Pie_chart
-        Me.btGrafico.Location = New System.Drawing.Point(783, 373)
+        Me.btGrafico.Location = New System.Drawing.Point(844, 339)
         Me.btGrafico.Margin = New System.Windows.Forms.Padding(5)
         Me.btGrafico.Name = "btGrafico"
-        Me.btGrafico.Size = New System.Drawing.Size(114, 38)
+        Me.btGrafico.Size = New System.Drawing.Size(106, 38)
         Me.btGrafico.TabIndex = 365
         Me.btGrafico.Text = "Gráfico"
         Me.btGrafico.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -619,13 +619,13 @@ Partial Class frmContasApagar
         Me.btEditar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSteelBlue
         Me.btEditar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSkyBlue
         Me.btEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btEditar.Font = New System.Drawing.Font("Arial Rounded MT Bold", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btEditar.Font = New System.Drawing.Font("Arial Rounded MT Bold", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btEditar.ForeColor = System.Drawing.Color.White
         Me.btEditar.Image = Global.PDVVENDASCAIXA.My.Resources.Resources.Edit
-        Me.btEditar.Location = New System.Drawing.Point(783, 157)
+        Me.btEditar.Location = New System.Drawing.Point(752, 100)
         Me.btEditar.Margin = New System.Windows.Forms.Padding(5)
         Me.btEditar.Name = "btEditar"
-        Me.btEditar.Size = New System.Drawing.Size(96, 43)
+        Me.btEditar.Size = New System.Drawing.Size(96, 42)
         Me.btEditar.TabIndex = 364
         Me.btEditar.Text = "Editar"
         Me.btEditar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -641,13 +641,13 @@ Partial Class frmContasApagar
         Me.btExcluir.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Azure
         Me.btExcluir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.btExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btExcluir.Font = New System.Drawing.Font("Arial Rounded MT Bold", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btExcluir.Font = New System.Drawing.Font("Arial Rounded MT Bold", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btExcluir.ForeColor = System.Drawing.Color.White
         Me.btExcluir.Image = CType(resources.GetObject("btExcluir.Image"), System.Drawing.Image)
-        Me.btExcluir.Location = New System.Drawing.Point(783, 210)
+        Me.btExcluir.Location = New System.Drawing.Point(852, 106)
         Me.btExcluir.Margin = New System.Windows.Forms.Padding(5)
         Me.btExcluir.Name = "btExcluir"
-        Me.btExcluir.Size = New System.Drawing.Size(105, 34)
+        Me.btExcluir.Size = New System.Drawing.Size(96, 34)
         Me.btExcluir.TabIndex = 363
         Me.btExcluir.Text = "Excluir"
         Me.btExcluir.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -663,10 +663,10 @@ Partial Class frmContasApagar
         Me.btPagar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSteelBlue
         Me.btPagar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSkyBlue
         Me.btPagar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btPagar.Font = New System.Drawing.Font("Arial Rounded MT Bold", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btPagar.Font = New System.Drawing.Font("Arial Rounded MT Bold", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btPagar.ForeColor = System.Drawing.Color.White
         Me.btPagar.Image = CType(resources.GetObject("btPagar.Image"), System.Drawing.Image)
-        Me.btPagar.Location = New System.Drawing.Point(783, 248)
+        Me.btPagar.Location = New System.Drawing.Point(828, 168)
         Me.btPagar.Margin = New System.Windows.Forms.Padding(5)
         Me.btPagar.Name = "btPagar"
         Me.btPagar.Size = New System.Drawing.Size(124, 58)
@@ -683,10 +683,10 @@ Partial Class frmContasApagar
         Me.btSalvar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSteelBlue
         Me.btSalvar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSkyBlue
         Me.btSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btSalvar.Font = New System.Drawing.Font("Arial Rounded MT Bold", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btSalvar.Font = New System.Drawing.Font("Arial Rounded MT Bold", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btSalvar.ForeColor = System.Drawing.Color.White
         Me.btSalvar.Image = CType(resources.GetObject("btSalvar.Image"), System.Drawing.Image)
-        Me.btSalvar.Location = New System.Drawing.Point(783, 116)
+        Me.btSalvar.Location = New System.Drawing.Point(852, 57)
         Me.btSalvar.Margin = New System.Windows.Forms.Padding(5)
         Me.btSalvar.Name = "btSalvar"
         Me.btSalvar.Size = New System.Drawing.Size(96, 37)
@@ -698,19 +698,22 @@ Partial Class frmContasApagar
         '
         'btNovo
         '
+        Me.btNovo.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btNovo.BackColor = System.Drawing.Color.Transparent
         Me.btNovo.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btNovo.FlatAppearance.BorderSize = 0
         Me.btNovo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSteelBlue
         Me.btNovo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSkyBlue
         Me.btNovo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btNovo.Font = New System.Drawing.Font("Arial Rounded MT Bold", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btNovo.Font = New System.Drawing.Font("Arial Rounded MT Bold", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btNovo.ForeColor = System.Drawing.Color.White
         Me.btNovo.Image = CType(resources.GetObject("btNovo.Image"), System.Drawing.Image)
-        Me.btNovo.Location = New System.Drawing.Point(783, 80)
+        Me.btNovo.Location = New System.Drawing.Point(752, 49)
         Me.btNovo.Margin = New System.Windows.Forms.Padding(5)
         Me.btNovo.Name = "btNovo"
-        Me.btNovo.Size = New System.Drawing.Size(87, 34)
+        Me.btNovo.Size = New System.Drawing.Size(90, 51)
         Me.btNovo.TabIndex = 360
         Me.btNovo.Text = "Novo "
         Me.btNovo.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -722,7 +725,7 @@ Partial Class frmContasApagar
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.SteelBlue
-        Me.ClientSize = New System.Drawing.Size(953, 600)
+        Me.ClientSize = New System.Drawing.Size(958, 641)
         Me.Controls.Add(Me.btPagarParcela)
         Me.Controls.Add(Me.btGerarParcelamento)
         Me.Controls.Add(Me.btPendente)

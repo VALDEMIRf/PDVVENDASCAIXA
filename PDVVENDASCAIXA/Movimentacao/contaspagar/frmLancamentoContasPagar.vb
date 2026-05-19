@@ -375,6 +375,8 @@ Public Class frmLancamentoContasPagar
                     cmd.Parameters.AddWithValue("@idConta", lblCodigoConta.Text)
                     cmd.Parameters.AddWithValue("@valorPago", "")
                     cmd.Parameters.AddWithValue("@data_pagamento", "")
+                    cmd.Parameters.AddWithValue("@juros", "")
+                    cmd.Parameters.AddWithValue("@desconto", "")
                     cmd.ExecuteNonQuery()
 
                 End If

@@ -36,10 +36,7 @@ Public Class frmContasApagar
 
     End Sub
 
-    Private Sub CarregaFormataDG()
 
-        FormatarDG()
-    End Sub
     Sub carregarBuscarCatContas()
         Dim DT As New DataTable
         Dim DA As SqlDataAdapter
@@ -180,6 +177,7 @@ Public Class frmContasApagar
             ContarLinhas()
             ' CarregaFormataDG()
             FormatarDG()
+
         Catch ex As Exception
             MessageBox.Show("Erro ao Listar as contas" + ex.Message.ToString)
         Finally
@@ -230,7 +228,9 @@ Public Class frmContasApagar
             dgvContas.DataSource = dt
 
             ' CarregaFormataDG()
+
             FormatarDG()
+
             txtBuscarFornecedor.Text = Nothing
             txtBuscarTipoConta.Text = Nothing
         Catch ex As Exception
@@ -454,7 +454,6 @@ Public Class frmContasApagar
 
         End If
 
-
     End Sub
 
     Private Sub DesabilitarCampos()
@@ -465,7 +464,6 @@ Public Class frmContasApagar
         txtFornecedor.Enabled = False
         txtValor.Enabled = False
         dtpVencimento.Enabled = False
-
 
     End Sub
 
@@ -499,7 +497,7 @@ Public Class frmContasApagar
             .Columns(5).DefaultCellStyle.Format = "c"
 
             .Columns(0).Visible = False
-
+            .Columns(6).Visible = False
             .Columns(12).Visible = False
             .Columns(13).Visible = False
             .Columns(14).Visible = False
@@ -518,7 +516,7 @@ Public Class frmContasApagar
             .Columns(8).HeaderText = "Data Pagamento"
             .Columns(9).HeaderText = "Pago"
             .Columns(10).HeaderText = "Usuário"
-            .Columns(11).HeaderText = "Situação"
+            .Columns(11).HeaderText = "Situacao"
             .Columns(12).HeaderText = "id_categoriacontas"
             .Columns(13).HeaderText = "id_categoriacontas"
             .Columns(14).HeaderText = "id_fornecedor"
@@ -527,18 +525,33 @@ Public Class frmContasApagar
             .Columns(17).HeaderText = "id_formaPag"
 
             .Columns(1).Width = 150
-            .Columns(2).Width = 150
-            .Columns(3).Width = 300
+            .Columns(2).Width = 180
+            .Columns(3).Width = 330
             .Columns(4).Width = 130
             .Columns(5).Width = 120
             .Columns(6).Width = 100
             .Columns(7).Width = 100
             .Columns(8).Width = 100
-            .Columns(9).Width = 70
+            .Columns(9).Width = 50
             .Columns(10).Width = 130
             .Columns(11).Width = 130
+
+            For Each row As DataGridViewRow In .Rows
+                If row.Cells("situacao").Value = "Pago" Then
+                    row.DefaultCellStyle.BackColor = Color.Green
+                ElseIf row.Cells("situacao").Value = "Pendente" Then
+                    row.DefaultCellStyle.BackColor = Color.Red
+                    row.DefaultCellStyle.ForeColor = Color.White
+                ElseIf row.Cells("situacao").Value = "Em Parcelamento" Then
+                    row.DefaultCellStyle.BackColor = Color.Blue
+
+                End If
+            Next
+
+
         End With
     End Sub
+
 
     Private Sub dgvContas_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvContas.CellClick
         btExcluir.Enabled = True
@@ -580,7 +593,8 @@ Public Class frmContasApagar
                 dgvContas.DataSource = dt
 
                 'CarregaFormataDG()
-                FormatarDG()
+                'FormatarDG()
+
             Catch ex As Exception
                 MessageBox.Show("Erro ao Listar a pesquisa dos fornecedores" + ex.Message.ToString)
             Finally
@@ -610,7 +624,7 @@ Public Class frmContasApagar
                 dgvContas.DataSource = dt
 
                 '  CarregaFormataDG()
-                FormatarDG()
+                ' FormatarDG()
 
             Catch ex As Exception
                 MessageBox.Show("Erro ao Listar as contas" + ex.Message.ToString)
@@ -620,5 +634,23 @@ Public Class frmContasApagar
         End If
     End Sub
 
+    'Private Sub dgvContas_CellFormatting(sender As Object, e As DataGridViewCellFormattingEventArgs) Handles dgvContas.CellFormatting
+    '    If e.RowIndex < 0 OrElse e.RowIndex = dgvContas.NewRowIndex Then Return
 
+    '    ' Altere "NomeDaColunaStatus" pelo nome exato ou índice da sua coluna que contém "Pago"
+    '    If dgvContas.Columns(e.ColumnIndex).Name = "situacao" Then
+
+    '        ' Obtém o valor da célula em formato de texto
+    '        Dim valor As String = If(e.Value IsNot Nothing, e.Value.ToString(), "").ToLower()
+
+    '        ' Aplica a formatação caso o valor seja "pago"
+    '        If valor = "Pago" Then
+    '            e.CellStyle.BackColor = Color.LightGreen ' Cor de fundo verde claro
+    '            e.CellStyle.ForeColor = Color.Black   ' Cor do texto verde escuro
+    '        Else
+    '            e.CellStyle.BackColor = Color.Blue       ' Cor padrão
+    '            e.CellStyle.ForeColor = Color.White
+    '        End If
+    '    End If
+    'End Sub
 End Class

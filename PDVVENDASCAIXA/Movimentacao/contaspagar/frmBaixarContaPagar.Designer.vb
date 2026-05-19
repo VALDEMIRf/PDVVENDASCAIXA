@@ -49,6 +49,9 @@ Partial Class frmBaixarContaPagar
         Me.txtFormaPagto = New System.Windows.Forms.ComboBox()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.txtAtualizarSaldo = New System.Windows.Forms.TextBox()
+        Me.lblSaldoAtualizado = New System.Windows.Forms.Label()
+        Me.lblVlrParcelas = New System.Windows.Forms.Label()
         Me.txtSaldoAtual = New System.Windows.Forms.TextBox()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -81,8 +84,7 @@ Partial Class frmBaixarContaPagar
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.Label16 = New System.Windows.Forms.Label()
         Me.btSair = New System.Windows.Forms.Button()
-        Me.lblVlrParcelas = New System.Windows.Forms.Label()
-        Me.lblSaldoAtualizado = New System.Windows.Forms.Label()
+        Me.lblResto = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         CType(Me.dgvParcelas, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
@@ -133,7 +135,7 @@ Partial Class frmBaixarContaPagar
         Me.dgvParcelas.Name = "dgvParcelas"
         Me.dgvParcelas.ReadOnly = True
         Me.dgvParcelas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvParcelas.Size = New System.Drawing.Size(873, 349)
+        Me.dgvParcelas.Size = New System.Drawing.Size(876, 349)
         Me.dgvParcelas.TabIndex = 401
         '
         'GroupBox2
@@ -374,6 +376,8 @@ Partial Class frmBaixarContaPagar
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.lblResto)
+        Me.GroupBox1.Controls.Add(Me.txtAtualizarSaldo)
         Me.GroupBox1.Controls.Add(Me.lblSaldoAtualizado)
         Me.GroupBox1.Controls.Add(Me.lblVlrParcelas)
         Me.GroupBox1.Controls.Add(Me.txtSaldoAtual)
@@ -413,15 +417,47 @@ Partial Class frmBaixarContaPagar
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Pagamento"
         '
+        'txtAtualizarSaldo
+        '
+        Me.txtAtualizarSaldo.Enabled = False
+        Me.txtAtualizarSaldo.Location = New System.Drawing.Point(110, 121)
+        Me.txtAtualizarSaldo.Name = "txtAtualizarSaldo"
+        Me.txtAtualizarSaldo.ReadOnly = True
+        Me.txtAtualizarSaldo.Size = New System.Drawing.Size(129, 26)
+        Me.txtAtualizarSaldo.TabIndex = 403
+        '
+        'lblSaldoAtualizado
+        '
+        Me.lblSaldoAtualizado.AutoSize = True
+        Me.lblSaldoAtualizado.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblSaldoAtualizado.Location = New System.Drawing.Point(139, 276)
+        Me.lblSaldoAtualizado.Name = "lblSaldoAtualizado"
+        Me.lblSaldoAtualizado.Size = New System.Drawing.Size(59, 17)
+        Me.lblSaldoAtualizado.TabIndex = 412
+        Me.lblSaldoAtualizado.Text = "Label15"
+        Me.lblSaldoAtualizado.Visible = False
+        '
+        'lblVlrParcelas
+        '
+        Me.lblVlrParcelas.AutoSize = True
+        Me.lblVlrParcelas.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblVlrParcelas.Location = New System.Drawing.Point(128, 250)
+        Me.lblVlrParcelas.Name = "lblVlrParcelas"
+        Me.lblVlrParcelas.Size = New System.Drawing.Size(59, 17)
+        Me.lblVlrParcelas.TabIndex = 411
+        Me.lblVlrParcelas.Text = "Label15"
+        Me.lblVlrParcelas.Visible = False
+        '
         'txtSaldoAtual
         '
         Me.txtSaldoAtual.Enabled = False
         Me.txtSaldoAtual.ForeColor = System.Drawing.Color.Green
-        Me.txtSaldoAtual.Location = New System.Drawing.Point(110, 122)
+        Me.txtSaldoAtual.Location = New System.Drawing.Point(230, 393)
         Me.txtSaldoAtual.Name = "txtSaldoAtual"
         Me.txtSaldoAtual.ReadOnly = True
-        Me.txtSaldoAtual.Size = New System.Drawing.Size(128, 26)
+        Me.txtSaldoAtual.Size = New System.Drawing.Size(11, 26)
         Me.txtSaldoAtual.TabIndex = 410
+        Me.txtSaldoAtual.Visible = False
         '
         'Label12
         '
@@ -781,25 +817,16 @@ Partial Class frmBaixarContaPagar
         Me.btSair.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btSair.UseVisualStyleBackColor = False
         '
-        'lblVlrParcelas
+        'lblResto
         '
-        Me.lblVlrParcelas.AutoSize = True
-        Me.lblVlrParcelas.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblVlrParcelas.Location = New System.Drawing.Point(128, 250)
-        Me.lblVlrParcelas.Name = "lblVlrParcelas"
-        Me.lblVlrParcelas.Size = New System.Drawing.Size(59, 17)
-        Me.lblVlrParcelas.TabIndex = 411
-        Me.lblVlrParcelas.Text = "Label15"
-        '
-        'lblSaldoAtualizado
-        '
-        Me.lblSaldoAtualizado.AutoSize = True
-        Me.lblSaldoAtualizado.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblSaldoAtualizado.Location = New System.Drawing.Point(139, 276)
-        Me.lblSaldoAtualizado.Name = "lblSaldoAtualizado"
-        Me.lblSaldoAtualizado.Size = New System.Drawing.Size(59, 17)
-        Me.lblSaldoAtualizado.TabIndex = 412
-        Me.lblSaldoAtualizado.Text = "Label15"
+        Me.lblResto.AutoSize = True
+        Me.lblResto.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblResto.Location = New System.Drawing.Point(18, 339)
+        Me.lblResto.Name = "lblResto"
+        Me.lblResto.Size = New System.Drawing.Size(59, 17)
+        Me.lblResto.TabIndex = 413
+        Me.lblResto.Text = "Label15"
+        Me.lblResto.Visible = False
         '
         'frmBaixarContaPagar
         '
@@ -883,4 +910,6 @@ Partial Class frmBaixarContaPagar
     Friend WithEvents Label2 As Label
     Friend WithEvents lblVlrParcelas As Label
     Friend WithEvents lblSaldoAtualizado As Label
+    Friend WithEvents txtAtualizarSaldo As TextBox
+    Friend WithEvents lblResto As Label
 End Class

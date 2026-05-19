@@ -29,12 +29,15 @@ Public Class frmBaixarContaPagar
             lblCodigo.Text = intCodigoLancamento
 
             CarregarDados()
+
         Else
             lblCodigo.Text = "Novo"
         End If
 
         CarregarDGrid()
 
+
+        ' ultimoValor(txtNDoc.Text)
         '   Dim parc As Integer = ObterProximaParcela(1)
 
         ' MessageBox.Show("A próxima parcela a ser paga é:  " & parc & " .Antes de fazer o cálculo do parcelamento selecione primeiro a parcela:  " & parc)
@@ -43,6 +46,7 @@ Public Class frmBaixarContaPagar
 
     Private Sub frmBaixarContaPagar_Activated(sender As Object, e As EventArgs) Handles Me.Activated
         CarregarDGrid()
+        ' ultimoValor()
     End Sub
 
     Sub carregarQtdParcela()
@@ -137,7 +141,6 @@ Public Class frmBaixarContaPagar
                 txtFornecedor.Text = dr.Item("razaoSocial")
                 txtFormaPagto.Text = dr.Item("nome")
                 txtValor.Text = FormatCurrency(dr.Item("valor"))
-                ' lblPago.Text = dr.Item("Pago")
                 txtVencimento.Text = dr.Item("DataVencimento")
                 txtDataEntrada.Text = dr.Item("data_cadastro")
                 txtSituacao.Text = dr.Item("situacao")
@@ -148,8 +151,11 @@ Public Class frmBaixarContaPagar
             MessageBox.Show("Erro ao Listar as contas  " + ex.Message.ToString)
         Finally
             fechar()
+            ' dr.Close()
         End Try
+        'ultimoValor(txtNDoc.Text)
     End Sub
+
     Private Sub CarregarDGrid()
         Dim dt As New DataTable
         Dim da As SqlDataAdapter
@@ -166,10 +172,40 @@ Public Class frmBaixarContaPagar
 
             FormatarDG()
 
-
-
         Catch ex As Exception
             MessageBox.Show("Erro ao Listar as Parcelas" + ex.Message.ToString)
+        Finally
+            fechar()
+        End Try
+
+    End Sub
+
+
+    Sub ultimoValor()
+        Dim dr As SqlDataReader = Nothing
+        Dim dt As New DataTable
+        Dim da As SqlDataAdapter
+        Dim numIDParcela2 As Integer
+        Dim numIDParcela As Integer
+
+        numIDParcela = lblNrParcela.Text
+        numIDParcela2 = numIDParcela - 1
+
+        Try
+            abrir()
+
+            Dim sql As String = "pa_ParcelasPagasValorRestante " & CInt(numIDParcela2)
+            Dim cmd As SqlCommand = New SqlCommand(sql, con)
+            dr = cmd.ExecuteReader(CommandBehavior.SingleRow)
+
+            If dr.HasRows Then
+                dr.Read()
+                txtAtualizarSaldo.Text = dr.Item("saldoRestante")
+
+            End If
+
+        Catch ex As Exception
+            MessageBox.Show("Erro ao Listar o saldo Restante  " + ex.Message.ToString)
         Finally
             fechar()
         End Try
@@ -177,7 +213,7 @@ Public Class frmBaixarContaPagar
 
     Private Sub dgvParcelas_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvParcelas.CellClick
 
-        If dgvParcelas.CurrentRow.Cells(7).Value = 1 Then
+        If dgvParcelas.CurrentRow.Cells(7).Value = True Then
             MsgBox("Esta Parcela já foi paga")
             Exit Sub
         Else
@@ -188,17 +224,9 @@ Public Class frmBaixarContaPagar
             dtpVencimentoParcela.Text = dgvParcelas.CurrentRow.Cells(5).Value
             lblSaldoAtualizado.Text = dgvParcelas.CurrentRow.Cells(10).Value
 
-            Dim vParcela As Double
-            Dim saldoAtual As Double
-            Dim Resultado As Double
-            'Dim As Double
-            'vParcela = lblVlrParcelas.Text
+            ultimoValor()
 
-            'saldoAtual = lblSaldoAtualizado.Text
-            'Resultado = CDbl(saldoAtual - vParcela)
-            'txtSaldoAtual.Text = CDbl(Resultado).ToString("C2")
         End If
-
 
     End Sub
 
@@ -236,6 +264,20 @@ Public Class frmBaixarContaPagar
             .Columns(8).Width = 130
             .Columns(9).Width = 90
             .Columns(10).Width = 130
+
+            For Each row As DataGridViewRow In .Rows
+                If row.Cells("situacao").Value = "Pago" Then
+                    row.DefaultCellStyle.BackColor = Color.Green
+                ElseIf row.Cells("situacao").Value = "Pendente" Then
+                    row.DefaultCellStyle.BackColor = Color.Red
+                    row.DefaultCellStyle.ForeColor = Color.White
+                ElseIf row.Cells("situacao").Value = "Em Parcelamento" Then
+                    row.DefaultCellStyle.BackColor = Color.Blue
+
+                End If
+            Next
+
+
         End With
 
     End Sub
@@ -275,10 +317,12 @@ Public Class frmBaixarContaPagar
         Dim cmd2 As SqlCommand
 
         Dim vTotal As Double
-        vTotal = CDbl(txtValor.Text)
+
+        vTotal = CDbl(txtAtualizarSaldo.Text)
         valorDaParcela = CDbl(txtValorParcela.Text)
         valorRestante = vTotal - valorDaParcela
         txtSaldoRestante.Text = CDbl(valorRestante).ToString("c")
+
         Try
             abrir()
 
@@ -294,42 +338,91 @@ Public Class frmBaixarContaPagar
             cmd.Parameters.AddWithValue("@saldoRestante", txtSaldoRestante.Text)
             cmd.Parameters.AddWithValue("@juros", lblJuros.Text)
             cmd.Parameters.AddWithValue("@desconto", lblDesconto.Text)
-            cmd.Parameters.Add("@mensagem", SqlDbType.VarChar, 100).Direction = 2
+            ' cmd.Parameters.Add("@mensagem", SqlDbType.VarChar, 100).Direction = 2
             cmd.ExecuteNonQuery()
 
-            Dim msg As String = cmd.Parameters("@mensagem").Value.ToString
-            MessageBox.Show(msg, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button3)
+            'Dim msg As String = cmd.Parameters("@mensagem").Value.ToString
+            'MessageBox.Show(msg, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button3)
 
-            '==================================================================================================================================================================
-            '========================================================================================================================================================
-
-
-            cmd2 = New SqlCommand("pa_ParcelasPagas_Salvar", con)
-            cmd2.CommandType = CommandType.StoredProcedure
-            cmd2.Parameters.AddWithValue("@id_parcela", lblNrParcela.Text)
-            cmd2.Parameters.AddWithValue("@numDocto", txtNDoc.Text)
-            cmd2.Parameters.AddWithValue("@valorTotal", txtValor.Text)
-            cmd2.Parameters.AddWithValue("@parcela", txtNumParcela.Text)
-            cmd2.Parameters.AddWithValue("@valor_parcela", txtValorParcela.Text)
-            cmd2.Parameters.AddWithValue("@data_parcela", dtpVencimentoParcela.Text)
-            cmd2.Parameters.AddWithValue("@situacao", "Pago")
-            cmd2.Parameters.AddWithValue("@Pago", True)
-            cmd2.Parameters.AddWithValue("@valorPago", txtValorPago.Text)
-            cmd2.Parameters.AddWithValue("@data_pagamento", Now.ToShortDateString)
-            cmd2.Parameters.AddWithValue("@saldoRestante", txtSaldoRestante.Text)
-            cmd2.Parameters.AddWithValue("@juros", lblJuros.Text)
-            cmd2.Parameters.AddWithValue("@desconto", lblDesconto.Text)
-            cmd2.Parameters.Add("@mensagem", SqlDbType.VarChar, 100).Direction = 2
-            cmd2.ExecuteNonQuery()
-
-            Dim msg2 As String = cmd2.Parameters("@mensagem").Value.ToString
-            MessageBox.Show(msg2, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button3)
+            salvarParcelaPaga()
 
         Catch ex As Exception
             MessageBox.Show("Erro ao salvar os dados" + ex.Message.ToString)
         Finally
             fechar()
         End Try
+
+    End Sub
+
+    Sub salvarParcelaPaga()
+
+        Dim cmd As SqlCommand
+
+        Try
+            abrir()
+            cmd = New SqlCommand("pa_ParcelasPagas_Salvar", con)
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.Parameters.AddWithValue("@id_parcela", lblNrParcela.Text)
+            cmd.Parameters.AddWithValue("@numDocto", txtNDoc.Text)
+            cmd.Parameters.AddWithValue("@valorTotal", txtValor.Text)
+            cmd.Parameters.AddWithValue("@parcela", txtNumParcela.Text)
+            cmd.Parameters.AddWithValue("@valor_parcela", txtValorParcela.Text)
+            cmd.Parameters.AddWithValue("@data_parcela", dtpVencimentoParcela.Text)
+            cmd.Parameters.AddWithValue("@situacao", "Pago")
+            cmd.Parameters.AddWithValue("@Pago", True)
+            cmd.Parameters.AddWithValue("@valorPago", txtValorPago.Text)
+            cmd.Parameters.AddWithValue("@data_pagamento", Now.ToShortDateString)
+            cmd.Parameters.AddWithValue("@saldoRestante", txtSaldoRestante.Text)
+            cmd.Parameters.AddWithValue("@juros", lblJuros.Text)
+            cmd.Parameters.AddWithValue("@desconto", lblDesconto.Text)
+            cmd.Parameters.Add("@mensagem", SqlDbType.VarChar, 100).Direction = 2
+            cmd.ExecuteNonQuery()
+
+            Dim msg As String = cmd.Parameters("@mensagem").Value.ToString
+            MessageBox.Show(msg, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button3)
+
+        Catch ex As Exception
+            MessageBox.Show("Erro ao salvar o Cliente" + ex.Message.ToString)
+        Finally
+
+            fechar()
+        End Try
+        baixarContaFinal()
+    End Sub
+
+    Sub baixarContaFinal()
+        Dim cmd As SqlCommand
+
+
+        If txtSaldoRestante.Text > 0 Then
+            Exit Sub
+
+        ElseIf txtSaldoRestante.Text = 0 Then
+
+            Try
+
+                abrir()
+                cmd = New SqlCommand("pa_ContasPagar_PagarConta", con)
+                cmd.CommandType = CommandType.StoredProcedure
+                cmd.Parameters.AddWithValue("@id", lblCodigo.Text)
+                cmd.Parameters.AddWithValue("@DataPagamento", Now.ToShortDateString)
+                cmd.Parameters.AddWithValue("@Pago", True)
+                cmd.Parameters.AddWithValue("@situacao", "Pago")
+                cmd.Parameters.Add("@mensagem", SqlDbType.VarChar, 100).Direction = 2
+                cmd.ExecuteNonQuery()
+
+                Dim msg As String = cmd.Parameters("@mensagem").Value.ToString
+                MessageBox.Show(msg, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button3)
+
+            Catch ex As Exception
+                MessageBox.Show("Erro ao salvar esta conta" + ex.Message.ToString)
+            Finally
+
+                fechar()
+            End Try
+
+        End If
+
         Me.Close()
     End Sub
 
@@ -367,10 +460,11 @@ Public Class frmBaixarContaPagar
     End Sub
 
     Private Sub calculoValorResto()
-        valorRestante = txtValor.Text
+        valorRestante = txtAtualizarSaldo.Text
         Dim valorpago As Integer = txtValorParcela.Text
 
         txtSaldoRestante.Text = CDbl(valorRestante - valorpago).ToString("c")
+        ' lblResto.Text = CDbl(valorRestante).ToString("c")
     End Sub
 
     Private Sub btCalcular_Click(sender As Object, e As EventArgs) Handles btCalcular.Click
