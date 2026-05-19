@@ -22,8 +22,8 @@ Partial Class frmBaixarContaPagar
     'Não o modifique usando o editor de códigos.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmBaixarContaPagar))
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.dgvParcelas = New System.Windows.Forms.DataGridView()
@@ -49,6 +49,7 @@ Partial Class frmBaixarContaPagar
         Me.txtFormaPagto = New System.Windows.Forms.ComboBox()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.lblResto = New System.Windows.Forms.Label()
         Me.txtAtualizarSaldo = New System.Windows.Forms.TextBox()
         Me.lblSaldoAtualizado = New System.Windows.Forms.Label()
         Me.lblVlrParcelas = New System.Windows.Forms.Label()
@@ -84,7 +85,6 @@ Partial Class frmBaixarContaPagar
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.Label16 = New System.Windows.Forms.Label()
         Me.btSair = New System.Windows.Forms.Button()
-        Me.lblResto = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         CType(Me.dgvParcelas, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
@@ -112,23 +112,23 @@ Partial Class frmBaixarContaPagar
         Me.dgvParcelas.AllowUserToDeleteRows = False
         Me.dgvParcelas.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
         Me.dgvParcelas.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvParcelas.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvParcelas.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle3
         Me.dgvParcelas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgvParcelas.DefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.White
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgvParcelas.DefaultCellStyle = DataGridViewCellStyle4
         Me.dgvParcelas.GridColor = System.Drawing.Color.DarkBlue
         Me.dgvParcelas.Location = New System.Drawing.Point(9, 162)
         Me.dgvParcelas.Margin = New System.Windows.Forms.Padding(12, 10, 12, 10)
@@ -417,6 +417,17 @@ Partial Class frmBaixarContaPagar
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Pagamento"
         '
+        'lblResto
+        '
+        Me.lblResto.AutoSize = True
+        Me.lblResto.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblResto.Location = New System.Drawing.Point(18, 339)
+        Me.lblResto.Name = "lblResto"
+        Me.lblResto.Size = New System.Drawing.Size(59, 17)
+        Me.lblResto.TabIndex = 413
+        Me.lblResto.Text = "Label15"
+        Me.lblResto.Visible = False
+        '
         'txtAtualizarSaldo
         '
         Me.txtAtualizarSaldo.Enabled = False
@@ -540,7 +551,6 @@ Partial Class frmBaixarContaPagar
         Me.lblNrParcela.Size = New System.Drawing.Size(14, 20)
         Me.lblNrParcela.TabIndex = 402
         Me.lblNrParcela.Text = "-"
-        Me.lblNrParcela.Visible = False
         '
         'txtPagamento
         '
@@ -816,17 +826,6 @@ Partial Class frmBaixarContaPagar
         Me.btSair.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btSair.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btSair.UseVisualStyleBackColor = False
-        '
-        'lblResto
-        '
-        Me.lblResto.AutoSize = True
-        Me.lblResto.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblResto.Location = New System.Drawing.Point(18, 339)
-        Me.lblResto.Name = "lblResto"
-        Me.lblResto.Size = New System.Drawing.Size(59, 17)
-        Me.lblResto.TabIndex = 413
-        Me.lblResto.Text = "Label15"
-        Me.lblResto.Visible = False
         '
         'frmBaixarContaPagar
         '

@@ -539,15 +539,9 @@ Public Class frmContasApagar
             For Each row As DataGridViewRow In .Rows
                 If row.Cells("situacao").Value = "Pago" Then
                     row.DefaultCellStyle.BackColor = Color.Green
-                ElseIf row.Cells("situacao").Value = "Pendente" Then
-                    row.DefaultCellStyle.BackColor = Color.Red
-                    row.DefaultCellStyle.ForeColor = Color.White
-                ElseIf row.Cells("situacao").Value = "Em Parcelamento" Then
-                    row.DefaultCellStyle.BackColor = Color.Blue
 
                 End If
             Next
-
 
         End With
     End Sub
