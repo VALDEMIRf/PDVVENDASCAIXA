@@ -15,6 +15,8 @@ Public Class frmContasApagar
 
         txtBuscarFornecedor.Text = Nothing
         txtBuscarTipoConta.Text = Nothing
+        txtBuscarFornecedor.Visible = False
+        txtBuscarTipoConta.Visible = False
 
         rbTodas.Checked = True
 
@@ -36,7 +38,6 @@ Public Class frmContasApagar
 
     End Sub
 
-
     Sub carregarBuscarCatContas()
         Dim DT As New DataTable
         Dim DA As SqlDataAdapter
@@ -48,6 +49,7 @@ Public Class frmContasApagar
             txtBuscarTipoConta.DisplayMember = "descricaocategoriacontas"
             txtBuscarTipoConta.ValueMember = "id_categoriacontas"
             txtBuscarTipoConta.DataSource = DT
+
 
         Catch ex As Exception : MessageBox.Show(ex.Message.ToString)
         Finally
@@ -67,11 +69,11 @@ Public Class frmContasApagar
             txtFornecedor.ValueMember = "id_fornecedor"
             txtFornecedor.DataSource = DT
 
-        Catch ex As Exception : MessageBox.Show(ex.Message.ToString)
+        Catch ex As Exception
+            MessageBox.Show("Erro ao Listar os Fornecedores" + ex.Message.ToString)
         Finally
             fechar()
         End Try
-
     End Sub
 
     Sub carregarCatContas()
@@ -86,7 +88,8 @@ Public Class frmContasApagar
             txtTipoConta.ValueMember = "id_categoriacontas"
             txtTipoConta.DataSource = DT
 
-        Catch ex As Exception : MessageBox.Show(ex.Message.ToString)
+        Catch ex As Exception
+            MessageBox.Show("Erro ao Listar as Contas" + ex.Message.ToString)
         Finally
             fechar()
         End Try
@@ -104,11 +107,11 @@ Public Class frmContasApagar
             txtBuscarFornecedor.ValueMember = "id_fornecedor"
             txtBuscarFornecedor.DataSource = DT
 
-        Catch ex As Exception : MessageBox.Show(ex.Message.ToString)
+        Catch ex As Exception
+            MessageBox.Show("Erro ao Listar os Fornecedores" + ex.Message.ToString)
         Finally
             fechar()
         End Try
-
     End Sub
 
     Sub caregarFormaPagamento()
@@ -123,11 +126,11 @@ Public Class frmContasApagar
             txtFormaPagto.ValueMember = "id_formaPag"
             txtFormaPagto.DataSource = DT
 
-        Catch ex As Exception : MessageBox.Show(ex.Message.ToString)
+        Catch ex As Exception
+            MessageBox.Show("Erro ao Listar os tipos de pagamentos" + ex.Message.ToString)
         Finally
             fechar()
         End Try
-
     End Sub
 
     Private Sub ContarLinhas()
@@ -151,14 +154,10 @@ Public Class frmContasApagar
             If linha.Cells("Pago").Value = False Then
                 dblContasNaoPagas = dblContasNaoPagas + linha.Cells(5).Value
             End If
-
         Next
-
         txtTotalContasPagas.Text = FormatCurrency(dblContasPagas)
         txtTotalContasNaoPagas.Text = FormatCurrency(dblContasNaoPagas)
         txtTotalContasPagar.Text = FormatCurrency(dblTotalContas)
-
-
     End Sub
 
     Private Sub Carregar()
@@ -175,7 +174,7 @@ Public Class frmContasApagar
             dgvContas.DataSource = dt
 
             ContarLinhas()
-            ' CarregaFormataDG()
+
             FormatarDG()
 
         Catch ex As Exception
@@ -183,15 +182,14 @@ Public Class frmContasApagar
         Finally
             fechar()
         End Try
-
-
-
     End Sub
 
     Private Sub rbTodas_CheckedChanged(sender As Object, e As EventArgs) Handles rbTodas.CheckedChanged
         Carregar()
         txtBuscarFornecedor.Text = Nothing
         txtBuscarTipoConta.Text = Nothing
+        txtBuscarFornecedor.Visible = False
+        txtBuscarTipoConta.Visible = False
     End Sub
 
     Private Sub rbContasPagar_CheckedChanged(sender As Object, e As EventArgs) Handles rbContasPagar.CheckedChanged
@@ -204,10 +202,11 @@ Public Class frmContasApagar
             da.Fill(dt)
             dgvContas.DataSource = dt
 
-            ' CarregaFormataDG()
             FormatarDG()
             txtBuscarFornecedor.Text = Nothing
             txtBuscarTipoConta.Text = Nothing
+            txtBuscarFornecedor.Visible = False
+            txtBuscarTipoConta.Visible = False
 
         Catch ex As Exception
             MessageBox.Show("Erro ao Listar as Contas" + ex.Message.ToString)
@@ -222,17 +221,16 @@ Public Class frmContasApagar
         Try
             abrir()
             da = New SqlDataAdapter("pa_ContasPagar_contas_pagas", con) '
-            ' da = New SqlDataAdapter("select * from tbTipoServico", con)
 
             da.Fill(dt)
             dgvContas.DataSource = dt
-
-            ' CarregaFormataDG()
 
             FormatarDG()
 
             txtBuscarFornecedor.Text = Nothing
             txtBuscarTipoConta.Text = Nothing
+            txtBuscarFornecedor.Visible = False
+            txtBuscarTipoConta.Visible = False
         Catch ex As Exception
             MessageBox.Show("Erro ao Listar as Contas" + ex.Message.ToString)
         Finally
@@ -343,9 +341,7 @@ Public Class frmContasApagar
                 fechar()
             End Try
         End If
-
     End Sub
-
 
     Private Sub btPagar_Click(sender As Object, e As EventArgs) Handles btPagar.Click
         Dim cmd As SqlCommand
@@ -376,7 +372,6 @@ Public Class frmContasApagar
 
             fechar()
         End Try
-
     End Sub
 
     Private Sub btExcluir_Click(sender As Object, e As EventArgs) Handles btExcluir.Click
@@ -419,7 +414,6 @@ Public Class frmContasApagar
         dgvContas.DataSource = dal.ListarPendente()
         MessageBox.Show("Total Pendente: R$ " &
                        dal.TotalPendente().ToString("N2"))
-
     End Sub
 
     Private Sub btGerarParcelamento_Click(sender As Object, e As EventArgs) Handles btGerarParcelamento.Click
@@ -459,19 +453,16 @@ Public Class frmContasApagar
     Private Sub DesabilitarCampos()
         txtNDoc.Enabled = False
         txtTipoConta.Enabled = False
-
         txtFormaPagto.Enabled = False
         txtFornecedor.Enabled = False
         txtValor.Enabled = False
         dtpVencimento.Enabled = False
-
     End Sub
 
     Private Sub HabilitarCampos()
         txtNDoc.Focus()
         txtNDoc.Enabled = True
         txtTipoConta.Enabled = True
-
         txtFormaPagto.Enabled = True
         txtFornecedor.Enabled = True
         txtValor.Enabled = True
@@ -482,20 +473,16 @@ Public Class frmContasApagar
         txtNDoc.Focus()
         txtNDoc.Text = ""
         txtTipoConta.Text = Nothing
-
         txtFormaPagto.Text = Nothing
         txtFornecedor.Text = Nothing
         txtValor.Text = ""
         dtpVencimento.Text = ""
-
     End Sub
 
     Private Sub FormatarDG()
 
         With dgvContas
-
             .Columns(5).DefaultCellStyle.Format = "c"
-
             .Columns(0).Visible = False
             .Columns(6).Visible = False
             .Columns(12).Visible = False
@@ -539,13 +526,11 @@ Public Class frmContasApagar
             For Each row As DataGridViewRow In .Rows
                 If row.Cells("situacao").Value = "Pago" Then
                     row.DefaultCellStyle.BackColor = Color.Green
-
                 End If
             Next
 
         End With
     End Sub
-
 
     Private Sub dgvContas_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvContas.CellClick
         btExcluir.Enabled = True
@@ -564,13 +549,12 @@ Public Class frmContasApagar
         txtFormaPagto.Text = dgvContas.CurrentRow.Cells(4).Value
         txtValor.Text = dgvContas.CurrentRow.Cells(5).Value
         dtpVencimento.Text = dgvContas.CurrentRow.Cells(6).Value
-
     End Sub
 
     Private Sub txtBuscarFornecedor_SelectedIndexChanged(sender As Object, e As EventArgs) Handles txtBuscarFornecedor.SelectedIndexChanged
         If txtBuscarFornecedor.Text = "" And dgvContas.Rows.Count > 0 Then
 
-            Carregar()
+            ' Carregar()
 
         Else
             Dim dt As New DataTable
@@ -586,8 +570,7 @@ Public Class frmContasApagar
                 da.Fill(dt)
                 dgvContas.DataSource = dt
 
-                'CarregaFormataDG()
-                'FormatarDG()
+                FormatarDG()
 
             Catch ex As Exception
                 MessageBox.Show("Erro ao Listar a pesquisa dos fornecedores" + ex.Message.ToString)
@@ -600,7 +583,7 @@ Public Class frmContasApagar
     Private Sub txtBuscarTipoConta_SelectedIndexChanged(sender As Object, e As EventArgs) Handles txtBuscarTipoConta.SelectedIndexChanged
         If txtBuscarTipoConta.Text = "" And dgvContas.Rows.Count > 0 Then
 
-            Carregar()
+            ' Carregar()
 
         Else
 
@@ -617,8 +600,7 @@ Public Class frmContasApagar
                 da.Fill(dt)
                 dgvContas.DataSource = dt
 
-                '  CarregaFormataDG()
-                ' FormatarDG()
+                FormatarDG()
 
             Catch ex As Exception
                 MessageBox.Show("Erro ao Listar as contas" + ex.Message.ToString)
@@ -628,23 +610,7 @@ Public Class frmContasApagar
         End If
     End Sub
 
-    'Private Sub dgvContas_CellFormatting(sender As Object, e As DataGridViewCellFormattingEventArgs) Handles dgvContas.CellFormatting
-    '    If e.RowIndex < 0 OrElse e.RowIndex = dgvContas.NewRowIndex Then Return
-
-    '    ' Altere "NomeDaColunaStatus" pelo nome exato ou índice da sua coluna que contém "Pago"
-    '    If dgvContas.Columns(e.ColumnIndex).Name = "situacao" Then
-
-    '        ' Obtém o valor da célula em formato de texto
-    '        Dim valor As String = If(e.Value IsNot Nothing, e.Value.ToString(), "").ToLower()
-
-    '        ' Aplica a formatação caso o valor seja "pago"
-    '        If valor = "Pago" Then
-    '            e.CellStyle.BackColor = Color.LightGreen ' Cor de fundo verde claro
-    '            e.CellStyle.ForeColor = Color.Black   ' Cor do texto verde escuro
-    '        Else
-    '            e.CellStyle.BackColor = Color.Blue       ' Cor padrão
-    '            e.CellStyle.ForeColor = Color.White
-    '        End If
-    '    End If
-    'End Sub
 End Class
+
+
+

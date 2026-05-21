@@ -23,8 +23,8 @@ Partial Class frmContasApagar
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmContasApagar))
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.Label5 = New System.Windows.Forms.Label()
@@ -86,7 +86,7 @@ Partial Class frmContasApagar
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(958, 47)
+        Me.Panel1.Size = New System.Drawing.Size(953, 47)
         Me.Panel1.TabIndex = 314
         '
         'PictureBox2
@@ -139,23 +139,23 @@ Partial Class frmContasApagar
         Me.dgvContas.AllowUserToDeleteRows = False
         Me.dgvContas.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
         Me.dgvContas.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvContas.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvContas.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle3
         Me.dgvContas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgvContas.DefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.White
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgvContas.DefaultCellStyle = DataGridViewCellStyle4
         Me.dgvContas.GridColor = System.Drawing.Color.DarkBlue
         Me.dgvContas.Location = New System.Drawing.Point(12, 233)
         Me.dgvContas.Margin = New System.Windows.Forms.Padding(12, 10, 12, 10)
@@ -344,19 +344,21 @@ Partial Class frmContasApagar
         '
         Me.txtBuscarTipoConta.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.txtBuscarTipoConta.FormattingEnabled = True
-        Me.txtBuscarTipoConta.Location = New System.Drawing.Point(505, 18)
+        Me.txtBuscarTipoConta.Location = New System.Drawing.Point(504, 19)
         Me.txtBuscarTipoConta.Name = "txtBuscarTipoConta"
         Me.txtBuscarTipoConta.Size = New System.Drawing.Size(220, 21)
         Me.txtBuscarTipoConta.TabIndex = 295
+        Me.txtBuscarTipoConta.Visible = False
         '
         'txtBuscarFornecedor
         '
         Me.txtBuscarFornecedor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.txtBuscarFornecedor.FormattingEnabled = True
-        Me.txtBuscarFornecedor.Location = New System.Drawing.Point(504, 17)
+        Me.txtBuscarFornecedor.Location = New System.Drawing.Point(504, 18)
         Me.txtBuscarFornecedor.Name = "txtBuscarFornecedor"
         Me.txtBuscarFornecedor.Size = New System.Drawing.Size(220, 21)
         Me.txtBuscarFornecedor.TabIndex = 310
+        Me.txtBuscarFornecedor.Visible = False
         '
         'rbContasPagar
         '
@@ -537,10 +539,10 @@ Partial Class frmContasApagar
         Me.btPagarParcela.Font = New System.Drawing.Font("Arial Rounded MT Bold", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btPagarParcela.ForeColor = System.Drawing.Color.White
         Me.btPagarParcela.Image = CType(resources.GetObject("btPagarParcela.Image"), System.Drawing.Image)
-        Me.btPagarParcela.Location = New System.Drawing.Point(838, 488)
+        Me.btPagarParcela.Location = New System.Drawing.Point(844, 488)
         Me.btPagarParcela.Margin = New System.Windows.Forms.Padding(5)
         Me.btPagarParcela.Name = "btPagarParcela"
-        Me.btPagarParcela.Size = New System.Drawing.Size(114, 58)
+        Me.btPagarParcela.Size = New System.Drawing.Size(101, 58)
         Me.btPagarParcela.TabIndex = 368
         Me.btPagarParcela.Text = "Baixa de  Parcela"
         Me.btPagarParcela.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -559,7 +561,7 @@ Partial Class frmContasApagar
         Me.btGerarParcelamento.Font = New System.Drawing.Font("Arial Rounded MT Bold", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btGerarParcelamento.ForeColor = System.Drawing.Color.White
         Me.btGerarParcelamento.Image = Global.PDVVENDASCAIXA.My.Resources.Resources.numbered_24
-        Me.btGerarParcelamento.Location = New System.Drawing.Point(846, 407)
+        Me.btGerarParcelamento.Location = New System.Drawing.Point(844, 407)
         Me.btGerarParcelamento.Margin = New System.Windows.Forms.Padding(5)
         Me.btGerarParcelamento.Name = "btGerarParcelamento"
         Me.btGerarParcelamento.Size = New System.Drawing.Size(106, 50)
@@ -713,7 +715,7 @@ Partial Class frmContasApagar
         Me.btNovo.Location = New System.Drawing.Point(752, 49)
         Me.btNovo.Margin = New System.Windows.Forms.Padding(5)
         Me.btNovo.Name = "btNovo"
-        Me.btNovo.Size = New System.Drawing.Size(90, 51)
+        Me.btNovo.Size = New System.Drawing.Size(85, 51)
         Me.btNovo.TabIndex = 360
         Me.btNovo.Text = "Novo "
         Me.btNovo.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -725,7 +727,7 @@ Partial Class frmContasApagar
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.SteelBlue
-        Me.ClientSize = New System.Drawing.Size(958, 641)
+        Me.ClientSize = New System.Drawing.Size(953, 641)
         Me.Controls.Add(Me.btPagarParcela)
         Me.Controls.Add(Me.btGerarParcelamento)
         Me.Controls.Add(Me.btPendente)
