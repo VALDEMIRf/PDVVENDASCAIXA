@@ -22,8 +22,6 @@ Public Class frmBaixarContaPagar
         carregarContas()
         CarregarFornecedor()
         caregarFormaPagamento()
-        carregarQtdParcela()
-
 
         If intCodigoLancamento <> 0 Then
             lblCodigo.Text = intCodigoLancamento
@@ -35,37 +33,12 @@ Public Class frmBaixarContaPagar
         End If
 
         CarregarDGrid()
-
-
-        ' ultimoValor(txtNDoc.Text)
-        '   Dim parc As Integer = ObterProximaParcela(1)
-
-        ' MessageBox.Show("A próxima parcela a ser paga é:  " & parc & " .Antes de fazer o cálculo do parcelamento selecione primeiro a parcela:  " & parc)
-
     End Sub
 
     Private Sub frmBaixarContaPagar_Activated(sender As Object, e As EventArgs) Handles Me.Activated
         CarregarDGrid()
-        ' ultimoValor()
     End Sub
 
-    Sub carregarQtdParcela()
-        Dim DT As New DataTable
-        Dim DA As SqlDataAdapter
-        Try
-            abrir()
-
-            DA = New SqlDataAdapter("parcelasPagar_listarParcelas", con)
-            DA.Fill(DT)
-            'cboParcela.DisplayMember = "parcela"
-            'cboParcela.ValueMember = "id_parcela"
-            'cboParcela.DataSource = DT
-
-        Catch ex As Exception : MessageBox.Show(ex.Message.ToString)
-        Finally
-            fechar()
-        End Try
-    End Sub
     Sub carregarContas()
         Dim DT As New DataTable
         Dim DA As SqlDataAdapter
@@ -141,20 +114,16 @@ Public Class frmBaixarContaPagar
                 txtFornecedor.Text = dr.Item("razaoSocial")
                 txtFormaPagto.Text = dr.Item("nome")
                 txtValor.Text = FormatCurrency(dr.Item("valor"))
-                'txtAtualizarSaldo.Text = FormatCurrency(dr.Item("valor"))
                 txtVencimento.Text = dr.Item("DataVencimento")
                 txtDataEntrada.Text = dr.Item("data_cadastro")
                 txtSituacao.Text = dr.Item("situacao")
-
             End If
 
         Catch ex As Exception
             MessageBox.Show("Erro ao Listar as contas  " + ex.Message.ToString)
         Finally
             fechar()
-            ' dr.Close()
         End Try
-        'ultimoValor(txtNDoc.Text)
     End Sub
 
     Private Sub CarregarDGrid()
@@ -181,7 +150,6 @@ Public Class frmBaixarContaPagar
 
     End Sub
 
-
     Sub ultimoValor()
         Dim dr As SqlDataReader = Nothing
         Dim dt As New DataTable
@@ -192,16 +160,8 @@ Public Class frmBaixarContaPagar
         If txtNumParcela.Text = 1 Then
             txtAtualizarSaldo.Text = txtValor.Text
         Else
-
-
-
-
             numIDParcela = lblNrParcela.Text
             numIDParcela2 = numIDParcela - 1
-
-            'If txtAtualizarSaldo.Text = 0 Then
-            '    MsgBox("certo")
-            'End If
 
             Try
                 abrir()
@@ -224,7 +184,7 @@ Public Class frmBaixarContaPagar
         End If
     End Sub
 
-    Private Sub dgvParcelas_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvParcelas.CellClick
+    Private Sub dgvParcelas_CellClick(sender As Object, e As DataGridViewCellEventArgs)
 
         If dgvParcelas.CurrentRow.Cells(7).Value = True Then
             MsgBox("Esta Parcela já foi paga")
@@ -238,13 +198,8 @@ Public Class frmBaixarContaPagar
             dtpVencimentoParcela.Text = dgvParcelas.CurrentRow.Cells(5).Value
             lblSaldoAtualizado.Text = dgvParcelas.CurrentRow.Cells(10).Value
 
-
             ultimoValor()
-
-
-
         End If
-
     End Sub
 
     Private Sub FormatarDG()
@@ -294,15 +249,15 @@ Public Class frmBaixarContaPagar
 
     End Sub
 
-    Private Sub txtValorParcela_TextChanged(sender As Object, e As EventArgs) Handles txtValorParcela.TextChanged
+    Private Sub txtValorParcela_TextChanged(sender As Object, e As EventArgs)
         txtValorParcela.Text = FormatCurrency(txtValorParcela.Text)
     End Sub
 
-    Private Sub txtValoraPagar_TextChanged(sender As Object, e As EventArgs) Handles txtValorPago.TextChanged
+    Private Sub txtValoraPagar_TextChanged(sender As Object, e As EventArgs)
         txtValorPago.Text = FormatCurrency(txtValorPago.Text)
     End Sub
 
-    Private Sub btSair_Click(sender As Object, e As EventArgs) Handles btSair.Click
+    Private Sub btSair_Click(sender As Object, e As EventArgs)
         Me.Close()
     End Sub
 
@@ -322,8 +277,7 @@ Public Class frmBaixarContaPagar
         End If
     End Sub
 
-
-    Private Sub btBaixarConta_Click(sender As Object, e As EventArgs) Handles btBaixarConta.Click
+    Private Sub btBaixarConta_Click(sender As Object, e As EventArgs)
         Dim sql As String
         Dim cmd As SqlCommand
         Dim cmd2 As SqlCommand
@@ -350,12 +304,9 @@ Public Class frmBaixarContaPagar
             cmd.Parameters.AddWithValue("@saldoRestante", txtSaldoRestante.Text)
             cmd.Parameters.AddWithValue("@juros", lblJuros.Text)
             cmd.Parameters.AddWithValue("@desconto", lblDesconto.Text)
-            ' cmd.Parameters.Add("@mensagem", SqlDbType.VarChar, 100).Direction = 2
             cmd.ExecuteNonQuery()
 
-            'Dim msg As String = cmd.Parameters("@mensagem").Value.ToString
-            'MessageBox.Show(msg "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button3)
-            MsgBox("ALUNO SALVO COM SUCESSO!")
+            MsgBox("PARCELA SALVA!")
 
             ' salvarParcelaPaga()
             baixarContaFinal()
@@ -365,47 +316,6 @@ Public Class frmBaixarContaPagar
         Finally
             fechar()
         End Try
-
-    End Sub
-
-    Sub salvarParcelaPaga()
-
-        Dim cmd As SqlCommand
-        Dim parcelaNumID As Integer
-        Dim parcelaNumero As Integer
-        parcelaNumID = lblNrParcela.Text
-        parcelaNumero = txtNumParcela.Text
-
-        Try
-            abrir()
-            cmd = New SqlCommand("pa_ParcelasPagas_Salvar", con)
-            cmd.CommandType = CommandType.StoredProcedure
-            cmd.Parameters.AddWithValue("@id_parcela", CInt(parcelaNumID))
-            cmd.Parameters.AddWithValue("@numDocto", txtNDoc.Text)
-            cmd.Parameters.AddWithValue("@valorTotal", txtValor.Text)
-            cmd.Parameters.AddWithValue("@parcela", parcelaNumero)
-            cmd.Parameters.AddWithValue("@valor_parcela", txtValorParcela.Text)
-            cmd.Parameters.AddWithValue("@data_parcela", txtVencimento.Text)
-            cmd.Parameters.AddWithValue("@situacao", "Pago")
-            cmd.Parameters.AddWithValue("@Pago", True)
-            cmd.Parameters.AddWithValue("@valorPago", txtValorPago.Text)
-            cmd.Parameters.AddWithValue("@data_pagamento", Now.ToShortDateString)
-            cmd.Parameters.AddWithValue("@saldoRestante", txtSaldoRestante.Text)
-            cmd.Parameters.AddWithValue("@juros", lblJuros.Text)
-            cmd.Parameters.AddWithValue("@desconto", lblDesconto.Text)
-            cmd.Parameters.Add("@mensagem", SqlDbType.VarChar, 100).Direction = 2
-            cmd.ExecuteNonQuery()
-
-            Dim msg As String = cmd.Parameters("@mensagem").Value.ToString
-            MessageBox.Show(msg, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button3)
-
-        Catch ex As Exception
-            MessageBox.Show("Erro ao salvar esta parcela" + ex.Message.ToString)
-        Finally
-
-            fechar()
-        End Try
-        baixarContaFinal()
     End Sub
 
     Sub baixarContaFinal()
@@ -483,10 +393,10 @@ Public Class frmBaixarContaPagar
 
     End Sub
 
-    Private Sub btCalcular_Click(sender As Object, e As EventArgs) Handles btCalcular.Click
+    Private Sub btCalcular_Click(sender As Object, e As EventArgs)
         If txtValorParcela.Text = "" Then
             MsgBox("Informe o valor para aplicar o Desconto/Juros referente a esta mensalidade.",
-                   MsgBoxStyle.Information, "CS .Net Tecnologia")
+                   MsgBoxStyle.Information, "VAL.Net Tecnologia")
 
             Exit Sub
         End If
@@ -515,6 +425,11 @@ Public Class frmBaixarContaPagar
         'Calcula a taxas de descontos, juros
         calcular()
     End Sub
+
+    Private Sub btSair_Click_1(sender As Object, e As EventArgs) Handles btSair.Click
+        Me.Close()
+    End Sub
+
 
 End Class
 

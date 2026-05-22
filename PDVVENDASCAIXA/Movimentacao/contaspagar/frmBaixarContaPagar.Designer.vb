@@ -22,10 +22,9 @@ Partial Class frmBaixarContaPagar
     'Não o modifique usando o editor de códigos.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmBaixarContaPagar))
-        Me.Panel1 = New System.Windows.Forms.Panel()
         Me.dgvParcelas = New System.Windows.Forms.DataGridView()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.txtSituacao = New System.Windows.Forms.TextBox()
@@ -47,7 +46,6 @@ Partial Class frmBaixarContaPagar
         Me.txtFornecedor = New System.Windows.Forms.ComboBox()
         Me.Label29 = New System.Windows.Forms.Label()
         Me.txtFormaPagto = New System.Windows.Forms.ComboBox()
-        Me.Label11 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.lblResto = New System.Windows.Forms.Label()
         Me.txtAtualizarSaldo = New System.Windows.Forms.TextBox()
@@ -85,7 +83,6 @@ Partial Class frmBaixarContaPagar
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.Label16 = New System.Windows.Forms.Label()
         Me.btSair = New System.Windows.Forms.Button()
-        Me.Panel1.SuspendLayout()
         CType(Me.dgvParcelas, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -93,50 +90,37 @@ Partial Class frmBaixarContaPagar
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'Panel1
-        '
-        Me.Panel1.BackColor = System.Drawing.Color.DarkSlateGray
-        Me.Panel1.Controls.Add(Me.dgvParcelas)
-        Me.Panel1.Controls.Add(Me.GroupBox2)
-        Me.Panel1.Controls.Add(Me.Label11)
-        Me.Panel1.Controls.Add(Me.GroupBox1)
-        Me.Panel1.Controls.Add(Me.Panel2)
-        Me.Panel1.Location = New System.Drawing.Point(2, 4)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1152, 519)
-        Me.Panel1.TabIndex = 380
-        '
         'dgvParcelas
         '
         Me.dgvParcelas.AllowUserToAddRows = False
         Me.dgvParcelas.AllowUserToDeleteRows = False
         Me.dgvParcelas.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
         Me.dgvParcelas.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvParcelas.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvParcelas.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.dgvParcelas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle4.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.White
-        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgvParcelas.DefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgvParcelas.DefaultCellStyle = DataGridViewCellStyle2
         Me.dgvParcelas.GridColor = System.Drawing.Color.DarkBlue
-        Me.dgvParcelas.Location = New System.Drawing.Point(9, 162)
+        Me.dgvParcelas.Location = New System.Drawing.Point(10, 161)
         Me.dgvParcelas.Margin = New System.Windows.Forms.Padding(12, 10, 12, 10)
         Me.dgvParcelas.Name = "dgvParcelas"
         Me.dgvParcelas.ReadOnly = True
         Me.dgvParcelas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvParcelas.Size = New System.Drawing.Size(876, 349)
-        Me.dgvParcelas.TabIndex = 401
+        Me.dgvParcelas.TabIndex = 404
         '
         'GroupBox2
         '
@@ -159,10 +143,10 @@ Partial Class frmBaixarContaPagar
         Me.GroupBox2.Controls.Add(Me.txtFornecedor)
         Me.GroupBox2.Controls.Add(Me.Label29)
         Me.GroupBox2.Controls.Add(Me.txtFormaPagto)
-        Me.GroupBox2.Location = New System.Drawing.Point(9, 53)
+        Me.GroupBox2.Location = New System.Drawing.Point(10, 52)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(876, 106)
-        Me.GroupBox2.TabIndex = 400
+        Me.GroupBox2.TabIndex = 403
         Me.GroupBox2.TabStop = False
         '
         'txtSituacao
@@ -362,18 +346,6 @@ Partial Class frmBaixarContaPagar
         Me.txtFormaPagto.Size = New System.Drawing.Size(157, 21)
         Me.txtFormaPagto.TabIndex = 313
         '
-        'Label11
-        '
-        Me.Label11.AutoSize = True
-        Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.ForeColor = System.Drawing.Color.White
-        Me.Label11.Location = New System.Drawing.Point(367, 172)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(11, 15)
-        Me.Label11.TabIndex = 398
-        Me.Label11.Text = "-"
-        Me.Label11.Visible = False
-        '
         'GroupBox1
         '
         Me.GroupBox1.Controls.Add(Me.lblResto)
@@ -410,10 +382,10 @@ Partial Class frmBaixarContaPagar
         Me.GroupBox1.Controls.Add(Me.Label19)
         Me.GroupBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox1.ForeColor = System.Drawing.Color.White
-        Me.GroupBox1.Location = New System.Drawing.Point(891, 49)
+        Me.GroupBox1.Location = New System.Drawing.Point(893, 52)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(252, 462)
-        Me.GroupBox1.TabIndex = 385
+        Me.GroupBox1.Size = New System.Drawing.Size(256, 462)
+        Me.GroupBox1.TabIndex = 402
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Pagamento"
         '
@@ -782,8 +754,8 @@ Partial Class frmBaixarContaPagar
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel2.Location = New System.Drawing.Point(0, 0)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(1152, 47)
-        Me.Panel2.TabIndex = 380
+        Me.Panel2.Size = New System.Drawing.Size(1162, 47)
+        Me.Panel2.TabIndex = 405
         '
         'PictureBox2
         '
@@ -800,7 +772,7 @@ Partial Class frmBaixarContaPagar
         Me.Label16.AutoSize = True
         Me.Label16.Font = New System.Drawing.Font("Arial Rounded MT Bold", 22.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label16.ForeColor = System.Drawing.Color.White
-        Me.Label16.Location = New System.Drawing.Point(136, 3)
+        Me.Label16.Location = New System.Drawing.Point(232, 3)
         Me.Label16.Name = "Label16"
         Me.Label16.Size = New System.Drawing.Size(438, 34)
         Me.Label16.TabIndex = 258
@@ -817,7 +789,7 @@ Partial Class frmBaixarContaPagar
         Me.btSair.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btSair.ForeColor = System.Drawing.Color.White
         Me.btSair.Image = CType(resources.GetObject("btSair.Image"), System.Drawing.Image)
-        Me.btSair.Location = New System.Drawing.Point(1052, 1)
+        Me.btSair.Location = New System.Drawing.Point(1037, 3)
         Me.btSair.Margin = New System.Windows.Forms.Padding(5)
         Me.btSair.Name = "btSair"
         Me.btSair.Size = New System.Drawing.Size(93, 36)
@@ -831,15 +803,16 @@ Partial Class frmBaixarContaPagar
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.LightBlue
-        Me.ClientSize = New System.Drawing.Size(1156, 526)
-        Me.Controls.Add(Me.Panel1)
+        Me.BackColor = System.Drawing.Color.DarkSlateGray
+        Me.ClientSize = New System.Drawing.Size(1162, 526)
+        Me.Controls.Add(Me.Panel2)
+        Me.Controls.Add(Me.dgvParcelas)
+        Me.Controls.Add(Me.GroupBox2)
+        Me.Controls.Add(Me.GroupBox1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "frmBaixarContaPagar"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "frmBaixarContaPagar"
-        Me.Panel1.ResumeLayout(False)
-        Me.Panel1.PerformLayout()
         CType(Me.dgvParcelas, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
@@ -851,37 +824,17 @@ Partial Class frmBaixarContaPagar
         Me.ResumeLayout(False)
 
     End Sub
-    Friend WithEvents Panel1 As Panel
-    Friend WithEvents Panel2 As Panel
-    Friend WithEvents PictureBox2 As PictureBox
-    Friend WithEvents Label16 As Label
-    Friend WithEvents btSair As Button
-    Friend WithEvents btBaixarConta As Button
-    Friend WithEvents lblIdparcela As Label
-    Friend WithEvents Label19 As Label
-    Friend WithEvents btCalcular As Button
-    Friend WithEvents GroupBox1 As GroupBox
-    Friend WithEvents txtValorParcela As TextBox
-    Friend WithEvents Label3 As Label
-    Friend WithEvents txtValorPago As TextBox
-    Friend WithEvents Label9 As Label
-    Friend WithEvents Label8 As Label
-    Friend WithEvents txtJuros As TextBox
-    Friend WithEvents Label7 As Label
-    Friend WithEvents txtDesconto As TextBox
-    Friend WithEvents Label6 As Label
-    Friend WithEvents Label5 As Label
-    Friend WithEvents lblCodigo As Label
-    Friend WithEvents txtSaldoRestante As TextBox
-    Friend WithEvents Label14 As Label
-    Friend WithEvents dtpVencimentoParcela As DateTimePicker
-    Friend WithEvents lblRecebeValorTotal As Label
-    Friend WithEvents lblNrParcela As Label
-    Friend WithEvents lblCodigoConta As Label
-    Friend WithEvents Label11 As Label
+
+    Friend WithEvents dgvParcelas As DataGridView
     Friend WithEvents GroupBox2 As GroupBox
+    Friend WithEvents txtSituacao As TextBox
+    Friend WithEvents Label13 As Label
+    Friend WithEvents lblCodigoConta As Label
+    Friend WithEvents lblCodigo As Label
+    Friend WithEvents lblIdparcela As Label
     Public WithEvents txtDataEntrada As MaskedTextBox
     Friend WithEvents Label20 As Label
+    Public WithEvents txtVencimento As MaskedTextBox
     Friend WithEvents Label23 As Label
     Friend WithEvents Label24 As Label
     Friend WithEvents txtValor As TextBox
@@ -893,22 +846,41 @@ Partial Class frmBaixarContaPagar
     Friend WithEvents txtFornecedor As ComboBox
     Friend WithEvents Label29 As Label
     Friend WithEvents txtFormaPagto As ComboBox
-    Friend WithEvents Label4 As Label
-    Public WithEvents txtVencimento As MaskedTextBox
-    Friend WithEvents Label13 As Label
-    Friend WithEvents dgvParcelas As DataGridView
-    Friend WithEvents txtSituacao As TextBox
-    Public WithEvents txtNumParcela As MaskedTextBox
+    Friend WithEvents GroupBox1 As GroupBox
+    Friend WithEvents lblResto As Label
+    Friend WithEvents txtAtualizarSaldo As TextBox
+    Friend WithEvents lblSaldoAtualizado As Label
+    Friend WithEvents lblVlrParcelas As Label
+    Friend WithEvents txtSaldoAtual As TextBox
+    Friend WithEvents Label12 As Label
     Friend WithEvents Label1 As Label
     Friend WithEvents lblDesconto As Label
     Friend WithEvents Label10 As Label
     Friend WithEvents lblJuros As Label
-    Friend WithEvents txtSaldoAtual As TextBox
-    Friend WithEvents Label12 As Label
+    Public WithEvents txtNumParcela As MaskedTextBox
+    Friend WithEvents Label4 As Label
+    Friend WithEvents lblNrParcela As Label
     Friend WithEvents txtPagamento As DateTimePicker
+    Friend WithEvents lblRecebeValorTotal As Label
+    Friend WithEvents dtpVencimentoParcela As DateTimePicker
+    Friend WithEvents txtSaldoRestante As TextBox
+    Friend WithEvents Label14 As Label
+    Friend WithEvents txtValorPago As TextBox
+    Friend WithEvents Label9 As Label
+    Friend WithEvents Label8 As Label
+    Friend WithEvents txtJuros As TextBox
+    Friend WithEvents Label7 As Label
+    Friend WithEvents txtDesconto As TextBox
+    Friend WithEvents Label6 As Label
+    Friend WithEvents Label5 As Label
+    Friend WithEvents txtValorParcela As TextBox
+    Friend WithEvents btCalcular As Button
+    Friend WithEvents Label3 As Label
+    Friend WithEvents btBaixarConta As Button
     Friend WithEvents Label2 As Label
-    Friend WithEvents lblVlrParcelas As Label
-    Friend WithEvents lblSaldoAtualizado As Label
-    Friend WithEvents txtAtualizarSaldo As TextBox
-    Friend WithEvents lblResto As Label
+    Friend WithEvents Label19 As Label
+    Friend WithEvents Panel2 As Panel
+    Friend WithEvents PictureBox2 As PictureBox
+    Friend WithEvents Label16 As Label
+    Friend WithEvents btSair As Button
 End Class

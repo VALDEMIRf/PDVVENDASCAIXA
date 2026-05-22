@@ -64,7 +64,6 @@ Partial Class frmLancamentoContasPagar
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.txtValor = New System.Windows.Forms.TextBox()
-        Me.txtSituacao = New System.Windows.Forms.ComboBox()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.txtConta = New System.Windows.Forms.ComboBox()
         Me.Label4 = New System.Windows.Forms.Label()
@@ -78,6 +77,7 @@ Partial Class frmLancamentoContasPagar
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.Label16 = New System.Windows.Forms.Label()
         Me.btSair = New System.Windows.Forms.Button()
+        Me.txtSituacao = New System.Windows.Forms.TextBox()
         Me.Panel1.SuspendLayout()
         CType(Me.dgvParcelas, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
@@ -341,6 +341,7 @@ Partial Class frmLancamentoContasPagar
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.txtSituacao)
         Me.GroupBox1.Controls.Add(Me.txtSaldoRestante)
         Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Controls.Add(Me.txtJuros)
@@ -356,7 +357,6 @@ Partial Class frmLancamentoContasPagar
         Me.GroupBox1.Controls.Add(Me.Label5)
         Me.GroupBox1.Controls.Add(Me.Label6)
         Me.GroupBox1.Controls.Add(Me.txtValor)
-        Me.GroupBox1.Controls.Add(Me.txtSituacao)
         Me.GroupBox1.Controls.Add(Me.Label13)
         Me.GroupBox1.Controls.Add(Me.txtConta)
         Me.GroupBox1.Controls.Add(Me.Label4)
@@ -404,9 +404,9 @@ Partial Class frmLancamentoContasPagar
         '
         'txtDesconto
         '
-        Me.txtDesconto.Location = New System.Drawing.Point(516, 74)
+        Me.txtDesconto.Location = New System.Drawing.Point(525, 74)
         Me.txtDesconto.Name = "txtDesconto"
-        Me.txtDesconto.Size = New System.Drawing.Size(71, 20)
+        Me.txtDesconto.Size = New System.Drawing.Size(60, 20)
         Me.txtDesconto.TabIndex = 322
         Me.txtDesconto.Text = "0"
         Me.txtDesconto.Visible = False
@@ -525,17 +525,6 @@ Partial Class frmLancamentoContasPagar
         Me.txtValor.Name = "txtValor"
         Me.txtValor.Size = New System.Drawing.Size(130, 20)
         Me.txtValor.TabIndex = 299
-        '
-        'txtSituacao
-        '
-        Me.txtSituacao.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.txtSituacao.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.txtSituacao.FormattingEnabled = True
-        Me.txtSituacao.Items.AddRange(New Object() {"Paga", "Não Paga", "Vencida", "Pendente"})
-        Me.txtSituacao.Location = New System.Drawing.Point(357, 72)
-        Me.txtSituacao.Name = "txtSituacao"
-        Me.txtSituacao.Size = New System.Drawing.Size(148, 21)
-        Me.txtSituacao.TabIndex = 298
         '
         'Label13
         '
@@ -681,6 +670,13 @@ Partial Class frmLancamentoContasPagar
         Me.btSair.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btSair.UseVisualStyleBackColor = False
         '
+        'txtSituacao
+        '
+        Me.txtSituacao.Location = New System.Drawing.Point(357, 73)
+        Me.txtSituacao.Name = "txtSituacao"
+        Me.txtSituacao.Size = New System.Drawing.Size(141, 20)
+        Me.txtSituacao.TabIndex = 380
+        '
         'frmLancamentoContasPagar
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -717,7 +713,6 @@ Partial Class frmLancamentoContasPagar
     Friend WithEvents Label13 As Label
     Friend WithEvents Label11 As Label
     Friend WithEvents Label3 As Label
-    Friend WithEvents txtSituacao As ComboBox
     Friend WithEvents txtValor As TextBox
     Friend WithEvents txtNDoc As TextBox
     Friend WithEvents Label9 As Label
@@ -759,4 +754,5 @@ Partial Class frmLancamentoContasPagar
     Friend WithEvents SaldoRestante As DataGridViewTextBoxColumn
     Friend WithEvents Fornecedor As DataGridViewTextBoxColumn
     Friend WithEvents Conta As DataGridViewTextBoxColumn
+    Friend WithEvents txtSituacao As TextBox
 End Class

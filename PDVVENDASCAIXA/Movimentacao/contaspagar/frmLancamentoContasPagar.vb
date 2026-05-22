@@ -21,10 +21,6 @@ Public Class frmLancamentoContasPagar
         Else
             txtCodigo.Text = "Novo"
         End If
-
-
-        '  listarParcelas()
-
     End Sub
 
     Private Sub frmLancamentoContasPagar_Activated(sender As Object, e As EventArgs) Handles MyBase.Activated
@@ -87,6 +83,7 @@ Public Class frmLancamentoContasPagar
         Dim DT As New DataTable
         Dim DA As SqlDataAdapter
         Try
+
             abrir()
 
             DA = New SqlDataAdapter("pa_FormaPagamento_listar", con)
@@ -130,7 +127,7 @@ Public Class frmLancamentoContasPagar
             End If
 
         Catch ex As Exception
-            MessageBox.Show("Erro ao Listagem desta conta as contas" + ex.Message.ToString)
+            MessageBox.Show("Erro ao carregar os dados desta conta" + ex.Message.ToString)
         Finally
             fechar()
         End Try
@@ -223,8 +220,6 @@ Public Class frmLancamentoContasPagar
                 valor1 = lblPago.Text
                 valorTotal = valor1 - desc
 
-                ' txtValorPago.Text = valorTotal
-
             Catch ex As Exception
             End Try
         Else
@@ -247,15 +242,12 @@ Public Class frmLancamentoContasPagar
                 valor1 = lblPago.Text
                 valorTotal = valor1 + jur
 
-                'txtValorPago.Text = valorTotal
-
             Catch ex As Exception
             End Try
         Else
             txtJuros.Text = 0
         End If
     End Sub
-
 
     Private Sub txtParcela_KeyPress(sender As Object, e As KeyPressEventArgs)
         permiteSoNumeros(sender, e)
@@ -390,7 +382,7 @@ Public Class frmLancamentoContasPagar
             atualizarSituacao()
 
         Catch ex As Exception
-            MsgBox("Erro ao gravar as Parcelas no banco!" + ex.Message.ToString, MsgBoxStyle.Critical, "Erro")
+            MsgBox("Erro ao registrar as Parcelas!" + ex.Message.ToString, MsgBoxStyle.Critical, "Erro")
         Finally
             fechar()
         End Try
@@ -408,7 +400,7 @@ Public Class frmLancamentoContasPagar
             cmd.ExecuteNonQuery()
 
         Catch ex As Exception
-            MessageBox.Show("Erro ao sal'var os dados" + ex.Message.ToString)
+            MessageBox.Show("Erro ao salvar os dados" + ex.Message.ToString)
         Finally
             fechar()
         End Try

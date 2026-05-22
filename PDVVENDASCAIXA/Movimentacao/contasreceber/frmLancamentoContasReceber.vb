@@ -21,14 +21,10 @@ Public Class frmLancamentoContasReceber
         Else
             txtCodigo.Text = "Novo"
         End If
-
-
-        ' listarParcelas()
-
     End Sub
 
     Private Sub frmLancamentoContasReceber_Activated(sender As Object, e As EventArgs) Handles MyBase.Activated
-        '  listarParcelas()
+        listarParcelas()
         carregarContas()
         CarregarClientes()
         caregarFormaPagamento()
@@ -112,29 +108,27 @@ Public Class frmLancamentoContasReceber
             abrir()
 
             Dim sql As String = "pa_ContasReceber_listarID " & CInt(intCodigoLancamento)
-            ' Dim sql As String = "SELECT * FROM tbContasPagar WHERE id_conta=" & CInt(txtCodigo.Text)
             Dim cmd As SqlCommand = New SqlCommand(sql, con)
-            ' cmd.CommandText = CommandType.StoredProcedure
-            ' cmd.Parameters.AddWithValue("@id_conta", txtCodigo.Text)
             dr = cmd.ExecuteReader(CommandBehavior.SingleRow)
-
 
             If dr.HasRows Then
                 dr.Read()
                 lblCodigoConta.Text = dr.Item("id")
                 txtNDoc.Text = dr.Item("numDocto")
-                txtConta.Text = dr.Item("id_categoriacontas")
+                txtConta.Text = dr.Item("descricaocategoriacontas")
                 txtCliente.Text = dr.Item("id_cliente")
+                txtFormaPagto.Text = dr.Item("nome")
                 txtFormaPagto.Text = dr.Item("id_formaPag")
                 txtValor.Text = dr.Item("valor")
                 lblPago.Text = dr.Item("Pago")
                 txtVencimento.Text = dr.Item("DataVencimento")
                 txtDataEntrada.Text = dr.Item("data_cadastro")
+                txtSituacao.Text = dr.Item("situacao")
 
             End If
 
         Catch ex As Exception
-            MessageBox.Show("Erro ao Listar as contas" + ex.Message.ToString)
+            MessageBox.Show("Erro ao carregar os dados desta conta" + ex.Message.ToString)
         Finally
             fechar()
         End Try
@@ -227,8 +221,6 @@ Public Class frmLancamentoContasReceber
                 valor1 = lblPago.Text
                 valorTotal = valor1 - desc
 
-                ' txtValorPago.Text = valorTotal
-
             Catch ex As Exception
             End Try
         Else
@@ -249,8 +241,6 @@ Public Class frmLancamentoContasReceber
                 jur = txtJuros.Text
                 valor1 = lblPago.Text
                 valorTotal = valor1 + jur
-
-                'txtValorPago.Text = valorTotal
 
             Catch ex As Exception
             End Try
@@ -355,7 +345,6 @@ Public Class frmLancamentoContasReceber
 
                     cmd = New SqlCommand("pa_ParcelasReceber_Salvar", con)
                     cmd.CommandType = CommandType.StoredProcedure
-                    cmd.CommandType = CommandType.StoredProcedure
                     cmd.Parameters.AddWithValue("@id_categoriacontas", txtConta.SelectedValue)
                     cmd.Parameters.AddWithValue("@parcela", Me.dgvParcelas.Item(1, cont).Value)
                     cmd.Parameters.AddWithValue("@data_parcela", d)
@@ -369,7 +358,8 @@ Public Class frmLancamentoContasReceber
                     cmd.Parameters.AddWithValue("@idConta", lblCodigoConta.Text)
                     cmd.Parameters.AddWithValue("@valorPago", "")
                     cmd.Parameters.AddWithValue("@data_pagamento", "")
-
+                    cmd.Parameters.AddWithValue("@juros", "")
+                    cmd.Parameters.AddWithValue("@desconto", "")
                     cmd.ExecuteNonQuery()
 
                 End If
@@ -383,7 +373,7 @@ Public Class frmLancamentoContasReceber
             atualizarSituacao()
 
         Catch ex As Exception
-            MsgBox("Erro ao gravar as Parcelas no banco!" + ex.Message.ToString, MsgBoxStyle.Critical, "Erro")
+            MsgBox("Erro ao registrar as Parcelas!" + ex.Message.ToString, MsgBoxStyle.Critical, "Erro")
         Finally
             fechar()
         End Try
@@ -447,6 +437,5 @@ Public Class frmLancamentoContasReceber
 
         End If
     End Sub
-
 
 End Class
