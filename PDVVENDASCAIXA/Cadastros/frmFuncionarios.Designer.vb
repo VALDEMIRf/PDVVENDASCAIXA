@@ -103,6 +103,10 @@ Partial Class frmFuncionarios
         Me.btSalvar = New System.Windows.Forms.Button()
         Me.btNovo = New System.Windows.Forms.Button()
         Me.errErro = New System.Windows.Forms.ErrorProvider(Me.components)
+        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.Label29 = New System.Windows.Forms.Label()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.TabControl1.SuspendLayout()
         Me.Cadastro.SuspendLayout()
         Me.GroupBox6.SuspendLayout()
@@ -115,13 +119,15 @@ Partial Class frmFuncionarios
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         CType(Me.errErro, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel2.SuspendLayout()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'TabControl1
         '
         Me.TabControl1.Controls.Add(Me.Cadastro)
         Me.TabControl1.Controls.Add(Me.Consulta)
-        Me.TabControl1.Location = New System.Drawing.Point(8, 12)
+        Me.TabControl1.Location = New System.Drawing.Point(8, 54)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
         Me.TabControl1.Size = New System.Drawing.Size(911, 420)
@@ -911,12 +917,11 @@ Partial Class frmFuncionarios
         '
         'GroupBox3
         '
-        Me.GroupBox3.Controls.Add(Me.btSair)
         Me.GroupBox3.Controls.Add(Me.btExcluir)
         Me.GroupBox3.Controls.Add(Me.btEditar)
         Me.GroupBox3.Controls.Add(Me.btSalvar)
         Me.GroupBox3.Controls.Add(Me.btNovo)
-        Me.GroupBox3.Location = New System.Drawing.Point(8, 438)
+        Me.GroupBox3.Location = New System.Drawing.Point(8, 480)
         Me.GroupBox3.Name = "GroupBox3"
         Me.GroupBox3.Size = New System.Drawing.Size(392, 69)
         Me.GroupBox3.TabIndex = 123
@@ -929,7 +934,7 @@ Partial Class frmFuncionarios
         Me.btSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btSair.ForeColor = System.Drawing.Color.White
         Me.btSair.Image = CType(resources.GetObject("btSair.Image"), System.Drawing.Image)
-        Me.btSair.Location = New System.Drawing.Point(323, 17)
+        Me.btSair.Location = New System.Drawing.Point(839, 1)
         Me.btSair.Name = "btSair"
         Me.btSair.Size = New System.Drawing.Size(66, 30)
         Me.btSair.TabIndex = 28
@@ -1001,15 +1006,72 @@ Partial Class frmFuncionarios
         '
         Me.errErro.ContainerControl = Me
         '
+        'Panel2
+        '
+        Me.Panel2.BackColor = System.Drawing.Color.SteelBlue
+        Me.Panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.Panel2.Controls.Add(Me.btSair)
+        Me.Panel2.Controls.Add(Me.PictureBox2)
+        Me.Panel2.Controls.Add(Me.Label29)
+        Me.Panel2.Controls.Add(Me.Button1)
+        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel2.Location = New System.Drawing.Point(0, 0)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(927, 47)
+        Me.Panel2.TabIndex = 406
+        '
+        'PictureBox2
+        '
+        Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
+        Me.PictureBox2.Location = New System.Drawing.Point(3, 1)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(40, 40)
+        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox2.TabIndex = 313
+        Me.PictureBox2.TabStop = False
+        '
+        'Label29
+        '
+        Me.Label29.AutoSize = True
+        Me.Label29.Font = New System.Drawing.Font("Arial Rounded MT Bold", 22.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label29.ForeColor = System.Drawing.Color.White
+        Me.Label29.Location = New System.Drawing.Point(233, 5)
+        Me.Label29.Name = "Label29"
+        Me.Label29.Size = New System.Drawing.Size(513, 34)
+        Me.Label29.TabIndex = 258
+        Me.Label29.Text = "Gerenciamento de Funcionarios"
+        '
+        'Button1
+        '
+        Me.Button1.BackColor = System.Drawing.Color.Transparent
+        Me.Button1.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button1.FlatAppearance.BorderSize = 0
+        Me.Button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSteelBlue
+        Me.Button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSkyBlue
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.ForeColor = System.Drawing.Color.White
+        Me.Button1.Image = CType(resources.GetObject("Button1.Image"), System.Drawing.Image)
+        Me.Button1.Location = New System.Drawing.Point(1037, 3)
+        Me.Button1.Margin = New System.Windows.Forms.Padding(5)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(93, 36)
+        Me.Button1.TabIndex = 13
+        Me.Button1.Text = "Voltar"
+        Me.Button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.Button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.Button1.UseVisualStyleBackColor = False
+        '
         'frmFuncionarios
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.SteelBlue
-        Me.ClientSize = New System.Drawing.Size(930, 518)
+        Me.ClientSize = New System.Drawing.Size(927, 555)
+        Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.TabControl1)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "frmFuncionarios"
@@ -1033,6 +1095,9 @@ Partial Class frmFuncionarios
         Me.GroupBox1.PerformLayout()
         Me.GroupBox3.ResumeLayout(False)
         CType(Me.errErro, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel2.ResumeLayout(False)
+        Me.Panel2.PerformLayout()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -1116,4 +1181,8 @@ Partial Class frmFuncionarios
     Friend WithEvents txtCTPS As TextBox
     Friend WithEvents txtCel As MaskedTextBox
     Friend WithEvents Label9 As Label
+    Friend WithEvents Panel2 As Panel
+    Friend WithEvents PictureBox2 As PictureBox
+    Friend WithEvents Label29 As Label
+    Friend WithEvents Button1 As Button
 End Class

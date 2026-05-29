@@ -4,7 +4,7 @@ Public Class Parcelas
 
     Dim sql As String
     Dim ds As New DataSet
-    Dim conex As New ConexaoTeste
+    '  Dim conex As New ConexaoTeste
     Dim param As SqlParameter
 
 
@@ -126,7 +126,7 @@ Public Class Parcelas
     Public Sub CadastrarParcela()
 
         sql = "Insert Into tbParcelasAPagar(id_categoriacontas,parcela,data_parcela,valor_parcela,numDocto,Pago,valorTotal,situacao,saldoRestante)values(" & id_categoriacontas & "," & parcela & ",'" & data_parcela & "','" & valor_parcela & "','" & numDocto & "','" & Pago & "','" & valorTotal & "','" & situacao & "','" & saldoRestante & "' )"
-        conex.Operar(sql)
+        ' conex.Operar(sql)
 
         'Try
         '    abrir()
@@ -225,7 +225,7 @@ Public Class Parcelas
     Public Sub CadastrarParcelaReceber()
 
         sql = "Insert Into tbParcelasReceber(parcela,data_parcela,valor_parcela,numDocto,descricao,valorTotal,situacao)values(" & parcela & ",'" & data_parcela & "','" & valor_parcela & "','" & numDocto & "','" & descricao & "','" & valorTotal & "','" & situacao & "' )"
-        conex.Operar(sql)
+        '  conex.Operar(sql)
 
     End Sub
 

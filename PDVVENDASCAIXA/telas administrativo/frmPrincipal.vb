@@ -212,22 +212,6 @@ Public Class frmPrincipal
         form.ShowDialog()
     End Sub
 
-    Private Sub SangriaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SangriaToolStripMenuItem.Click
-        Dim formP As Form
-        formP = frmSangria
-
-        Dim form = New frmLoginAdm(formP)
-        form.ShowDialog()
-    End Sub
-
-    Private Sub ReforçosAsCaixaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ReforçosAsCaixaToolStripMenuItem.Click
-        Dim formP As Form
-        formP = frmReforcoCaixa
-
-        Dim form = New frmLoginAdm(formP)
-        form.ShowDialog()
-    End Sub
-
     'MWNU RELATÓRIOS
     Private Sub CatálogoDeProdutosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CatálogoDeProdutosToolStripMenuItem.Click
         Dim form = New frmRelCatalogoProdutos
