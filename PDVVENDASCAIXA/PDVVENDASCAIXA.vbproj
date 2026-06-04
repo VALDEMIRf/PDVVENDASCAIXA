@@ -447,6 +447,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>VendasDataSet1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Vendas\frmConsultaValor.Designer.vb">
+      <DependentUpon>frmConsultaValor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vendas\frmConsultaValor.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Vendas\frmListaVendas.Designer.vb">
       <DependentUpon>frmListaVendas.vb</DependentUpon>
     </Compile>
@@ -605,6 +611,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="telas administrativo\frmProdutoConsultaSimples.resx">
       <DependentUpon>frmProdutoConsultaSimples.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vendas\frmConsultaValor.resx">
+      <DependentUpon>frmConsultaValor.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vendas\frmListaVendas.resx">
       <DependentUpon>frmListaVendas.vb</DependentUpon>

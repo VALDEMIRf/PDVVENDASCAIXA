@@ -22,12 +22,9 @@ Partial Class frmVendas2
     'Não o modifique usando o editor de códigos.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmVendas2))
         Me.cbProduto = New System.Windows.Forms.ComboBox()
         Me.txtCodBarras = New System.Windows.Forms.TextBox()
-        Me.dg = New System.Windows.Forms.DataGridView()
         Me.btRel = New System.Windows.Forms.Button()
         Me.btnNovo = New System.Windows.Forms.Button()
         Me.btnExcluir = New System.Windows.Forms.Button()
@@ -46,9 +43,12 @@ Partial Class frmVendas2
         Me.txtEstoque = New System.Windows.Forms.TextBox()
         Me.txtNum = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
-        CType(Me.dg, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.btEditar = New System.Windows.Forms.Button()
+        Me.dg = New System.Windows.Forms.DataGridView()
+        Me.btConsultaPreco = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dg, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'cbProduto
@@ -57,7 +57,7 @@ Partial Class frmVendas2
         Me.cbProduto.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.cbProduto.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbProduto.FormattingEnabled = True
-        Me.cbProduto.Location = New System.Drawing.Point(82, 50)
+        Me.cbProduto.Location = New System.Drawing.Point(116, 109)
         Me.cbProduto.Name = "cbProduto"
         Me.cbProduto.Size = New System.Drawing.Size(325, 39)
         Me.cbProduto.TabIndex = 20001
@@ -67,37 +67,11 @@ Partial Class frmVendas2
         Me.txtCodBarras.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtCodBarras.Enabled = False
         Me.txtCodBarras.Font = New System.Drawing.Font("Microsoft Sans Serif", 30.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtCodBarras.Location = New System.Drawing.Point(12, 113)
+        Me.txtCodBarras.Location = New System.Drawing.Point(31, 209)
         Me.txtCodBarras.Multiline = True
         Me.txtCodBarras.Name = "txtCodBarras"
-        Me.txtCodBarras.Size = New System.Drawing.Size(305, 38)
+        Me.txtCodBarras.Size = New System.Drawing.Size(410, 67)
         Me.txtCodBarras.TabIndex = 20002
-        '
-        'dg
-        '
-        Me.dg.AllowUserToAddRows = False
-        Me.dg.AllowUserToDeleteRows = False
-        Me.dg.BackgroundColor = System.Drawing.Color.White
-        Me.dg.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dg.DefaultCellStyle = DataGridViewCellStyle1
-        Me.dg.Enabled = False
-        Me.dg.GridColor = System.Drawing.Color.Teal
-        Me.dg.Location = New System.Drawing.Point(552, 98)
-        Me.dg.Margin = New System.Windows.Forms.Padding(4)
-        Me.dg.Name = "dg"
-        Me.dg.ReadOnly = True
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.dg.RowsDefaultCellStyle = DataGridViewCellStyle2
-        Me.dg.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dg.Size = New System.Drawing.Size(425, 383)
-        Me.dg.TabIndex = 20008
         '
         'btRel
         '
@@ -109,7 +83,7 @@ Partial Class frmVendas2
         Me.btRel.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btRel.ForeColor = System.Drawing.Color.White
         Me.btRel.Image = CType(resources.GetObject("btRel.Image"), System.Drawing.Image)
-        Me.btRel.Location = New System.Drawing.Point(82, 445)
+        Me.btRel.Location = New System.Drawing.Point(244, 847)
         Me.btRel.Margin = New System.Windows.Forms.Padding(7, 6, 7, 6)
         Me.btRel.Name = "btRel"
         Me.btRel.Size = New System.Drawing.Size(105, 36)
@@ -129,7 +103,7 @@ Partial Class frmVendas2
         Me.btnNovo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnNovo.ForeColor = System.Drawing.Color.White
         Me.btnNovo.Image = CType(resources.GetObject("btnNovo.Image"), System.Drawing.Image)
-        Me.btnNovo.Location = New System.Drawing.Point(3, 397)
+        Me.btnNovo.Location = New System.Drawing.Point(31, 801)
         Me.btnNovo.Margin = New System.Windows.Forms.Padding(7, 6, 7, 6)
         Me.btnNovo.Name = "btnNovo"
         Me.btnNovo.Size = New System.Drawing.Size(70, 37)
@@ -149,7 +123,7 @@ Partial Class frmVendas2
         Me.btnExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnExcluir.ForeColor = System.Drawing.Color.White
         Me.btnExcluir.Image = CType(resources.GetObject("btnExcluir.Image"), System.Drawing.Image)
-        Me.btnExcluir.Location = New System.Drawing.Point(96, 397)
+        Me.btnExcluir.Location = New System.Drawing.Point(21, 847)
         Me.btnExcluir.Margin = New System.Windows.Forms.Padding(7, 6, 7, 6)
         Me.btnExcluir.Name = "btnExcluir"
         Me.btnExcluir.Size = New System.Drawing.Size(71, 37)
@@ -169,7 +143,7 @@ Partial Class frmVendas2
         Me.btnSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnSalvar.ForeColor = System.Drawing.Color.White
         Me.btnSalvar.Image = CType(resources.GetObject("btnSalvar.Image"), System.Drawing.Image)
-        Me.btnSalvar.Location = New System.Drawing.Point(6, 446)
+        Me.btnSalvar.Location = New System.Drawing.Point(110, 801)
         Me.btnSalvar.Margin = New System.Windows.Forms.Padding(7, 6, 7, 6)
         Me.btnSalvar.Name = "btnSalvar"
         Me.btnSalvar.Size = New System.Drawing.Size(77, 37)
@@ -184,10 +158,10 @@ Partial Class frmVendas2
         Me.txtValorUnitario.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtValorUnitario.Enabled = False
         Me.txtValorUnitario.Font = New System.Drawing.Font("Microsoft Sans Serif", 30.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtValorUnitario.Location = New System.Drawing.Point(12, 234)
+        Me.txtValorUnitario.Location = New System.Drawing.Point(31, 434)
         Me.txtValorUnitario.Multiline = True
         Me.txtValorUnitario.Name = "txtValorUnitario"
-        Me.txtValorUnitario.Size = New System.Drawing.Size(294, 55)
+        Me.txtValorUnitario.Size = New System.Drawing.Size(410, 105)
         Me.txtValorUnitario.TabIndex = 20017
         '
         'txtVAlorTotalUnitario
@@ -206,10 +180,10 @@ Partial Class frmVendas2
         Me.txtSubTotal.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtSubTotal.Enabled = False
         Me.txtSubTotal.Font = New System.Drawing.Font("Microsoft Sans Serif", 30.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtSubTotal.Location = New System.Drawing.Point(337, 112)
+        Me.txtSubTotal.Location = New System.Drawing.Point(494, 209)
         Me.txtSubTotal.Multiline = True
         Me.txtSubTotal.Name = "txtSubTotal"
-        Me.txtSubTotal.Size = New System.Drawing.Size(201, 62)
+        Me.txtSubTotal.Size = New System.Drawing.Size(279, 119)
         Me.txtSubTotal.TabIndex = 20019
         '
         'txtTotalVenda
@@ -217,10 +191,10 @@ Partial Class frmVendas2
         Me.txtTotalVenda.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtTotalVenda.Enabled = False
         Me.txtTotalVenda.Font = New System.Drawing.Font("Microsoft Sans Serif", 30.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtTotalVenda.Location = New System.Drawing.Point(337, 213)
+        Me.txtTotalVenda.Location = New System.Drawing.Point(21, 601)
         Me.txtTotalVenda.Multiline = True
         Me.txtTotalVenda.Name = "txtTotalVenda"
-        Me.txtTotalVenda.Size = New System.Drawing.Size(200, 60)
+        Me.txtTotalVenda.Size = New System.Drawing.Size(437, 104)
         Me.txtTotalVenda.TabIndex = 20020
         '
         'txtProduto
@@ -228,10 +202,10 @@ Partial Class frmVendas2
         Me.txtProduto.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtProduto.Enabled = False
         Me.txtProduto.Font = New System.Drawing.Font("Microsoft Sans Serif", 30.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtProduto.Location = New System.Drawing.Point(431, 51)
+        Me.txtProduto.Location = New System.Drawing.Point(522, 85)
         Me.txtProduto.Multiline = True
         Me.txtProduto.Name = "txtProduto"
-        Me.txtProduto.Size = New System.Drawing.Size(539, 35)
+        Me.txtProduto.Size = New System.Drawing.Size(888, 78)
         Me.txtProduto.TabIndex = 20021
         '
         'lblCodigo
@@ -240,7 +214,7 @@ Partial Class frmVendas2
         Me.lblCodigo.BackColor = System.Drawing.Color.Transparent
         Me.lblCodigo.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblCodigo.ForeColor = System.Drawing.Color.White
-        Me.lblCodigo.Location = New System.Drawing.Point(347, 279)
+        Me.lblCodigo.Location = New System.Drawing.Point(757, 522)
         Me.lblCodigo.Name = "lblCodigo"
         Me.lblCodigo.Size = New System.Drawing.Size(16, 17)
         Me.lblCodigo.TabIndex = 20022
@@ -250,7 +224,7 @@ Partial Class frmVendas2
         '
         Me.txtQuantidade.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtQuantidade.Font = New System.Drawing.Font("Microsoft Sans Serif", 22.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtQuantidade.Location = New System.Drawing.Point(116, 169)
+        Me.txtQuantidade.Location = New System.Drawing.Point(176, 331)
         Me.txtQuantidade.Margin = New System.Windows.Forms.Padding(5)
         Me.txtQuantidade.Name = "txtQuantidade"
         Me.txtQuantidade.Size = New System.Drawing.Size(201, 34)
@@ -266,7 +240,7 @@ Partial Class frmVendas2
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1000, 47)
+        Me.Panel1.Size = New System.Drawing.Size(1460, 79)
         Me.Panel1.TabIndex = 20024
         '
         'PictureBox2
@@ -274,7 +248,7 @@ Partial Class frmVendas2
         Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
         Me.PictureBox2.Location = New System.Drawing.Point(1, 1)
         Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(50, 41)
+        Me.PictureBox2.Size = New System.Drawing.Size(111, 75)
         Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox2.TabIndex = 312
         Me.PictureBox2.TabStop = False
@@ -285,7 +259,7 @@ Partial Class frmVendas2
         Me.Label5.BackColor = System.Drawing.Color.Transparent
         Me.Label5.Font = New System.Drawing.Font("Elephant", 28.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.Color.White
-        Me.Label5.Location = New System.Drawing.Point(234, -1)
+        Me.Label5.Location = New System.Drawing.Point(440, 9)
         Me.Label5.Margin = New System.Windows.Forms.Padding(8, 0, 8, 0)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(563, 49)
@@ -303,7 +277,7 @@ Partial Class frmVendas2
         Me.btSair.Font = New System.Drawing.Font("Arial Rounded MT Bold", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btSair.ForeColor = System.Drawing.Color.White
         Me.btSair.Image = CType(resources.GetObject("btSair.Image"), System.Drawing.Image)
-        Me.btSair.Location = New System.Drawing.Point(885, 7)
+        Me.btSair.Location = New System.Drawing.Point(1325, 5)
         Me.btSair.Margin = New System.Windows.Forms.Padding(5)
         Me.btSair.Name = "btSair"
         Me.btSair.Size = New System.Drawing.Size(85, 35)
@@ -317,14 +291,14 @@ Partial Class frmVendas2
         '
         Me.txtEstoque.Enabled = False
         Me.txtEstoque.ForeColor = System.Drawing.Color.Black
-        Me.txtEstoque.Location = New System.Drawing.Point(475, 290)
+        Me.txtEstoque.Location = New System.Drawing.Point(727, 547)
         Me.txtEstoque.Name = "txtEstoque"
         Me.txtEstoque.Size = New System.Drawing.Size(70, 20)
         Me.txtEstoque.TabIndex = 20025
         '
         'txtNum
         '
-        Me.txtNum.Location = New System.Drawing.Point(459, 321)
+        Me.txtNum.Location = New System.Drawing.Point(711, 578)
         Me.txtNum.Name = "txtNum"
         Me.txtNum.Size = New System.Drawing.Size(86, 20)
         Me.txtNum.TabIndex = 20026
@@ -341,13 +315,70 @@ Partial Class frmVendas2
         Me.Label1.TabIndex = 20027
         Me.Label1.Text = "Núm Venda"
         '
+        'btEditar
+        '
+        Me.btEditar.BackColor = System.Drawing.Color.Transparent
+        Me.btEditar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btEditar.FlatAppearance.BorderSize = 0
+        Me.btEditar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Azure
+        Me.btEditar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
+        Me.btEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btEditar.ForeColor = System.Drawing.Color.White
+        Me.btEditar.Image = CType(resources.GetObject("btEditar.Image"), System.Drawing.Image)
+        Me.btEditar.Location = New System.Drawing.Point(201, 800)
+        Me.btEditar.Margin = New System.Windows.Forms.Padding(7, 6, 7, 6)
+        Me.btEditar.Name = "btEditar"
+        Me.btEditar.Size = New System.Drawing.Size(77, 37)
+        Me.btEditar.TabIndex = 20028
+        Me.btEditar.Text = "Editar"
+        Me.btEditar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btEditar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btEditar.UseVisualStyleBackColor = False
+        '
+        'dg
+        '
+        Me.dg.AllowUserToAddRows = False
+        Me.dg.AllowUserToDeleteRows = False
+        Me.dg.BackgroundColor = System.Drawing.Color.White
+        Me.dg.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dg.GridColor = System.Drawing.SystemColors.ActiveCaption
+        Me.dg.Location = New System.Drawing.Point(806, 181)
+        Me.dg.Name = "dg"
+        Me.dg.ReadOnly = True
+        Me.dg.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.dg.Size = New System.Drawing.Size(624, 707)
+        Me.dg.TabIndex = 20029
+        '
+        'btConsultaPreco
+        '
+        Me.btConsultaPreco.BackColor = System.Drawing.Color.Transparent
+        Me.btConsultaPreco.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btConsultaPreco.FlatAppearance.BorderSize = 0
+        Me.btConsultaPreco.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Azure
+        Me.btConsultaPreco.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
+        Me.btConsultaPreco.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btConsultaPreco.ForeColor = System.Drawing.Color.White
+        Me.btConsultaPreco.Image = CType(resources.GetObject("btConsultaPreco.Image"), System.Drawing.Image)
+        Me.btConsultaPreco.Location = New System.Drawing.Point(116, 847)
+        Me.btConsultaPreco.Margin = New System.Windows.Forms.Padding(7, 6, 7, 6)
+        Me.btConsultaPreco.Name = "btConsultaPreco"
+        Me.btConsultaPreco.Size = New System.Drawing.Size(105, 36)
+        Me.btConsultaPreco.TabIndex = 20030
+        Me.btConsultaPreco.Text = "Comprovante"
+        Me.btConsultaPreco.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btConsultaPreco.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btConsultaPreco.UseVisualStyleBackColor = False
+        '
         'frmVendas2
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = Global.PDVVENDASCAIXA.My.Resources.Resources.FRENTE_DE_CAIXA3
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(1000, 485)
+        Me.ClientSize = New System.Drawing.Size(1460, 900)
+        Me.Controls.Add(Me.btConsultaPreco)
+        Me.Controls.Add(Me.dg)
+        Me.Controls.Add(Me.btEditar)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.txtNum)
         Me.Controls.Add(Me.txtEstoque)
@@ -363,7 +394,6 @@ Partial Class frmVendas2
         Me.Controls.Add(Me.btnNovo)
         Me.Controls.Add(Me.btnExcluir)
         Me.Controls.Add(Me.btnSalvar)
-        Me.Controls.Add(Me.dg)
         Me.Controls.Add(Me.txtCodBarras)
         Me.Controls.Add(Me.cbProduto)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
@@ -373,10 +403,10 @@ Partial Class frmVendas2
         Me.Name = "frmVendas2"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Vendas - PDV"
-        CType(Me.dg, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dg, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -384,7 +414,6 @@ Partial Class frmVendas2
 
     Friend WithEvents cbProduto As ComboBox
     Friend WithEvents txtCodBarras As TextBox
-    Friend WithEvents dg As DataGridView
     Friend WithEvents btRel As Button
     Friend WithEvents btnNovo As Button
     Friend WithEvents btnExcluir As Button
@@ -403,4 +432,7 @@ Partial Class frmVendas2
     Friend WithEvents txtEstoque As TextBox
     Friend WithEvents txtNum As TextBox
     Friend WithEvents Label1 As Label
+    Friend WithEvents btEditar As Button
+    Friend WithEvents dg As DataGridView
+    Friend WithEvents btConsultaPreco As Button
 End Class

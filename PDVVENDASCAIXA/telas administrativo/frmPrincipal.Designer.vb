@@ -79,6 +79,7 @@ Partial Class frmPrincipal
         Me.imagemNivel = New System.Windows.Forms.PictureBox()
         Me.lblNivel = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.ConsultaPreçoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.dg, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.imagem, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -179,7 +180,7 @@ Partial Class frmPrincipal
         '
         'VendasToolStripMenuItem
         '
-        Me.VendasToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PDVRegistrarVendaToolStripMenuItem, Me.ListarVendasToolStripMenuItem})
+        Me.VendasToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PDVRegistrarVendaToolStripMenuItem, Me.ListarVendasToolStripMenuItem, Me.ConsultaPreçoToolStripMenuItem})
         Me.VendasToolStripMenuItem.ForeColor = System.Drawing.Color.Black
         Me.VendasToolStripMenuItem.Image = CType(resources.GetObject("VendasToolStripMenuItem.Image"), System.Drawing.Image)
         Me.VendasToolStripMenuItem.Name = "VendasToolStripMenuItem"
@@ -575,6 +576,13 @@ Partial Class frmPrincipal
         Me.Label1.TabIndex = 254
         Me.Label1.Text = "Nº CAIXA"
         '
+        'ConsultaPreçoToolStripMenuItem
+        '
+        Me.ConsultaPreçoToolStripMenuItem.Image = CType(resources.GetObject("ConsultaPreçoToolStripMenuItem.Image"), System.Drawing.Image)
+        Me.ConsultaPreçoToolStripMenuItem.Name = "ConsultaPreçoToolStripMenuItem"
+        Me.ConsultaPreçoToolStripMenuItem.Size = New System.Drawing.Size(200, 24)
+        Me.ConsultaPreçoToolStripMenuItem.Text = "Consulta Preço"
+        '
         'frmPrincipal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -675,4 +683,5 @@ Partial Class frmPrincipal
     Friend WithEvents Modelo2ToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ContasAPagarToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents CcontasAReceberToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ConsultaPreçoToolStripMenuItem As ToolStripMenuItem
 End Class
