@@ -2,7 +2,7 @@
 
 Module conexao
     ' Public con As New SqlConnection("Data Source=DESKTOP-9357516;Initial Catalog=sistemavb;Integrated Security=True")
-    Public con As New SqlConnection("Data Source=DESKTOP-R5VHKNO\SQLEXPRESS;Initial Catalog=PDV;Integrated Security=True")
+    Public con As New SqlConnection("Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=PDV;Integrated Security=True")
 
     Sub abrir()
             If con.State = 0 Then

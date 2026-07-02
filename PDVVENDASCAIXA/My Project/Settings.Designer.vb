@@ -57,8 +57,7 @@ Namespace My
         <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-R5VHKNO\SQLEXPRESS;Initial Catalog=PDV;Integrated Security=Tr"& _ 
-            "ue")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=PDV;Integrated Security=True")>  _
         Public ReadOnly Property PDVConnectionString() As String
             Get
                 Return CType(Me("PDVConnectionString"),String)

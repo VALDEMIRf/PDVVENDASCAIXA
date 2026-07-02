@@ -121,6 +121,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Cadastros\clientes\frmClientesPJ.Designer.vb">
+      <DependentUpon>frmClientesPJ.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Cadastros\clientes\frmClientesPJ.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Cadastros\frmCargos.Designer.vb">
       <DependentUpon>frmCargos.vb</DependentUpon>
     </Compile>
@@ -473,6 +479,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Cadastros\clientes\frmClientesPJ.resx">
+      <DependentUpon>frmClientesPJ.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Cadastros\frmCargos.resx">
       <DependentUpon>frmCargos.vb</DependentUpon>
     </EmbeddedResource>

@@ -22,6 +22,7 @@ Partial Class frmEmpresa
     'Não o modifique usando o editor de códigos.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmEmpresa))
         Me.Label28 = New System.Windows.Forms.Label()
         Me.dg = New System.Windows.Forms.DataGridView()
@@ -55,18 +56,22 @@ Partial Class frmEmpresa
         Me.btnSalvar = New System.Windows.Forms.Button()
         Me.btnEditar = New System.Windows.Forms.Button()
         Me.btnExcluir = New System.Windows.Forms.Button()
+        Me.btBuscarEmpresa = New System.Windows.Forms.Button()
+        Me.errErro = New System.Windows.Forms.ErrorProvider(Me.components)
+        Me.btnNovo = New System.Windows.Forms.Button()
         CType(Me.dg, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.errErro, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label28
         '
         Me.Label28.AutoSize = True
-        Me.Label28.Font = New System.Drawing.Font("Arial", 16.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label28.Font = New System.Drawing.Font("Arial", 22.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label28.ForeColor = System.Drawing.Color.White
-        Me.Label28.Location = New System.Drawing.Point(210, 9)
+        Me.Label28.Location = New System.Drawing.Point(192, 9)
         Me.Label28.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.Label28.Name = "Label28"
-        Me.Label28.Size = New System.Drawing.Size(339, 26)
+        Me.Label28.Size = New System.Drawing.Size(465, 35)
         Me.Label28.TabIndex = 246
         Me.Label28.Text = "CADASTRAR MINHA EMPRESA"
         '
@@ -87,19 +92,23 @@ Partial Class frmEmpresa
         '
         'txtCEP
         '
+        Me.txtCEP.Enabled = False
         Me.txtCEP.Location = New System.Drawing.Point(692, 111)
         Me.txtCEP.Margin = New System.Windows.Forms.Padding(4)
         Me.txtCEP.Mask = "00000-999"
         Me.txtCEP.Name = "txtCEP"
+        Me.txtCEP.ReadOnly = True
         Me.txtCEP.Size = New System.Drawing.Size(80, 23)
         Me.txtCEP.TabIndex = 259
         '
         'txtTelResidencial
         '
+        Me.txtTelResidencial.Enabled = False
         Me.txtTelResidencial.Location = New System.Drawing.Point(473, 142)
         Me.txtTelResidencial.Margin = New System.Windows.Forms.Padding(4)
         Me.txtTelResidencial.Mask = "(99) 0000-0000"
         Me.txtTelResidencial.Name = "txtTelResidencial"
+        Me.txtTelResidencial.ReadOnly = True
         Me.txtTelResidencial.Size = New System.Drawing.Size(104, 23)
         Me.txtTelResidencial.TabIndex = 260
         '
@@ -267,61 +276,74 @@ Partial Class frmEmpresa
         '
         'txtRazaoSocial
         '
+        Me.txtRazaoSocial.Enabled = False
         Me.txtRazaoSocial.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtRazaoSocial.Location = New System.Drawing.Point(85, 84)
         Me.txtRazaoSocial.Margin = New System.Windows.Forms.Padding(11, 7, 11, 7)
         Me.txtRazaoSocial.Name = "txtRazaoSocial"
+        Me.txtRazaoSocial.ReadOnly = True
         Me.txtRazaoSocial.Size = New System.Drawing.Size(300, 21)
         Me.txtRazaoSocial.TabIndex = 251
         '
         'txtFantasia
         '
+        Me.txtFantasia.Enabled = False
         Me.txtFantasia.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtFantasia.Location = New System.Drawing.Point(85, 110)
         Me.txtFantasia.Margin = New System.Windows.Forms.Padding(11, 7, 11, 7)
         Me.txtFantasia.Name = "txtFantasia"
+        Me.txtFantasia.ReadOnly = True
         Me.txtFantasia.Size = New System.Drawing.Size(300, 21)
         Me.txtFantasia.TabIndex = 252
         '
         'txtEndereco
         '
+        Me.txtEndereco.Enabled = False
         Me.txtEndereco.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtEndereco.Location = New System.Drawing.Point(85, 137)
         Me.txtEndereco.Margin = New System.Windows.Forms.Padding(11, 7, 11, 7)
         Me.txtEndereco.Name = "txtEndereco"
+        Me.txtEndereco.ReadOnly = True
         Me.txtEndereco.Size = New System.Drawing.Size(300, 21)
         Me.txtEndereco.TabIndex = 253
         '
         'txtNumero
         '
+        Me.txtNumero.Enabled = False
         Me.txtNumero.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtNumero.Location = New System.Drawing.Point(85, 164)
         Me.txtNumero.Margin = New System.Windows.Forms.Padding(11, 7, 11, 7)
         Me.txtNumero.Name = "txtNumero"
+        Me.txtNumero.ReadOnly = True
         Me.txtNumero.Size = New System.Drawing.Size(120, 21)
         Me.txtNumero.TabIndex = 254
         '
         'txtCompl
         '
+        Me.txtCompl.Enabled = False
         Me.txtCompl.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtCompl.Location = New System.Drawing.Point(86, 189)
         Me.txtCompl.Margin = New System.Windows.Forms.Padding(11, 7, 11, 7)
         Me.txtCompl.Name = "txtCompl"
+        Me.txtCompl.ReadOnly = True
         Me.txtCompl.Size = New System.Drawing.Size(220, 21)
         Me.txtCompl.TabIndex = 255
         '
         'txtBairro
         '
+        Me.txtBairro.Enabled = False
         Me.txtBairro.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtBairro.Location = New System.Drawing.Point(472, 57)
         Me.txtBairro.Margin = New System.Windows.Forms.Padding(11, 7, 11, 7)
         Me.txtBairro.Name = "txtBairro"
+        Me.txtBairro.ReadOnly = True
         Me.txtBairro.Size = New System.Drawing.Size(300, 21)
         Me.txtBairro.TabIndex = 256
         '
         'txtUF
         '
         Me.txtUF.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.txtUF.Enabled = False
         Me.txtUF.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtUF.FormattingEnabled = True
         Me.txtUF.Items.AddRange(New Object() {"AC", "AL", "AP", "AM", "BA", "CE", "DF", "ES", "GO", "MA", "MT", "MS", "MG", "PA", "PB", "PR", "PE", "PI", "RJ", "RN", "RS", "RO", "RR", "SC", "SP", "SE", "TO"})
@@ -333,19 +355,23 @@ Partial Class frmEmpresa
         '
         'txtEmail
         '
+        Me.txtEmail.Enabled = False
         Me.txtEmail.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtEmail.Location = New System.Drawing.Point(472, 176)
         Me.txtEmail.Margin = New System.Windows.Forms.Padding(11, 7, 11, 7)
         Me.txtEmail.Name = "txtEmail"
+        Me.txtEmail.ReadOnly = True
         Me.txtEmail.Size = New System.Drawing.Size(300, 21)
         Me.txtEmail.TabIndex = 262
         '
         'txtCidade
         '
+        Me.txtCidade.Enabled = False
         Me.txtCidade.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtCidade.Location = New System.Drawing.Point(472, 84)
         Me.txtCidade.Margin = New System.Windows.Forms.Padding(11, 7, 11, 7)
         Me.txtCidade.Name = "txtCidade"
+        Me.txtCidade.ReadOnly = True
         Me.txtCidade.Size = New System.Drawing.Size(300, 21)
         Me.txtCidade.TabIndex = 257
         '
@@ -360,7 +386,7 @@ Partial Class frmEmpresa
         Me.btSair.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btSair.ForeColor = System.Drawing.Color.White
         Me.btSair.Image = CType(resources.GetObject("btSair.Image"), System.Drawing.Image)
-        Me.btSair.Location = New System.Drawing.Point(323, 330)
+        Me.btSair.Location = New System.Drawing.Point(450, 330)
         Me.btSair.Margin = New System.Windows.Forms.Padding(4)
         Me.btSair.Name = "btSair"
         Me.btSair.Size = New System.Drawing.Size(75, 44)
@@ -381,7 +407,7 @@ Partial Class frmEmpresa
         Me.btnSalvar.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSalvar.ForeColor = System.Drawing.Color.White
         Me.btnSalvar.Image = CType(resources.GetObject("btnSalvar.Image"), System.Drawing.Image)
-        Me.btnSalvar.Location = New System.Drawing.Point(5, 328)
+        Me.btnSalvar.Location = New System.Drawing.Point(132, 328)
         Me.btnSalvar.Margin = New System.Windows.Forms.Padding(4)
         Me.btnSalvar.Name = "btnSalvar"
         Me.btnSalvar.Size = New System.Drawing.Size(100, 45)
@@ -402,7 +428,7 @@ Partial Class frmEmpresa
         Me.btnEditar.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnEditar.ForeColor = System.Drawing.Color.White
         Me.btnEditar.Image = CType(resources.GetObject("btnEditar.Image"), System.Drawing.Image)
-        Me.btnEditar.Location = New System.Drawing.Point(110, 330)
+        Me.btnEditar.Location = New System.Drawing.Point(237, 330)
         Me.btnEditar.Margin = New System.Windows.Forms.Padding(4)
         Me.btnEditar.Name = "btnEditar"
         Me.btnEditar.Size = New System.Drawing.Size(93, 44)
@@ -423,7 +449,7 @@ Partial Class frmEmpresa
         Me.btnExcluir.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnExcluir.ForeColor = System.Drawing.Color.White
         Me.btnExcluir.Image = CType(resources.GetObject("btnExcluir.Image"), System.Drawing.Image)
-        Me.btnExcluir.Location = New System.Drawing.Point(211, 330)
+        Me.btnExcluir.Location = New System.Drawing.Point(338, 330)
         Me.btnExcluir.Margin = New System.Windows.Forms.Padding(4)
         Me.btnExcluir.Name = "btnExcluir"
         Me.btnExcluir.Size = New System.Drawing.Size(90, 43)
@@ -433,12 +459,60 @@ Partial Class frmEmpresa
         Me.btnExcluir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnExcluir.UseVisualStyleBackColor = False
         '
+        'btBuscarEmpresa
+        '
+        Me.btBuscarEmpresa.BackColor = System.Drawing.Color.Transparent
+        Me.btBuscarEmpresa.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btBuscarEmpresa.FlatAppearance.BorderSize = 0
+        Me.btBuscarEmpresa.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSteelBlue
+        Me.btBuscarEmpresa.FlatAppearance.MouseOverBackColor = System.Drawing.Color.CornflowerBlue
+        Me.btBuscarEmpresa.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btBuscarEmpresa.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btBuscarEmpresa.ForeColor = System.Drawing.Color.Black
+        Me.btBuscarEmpresa.Image = CType(resources.GetObject("btBuscarEmpresa.Image"), System.Drawing.Image)
+        Me.btBuscarEmpresa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btBuscarEmpresa.Location = New System.Drawing.Point(230, 55)
+        Me.btBuscarEmpresa.Margin = New System.Windows.Forms.Padding(8, 7, 8, 7)
+        Me.btBuscarEmpresa.Name = "btBuscarEmpresa"
+        Me.btBuscarEmpresa.Size = New System.Drawing.Size(35, 27)
+        Me.btBuscarEmpresa.TabIndex = 281
+        Me.btBuscarEmpresa.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btBuscarEmpresa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btBuscarEmpresa.UseVisualStyleBackColor = False
+        '
+        'errErro
+        '
+        Me.errErro.ContainerControl = Me
+        '
+        'btnNovo
+        '
+        Me.btnNovo.BackColor = System.Drawing.Color.Transparent
+        Me.btnNovo.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnNovo.FlatAppearance.BorderSize = 0
+        Me.btnNovo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Azure
+        Me.btnNovo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
+        Me.btnNovo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnNovo.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnNovo.ForeColor = System.Drawing.Color.White
+        Me.btnNovo.Image = CType(resources.GetObject("btnNovo.Image"), System.Drawing.Image)
+        Me.btnNovo.Location = New System.Drawing.Point(17, 328)
+        Me.btnNovo.Margin = New System.Windows.Forms.Padding(5)
+        Me.btnNovo.Name = "btnNovo"
+        Me.btnNovo.Size = New System.Drawing.Size(79, 45)
+        Me.btnNovo.TabIndex = 282
+        Me.btnNovo.Text = "Novo"
+        Me.btnNovo.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnNovo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnNovo.UseVisualStyleBackColor = False
+        '
         'frmEmpresa
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.SteelBlue
         Me.ClientSize = New System.Drawing.Size(778, 379)
+        Me.Controls.Add(Me.btnNovo)
+        Me.Controls.Add(Me.btBuscarEmpresa)
         Me.Controls.Add(Me.btSair)
         Me.Controls.Add(Me.btnSalvar)
         Me.Controls.Add(Me.btnEditar)
@@ -472,13 +546,14 @@ Partial Class frmEmpresa
         Me.Controls.Add(Me.txtCidade)
         Me.Controls.Add(Me.Label28)
         Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Margin = New System.Windows.Forms.Padding(4)
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "frmEmpresa"
         Me.Text = "Gerenciar Minha Empresa"
         CType(Me.dg, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.errErro, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -516,4 +591,7 @@ Partial Class frmEmpresa
     Friend WithEvents btnSalvar As Button
     Friend WithEvents btnEditar As Button
     Friend WithEvents btnExcluir As Button
+    Friend WithEvents btBuscarEmpresa As Button
+    Friend WithEvents errErro As ErrorProvider
+    Friend WithEvents btnNovo As Button
 End Class

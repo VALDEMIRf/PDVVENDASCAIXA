@@ -223,4 +223,49 @@ Public Class frmEmpresa
         txtCelular.Text = dg.CurrentRow.Cells(12).Value
         txtEmail.Text = dg.CurrentRow.Cells(13).Value
     End Sub
+
+    Private Sub btBuscarEmpresa_Click(sender As Object, e As EventArgs) Handles btBuscarEmpresa.Click
+        If txtCNPJ.Text.Equals(String.Empty) Then
+            errErro.SetError(txtCNPJ, "Digite um CNPJ válido")
+            Exit Sub
+        Else
+            errErro.SetError(txtCNPJ, "")
+        End If
+
+
+        ObterCnpj(txtCNPJ.Text)
+    End Sub
+
+
+    Private Sub ObterCnpj(cnpj As String)
+
+        Dim cliente = Empresa.ObterCnpj(cnpj)
+
+        Try
+            txtRazaoSocial.Text = cliente.nome
+            ' txtSituacao.Text = cliente.situacao
+            '  txtAbertura.Text = cliente.abertura
+            ' txtMotivo.Text = UTF8_to_ISO(cliente.motivo_situacao)
+            txtEndereco.Text = cliente.logradouro
+            txtNumero.Text = cliente.numero
+            txtCompl.Text = cliente.complemento
+            txtBairro.Text = cliente.bairro
+            txtCEP.Text = cliente.cep
+            txtCidade.Text = cliente.municipio
+            txtUF.Text = cliente.uf
+            txtFantasia.Text = cliente.fantasia
+            txtTelResidencial.Text = cliente.telefone
+
+            txtEmail.Text = cliente.email
+
+        Catch ex As Exception
+
+            '  MessageBox.Show("CNPJ Incorreto, digite um CNPJ válido!!!" + ex.Message.ToString)
+            MessageBox.Show("CNPJ Incorreto, digite um CNPJ válido!!!", "ERRO")
+        End Try
+    End Sub
+
+    Private Sub btnNovo_Click(sender As Object, e As EventArgs) Handles btnNovo.Click
+        btnSalvar.Enabled = True
+    End Sub
 End Class

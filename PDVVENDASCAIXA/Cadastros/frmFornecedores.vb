@@ -4,7 +4,7 @@ Imports System.Text.RegularExpressions
 
 Public Class frmFornecedores
     Private Sub frmFornecedores_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        btnSalvar.Enabled = False
+        ' btnSalvar.Enabled = False
         txtBuscarCNPJ.Visible = False
 
         Listar()
@@ -27,7 +27,7 @@ Public Class frmFornecedores
 
             ContarLinhas()
 
-            '  FormatarDG()
+            FormatarDG()
         Catch ex As Exception
             MessageBox.Show("Erro ao Listar os Fornecedores" + ex.Message.ToString)
         Finally
@@ -41,22 +41,6 @@ Public Class frmFornecedores
 
         With dg
             .Columns(0).Visible = False
-            .Columns(2).Visible = False
-            .Columns(4).Visible = False
-            .Columns(5).Visible = False
-            .Columns(6).Visible = False
-            .Columns(7).Visible = False
-            .Columns(8).Visible = False
-            .Columns(9).Visible = False
-            .Columns(10).Visible = False
-            .Columns(11).Visible = False
-            .Columns(12).Visible = False
-            .Columns(13).Visible = False
-            .Columns(14).Visible = False
-            .Columns(15).Visible = False
-            .Columns(16).Visible = False
-            .Columns(17).Visible = False
-            .Columns(18).Visible = False
 
             .Columns(1).HeaderText = "CNPJ"
             .Columns(2).HeaderText = "ABERTURA"
@@ -77,8 +61,9 @@ Public Class frmFornecedores
             .Columns(17).HeaderText = "Tel. Contato"
             .Columns(18).HeaderText = "Dt. Cadastro"
 
-            .Columns(1).Width = 150
-            .Columns(2).Width = 300
+            .Columns(4).Width = 150
+            .Columns(3).Width = 300
+            .Columns(5).Width = 300
         End With
 
     End Sub
@@ -104,6 +89,13 @@ Public Class frmFornecedores
         txtContato.Text = ""
         txtTelContato.Text = ""
 
+    End Sub
+
+    Private Sub HabilitarCampos()
+        txtCNPJ.Focus()
+        txtCNPJ.Enabled = True
+        txtContato.Enabled = True
+        txtTelContato.Enabled = True
     End Sub
 
     Private Sub ContarLinhas()
@@ -349,4 +341,38 @@ Public Class frmFornecedores
         End Try
     End Sub
 
+    Private Sub btnNovo_Click(sender As Object, e As EventArgs) Handles btnNovo.Click
+        HabilitarCampos()
+        Limpar()
+        btnSalvar.Enabled = True
+        btnEditar.Enabled = False
+        btnExcluir.Enabled = False
+    End Sub
+
+    Private Sub btnEditar_Click(sender As Object, e As EventArgs) Handles btnEditar.Click
+        Dim cmd As SqlCommand
+
+        Try
+
+            abrir()
+            cmd = New SqlCommand("pa_fornecedor_Editar", con)
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.Parameters.AddWithValue("@cnpj", txtCNPJ.Text)
+            cmd.Parameters.AddWithValue("@contato", txtContato.Text)
+            cmd.Parameters.AddWithValue("@telcontato", txtTelContato.Text)
+            cmd.Parameters.Add("@mensagem", SqlDbType.VarChar, 100).Direction = 2
+            cmd.ExecuteNonQuery()
+
+            Dim msg As String = cmd.Parameters("@mensagem").Value.ToString
+            MessageBox.Show(msg, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button3)
+
+            Listar()
+            Limpar()
+
+        Catch ex As Exception
+            MessageBox.Show("Erro ao editar este contato" + ex.Message.ToString)
+            fechar()
+        End Try
+
+    End Sub
 End Class

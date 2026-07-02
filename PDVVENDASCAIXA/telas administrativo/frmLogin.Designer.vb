@@ -26,6 +26,7 @@ Partial Class frmLogin
         Me.txtSenha = New System.Windows.Forms.MaskedTextBox()
         Me.btnLogin = New System.Windows.Forms.Button()
         Me.txtUsuario = New System.Windows.Forms.TextBox()
+        Me.btSair = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'txtSenha
@@ -62,12 +63,30 @@ Partial Class frmLogin
         Me.txtUsuario.Size = New System.Drawing.Size(125, 13)
         Me.txtUsuario.TabIndex = 3
         '
+        'btSair
+        '
+        Me.btSair.BackColor = System.Drawing.Color.RoyalBlue
+        Me.btSair.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btSair.FlatAppearance.BorderSize = 0
+        Me.btSair.FlatAppearance.MouseDownBackColor = System.Drawing.Color.WhiteSmoke
+        Me.btSair.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
+        Me.btSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btSair.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btSair.ForeColor = System.Drawing.Color.White
+        Me.btSair.Location = New System.Drawing.Point(93, 242)
+        Me.btSair.Name = "btSair"
+        Me.btSair.Size = New System.Drawing.Size(110, 23)
+        Me.btSair.TabIndex = 23
+        Me.btSair.Text = "CANCELAR"
+        Me.btSair.UseVisualStyleBackColor = False
+        '
         'frmLogin
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.ClientSize = New System.Drawing.Size(297, 277)
+        Me.Controls.Add(Me.btSair)
         Me.Controls.Add(Me.txtSenha)
         Me.Controls.Add(Me.btnLogin)
         Me.Controls.Add(Me.txtUsuario)
@@ -86,4 +105,5 @@ Partial Class frmLogin
     Friend WithEvents txtSenha As MaskedTextBox
     Friend WithEvents btnLogin As Button
     Friend WithEvents txtUsuario As TextBox
+    Friend WithEvents btSair As Button
 End Class

@@ -97,4 +97,10 @@ Public Class frmLogin
             fechar()
         End Try
     End Sub
+
+
+
+    Private Sub btSair_Click(sender As Object, e As EventArgs) Handles btSair.Click
+        Application.Exit()
+    End Sub
 End Class

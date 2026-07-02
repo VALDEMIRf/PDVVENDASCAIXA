@@ -66,7 +66,7 @@ Partial Class frmCargos
         Me.lblCargo.AutoSize = True
         Me.lblCargo.BackColor = System.Drawing.Color.Transparent
         Me.lblCargo.ForeColor = System.Drawing.Color.White
-        Me.lblCargo.Location = New System.Drawing.Point(252, 5)
+        Me.lblCargo.Location = New System.Drawing.Point(353, 9)
         Me.lblCargo.Name = "lblCargo"
         Me.lblCargo.Size = New System.Drawing.Size(13, 13)
         Me.lblCargo.TabIndex = 19
@@ -77,11 +77,11 @@ Partial Class frmCargos
         '
         Me.Label1.AutoSize = True
         Me.Label1.BackColor = System.Drawing.Color.Transparent
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(4, 5)
+        Me.Label1.Location = New System.Drawing.Point(68, 4)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(217, 20)
+        Me.Label1.Size = New System.Drawing.Size(248, 24)
         Me.Label1.TabIndex = 18
         Me.Label1.Text = "CADASTRO DE CARGOS"
         '
@@ -213,7 +213,7 @@ Partial Class frmCargos
         Me.Controls.Add(Me.txtCargo)
         Me.Controls.Add(Me.lblCargo)
         Me.Controls.Add(Me.Label1)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "frmCargos"

@@ -3,92 +3,12 @@ Imports System.Text.RegularExpressions
 
 Public Class frmClientes
     Private Sub frmClientes_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        DesabilitarCampos()
-        'dtData.Value = Now
-        btnSalvar.Enabled = False
-        ' txtBuscarCPF.Visible = False
 
+        btnSalvar.Enabled = False
         Listar()
-        ListarPJ()
 
         rbNome.Checked = True
-        rbNomePJ.Checked = True
 
-    End Sub
-
-    Private Sub DesabilitarCampos()
-        txtNome.Enabled = False
-        cbSexo.Enabled = False
-        txtRG.Enabled = False
-        txtCPF.Enabled = False
-        txtCNPJ.Enabled = False
-        txtIE.Enabled = False
-        txtTel.Enabled = False
-        txtEmail.Enabled = False
-        txtdtNasc.Enabled = False
-        txtCompl.Enabled = False
-        cbEstCivil.Enabled = False
-        txtTelCel.Enabled = False
-        txtNatural.Enabled = False
-        txtObs.Enabled = False
-
-    End Sub
-
-    Private Sub HabilitarCampos()
-        txtNome.Focus()
-        txtNome.Enabled = True
-        cbSexo.Enabled = True
-        txtRG.Enabled = True
-        txtCPF.Enabled = True
-        txtCNPJ.Enabled = True
-        txtIE.Enabled = True
-        txtTel.Enabled = True
-        txtEmail.Enabled = True
-        txtdtNasc.Enabled = True
-        txtCompl.Enabled = True
-        cbEstCivil.Enabled = True
-        txtTelCel.Enabled = True
-        txtNatural.Enabled = True
-        txtObs.Enabled = True
-    End Sub
-
-    Private Sub Limpar()
-        txtNome.Focus()
-        txtNome.Text = ""
-        cbSexo.Text = Nothing
-        cbEstCivil.Text = Nothing
-        txtRG.Text = ""
-        txtCNPJ.Text = ""
-        txtCPF.Text = ""
-        txtTel.Text = ""
-        txtTelCel.Text = ""
-        txtNatural.Text = ""
-        txtEmail.Text = ""
-        txtdtNasc.Text = ""
-        txtEndereco.Text = ""
-        txtNumero.Text = ""
-        txtCompl.Text = ""
-        txtComplemento.Text = ""
-        txtBairro.Text = ""
-        txtCidade.Text = ""
-        txtUF.Text = Nothing
-        txtCEP.Text = ""
-        txtObs.Text = ""
-        txtRazaoSocial.Text = ""
-        txtFantasia.Text = ""
-        txtIE.Text = ""
-        txtTelPJ.Text = ""
-        txtEmailPJ.Text = ""
-        txtCEPPJ.Text = ""
-        txtUFPJ.Text = Nothing
-        txtEnd.Text = ""
-        txtNum.Text = ""
-        txtComplPJ.Text = ""
-        txtBairroPJ.Text = ""
-        txtCidadePJ.Text = ""
-        txtObsPj.Text = ""
-        txtSituacao.Text = ""
-        txtMotivo.Text = ""
     End Sub
 
     Private Sub Listar()
@@ -107,6 +27,7 @@ Public Class frmClientes
             ContarLinhas()
 
             FormatarDG()
+
         Catch ex As Exception
             MessageBox.Show("Erro ao Listar os clientes" + ex.Message.ToString)
         Finally
@@ -125,8 +46,9 @@ Public Class frmClientes
             .Columns(5).Visible = False
             .Columns(6).Visible = False
             .Columns(20).Visible = False
-            .Columns(21).Visible = False
 
+
+            .Columns(0).HeaderText = "ID"
             .Columns(1).HeaderText = "Nome"
             .Columns(2).HeaderText = "CPF"
             .Columns(3).HeaderText = "RG"
@@ -183,7 +105,47 @@ Public Class frmClientes
 
     End Sub
 
+    Private Sub HabilitarCampos()
 
+        txtCPF.Enabled = True
+        txtRG.Enabled = True
+        txtNome.Enabled = True
+        cbEstCivil.Enabled = True
+        txtNatural.Enabled = True
+        cbSexo.Enabled = True
+        txtdtNasc.Enabled = True
+        txtTel.Enabled = True
+        txtTelCel.Enabled = True
+        txtEmail.Enabled = True
+        txtCEP.Enabled = True
+        txtNumero.Enabled = True
+        txtCompl.Enabled = True
+        txtObs.Enabled = True
+        txtCPF.Focus()
+    End Sub
+
+    Private Sub Limpar()
+        txtCPF.Text = ""
+        txtRG.Text = ""
+        txtNome.Text = ""
+        cbEstCivil.Text = Nothing
+        txtNatural.Text = ""
+        cbSexo.Text = Nothing
+        txtdtNasc.Text = ""
+        txtTel.Text = ""
+        txtTelCel.Text = ""
+        txtEmail.Text = ""
+        txtCEP.Text = ""
+        txtEndereco.Text = ""
+        txtNumero.Text = ""
+        txtCompl.Text = ""
+        txtComplemento.Text = ""
+        txtBairro.Text = ""
+        txtCidade.Text = ""
+        txtUF.Text = Nothing
+        txtObs.Text = ""
+
+    End Sub
     Private Sub btnSalvar_Click(sender As Object, e As EventArgs) Handles btnSalvar.Click
         Dim cmd As SqlCommand
 
@@ -195,9 +157,7 @@ Public Class frmClientes
                 cmd.CommandType = CommandType.StoredProcedure
                 cmd.Parameters.AddWithValue("@nome", txtNome.Text)
                 cmd.Parameters.AddWithValue("@cpf", txtCPF.Text)
-                cmd.Parameters.AddWithValue("@cnpj", "")
                 cmd.Parameters.AddWithValue("@rg", txtRG.Text)
-                cmd.Parameters.AddWithValue("@ie", "")
                 cmd.Parameters.AddWithValue("@estadoCivil", cbEstCivil.Text)
                 cmd.Parameters.AddWithValue("@naturalidade", txtNatural.Text)
                 cmd.Parameters.AddWithValue("@sexo", cbSexo.Text)
@@ -214,11 +174,7 @@ Public Class frmClientes
                 cmd.Parameters.AddWithValue("@bairro", txtBairro.Text)
                 cmd.Parameters.AddWithValue("@cidade", txtCidade.Text)
                 cmd.Parameters.AddWithValue("@obs", txtObs.Text)
-                cmd.Parameters.AddWithValue("@data_cadastro", Now.ToShortDateString)
-                cmd.Parameters.AddWithValue("@situacao", "")
-                cmd.Parameters.AddWithValue("@motivo", "")
-                cmd.Parameters.AddWithValue("@tipocli", 0)
-                cmd.Parameters.AddWithValue("@fantasia", "")
+                cmd.Parameters.AddWithValue("@data_cadastro", Now.Date())
                 cmd.Parameters.Add("@mensagem", SqlDbType.VarChar, 100).Direction = 2
                 cmd.ExecuteNonQuery()
 
@@ -244,6 +200,7 @@ Public Class frmClientes
         'btnEditar.Enabled = True
         btnExcluir.Enabled = True
         btnSalvar.Enabled = False
+        btnEditar.Enabled = True
 
         HabilitarCampos()
         txtCPF.Enabled = False
@@ -268,6 +225,7 @@ Public Class frmClientes
         txtBairro.Text = dg.CurrentRow.Cells(17).Value
         txtCidade.Text = dg.CurrentRow.Cells(18).Value
         txtObs.Text = dg.CurrentRow.Cells(19).Value
+
     End Sub
 
     Private Sub btnEditar_Click(sender As Object, e As EventArgs) Handles btnEditar.Click
@@ -279,11 +237,9 @@ Public Class frmClientes
                 abrir()
                 cmd = New SqlCommand("pa_cliente_Editar", con)
                 cmd.CommandType = CommandType.StoredProcedure
+                cmd.Parameters.AddWithValue("@id_cliente", lblCodigo.Text)
                 cmd.Parameters.AddWithValue("@nome", txtNome.Text)
-                cmd.Parameters.AddWithValue("@cpf", txtCPF.Text)
-                cmd.Parameters.AddWithValue("@cnpj", "")
                 cmd.Parameters.AddWithValue("@rg", txtRG.Text)
-                cmd.Parameters.AddWithValue("@ie", "")
                 cmd.Parameters.AddWithValue("@estadoCivil", cbEstCivil.Text)
                 cmd.Parameters.AddWithValue("@naturalidade", txtNatural.Text)
                 cmd.Parameters.AddWithValue("@sexo", cbSexo.Text)
@@ -310,7 +266,7 @@ Public Class frmClientes
                 Limpar()
 
             Catch ex As Exception
-                MessageBox.Show("Erro ao Editar os dados" + ex.Message.ToString)
+                MessageBox.Show("Erro ao Editar os dados deste cliente" + ex.Message.ToString)
                 fechar()
             End Try
         End If
@@ -327,7 +283,7 @@ Public Class frmClientes
                 abrir()
                 cmd = New SqlCommand("pa_cliente_Excluir", con)
                 cmd.CommandType = CommandType.StoredProcedure
-                cmd.Parameters.AddWithValue("@cpf", txtCPF.Text)
+                cmd.Parameters.AddWithValue("@id_cliente", lblCodigo.Text)
                 cmd.Parameters.Add("@mensagem", SqlDbType.VarChar, 100).Direction = 2
                 cmd.ExecuteNonQuery()
 
@@ -347,51 +303,6 @@ Public Class frmClientes
         End If
     End Sub
 
-    Private Sub ObterCnpj(cnpj As String)
-
-        Dim cliente = Empresa.ObterCnpj(cnpj)
-        Try
-            txtRazaoSocial.Text = cliente.nome
-            txtFantasia.Text = cliente.fantasia
-            txtSituacao.Text = cliente.situacao
-            txtMotivo.Text = UTF8_to_ISO(cliente.motivo_situacao)
-            txtEnd.Text = cliente.logradouro
-            txtNum.Text = cliente.numero
-            txtComplPJ.Text = cliente.complemento
-            txtBairroPJ.Text = cliente.bairro
-            txtCEPPJ.Text = cliente.cep
-            txtCidadePJ.Text = cliente.municipio
-            txtUFPJ.Text = cliente.uf
-            txtEmailPJ.Text = cliente.email
-            txtTelPJ.Text = cliente.telefone
-        Catch ex As Exception
-
-            MessageBox.Show("CNPJ Incorreto, digite um CNPJ válido!!!", "ERRO" + ex.Message.ToString)
-        End Try
-
-    End Sub
-
-    Private Sub btBuscarCEP_Click_1(sender As Object, e As EventArgs) Handles btBuscarCEP.Click
-
-        If validaCEP() Then
-
-            ObterCep(txtCEP.Text)
-            ' MessageBox.Show("Digite um cep válido!!!!")
-        End If
-        'Try
-        '    Dim ws = New WSCEP.AtendeClienteClient()
-        '    Dim resposta = ws.consultaCEP(txtCEP.Text)
-        '    txtEndereco.Text = resposta.end
-        '    txtComplemento.Text = resposta.complemento2  'complemento
-        '    txtBairro.Text = resposta.bairro
-        '    txtCidade.Text = resposta.cidade
-        '    txtUF.Text = resposta.uf
-
-        'Catch ex As Exception
-        '    MsgBox("Erro ao buscar CEP.!" & ex.Message.ToString, vbCritical)
-        'End Try
-    End Sub
-
     Private Function validaCEP()
         Dim rgxCep = New Regex("^\d{5}-\d{3}$")
         If Not rgxCep.IsMatch(txtCEP.Text) Then
@@ -404,8 +315,8 @@ Public Class frmClientes
 
     Private Sub txtBuscarNome_TextChanged_1(sender As Object, e As EventArgs) Handles txtBuscarNome.TextChanged
         If txtBuscarNome.Text = "" And dg.Rows.Count > 0 Then
-
             Listar()
+
 
         Else
             Dim dt As New DataTable
@@ -420,6 +331,7 @@ Public Class frmClientes
                 da.Fill(dt)
                 dg.DataSource = dt
 
+                FormatarDG()
                 ContarLinhas()
 
             Catch ex As Exception
@@ -439,13 +351,14 @@ Public Class frmClientes
 
             Try
                 abrir()
-                da = New SqlDataAdapter("pa_cliente_Cpfbuscar", con)
+                da = New SqlDataAdapter("pa_clienteCpfbuscar", con)
                 da.SelectCommand.CommandType = CommandType.StoredProcedure
                 da.SelectCommand.Parameters.AddWithValue("@cpf", txtBuscarCPF.Text)
 
                 da.Fill(dt)
                 dg.DataSource = dt
 
+                FormatarDG()
                 ContarLinhas()
 
             Catch ex As Exception
@@ -458,6 +371,7 @@ Public Class frmClientes
     End Sub
 
     Private Sub rbNome_CheckedChanged_1(sender As Object, e As EventArgs) Handles rbNome.CheckedChanged
+        Listar()
         txtBuscarCPF.Text = ""
         txtBuscarNome.Text = ""
         txtBuscarNome.Visible = True
@@ -466,328 +380,12 @@ Public Class frmClientes
     End Sub
 
     Private Sub rbCPF_CheckedChanged_1(sender As Object, e As EventArgs) Handles rbCPF.CheckedChanged
+        Listar()
         txtBuscarNome.Text = ""
         txtBuscarCPF.Text = ""
         txtBuscarNome.Visible = False
         txtBuscarCPF.Visible = True
         txtBuscarCPF.Focus()
-    End Sub
-
-    Private Sub lblSair_Click(sender As Object, e As EventArgs)
-        Me.Close()
-    End Sub
-
-    Private Sub btBuscarCNPJ_Click_1(sender As Object, e As EventArgs) Handles btBuscarCNPJ.Click
-        ObterCnpj(txtCNPJ.Text)
-    End Sub
-
-    Private Sub btNovoPJ_Click(sender As Object, e As EventArgs) Handles btNovoPJ.Click
-        HabilitarCampos()
-        Limpar()
-        btSalvarPJ.Enabled = True
-        'btEditarPJ.Enabled = False
-        btEscluirPJ.Enabled = False
-    End Sub
-
-    Private Sub btSalvarPJ_Click(sender As Object, e As EventArgs) Handles btSalvarPJ.Click
-        Dim cmd As SqlCommand
-
-        If txtCNPJ.Text <> "" And txtRazaoSocial.Text <> "" Then
-
-            Try
-                abrir()
-                cmd = New SqlCommand("pa_cliente_SalvarPJ", con)
-                cmd.CommandType = CommandType.StoredProcedure
-                cmd.Parameters.AddWithValue("@nome", txtRazaoSocial.Text)
-                cmd.Parameters.AddWithValue("@cpf", "")
-                cmd.Parameters.AddWithValue("@cnpj", txtCNPJ.Text)
-                cmd.Parameters.AddWithValue("@rg", "")
-                cmd.Parameters.AddWithValue("@ie", txtIE.Text)
-                cmd.Parameters.AddWithValue("@estadoCivil", "")
-                cmd.Parameters.AddWithValue("@naturalidade", "")
-                cmd.Parameters.AddWithValue("@sexo", "")
-                cmd.Parameters.AddWithValue("@dtNasc", "")
-                cmd.Parameters.AddWithValue("@telRes", txtTelPJ.Text)
-                cmd.Parameters.AddWithValue("@telcel", "")
-                cmd.Parameters.AddWithValue("@email", txtEmailPJ.Text)
-                cmd.Parameters.AddWithValue("@cep", txtCEPPJ.Text)
-                cmd.Parameters.AddWithValue("@UF", txtUFPJ.Text)
-                cmd.Parameters.AddWithValue("@endereco", txtEnd.Text)
-                cmd.Parameters.AddWithValue("@num", txtNum.Text)
-                cmd.Parameters.AddWithValue("@compl", txtComplPJ.Text)
-                cmd.Parameters.AddWithValue("@complemento", "")
-                cmd.Parameters.AddWithValue("@bairro", txtBairroPJ.Text)
-                cmd.Parameters.AddWithValue("@cidade", txtCidadePJ.Text)
-                cmd.Parameters.AddWithValue("@obs", txtObsPj.Text)
-                cmd.Parameters.AddWithValue("@data_cadastro", Now.ToShortDateString)
-                cmd.Parameters.AddWithValue("@situacao", txtSituacao.Text)
-                cmd.Parameters.AddWithValue("@motivo", txtMotivo.Text)
-                cmd.Parameters.AddWithValue("@tipocli", 1)
-                cmd.Parameters.AddWithValue("@fantasia", txtFantasia.Text)
-                cmd.Parameters.Add("@mensagem", SqlDbType.VarChar, 100).Direction = 2
-                cmd.ExecuteNonQuery()
-
-                Dim msg As String = cmd.Parameters("@mensagem").Value.ToString
-                MessageBox.Show(msg, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button3)
-
-                ListarPJ()
-                Limpar()
-
-                btSalvarPJ.Enabled = False
-
-            Catch ex As Exception
-                MessageBox.Show("Erro ao salvar o Cliente" + ex.Message.ToString)
-            Finally
-
-                fechar()
-            End Try
-        End If
-    End Sub
-
-    Private Sub btEscluirPJ_Click(sender As Object, e As EventArgs) Handles btEscluirPJ.Click
-        Dim cmd As SqlCommand
-
-        If txtCNPJ.Text <> "" Then
-
-            Try
-                If (MessageBox.Show("Deseja excluir este cliente?", Me.Text, MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.No) Then Exit Sub
-
-                abrir()
-                cmd = New SqlCommand("pa_cliente_ExcluirPJ", con)
-                cmd.CommandType = CommandType.StoredProcedure
-                cmd.Parameters.AddWithValue("@cnpj", txtCNPJ.Text)
-                cmd.Parameters.Add("@mensagem", SqlDbType.VarChar, 100).Direction = 2
-                cmd.ExecuteNonQuery()
-
-                Dim msg As String = cmd.Parameters("@mensagem").Value.ToString
-                MessageBox.Show(msg, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
-
-                ListarPJ()
-                Limpar()
-
-                btnExcluir.Enabled = False
-                'btnEditar.Enabled = False
-
-            Catch ex As Exception
-                MessageBox.Show("Erro ao  excluir os dados deste Cliente" + ex.Message.ToString)
-            Finally
-
-                fechar()
-            End Try
-        End If
-    End Sub
-
-    Private Sub ListarPJ()
-
-        Dim dt As New DataTable
-        Dim da As SqlDataAdapter
-
-        Try
-            abrir()
-            da = New SqlDataAdapter("pa_cliente_listarPJ", con)
-            da.SelectCommand.CommandType = CommandType.StoredProcedure
-
-            da.Fill(dt)
-            dgPJ.DataSource = dt
-
-            ContarLinhasPJ()
-
-            FormatarDGPJ()
-
-        Catch ex As Exception
-            MessageBox.Show("Erro ao Listar os clientes" + ex.Message.ToString)
-        Finally
-
-            fechar()
-        End Try
-
-    End Sub
-    Private Sub ContarLinhasPJ()
-        Dim total As Integer = dgPJ.Rows.Count
-        lblTotalPJ.Text = CInt(total)
-
-    End Sub
-
-    Private Sub FormatarDGPJ()
-
-        With dgPJ
-            .Columns(0).Visible = False
-            .Columns(15).Visible = False
-            '  .Columns(6).Visible = False
-
-            .Columns(1).HeaderText = "Nome"
-            .Columns(2).HeaderText = "Fantasia"
-            .Columns(3).HeaderText = "CNPJ"
-            .Columns(4).HeaderText = "Inscr. Estadual"
-            .Columns(5).HeaderText = "Telefone"
-            .Columns(6).HeaderText = "Email"
-            .Columns(7).HeaderText = "CEP"
-            .Columns(8).HeaderText = "UF"
-            .Columns(9).HeaderText = "Endereço"
-            .Columns(10).HeaderText = "Num"
-            .Columns(11).HeaderText = "Compl"
-            .Columns(12).HeaderText = "Bairro"
-            .Columns(13).HeaderText = "Cidade"
-            .Columns(14).HeaderText = "Obs."
-            .Columns(15).HeaderText = "Situação"
-            .Columns(16).HeaderText = "Motivo"
-            .Columns(17).HeaderText = "Data Cadastro"
-            .Columns(18).HeaderText = "Tipo"
-
-            .Columns(1).Width = 150
-            .Columns(2).Width = 100
-            .Columns(3).Width = 100
-            .Columns(6).Width = 80
-            .Columns(7).Width = 100
-            .Columns(8).Width = 120
-            .Columns(9).Width = 120
-            .Columns(10).Width = 50
-            .Columns(11).Width = 80
-            .Columns(12).Width = 100
-            .Columns(13).Width = 100
-        End With
-
-    End Sub
-
-    Private Sub dgPJ_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgPJ.CellClick
-        btEscluirPJ.Enabled = True
-        btSalvarPJ.Enabled = False
-
-        HabilitarCampos()
-        ' txtCNPJ.Enabled = False
-
-        lblCodigo.Text = dgPJ.CurrentRow.Cells(0).Value
-        txtRazaoSocial.Text = dgPJ.CurrentRow.Cells(1).Value
-        txtFantasia.Text = dgPJ.CurrentRow.Cells(2).Value
-        txtCNPJ.Text = dgPJ.CurrentRow.Cells(3).Value
-        txtIE.Text = dgPJ.CurrentRow.Cells(4).Value
-        txtTelPJ.Text = dgPJ.CurrentRow.Cells(5).Value
-        txtEmailPJ.Text = dgPJ.CurrentRow.Cells(6).Value
-        txtCEPPJ.Text = dgPJ.CurrentRow.Cells(7).Value
-        txtUFPJ.Text = dgPJ.CurrentRow.Cells(8).Value
-        txtEnd.Text = dgPJ.CurrentRow.Cells(9).Value
-        txtNum.Text = dgPJ.CurrentRow.Cells(10).Value
-        txtComplPJ.Text = dgPJ.CurrentRow.Cells(11).Value
-        txtBairroPJ.Text = dgPJ.CurrentRow.Cells(12).Value
-        txtCidadePJ.Text = dgPJ.CurrentRow.Cells(13).Value
-        txtObsPj.Text = dgPJ.CurrentRow.Cells(14).Value
-        txtSituacao.Text = dgPJ.CurrentRow.Cells(15).Value
-        txtMotivo.Text = dgPJ.CurrentRow.Cells(16).Value
-
-    End Sub
-
-    Private Sub rbNomePJ_CheckedChanged(sender As Object, e As EventArgs) Handles rbNomePJ.CheckedChanged
-        txtBuscarCNPJ.Text = ""
-        txtBuscarNomePJ.Text = ""
-        txtBuscarNomePJ.Visible = True
-        txtBuscarCNPJ.Visible = False
-        txtBuscarNomePJ.Focus()
-    End Sub
-
-    Private Sub rbCNPJ_CheckedChanged(sender As Object, e As EventArgs) Handles rbCNPJ.CheckedChanged
-        txtBuscarNomePJ.Text = ""
-        txtBuscarCNPJ.Text = ""
-        txtBuscarNomePJ.Visible = False
-        txtBuscarCNPJ.Visible = True
-        txtBuscarCNPJ.Focus()
-    End Sub
-
-    Private Sub txtNomePJ_TextChanged(sender As Object, e As EventArgs) Handles txtBuscarNomePJ.TextChanged
-        If txtBuscarNomePJ.Text = "" And dgPJ.Rows.Count > 0 Then
-
-            ListarPJ()
-
-        Else
-            Dim dt As New DataTable
-            Dim da As SqlDataAdapter
-
-            Try
-                abrir()
-                da = New SqlDataAdapter("pa_cliente_NomebuscarPJ", con)
-                da.SelectCommand.CommandType = CommandType.StoredProcedure
-                da.SelectCommand.Parameters.AddWithValue("@nome", txtBuscarNomePJ.Text)
-
-                da.Fill(dt)
-                dgPJ.DataSource = dt
-
-                ContarLinhasPJ()
-
-            Catch ex As Exception
-                MessageBox.Show("Erro ao Listar" + ex.Message.ToString)
-            Finally
-
-                fechar()
-            End Try
-        End If
-    End Sub
-
-    Private Sub MaskedTextBox1_MaskInputRejected(sender As Object, e As MaskInputRejectedEventArgs) Handles txtBuscarCNPJ.MaskInputRejected
-        If txtBuscarCNPJ.Text = "   .   .   -" And dgPJ.Rows.Count > 0 Then
-
-
-        Else
-            Dim dt As New DataTable
-            Dim da As SqlDataAdapter
-
-            Try
-                abrir()
-                da = New SqlDataAdapter("pa_cliente_CpfbuscarPJ", con)
-                da.SelectCommand.CommandType = CommandType.StoredProcedure
-                da.SelectCommand.Parameters.AddWithValue("@cnpj", txtBuscarCNPJ.Text)
-
-                da.Fill(dt)
-                dgPJ.DataSource = dt
-
-                ListarPJ()
-                ContarLinhasPJ()
-
-            Catch ex As Exception
-                MessageBox.Show("Erro ao Listar" + ex.Message.ToString)
-            Finally
-
-                fechar()
-            End Try
-        End If
-    End Sub
-
-    Private Sub frmClientes_KeyDown(sender As Object, e As KeyEventArgs) Handles MyBase.KeyDown
-        'If e.KeyCode = Keys.F1 Then
-        '    botaoNovo()
-        'End If
-        'If e.KeyCode = Keys.F2 Then
-        '    botaoBuscarCep()
-        'End If
-
-        Select Case e.KeyCode
-            Case Keys.F1
-                btnNovo.PerformClick()
-            Case Keys.F2
-                btBuscarCEP.PerformClick()
-            Case Keys.F3
-                btnEditar.PerformClick()
-            Case Keys.F4
-                btnExcluir.PerformClick()
-            Case Keys.F5
-                btBuscarCNPJ.PerformClick()
-            Case Keys.F6
-                btNovoPJ.PerformClick()
-            Case Keys.F7
-                btSalvarPJ.PerformClick()
-            Case Keys.F8
-                btEscluirPJ.PerformClick()
-
-            Case Keys.Escape
-                Me.Close()
-
-        End Select
-    End Sub
-
-    Private Sub btSair_Click(sender As Object, e As EventArgs)
-        Me.Close()
-    End Sub
-
-    Private Sub btSair_Click_1(sender As Object, e As EventArgs) Handles btSair.Click
-        Me.Close()
     End Sub
 
     Private Sub ObterCep(cep As String)
@@ -803,5 +401,18 @@ Public Class frmClientes
             MessageBox.Show("CEP Incorreto, digite um CEP válido!!!", "ERRO")
         End Try
 
+    End Sub
+
+
+    Private Sub btSair_Click(sender As Object, e As EventArgs) Handles btSair.Click
+        Me.Close()
+    End Sub
+
+    Private Sub btBuscarCEP_Click(sender As Object, e As EventArgs) Handles btBuscarCEP.Click
+        If validaCEP() Then
+
+            ObterCep(txtCEP.Text)
+
+        End If
     End Sub
 End Class
