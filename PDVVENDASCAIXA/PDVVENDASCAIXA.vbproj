@@ -139,10 +139,10 @@
     <Compile Include="Cadastros\frmCategoriaProdutos.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Cadastros\frmClientes.Designer.vb">
+    <Compile Include="Cadastros\clientes\frmClientes.Designer.vb">
       <DependentUpon>frmClientes.vb</DependentUpon>
     </Compile>
-    <Compile Include="Cadastros\frmClientes.vb">
+    <Compile Include="Cadastros\clientes\frmClientes.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Cadastros\frmEmpresa.Designer.vb">
@@ -488,7 +488,7 @@
     <EmbeddedResource Include="Cadastros\frmCategoriaProdutos.resx">
       <DependentUpon>frmCategoriaProdutos.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Cadastros\frmClientes.resx">
+    <EmbeddedResource Include="Cadastros\clientes\frmClientes.resx">
       <DependentUpon>frmClientes.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Cadastros\frmEmpresa.resx">

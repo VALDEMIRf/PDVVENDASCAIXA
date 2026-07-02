@@ -5,10 +5,7 @@ Public Class frmClientesPJ
     Private Sub frmClientesPJ_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         btnSalvar.Enabled = False
-
         ListarPJ()
-
-
         rbNomePJ.Checked = True
     End Sub
 
@@ -16,21 +13,9 @@ Public Class frmClientesPJ
 
     Private Sub HabilitarCamposPJ()
         txtCNPJ.Enabled = True
-        txtNome.Enabled = True
-        txtFantasia.Enabled = True
         txtIE.Enabled = True
-        txtSituacao.Enabled = True
-        txtMotivo.Enabled = True
-        txtTel.Enabled = True
-        txtEmail.Enabled = True
         txtCEP.Enabled = True
-        txtUF.Enabled = True
-        txtEndereco.Enabled = True
-        txtNum.Enabled = True
-        txtCompl.Enabled = True
         txtComplemento.Enabled = True
-        txtBairro.Enabled = True
-        txtCidade.Enabled = True
         txtObs.Enabled = True
         txtCNPJ.Focus()
     End Sub
@@ -87,7 +72,7 @@ Public Class frmClientesPJ
         HabilitarCamposPJ()
         Limpar()
         btnSalvar.Enabled = True
-        btEditar.Enabled = False
+
         btExcluir.Enabled = False
     End Sub
 
@@ -165,7 +150,7 @@ Public Class frmClientesPJ
 
     End Sub
 
-    Private Sub btEditarPJ_Click(sender As Object, e As EventArgs) Handles btEditar.Click
+    Private Sub btEditarPJ_Click(sender As Object, e As EventArgs)
         Dim cmd As SqlCommand
 
         If txtCNPJ.Text <> "" And txtNome.Text <> "" Then
@@ -215,7 +200,7 @@ Public Class frmClientesPJ
                 If (MessageBox.Show("Deseja excluir este cliente?", Me.Text, MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.No) Then Exit Sub
 
                 abrir()
-                cmd = New SqlCommand("pa_cliente_ExcluirPJ", con)
+                cmd = New SqlCommand("pa_clienteExcluirPJ", con)
                 cmd.CommandType = CommandType.StoredProcedure
                 cmd.Parameters.AddWithValue("@id_cliente", lblCodigo.Text)
                 cmd.Parameters.Add("@mensagem", SqlDbType.VarChar, 100).Direction = 2
@@ -228,7 +213,7 @@ Public Class frmClientesPJ
                 Limpar()
 
                 btExcluir.Enabled = False
-                btEditar.Enabled = False
+
 
             Catch ex As Exception
                 MessageBox.Show("Erro ao  excluir os dados deste Cliente" + ex.Message.ToString)
@@ -274,17 +259,23 @@ Public Class frmClientesPJ
             .Columns(19).HeaderText = "Data Cadastro"
 
 
-            .Columns(1).Width = 150
-            .Columns(2).Width = 100
-            .Columns(3).Width = 100
-            .Columns(6).Width = 80
-            .Columns(7).Width = 100
+            .Columns(1).Width = 130
+            .Columns(2).Width = 230
+            .Columns(3).Width = 170
+            .Columns(4).Width = 150
+            .Columns(6).Width = 120
+            .Columns(7).Width = 200
             .Columns(8).Width = 120
-            .Columns(9).Width = 120
+            .Columns(9).Width = 250
             .Columns(10).Width = 50
             .Columns(11).Width = 80
-            .Columns(12).Width = 100
-            .Columns(13).Width = 100
+            .Columns(12).Width = 200
+            .Columns(13).Width = 90
+            .Columns(14).Width = 150
+            .Columns(15).Width = 150
+            .Columns(16).Width = 150
+            .Columns(17).Width = 150
+            .Columns(18).Width = 300
         End With
 
     End Sub
@@ -317,6 +308,7 @@ Public Class frmClientesPJ
     End Sub
 
     Private Sub rbNomePJ_CheckedChanged(sender As Object, e As EventArgs) Handles rbNomePJ.CheckedChanged
+        ListarPJ()
         txtBuscarCNPJ.Text = ""
         txtBuscarNome.Text = ""
         txtBuscarNome.Visible = True
@@ -325,6 +317,7 @@ Public Class frmClientesPJ
     End Sub
 
     Private Sub rbCNPJ_CheckedChanged(sender As Object, e As EventArgs) Handles rbCNPJ.CheckedChanged
+        ListarPJ()
         txtBuscarNome.Text = ""
         txtBuscarCNPJ.Text = ""
         txtBuscarNome.Visible = False
@@ -343,15 +336,16 @@ Public Class frmClientesPJ
 
             Try
                 abrir()
-                da = New SqlDataAdapter("pa_cliente_Nomebuscar", con)
+                da = New SqlDataAdapter("pa_cliente_NomebuscarPJ", con)
                 da.SelectCommand.CommandType = CommandType.StoredProcedure
                 da.SelectCommand.Parameters.AddWithValue("@nome", txtBuscarNome.Text)
 
                 da.Fill(dt)
                 dgPJ.DataSource = dt
 
-                FormatarDGPJ()
                 ContarLinhasPJ()
+
+                FormatarDGPJ()
 
             Catch ex As Exception
                 MessageBox.Show("Erro ao Listar" + ex.Message.ToString)
@@ -361,7 +355,7 @@ Public Class frmClientesPJ
     End Sub
 
     Private Sub txtBuscarCNPJ_MaskInputRejected(sender As Object, e As MaskInputRejectedEventArgs) Handles txtBuscarCNPJ.MaskInputRejected
-        If txtBuscarCNPJ.Text = "   .   .   -" And dgPJ.Rows.Count > 0 Then
+        If txtBuscarCNPJ.Text = "  .   .   /  -  " And dgPJ.Rows.Count > 0 Then
             ListarPJ()
 
         Else
@@ -377,8 +371,10 @@ Public Class frmClientesPJ
                 da.Fill(dt)
                 dgPJ.DataSource = dt
 
-                FormatarDGPJ()
+
                 ContarLinhasPJ()
+
+                FormatarDGPJ()
 
             Catch ex As Exception
                 MessageBox.Show("Erro ao Listar" + ex.Message.ToString)
@@ -387,5 +383,9 @@ Public Class frmClientesPJ
                 fechar()
             End Try
         End If
+    End Sub
+
+    Private Sub btSair_Click(sender As Object, e As EventArgs) Handles btSair.Click
+        Me.Close()
     End Sub
 End Class

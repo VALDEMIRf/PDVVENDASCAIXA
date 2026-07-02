@@ -66,7 +66,6 @@ Partial Class frmClientesPJ
         Me.Label4 = New System.Windows.Forms.Label()
         Me.txtIE = New System.Windows.Forms.MaskedTextBox()
         Me.txtCNPJ = New System.Windows.Forms.MaskedTextBox()
-        Me.btEditar = New System.Windows.Forms.Button()
         Me.btNovoPJ = New System.Windows.Forms.Button()
         Me.btExcluir = New System.Windows.Forms.Button()
         Me.btnSalvar = New System.Windows.Forms.Button()
@@ -554,28 +553,6 @@ Partial Class frmClientesPJ
         Me.txtCNPJ.TabIndex = 351
         Me.txtCNPJ.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals
         '
-        'btEditar
-        '
-        Me.btEditar.BackColor = System.Drawing.Color.Transparent
-        Me.btEditar.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btEditar.Enabled = False
-        Me.btEditar.FlatAppearance.BorderSize = 0
-        Me.btEditar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Azure
-        Me.btEditar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
-        Me.btEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btEditar.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btEditar.ForeColor = System.Drawing.Color.White
-        Me.btEditar.Image = CType(resources.GetObject("btEditar.Image"), System.Drawing.Image)
-        Me.btEditar.Location = New System.Drawing.Point(194, 8)
-        Me.btEditar.Margin = New System.Windows.Forms.Padding(7, 6, 7, 6)
-        Me.btEditar.Name = "btEditar"
-        Me.btEditar.Size = New System.Drawing.Size(92, 47)
-        Me.btEditar.TabIndex = 378
-        Me.btEditar.Text = "Editar"
-        Me.btEditar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.btEditar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btEditar.UseVisualStyleBackColor = False
-        '
         'btNovoPJ
         '
         Me.btNovoPJ.BackColor = System.Drawing.Color.Transparent
@@ -587,7 +564,7 @@ Partial Class frmClientesPJ
         Me.btNovoPJ.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btNovoPJ.ForeColor = System.Drawing.Color.White
         Me.btNovoPJ.Image = CType(resources.GetObject("btNovoPJ.Image"), System.Drawing.Image)
-        Me.btNovoPJ.Location = New System.Drawing.Point(4, 12)
+        Me.btNovoPJ.Location = New System.Drawing.Point(94, 20)
         Me.btNovoPJ.Margin = New System.Windows.Forms.Padding(7, 6, 7, 6)
         Me.btNovoPJ.Name = "btNovoPJ"
         Me.btNovoPJ.Size = New System.Drawing.Size(74, 35)
@@ -609,7 +586,7 @@ Partial Class frmClientesPJ
         Me.btExcluir.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btExcluir.ForeColor = System.Drawing.Color.White
         Me.btExcluir.Image = CType(resources.GetObject("btExcluir.Image"), System.Drawing.Image)
-        Me.btExcluir.Location = New System.Drawing.Point(311, 16)
+        Me.btExcluir.Location = New System.Drawing.Point(314, 17)
         Me.btExcluir.Margin = New System.Windows.Forms.Padding(7, 6, 7, 6)
         Me.btExcluir.Name = "btExcluir"
         Me.btExcluir.Size = New System.Drawing.Size(88, 37)
@@ -631,7 +608,7 @@ Partial Class frmClientesPJ
         Me.btnSalvar.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSalvar.ForeColor = System.Drawing.Color.White
         Me.btnSalvar.Image = CType(resources.GetObject("btnSalvar.Image"), System.Drawing.Image)
-        Me.btnSalvar.Location = New System.Drawing.Point(91, 12)
+        Me.btnSalvar.Location = New System.Drawing.Point(194, 18)
         Me.btnSalvar.Margin = New System.Windows.Forms.Padding(7, 6, 7, 6)
         Me.btnSalvar.Name = "btnSalvar"
         Me.btnSalvar.Size = New System.Drawing.Size(86, 35)
@@ -748,7 +725,6 @@ Partial Class frmClientesPJ
         '
         Me.GroupBox5.Controls.Add(Me.btNovoPJ)
         Me.GroupBox5.Controls.Add(Me.btnSalvar)
-        Me.GroupBox5.Controls.Add(Me.btEditar)
         Me.GroupBox5.Controls.Add(Me.btExcluir)
         Me.GroupBox5.Location = New System.Drawing.Point(5, 287)
         Me.GroupBox5.Name = "GroupBox5"
@@ -818,7 +794,6 @@ Partial Class frmClientesPJ
     Friend WithEvents Label38 As Label
     Friend WithEvents txtEndereco As TextBox
     Friend WithEvents Label39 As Label
-    Friend WithEvents btEditar As Button
     Friend WithEvents Label33 As Label
     Friend WithEvents lblTotalPJ As Label
     Friend WithEvents Label27 As Label

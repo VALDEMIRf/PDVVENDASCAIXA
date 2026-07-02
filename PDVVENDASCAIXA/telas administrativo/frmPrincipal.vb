@@ -75,10 +75,7 @@ Public Class frmPrincipal
     End Sub
 
     'MENU CADASTROS
-    Private Sub ClientesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ClientesToolStripMenuItem.Click
-        Dim form = New frmClientes
-        form.ShowDialog()
-    End Sub
+
 
     Private Sub CargosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CargosToolStripMenuItem.Click
         Dim form = New frmCargos
@@ -616,6 +613,16 @@ Public Class frmPrincipal
 
     Private Sub ConsultaPreçoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ConsultaPreçoToolStripMenuItem.Click
         Dim form = New frmConsultaValor()
+        form.ShowDialog()
+    End Sub
+
+    Private Sub PessoaFísicaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PessoaFísicaToolStripMenuItem.Click
+        Dim form = New frmClientes
+        form.ShowDialog()
+    End Sub
+
+    Private Sub PessoaJurídicaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PessoaJurídicaToolStripMenuItem.Click
+        Dim form = New frmClientesPJ
         form.ShowDialog()
     End Sub
 
