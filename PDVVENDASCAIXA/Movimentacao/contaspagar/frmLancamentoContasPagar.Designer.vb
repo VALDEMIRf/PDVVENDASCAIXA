@@ -49,6 +49,7 @@ Partial Class frmLancamentoContasPagar
         Me.Label10 = New System.Windows.Forms.Label()
         Me.txtValorParcelas = New System.Windows.Forms.TextBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.txtSituacao = New System.Windows.Forms.TextBox()
         Me.txtSaldoRestante = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.txtJuros = New System.Windows.Forms.TextBox()
@@ -77,7 +78,6 @@ Partial Class frmLancamentoContasPagar
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.Label16 = New System.Windows.Forms.Label()
         Me.btSair = New System.Windows.Forms.Button()
-        Me.txtSituacao = New System.Windows.Forms.TextBox()
         Me.Panel1.SuspendLayout()
         CType(Me.dgvParcelas, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
@@ -371,6 +371,13 @@ Partial Class frmLancamentoContasPagar
         Me.GroupBox1.Size = New System.Drawing.Size(909, 106)
         Me.GroupBox1.TabIndex = 345
         Me.GroupBox1.TabStop = False
+        '
+        'txtSituacao
+        '
+        Me.txtSituacao.Location = New System.Drawing.Point(357, 73)
+        Me.txtSituacao.Name = "txtSituacao"
+        Me.txtSituacao.Size = New System.Drawing.Size(141, 20)
+        Me.txtSituacao.TabIndex = 380
         '
         'txtSaldoRestante
         '
@@ -669,13 +676,6 @@ Partial Class frmLancamentoContasPagar
         Me.btSair.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btSair.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btSair.UseVisualStyleBackColor = False
-        '
-        'txtSituacao
-        '
-        Me.txtSituacao.Location = New System.Drawing.Point(357, 73)
-        Me.txtSituacao.Name = "txtSituacao"
-        Me.txtSituacao.Size = New System.Drawing.Size(141, 20)
-        Me.txtSituacao.TabIndex = 380
         '
         'frmLancamentoContasPagar
         '

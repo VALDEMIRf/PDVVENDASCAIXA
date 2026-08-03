@@ -14,8 +14,8 @@ Public Class frmProdutos
         CarregarCategoriaProdutos()
         CarregarUnidadesMedidas()
 
-        DesabilitarCampos()
-        btnSalvar.Enabled = False
+        ' DesabilitarCampos()
+        btnSalvar.Enabled = False '
 
         Listar()
 
@@ -91,7 +91,6 @@ Public Class frmProdutos
         Try
             abrir()
 
-            '  da = New SqlDataAdapter("SELECT * FROM tbProdutos", con)
             da = New SqlDataAdapter("pa_produto_Listar", con)
             da.SelectCommand.CommandType = CommandType.StoredProcedure
             da.Fill(dt)
@@ -107,19 +106,6 @@ Public Class frmProdutos
         End Try
     End Sub
 
-    Private Sub DesabilitarCampos()
-        txtNome.Enabled = False
-        txtDescricao.Enabled = False
-        cbFornecedor.Enabled = False
-        cbCategoria.Enabled = False
-        cbUnidade.Enabled = False
-        txtQuantidade.Enabled = False
-        txtValorCompra.Enabled = False
-        txtValorVenda.Enabled = False
-        txtNivel.Enabled = False
-
-
-    End Sub
 
     Private Sub HabilitarCampos()
         txtNome.Enabled = True
@@ -135,7 +121,7 @@ Public Class frmProdutos
     End Sub
 
     Private Sub Limpar()
-        txtNome.Focus()
+
         txtNome.Text = ""
         txtDescricao.Text = ""
         txtQuantidade.Text = "0"
@@ -146,8 +132,9 @@ Public Class frmProdutos
         cbFornecedor.Text = Nothing
         cbUnidade.Text = Nothing
         cbCategoria.Text = Nothing
-        ' txtCodBarras.Text = ""
+        txtCodBarras.Text = ""
         imgCodBar.Image = Nothing
+        txtNome.Focus()
         carregarImagem()
 
     End Sub
@@ -156,10 +143,13 @@ Public Class frmProdutos
         With dg
             .Columns(0).Visible = False
             .Columns(9).Visible = False
-            .Columns(16).Visible = False
+            .Columns(10).Visible = False
             .Columns(14).Visible = False
             .Columns(15).Visible = False
+            .Columns(16).Visible = False
+            .Columns(17).Visible = False
 
+            .Columns(0).HeaderText = "ID"
             .Columns(1).HeaderText = "Produto"
             .Columns(2).HeaderText = "Descrição"
             .Columns(3).HeaderText = "Fornecedor"
@@ -168,10 +158,15 @@ Public Class frmProdutos
             .Columns(6).HeaderText = "Quant."
             .Columns(7).HeaderText = "Vlr de Compra"
             .Columns(8).HeaderText = "Vlr de Venda"
-            .Columns(10).HeaderText = "Nível Mínimo"
-            .Columns(11).HeaderText = "quant_vendida"
-            .Columns(12).HeaderText = "Cód. Barras"
-            .Columns(13).HeaderText = "data_cadastro"
+            .Columns(9).HeaderText = "Vlr de Venda"
+            .Columns(10).HeaderText = "imagem"
+            .Columns(11).HeaderText = "Nível Mínimo"
+            .Columns(12).HeaderText = "quant_vendida"
+            .Columns(13).HeaderText = "Cód. Barras"
+            .Columns(14).HeaderText = "data_cadastro"
+            .Columns(15).HeaderText = "id_fornecedor"
+            .Columns(16).HeaderText = "id_categoria"
+            .Columns(17).HeaderText = "id_unidade"
 
             .Columns(1).Width = 200
             .Columns(2).Width = 180
@@ -194,15 +189,11 @@ Public Class frmProdutos
     End Sub
 
     Private Sub btnNovo_Click(sender As Object, e As EventArgs) Handles btnNovo.Click
-        If txtCodBarras.Text <> "" Then
-            HabilitarCampos()
-            ' Limpar()
-            btnSalvar.Enabled = True
-            '  btnEditar.Enabled = False
-            '  btnExcluir.Enabled = False
-            ' CriarCodigoBarras()
-            txtCodBarras.Focus()
-        End If
+
+        btnSalvar.Enabled = True
+
+        HabilitarCampos()
+        Limpar()
 
     End Sub
 
@@ -225,14 +216,15 @@ Public Class frmProdutos
                 abrir()
                 cmd = New SqlCommand("pa_produto_Salvar", con)
                 cmd.CommandType = CommandType.StoredProcedure
-                cmd.Parameters.AddWithValue("@nome", txtNome.Text)
-                cmd.Parameters.AddWithValue("@descricao", txtDescricao.Text)
                 cmd.Parameters.AddWithValue("@id_fornecedor", cbFornecedor.SelectedValue)
                 cmd.Parameters.AddWithValue("@id_categoria", cbCategoria.SelectedValue)
                 cmd.Parameters.AddWithValue("@id_unidade", cbUnidade.SelectedValue)
+                cmd.Parameters.AddWithValue("@nome", txtNome.Text)
+                cmd.Parameters.AddWithValue("@descricao", txtDescricao.Text)
                 cmd.Parameters.AddWithValue("@quantidade", txtQuantidade.Text)
                 cmd.Parameters.AddWithValue("@valor_compra", vlcompra)
                 cmd.Parameters.AddWithValue("@valor_venda", vlVenda)
+                cmd.Parameters.AddWithValue("@valorVenda", vlVenda)
                 cmd.Parameters.AddWithValue("@data_cadastro", Now.Date())
                 cmd.Parameters.AddWithValue("@imagem", byteArray)
                 cmd.Parameters.AddWithValue("@nivel_minimo", txtNivel.Text)
@@ -279,7 +271,7 @@ Public Class frmProdutos
                 abrir()
                 cmd = New SqlCommand("pa_produto_Editar", con)
                 cmd.CommandType = CommandType.StoredProcedure
-                cmd.Parameters.AddWithValue("@id_produto", txtCodigo.Text)
+                cmd.Parameters.AddWithValue("@id_produto", lblCodigo.Text)
                 cmd.Parameters.AddWithValue("@nome", txtNome.Text)
                 cmd.Parameters.AddWithValue("@descricao", txtDescricao.Text)
                 cmd.Parameters.AddWithValue("@id_fornecedor", cbFornecedor.SelectedValue)
@@ -288,6 +280,7 @@ Public Class frmProdutos
                 cmd.Parameters.AddWithValue("@quantidade", txtQuantidade.Text)
                 cmd.Parameters.AddWithValue("@valor_compra", vlcompra)
                 cmd.Parameters.AddWithValue("@valor_venda", vlVenda)
+                cmd.Parameters.AddWithValue("@valorVenda", vlVenda)
                 cmd.Parameters.AddWithValue("@imagem", byteArray)
                 cmd.Parameters.AddWithValue("@nivel_minimo", txtNivel.Text)
 
@@ -318,7 +311,7 @@ Public Class frmProdutos
                 abrir()
                 cmd = New SqlCommand("pa_produto_Excluir", con)
                 cmd.CommandType = CommandType.StoredProcedure
-                cmd.Parameters.AddWithValue("@id_produto", txtCodigo.Text)
+                cmd.Parameters.AddWithValue("@id_produto", lblCodigo.Text)
                 cmd.Parameters.Add("@mensagem", SqlDbType.VarChar, 100).Direction = 2
                 cmd.ExecuteNonQuery()
 
@@ -354,6 +347,7 @@ Public Class frmProdutos
         HabilitarCampos()
 
         txtCodigo.Text = dg.CurrentRow.Cells(0).Value
+        lblCodigo.Text = dg.CurrentRow.Cells(0).Value
         txtNome.Text = dg.CurrentRow.Cells(1).Value
         txtDescricao.Text = dg.CurrentRow.Cells(2).Value
         cbFornecedor.Text = dg.CurrentRow.Cells(3).Value
@@ -362,11 +356,10 @@ Public Class frmProdutos
         txtQuantidade.Text = dg.CurrentRow.Cells(6).Value
         txtValorCompra.Text = dg.CurrentRow.Cells(7).Value '.ToString("R$ #,###.00")
         txtValorVenda.Text = dg.CurrentRow.Cells(8).Value '.ToString("R$ #,###.00")
+        txtNivel.Text = CInt(dg.CurrentRow.Cells(11).Value)
+        txtCodBarras.Text = dg.CurrentRow.Cells(13).Value
 
-        txtNivel.Text = CInt(dg.CurrentRow.Cells(10).Value)
-        txtCodBarras.Text = dg.CurrentRow.Cells(12).Value
-
-        Dim tempImagem As Byte() = DirectCast(dg.CurrentRow.Cells(9).Value, Byte())
+        Dim tempImagem As Byte() = DirectCast(dg.CurrentRow.Cells(10).Value, Byte())
         If tempImagem Is Nothing Then
             MessageBox.Show("Imagem não localizada", "Erro")
             Exit Sub
@@ -412,27 +405,7 @@ Public Class frmProdutos
         End If
     End Sub
 
-    Private Sub btImagem_Click(sender As Object, e As EventArgs)
-        pbImagem.Visible = True
-        Using OFD As New OpenFileDialog With {.Filter = "Image File(*.jpg;*.bmp;*.gif;*.png)|*.jpg;*.bmp;*.gif;*.png"}
 
-            If OFD.ShowDialog = DialogResult.OK Then
-                ImagemCarregada = Image.FromFile(OFD.FileName)
-                pbImagem.Image = ImagemCarregada
-            End If
-        End Using
-    End Sub
-
-    Private Sub btImagem_Click_1(sender As Object, e As EventArgs) Handles btImagem.Click
-        pbImagem.Visible = True
-        Using OFD As New OpenFileDialog With {.Filter = "Image File(*.jpg;*.bmp;*.gif;*.png)|*.jpg;*.bmp;*.gif;*.png"}
-
-            If OFD.ShowDialog = DialogResult.OK Then
-                ImagemCarregada = Image.FromFile(OFD.FileName)
-                pbImagem.Image = ImagemCarregada
-            End If
-        End Using
-    End Sub
 
     Sub CriarCodigoBarras()
 
@@ -503,4 +476,33 @@ Public Class frmProdutos
         Dim form = New frmFornecedores
         form.ShowDialog()
     End Sub
+
+    'Private Sub txtValorVenda_TextChanged(sender As Object, e As EventArgs) Handles txtValorVenda.TextChanged
+    '    txtValorVenda.Text = FormatCurrency(txtValorVenda.Text)
+    'End Sub
+
+    'Private Sub txtValorCompra_TextChanged(sender As Object, e As EventArgs) Handles txtValorCompra.TextChanged
+    '    txtValorCompra.Text = FormatCurrency(txtValorCompra.Text)
+    'End Sub
+
+    'Private Sub txtQuantidade_TextChanged(sender As Object, e As EventArgs) Handles txtQuantidade.TextChanged
+    '    permiteSoNumeros(sender, e)
+    'End Sub
+
+    'Private Sub txtNivel_TextChanged(sender As Object, e As EventArgs) Handles txtNivel.TextChanged
+    '    permiteSoNumeros(sender, e)
+    'End Sub
+
+    Private Sub btImagem_Click(sender As Object, e As EventArgs) Handles btImagem.Click
+        pbImagem.Visible = True
+        Using OFD As New OpenFileDialog With {.Filter = "Image File(*.jpg;*.bmp;*.gif;*.png)|*.jpg;*.bmp;*.gif;*.png"}
+
+            If OFD.ShowDialog = DialogResult.OK Then
+                ImagemCarregada = Image.FromFile(OFD.FileName)
+                pbImagem.Image = ImagemCarregada
+            End If
+        End Using
+    End Sub
+
+
 End Class
