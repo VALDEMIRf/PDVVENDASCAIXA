@@ -19,6 +19,8 @@ Public Class frmProdutos
 
         Listar()
 
+        rbProdutoBarras.Checked = True
+
         btnEditar.Enabled = False
         btnExcluir.Enabled = False
     End Sub
@@ -377,6 +379,49 @@ Public Class frmProdutos
         CriarCodigoBarras()
     End Sub
 
+    Private Sub rbProdutoBarras_CheckedChanged(sender As Object, e As EventArgs) Handles rbProdutoBarras.CheckedChanged
+        Listar()
+        txtBuscarDescricao.Visible = False
+        txtBuscarFornecedor.Visible = False
+        txtBuscarCategoria.Visible = False
+        txtBuscar.Visible = True
+        txtBuscar.Text = ""
+        txtBuscar.Focus()
+    End Sub
+
+    Private Sub rbDescricao_CheckedChanged(sender As Object, e As EventArgs) Handles rbDescricao.CheckedChanged
+        Listar()
+
+        txtBuscarFornecedor.Visible = False
+        txtBuscarCategoria.Visible = False
+        txtBuscar.Visible = False
+        txtBuscarDescricao.Visible = True
+        txtBuscarDescricao.Text = ""
+        txtBuscarDescricao.Focus()
+    End Sub
+
+    Private Sub rbFornecedor_CheckedChanged(sender As Object, e As EventArgs) Handles rbFornecedor.CheckedChanged
+        Listar()
+
+        txtBuscarDescricao.Visible = False
+        txtBuscarCategoria.Visible = False
+        txtBuscar.Visible = False
+        txtBuscarFornecedor.Visible = True
+        txtBuscarFornecedor.Text = ""
+        txtBuscarFornecedor.Focus()
+    End Sub
+
+    Private Sub rbCategoria_CheckedChanged(sender As Object, e As EventArgs) Handles rbCategoria.CheckedChanged
+        Listar()
+
+        txtBuscarFornecedor.Visible = False
+        txtBuscarDescricao.Visible = False
+        txtBuscar.Visible = False
+        txtBuscarCategoria.Visible = True
+        txtBuscarCategoria.Text = ""
+        txtBuscarCategoria.Focus()
+    End Sub
+
     Private Sub txtBuscar_TextChanged(sender As Object, e As EventArgs) Handles txtBuscar.TextChanged
         If txtBuscar.Text = "" And dg.Rows.Count > 0 Then
 
@@ -405,7 +450,86 @@ Public Class frmProdutos
         End If
     End Sub
 
+    Private Sub txtBuscarDescricao_TextChanged(sender As Object, e As EventArgs) Handles txtBuscarDescricao.TextChanged
+        If txtBuscarDescricao.Text = "" And dg.Rows.Count > 0 Then
 
+            Listar()
+
+        Else
+            Dim dt As New DataTable
+            Dim da As SqlDataAdapter
+
+            Try
+                abrir()
+                da = New SqlDataAdapter("pa_produto_BuscarDescricao", con)
+                da.SelectCommand.CommandType = CommandType.StoredProcedure
+                da.SelectCommand.Parameters.AddWithValue("@descricao", txtBuscarDescricao.Text)
+
+                da.Fill(dt)
+                dg.DataSource = dt
+
+                ContarLinhas()
+
+            Catch ex As Exception
+                MessageBox.Show("Erro ao Listar" + ex.Message.ToString)
+                fechar()
+            End Try
+        End If
+    End Sub
+
+    Private Sub txtBuscarFornecedor_TextChanged(sender As Object, e As EventArgs) Handles txtBuscarFornecedor.TextChanged
+        If txtBuscarFornecedor.Text = "" And dg.Rows.Count > 0 Then
+
+            Listar()
+
+        Else
+            Dim dt As New DataTable
+            Dim da As SqlDataAdapter
+
+            Try
+                abrir()
+                da = New SqlDataAdapter("pa_produto_BuscarFornecedor", con)
+                da.SelectCommand.CommandType = CommandType.StoredProcedure
+                da.SelectCommand.Parameters.AddWithValue("@razaoSocial", txtBuscarFornecedor.Text)
+
+                da.Fill(dt)
+                dg.DataSource = dt
+
+                ContarLinhas()
+
+            Catch ex As Exception
+                MessageBox.Show("Erro ao Listar" + ex.Message.ToString)
+                fechar()
+            End Try
+        End If
+    End Sub
+
+    Private Sub txtBuscarCategoria_TextChanged(sender As Object, e As EventArgs) Handles txtBuscarCategoria.TextChanged
+        If txtBuscarCategoria.Text = "" And dg.Rows.Count > 0 Then
+
+            Listar()
+
+        Else
+            Dim dt As New DataTable
+            Dim da As SqlDataAdapter
+
+            Try
+                abrir()
+                da = New SqlDataAdapter("pa_produto_BuscarCategoria", con)
+                da.SelectCommand.CommandType = CommandType.StoredProcedure
+                da.SelectCommand.Parameters.AddWithValue("@categoria", txtBuscarCategoria.Text)
+
+                da.Fill(dt)
+                dg.DataSource = dt
+
+                ContarLinhas()
+
+            Catch ex As Exception
+                MessageBox.Show("Erro ao Listar" + ex.Message.ToString)
+                fechar()
+            End Try
+        End If
+    End Sub
 
     Sub CriarCodigoBarras()
 
