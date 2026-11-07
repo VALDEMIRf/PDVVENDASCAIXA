@@ -1021,12 +1021,17 @@
     <None Include="Resources\FRENTE DE CAIXA2.png" />
     <None Include="Resources\FRENTE DE 2CAIXA.png" />
     <None Include="Resources\FRENTE DE CAIXA3.png" />
+    <None Include="Resources\caixa.PNG" />
     <Content Include="Resources\header-pagarreceber.png" />
     <None Include="Resources\Undo_32x32.png" />
     <None Include="Resources\Save.png" />
     <None Include="Resources\numbered.24.png" />
     <None Include="Resources\Report.png" />
     <None Include="Resources\Pie chart.png" />
+    <None Include="Resources\img_Botao.png" />
+    <None Include="Resources\img_Botao1.png" />
+    <None Include="Resources\img_Botao11.png" />
+    <None Include="Resources\icon_pesquisar.bmp" />
     <Content Include="SqlServerTypes\Loader.cs" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">

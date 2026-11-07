@@ -44,27 +44,32 @@ Public Class frmNivelBaixo
     Private Sub FormatarDG()
         With dg
             .Columns(0).Visible = False
+            .Columns(1).Visible = False
+            .Columns(2).Visible = False
             .Columns(3).Visible = False
-            .Columns(4).Visible = False
-            .Columns(5).Visible = False
             .Columns(7).Visible = False
             .Columns(8).Visible = False
-            .Columns(10).Visible = False
+            .Columns(11).Visible = False
+            .Columns(14).Visible = False
 
+            .Columns(0).HeaderText = "id_Produto"
+            .Columns(1).HeaderText = "id_Fornecedor"
+            .Columns(2).HeaderText = "id_Categoria"
+            .Columns(3).HeaderText = "id_Unidade"
+            .Columns(4).HeaderText = "Produto"
+            .Columns(5).HeaderText = "Descrição"
+            .Columns(6).HeaderText = "Quantidade"
+            .Columns(7).HeaderText = "Vlr de Compra"
+            .Columns(8).HeaderText = "Vlr de Venda"
+            .Columns(9).HeaderText = "Vlr de Venda"
+            .Columns(10).HeaderText = "Dt Cadastro"
+            .Columns(11).HeaderText = "imagem"
+            .Columns(12).HeaderText = "Nível Mínimo"
+            .Columns(13).HeaderText = "quant_vendida"
+            .Columns(14).HeaderText = "codigo_barras"
 
-            .Columns(1).HeaderText = "Produto"
-            .Columns(2).HeaderText = "Descrição"
-            ' .Columns(3).HeaderText = "Fornecedor"
-            '.Columns(4).HeaderText = "Categoria"
-            ' .Columns(5).HeaderText = "Unidade"
-            .Columns(6).HeaderText = "Quantidade" '
-            ' .Columns(7).HeaderText = "Vlr de Compra"
-            ' .Columns(8).HeaderText = "Vlr de Venda"
-            .Columns(9).HeaderText = "Dt Cadastro"
-            .Columns(11).HeaderText = "Nível Mínimo"
-
-            .Columns(1).Width = 180
-            .Columns(2).Width = 200
+            .Columns(4).Width = 380
+            .Columns(5).Width = 300
             '.Columns(3).Width = 260
             '.Columns(4).Width = 120
             '.Columns(5).Width = 80
@@ -87,7 +92,7 @@ Public Class frmNivelBaixo
         Listar()
     End Sub
 
-    Private Sub lblSair_Click(sender As Object, e As EventArgs) Handles lblSair.Click
+    Private Sub btSair_Click(sender As Object, e As EventArgs) Handles btSair.Click
         Me.Close()
     End Sub
 End Class

@@ -71,7 +71,7 @@ Public Class frmEstoque
             .Columns(5).HeaderText = "Funcionário"
             .Columns(6).HeaderText = "Motivo"
 
-            .Columns(1).Width = 180
+            .Columns(1).Width = 300
             .Columns(2).Width = 180
             '.Columns(3).Width = 130
             '.Columns(4).Width = 90

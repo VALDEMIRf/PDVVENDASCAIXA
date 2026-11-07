@@ -66,6 +66,7 @@ Partial Class frmLogin
         'btSair
         '
         Me.btSair.BackColor = System.Drawing.Color.RoyalBlue
+        Me.btSair.BackgroundImage = Global.PDVVENDASCAIXA.My.Resources.Resources.img_Botao11
         Me.btSair.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btSair.FlatAppearance.BorderSize = 0
         Me.btSair.FlatAppearance.MouseDownBackColor = System.Drawing.Color.WhiteSmoke
@@ -73,7 +74,7 @@ Partial Class frmLogin
         Me.btSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btSair.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btSair.ForeColor = System.Drawing.Color.White
-        Me.btSair.Location = New System.Drawing.Point(93, 242)
+        Me.btSair.Location = New System.Drawing.Point(95, 242)
         Me.btSair.Name = "btSair"
         Me.btSair.Size = New System.Drawing.Size(110, 23)
         Me.btSair.TabIndex = 23
